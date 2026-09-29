@@ -1,11 +1,15 @@
 package com.tcm.ragassistant.service;
 
+import com.tcm.ragassistant.config.RagEngineProperties;
 import com.tcm.ragassistant.domain.KnowledgeChunk;
 import com.tcm.ragassistant.domain.KnowledgeDocument;
 import com.tcm.ragassistant.dto.KnowledgeDocumentResponse;
 import com.tcm.ragassistant.dto.KnowledgeImportRequest;
 import com.tcm.ragassistant.dto.KnowledgeImportResponse;
 import com.tcm.ragassistant.repository.KnowledgeBaseRepository;
+import com.tcm.ragassistant.service.remote.LlamaIndexRagClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -22,11 +26,20 @@ import java.util.UUID;
 @Service
 public class KnowledgeIngestionService {
 
+    private static final Logger log = LoggerFactory.getLogger(KnowledgeIngestionService.class);
     private static final int MAX_CHUNK_LENGTH = 620;
 
+    private final RagEngineProperties engineProperties;
+    private final LlamaIndexRagClient llamaIndexRagClient;
     private final KnowledgeBaseRepository repository;
 
-    public KnowledgeIngestionService(KnowledgeBaseRepository repository) {
+    public KnowledgeIngestionService(
+            RagEngineProperties engineProperties,
+            LlamaIndexRagClient llamaIndexRagClient,
+            KnowledgeBaseRepository repository
+    ) {
+        this.engineProperties = engineProperties;
+        this.llamaIndexRagClient = llamaIndexRagClient;
         this.repository = repository;
     }
 
@@ -57,12 +70,25 @@ public class KnowledgeIngestionService {
         );
         List<KnowledgeChunk> chunks = buildChunks(document, request, checksum, now);
         repository.registerDocument(document, chunks);
+        syncToLlamaIndex(document, chunks);
         return new KnowledgeImportResponse(
                 KnowledgeDocumentResponse.from(document, chunks.size()),
                 chunks.size(),
                 "READY",
                 now
         );
+    }
+
+    private void syncToLlamaIndex(KnowledgeDocument document, List<KnowledgeChunk> chunks) {
+        if (!engineProperties.remoteEnabled()) {
+            return;
+        }
+        try {
+            llamaIndexRagClient.importKnowledge(document, chunks);
+        } catch (RuntimeException exception) {
+            log.warn("Document {} was registered locally but LlamaIndex sync failed: {}",
+                    document.id(), exception.getMessage());
+        }
     }
 
     private List<KnowledgeChunk> buildChunks(

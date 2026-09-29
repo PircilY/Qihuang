@@ -5,3 +5,12 @@ backend/target/
 *.iml
 .DS_Store
 Thumbs.db
+.venv/
+venv/
+.rag-deps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+rag-service/.env

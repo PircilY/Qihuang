@@ -756,12 +756,14 @@ function renderAnswer(result) {
         node("strong", "", `${version?.code || result.version} · ${version?.name || "迭代版本"}`),
         node("span", "", formatDateTime(result.generatedAt))
     );
-    const evidenceLevels = unique(result.citations.map(citation => citation.evidenceLevel));
+    const engineLabel = result.retrieval.notes.includes("engine=llama-index")
+        ? "LlamaIndex"
+        : "Java Local";
     const summary = node("div", "answer-summary");
     [
         ["检索策略", version?.retrievalFeature || "--"],
         ["引用证据", `${result.citations.length} 条`],
-        ["证据等级", evidenceLevels.length ? evidenceLevels.join(" / ") : "未命中"],
+        ["运行引擎", engineLabel],
         ["安全状态", result.refused ? "已拒答" : result.retrieval.sufficientEvidence ? "阈值通过" : "证据不足"]
     ].forEach(([label, value]) => {
         const item = node("span");

@@ -20,6 +20,13 @@ management:
       show-details: always
 
 app:
+  rag-engine:
+    mode: ${RAG_ENGINE_MODE:auto}
+    base-url: ${RAG_SERVICE_URL:http://127.0.0.1:8000}
+    connect-timeout: ${RAG_CONNECT_TIMEOUT:500ms}
+    read-timeout: ${RAG_READ_TIMEOUT:30s}
+    fallback-to-local: ${RAG_FALLBACK_TO_LOCAL:true}
+    retry-interval: ${RAG_RETRY_INTERVAL:10s}
   retrieval:
     candidate-limit: 8
     final-limit: 4
