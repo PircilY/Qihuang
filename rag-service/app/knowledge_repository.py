@@ -31,10 +31,44 @@ class KnowledgeRepository:
             self._document_ids = document_ids
 
     def upsert(self, document: dict, chunks: Iterable[dict]) -> None:
+        document_id = str(document.get("id", "")).strip()
+        if not document_id:
+            raise ValueError("document.id is required")
+        materialized = list(chunks)
+        if not materialized:
+            raise ValueError("at least one chunk is required")
+
+        nodes = []
+        chunk_ids: set[str] = set()
+        for chunk in materialized:
+            chunk_id = str(chunk.get("id", "")).strip()
+            if not chunk_id:
+                raise ValueError("chunk.id is required")
+            if chunk_id in chunk_ids:
+                raise ValueError(f"duplicate chunk id: {chunk_id}")
+            if str(chunk.get("documentId", "")).strip() != document_id:
+                raise ValueError(f"chunk {chunk_id} does not belong to document {document_id}")
+            chunk_ids.add(chunk_id)
+            nodes.append((chunk_id, self._to_node(chunk)))
+
         with self._lock:
-            self._document_ids.add(document["id"])
-            for chunk in chunks:
-                self._nodes[chunk["id"]] = self._to_node(chunk)
+            for chunk_id, node in nodes:
+                existing = self._nodes.get(chunk_id)
+                existing_document = existing.metadata.get("document_id") if existing else None
+                if existing_document and existing_document != document_id:
+                    raise ValueError(f"chunk id already belongs to another document: {chunk_id}")
+
+            # Upsert means replacement for this document. Removing stale chunks
+            # prevents re-importing a document from leaving unreachable evidence.
+            stale_ids = [
+                node_id
+                for node_id, node in self._nodes.items()
+                if node.metadata.get("document_id") == document_id
+            ]
+            for node_id in stale_ids:
+                del self._nodes[node_id]
+            self._document_ids.add(document_id)
+            self._nodes.update(nodes)
 
     def nodes(self) -> list[TextNode]:
         with self._lock:

@@ -53,10 +53,13 @@ def chat(request: ChatRequest) -> ChatResponse:
 
 @app.post("/v1/knowledge/import", response_model=KnowledgeImportResponse)
 def import_knowledge(request: KnowledgeImportRequest) -> KnowledgeImportResponse:
-    return engine.ingest(
-        request.document.model_dump(by_alias=True),
-        [chunk.model_dump(by_alias=True) for chunk in request.chunks],
-    )
+    try:
+        return engine.ingest(
+            request.document.model_dump(by_alias=True),
+            [chunk.model_dump(by_alias=True) for chunk in request.chunks],
+        )
+    except (KeyError, TypeError, ValueError) as exception:
+        raise HTTPException(status_code=400, detail=str(exception)) from exception
 
 
 @app.post("/v1/knowledge/reload", response_model=HealthResponse)

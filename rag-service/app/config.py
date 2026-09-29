@@ -9,14 +9,22 @@ def _env_int(name: str, default: int) -> int:
     value = os.getenv(name)
     if value is None or not value.strip():
         return default
-    return int(value)
+    try:
+        parsed = int(value)
+    except ValueError:
+        return default
+    return parsed if parsed > 0 else default
 
 
 def _env_float(name: str, default: float) -> float:
     value = os.getenv(name)
     if value is None or not value.strip():
         return default
-    return float(value)
+    try:
+        parsed = float(value)
+    except ValueError:
+        return default
+    return parsed if 0.0 <= parsed <= 1.0 else default
 
 
 @dataclass(frozen=True)

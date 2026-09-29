@@ -40,17 +40,6 @@ public class AnswerGenerationService {
         }
 
         if (version == IterationVersion.V3_GUARDED
-                && INDIVIDUAL_PRESCRIPTION_PATTERN.matcher(question).find()) {
-            return refusal(
-                    "涉及个体化处方或剂量判断，超出知识问答边界",
-                    "不能根据单段文字直接为具体患者确定处方或剂量。"
-                            + "系统仅展示一般性的文献依据，个体用药必须结合面诊、既往史、合并用药和医师判断。",
-                    retrievalOutput,
-                    2
-            );
-        }
-
-        if (version == IterationVersion.V3_GUARDED
                 && EMERGENCY_PATTERN.matcher(question).find()) {
             return refusal(
                     "问题可能涉及急症，超出线上问答边界",
@@ -58,6 +47,17 @@ public class AnswerGenerationService {
                             + "本系统不进行急诊分诊，也不替代现场医疗处置。",
                     retrievalOutput,
                     1
+            );
+        }
+
+        if (version == IterationVersion.V3_GUARDED
+                && INDIVIDUAL_PRESCRIPTION_PATTERN.matcher(question).find()) {
+            return refusal(
+                    "涉及个体化处方或剂量判断，超出知识问答边界",
+                    "不能根据单段文字直接为具体患者确定处方或剂量。"
+                            + "系统仅展示一般性的文献依据，个体用药必须结合面诊、既往史、合并用药和医师判断。",
+                    retrievalOutput,
+                    2
             );
         }
 

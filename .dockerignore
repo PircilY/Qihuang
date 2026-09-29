@@ -1,0 +1,9 @@
+.git
+.gitignore
+.venv
+venv
+.rag-deps
+backend/target
+**/__pycache__
+**/.pytest_cache
+*.log

@@ -1,0 +1,23 @@
+services:
+  rag-service:
+    build:
+      context: .
+      dockerfile: rag-service/Dockerfile
+    environment:
+      RAG_HOST: 0.0.0.0
+      RAG_PORT: 8000
+    ports:
+      - "8000:8000"
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      RAG_ENGINE_MODE: auto
+      RAG_SERVICE_URL: http://rag-service:8000
+      RAG_FALLBACK_TO_LOCAL: "true"
+    depends_on:
+      - rag-service
+    ports:
+      - "8080:8080"

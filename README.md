@@ -50,6 +50,17 @@ FastAPI + LlamaIndex       :8000
 
 ## 运行
 
+### Docker Compose 一键启动
+
+已提供 `docker-compose.yml`，适合在答辩或部署环境中同时启动 Java 网关和 Python 检索服务：
+
+```powershell
+docker compose up --build
+```
+
+启动后访问 `http://localhost:8080`；Python 服务健康地址为
+`http://localhost:8000/health`。也可以复制 `.env.example` 作为本地配置模板。
+
 先启动 LlamaIndex 服务：
 
 ```powershell
@@ -116,6 +127,8 @@ cd ..\backend
 mvn test
 ```
 
+仓库还提供 GitHub Actions 工作流，在 push 和 pull request 时分别执行 Python 与 Java 测试。
+
 或只运行 Java 测试：
 
 ```powershell
@@ -152,4 +165,10 @@ Python 服务另提供：
 - 所有异常通过全局异常处理器转换为统一响应
 - DTO 与领域模型分离
 - 知识库数据通过仓储接口访问
+
+## 当前边界
+
+当前版本是可运行的研究型原型：运行时导入写入内存索引，服务重启后需要重新导入；内置语料是演示整理数据，
+不代表经过临床专家审核的诊疗知识库。正式部署前应接入持久化数据库、文献授权与版本审计、用户权限、人工复核、
+真实 Embedding/大模型服务以及脱敏后的临床数据，并完成独立的安全性和效果验证。
 

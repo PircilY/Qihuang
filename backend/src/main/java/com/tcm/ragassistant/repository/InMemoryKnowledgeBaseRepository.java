@@ -11,10 +11,12 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedHashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Repository
@@ -106,15 +108,37 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
 
     @Override
     public synchronized void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
+        if (document == null || document.id() == null || document.id().isBlank()) {
+            throw new BusinessException("INVALID_DOCUMENT", "文档编号不能为空");
+        }
+        if (newChunks == null || newChunks.isEmpty()) {
+            throw new BusinessException("INVALID_CHUNKS", "至少需要登记一个知识片段");
+        }
         if (documentById.containsKey(document.id())) {
             throw new BusinessException("DOCUMENT_ALREADY_EXISTS", "文档编号已存在：" + document.id());
         }
-        documents.add(document);
-        documentById.put(document.id(), document);
+
+        Set<String> incomingIds = new HashSet<>();
         for (KnowledgeChunk chunk : newChunks) {
+            if (chunk == null || chunk.id() == null || chunk.id().isBlank()) {
+                throw new BusinessException("INVALID_CHUNK", "知识片段编号不能为空");
+            }
+            if (!document.id().equals(chunk.documentId())) {
+                throw new BusinessException("CHUNK_DOCUMENT_MISMATCH", "知识片段不属于当前文档：" + chunk.id());
+            }
+            if (!incomingIds.add(chunk.id())) {
+                throw new BusinessException("CHUNK_ALREADY_EXISTS", "导入请求中存在重复片段编号：" + chunk.id());
+            }
             if (chunkById.containsKey(chunk.id())) {
                 throw new BusinessException("CHUNK_ALREADY_EXISTS", "知识片段编号已存在：" + chunk.id());
             }
+        }
+
+        // Validate the whole batch before mutating either collection so a failed
+        // import cannot leave a document or a prefix of its chunks behind.
+        documents.add(document);
+        documentById.put(document.id(), document);
+        for (KnowledgeChunk chunk : newChunks) {
             chunks.add(chunk);
             chunkById.put(chunk.id(), chunk);
         }

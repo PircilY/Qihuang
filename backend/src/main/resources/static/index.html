@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="中医药心血管疾病 RAG 知识治理、检索实验与评估工作台">
+    <meta name="theme-color" content="#102823">
     <title>岐黄脉证 · 中医药心血管 RAG 研究台</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="/styles.css">
@@ -528,7 +529,7 @@
                                 <span class="request-id" id="requestIdValue">NO REQUEST</span>
                             </div>
                         </header>
-                        <div class="answer-stage" id="answerStage">
+                        <div class="answer-stage" id="answerStage" role="status" aria-live="polite" aria-atomic="true">
                             <div class="empty-state">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -828,7 +829,7 @@
                                           placeholder="粘贴可公开使用的演示文本。系统将按段落和长度边界自动切分，并计算校验值。"></textarea>
                             </label>
                             <div class="form-actions">
-                                <span id="importHint">正文至少 30 个字符，导入后会立即写入内存索引。</span>
+                                <span id="importHint">正文至少 30 个字符，导入后立即建立索引；当前演示实例重启后需重新导入。</span>
                                 <button class="button button-primary" id="importButton" type="submit">
                                     <svg viewBox="0 0 24 24" aria-hidden="true">
                                         <path d="M12 3v12"></path>

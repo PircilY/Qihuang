@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from pydantic.alias_generators import to_camel
 
 
@@ -26,6 +26,14 @@ class ChatRequest(ApiModel):
     disease: str | None = None
     source_type: str | None = None
     evidence_level: str | None = None
+
+    @field_validator("question")
+    @classmethod
+    def question_must_contain_text(cls, value: str) -> str:
+        normalized = value.strip()
+        if not normalized:
+            raise ValueError("问题不能为空")
+        return normalized
 
     def to_filter(self) -> RagFilter:
         return RagFilter(

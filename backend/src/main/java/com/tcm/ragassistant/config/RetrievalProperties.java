@@ -21,6 +21,20 @@ public record RetrievalProperties(
         if (rrfRankConstant <= 0) {
             rrfRankConstant = 60;
         }
+        if (!Double.isFinite(lexicalWeight) || lexicalWeight < 0.0) {
+            lexicalWeight = 1.0;
+        }
+        if (!Double.isFinite(vectorWeight) || vectorWeight < 0.0) {
+            vectorWeight = 0.85;
+        }
+        if (lexicalWeight == 0.0 && vectorWeight == 0.0) {
+            lexicalWeight = 1.0;
+        }
+        if (!Double.isFinite(minimumEvidenceScore)
+                || minimumEvidenceScore < 0.0
+                || minimumEvidenceScore > 1.0) {
+            minimumEvidenceScore = 0.016;
+        }
     }
 }
 
