@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: tcm-cvd-rag-prototype
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  retrieval:
+    candidate-limit: 8
+    final-limit: 4
+    rrf-rank-constant: 60
+    lexical-weight: 1.0
+    vector-weight: 0.85
+    minimum-evidence-score: 0.016
+
+logging:
+  level:
+    root: INFO
+    com.tcm.ragassistant: DEBUG
+

@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中医药心血管疾病 RAG 知识治理、检索实验与评估工作台">
+    <title>岐黄脉证 · 中医药心血管 RAG 研究台</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-frame">
+    <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="返回总览">
+            <span class="brand-seal" aria-hidden="true">脉</span>
+            <span class="brand-copy">
+                <strong>岐黄脉证</strong>
+                <span>中医药心血管 RAG 研究台</span>
+            </span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="主要工作区">
+            <button class="nav-item active" type="button" data-view="overview">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="8" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                    <rect x="3" y="15" width="7" height="6" rx="1"></rect>
+                </svg>
+                <span>研究总览</span>
+                <span class="nav-mark" aria-hidden="true"></span>
+            </button>
+            <button class="nav-item" type="button" data-view="knowledge">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                    <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path>
+                    <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path>
+                </svg>
+                <span>知识库</span>
+                <span class="nav-count" id="navChunkCount">--</span>
+            </button>
+            <button class="nav-item" type="button" data-view="workbench">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 3h6"></path>
+                    <path d="M10 9h4"></path>
+                    <path d="M8.4 3 7 8l-4 8a3 3 0 0 0 2.7 4h12.6A3 3 0 0 0 21 16l-4-8-1.4-5"></path>
+                    <path d="M7 15h10"></path>
+                </svg>
+                <span>RAG 工作台</span>
+                <span class="nav-mark" aria-hidden="true"></span>
+            </button>
+            <button class="nav-item" type="button" data-view="evaluation">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 20V10"></path>
+                    <path d="M10 20V4"></path>
+                    <path d="M16 20v-7"></path>
+                    <path d="M22 20H2"></path>
+                </svg>
+                <span>评估实验</span>
+                <span class="nav-count" id="navCaseCount">48</span>
+            </button>
+            <button class="nav-item" type="button" data-view="pipeline">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="5" cy="6" r="2"></circle>
+                    <circle cx="19" cy="6" r="2"></circle>
+                    <circle cx="12" cy="18" r="2"></circle>
+                    <path d="M7 6h10"></path>
+                    <path d="m6.5 7.7 4 8.6"></path>
+                    <path d="m17.5 7.7-4 8.6"></path>
+                </svg>
+                <span>数据流水线</span>
+                <span class="nav-mark" aria-hidden="true"></span>
+            </button>
+        </nav>
+
+        <div class="sidebar-foot">
+            <div class="sidebar-stat">
+                <span>当前数据库</span>
+                <strong id="sidebarChunkCount">--</strong>
+            </div>
+            <div class="sidebar-stat">
+                <span>文档登记</span>
+                <strong id="sidebarDocumentCount">--</strong>
+            </div>
+            <p>当前为离线演示数据，正式部署前需替换为获得授权的指南、古籍与临床文本。</p>
+        </div>
+    </aside>
+
+    <div class="main-shell">
+        <header class="topbar">
+            <div class="page-identity">
+                <span class="page-index" id="pageIndex">01</span>
+                <div>
+                    <h1 id="pageTitle">研究总览</h1>
+                    <p id="pageSubtitle">语料构成、证据质量与迭代状态</p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <span class="service-state" id="serviceState">
+                    <span class="status-dot"></span>
+                    <span id="serviceText">服务检查中</span>
+                </span>
+                <button class="button button-demo" id="demoButton" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m8 5 11 7-11 7z"></path>
+                        <path d="M4 5v14"></path>
+                    </svg>
+                    <span>一键演示</span>
+                </button>
+                <button class="button button-secondary" id="globalEvaluateButton" type="button">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m5 12 4 4L19 6"></path>
+                        <path d="M5 20h14"></path>
+                    </svg>
+                    <span>运行评估</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="view active" id="view-overview" data-title="研究总览" data-index="01"
+                     data-subtitle="语料构成、证据质量与迭代状态">
+                <div class="view-intro research-hero">
+                    <div class="hero-copy">
+                        <p class="intro-kicker">TCM cardiovascular RAG · graduation prototype</p>
+                        <h2>让每一条中医药心血管结论，都能回到文献证据与安全边界</h2>
+                        <p class="hero-summary">
+                            围绕高血压、冠心病、心力衰竭等专科问题，把来源登记、混合检索、证据引用、安全拒答和版本评估放进一条可演示、可复核的研究链路。
+                        </p>
+                        <div class="hero-meta">
+                            <span>Java 17 + Spring Boot</span>
+                            <span>4 轮 RAG 迭代</span>
+                            <span>离线可复现实验</span>
+                            <span>患者数据未接入</span>
+                        </div>
+                    </div>
+                    <div class="hero-rail">
+                        <div class="intro-note">
+                            <span class="signal-dot"></span>
+                            <p><strong>演示数据状态</strong><br><span id="overviewDataState">正在核对知识库登记信息，未接入真实患者数据。</span></p>
+                        </div>
+                        <div class="hero-demo-path">
+                            <div class="hero-demo-head">
+                                <div>
+                                    <span>DEMO ROUTE · 04 STEPS</span>
+                                    <strong>答辩演示路径</strong>
+                                </div>
+                                <button class="text-button" id="overviewDemoButton" type="button">一键走完</button>
+                            </div>
+                            <ol>
+                                <li><span>01</span><strong>知识底座</strong><small>来源与片段可追溯</small></li>
+                                <li><span>02</span><strong>检索迭代</strong><small>V0 到 V3 同题对照</small></li>
+                                <li><span>03</span><strong>证据回答</strong><small>引用、阈值与拒答</small></li>
+                                <li><span>04</span><strong>量化验证</strong><small>48 条版本级结果</small></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="evidence-chain" aria-label="RAG 检索证据链">
+                    <div class="evidence-chain-query">
+                        <span>当前演示命题</span>
+                        <strong>高血压肝阳上亢证，常用治法和方药证据是什么？</strong>
+                        <small>病种约束 · 证型约束 · 治法与方药同时检索</small>
+                    </div>
+                    <ol>
+                        <li>
+                            <span>01</span>
+                            <strong>问题约束</strong>
+                            <small>病种、证型与任务意图</small>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <strong>候选召回</strong>
+                            <small>BM25 与向量式相似度</small>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <strong>证据重排</strong>
+                            <small>来源等级与阈值校验</small>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <strong>回答或拒答</strong>
+                            <small>答案必须回指原文</small>
+                        </li>
+                    </ol>
+                    <button class="chain-action" type="button" data-go-view="workbench">
+                        查看完整运行过程
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+                </section>
+
+                <section class="metric-strip" aria-label="知识库核心指标">
+                    <article>
+                        <span>登记文档</span>
+                        <strong id="overviewDocumentCount">--</strong>
+                        <small>含指南、古籍、研究与规则</small>
+                    </article>
+                    <article>
+                        <span>知识片段</span>
+                        <strong id="overviewChunkCount">--</strong>
+                        <small>每个片段保留来源和页码</small>
+                    </article>
+                    <article>
+                        <span>覆盖病种</span>
+                        <strong id="overviewDiseaseCount">--</strong>
+                        <small>高血压、冠心病、心衰等</small>
+                    </article>
+                    <article>
+                        <span>A 级证据片段</span>
+                        <strong id="overviewHighEvidenceCount">--</strong>
+                        <small>按演示元数据统计</small>
+                    </article>
+                    <article>
+                        <span>平均片段长度</span>
+                        <strong id="overviewChunkLength">--</strong>
+                        <small>字符</small>
+                    </article>
+                </section>
+
+                <div class="overview-grid">
+                    <section class="board corpus-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>语料构成</h2>
+                                <p>疾病覆盖与来源结构共同决定检索边界</p>
+                            </div>
+                            <button class="text-button" type="button" data-go-view="knowledge">查看知识库</button>
+                        </header>
+                        <div class="corpus-layout">
+                            <div>
+                                <div class="subsection-heading">
+                                    <span>疾病片段分布</span>
+                                    <small>片段数 / 全库占比</small>
+                                </div>
+                                <div class="distribution-list" id="diseaseDistribution">
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                    <div class="skeleton-line"></div>
+                                </div>
+                            </div>
+                            <aside class="source-mix">
+                                <div class="subsection-heading">
+                                    <span>来源构成</span>
+                                    <small>按片段统计</small>
+                                </div>
+                                <div class="source-distribution" id="overviewSourceDistribution"></div>
+                            </aside>
+                        </div>
+                    </section>
+
+                    <section class="board evidence-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>证据质量</h2>
+                                <p>等级结构、来源类型与复核状态</p>
+                            </div>
+                        </header>
+                        <div class="evidence-layout">
+                            <div class="evidence-ring" id="evidenceRing">
+                                <div>
+                                    <strong id="evidenceARatio">--</strong>
+                                    <span>A 级占比</span>
+                                </div>
+                            </div>
+                            <div class="compact-distribution" id="evidenceDistribution"></div>
+                        </div>
+                        <div class="evidence-foot">
+                            <div>
+                                <span>高等级证据占比</span>
+                                <strong id="overviewHighEvidenceRatio">--</strong>
+                            </div>
+                            <div>
+                                <span>来源类型</span>
+                                <strong id="overviewSourceTypeCount">--</strong>
+                            </div>
+                            <div>
+                                <span>待复核片段</span>
+                                <strong id="overviewPendingChunkCount">--</strong>
+                            </div>
+                        </div>
+                        <div class="status-line">
+                            <span>索引状态</span>
+                            <strong id="overviewStatusText">等待加载</strong>
+                        </div>
+                    </section>
+
+                    <section class="board pipeline-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>知识加工流水线</h2>
+                                <p>从来源登记、语义切分到校验值生成的完整链路</p>
+                            </div>
+                            <span class="board-badge" id="pipelineReadyBadge">-- / -- READY</span>
+                        </header>
+                        <div class="pipeline-strip compact" id="overviewPipeline"></div>
+                    </section>
+
+                    <section class="board evaluation-overview-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>四个版本的证据能力</h2>
+                                <p>同一评测集下，检索、引用与拒答能力如何变化</p>
+                            </div>
+                            <span class="board-badge" id="evaluationTimestamp">未运行</span>
+                        </header>
+                        <div class="evaluation-glance" id="evaluationGlance">
+                            <div class="iteration-ladder" id="overviewVersionLadder"></div>
+                            <div class="empty-compact">
+                                <strong>尚无评估记录</strong>
+                                <span>运行 48 条跨版本样本后显示结果。</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="board policy-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>边界与安全策略</h2>
+                                <p>系统只提供文献检索参考，不替代医师判断</p>
+                            </div>
+                        </header>
+                        <ul class="policy-list">
+                            <li><strong>急症分流</strong><span>胸痛持续、呼吸困难等问题直接提示立即就医。</span></li>
+                            <li><strong>拒答处方剂量</strong><span>不生成个体化克数、煎服与替代处方。</span></li>
+                            <li><strong>证据不足不回答</strong><span>低于检索阈值时保留问题并说明无法判定。</span></li>
+                            <li><strong>来源可追溯</strong><span>所有回答展示文档、版本、页码和原文引用。</span></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+
+            <section class="view" id="view-knowledge" data-title="知识库" data-index="02"
+                     data-subtitle="来源注册、元数据治理与片段追溯">
+                <div class="view-intro compact-intro">
+                    <div>
+                        <p class="intro-kicker">Evidence registry</p>
+                        <h2>先看文献来源与授权状态，再检查切分后的知识片段</h2>
+                    </div>
+                    <div class="intro-note neutral">
+                        <span class="source-chain" aria-hidden="true">文档 → 片段 → 引用</span>
+                        <p>检索结果必须能够回指原始文档和引用位置。</p>
+                    </div>
+                </div>
+
+                <section class="filter-bar">
+                    <label class="search-field">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-3.5-3.5"></path>
+                        </svg>
+                        <input id="knowledgeSearch" type="search" maxlength="80"
+                               placeholder="搜索病名、证型、方药、关键词或原文">
+                    </label>
+                    <label>
+                        <span>疾病</span>
+                        <select id="knowledgeDisease">
+                            <option value="">全部疾病</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>来源</span>
+                        <select id="knowledgeSource">
+                            <option value="">全部来源</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>证据</span>
+                        <select id="knowledgeEvidence">
+                            <option value="">全部等级</option>
+                        </select>
+                    </label>
+                    <button class="button button-secondary" id="resetKnowledgeFilters" type="button">重置筛选</button>
+                </section>
+
+                <div class="knowledge-layout">
+                    <section class="board document-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>文档登记簿</h2>
+                                <p id="documentSummary">正在加载来源</p>
+                            </div>
+                        </header>
+                        <div class="document-list" id="documentList"></div>
+                    </section>
+
+                    <section class="board chunk-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>知识片段</h2>
+                                <p id="chunkSummary">检索结果</p>
+                            </div>
+                            <span class="board-badge" id="chunkResultCount">--</span>
+                        </header>
+                        <div class="chunk-list" id="chunkList"></div>
+                    </section>
+                </div>
+
+                <section class="board detail-board hidden" id="chunkDetailBoard">
+                    <header class="board-heading">
+                        <div>
+                            <h2>片段证据档案</h2>
+                            <p id="chunkDetailId">--</p>
+                        </div>
+                        <button class="icon-button" id="closeChunkDetail" type="button" title="关闭详情" aria-label="关闭详情">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </header>
+                    <div class="detail-grid" id="chunkDetail"></div>
+                </section>
+            </section>
+
+            <section class="view" id="view-workbench" data-title="RAG 工作台" data-index="03"
+                     data-subtitle="版本对照、证据约束检索与回答追踪">
+                <div class="workbench-head">
+                    <div>
+                        <p class="intro-kicker">Retrieval experiment</p>
+                        <h2>同一条问题，观察检索策略如何逐步收紧证据边界</h2>
+                    </div>
+                    <div class="workbench-actions">
+                        <button class="button button-secondary" id="compareButton" type="button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 3v18"></path>
+                                <path d="M16 3v18"></path>
+                                <path d="M3 8h5"></path>
+                                <path d="M16 8h5"></path>
+                                <path d="M3 16h5"></path>
+                                <path d="M16 16h5"></path>
+                            </svg>
+                            <span>四版本对比</span>
+                        </button>
+                        <button class="button button-primary" id="askButton" type="button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="m5 12 4 4L19 6"></path>
+                            </svg>
+                            <span>运行检索</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="version-rail" id="versionRail" aria-label="选择 RAG 迭代版本"></div>
+
+                <div class="workbench-grid">
+                    <section class="board query-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>问题与数据范围</h2>
+                                <p>点击示例问题可直接带入，筛选器作用于检索候选集</p>
+                            </div>
+                        </header>
+                        <div class="question-presets" aria-label="示例问题">
+                            <button type="button" data-question="高血压肝阳上亢证常见治法和方药是什么？">
+                                高血压 · 肝阳上亢
+                            </button>
+                            <button type="button" data-question="冠心病气虚血瘀证有哪些治法、方药和用药风险？">
+                                冠心病 · 气虚血瘀
+                            </button>
+                            <button type="button" data-question="慢性心力衰竭阳虚水泛证的常用治法和方药是什么？">
+                                心衰 · 阳虚水泛
+                            </button>
+                            <button type="button" data-question="胸痛持续不缓解时应该如何处理？">
+                                急症安全边界
+                            </button>
+                        </div>
+                        <label class="question-field">
+                            <span>临床或文献问题</span>
+                            <textarea id="questionInput" maxlength="500" rows="5"
+                                      placeholder="例如：冠心病气虚血瘀证常见治法与方药资料有哪些？">高血压肝阳上亢证常见治法和方药是什么？</textarea>
+                            <span class="field-meta"><span id="characterCount">27</span>/500 · Ctrl + Enter 运行</span>
+                        </label>
+
+                        <div class="query-filter-grid">
+                            <label>
+                                <span>疾病范围</span>
+                                <select id="workbenchDisease">
+                                    <option value="">全部疾病</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>来源类型</span>
+                                <select id="workbenchSource">
+                                    <option value="">全部来源</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>最低证据等级</span>
+                                <select id="workbenchEvidence">
+                                    <option value="">全部等级</option>
+                                    <option value="A">A 级</option>
+                                    <option value="B">B 级</option>
+                                    <option value="C">C 级</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="scope-readout">
+                            <span>当前数据范围</span>
+                            <strong id="scopeReadout">全库</strong>
+                        </div>
+
+                        <div class="method-note" id="methodNote">
+                            <span>V3</span>
+                            <p>证据约束版本的检索配置将在加载版本信息后显示。</p>
+                        </div>
+                    </section>
+
+                    <section class="board answer-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>证据约束回答</h2>
+                                <p id="answerStatus">等待运行检索</p>
+                            </div>
+                            <div class="answer-head-actions">
+                                <button class="icon-button hidden" id="copyAnswerButton" type="button"
+                                        title="复制回答" aria-label="复制回答">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+                                    </svg>
+                                </button>
+                                <span class="request-id" id="requestIdValue">NO REQUEST</span>
+                            </div>
+                        </header>
+                        <div class="answer-stage" id="answerStage">
+                            <div class="empty-state">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <path d="M14 2v6h6"></path>
+                                    <path d="M9 15h6"></path>
+                                    <path d="M9 11h3"></path>
+                                </svg>
+                                <strong>尚未生成回答</strong>
+                                <span>选择版本与数据范围后运行检索，系统会展示召回、证据校验和原文引用。</span>
+                                <div class="empty-query-map" aria-hidden="true">
+                                    <span><b>01</b>问题约束</span>
+                                    <span><b>02</b>混合召回</span>
+                                    <span><b>03</b>证据校验</span>
+                                    <span><b>04</b>引用回答</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="workbench-grid secondary">
+                    <section class="board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>检索观测</h2>
+                                <p>候选、融合、重排和证据充分性</p>
+                            </div>
+                            <span class="live-label">LIVE</span>
+                        </header>
+                        <div class="telemetry-strip">
+                            <div><span>置信度</span><strong id="confidenceValue">--</strong></div>
+                            <div><span>响应耗时</span><strong id="latencyValue">--</strong></div>
+                            <div><span>召回候选</span><strong id="candidateValue">--</strong></div>
+                            <div><span>入选片段</span><strong id="selectedValue">--</strong></div>
+                        </div>
+                        <div class="trace-path" id="tracePath"></div>
+                        <div class="trace-notes">
+                            <h3>执行记录</h3>
+                            <ol id="traceList"><li>等待检索请求</li></ol>
+                        </div>
+                    </section>
+
+                    <section class="board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>安全状态</h2>
+                                <p>证据充分性与拒答边界</p>
+                            </div>
+                        </header>
+                        <div class="safety-status" id="safetyStatus">
+                            <div class="safety-shield">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong id="safetyTitle">等待检测</strong>
+                                <p id="safetyDescription">运行检索后显示证据阈值和拒答判断。</p>
+                            </div>
+                        </div>
+                        <ul class="safety-facts">
+                            <li><span>输入范围</span><strong id="safetyScope">全库</strong></li>
+                            <li><span>检索策略</span><strong id="strategyValue">--</strong></li>
+                            <li><span>引用数量</span><strong id="citationCountValue">--</strong></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <section class="board hidden" id="compareSection">
+                    <header class="board-heading">
+                        <div>
+                            <h2>同题跨版本对照</h2>
+                            <p id="compareQuestion">--</p>
+                        </div>
+                        <button class="icon-button" id="closeCompareButton" type="button" title="关闭对比"
+                                aria-label="关闭对比">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </header>
+                    <div class="compare-grid" id="compareGrid"></div>
+                </section>
+            </section>
+
+            <section class="view" id="view-evaluation" data-title="评估实验" data-index="04"
+                     data-subtitle="检索命中、拒答准确率与失败样本">
+                <div class="view-intro compact-intro">
+                    <div>
+                        <p class="intro-kicker">Quantified iteration</p>
+                        <h2>用同一套 12 条问题证明版本迭代带来了哪些变化</h2>
+                    </div>
+                    <button class="button button-primary" id="evaluationRunButton" type="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 3v18"></path>
+                            <path d="m9 3 10 9L9 21z"></path>
+                        </svg>
+                        <span>重新运行评估</span>
+                    </button>
+                </div>
+
+                <section class="evaluation-meta">
+                    <div><span>数据集</span><strong id="datasetName">中医药心血管检索评测集</strong></div>
+                    <div><span>样本数</span><strong id="datasetSize">12</strong></div>
+                    <div><span>版本数</span><strong id="versionSize">4</strong></div>
+                    <div><span>运行状态</span><strong id="evaluationStatus">等待运行</strong></div>
+                </section>
+
+                <section class="board">
+                    <header class="board-heading">
+                        <div>
+                            <h2>版本指标</h2>
+                            <p>百分比越高越好，失败样本数越低越好</p>
+                        </div>
+                        <span class="board-badge" id="evaluationRunTime">未运行</span>
+                    </header>
+                    <div class="evaluation-insight" id="evaluationInsight">
+                        <span>ITERATION SIGNAL</span>
+                        <p>运行评估后显示 V0 到 V3 的关键指标增益与失败样本变化。</p>
+                    </div>
+                    <div class="evaluation-summary-grid" id="evaluationSummary">
+                        <div class="empty-state compact">
+                            <strong>正在等待评估结果</strong>
+                            <span>点击右上角“运行评估”生成 48 条版本级结果。</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="evaluation-grid">
+                    <section class="board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>核心指标演进</h2>
+                                <p>Hit@3、引用覆盖与拒答准确性</p>
+                            </div>
+                        </header>
+                        <div class="metric-matrix" id="metricMatrix"></div>
+                    </section>
+
+                    <section class="board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>失败分析</h2>
+                                <p>按检索排名、引用和拒答结果定位问题</p>
+                            </div>
+                            <select id="failureVersionFilter" class="compact-select" aria-label="筛选失败分析版本">
+                                <option value="">全部版本</option>
+                            </select>
+                        </header>
+                        <div class="failure-summary" id="failureSummary">运行评估后显示失败样本。</div>
+                    </section>
+                </div>
+
+                <section class="board">
+                    <header class="board-heading">
+                        <div>
+                            <h2>样本级结果</h2>
+                            <p>每条问题在四个版本下的检索、引用与拒答表现</p>
+                        </div>
+                        <span class="board-badge" id="caseResultCount">0 条</span>
+                    </header>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>样本</th>
+                                <th>类别</th>
+                                <th>版本</th>
+                                <th>检索命中</th>
+                                <th>命中排名</th>
+                                <th>引用覆盖</th>
+                                <th>拒答正确</th>
+                                <th>置信度</th>
+                                <th>耗时</th>
+                            </tr>
+                            </thead>
+                            <tbody id="evaluationCaseRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
+            <section class="view" id="view-pipeline" data-title="数据流水线" data-index="05"
+                     data-subtitle="来源登记、切分索引与质量校验">
+                <div class="view-intro compact-intro">
+                    <div>
+                        <p class="intro-kicker">Ingestion governance</p>
+                        <h2>新增文献不是直接塞进索引，而是经过登记、切分、元数据和校验</h2>
+                    </div>
+                    <div class="intro-note neutral">
+                        <span class="source-chain" aria-hidden="true">6 STAGES</span>
+                        <p>原型按可替换流水线设计，正式版可接入 OCR、版面解析和人工复核。</p>
+                    </div>
+                </div>
+
+                <section class="board">
+                    <header class="board-heading">
+                        <div>
+                            <h2>加工链路状态</h2>
+                            <p>每个阶段显示处理数量和后端记录时间</p>
+                        </div>
+                        <span class="board-badge" id="pipelineStageBadge">等待加载</span>
+                    </header>
+                    <div class="pipeline-strip" id="pipelineStages"></div>
+                </section>
+
+                <div class="ingestion-grid">
+                    <section class="board import-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>运行时登记文档</h2>
+                                <p>演示单篇文本导入及自动切分</p>
+                            </div>
+                            <button class="button button-secondary" id="loadImportSampleButton" type="button">
+                                载入演示样本
+                            </button>
+                        </header>
+                        <form id="importForm" class="import-form">
+                            <div class="form-row two-columns">
+                                <label>
+                                    <span>文档标题 *</span>
+                                    <input name="title" type="text" maxlength="160" required
+                                           placeholder="例如：胸痹证候研究摘要">
+                                </label>
+                                <label>
+                                    <span>发布机构 *</span>
+                                    <input name="publisher" type="text" required
+                                           placeholder="例如：某专业委员会">
+                                </label>
+                            </div>
+                            <div class="form-row three-columns">
+                                <label>
+                                    <span>来源类型 *</span>
+                                    <select name="sourceType" required>
+                                        <option value="临床研究">临床研究</option>
+                                        <option value="指南/共识">指南/共识</option>
+                                        <option value="专家共识">专家共识</option>
+                                        <option value="中医古籍">中医古籍</option>
+                                        <option value="知识规则">知识规则</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span>出版年份 *</span>
+                                    <input name="publicationYear" type="number" min="1900" max="2100" value="2026" required>
+                                </label>
+                                <label>
+                                    <span>证据等级</span>
+                                    <select name="evidenceLevel">
+                                        <option value="A">A</option>
+                                        <option value="B" selected>B</option>
+                                        <option value="C">C</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="form-row three-columns">
+                                <label>
+                                    <span>疾病范围</span>
+                                    <input name="disease" type="text" placeholder="冠心病">
+                                </label>
+                                <label>
+                                    <span>章节位置</span>
+                                    <input name="section" type="text" placeholder="辨证论治">
+                                </label>
+                                <label>
+                                    <span>版本号</span>
+                                    <input name="version" type="text" value="v1.0">
+                                </label>
+                            </div>
+                            <div class="form-row three-columns">
+                                <label>
+                                    <span>证型</span>
+                                    <input name="syndromes" type="text" placeholder="气虚血瘀, 寒凝心脉">
+                                </label>
+                                <label>
+                                    <span>方剂</span>
+                                    <input name="formulas" type="text" placeholder="血府逐瘀汤">
+                                </label>
+                                <label>
+                                    <span>中药</span>
+                                    <input name="herbs" type="text" placeholder="黄芪, 丹参, 川芎">
+                                </label>
+                            </div>
+                            <label>
+                                <span>关键词</span>
+                                <input name="keywords" type="text" placeholder="胸痹, 益气活血, 临床摘要">
+                            </label>
+                            <label>
+                                <span>授权说明</span>
+                                <input name="licenseNote" type="text"
+                                       placeholder="演示导入，正式使用前需核验原文与授权">
+                            </label>
+                            <label>
+                                <span>正文 *</span>
+                                <textarea name="content" rows="8" minlength="30" maxlength="12000" required
+                                          placeholder="粘贴可公开使用的演示文本。系统将按段落和长度边界自动切分，并计算校验值。"></textarea>
+                            </label>
+                            <div class="form-actions">
+                                <span id="importHint">正文至少 30 个字符，导入后会立即写入内存索引。</span>
+                                <button class="button button-primary" id="importButton" type="submit">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m7 8 5-5 5 5"></path>
+                                        <path d="M5 21h14"></path>
+                                    </svg>
+                                    <span>登记并建立索引</span>
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="board registry-board">
+                        <header class="board-heading">
+                            <div>
+                                <h2>来源台账</h2>
+                                <p id="registrySummary">正在加载文档</p>
+                            </div>
+                        </header>
+                        <div class="registry-list" id="registryList"></div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
