@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: rag-service/Dockerfile
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim}
     environment:
       RAG_HOST: 0.0.0.0
       RAG_PORT: 8000
@@ -13,6 +15,9 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+      args:
+        MAVEN_IMAGE: ${MAVEN_IMAGE:-maven:3.9.9-eclipse-temurin-17}
+        JAVA_IMAGE: ${JAVA_IMAGE:-eclipse-temurin:17-jre}
     environment:
       RAG_ENGINE_MODE: auto
       RAG_SERVICE_URL: http://rag-service:8000

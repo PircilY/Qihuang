@@ -61,6 +61,19 @@ docker compose up --build
 启动后访问 `http://localhost:8080`；Python 服务健康地址为
 `http://localhost:8000/health`。也可以复制 `.env.example` 作为本地配置模板。
 
+如果构建时出现 `failed to fetch oauth token`、`dial tcp ... auth.docker.io`，说明 Docker
+无法访问 Docker Hub，通常是网络、代理或 IPv6/DNS 问题，不是项目代码错误。可以先单独验证：
+
+```powershell
+docker pull maven:3.9.9-eclipse-temurin-17
+docker pull eclipse-temurin:17-jre
+docker pull python:3.12-slim
+```
+
+也可以在 `.env` 中将 `MAVEN_IMAGE`、`JAVA_IMAGE`、`PYTHON_IMAGE` 指向你所在网络可访问的镜像仓库，
+再执行 `docker compose build --no-cache`。如果 Docker Desktop 使用了错误代理，请在 Settings → Resources → Proxies
+中修正或关闭代理后重启 Docker Desktop。
+
 先启动 LlamaIndex 服务：
 
 ```powershell
