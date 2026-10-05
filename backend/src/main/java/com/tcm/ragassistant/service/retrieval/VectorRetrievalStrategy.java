@@ -43,6 +43,7 @@ public class VectorRetrievalStrategy implements RetrievalStrategy {
                         !chunks.isEmpty(),
                         List.of(
                                 "仅使用字符级语义向量近似，未使用外部 Embedding 模型",
+                                "generation=grounded-extractive",
                                 filter == null || filter.isEmpty()
                                         ? "未启用知识范围过滤"
                                         : "已应用知识范围过滤：" + filter.description()

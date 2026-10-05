@@ -12,12 +12,13 @@ const state = {
     selectedChunk: null,
     compareResult: null,
     busy: false,
-    demoRunning: false,
     activeView: "overview",
-    searchTimer: null
+    searchTimer: null,
+    knowledgeLoaded: false,
+    knowledgeError: "",
+    modelConfig: null,
+    modelBusy: false
 };
-
-const demoQuestion = "高血压肝阳上亢证常见治法和方药是什么？";
 
 const elements = {
     mainNav: document.getElementById("mainNav"),
@@ -26,9 +27,6 @@ const elements = {
     pageSubtitle: document.getElementById("pageSubtitle"),
     serviceState: document.getElementById("serviceState"),
     serviceText: document.getElementById("serviceText"),
-    demoButton: document.getElementById("demoButton"),
-    overviewDemoButton: document.getElementById("overviewDemoButton"),
-    globalEvaluateButton: document.getElementById("globalEvaluateButton"),
     navChunkCount: document.getElementById("navChunkCount"),
     navCaseCount: document.getElementById("navCaseCount"),
     sidebarChunkCount: document.getElementById("sidebarChunkCount"),
@@ -49,11 +47,6 @@ const elements = {
     overviewSourceTypeCount: document.getElementById("overviewSourceTypeCount"),
     overviewPendingChunkCount: document.getElementById("overviewPendingChunkCount"),
     overviewStatusText: document.getElementById("overviewStatusText"),
-    overviewPipeline: document.getElementById("overviewPipeline"),
-    pipelineReadyBadge: document.getElementById("pipelineReadyBadge"),
-    evaluationGlance: document.getElementById("evaluationGlance"),
-    overviewVersionLadder: document.getElementById("overviewVersionLadder"),
-    evaluationTimestamp: document.getElementById("evaluationTimestamp"),
 
     knowledgeSearch: document.getElementById("knowledgeSearch"),
     knowledgeDisease: document.getElementById("knowledgeDisease"),
@@ -71,6 +64,20 @@ const elements = {
     closeChunkDetail: document.getElementById("closeChunkDetail"),
 
     versionRail: document.getElementById("versionRail"),
+    modelSettingsButton: document.getElementById("modelSettingsButton"),
+    modelDialog: document.getElementById("modelDialog"),
+    modelForm: document.getElementById("modelForm"),
+    modelMode: document.getElementById("modelMode"),
+    modelBaseUrl: document.getElementById("modelBaseUrl"),
+    modelName: document.getElementById("modelName"),
+    modelApiKey: document.getElementById("modelApiKey"),
+    modelKeyState: document.getElementById("modelKeyState"),
+    modelConsent: document.getElementById("modelConsent"),
+    modelConnectionStatus: document.getElementById("modelConnectionStatus"),
+    closeModelButton: document.getElementById("closeModelButton"),
+    clearModelButton: document.getElementById("clearModelButton"),
+    testModelButton: document.getElementById("testModelButton"),
+    saveModelButton: document.getElementById("saveModelButton"),
     questionInput: document.getElementById("questionInput"),
     characterCount: document.getElementById("characterCount"),
     askButton: document.getElementById("askButton"),
@@ -119,7 +126,6 @@ const elements = {
     pipelineStages: document.getElementById("pipelineStages"),
     importForm: document.getElementById("importForm"),
     importButton: document.getElementById("importButton"),
-    loadImportSampleButton: document.getElementById("loadImportSampleButton"),
     importHint: document.getElementById("importHint"),
     registrySummary: document.getElementById("registrySummary"),
     registryList: document.getElementById("registryList"),
@@ -131,6 +137,7 @@ window.addEventListener("hashchange", () => setView(window.location.hash.replace
 
 async function initialize() {
     bindEvents();
+    elements.importForm.elements.publicationYear.max = String(new Date().getFullYear());
     updateCharacterCount();
     updateScopeReadout();
     setView(window.location.hash.replace("#", "") || "overview");
@@ -138,7 +145,8 @@ async function initialize() {
     await Promise.allSettled([
         loadVersions(),
         loadKnowledgeData(),
-        checkHealth()
+        checkHealth(),
+        loadModelConfig()
     ]);
 
     renderOverview();
@@ -147,10 +155,29 @@ async function initialize() {
     renderChunks(state.allChunks);
     renderPipeline();
     renderRegistry();
-    await runEvaluation({silent: true});
 }
 
 function bindEvents() {
+    elements.modelSettingsButton.addEventListener("click", openModelDialog);
+    elements.closeModelButton.addEventListener("click", () => elements.modelDialog.close());
+    elements.modelDialog.addEventListener("cancel", event => {
+        if (state.modelBusy) event.preventDefault();
+    });
+    elements.modelDialog.addEventListener("close", () => {
+        elements.modelApiKey.value = "";
+        elements.modelSettingsButton.focus();
+    });
+    elements.modelForm.addEventListener("submit", saveModelConfig);
+    elements.testModelButton.addEventListener("click", testModelConnection);
+    elements.clearModelButton.addEventListener("click", clearModelConfig);
+    elements.modelForm.addEventListener("input", () => {
+        elements.modelConnectionStatus.textContent = "";
+    });
+    elements.modelBaseUrl.addEventListener("input", () => {
+        elements.modelConsent.checked = false;
+        elements.modelApiKey.value = "";
+        elements.modelKeyState.textContent = "接口变更后需重新设置";
+    });
     elements.mainNav.addEventListener("click", event => {
         const button = event.target.closest("[data-view]");
         if (button) {
@@ -165,12 +192,6 @@ function bindEvents() {
         }
     });
 
-    elements.globalEvaluateButton.addEventListener("click", async () => {
-        setView("evaluation");
-        await runEvaluation();
-    });
-    elements.demoButton.addEventListener("click", runDemoSequence);
-    elements.overviewDemoButton.addEventListener("click", runDemoSequence);
     elements.evaluationRunButton.addEventListener("click", () => runEvaluation());
     elements.askButton.addEventListener("click", askQuestion);
     elements.compareButton.addEventListener("click", compareVersions);
@@ -198,7 +219,7 @@ function bindEvents() {
         elements.questionInput.value = preset.dataset.question;
         updateCharacterCount();
         elements.questionInput.focus();
-        showToast("示例问题已载入，点击“运行检索”查看证据链");
+        showToast("问题已选定");
     });
 
     elements.knowledgeSearch.addEventListener("input", () => {
@@ -225,7 +246,6 @@ function bindEvents() {
 
     elements.failureVersionFilter.addEventListener("change", () => renderEvaluationResults());
     elements.importForm.addEventListener("submit", importDocument);
-    elements.loadImportSampleButton.addEventListener("click", fillImportSample);
 }
 
 async function loadVersions() {
@@ -254,8 +274,11 @@ async function loadKnowledgeData() {
         state.filteredChunks = chunks;
         state.documents = documents;
         state.pipeline = pipeline;
+        state.knowledgeLoaded = true;
+        state.knowledgeError = "";
         updateKnowledgeCounts();
     } catch (error) {
+        state.knowledgeError = error.message;
         showToast(error.message, true);
     }
 }
@@ -265,21 +288,24 @@ async function refreshKnowledgeData() {
     renderOverview();
     populateFilterOptions();
     renderDocuments();
-    renderChunks(state.filteredChunks);
+    loadFilteredChunks();
     renderPipeline();
     renderRegistry();
 }
 
 async function checkHealth() {
     try {
-        const response = await fetch("/actuator/health", {headers: {"Accept": "application/json"}});
+        const response = await fetch("/actuator/health", {
+            headers: {"Accept": "application/json"},
+            signal: AbortSignal.timeout(5000)
+        });
         const payload = await response.json();
         if (!response.ok || payload.status !== "UP") {
             throw new Error("health check failed");
         }
         elements.serviceState.classList.add("online");
         elements.serviceState.classList.remove("offline");
-        elements.serviceText.textContent = "离线演示服务在线";
+        elements.serviceText.textContent = "本地服务在线";
     } catch (error) {
         elements.serviceState.classList.add("offline");
         elements.serviceState.classList.remove("online");
@@ -288,6 +314,8 @@ async function checkHealth() {
 }
 
 function setView(view) {
+    const allowed = ["overview", "knowledge", "workbench", "evaluation", "pipeline"];
+    if (!allowed.includes(view)) view = "overview";
     const target = document.getElementById(`view-${view}`);
     if (!target) {
         return;
@@ -296,6 +324,8 @@ function setView(view) {
     document.querySelectorAll(".view").forEach(section => section.classList.toggle("active", section.id === `view-${view}`));
     elements.mainNav.querySelectorAll("[data-view]").forEach(button => {
         button.classList.toggle("active", button.dataset.view === view);
+        if (button.dataset.view === view) button.setAttribute("aria-current", "page");
+        else button.removeAttribute("aria-current");
     });
     elements.pageIndex.textContent = target.dataset.index;
     elements.pageTitle.textContent = target.dataset.title;
@@ -324,10 +354,10 @@ function renderVersionRail() {
 
         const code = node("span", "version-code", version.code);
         const name = node("strong", "", version.name);
-        const description = node("p", "", version.description);
         const flags = node("div", "version-flags");
-        flags.append(node("span", "", version.retrievalFeature), node("span", "", `${version.reliability}可信`));
-        button.append(code, name, description, flags);
+        flags.append(node("span", "", version.retrievalFeature));
+        button.setAttribute("aria-pressed", String(version.version === state.activeVersion));
+        button.append(code, name, flags);
         button.addEventListener("click", () => {
             state.activeVersion = version.version;
             renderVersionRail();
@@ -346,8 +376,119 @@ function updateMethodNote() {
     elements.methodNote.replaceChildren();
     elements.methodNote.append(
         node("span", "", version.code),
-        node("p", "", `${version.description} 检索：${version.retrievalFeature}；引用：${version.citationFeature}。`)
+        node("p", "", state.modelConfig?.enabled && version.version !== "V0_DIRECT"
+            ? `${version.name} · ${state.modelConfig.model}`
+            : `${version.name} · ${version.version === "V0_DIRECT" ? "基线提示" : "原文摘录"}`)
     );
+    elements.askButton.querySelector("span").textContent = modelEnabled() ? "智能问答" : "运行检索";
+    elements.modelSettingsButton.classList.toggle("configured", Boolean(state.modelConfig?.enabled));
+}
+
+function modelEnabled() {
+    return Boolean(state.modelConfig?.enabled && state.activeVersion !== "V0_DIRECT");
+}
+
+async function loadModelConfig() {
+    state.modelConfig = await request("/api/v1/rag/model");
+    updateMethodNote();
+}
+
+async function openModelDialog() {
+    if (state.busy || state.modelBusy) return;
+    elements.modelDialog.showModal();
+    setModelBusy(true);
+    elements.modelConnectionStatus.textContent = "正在读取配置";
+    try {
+        await loadModelConfig();
+        const config = state.modelConfig;
+        elements.modelMode.value = config.enabled ? "MODEL" : "EXTRACTIVE";
+        elements.modelBaseUrl.value = config.baseUrl || "";
+        elements.modelName.value = config.model || "";
+        elements.modelApiKey.value = "";
+        elements.modelKeyState.textContent = config.apiKeySet ? "已设置；留空保留" : "未设置";
+        elements.modelConsent.checked = config.enabled;
+        elements.modelConnectionStatus.textContent = config.configured ? "配置已载入 · 当前会话" : "未配置模型";
+    } catch (error) {
+        elements.modelConnectionStatus.textContent = error.message;
+    } finally {
+        setModelBusy(false);
+    }
+}
+
+function modelPayload(requireConnection = true) {
+    const enabled = elements.modelMode.value === "MODEL";
+    elements.modelBaseUrl.required = requireConnection || enabled;
+    elements.modelName.required = requireConnection || enabled;
+    elements.modelConsent.required = enabled && !requireConnection;
+    if (!elements.modelForm.reportValidity()) return null;
+    if (enabled && !elements.modelConsent.checked && !requireConnection) return null;
+    return {
+        baseUrl: elements.modelBaseUrl.value.trim(),
+        model: elements.modelName.value.trim(),
+        apiKey: elements.modelApiKey.value.trim(),
+        enabled
+    };
+}
+
+function setModelBusy(busy) {
+    state.modelBusy = busy;
+    elements.modelForm.setAttribute("aria-busy", String(busy));
+    [...elements.modelForm.elements, elements.closeModelButton].forEach(control => control.disabled = busy);
+}
+
+async function testModelConnection() {
+    if (state.modelBusy) return;
+    const payload = modelPayload();
+    if (!payload) return;
+    setModelBusy(true);
+    elements.modelConnectionStatus.textContent = "正在测试连接";
+    try {
+        const result = await request("/api/v1/rag/model/test", {
+            method: "POST", body: JSON.stringify(payload), timeoutMs: 75000
+        });
+        elements.modelConnectionStatus.textContent = `连接成功 · ${result.latencyMs} ms`;
+    } catch (error) {
+        elements.modelConnectionStatus.textContent = error.message;
+    } finally {
+        setModelBusy(false);
+    }
+}
+
+async function saveModelConfig(event) {
+    event.preventDefault();
+    if (state.modelBusy) return;
+    const payload = modelPayload(false);
+    if (!payload) return;
+    setModelBusy(true);
+    try {
+        state.modelConfig = await request("/api/v1/rag/model", payload.baseUrl || payload.model ? {
+            method: "PUT", body: JSON.stringify(payload)
+        } : {method: "DELETE"});
+        updateMethodNote();
+        elements.modelDialog.close();
+        showToast(state.modelConfig.enabled ? "RAG 智能问答已启用" : "已切换为原文摘录");
+    } catch (error) {
+        elements.modelConnectionStatus.textContent = error.message;
+    } finally {
+        setModelBusy(false);
+    }
+}
+
+async function clearModelConfig() {
+    if (state.modelBusy) return;
+    setModelBusy(true);
+    try {
+        state.modelConfig = await request("/api/v1/rag/model", {method: "DELETE"});
+        elements.modelForm.reset();
+        elements.modelApiKey.value = "";
+        elements.modelKeyState.textContent = "未设置";
+        elements.modelConnectionStatus.textContent = "配置已清除";
+        updateMethodNote();
+    } catch (error) {
+        elements.modelConnectionStatus.textContent = error.message;
+    } finally {
+        setModelBusy(false);
+    }
 }
 
 function renderComparisonOptions() {
@@ -361,6 +502,8 @@ function renderComparisonOptions() {
 function renderOverview() {
     const overview = state.overview;
     if (!overview) {
+        elements.overviewDataState.textContent = state.knowledgeError || "暂无数据";
+        elements.diseaseDistribution.replaceChildren(emptyCompact("数据未加载", state.knowledgeError));
         return;
     }
     elements.overviewDocumentCount.textContent = formatInteger(overview.documentCount);
@@ -368,7 +511,7 @@ function renderOverview() {
     elements.overviewDiseaseCount.textContent = formatInteger(overview.diseaseCount);
     elements.overviewHighEvidenceCount.textContent = formatInteger(overview.highEvidenceChunkCount);
     elements.overviewChunkLength.textContent = formatDecimal(overview.averageChunkLength, 0);
-    elements.overviewDataState.textContent = `已建立 ${formatInteger(overview.documentCount)} 份演示文档与 ${formatInteger(overview.chunkCount)} 个可追溯片段，未接入真实患者数据。`;
+    elements.overviewDataState.textContent = `${formatInteger(overview.documentCount)} 份文档 / ${formatInteger(overview.chunkCount)} 个片段`;
     renderDistribution(elements.diseaseDistribution, overview.diseaseDistribution);
     renderSourceDistribution(overview.sourceDistribution);
     renderEvidence(overview);
@@ -378,7 +521,7 @@ function renderOverview() {
 function renderDistribution(container, items) {
     container.replaceChildren();
     if (!items?.length) {
-        container.append(emptyCompact("暂无分布数据", "知识片段加载后会显示统计结果。"));
+        container.append(emptyCompact("暂无分布数据"));
         return;
     }
     items.forEach(item => {
@@ -397,7 +540,7 @@ function renderDistribution(container, items) {
 function renderSourceDistribution(items) {
     elements.overviewSourceDistribution.replaceChildren();
     if (!items?.length) {
-        elements.overviewSourceDistribution.append(emptyCompact("暂无来源数据", "登记文档后会形成来源结构。"));
+        elements.overviewSourceDistribution.append(emptyCompact("暂无来源数据"));
         return;
     }
     const maxValue = Math.max(...items.map(item => Number(item.value || 0)), 1);
@@ -427,7 +570,7 @@ function renderEvidence(overview) {
     overview.evidenceDistribution.forEach(item => {
         const row = node("div", "compact-row");
         row.append(
-            node("span", "", `${item.label} 级证据`),
+            node("span", "", evidenceLabel(item.label)),
             node("strong", "", `${item.value} / ${formatPercent(item.ratio, 0)}`)
         );
         elements.evidenceDistribution.append(row);
@@ -445,11 +588,13 @@ function renderPipeline() {
     if (!state.pipeline.length) {
         return;
     }
-    renderPipelineStrip(elements.overviewPipeline, true);
-    renderPipelineStrip(elements.pipelineStages, false);
+    if (elements.pipelineStages) {
+        renderPipelineStrip(elements.pipelineStages, false);
+    }
     const readyCount = state.pipeline.filter(stage => stage.status === "READY").length;
-    elements.pipelineReadyBadge.textContent = `${readyCount} / ${state.pipeline.length} READY`;
-    elements.pipelineStageBadge.textContent = `${readyCount} / ${state.pipeline.length} READY`;
+    if (elements.pipelineStageBadge) {
+        elements.pipelineStageBadge.textContent = `${readyCount} / ${state.pipeline.length} READY`;
+    }
 }
 
 function renderPipelineStrip(container, compact) {
@@ -461,11 +606,7 @@ function renderPipelineStrip(container, compact) {
         const item = node("div", `pipeline-stage ${statusClass}`.trim());
         item.append(node("span", "pipeline-node", String(index + 1).padStart(2, "0")));
         item.append(node("strong", "", stage.name));
-        if (!compact) {
-            item.append(node("p", "", stage.description));
-        } else {
-            item.append(node("p", "", stage.description.replace(/^将|构建|检查/, "")));
-        }
+        item.append(node("p", "", formatDateTime(stage.updatedAt)));
         item.append(node("small", "", `${stage.itemCount} 项 · ${formatPipelineStatus(stage.status)}`));
         container.append(item);
     });
@@ -475,7 +616,7 @@ function renderDocuments() {
     elements.documentList.replaceChildren();
     elements.documentSummary.textContent = `${state.documents.length} 份来源已登记`;
     if (!state.documents.length) {
-        elements.documentList.append(emptyCompact("尚无文档", "请先通过数据流水线登记来源。"));
+        elements.documentList.append(emptyCompact(state.knowledgeError || "尚无文档"));
         return;
     }
     state.documents.forEach((document, index) => {
@@ -483,6 +624,7 @@ function renderDocuments() {
         button.type = "button";
         button.dataset.documentId = document.id;
         button.classList.toggle("active", document.id === state.selectedDocumentId);
+        button.setAttribute("aria-pressed", String(document.id === state.selectedDocumentId));
         button.append(node("span", "document-index", String(index + 1).padStart(2, "0")));
 
         const copy = node("span", "document-copy");
@@ -505,9 +647,9 @@ function renderChunks(chunks) {
     elements.chunkResultCount.textContent = `${chunks.length} 条`;
     elements.chunkSummary.textContent = state.selectedDocumentId
         ? `来源 ${state.selectedDocumentId} 的片段`
-        : "按关键词、疾病和证据等级筛选";
+        : "全部来源";
     if (!chunks.length) {
-        elements.chunkList.append(emptyCompact("没有匹配片段", "调整筛选条件或登记新的来源文档。"));
+        elements.chunkList.append(emptyCompact(state.knowledgeError || "没有匹配片段"));
         return;
     }
     chunks.forEach(chunk => {
@@ -546,34 +688,29 @@ function renderChunks(chunks) {
     });
 }
 
-async function loadFilteredChunks() {
-    state.selectedDocumentId = null;
-    renderDocuments();
-    const params = new URLSearchParams();
-    const keyword = elements.knowledgeSearch.value.trim();
-    const disease = elements.knowledgeDisease.value;
-    const sourceType = elements.knowledgeSource.value;
-    const evidenceLevel = elements.knowledgeEvidence.value;
-    if (keyword) params.set("keyword", keyword);
-    if (disease) params.set("disease", disease);
-    if (sourceType) params.set("sourceType", sourceType);
-    if (evidenceLevel) params.set("evidenceLevel", evidenceLevel);
-    try {
-        const chunks = await request(`/api/v1/knowledge/chunks${params.toString() ? `?${params}` : ""}`);
-        renderChunks(chunks);
-    } catch (error) {
-        showToast(error.message, true);
+function loadFilteredChunks() {
+    const normalize = value => String(value || "").toLocaleLowerCase().replace(/\s+/g, "");
+    const keyword = normalize(elements.knowledgeSearch.value);
+    const chunks = state.allChunks.filter(chunk => {
+        const searchable = [chunk.id, chunk.documentId, chunk.title, chunk.sourceType, chunk.publisher,
+            chunk.disease, chunk.section, ...chunk.syndromes, ...chunk.formulas,
+            ...chunk.herbs, ...chunk.keywords, chunk.content].join(" ");
+        return (!state.selectedDocumentId || chunk.documentId === state.selectedDocumentId)
+            && (!elements.knowledgeDisease.value || chunk.disease === elements.knowledgeDisease.value)
+            && (!elements.knowledgeSource.value || chunk.sourceType === elements.knowledgeSource.value)
+            && (!elements.knowledgeEvidence.value || chunk.evidenceLevel === elements.knowledgeEvidence.value)
+            && (!keyword || normalize(searchable).includes(keyword));
+    });
+    if (state.selectedChunk && !chunks.some(chunk => chunk.id === state.selectedChunk.id)) {
+        closeChunkDetail();
     }
+    renderChunks(chunks);
 }
 
 function selectDocument(documentId) {
     state.selectedDocumentId = state.selectedDocumentId === documentId ? null : documentId;
     renderDocuments();
-    if (!state.selectedDocumentId) {
-        renderChunks(state.allChunks);
-        return;
-    }
-    renderChunks(state.allChunks.filter(chunk => chunk.documentId === state.selectedDocumentId));
+    loadFilteredChunks();
 }
 
 async function openChunk(chunkId) {
@@ -592,6 +729,7 @@ async function openChunk(chunkId) {
 }
 
 function renderChunkDetail(chunk) {
+    const document = state.documents.find(item => item.id === chunk.documentId);
     elements.chunkDetailId.textContent = `${chunk.id} · ${chunk.documentId}`;
     elements.chunkDetail.replaceChildren();
     const content = node("div", "detail-content");
@@ -604,6 +742,11 @@ function renderChunkDetail(chunk) {
         tagGroup("关键词", chunk.keywords)
     );
     content.append(detailTags);
+    if (document) {
+        content.append(sourceLink(document));
+        content.append(node("p", "source-note", document.description));
+        content.append(node("p", "source-note", document.licenseNote));
+    }
 
     const facts = node("dl", "detail-facts");
     [
@@ -612,10 +755,11 @@ function renderChunkDetail(chunk) {
         ["疾病范围", chunk.disease],
         ["章节", chunk.section],
         ["引用位置", chunk.page],
-        ["证据等级", `${chunk.evidenceLevel} 级`],
+        ["证据等级", evidenceLabel(chunk.evidenceLevel)],
         ["文档版本", chunk.version],
         ["校验值", chunk.checksum],
         ["入库时间", formatDateTime(chunk.ingestedAt)],
+        ["来源访问", document?.accessedAt ? formatDateTime(document.accessedAt) : "未经独立核验"],
         ["状态", chunk.status]
     ].forEach(([label, value]) => {
         const row = node("div");
@@ -648,6 +792,8 @@ function populateFilterOptions() {
     fillSelect(elements.knowledgeEvidence, evidenceLevels.map(value => `${value}`), "全部等级", elements.knowledgeEvidence.value);
     fillSelect(elements.workbenchDisease, diseases, "全部疾病", elements.workbenchDisease.value);
     fillSelect(elements.workbenchSource, sources, "全部来源", elements.workbenchSource.value);
+    fillSelect(elements.workbenchEvidence, evidenceLevels, "全部等级", elements.workbenchEvidence.value);
+    updateScopeReadout();
     updateKnowledgeCounts();
 }
 
@@ -658,15 +804,17 @@ function fillSelect(select, values, placeholder, currentValue) {
             select.append(new Option(String(value), String(value)));
         }
     });
-    select.value = currentValue || "";
+    select.value = values.includes(currentValue) ? currentValue : "";
 }
 
 function resetKnowledgeFilters() {
+    window.clearTimeout(state.searchTimer);
     elements.knowledgeSearch.value = "";
     elements.knowledgeDisease.value = "";
     elements.knowledgeSource.value = "";
     elements.knowledgeEvidence.value = "";
     state.selectedDocumentId = null;
+    closeChunkDetail();
     renderDocuments();
     renderChunks(state.allChunks);
 }
@@ -679,7 +827,7 @@ function updateScopeReadout() {
     const parts = [
         elements.workbenchDisease.value,
         elements.workbenchSource.value,
-        elements.workbenchEvidence.value ? `${elements.workbenchEvidence.value} 级证据` : ""
+        elements.workbenchEvidence.value ? evidenceLabel(elements.workbenchEvidence.value) : ""
     ].filter(Boolean);
     const scope = parts.length ? parts.join(" / ") : "全库";
     elements.scopeReadout.textContent = scope;
@@ -687,6 +835,7 @@ function updateScopeReadout() {
 }
 
 async function askQuestion() {
+    if (state.busy) return;
     const question = elements.questionInput.value.trim();
     if (!question) {
         showToast("请输入需要检索的问题", true);
@@ -698,14 +847,22 @@ async function askQuestion() {
         return;
     }
     setBusy(true);
+    state.currentResult = null;
+    elements.copyAnswerButton.classList.add("hidden");
+    elements.requestIdValue.textContent = "--";
+    resetTelemetry();
+    elements.safetyTitle.textContent = "检测中";
+    elements.safetyDescription.textContent = "";
     elements.answerStatus.textContent = "正在执行检索与证据生成";
-    renderLoading("正在检索知识库并校验证据");
+    renderLoading(modelEnabled() ? "正在检索证据并生成模型回答" : "正在检索知识库并校验证据");
     try {
         state.currentResult = await request("/api/v1/rag/chat", {
             method: "POST",
+            timeoutMs: 120000,
             body: JSON.stringify({
                 question,
                 version: state.activeVersion,
+                useModel: modelEnabled(),
                 disease: elements.workbenchDisease.value || null,
                 sourceType: elements.workbenchSource.value || null,
                 evidenceLevel: elements.workbenchEvidence.value || null
@@ -714,6 +871,7 @@ async function askQuestion() {
         renderAnswer(state.currentResult);
         renderTelemetry(state.currentResult);
     } catch (error) {
+        elements.answerStatus.textContent = "请求失败";
         renderError(error.message);
         resetTelemetry();
         showToast(error.message, true);
@@ -759,11 +917,18 @@ function renderAnswer(result) {
     const engineLabel = result.retrieval.notes.includes("engine=llama-index")
         ? "LlamaIndex"
         : "Java Local";
+    const modelName = result.retrieval.notes.find(note => note.startsWith("model="))?.slice(6);
+    const generationLabel = result.refused ? "安全拒答" : result.retrieval.notes.includes("generation=llm")
+        ? (modelName || "大模型生成")
+        : result.retrieval.notes.includes("generation=grounded-extractive")
+            ? "原文摘录"
+            : result.version === "V0_DIRECT" ? "基线提示" : "原文摘录";
     const summary = node("div", "answer-summary");
     [
         ["检索策略", version?.retrievalFeature || "--"],
         ["引用证据", `${result.citations.length} 条`],
-        ["运行引擎", engineLabel],
+        ["检索引擎", engineLabel],
+        ["生成方式", generationLabel],
         ["安全状态", result.refused ? "已拒答" : result.retrieval.sufficientEvidence ? "阈值通过" : "证据不足"]
     ].forEach(([label, value]) => {
         const item = node("span");
@@ -833,7 +998,14 @@ function citationSection(citations) {
             node("span", "", `证据 ${citation.evidenceLevel}`)
         );
         item.append(head, meta, node("p", "citation-quote", citation.quote));
-        item.addEventListener("click", () => openCitation(citation.chunkId));
+        const actions = node("div", "citation-actions");
+        const detail = node("button", "text-button", "片段详情");
+        detail.type = "button";
+        detail.addEventListener("click", () => openCitation(citation.chunkId));
+        actions.append(detail);
+        const document = state.documents.find(item => item.id === citation.documentId);
+        if (document) actions.append(sourceLink(document));
+        item.append(actions);
         list.append(item);
     });
     section.append(list);
@@ -885,8 +1057,8 @@ function renderTelemetry(result) {
     elements.safetyDescription.textContent = result.refused
         ? result.refusalReason
         : result.retrieval.sufficientEvidence
-            ? "回答已通过证据充分性检查并附带可追溯引用。"
-            : "未达到最低证据阈值，系统不会生成确定结论。";
+            ? "相关文献已匹配"
+            : "未达到最低检索阈值";
 }
 
 function resetTelemetry() {
@@ -904,6 +1076,7 @@ function resetTelemetry() {
 }
 
 async function compareVersions() {
+    if (state.busy) return;
     const question = elements.questionInput.value.trim();
     if (!question) {
         showToast("请输入需要对比的问题", true);
@@ -912,10 +1085,11 @@ async function compareVersions() {
     setBusy(true);
     elements.compareSection.classList.remove("hidden");
     elements.compareQuestion.textContent = question;
-    elements.compareGrid.replaceChildren(loadingBlock("正在运行四个迭代版本"));
+    elements.compareGrid.replaceChildren(loadingBlock(`正在运行 ${state.versions.length || "全部"} 个迭代版本`));
     try {
         state.compareResult = await request("/api/v1/rag/compare", {
             method: "POST",
+            timeoutMs: 180000,
             body: JSON.stringify({
                 question,
                 disease: elements.workbenchDisease.value || null,
@@ -949,7 +1123,7 @@ function renderComparison(result) {
         const answer = node("p", "compare-answer", response.answer);
         const stats = node("div", "compare-stats");
         [
-            ["置信度", formatPercent(response.confidence, 0)],
+            ["检索参考分", formatPercent(response.confidence, 0)],
             ["耗时", `${response.latencyMs}ms`],
             ["引用", String(response.citations.length)],
             ["入选证据", String(response.retrieval.selectedCount)]
@@ -968,17 +1142,24 @@ async function runEvaluation({silent = false} = {}) {
         return;
     }
     setBusy(true);
+    state.evaluation = null;
+    elements.metricMatrix.replaceChildren();
+    elements.failureSummary.replaceChildren();
+    elements.evaluationCaseRows.replaceChildren();
+    elements.evaluationInsight.replaceChildren();
+    elements.caseResultCount.textContent = "--";
     elements.evaluationStatus.textContent = "计算中";
     elements.evaluationRunTime.textContent = "运行中";
     if (!silent) {
-        elements.evaluationSummary.replaceChildren(loadingBlock("正在执行 48 条版本级样本"));
+        elements.evaluationSummary.replaceChildren(loadingBlock("评估中"));
     }
     try {
-        state.evaluation = await request("/api/v1/evaluations/run", {method: "POST"});
+        state.evaluation = await request("/api/v1/evaluations/run", {method: "POST", timeoutMs: 600000});
         renderEvaluation();
     } catch (error) {
         elements.evaluationStatus.textContent = "运行失败";
         elements.evaluationRunTime.textContent = "失败";
+        elements.evaluationSummary.replaceChildren(emptyCompact("评估失败", error.message));
         showToast(error.message, true);
     } finally {
         setBusy(false);
@@ -1014,10 +1195,10 @@ function renderEvaluationInsight(result) {
     const failureReduction = baseline.failureCount - current.failureCount;
 
     elements.evaluationInsight.replaceChildren();
-    const eyebrow = node("span", "", "ITERATION SIGNAL · V0 → V3");
+    const eyebrow = node("span", "", "V0 / V3");
     const copy = node("p");
     copy.append(
-        node("strong", "", "证据约束版本形成可量化增益"),
+        node("strong", "", "本次指标差值"),
         document.createTextNode(
             `：Hit@3 ${signedPercent(hitGain)}，引用覆盖 ${signedPercent(citationGain)}，` +
             `拒答准确率 ${signedPercent(refusalGain)}，失败样本 ${failureReduction >= 0 ? "减少" : "增加"} ${Math.abs(failureReduction)} 条。`
@@ -1025,8 +1206,8 @@ function renderEvaluationInsight(result) {
     );
     const metrics = node("div", "insight-metrics");
     [
-        ["Hit@3 增益", signedPercent(hitGain)],
-        ["引用覆盖增益", signedPercent(citationGain)],
+        ["Hit@3 差值", signedPercent(hitGain)],
+        ["引用覆盖差值", signedPercent(citationGain)],
         ["失败样本变化", `${failureReduction >= 0 ? "-" : "+"}${Math.abs(failureReduction)}`]
     ].forEach(([label, value]) => {
         const metric = node("span");
@@ -1073,6 +1254,9 @@ function renderEvaluationResults() {
 }
 
 function renderEvaluationGlance(result) {
+    if (!elements.evaluationGlance || !elements.overviewVersionLadder || !elements.evaluationTimestamp) {
+        return;
+    }
     elements.overviewVersionLadder.replaceChildren();
     elements.evaluationGlance.querySelector(".empty-compact")?.remove();
     if (!result) {
@@ -1159,12 +1343,13 @@ function renderFailureSummary(cases) {
     const selectedVersion = elements.failureVersionFilter.value;
     const failures = cases.filter(item => {
         const versionMatch = !selectedVersion || item.version === selectedVersion;
-        const failed = !item.retrievalHit || !item.citationPresent || !item.refusalCorrect;
+        const failed = !item.refusalCorrect
+            || (!item.expectedRefusal && (!item.retrievalHit || !item.citationPresent));
         return versionMatch && failed;
     });
     elements.failureSummary.replaceChildren();
     if (!failures.length) {
-        elements.failureSummary.append(emptyCompact("没有失败样本", "当前筛选范围内检索、引用与拒答均符合预期。"));
+        elements.failureSummary.append(emptyCompact("没有失败样本"));
         return;
     }
     failures.slice(0, 7).forEach(item => {
@@ -1190,12 +1375,15 @@ function renderCaseRows(cases) {
         const version = findVersion(item.version);
         [
             item.caseId,
+            item.question,
             item.category,
             version?.code || item.version
         ].forEach(value => row.append(node("td", "", value)));
-        appendBooleanCell(row, item.retrievalHit);
+        if (item.expectedRefusal) row.append(node("td", "", "不适用"));
+        else appendBooleanCell(row, item.retrievalHit);
         row.append(node("td", "", item.hitRank > 0 ? String(item.hitRank) : "--"));
-        appendBooleanCell(row, item.citationPresent);
+        if (item.expectedRefusal) row.append(node("td", "", "不适用"));
+        else appendBooleanCell(row, item.citationPresent);
         appendBooleanCell(row, item.refusalCorrect);
         row.append(node("td", "", formatPercent(item.confidence, 0)));
         row.append(node("td", "", `${item.latencyMs} ms`));
@@ -1205,6 +1393,7 @@ function renderCaseRows(cases) {
 
 async function importDocument(event) {
     event.preventDefault();
+    if (state.busy) return;
     if (!elements.importForm.reportValidity()) {
         return;
     }
@@ -1214,7 +1403,7 @@ async function importDocument(event) {
         sourceType: value(form, "sourceType"),
         publisher: value(form, "publisher"),
         publicationYear: Number(value(form, "publicationYear")),
-        authority: "运行时演示导入，需人工核验",
+        sourceUrl: value(form, "sourceUrl"),
         evidenceLevel: value(form, "evidenceLevel"),
         disease: value(form, "disease"),
         syndromes: splitList(value(form, "syndromes")),
@@ -1227,16 +1416,18 @@ async function importDocument(event) {
         content: value(form, "content")
     };
     setBusy(true);
-    elements.importHint.textContent = "正在登记、切分并写入内存索引";
+    elements.importHint.textContent = "保存中";
     try {
         const result = await request("/api/v1/knowledge/import", {
             method: "POST",
             body: JSON.stringify(payload)
         });
-        elements.importHint.textContent = `已登记 ${result.document.id}，生成 ${result.chunkCount} 个片段。`;
+        const status = {READY: "已保存并同步", LOCAL_READY: "已保存至本地",
+            SYNC_PENDING: "已保存至本地，远程同步待重试"}[result.status] || result.status;
+        elements.importHint.textContent = `${status} · ${result.chunkCount} 个片段`;
         elements.importForm.reset();
         await refreshKnowledgeData();
-        showToast(`文档已登记并生成 ${result.chunkCount} 个知识片段`);
+        showToast(status);
     } catch (error) {
         elements.importHint.textContent = `导入失败：${error.message}`;
         showToast(error.message, true);
@@ -1245,39 +1436,11 @@ async function importDocument(event) {
     }
 }
 
-function fillImportSample() {
-    const sample = {
-        title: "胸痹证候与益气活血治法演示摘要",
-        publisher: "毕业设计演示数据组",
-        sourceType: "临床研究",
-        publicationYear: "2026",
-        evidenceLevel: "B",
-        disease: "冠心病",
-        section: "辨证论治",
-        version: "v1.0",
-        syndromes: "气虚血瘀, 心脉痹阻",
-        formulas: "补阳还五汤加减",
-        herbs: "黄芪, 丹参, 川芎",
-        keywords: "胸痹, 益气活血, 临床摘要",
-        licenseNote: "仅用于原型导入演示，正式使用前需核验原文与授权",
-        content:
-            "本演示摘要用于验证知识库运行时入库流程。气虚血瘀证可见胸痛胸闷、气短乏力和动则加重，治法以益气活血、通脉止痛为主。具体方药、剂量及合并用药必须结合患者情况，由专业医师依据最新指南和药品说明书判断。中医药干预不能替代急性胸痛的急诊评估，也不能自行停用抗血小板或抗凝等基础治疗。"
-    };
-    Object.entries(sample).forEach(([name, value]) => {
-        const field = elements.importForm.elements.namedItem(name);
-        if (field) {
-            field.value = value;
-        }
-    });
-    elements.importHint.textContent = "演示样本已载入，可直接登记并观察自动切分结果。";
-    showToast("已载入可公开演示的导入样本");
-}
-
 function renderRegistry() {
     elements.registryList.replaceChildren();
     elements.registrySummary.textContent = `${state.documents.length} 份来源，按登记时间排序`;
     if (!state.documents.length) {
-        elements.registryList.append(emptyCompact("尚无登记记录", "导入文档后会在这里显示来源台账。"));
+        elements.registryList.append(emptyCompact(state.knowledgeError || "尚无登记记录"));
         return;
     }
     [...state.documents].reverse().forEach(document => {
@@ -1291,9 +1454,9 @@ function renderRegistry() {
         badges.append(
             node("span", "active", document.status),
             node("span", "", `${document.chunkCount} 片段`),
-            node("span", "", `${document.evidenceLevel} 级`)
+            node("span", "", evidenceLabel(document.evidenceLevel))
         );
-        item.append(main, badges);
+        item.append(main, badges, sourceLink(document));
         elements.registryList.append(item);
     });
 }
@@ -1301,66 +1464,21 @@ function renderRegistry() {
 function setBusy(busy) {
     state.busy = busy;
     [
-        elements.demoButton,
-        elements.overviewDemoButton,
         elements.askButton,
         elements.compareButton,
-        elements.globalEvaluateButton,
         elements.evaluationRunButton,
-        elements.importButton
+        elements.importButton,
+        elements.modelSettingsButton
     ].forEach(button => {
         if (button) {
             button.disabled = busy;
         }
     });
-}
-
-async function runDemoSequence() {
-    if (state.demoRunning) {
-        return;
-    }
-    if (state.busy) {
-        showToast("当前实验仍在运行，请稍候", true);
-        return;
-    }
-
-    state.demoRunning = true;
-    state.currentResult = null;
-    state.compareResult = null;
-    elements.copyAnswerButton.classList.add("hidden");
-    elements.compareSection.classList.add("hidden");
-    setView("workbench");
-
-    if (state.versions.some(version => version.version === "V3_GUARDED")) {
-        state.activeVersion = "V3_GUARDED";
-        renderVersionRail();
-    }
-    elements.questionInput.value = demoQuestion;
-    updateCharacterCount();
-
-    try {
-        showToast("演示 1/4：运行 V3 证据约束检索");
-        await askQuestion();
-        if (!state.currentResult) {
-            throw new Error("演示检索未生成结果");
-        }
-        await wait(650);
-
-        showToast("演示 2/4：对比 V0 到 V3 的检索与回答");
-        await compareVersions();
-        await wait(650);
-
-        showToast("演示 3/4：进入量化评估实验");
-        setView("evaluation");
-        await runEvaluation();
-        showToast("演示完成：知识底座 → 检索 → 引用 → 量化评估");
-    } catch (error) {
-        showToast(`演示中断：${error.message}`, true);
-    } finally {
-        state.demoRunning = false;
-        elements.demoButton.disabled = false;
-        elements.overviewDemoButton.disabled = false;
-    }
+    [elements.questionInput, elements.workbenchDisease, elements.workbenchSource,
+        elements.workbenchEvidence, ...elements.versionRail.querySelectorAll("button"),
+        ...document.querySelectorAll("[data-question]")].forEach(control => {
+        control.disabled = busy;
+    });
 }
 
 function bestEvaluationVersion(summaries) {
@@ -1392,16 +1510,37 @@ function appendBooleanCell(row, passed) {
 }
 
 function failureReason(item) {
-    if (!item.retrievalHit) return "检索未命中";
-    if (!item.citationPresent) return "缺少引用";
     if (!item.refusalCorrect) return "拒答判断错误";
+    if (!item.expectedRefusal && !item.retrievalHit) return "检索未命中";
+    if (!item.expectedRefusal && !item.citationPresent) return "缺少引用";
     return "未达到预期";
 }
 
 function evidenceTag(level) {
     const normalized = String(level || "").toUpperCase();
     const className = normalized === "B" ? "level-b" : normalized === "C" ? "level-c" : "";
-    return node("span", `evidence-tag ${className}`.trim(), `${level || "--"} 级`);
+    return node("span", `evidence-tag ${className}`.trim(), evidenceLabel(level));
+}
+
+function evidenceLabel(level) {
+    return ["A", "B", "C"].includes(level) ? `${level} 级` : (level || "未评级");
+}
+
+function sourceLink(document) {
+    try {
+        const url = new URL(document.sourceUrl);
+        if (!["http:", "https:"].includes(url.protocol) || url.username || url.password) {
+            throw new Error("invalid source");
+        }
+        const link = node("a", "source-link", "原文来源");
+        link.href = url.href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", `${document.title}：原文来源`);
+        return link;
+    } catch {
+        return node("span", "source-note", "原文链接未登记");
+    }
 }
 
 function tagGroup(label, values) {
@@ -1417,7 +1556,7 @@ function tagGroup(label, values) {
     return wrapper;
 }
 
-function emptyCompact(title, description) {
+function emptyCompact(title, description = "") {
     const empty = node("div", "empty-compact");
     empty.append(node("strong", "", title), node("span", "", description));
     return empty;
@@ -1533,16 +1672,27 @@ function showToast(message, isError = false) {
 }
 
 async function request(url, options = {}) {
-    const response = await fetch(url, {
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        ...options
-    });
-    const payload = await response.json().catch(() => null);
-    if (!response.ok || !payload || payload.code !== "OK") {
-        throw new Error(payload?.message || `请求失败（HTTP ${response.status}）`);
+    const {timeoutMs = 45000, ...fetchOptions} = options;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+    try {
+        const response = await fetch(url, {
+            ...fetchOptions,
+            headers: {"Accept": "application/json", "Content-Type": "application/json", ...fetchOptions.headers},
+            signal: controller.signal
+        });
+        const payload = await response.json().catch(() => null);
+        if (!response.ok || !payload || payload.code !== "OK") {
+            throw new Error(payload?.message || `请求失败（HTTP ${response.status}）`);
+        }
+        return payload.data;
+    } catch (error) {
+        if (error.name === "AbortError") {
+            throw new Error("请求超时，结果尚未确认，请刷新记录后重试");
+        }
+        if (error instanceof TypeError) throw new Error("连接失败，请检查服务后重试");
+        throw error;
+    } finally {
+        window.clearTimeout(timeout);
     }
-    return payload.data;
 }

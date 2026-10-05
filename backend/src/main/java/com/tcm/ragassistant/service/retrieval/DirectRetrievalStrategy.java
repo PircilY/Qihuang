@@ -26,7 +26,7 @@ public class DirectRetrievalStrategy implements RetrievalStrategy {
                         0,
                         0,
                         false,
-                        List.of("未访问知识库", "回答无法回溯到证据片段")
+                        List.of("未访问知识库", "generation=none", "回答无法回溯到证据片段")
                 ),
                 false
         );

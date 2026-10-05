@@ -78,7 +78,8 @@ public class KnowledgeBaseService {
                 distinctCount(chunks, KnowledgeChunk::disease),
                 distinctCount(chunks, KnowledgeChunk::sourceType),
                 (int) chunks.stream().filter(this::isHighEvidence).count(),
-                (int) chunks.stream().filter(chunk -> !"ACTIVE".equals(chunk.status())).count(),
+                (int) chunks.stream().filter(chunk -> !"ACTIVE".equals(chunk.status())
+                        || !List.of("A", "B", "C").contains(chunk.evidenceLevel())).count(),
                 round(chunks.stream().mapToInt(chunk -> chunk.content().length()).average().orElse(0.0)),
                 lastUpdatedAt,
                 distribution(chunks, KnowledgeChunk::disease),
@@ -109,7 +110,7 @@ public class KnowledgeBaseService {
                 new PipelineStageResponse(
                         "source",
                         "来源注册",
-                        "登记标题、发布机构、年份、授权说明和版本",
+                        "文档与来源记录",
                         documents.isEmpty() ? "WAITING" : "READY",
                         documents.size(),
                         lastDocumentTime(documents)
@@ -117,15 +118,15 @@ public class KnowledgeBaseService {
                 new PipelineStageResponse(
                         "parse",
                         "内容解析",
-                        "将原文转换为统一文本并计算 SHA-256 校验值",
+                        "文本 / SHA-256",
                         chunks.isEmpty() ? "WAITING" : "READY",
                         chunks.size(),
                         lastUpdatedAt
                 ),
                 new PipelineStageResponse(
                         "chunk",
-                        "语义切分",
-                        "按段落与长度边界切分，保留原文引用位置",
+                        "段落切分",
+                        "段落 / 长度边界",
                         chunks.isEmpty() ? "WAITING" : "READY",
                         chunks.size(),
                         lastUpdatedAt
@@ -133,24 +134,24 @@ public class KnowledgeBaseService {
                 new PipelineStageResponse(
                         "metadata",
                         "元数据补全",
-                        "补全疾病、证型、方剂、中药、关键词和证据等级",
-                        metadataReady == chunks.size() ? "READY" : "PARTIAL",
+                        "疾病 / 等级",
+                        chunks.isEmpty() ? "WAITING" : metadataReady == chunks.size() ? "READY" : "PARTIAL",
                         metadataReady,
                         lastUpdatedAt
                 ),
                 new PipelineStageResponse(
                         "index",
                         "索引构建",
-                        "构建 BM25 词法索引与轻量向量评分数据",
-                        indexed == chunks.size() ? "READY" : "PARTIAL",
+                        "本地可检索片段",
+                        chunks.isEmpty() ? "WAITING" : indexed == chunks.size() ? "READY" : "PARTIAL",
                         indexed,
                         lastUpdatedAt
                 ),
                 new PipelineStageResponse(
                         "quality",
                         "质量校验",
-                        "检查正文非空、来源可追溯、片段校验值完整",
-                        qualityReady == chunks.size() ? "READY" : "PARTIAL",
+                        "非空正文 / 校验值",
+                        chunks.isEmpty() ? "WAITING" : qualityReady == chunks.size() ? "READY" : "PARTIAL",
                         qualityReady,
                         lastUpdatedAt
                 )

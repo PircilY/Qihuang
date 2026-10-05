@@ -7,6 +7,10 @@ import com.tcm.ragassistant.dto.ChatResponse;
 import com.tcm.ragassistant.dto.CompareRequest;
 import com.tcm.ragassistant.dto.VersionResponse;
 import com.tcm.ragassistant.service.RagOrchestrationService;
+import com.tcm.ragassistant.service.model.ModelAnswerService;
+import com.tcm.ragassistant.service.model.ModelSessionService;
+import com.tcm.ragassistant.exception.BusinessException;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +27,14 @@ import java.util.Map;
 public class RagController {
 
     private final RagOrchestrationService ragOrchestrationService;
+    private final ModelSessionService modelSessions;
+    private final ModelAnswerService modelAnswers;
 
-    public RagController(RagOrchestrationService ragOrchestrationService) {
+    public RagController(RagOrchestrationService ragOrchestrationService,
+                         ModelSessionService modelSessions, ModelAnswerService modelAnswers) {
         this.ragOrchestrationService = ragOrchestrationService;
+        this.modelSessions = modelSessions;
+        this.modelAnswers = modelAnswers;
     }
 
     @GetMapping("/versions")
@@ -36,12 +45,17 @@ public class RagController {
     }
 
     @PostMapping("/rag/chat")
-    public ApiResponse<ChatResponse> chat(@Valid @RequestBody ChatRequest request) {
-        return ApiResponse.success(ragOrchestrationService.ask(
+    public ApiResponse<ChatResponse> chat(@Valid @RequestBody ChatRequest request, HttpServletRequest http) {
+        var connection = modelSessions.current(http.getSession(false));
+        if (request.useModel() && (connection == null || !connection.enabled())) {
+            throw new BusinessException("MODEL_NOT_CONFIGURED", "当前会话尚未启用模型，请先配置模型");
+        }
+        ChatResponse retrieved = ragOrchestrationService.askExtractive(
                 request.question().trim(),
                 request.version(),
                 request.toRetrievalFilter()
-        ));
+        );
+        return ApiResponse.success(request.useModel() ? modelAnswers.generate(retrieved, connection) : retrieved);
     }
 
     @PostMapping("/rag/compare")

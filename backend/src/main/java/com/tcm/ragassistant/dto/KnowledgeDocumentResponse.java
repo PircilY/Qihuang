@@ -21,7 +21,9 @@ public record KnowledgeDocumentResponse(
         Instant registeredAt,
         String licenseNote,
         String description,
-        int chunkCount
+        int chunkCount,
+        String sourceUrl,
+        Instant accessedAt
 ) {
     public static KnowledgeDocumentResponse from(KnowledgeDocument document, int chunkCount) {
         return new KnowledgeDocumentResponse(
@@ -40,7 +42,9 @@ public record KnowledgeDocumentResponse(
                 document.registeredAt(),
                 document.licenseNote(),
                 document.description(),
-                chunkCount
+                chunkCount,
+                document.sourceUrl(),
+                document.accessedAt()
         );
     }
 }

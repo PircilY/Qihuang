@@ -38,15 +38,44 @@ FastAPI + LlamaIndex       :8000
 - 四个可切换的迭代版本
 - 同一问题的跨版本对比
 - BM25、向量式相似度、RRF 融合和证据重排
-- 来源引用、置信度、拒答和检索轨迹
+- 来源引用、检索参考分、拒答和检索轨迹
 - 内置评测集与自动指标计算
 - 知识库来源台账、片段详情与运行时文本导入
-- 页面内置“一键演示”，串联检索、版本对比和量化评估
+- 页面工作台串联提问、检索、证据引用与版本评估
 - Java 与 LlamaIndex 双引擎切换、自动回退和运行时知识同步
 
-当前版本不依赖数据库、外部向量库或大模型 API Key，便于离线演示。Python 服务使用确定性哈希向量和本地 BM25，因此结果可复现，但不等同于生产级语义检索。后续可在现有接口不变的前提下替换为真实 Embedding 模型、PostgreSQL/pgvector、OpenSearch、Neo4j 或兼容 OpenAI 的模型服务。
+当前版本不依赖数据库、外部向量库或大模型 API Key 即可运行。默认使用确定性哈希向量、本地 BM25 与原文摘录。RAG 工作台支持页面内配置兼容 Chat Completions 协议的模型，或从 Java 进程环境加载默认模型；启用后先检索再由模型基于命中证据生成回答。两种模式都会返回检索轨迹与引用。当前检索不是生产级语义检索，接入生成模型不会自动替换 Embedding 算法。
 
-内置数据仅用于功能演示，不是经过临床审核的诊疗知识库，也不接入真实患者信息。正式使用前必须完成数据授权、来源核验、专家复核、脱敏和安全性评估。
+## 大模型接入
+
+RAG 工作台标题旁的配置按钮打开弹窗，主体页面布局不变。配置接口基础地址、实际模型 ID 和 API Key，测试连接后选择「RAG 智能问答」，确认向该接口发送问题及命中文献并保存。API 地址不包含 `/chat/completions`，客户端会自动追加该路径。
+
+- 默认允许 `https://api.deepseek.com/v1`、`https://api.deepseek.com`、`https://dashscope.aliyuncs.com/compatible-mode/v1`、`https://api.openai.com/v1`，以及本机 `http://127.0.0.1:端口/v1`、`http://localhost:端口/v1`。接口须支持 system/user 消息、非流式响应、`max_tokens` 与 `finish_reason=stop`。
+- 其他 HTTPS 网关必须由管理员加入 `MODEL_ALLOWED_BASE_URLS`（逗号分隔的完整基础地址）；不接收带用户信息、查询参数或片段的地址，不跟随重定向。允许列表不是对所有兼容厂商的实测声明。
+- 会话配置仅在服务端内存保留，闲置 30 分钟失效。API Key 不回显、不写入浏览器存储、日志或知识库。更改接口地址后不继承旧密钥。清除配置仅影响当前会话。
+- 需要服务端默认模型时，在启动 Java 前设置 `MODEL_API_BASE`、`MODEL_NAME`、`MODEL_API_KEY`；这些配置面向能访问该实例的所有用户，必须限制访问。关闭进程后需从安全的凭据来源重新提供，代码不自动保存密钥。
+- `MODEL_TIMEOUT` 默认 60 秒，覆盖完整模型响应读取；并发模型请求上限为 4，响应正文上限 256 KiB。不自动重试付费请求。
+- V1/V2/V3 的模型模式只向模型发送本次问题及命中证据，不发送全库或 API Key。V0 保持无检索基线；四版本对比与评估不使用页面会话模型配置。
+- 急症、个体处方和证据不足会在模型调用前拒答。模型超时、鉴权失败、输出截断、缺少引用或引用越界时明确报错，不把摘录伪装成模型输出。引用校验只检查结构与编号，不能证明每项医学结论均被原文支持，仍需人工复核。
+
+模型 API：`GET/PUT/DELETE /api/v1/rag/model`；测试连接：`POST /api/v1/rag/model/test`；问答请求增加可选 `useModel: true`。省略该字段保持原文摘录。页面会话通过 HttpOnly / SameSite=Strict Cookie 隔离；模型接口拒绝跨来源浏览器请求。公网或多人部署前仍须配置 HTTPS、身份认证、权限与出站网络策略。
+
+协议依据：[DeepSeek 官方 Chat Completions 文档](https://api-docs.deepseek.com/api/create-chat-completion)，核对日期 2026-09-30。模型 ID 应从账号实际可用列表选取，不在页面预造模型清单。设置图标来自 Lucide 0.468.0，许可证随 `static/icons/LICENSE` 保留。
+
+仓库内置 4 份公开机构资料、11 条核验过的原文摘录，不接入患者信息。全部标为「未评级」；机构权威性不等于临床证据等级。本项目的交付范围是本机或受控内网的文献检索研究工具，不是临床诊断、处方或医疗决策产品。
+
+## 数据来源
+
+| 来源 | 标注日期 | 内容 |
+| --- | --- | --- |
+| [WHO 高血压](https://www.who.int/zh/news-room/fact-sheets/detail/hypertension) | 2025-09-25 | 血压检查、症状、生活方式 |
+| [WHO 心血管疾病](https://www.who.int/zh/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) | 2021-06-11 | 风险控制、急性事件机制 |
+| [NIH/NCCIH Licorice Root](https://www.nccih.nih.gov/health/licorice-root) | 2025-04 | 甘草不良反应和相互作用 |
+| [NIH/NCCIH Traditional Chinese Medicine](https://www.nccih.nih.gov/health/traditional-chinese-medicine-what-you-need-to-know) | 2019-04 | 研究局限、中草药安全 |
+
+采集时间为 2026-09-30。原文、章节、链接、采集时间和使用范围均登记在 `data/sources.json`。WHO 心血管页面包含后续更新内容，年份沿用页面标注，未收录日期有歧义的流行病学统计。NCCIH 保留英文原文，中文关键词只是人工索引标签，不冒充译文；网页不编造页码。
+
+NCCIH 页面声明出版物属公有领域，保留署名；WHO 仅收录署名短摘录，不代表取得全文或商业再分发许可。商业交付须另行审核授权。详细核验方式见 [数据来源说明](data/README.md)。
 
 ## 运行
 
@@ -60,6 +89,8 @@ docker compose up --build
 
 启动后访问 `http://localhost:8080`；Python 服务健康地址为
 `http://localhost:8000/health`。也可以复制 `.env.example` 作为本地配置模板。
+
+Compose 默认仅发布到 `127.0.0.1`，导入快照保存在 `knowledge-data` 命名卷。`docker compose down` 保留数据；不要使用 `down -v` 删除需要保留的数据。端口被占用时，在 `.env` 配置 `SERVER_PORT` 和 `RAG_PORT`。`.env` 由 Compose 读取，直接运行 Java/Python 时须在启动终端设置环境变量。
 
 如果构建时出现 `failed to fetch oauth token`、`dial tcp ... auth.docker.io`，说明 Docker
 无法访问 Docker Hub，通常是网络、代理或 IPv6/DNS 问题，不是项目代码错误。可以先单独验证：
@@ -101,11 +132,19 @@ java -jar target\tcm-cvd-rag-prototype-0.1.0-SNAPSHOT.jar
 
 打开 `http://localhost:8080`。
 
+Windows 下也可在完成构建和依赖安装后，用 PowerShell 7 从仓库根目录执行：
+
+```powershell
+.\tools\start-local.ps1 -Port 8081 -RagPort 8001 -WithPython
+```
+
+不带 `-WithPython` 时只启动 Java 本地引擎。脚本拒绝占用已有端口，后台运行、不弹出窗口；日志和 PID 位于 `runtime`。先结束对应 PID 的进程，再重新构建和启动。脚本不安装依赖。
+
 不建议在当前中文路径工作区使用 `mvn spring-boot:run`。Windows 下个别 Spring Boot Maven 插件版本可能因类路径编码问题找不到主类，打包后通过 `java -jar` 启动不受该问题影响。
 
 ## 引擎模式
 
-Java 通过环境变量控制 RAG 引擎，默认值适合演示：
+Java 通过环境变量控制 RAG 引擎，默认值适合本地复核：
 
 | 模式 | 行为 |
 | --- | --- |
@@ -127,7 +166,12 @@ java -jar backend\target\tcm-cvd-rag-prototype-0.1.0-SNAPSHOT.jar
 - `RAG_CONNECT_TIMEOUT`：连接超时，默认 `500ms`
 - `RAG_READ_TIMEOUT`：读取超时，默认 `30s`
 - `RAG_RETRY_INTERVAL`：远程失败后的重试间隔，默认 `10s`
-- `LLM_API_BASE`、`LLM_API_KEY`、`LLM_MODEL`：可选的 OpenAI 兼容生成模型
+- `MODEL_API_BASE`、`MODEL_API_KEY`、`MODEL_NAME`：Java 工作台默认生成模型
+- `LLM_API_BASE`、`LLM_API_KEY`、`LLM_MODEL`：旧版 Python 直连接口生成配置；工作台强制只取检索证据，避免双重生成
+- `SERVER_ADDRESS`、`SERVER_PORT`：默认绑定 `127.0.0.1:8080`
+- `KNOWLEDGE_STORE_PATH`：导入快照路径，默认相对启动目录的 `runtime/knowledge-imports.json`；部署时建议指定固定绝对路径
+
+导入在完整快照落盘后才返回成功，重启自动恢复，重复正文返回 HTTP 409。`LOCAL_READY` 表示仅本地可用，`READY` 表示已同步 Python，`SYNC_PENDING` 表示本地已保存但远程暂不可用；后续远程问答前会幂等同步本地导入记录。用户登记的来源和授权属于声明，系统不会将其标为已独立核验。
 
 ## 测试
 
@@ -141,6 +185,8 @@ mvn test
 ```
 
 仓库还提供 GitHub Actions 工作流，在 push 和 pull request 时分别执行 Python 与 Java 测试。
+
+12 条回归问题依据上述原文人工编写，并非外部临床测评集。Hit@1、Hit@3、MRR 以返回引用中的首个预期片段排名计算，分母只包含非拒答样本；引用覆盖仅衡量是否有引用，不证明回答正确；拒答准确率覆盖全部样本；失败数按样本去重。检索参考分是启发式分数，不是医学正确率或校准概率。测试夹具不进入交付语料。
 
 或只运行 Java 测试：
 
@@ -158,7 +204,7 @@ mvn test
 - `GET /api/v1/knowledge/overview`：获取知识库统计概览
 - `GET /api/v1/knowledge/documents`：获取来源台账
 - `GET /api/v1/knowledge/pipeline`：获取数据加工阶段
-- `POST /api/v1/knowledge/import`：登记文档并建立内存索引
+- `POST /api/v1/knowledge/import`：持久化登记文档、建立索引并尝试远程同步
 - `GET /api/v1/knowledge/chunks`：查看知识片段
 - `GET /actuator/health`：健康检查
 
@@ -181,7 +227,7 @@ Python 服务另提供：
 
 ## 当前边界
 
-当前版本是可运行的研究型原型：运行时导入写入内存索引，服务重启后需要重新导入；内置语料是演示整理数据，
-不代表经过临床专家审核的诊疗知识库。正式部署前应接入持久化数据库、文献授权与版本审计、用户权限、人工复核、
-真实 Embedding/大模型服务以及脱敏后的临床数据，并完成独立的安全性和效果验证。
+持久化快照只支持单进程、单写入者，不支持多个 Java 实例共享同一路径。备份应在停止写入后复制完整快照；恢复时停止服务、替换快照再启动，损坏快照会阻止启动而不是静默丢数据。Python 索引是可重建缓存，导入应通过 Java 接口完成。
+
+未实现用户登录、租户隔离、专家审核或临床认证；不要直接暴露公网，不要输入患者隐私。规则式急症与剂量识别只能覆盖部分表达，不能承担临床分诊。启用外部 LLM 会将问题和检索片段发送给配置的服务方，需事先审核隐私和授权。公网或临床部署前必须补齐访问控制、审计、授权复核、独立安全评估及真实语义模型，并重新验证。
 

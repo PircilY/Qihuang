@@ -30,6 +30,8 @@ public class LexicalScorer {
     public List<ScoredChunk> score(String question, int limit, RetrievalFilter filter) {
         List<String> queryTokens = tokenizer.tokenize(question);
         List<KnowledgeChunk> chunks = repository.findAll().stream()
+                .filter(chunk -> "ACTIVE".equals(chunk.status()))
+                .filter(chunk -> tokenizer.isRelated(question, chunk))
                 .filter(filter == null ? chunk -> true : filter::matches)
                 .toList();
         List<Map<String, Integer>> termFrequencies = chunks.stream()
@@ -66,6 +68,7 @@ public class LexicalScorer {
                 String.join(" ", chunk.syndromes()),
                 String.join(" ", chunk.formulas()),
                 String.join(" ", chunk.herbs()),
+                String.join(" ", chunk.keywords()),
                 chunk.content()
         );
         tokenizer.tokenize(searchableText).forEach(token ->

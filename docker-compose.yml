@@ -5,11 +5,21 @@ services:
       dockerfile: rag-service/Dockerfile
       args:
         PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim}
+        INSTALL_LLM: ${INSTALL_LLM:-false}
     environment:
       RAG_HOST: 0.0.0.0
       RAG_PORT: 8000
+      LLM_API_BASE: ${LLM_API_BASE:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-}
     ports:
-      - "8000:8000"
+      - "127.0.0.1:${RAG_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
 
   backend:
     build:
@@ -19,10 +29,26 @@ services:
         MAVEN_IMAGE: ${MAVEN_IMAGE:-maven:3.9.9-eclipse-temurin-17}
         JAVA_IMAGE: ${JAVA_IMAGE:-eclipse-temurin:17-jre}
     environment:
-      RAG_ENGINE_MODE: auto
+      SERVER_ADDRESS: 0.0.0.0
+      KNOWLEDGE_STORE_PATH: /app/runtime/knowledge-imports.json
+      RAG_ENGINE_MODE: ${RAG_ENGINE_MODE:-auto}
       RAG_SERVICE_URL: http://rag-service:8000
-      RAG_FALLBACK_TO_LOCAL: "true"
+      RAG_FALLBACK_TO_LOCAL: ${RAG_FALLBACK_TO_LOCAL:-true}
+      RAG_CONNECT_TIMEOUT: ${RAG_CONNECT_TIMEOUT:-500ms}
+      RAG_READ_TIMEOUT: ${RAG_READ_TIMEOUT:-30s}
+      RAG_RETRY_INTERVAL: ${RAG_RETRY_INTERVAL:-10s}
+      MODEL_API_BASE: ${MODEL_API_BASE:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      MODEL_TIMEOUT: ${MODEL_TIMEOUT:-60s}
+      MODEL_ALLOWED_BASE_URLS: ${MODEL_ALLOWED_BASE_URLS:-https://api.deepseek.com/v1,https://api.deepseek.com,https://dashscope.aliyuncs.com/compatible-mode/v1,https://api.openai.com/v1}
     depends_on:
-      - rag-service
+      rag-service:
+        condition: service_healthy
     ports:
-      - "8080:8080"
+      - "127.0.0.1:${SERVER_PORT:-8080}:8080"
+    volumes:
+      - knowledge-data:/app/runtime
+
+volumes:
+  knowledge-data:

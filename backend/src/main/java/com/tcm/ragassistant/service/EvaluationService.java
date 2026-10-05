@@ -80,7 +80,7 @@ public class EvaluationService {
         }
 
         return new EvaluationRunResponse(
-                "内置心血管中医 RAG 演示评测集",
+                "公开来源检索回归集 v1",
                 cases.size(),
                 summaries,
                 caseResults,
@@ -92,7 +92,8 @@ public class EvaluationService {
         List<CaseOutcome> retrievalCases = outcomes.stream()
                 .filter(outcome -> !outcome.expectedRefusal())
                 .toList();
-        long retrievalHitCount = retrievalCases.stream().filter(CaseOutcome::retrievalHit).count();
+        long retrievalHitCount = retrievalCases.stream()
+                .filter(outcome -> outcome.hitRank() > 0 && outcome.hitRank() <= 3).count();
         long citationCount = retrievalCases.stream().filter(CaseOutcome::citationPresent).count();
         long refusalCorrectCount = outcomes.stream().filter(CaseOutcome::refusalCorrect).count();
 
@@ -109,15 +110,16 @@ public class EvaluationService {
                 round(outcomes.stream().mapToDouble(CaseOutcome::confidence).average().orElse(0.0)),
                 round(outcomes.stream().mapToLong(CaseOutcome::latencyMs).average().orElse(0.0)),
                 (int) outcomes.stream()
-                        .filter(outcome -> !outcome.retrievalHit() && !outcome.expectedRefusal())
+                        .filter(outcome -> !outcome.refusalCorrect()
+                                || (!outcome.expectedRefusal()
+                                && (!outcome.retrievalHit() || !outcome.citationPresent())))
                         .count()
-                        + (int) outcomes.stream().filter(outcome -> !outcome.refusalCorrect()).count()
         );
     }
 
     private int hitRank(EvaluationCase evaluationCase, ChatResponse response) {
         if (evaluationCase.shouldRefuse()) {
-            return response.refused() ? 1 : -1;
+            return -1;
         }
         List<String> responseIds = response.citations().stream()
                 .map(citation -> citation.chunkId())

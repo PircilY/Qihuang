@@ -35,7 +35,7 @@ class RagControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
-                                  "question": "高血压肝阳上亢证常见治法是什么？",
+                                  "question": "高血压患者没有症状也需要检查血压吗？",
                                   "version": "V3_GUARDED"
                                 }
                                 """))

@@ -42,3 +42,10 @@ def test_upsert_rejects_mismatched_chunk_without_mutation() -> None:
 
     assert repository.chunk_count() == 1
     assert repository.nodes()[0].node_id == "C-1"
+
+
+def test_identical_upsert_does_not_require_reindexing() -> None:
+    repository = KnowledgeRepository(Path("unused.json"))
+    assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1")]) is True
+    assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1")]) is False
+    assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1", "changed")]) is True

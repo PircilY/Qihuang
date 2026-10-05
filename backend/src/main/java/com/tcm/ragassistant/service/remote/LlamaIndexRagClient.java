@@ -40,6 +40,15 @@ public class LlamaIndexRagClient {
             IterationVersion version,
             RetrievalFilter filter
     ) {
+        return chat(question, version, filter, false);
+    }
+
+    public ChatResponse chatExtractive(String question, IterationVersion version, RetrievalFilter filter) {
+        return chat(question, version, filter, true);
+    }
+
+    private ChatResponse chat(String question, IterationVersion version, RetrievalFilter filter,
+                              boolean extractiveOnly) {
         RetrievalFilter effectiveFilter = filter == null ? RetrievalFilter.none() : filter;
         return restClient.post()
                 .uri("/v1/rag/chat")
@@ -48,7 +57,8 @@ public class LlamaIndexRagClient {
                         version.name(),
                         effectiveFilter.disease(),
                         effectiveFilter.sourceType(),
-                        effectiveFilter.evidenceLevel()
+                        effectiveFilter.evidenceLevel(),
+                        extractiveOnly
                 ))
                 .retrieve()
                 .body(ChatResponse.class);
@@ -78,7 +88,8 @@ public class LlamaIndexRagClient {
             String version,
             String disease,
             String sourceType,
-            String evidenceLevel
+            String evidenceLevel,
+            boolean extractiveOnly
     ) {
     }
 

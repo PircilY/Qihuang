@@ -1,0 +1,53 @@
+[
+  {
+    "id": "WHO-HTN", "title": "高血压", "sourceType": "健康资料", "publisher": "世界卫生组织（WHO）",
+    "publicationYear": 2025, "version": "2025-09-25",
+    "sourceUrl": "https://www.who.int/zh/news-room/fact-sheets/detail/hypertension",
+    "accessedAt": "2026-09-30T02:38:34Z", "cacheFile": "who-hypertension.html",
+    "licenseNote": "WHO 版权所有；仅收录署名短摘录供文献核对，不表示获得全文再分发许可。商业使用须另行核验授权。",
+    "description": "中文官网原文摘录，健康资料不等同于临床证据分级。",
+    "excerpts": [
+      {"id":"WHO-HTN-001","disease":"高血压","section":"概述","keywords":["高血压","血压","症状","检查"],"content":"高血压患者可能感觉不到症状。了解病情的唯一方法是检查血压。"},
+      {"id":"WHO-HTN-002","disease":"高血压","section":"症状","keywords":["高血压","头痛","视力模糊","胸痛"],"content":"大多数高血压患者感觉不到任何症状。很高的血压会引起头痛、视力模糊、胸痛和其他症状。"},
+      {"id":"WHO-HTN-003","disease":"高血压","section":"治疗","keywords":["高血压","生活方式","降低血压","服药"],"content":"改变生活方式有助于降低血压，对任何高血压患者都有帮助。做出这些改变的许多人仍然需要服药。"}
+    ]
+  },
+  {
+    "id": "WHO-CVD", "title": "心血管疾病", "sourceType": "健康资料", "publisher": "世界卫生组织（WHO）",
+    "publicationYear": 2021, "version": "网页标注 2021-06-11",
+    "sourceUrl": "https://www.who.int/zh/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)",
+    "accessedAt": "2026-09-30T02:40:43Z", "cacheFile": "who-cvd.html",
+    "licenseNote": "WHO 版权所有；仅收录署名短摘录供文献核对，不表示获得全文再分发许可。商业使用须另行核验授权。",
+    "description": "年份沿用网页标注日期；页面含后续更新内容。本库未采集可能存在日期歧义的流行病学统计。",
+    "excerpts": [
+      {"id":"WHO-CVD-001","disease":"心血管疾病","section":"心血管疾病的风险因素","keywords":["心血管风险","高血压","糖尿病","高血脂","药物治疗"],"content":"此外，药物治疗高血压、糖尿病和高血脂对于帮助存在这些健康问题的患者降低心血管风险、预防心脏病发作和中风是必要的。"},
+      {"id":"WHO-CVD-002","disease":"心血管疾病","section":"概述","keywords":["心脏病发作","中风","血管堵塞","脂肪沉积"],"content":"心脏病发作和中风通常是急性事件，主要是由于血管堵塞导致血液无法流向心脏或大脑。最常见的原因是向心脏或大脑供血的血管内壁发生脂肪沉积。"}
+    ]
+  },
+  {
+    "id": "NCCIH-LICORICE", "title": "Licorice Root", "sourceType": "健康资料", "publisher": "美国 NIH / NCCIH",
+    "publicationYear": 2025, "version": "2025-04",
+    "sourceUrl": "https://www.nccih.nih.gov/health/licorice-root",
+    "accessedAt": "2026-09-30T02:40:02Z", "cacheFile": "nccih-licorice.html",
+    "licenseNote": "页面声明本出版物属公有领域；保留 NCCIH 署名，不含图片、不暗示 NIH 背书。",
+    "description": "英文原文，中文关键词仅用于索引，不是原文译文。",
+    "excerpts": [
+      {"id":"NCCIH-LICORICE-001","disease":"中草药安全","section":"What Do We Know About Safety?","herbs":["甘草"],"keywords":["甘草","甘草酸","高血压","心律失常","安全","不良反应","licorice"],"content":"Licorice contains a component called glycyrrhizin, or glycyrrhizic acid, that can cause serious adverse effects, such as irregular heartbeat and cardiac arrest, especially when consumed in large amounts or in the long term. Even small amounts of glycyrrhizin from licorice root products have been linked to severe adverse effects in people who consume a lot of salt, in people with hypertension, and in people with heart or kidney conditions."},
+      {"id":"NCCIH-LICORICE-002","disease":"中草药安全","section":"What Do We Know About Safety?","herbs":["甘草"],"keywords":["甘草","皮质类固醇","相互作用","corticosteroids","licorice"],"content":"Interactions between licorice and corticosteroids have been reported."},
+      {"id":"NCCIH-LICORICE-003","disease":"中草药安全","section":"What Do We Know About Safety?","herbs":["甘草"],"keywords":["甘草","合并用药","医务人员","草药","相互作用"],"content":"If you take any type of medicine, talk with your health care provider before using licorice or other herbal products; some herbs and medicines interact in harmful ways."}
+    ]
+  },
+  {
+    "id": "NCCIH-TCM", "title": "Traditional Chinese Medicine: What You Need To Know", "sourceType": "健康资料", "publisher": "美国 NIH / NCCIH",
+    "publicationYear": 2019, "version": "2019-04",
+    "sourceUrl": "https://www.nccih.nih.gov/health/traditional-chinese-medicine-what-you-need-to-know",
+    "accessedAt": "2026-09-30T02:43:31Z", "cacheFile": "nccih-tcm.html",
+    "licenseNote": "页面声明本出版物属公有领域；保留 NCCIH 署名，不含图片、不暗示 NIH 背书。",
+    "description": "英文原文，中文关键词仅用于索引。页面标注更新于 2019 年，不视为最新系统综述。",
+    "excerpts": [
+      {"id":"NCCIH-TCM-001","disease":"中医药研究","section":"Chinese Herbal Products","keywords":["中草药","研究","疗效","证据","研究质量","心脏病","中风"],"content":"Chinese herbal products have been studied for many medical problems, including stroke, heart disease, mental disorders, and respiratory diseases (such as bronchitis and the common cold). Because many studies have been of poor quality, no firm conclusions can be made about their effectiveness."},
+      {"id":"NCCIH-TCM-002","disease":"中草药安全","section":"Chinese Herbal Products","keywords":["中草药","污染","重金属","农药","微生物","安全","副作用"],"content":"Some Chinese herbal products have been contaminated with toxic compounds, heavy metals, pesticides, and microorganisms and may have serious side effects. Manufacturing errors, in which one herb is mistakenly replaced with another, also have resulted in serious complications."},
+      {"id":"NCCIH-TCM-003","disease":"中草药安全","section":"More To Consider","keywords":["中医药","常规治疗","延误","替代","医务人员"],"content":"If you’re considering TCM, be sure to discuss this with your health care providers. Don’t use TCM to replace or delay seeking conventional care."}
+    ]
+  }
+]

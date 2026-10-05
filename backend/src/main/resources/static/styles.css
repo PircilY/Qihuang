@@ -1,8 +1,8 @@
 :root {
-    --canvas: #edf2ef;
+    --canvas: #f4f5f6;
     --surface: #ffffff;
-    --surface-raised: #f8faf8;
-    --surface-muted: #e7eeea;
+    --surface-raised: #f8f9fa;
+    --surface-muted: #e9edef;
     --ink: #14231f;
     --ink-soft: #344b45;
     --muted: #687771;
@@ -32,6 +32,7 @@
 
 * {
     box-sizing: border-box;
+    letter-spacing: 0;
 }
 
 html {
@@ -177,7 +178,7 @@ button,
 .brand-copy strong {
     font-family: var(--font-display);
     font-size: 19px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
 }
 
 .brand-copy > span {
@@ -482,7 +483,7 @@ button,
 .workbench-head h2 {
     max-width: 880px;
     margin-top: 7px;
-    font-size: clamp(23px, 2.5vw, 35px);
+    font-size: 28px;
     font-weight: 700;
     line-height: 1.34;
 }
@@ -687,7 +688,7 @@ button,
 .metric-strip strong {
     color: var(--primary-strong);
     font-family: var(--font-data);
-    font-size: clamp(24px, 2.5vw, 34px);
+    font-size: 30px;
     font-weight: 650;
     line-height: 1.15;
 }
@@ -732,10 +733,10 @@ button,
 .board {
     min-width: 0;
     padding: 20px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .board-heading {
@@ -1726,6 +1727,57 @@ textarea:hover {
     border: 1px solid var(--line);
 }
 
+.rag-workflow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin: -4px 0 16px;
+    padding: 12px 14px;
+    background: var(--surface-raised);
+    border: 1px solid var(--line);
+    border-top: 0;
+}
+
+.rag-workflow > div {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: center;
+    gap: 2px 8px;
+    min-width: 0;
+    padding: 0 12px;
+}
+
+.rag-workflow > div + div {
+    border-left: 1px solid var(--line);
+}
+
+.rag-workflow span {
+    grid-row: span 2;
+    display: grid;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    background: var(--primary);
+    border-radius: 50%;
+    font-family: var(--font-data);
+    font-size: 9px;
+    font-weight: 700;
+    place-items: center;
+}
+
+.rag-workflow strong {
+    color: var(--ink-soft);
+    font-size: 11px;
+}
+
+.rag-workflow small {
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .version-option {
     position: relative;
     display: grid;
@@ -1893,6 +1945,104 @@ textarea:hover {
 .method-note p {
     font-size: 10px;
     line-height: 1.65;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.workbench-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.model-settings-button {
+    flex: 0 0 32px;
+}
+
+.model-settings-button.configured {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+}
+
+.model-dialog {
+    width: min(480px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 24px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+.model-dialog::backdrop {
+    background: rgba(20, 35, 31, 0.42);
+}
+
+.model-dialog h2 {
+    font-size: 20px;
+}
+
+.model-form {
+    display: grid;
+    gap: 16px;
+}
+
+.model-form > label {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    font-size: 12px;
+}
+
+.model-form small {
+    margin-left: 8px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.model-form > .model-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.model-consent input {
+    width: 16px;
+    height: 16px;
+    min-height: 0;
+    margin: 2px 0 0;
+    flex: 0 0 16px;
+    accent-color: var(--primary);
+}
+
+.model-connection-status {
+    min-height: 20px;
+    font-size: 12px;
+    color: var(--info);
+    overflow-wrap: anywhere;
+}
+
+.model-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.model-form-actions .text-button {
+    margin-right: auto;
+}
+
+.model-form-actions .button {
+    padding-inline: 14px;
+}
+
+.answer-summary strong {
+    overflow-wrap: anywhere;
 }
 
 .answer-board {
@@ -2752,47 +2902,23 @@ textarea:hover {
 }
 
 .research-hero {
-    grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.85fr);
-    align-items: stretch;
-    gap: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, auto);
+    align-items: center;
+    gap: 24px;
     margin-bottom: 16px;
-    padding: 0;
-    overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-top: 4px solid var(--primary);
-    box-shadow: 0 20px 48px rgba(19, 42, 35, 0.08);
+    padding: 8px 0 24px;
+    border-bottom: 1px solid var(--line);
 }
 
 .hero-copy {
-    position: relative;
     min-width: 0;
-    padding: 30px 32px 28px;
-    overflow: hidden;
-}
-
-.hero-copy::after {
-    position: absolute;
-    right: 22px;
-    bottom: -45px;
-    color: rgba(15, 103, 88, 0.045);
-    content: "证";
-    font-family: var(--font-display);
-    font-size: 164px;
-    font-weight: 700;
-    line-height: 1;
-    pointer-events: none;
-}
-
-.hero-copy > * {
-    position: relative;
-    z-index: 1;
+    padding: 0;
 }
 
 .research-hero h2 {
     max-width: 760px;
     margin-top: 9px;
-    font-size: clamp(29px, 3vw, 42px);
+    font-size: 28px;
     line-height: 1.3;
 }
 
@@ -2829,15 +2955,52 @@ textarea:hover {
     display: grid;
     align-content: stretch;
     min-width: 0;
-    background: #f6f9f7;
-    border-left: 1px solid var(--line);
+    background: transparent;
 }
 
 .hero-rail .intro-note {
     align-items: center;
     padding: 19px 20px;
     border-left: 0;
-    border-bottom: 1px solid #e7cfc9;
+    border-bottom: 0;
+}
+
+.source-link {
+    display: inline-block;
+    color: var(--primary-strong);
+    font-size: 12px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+.source-note {
+    color: var(--muted-strong);
+    font-size: 12px;
+}
+
+.citation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.board-heading > div,
+.registry-main,
+.detail-grid > *,
+.citation-card,
+.document-item,
+.chunk-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.data-table td:nth-child(2) {
+    min-width: 220px;
+    max-width: 380px;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .hero-demo-path {
@@ -3233,7 +3396,7 @@ textarea:hover {
     }
 
     .main-nav {
-        grid-template-columns: repeat(5, minmax(110px, 1fr));
+        grid-template-columns: repeat(5, minmax(130px, 1fr));
         gap: 0;
         margin: 0 -18px;
         padding: 0 18px;
@@ -3244,6 +3407,7 @@ textarea:hover {
     .nav-item {
         grid-template-columns: 20px minmax(0, 1fr);
         min-height: 43px;
+        white-space: nowrap;
         border-radius: 0;
         border-bottom: 2px solid transparent;
     }
@@ -3282,7 +3446,8 @@ textarea:hover {
     }
 
     .hero-rail {
-        border-top: 1px solid var(--line);
+        margin-top: 16px;
+        border-top: 0;
         border-left: 0;
     }
 
@@ -3329,6 +3494,15 @@ textarea:hover {
 
     .version-rail {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rag-workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 0;
+    }
+
+    .rag-workflow > div:nth-child(3) {
+        border-left: 0;
     }
 
     .version-option:nth-child(3) {
@@ -3422,13 +3596,7 @@ textarea:hover {
     }
 
     .hero-copy {
-        padding: 24px 20px 22px;
-    }
-
-    .hero-copy::after {
-        right: 12px;
-        bottom: -28px;
-        font-size: 112px;
+        padding: 0;
     }
 
     .hero-summary {
@@ -3566,6 +3734,17 @@ textarea:hover {
         scroll-snap-type: none;
     }
 
+    .rag-workflow {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .rag-workflow > div,
+    .rag-workflow > div:nth-child(3) {
+        padding: 0;
+        border-left: 0;
+    }
+
     .version-option {
         flex: none;
         min-height: 96px;
@@ -3697,7 +3876,7 @@ textarea:hover {
     }
 
     .main-nav {
-        grid-template-columns: repeat(5, minmax(98px, 1fr));
+        grid-template-columns: repeat(5, minmax(118px, 1fr));
     }
 
     .nav-item {

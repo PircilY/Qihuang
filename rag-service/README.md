@@ -1,6 +1,8 @@
 # LlamaIndex RAG 服务
 
-该服务把知识片段构建为 LlamaIndex `TextNode`，同时建立本地哈希向量索引和 BM25 索引，并使用 RRF 融合结果。BM25 面向短篇中文医学文本配置字符级切分，V3 版本还会执行证据阈值判断和安全拒答。默认不依赖外部模型或 API Key，回答由检索证据抽取生成；配置 OpenAI 兼容模型后会调用大模型生成回答。
+该服务把知识片段构建为 LlamaIndex `TextNode`，同时建立本地哈希向量索引和 BM25 索引，并使用 RRF 融合结果。BM25 支持中文字符和英文词项。所有版本均执行急症、处方和剂量规则拒答，V1-V3 过滤停用片段与无关主题，V3 额外执行证据阈值判断。默认不依赖外部模型或 API Key，回答由检索证据抽取生成；配置 OpenAI 兼容模型后会调用大模型生成回答。
+
+种子数据为 4 份 WHO / NIH-NCCIH 公开资料的 11 条核验摘录，详见仓库根目录 `data/sources.json`。哈希向量不等于经过训练的语义嵌入；参考分不是医学正确率。
 
 ## 本地启动
 
@@ -29,7 +31,9 @@ python -m uvicorn app.main:app --app-dir rag-service --host 127.0.0.1 --port 800
 - `GET /v1/engine/info`：检索器、融合方式和当前阈值
 - `POST /v1/rag/chat`：执行 V0-V3 问答
 - `POST /v1/knowledge/import`：接收 Java 业务层同步的文档和知识片段
-- `POST /v1/knowledge/reload`：从 JSON 数据文件重新加载索引
+- `POST /v1/knowledge/reload`：从种子 JSON 重新加载索引，会清除 Python 内存中的运行时导入；后续 Java 远程问答前自动重同步
+
+Python 索引只保存在内存，持久化由 Java 负责。导入通过 Java `/api/v1/knowledge/import` 完成，避免只写 Python 后重启丢失。重复的同步批次不会重建索引；查询、导入和重建串行保护，因此单实例长耗时生成会阻塞同实例查询。服务仅供本机或受控服务间访问。
 
 常用配置：
 
@@ -48,7 +52,9 @@ $env:LLM_API_KEY = "your-key"
 $env:LLM_MODEL = "your-model"
 ```
 
-未配置模型时，服务仍可用于检索、引用、版本对比和证据约束演示。
+未配置模型时，服务仍可用于检索、引用、版本对比和证据约束复核；配置模型后才启用大模型生成。
+
+Docker 构建默认不包含可选模型依赖。启用时在 `.env` 中设置 `INSTALL_LLM=true` 及三个 `LLM_*` 变量后重新构建。`/health` 的 `llmConfigured` 反映实际加载状态；依赖缺失或模型调用失败时日志会记录抽取式回退。引用编号检查不能代替医学事实核验。
 
 ## 测试
 

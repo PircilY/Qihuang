@@ -16,7 +16,8 @@ public record ChatRequest(
 
         String disease,
         String sourceType,
-        String evidenceLevel
+        String evidenceLevel,
+        boolean useModel
 ) {
     public RetrievalFilter toRetrievalFilter() {
         return new RetrievalFilter(disease, sourceType, evidenceLevel);

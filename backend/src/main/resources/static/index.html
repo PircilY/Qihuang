@@ -58,7 +58,7 @@
                     <path d="M22 20H2"></path>
                 </svg>
                 <span>评估实验</span>
-                <span class="nav-count" id="navCaseCount">48</span>
+                <span class="nav-count" id="navCaseCount">--</span>
             </button>
             <button class="nav-item" type="button" data-view="pipeline">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -83,7 +83,7 @@
                 <span>文档登记</span>
                 <strong id="sidebarDocumentCount">--</strong>
             </div>
-            <p>当前为离线演示数据，正式部署前需替换为获得授权的指南、古籍与临床文本。</p>
+            <p>文献检索参考，不替代医生诊断和处方。</p>
         </div>
     </aside>
 
@@ -101,20 +101,6 @@
                     <span class="status-dot"></span>
                     <span id="serviceText">服务检查中</span>
                 </span>
-                <button class="button button-demo" id="demoButton" type="button">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="m8 5 11 7-11 7z"></path>
-                        <path d="M4 5v14"></path>
-                    </svg>
-                    <span>一键演示</span>
-                </button>
-                <button class="button button-secondary" id="globalEvaluateButton" type="button">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="m5 12 4 4L19 6"></path>
-                        <path d="M5 20h14"></path>
-                    </svg>
-                    <span>运行评估</span>
-                </button>
             </div>
         </header>
 
@@ -123,71 +109,56 @@
                      data-subtitle="语料构成、证据质量与迭代状态">
                 <div class="view-intro research-hero">
                     <div class="hero-copy">
-                        <p class="intro-kicker">TCM cardiovascular RAG · graduation prototype</p>
-                        <h2>让每一条中医药心血管结论，都能回到文献证据与安全边界</h2>
+                        <p class="intro-kicker">心血管与中医药文献</p>
+                        <h2>岐黄脉证 · 研究总览</h2>
                         <p class="hero-summary">
-                            围绕高血压、冠心病、心力衰竭等专科问题，把来源登记、混合检索、证据引用、安全拒答和版本评估放进一条可演示、可复核的研究链路。
+                            高血压、心血管风险与中草药安全
                         </p>
                         <div class="hero-meta">
-                            <span>Java 17 + Spring Boot</span>
-                            <span>FastAPI + LlamaIndex</span>
-                            <span>4 轮 RAG 迭代</span>
-                            <span>患者数据未接入</span>
+                            <span>WHO</span>
+                            <span>NIH / NCCIH</span>
+                            <span>公开来源</span>
+                            <span>无患者数据</span>
                         </div>
                     </div>
                     <div class="hero-rail">
                         <div class="intro-note">
                             <span class="signal-dot"></span>
-                            <p><strong>演示数据状态</strong><br><span id="overviewDataState">正在核对知识库登记信息，未接入真实患者数据。</span></p>
-                        </div>
-                        <div class="hero-demo-path">
-                            <div class="hero-demo-head">
-                                <div>
-                                    <span>DEMO ROUTE · 04 STEPS</span>
-                                    <strong>答辩演示路径</strong>
-                                </div>
-                                <button class="text-button" id="overviewDemoButton" type="button">一键走完</button>
-                            </div>
-                            <ol>
-                                <li><span>01</span><strong>知识底座</strong><small>来源与片段可追溯</small></li>
-                                <li><span>02</span><strong>检索迭代</strong><small>V0 到 V3 同题对照</small></li>
-                                <li><span>03</span><strong>证据回答</strong><small>引用、阈值与拒答</small></li>
-                                <li><span>04</span><strong>量化验证</strong><small>48 条版本级结果</small></li>
-                            </ol>
+                            <p><strong>知识库状态</strong><br><span id="overviewDataState">加载中</span></p>
                         </div>
                     </div>
                 </div>
 
                 <section class="evidence-chain" aria-label="RAG 检索证据链">
                     <div class="evidence-chain-query">
-                        <span>当前演示命题</span>
-                        <strong>高血压肝阳上亢证，常用治法和方药证据是什么？</strong>
-                        <small>病种约束 · 证型约束 · 治法与方药同时检索</small>
+                        <span>文献主题</span>
+                        <strong>高血压与中草药安全</strong>
+                        <small>公开原文 · 未作临床分级</small>
                     </div>
                     <ol>
                         <li>
                             <span>01</span>
                             <strong>问题约束</strong>
-                            <small>病种、证型与任务意图</small>
+                            <small>疾病 / 来源 / 等级</small>
                         </li>
                         <li>
                             <span>02</span>
                             <strong>候选召回</strong>
-                            <small>BM25 与向量式相似度</small>
+                            <small>BM25 / 向量</small>
                         </li>
                         <li>
                             <span>03</span>
                             <strong>证据重排</strong>
-                            <small>来源等级与阈值校验</small>
+                            <small>元数据 / 阈值</small>
                         </li>
                         <li>
                             <span>04</span>
                             <strong>回答或拒答</strong>
-                            <small>答案必须回指原文</small>
+                            <small>原文 / 引用</small>
                         </li>
                     </ol>
                     <button class="chain-action" type="button" data-go-view="workbench">
-                        查看完整运行过程
+                        进入工作台
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M5 12h14"></path>
                             <path d="m13 6 6 6-6 6"></path>
@@ -199,22 +170,22 @@
                     <article>
                         <span>登记文档</span>
                         <strong id="overviewDocumentCount">--</strong>
-                        <small>含指南、古籍、研究与规则</small>
+                        <small>份</small>
                     </article>
                     <article>
                         <span>知识片段</span>
                         <strong id="overviewChunkCount">--</strong>
-                        <small>每个片段保留来源和页码</small>
+                        <small>条</small>
                     </article>
                     <article>
-                        <span>覆盖病种</span>
+                        <span>疾病与主题</span>
                         <strong id="overviewDiseaseCount">--</strong>
-                        <small>高血压、冠心病、心衰等</small>
+                        <small>类</small>
                     </article>
                     <article>
                         <span>A 级证据片段</span>
                         <strong id="overviewHighEvidenceCount">--</strong>
-                        <small>按演示元数据统计</small>
+                        <small>条</small>
                     </article>
                     <article>
                         <span>平均片段长度</span>
@@ -228,7 +199,7 @@
                         <header class="board-heading">
                             <div>
                                 <h2>语料构成</h2>
-                                <p>疾病覆盖与来源结构共同决定检索边界</p>
+                                <p>疾病与来源</p>
                             </div>
                             <button class="text-button" type="button" data-go-view="knowledge">查看知识库</button>
                         </header>
@@ -290,46 +261,18 @@
                         </div>
                     </section>
 
-                    <section class="board pipeline-board">
-                        <header class="board-heading">
-                            <div>
-                                <h2>知识加工流水线</h2>
-                                <p>从来源登记、语义切分到校验值生成的完整链路</p>
-                            </div>
-                            <span class="board-badge" id="pipelineReadyBadge">-- / -- READY</span>
-                        </header>
-                        <div class="pipeline-strip compact" id="overviewPipeline"></div>
-                    </section>
-
-                    <section class="board evaluation-overview-board">
-                        <header class="board-heading">
-                            <div>
-                                <h2>四个版本的证据能力</h2>
-                                <p>同一评测集下，检索、引用与拒答能力如何变化</p>
-                            </div>
-                            <span class="board-badge" id="evaluationTimestamp">未运行</span>
-                        </header>
-                        <div class="evaluation-glance" id="evaluationGlance">
-                            <div class="iteration-ladder" id="overviewVersionLadder"></div>
-                            <div class="empty-compact">
-                                <strong>尚无评估记录</strong>
-                                <span>运行 48 条跨版本样本后显示结果。</span>
-                            </div>
-                        </div>
-                    </section>
-
                     <section class="board policy-board">
                         <header class="board-heading">
                             <div>
                                 <h2>边界与安全策略</h2>
-                                <p>系统只提供文献检索参考，不替代医师判断</p>
+                                <p>仅供文献参考</p>
                             </div>
                         </header>
                         <ul class="policy-list">
-                            <li><strong>急症分流</strong><span>胸痛持续、呼吸困难等问题直接提示立即就医。</span></li>
-                            <li><strong>拒答处方剂量</strong><span>不生成个体化克数、煎服与替代处方。</span></li>
-                            <li><strong>证据不足不回答</strong><span>低于检索阈值时保留问题并说明无法判定。</span></li>
-                            <li><strong>来源可追溯</strong><span>所有回答展示文档、版本、页码和原文引用。</span></li>
+                            <li><strong>急症</strong><span>持续胸痛、呼吸困难等情况请立即就医或拨打 120。</span></li>
+                            <li><strong>用药</strong><span>个体处方与剂量须由医师判断。</span></li>
+                            <li><strong>证据</strong><span>公开健康资料不等同于临床指南。</span></li>
+                            <li><strong>中医药</strong><span>不应替代或延误必要的常规诊疗。</span></li>
                         </ul>
                     </section>
                 </div>
@@ -339,12 +282,12 @@
                      data-subtitle="来源注册、元数据治理与片段追溯">
                 <div class="view-intro compact-intro">
                     <div>
-                        <p class="intro-kicker">Evidence registry</p>
-                        <h2>先看文献来源与授权状态，再检查切分后的知识片段</h2>
+                        <p class="intro-kicker">文献资料</p>
+                        <h2>来源与知识片段</h2>
                     </div>
                     <div class="intro-note neutral">
-                        <span class="source-chain" aria-hidden="true">文档 → 片段 → 引用</span>
-                        <p>检索结果必须能够回指原始文档和引用位置。</p>
+                        <span class="source-chain">原文档案</span>
+                        <p>公开来源 / 用户登记</p>
                     </div>
                 </div>
 
@@ -354,7 +297,7 @@
                             <circle cx="11" cy="11" r="7"></circle>
                             <path d="m20 20-3.5-3.5"></path>
                         </svg>
-                        <input id="knowledgeSearch" type="search" maxlength="80"
+                        <input id="knowledgeSearch" type="search" maxlength="80" aria-label="搜索知识片段"
                                placeholder="搜索病名、证型、方药、关键词或原文">
                     </label>
                     <label>
@@ -422,8 +365,14 @@
                      data-subtitle="版本对照、证据约束检索与回答追踪">
                 <div class="workbench-head">
                     <div>
-                        <p class="intro-kicker">Retrieval experiment</p>
-                        <h2>同一条问题，观察检索策略如何逐步收紧证据边界</h2>
+                        <p class="intro-kicker">文献检索</p>
+                        <div class="workbench-title">
+                            <h2>RAG 工作台</h2>
+                            <button class="icon-button model-settings-button" id="modelSettingsButton" type="button"
+                                    title="模型配置" aria-label="模型配置" aria-haspopup="dialog">
+                                <img src="/icons/settings-2.svg" width="20" height="20" alt="">
+                            </button>
+                        </div>
                     </div>
                     <div class="workbench-actions">
                         <button class="button button-secondary" id="compareButton" type="button">
@@ -448,23 +397,30 @@
 
                 <div class="version-rail" id="versionRail" aria-label="选择 RAG 迭代版本"></div>
 
+                <section class="rag-workflow" aria-label="RAG 问答链路">
+                    <div><span>01</span><strong>提问</strong><small>输入专科问题</small></div>
+                    <div><span>02</span><strong>检索</strong><small>BM25 + 向量召回</small></div>
+                    <div><span>03</span><strong>证据</strong><small>融合、重排、阈值校验</small></div>
+                    <div><span>04</span><strong>回答</strong><small>生成摘要并附引用</small></div>
+                </section>
+
                 <div class="workbench-grid">
                     <section class="board query-board">
                         <header class="board-heading">
                             <div>
                                 <h2>问题与数据范围</h2>
-                                <p>点击示例问题可直接带入，筛选器作用于检索候选集</p>
+                                <p>文献问题</p>
                             </div>
                         </header>
                         <div class="question-presets" aria-label="示例问题">
-                            <button type="button" data-question="高血压肝阳上亢证常见治法和方药是什么？">
-                                高血压 · 肝阳上亢
+                            <button type="button" data-question="高血压患者没有症状也需要检查血压吗？">
+                                高血压检查
                             </button>
-                            <button type="button" data-question="冠心病气虚血瘀证有哪些治法、方药和用药风险？">
-                                冠心病 · 气虚血瘀
+                            <button type="button" data-question="甘草有哪些严重不良反应？">
+                                甘草安全
                             </button>
-                            <button type="button" data-question="慢性心力衰竭阳虚水泛证的常用治法和方药是什么？">
-                                心衰 · 阳虚水泛
+                            <button type="button" data-question="中草药疗效研究的质量和证据如何？">
+                                中草药研究
                             </button>
                             <button type="button" data-question="胸痛持续不缓解时应该如何处理？">
                                 急症安全边界
@@ -473,8 +429,8 @@
                         <label class="question-field">
                             <span>临床或文献问题</span>
                             <textarea id="questionInput" maxlength="500" rows="5"
-                                      placeholder="例如：冠心病气虚血瘀证常见治法与方药资料有哪些？">高血压肝阳上亢证常见治法和方药是什么？</textarea>
-                            <span class="field-meta"><span id="characterCount">27</span>/500 · Ctrl + Enter 运行</span>
+                                      placeholder="文献问题">高血压患者没有症状也需要检查血压吗？</textarea>
+                            <span class="field-meta"><span id="characterCount">0</span>/500</span>
                         </label>
 
                         <div class="query-filter-grid">
@@ -491,12 +447,9 @@
                                 </select>
                             </label>
                             <label>
-                                <span>最低证据等级</span>
+                                <span>证据等级</span>
                                 <select id="workbenchEvidence">
                                     <option value="">全部等级</option>
-                                    <option value="A">A 级</option>
-                                    <option value="B">B 级</option>
-                                    <option value="C">C 级</option>
                                 </select>
                             </label>
                         </div>
@@ -508,14 +461,14 @@
 
                         <div class="method-note" id="methodNote">
                             <span>V3</span>
-                            <p>证据约束版本的检索配置将在加载版本信息后显示。</p>
+                            <p>加载中</p>
                         </div>
                     </section>
 
                     <section class="board answer-board">
                         <header class="board-heading">
                             <div>
-                                <h2>证据约束回答</h2>
+                                <h2>生成回答与引用</h2>
                                 <p id="answerStatus">等待运行检索</p>
                             </div>
                             <div class="answer-head-actions">
@@ -538,13 +491,6 @@
                                     <path d="M9 11h3"></path>
                                 </svg>
                                 <strong>尚未生成回答</strong>
-                                <span>选择版本与数据范围后运行检索，系统会展示召回、证据校验和原文引用。</span>
-                                <div class="empty-query-map" aria-hidden="true">
-                                    <span><b>01</b>问题约束</span>
-                                    <span><b>02</b>混合召回</span>
-                                    <span><b>03</b>证据校验</span>
-                                    <span><b>04</b>引用回答</span>
-                                </div>
                             </div>
                         </div>
                     </section>
@@ -560,7 +506,7 @@
                             <span class="live-label">LIVE</span>
                         </header>
                         <div class="telemetry-strip">
-                            <div><span>置信度</span><strong id="confidenceValue">--</strong></div>
+                            <div><span>检索参考分</span><strong id="confidenceValue">--</strong></div>
                             <div><span>响应耗时</span><strong id="latencyValue">--</strong></div>
                             <div><span>召回候选</span><strong id="candidateValue">--</strong></div>
                             <div><span>入选片段</span><strong id="selectedValue">--</strong></div>
@@ -588,7 +534,7 @@
                             </div>
                             <div>
                                 <strong id="safetyTitle">等待检测</strong>
-                                <p id="safetyDescription">运行检索后显示证据阈值和拒答判断。</p>
+                                <p id="safetyDescription">尚无请求</p>
                             </div>
                         </div>
                         <ul class="safety-facts">
@@ -621,22 +567,22 @@
                      data-subtitle="检索命中、拒答准确率与失败样本">
                 <div class="view-intro compact-intro">
                     <div>
-                        <p class="intro-kicker">Quantified iteration</p>
-                        <h2>用同一套 12 条问题证明版本迭代带来了哪些变化</h2>
+                        <p class="intro-kicker">检索回归</p>
+                        <h2>版本评估</h2>
                     </div>
                     <button class="button button-primary" id="evaluationRunButton" type="button">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M5 3v18"></path>
                             <path d="m9 3 10 9L9 21z"></path>
                         </svg>
-                        <span>重新运行评估</span>
+                        <span>运行评估</span>
                     </button>
                 </div>
 
                 <section class="evaluation-meta">
-                    <div><span>数据集</span><strong id="datasetName">中医药心血管检索评测集</strong></div>
-                    <div><span>样本数</span><strong id="datasetSize">12</strong></div>
-                    <div><span>版本数</span><strong id="versionSize">4</strong></div>
+                     <div><span>数据集</span><strong id="datasetName">--</strong></div>
+                     <div><span>样本数</span><strong id="datasetSize">--</strong></div>
+                     <div><span>版本数</span><strong id="versionSize">--</strong></div>
                     <div><span>运行状态</span><strong id="evaluationStatus">等待运行</strong></div>
                 </section>
 
@@ -644,18 +590,17 @@
                     <header class="board-heading">
                         <div>
                             <h2>版本指标</h2>
-                            <p>百分比越高越好，失败样本数越低越好</p>
+                            <p>检索与安全</p>
                         </div>
                         <span class="board-badge" id="evaluationRunTime">未运行</span>
                     </header>
                     <div class="evaluation-insight" id="evaluationInsight">
-                        <span>ITERATION SIGNAL</span>
-                        <p>运行评估后显示 V0 到 V3 的关键指标增益与失败样本变化。</p>
+                        <span>V0 / V3</span>
+                        <p>尚无评估记录</p>
                     </div>
                     <div class="evaluation-summary-grid" id="evaluationSummary">
                         <div class="empty-state compact">
                             <strong>正在等待评估结果</strong>
-                            <span>点击右上角“运行评估”生成 48 条版本级结果。</span>
                         </div>
                     </div>
                 </section>
@@ -675,13 +620,13 @@
                         <header class="board-heading">
                             <div>
                                 <h2>失败分析</h2>
-                                <p>按检索排名、引用和拒答结果定位问题</p>
+                                <p>未通过样本</p>
                             </div>
                             <select id="failureVersionFilter" class="compact-select" aria-label="筛选失败分析版本">
                                 <option value="">全部版本</option>
                             </select>
                         </header>
-                        <div class="failure-summary" id="failureSummary">运行评估后显示失败样本。</div>
+                        <div class="failure-summary" id="failureSummary">尚无评估记录</div>
                     </section>
                 </div>
 
@@ -689,7 +634,7 @@
                     <header class="board-heading">
                         <div>
                             <h2>样本级结果</h2>
-                            <p>每条问题在四个版本下的检索、引用与拒答表现</p>
+                            <p>问题与结果</p>
                         </div>
                         <span class="board-badge" id="caseResultCount">0 条</span>
                     </header>
@@ -698,13 +643,14 @@
                             <thead>
                             <tr>
                                 <th>样本</th>
+                                <th>问题</th>
                                 <th>类别</th>
                                 <th>版本</th>
                                 <th>检索命中</th>
                                 <th>命中排名</th>
                                 <th>引用覆盖</th>
                                 <th>拒答正确</th>
-                                <th>置信度</th>
+                                <th>检索参考分</th>
                                 <th>耗时</th>
                             </tr>
                             </thead>
@@ -718,12 +664,12 @@
                      data-subtitle="来源登记、切分索引与质量校验">
                 <div class="view-intro compact-intro">
                     <div>
-                        <p class="intro-kicker">Ingestion governance</p>
-                        <h2>新增文献不是直接塞进索引，而是经过登记、切分、元数据和校验</h2>
+                        <p class="intro-kicker">文献管理</p>
+                        <h2>数据流水线</h2>
                     </div>
                     <div class="intro-note neutral">
-                        <span class="source-chain" aria-hidden="true">6 STAGES</span>
-                        <p>原型按可替换流水线设计，正式版可接入 OCR、版面解析和人工复核。</p>
+                        <span class="source-chain">来源授权</span>
+                        <p>仅限已获授权的文本</p>
                     </div>
                 </div>
 
@@ -731,7 +677,7 @@
                     <header class="board-heading">
                         <div>
                             <h2>加工链路状态</h2>
-                            <p>每个阶段显示处理数量和后端记录时间</p>
+                            <p>本地知识库</p>
                         </div>
                         <span class="board-badge" id="pipelineStageBadge">等待加载</span>
                     </header>
@@ -742,30 +688,28 @@
                     <section class="board import-board">
                         <header class="board-heading">
                             <div>
-                                <h2>运行时登记文档</h2>
-                                <p>演示单篇文本导入及自动切分</p>
+                                <h2>登记文档</h2>
+                                <p>来源与正文</p>
                             </div>
-                            <button class="button button-secondary" id="loadImportSampleButton" type="button">
-                                载入演示样本
-                            </button>
                         </header>
                         <form id="importForm" class="import-form">
                             <div class="form-row two-columns">
                                 <label>
                                     <span>文档标题 *</span>
                                     <input name="title" type="text" maxlength="160" required
-                                           placeholder="例如：胸痹证候研究摘要">
+                                           placeholder="原文标题">
                                 </label>
                                 <label>
                                     <span>发布机构 *</span>
-                                    <input name="publisher" type="text" required
-                                           placeholder="例如：某专业委员会">
+                                    <input name="publisher" type="text" maxlength="160" required
+                                           placeholder="发布机构名称">
                                 </label>
                             </div>
                             <div class="form-row three-columns">
                                 <label>
                                     <span>来源类型 *</span>
                                     <select name="sourceType" required>
+                                        <option value="健康资料">健康资料</option>
                                         <option value="临床研究">临床研究</option>
                                         <option value="指南/共识">指南/共识</option>
                                         <option value="专家共识">专家共识</option>
@@ -775,61 +719,63 @@
                                 </label>
                                 <label>
                                     <span>出版年份 *</span>
-                                    <input name="publicationYear" type="number" min="1900" max="2100" value="2026" required>
+                                    <input name="publicationYear" type="number" min="1900" required>
                                 </label>
                                 <label>
                                     <span>证据等级</span>
                                     <select name="evidenceLevel">
-                                        <option value="A">A</option>
-                                        <option value="B" selected>B</option>
-                                        <option value="C">C</option>
+                                        <option value="未评级">未评级</option>
                                     </select>
                                 </label>
                             </div>
                             <div class="form-row three-columns">
                                 <label>
                                     <span>疾病范围</span>
-                                    <input name="disease" type="text" placeholder="冠心病">
+                                    <input name="disease" type="text" maxlength="80">
                                 </label>
                                 <label>
                                     <span>章节位置</span>
-                                    <input name="section" type="text" placeholder="辨证论治">
+                                    <input name="section" type="text" maxlength="160">
                                 </label>
                                 <label>
                                     <span>版本号</span>
-                                    <input name="version" type="text" value="v1.0">
+                                    <input name="version" type="text" maxlength="40" value="v1.0">
                                 </label>
                             </div>
                             <div class="form-row three-columns">
                                 <label>
                                     <span>证型</span>
-                                    <input name="syndromes" type="text" placeholder="气虚血瘀, 寒凝心脉">
+                                    <input name="syndromes" type="text" maxlength="500">
                                 </label>
                                 <label>
                                     <span>方剂</span>
-                                    <input name="formulas" type="text" placeholder="血府逐瘀汤">
+                                    <input name="formulas" type="text" maxlength="500">
                                 </label>
                                 <label>
                                     <span>中药</span>
-                                    <input name="herbs" type="text" placeholder="黄芪, 丹参, 川芎">
+                                    <input name="herbs" type="text" maxlength="500">
                                 </label>
                             </div>
                             <label>
                                 <span>关键词</span>
-                                <input name="keywords" type="text" placeholder="胸痹, 益气活血, 临床摘要">
+                                <input name="keywords" type="text" maxlength="500">
                             </label>
                             <label>
-                                <span>授权说明</span>
-                                <input name="licenseNote" type="text"
-                                       placeholder="演示导入，正式使用前需核验原文与授权">
+                                <span>原文链接 *</span>
+                                <input name="sourceUrl" type="url" maxlength="2048" required placeholder="https://">
+                            </label>
+                            <label>
+                                <span>授权说明 *</span>
+                                <input name="licenseNote" type="text" maxlength="500" required
+                                       placeholder="许可条款或授权编号">
                             </label>
                             <label>
                                 <span>正文 *</span>
                                 <textarea name="content" rows="8" minlength="30" maxlength="12000" required
-                                          placeholder="粘贴可公开使用的演示文本。系统将按段落和长度边界自动切分，并计算校验值。"></textarea>
+                                          placeholder="已授权原文"></textarea>
                             </label>
                             <div class="form-actions">
-                                <span id="importHint">正文至少 30 个字符，导入后立即建立索引；当前演示实例重启后需重新导入。</span>
+                                <span id="importHint" role="status" aria-live="polite"></span>
                                 <button class="button button-primary" id="importButton" type="submit">
                                     <svg viewBox="0 0 24 24" aria-hidden="true">
                                         <path d="M12 3v12"></path>
@@ -858,6 +804,43 @@
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog class="model-dialog" id="modelDialog" aria-labelledby="modelDialogTitle">
+    <header class="board-heading">
+        <h2 id="modelDialogTitle">模型配置</h2>
+        <button class="icon-button" id="closeModelButton" type="button" title="关闭" aria-label="关闭模型配置">&times;</button>
+    </header>
+    <form id="modelForm" class="model-form" autocomplete="off" novalidate>
+        <label>
+            <span>生成模式</span>
+            <select id="modelMode">
+                <option value="EXTRACTIVE">原文摘录</option>
+                <option value="MODEL">RAG 智能问答</option>
+            </select>
+        </label>
+        <label>
+            <span>接口地址</span>
+            <input id="modelBaseUrl" type="url" maxlength="500" placeholder="https://" spellcheck="false">
+        </label>
+        <label>
+            <span>模型名称</span>
+            <input id="modelName" type="text" maxlength="160" spellcheck="false">
+        </label>
+        <label>
+            <span>API Key <small id="modelKeyState">未设置</small></span>
+            <input id="modelApiKey" type="password" maxlength="4096" autocomplete="new-password" spellcheck="false">
+        </label>
+        <label class="model-consent">
+            <input id="modelConsent" type="checkbox">
+            <span>同意向该接口发送问题及命中文献</span>
+        </label>
+        <p id="modelConnectionStatus" class="model-connection-status" role="status" aria-live="polite"></p>
+        <footer class="model-form-actions">
+            <button class="text-button" id="clearModelButton" type="button">清除配置</button>
+            <button class="button button-secondary" id="testModelButton" type="button">测试连接</button>
+            <button class="button button-primary" id="saveModelButton" type="submit">保存</button>
+        </footer>
+    </form>
+</dialog>
 <script src="/app.js"></script>
 </body>
 </html>

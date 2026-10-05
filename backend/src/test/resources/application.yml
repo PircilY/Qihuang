@@ -1,0 +1,5 @@
+app:
+  knowledge:
+    store-path: ""
+  rag-engine:
+    mode: local

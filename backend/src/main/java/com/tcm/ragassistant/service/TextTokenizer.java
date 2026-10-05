@@ -1,6 +1,7 @@
 package com.tcm.ragassistant.service;
 
 import org.springframework.stereotype.Component;
+import com.tcm.ragassistant.domain.KnowledgeChunk;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -17,13 +18,30 @@ public class TextTokenizer {
     private static final Pattern LATIN_TERM = Pattern.compile("[a-z0-9]{2,}");
     private static final Pattern HAN_SEQUENCE = Pattern.compile("[\\p{IsHan}]{2,}");
     private static final Map<String, List<String>> SYNONYMS = Map.ofEntries(
-            Map.entry("高血压", List.of("眩晕", "头痛", "肝阳上亢")),
-            Map.entry("冠心病", List.of("胸痹", "心痛", "气虚血瘀")),
-            Map.entry("心力衰竭", List.of("心衰", "心水", "阳虚水泛")),
-            Map.entry("心衰", List.of("心力衰竭", "心水", "阳虚水泛")),
-            Map.entry("心律失常", List.of("心悸", "气阴两虚")),
-            Map.entry("心悸", List.of("心律失常", "气阴两虚"))
+            Map.entry("心力衰竭", List.of("心衰")),
+            Map.entry("心衰", List.of("心力衰竭"))
     );
+    private static final Set<String> GENERIC_TERMS = Set.of(
+            "证据", "研究", "安全", "疗效", "检查", "症状", "未归类"
+    );
+
+    public boolean isRelated(String question, KnowledgeChunk chunk) {
+        String normalized = normalize(question);
+        List<String> topics = new ArrayList<>(chunk.keywords());
+        topics.add(chunk.disease());
+        topics.addAll(chunk.herbs());
+        topics.addAll(chunk.formulas());
+        topics.addAll(chunk.syndromes());
+        if (topics.stream().filter(term -> term != null && term.length() >= 2)
+                .filter(term -> !GENERIC_TERMS.contains(term))
+                .anyMatch(term -> normalized.contains(normalize(term)))) {
+            return true;
+        }
+        // Unannotated imports still require meaningful lexical overlap.
+        Set<String> contentTokens = new LinkedHashSet<>(tokenize(chunk.content()));
+        return tokenize(question).stream().filter(term -> !GENERIC_TERMS.contains(term))
+                .filter(contentTokens::contains).count() >= 3;
+    }
 
     public List<String> tokenize(String text) {
         if (text == null || text.isBlank()) {

@@ -43,7 +43,18 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BusinessException.class)
     public ResponseEntity<ApiResponse<Void>> handleBusinessException(BusinessException exception) {
-        return ResponseEntity.badRequest()
+        HttpStatus status = switch (exception.code()) {
+            case "CHUNK_NOT_FOUND", "DOCUMENT_NOT_FOUND" -> HttpStatus.NOT_FOUND;
+            case "DOCUMENT_ALREADY_EXISTS", "CHUNK_ALREADY_EXISTS" -> HttpStatus.CONFLICT;
+            case "RAG_SERVICE_UNAVAILABLE" -> HttpStatus.SERVICE_UNAVAILABLE;
+            case "MODEL_BUSY", "MODEL_RATE_LIMITED" -> HttpStatus.TOO_MANY_REQUESTS;
+            case "MODEL_TIMEOUT" -> HttpStatus.GATEWAY_TIMEOUT;
+            case "MODEL_UNAVAILABLE", "MODEL_AUTH_FAILED", "MODEL_INVALID_RESPONSE",
+                 "MODEL_INVALID_CITATIONS" -> HttpStatus.BAD_GATEWAY;
+            case "KNOWLEDGE_STORE_ERROR" -> HttpStatus.INTERNAL_SERVER_ERROR;
+            default -> HttpStatus.BAD_REQUEST;
+        };
+        return ResponseEntity.status(status)
                 .body(ApiResponse.failure(exception.code(), exception.getMessage()));
     }
 

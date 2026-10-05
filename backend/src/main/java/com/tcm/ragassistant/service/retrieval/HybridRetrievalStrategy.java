@@ -57,6 +57,7 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
                         List.of(
                                 "BM25 与向量式召回并行",
                                 "使用 Reciprocal Rank Fusion 融合排序",
+                                "generation=grounded-extractive",
                                 filter == null || filter.isEmpty()
                                         ? "检索范围为全库"
                                         : "检索范围：" + filter.description()

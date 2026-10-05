@@ -18,7 +18,9 @@ public record KnowledgeDocument(
         String status,
         Instant registeredAt,
         String licenseNote,
-        String description
+        String description,
+        String sourceUrl,
+        Instant accessedAt
 ) {
     public KnowledgeDocument {
         diseaseScope = diseaseScope == null ? List.of() : List.copyOf(diseaseScope);
@@ -32,5 +34,6 @@ public record KnowledgeDocument(
         registeredAt = registeredAt == null ? Instant.now() : registeredAt;
         licenseNote = licenseNote == null ? "" : licenseNote;
         description = description == null ? "" : description;
+        sourceUrl = sourceUrl == null ? "" : sourceUrl;
     }
 }

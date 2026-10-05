@@ -30,7 +30,7 @@ class KnowledgeRepository:
             self._nodes = nodes
             self._document_ids = document_ids
 
-    def upsert(self, document: dict, chunks: Iterable[dict]) -> None:
+    def upsert(self, document: dict, chunks: Iterable[dict]) -> bool:
         document_id = str(document.get("id", "")).strip()
         if not document_id:
             raise ValueError("document.id is required")
@@ -65,10 +65,17 @@ class KnowledgeRepository:
                 for node_id, node in self._nodes.items()
                 if node.metadata.get("document_id") == document_id
             ]
+            if set(stale_ids) == chunk_ids and all(
+                self._nodes[chunk_id].text == node.text
+                and self._nodes[chunk_id].metadata == node.metadata
+                for chunk_id, node in nodes
+            ):
+                return False
             for node_id in stale_ids:
                 del self._nodes[node_id]
             self._document_ids.add(document_id)
             self._nodes.update(nodes)
+            return True
 
     def nodes(self) -> list[TextNode]:
         with self._lock:

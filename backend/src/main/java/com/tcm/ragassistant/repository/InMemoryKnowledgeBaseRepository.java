@@ -7,9 +7,16 @@ import com.tcm.ragassistant.exception.BusinessException;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.nio.channels.FileChannel;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -26,11 +33,17 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     private final Map<String, KnowledgeChunk> chunkById = new LinkedHashMap<>();
     private final List<KnowledgeDocument> documents = new CopyOnWriteArrayList<>();
     private final Map<String, KnowledgeDocument> documentById = new LinkedHashMap<>();
+    private final ObjectMapper objectMapper;
+    private final Path storePath;
+    private final Set<String> seedDocumentIds = new HashSet<>();
 
     public InMemoryKnowledgeBaseRepository(
             ObjectMapper objectMapper,
-            ResourceLoader resourceLoader
+            ResourceLoader resourceLoader,
+            @Value("${app.knowledge.store-path:./runtime/knowledge-imports.json}") String storePath
     ) {
+        this.objectMapper = objectMapper;
+        this.storePath = storePath.isBlank() ? null : Path.of(storePath).toAbsolutePath().normalize();
         try {
             List<KnowledgeDocument> loadedDocuments = readJson(
                     objectMapper,
@@ -45,6 +58,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
                     KnowledgeChunk.class
             );
             loadedDocuments.forEach(document -> {
+                seedDocumentIds.add(document.id());
                 documents.add(document);
                 documentById.put(document.id(), document);
             });
@@ -52,23 +66,35 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
                 chunks.add(chunk);
                 chunkById.put(chunk.id(), chunk);
             });
+            if (this.storePath != null && Files.exists(this.storePath)) {
+                Snapshot saved = objectMapper.readValue(this.storePath.toFile(), Snapshot.class);
+                for (KnowledgeDocument document : saved.documents()) {
+                    List<KnowledgeChunk> documentChunks = saved.chunks().stream()
+                            .filter(chunk -> document.id().equals(chunk.documentId())).toList();
+                    validateBatch(document, documentChunks);
+                    addToMemory(document, documentChunks);
+                }
+                if (saved.chunks().stream().anyMatch(chunk -> !documentById.containsKey(chunk.documentId()))) {
+                    throw new IOException("Orphaned persisted knowledge chunk");
+                }
+            }
         } catch (IOException | RuntimeException exception) {
             throw new BusinessException("KNOWLEDGE_BASE_LOAD_ERROR", "知识库初始化失败", exception);
         }
     }
 
     @Override
-    public List<KnowledgeChunk> findAll() {
+    public synchronized List<KnowledgeChunk> findAll() {
         return List.copyOf(chunks);
     }
 
     @Override
-    public Optional<KnowledgeChunk> findById(String id) {
+    public synchronized Optional<KnowledgeChunk> findById(String id) {
         return Optional.ofNullable(chunkById.get(id));
     }
 
     @Override
-    public List<KnowledgeChunk> findByDisease(String disease) {
+    public synchronized List<KnowledgeChunk> findByDisease(String disease) {
         if (disease == null || disease.isBlank()) {
             return findAll();
         }
@@ -80,7 +106,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     }
 
     @Override
-    public List<KnowledgeChunk> search(
+    public synchronized List<KnowledgeChunk> search(
             String keyword,
             String disease,
             String sourceType,
@@ -97,17 +123,23 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     }
 
     @Override
-    public List<KnowledgeDocument> findDocuments() {
+    public synchronized List<KnowledgeDocument> findDocuments() {
         return List.copyOf(documents);
     }
 
     @Override
-    public Optional<KnowledgeDocument> findDocumentById(String id) {
+    public synchronized Optional<KnowledgeDocument> findDocumentById(String id) {
         return Optional.ofNullable(documentById.get(id));
     }
 
     @Override
     public synchronized void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
+        validateBatch(document, newChunks);
+        persist(document, newChunks);
+        addToMemory(document, newChunks);
+    }
+
+    private void validateBatch(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
         if (document == null || document.id() == null || document.id().isBlank()) {
             throw new BusinessException("INVALID_DOCUMENT", "文档编号不能为空");
         }
@@ -116,6 +148,10 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
         }
         if (documentById.containsKey(document.id())) {
             throw new BusinessException("DOCUMENT_ALREADY_EXISTS", "文档编号已存在：" + document.id());
+        }
+        if (!document.checksum().isBlank() && documents.stream()
+                .anyMatch(existing -> existing.checksum().equals(document.checksum()))) {
+            throw new BusinessException("DOCUMENT_ALREADY_EXISTS", "相同正文已登记，请勿重复导入");
         }
 
         Set<String> incomingIds = new HashSet<>();
@@ -134,8 +170,9 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
             }
         }
 
-        // Validate the whole batch before mutating either collection so a failed
-        // import cannot leave a document or a prefix of its chunks behind.
+    }
+
+    private void addToMemory(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
         documents.add(document);
         documentById.put(document.id(), document);
         for (KnowledgeChunk chunk : newChunks) {
@@ -143,6 +180,43 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
             chunkById.put(chunk.id(), chunk);
         }
     }
+
+    private void persist(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
+        if (storePath == null) {
+            return;
+        }
+        Path temporary = null;
+        try {
+            Files.createDirectories(storePath.getParent());
+            List<KnowledgeDocument> savedDocuments = new ArrayList<>(documents.stream()
+                    .filter(item -> !seedDocumentIds.contains(item.id())).toList());
+            savedDocuments.add(document);
+            Set<String> ids = savedDocuments.stream().map(KnowledgeDocument::id)
+                    .collect(java.util.stream.Collectors.toSet());
+            List<KnowledgeChunk> savedChunks = new ArrayList<>(chunks.stream()
+                    .filter(item -> ids.contains(item.documentId())).toList());
+            savedChunks.addAll(newChunks);
+            temporary = Files.createTempFile(storePath.getParent(), "knowledge-", ".tmp");
+            objectMapper.writeValue(temporary.toFile(), new Snapshot(savedDocuments, savedChunks));
+            try (FileChannel channel = FileChannel.open(temporary, StandardOpenOption.WRITE)) {
+                channel.force(true);
+            }
+            // Publish memory changes only after the complete snapshot is durable.
+            Files.move(temporary, storePath, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException exception) {
+            throw new BusinessException("KNOWLEDGE_STORE_ERROR", "知识库保存失败，文档未登记", exception);
+        } finally {
+            if (temporary != null) {
+                try {
+                    Files.deleteIfExists(temporary);
+                } catch (IOException ignored) {
+                    // A leftover temporary file is not a committed snapshot.
+                }
+            }
+        }
+    }
+
+    public record Snapshot(List<KnowledgeDocument> documents, List<KnowledgeChunk> chunks) {}
 
     private <T> List<T> readJson(
             ObjectMapper objectMapper,

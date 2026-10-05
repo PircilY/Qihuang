@@ -26,6 +26,7 @@ class ChatRequest(ApiModel):
     disease: str | None = None
     source_type: str | None = None
     evidence_level: str | None = None
+    extractive_only: bool = False
 
     @field_validator("question")
     @classmethod
@@ -89,7 +90,7 @@ class KnowledgeDocument(ApiModel):
     publisher: str
     publication_year: int
     authority: str = ""
-    evidence_level: str = "C"
+    evidence_level: str = "未评级"
     disease_scope: list[str] = Field(default_factory=list)
     file_name: str = ""
     checksum: str = ""
@@ -98,6 +99,8 @@ class KnowledgeDocument(ApiModel):
     registered_at: str
     license_note: str = ""
     description: str = ""
+    source_url: str = ""
+    accessed_at: str | None = None
 
 
 class KnowledgeChunk(ApiModel):

@@ -7,19 +7,34 @@ spring:
       write-dates-as-timestamps: false
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
+  address: ${SERVER_ADDRESS:127.0.0.1}
   shutdown: graceful
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: strict
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info
   endpoint:
     health:
-      show-details: always
+      show-details: never
 
 app:
+  model:
+    api-base: ${MODEL_API_BASE:}
+    name: ${MODEL_NAME:}
+    api-key: ${MODEL_API_KEY:}
+    timeout: ${MODEL_TIMEOUT:60s}
+    allowed-base-urls: ${MODEL_ALLOWED_BASE_URLS:https://api.deepseek.com/v1,https://api.deepseek.com,https://dashscope.aliyuncs.com/compatible-mode/v1,https://api.openai.com/v1}
+  knowledge:
+    store-path: ${KNOWLEDGE_STORE_PATH:./runtime/knowledge-imports.json}
   rag-engine:
     mode: ${RAG_ENGINE_MODE:auto}
     base-url: ${RAG_SERVICE_URL:http://127.0.0.1:8000}
@@ -38,5 +53,5 @@ app:
 logging:
   level:
     root: INFO
-    com.tcm.ragassistant: DEBUG
+    com.tcm.ragassistant: INFO
 

@@ -9,6 +9,7 @@ import com.tcm.ragassistant.service.retrieval.RetrievalOutput;
 import com.tcm.ragassistant.service.retrieval.RetrievalStrategy;
 import com.tcm.ragassistant.service.retrieval.RetrievalStrategyRegistry;
 import com.tcm.ragassistant.service.remote.LlamaIndexRagClient;
+import com.tcm.ragassistant.repository.KnowledgeBaseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -30,17 +31,20 @@ public class RagOrchestrationService {
     private final RetrievalStrategyRegistry strategyRegistry;
     private final AnswerGenerationService answerGenerationService;
     private final AtomicLong remoteRetryAfter = new AtomicLong();
+    private final KnowledgeBaseRepository repository;
 
     public RagOrchestrationService(
             RagEngineProperties engineProperties,
             LlamaIndexRagClient llamaIndexRagClient,
             RetrievalStrategyRegistry strategyRegistry,
-            AnswerGenerationService answerGenerationService
+            AnswerGenerationService answerGenerationService,
+            KnowledgeBaseRepository repository
     ) {
         this.engineProperties = engineProperties;
         this.llamaIndexRagClient = llamaIndexRagClient;
         this.strategyRegistry = strategyRegistry;
         this.answerGenerationService = answerGenerationService;
+        this.repository = repository;
     }
 
     public ChatResponse ask(String question, IterationVersion version) {
@@ -48,10 +52,34 @@ public class RagOrchestrationService {
     }
 
     public ChatResponse ask(String question, IterationVersion version, RetrievalFilter filter) {
+        return ask(question, version, filter, false);
+    }
+
+    public ChatResponse askExtractive(String question, IterationVersion version, RetrievalFilter filter) {
+        return ask(question, version, filter, true);
+    }
+
+    private ChatResponse ask(String question, IterationVersion version, RetrievalFilter filter,
+                             boolean extractiveOnly) {
         RetrievalFilter effectiveFilter = filter == null ? RetrievalFilter.none() : filter;
+        if (engineProperties.strictRemote() && !shouldTryRemote()) {
+            throw new BusinessException("RAG_SERVICE_UNAVAILABLE", "远程检索服务暂不可用，请稍后重试");
+        }
         if (shouldTryRemote()) {
             try {
-                ChatResponse response = llamaIndexRagClient.chat(question, version, effectiveFilter);
+                // Reconcile durable imports after either service restarts; upserts are idempotent.
+                for (var document : repository.findDocuments()) {
+                    if (document.id().startsWith("DOC-")) {
+                        llamaIndexRagClient.importKnowledge(document, repository.findAll().stream()
+                                .filter(chunk -> chunk.documentId().equals(document.id())).toList());
+                    }
+                }
+                ChatResponse response = extractiveOnly
+                        ? llamaIndexRagClient.chatExtractive(question, version, effectiveFilter)
+                        : llamaIndexRagClient.chat(question, version, effectiveFilter);
+                if (response == null) {
+                    throw new IllegalStateException("Empty RAG response");
+                }
                 remoteRetryAfter.set(0);
                 return response;
             } catch (RuntimeException exception) {

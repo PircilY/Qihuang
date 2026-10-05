@@ -7,8 +7,11 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 COPY rag-service/requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
-
+ARG INSTALL_LLM=false
+RUN pip install --no-cache-dir \
+    -i https://pypi.tuna.tsinghua.edu.cn/simple \
+    -r /app/requirements.txt
+RUN if [ "$INSTALL_LLM" = "true" ]; then pip install --no-cache-dir "llama-index-llms-openai-like>=0.3,<0.7"; fi
 COPY rag-service /app/rag-service
 COPY backend/src/main/resources/data /app/backend/src/main/resources/data
 

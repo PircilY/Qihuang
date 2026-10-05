@@ -16,6 +16,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
+      - run: python ../tools/build_corpus.py --check
       - run: pytest -q
 
   java-tests:
