@@ -39,21 +39,42 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
 
     @Override
     public RetrievalOutput retrieve(String question, RetrievalFilter filter) {
-        List<ScoredChunk> lexical = lexicalScorer.score(question, properties.candidateLimit(), filter);
-        List<ScoredChunk> vector = vectorScorer.score(question, properties.candidateLimit(), filter);
-        List<ScoredChunk> fused = fuse(lexical, vector);
-        List<ScoredChunk> selected = fused.stream()
+        RetrievalOutput candidates = retrieveCandidates(question, filter);
+        List<ScoredChunk> selected = candidates.chunks().stream()
                 .limit(properties.finalLimit())
                 .toList();
         return new RetrievalOutput(
                 selected,
                 new RetrievalTrace(
                         "hybrid-rrf",
+                        candidates.trace().lexicalCandidateCount(),
+                        candidates.trace().vectorCandidateCount(),
+                        candidates.trace().fusedCandidateCount(),
+                        selected.size(),
+                        !selected.isEmpty(),
+                        candidates.trace().notes(),
+                        "java-local",
+                        version().name(),
+                        null,
+                        selected.isEmpty()
+                ),
+                !selected.isEmpty()
+        );
+    }
+
+    public RetrievalOutput retrieveCandidates(String question, RetrievalFilter filter) {
+        List<ScoredChunk> lexical = lexicalScorer.score(question, properties.candidateLimit(), filter);
+        List<ScoredChunk> vector = vectorScorer.score(question, properties.candidateLimit(), filter);
+        List<ScoredChunk> fused = fuse(lexical, vector);
+        return new RetrievalOutput(
+                fused,
+                new RetrievalTrace(
+                        "hybrid-rrf",
                         lexical.size(),
                         vector.size(),
                         fused.size(),
-                        selected.size(),
-                        !selected.isEmpty(),
+                        fused.size(),
+                        !fused.isEmpty(),
                         List.of(
                                 "BM25 与向量式召回并行",
                                 "使用 Reciprocal Rank Fusion 融合排序",
@@ -61,9 +82,13 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
                                 filter == null || filter.isEmpty()
                                         ? "检索范围为全库"
                                         : "检索范围：" + filter.description()
-                        )
+                        ),
+                        "java-local",
+                        version().name(),
+                        null,
+                        fused.isEmpty()
                 ),
-                !selected.isEmpty()
+                !fused.isEmpty()
         );
     }
 
@@ -72,7 +97,8 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
         addRankScores(scores, lexical, properties.lexicalWeight());
         addRankScores(scores, vector, properties.vectorWeight());
         return scores.values().stream()
-                .sorted(Comparator.comparingDouble(FusionScore::fusedScore).reversed())
+                .sorted(Comparator.comparingDouble(FusionScore::fusedScore).reversed()
+                        .thenComparing(score -> score.chunk().chunk().id()))
                 .map(score -> new ScoredChunk(
                         score.chunk().chunk(),
                         score.fusedScore(),

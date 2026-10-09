@@ -67,6 +67,10 @@ class RetrievalTrace(ApiModel):
     selected_count: int
     sufficient_evidence: bool
     notes: list[str] = Field(default_factory=list)
+    engine: str = "llama-index"
+    version: str | None = None
+    threshold: float | None = None
+    rejected: bool = False
 
 
 class ChatResponse(ApiModel):

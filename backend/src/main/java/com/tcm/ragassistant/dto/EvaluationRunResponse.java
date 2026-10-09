@@ -5,7 +5,9 @@ import java.util.List;
 
 public record EvaluationRunResponse(
         String datasetName,
+        String datasetVersion,
         int totalCases,
+        int retrievalK,
         List<EvaluationSummary> summaries,
         List<EvaluationCaseResult> caseResults,
         Instant generatedAt

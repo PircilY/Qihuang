@@ -34,6 +34,9 @@ class Settings:
     port: int
     candidate_limit: int
     final_limit: int
+    rrf_rank_constant: int
+    lexical_weight: float
+    vector_weight: float
     minimum_evidence_score: float
     llm_api_base: str
     llm_api_key: str
@@ -60,6 +63,9 @@ class Settings:
             port=_env_int("RAG_PORT", 8000),
             candidate_limit=_env_int("RAG_CANDIDATE_LIMIT", 8),
             final_limit=_env_int("RAG_FINAL_LIMIT", 4),
+            rrf_rank_constant=_env_int("RAG_RRF_RANK_CONSTANT", 60),
+            lexical_weight=_env_float("RAG_RRF_LEXICAL_WEIGHT", 1.0),
+            vector_weight=_env_float("RAG_RRF_VECTOR_WEIGHT", 0.85),
             minimum_evidence_score=_env_float("RAG_MINIMUM_EVIDENCE_SCORE", 0.016),
             llm_api_base=os.getenv("LLM_API_BASE", "").strip(),
             llm_api_key=os.getenv("LLM_API_KEY", "").strip(),

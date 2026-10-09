@@ -6,6 +6,8 @@ import pytest
 from app.config import Settings
 from app.engine import LlamaIndexEngine
 from app.schemas import ChatRequest
+from app.engine import _is_related, _metadata_boost
+from llama_index.core.schema import NodeWithScore, TextNode
 
 
 @pytest.fixture
@@ -55,3 +57,60 @@ def test_extractive_request_does_not_call_configured_legacy_model(engine):
     assert response.citations
     assert "generation=grounded-extractive" in response.retrieval.notes
     engine._llm.complete.assert_not_called()
+
+
+def test_rank_fusion_deduplicates_same_chunk_across_retrievers(engine):
+    node = TextNode(id_="CONTRACT-C1", text="重复候选只应保留一个身份。")
+    fused = engine._fuse_ranked_candidates(
+        [NodeWithScore(node=node, score=0.9)],
+        [NodeWithScore(node=node, score=4.2)],
+    )
+
+    assert [item.node.node_id for item in fused] == ["CONTRACT-C1"]
+    assert fused[0].score == 1 / 61 + 0.85 / 61
+
+
+def test_metadata_rank_weights_match_contract():
+    node = NodeWithScore(
+        node=TextNode(
+            id_="CONTRACT-META",
+            text="权重校验。",
+            metadata={
+                "disease": "高血压",
+                "syndromes": "气虚证",
+                "formulas": "测试方",
+                "herbs": "甘草|黄芪",
+                "evidence_level": "A",
+            },
+        ),
+        score=0.0,
+    )
+
+    assert _metadata_boost("高血压气虚证测试方甘草", node) == pytest.approx(0.82)
+
+
+def test_is_related_allows_shared_token_anchored_to_disease_metadata():
+    node = NodeWithScore(
+        node=TextNode(text="完全无关的证据内容。", metadata={"disease": "高血压"}),
+        score=0.0,
+    )
+
+    assert _is_related("血压非常高", node)
+
+
+def test_is_related_does_not_allow_single_body_token_without_disease_anchor():
+    node = NodeWithScore(
+        node=TextNode(text="血压异常。", metadata={"disease": "其他病种"}),
+        score=0.0,
+    )
+
+    assert not _is_related("血压", node)
+
+
+def test_is_related_does_not_use_generic_disease_metadata_as_anchor():
+    node = NodeWithScore(
+        node=TextNode(text="检查结果需要结合临床判断。", metadata={"disease": "症状"}),
+        score=0.0,
+    )
+
+    assert not _is_related("症状", node)

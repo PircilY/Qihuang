@@ -62,7 +62,7 @@ public class KnowledgeIngestionService {
                 request.publisher().trim(),
                 request.publicationYear(),
                 valueOrDefault(request.authority(), "待人工核验"),
-                "未评级",
+                valueOrDefault(request.evidenceLevel(), "未评级"),
                 diseaseScope,
                 "runtime-import.txt",
                 checksum,

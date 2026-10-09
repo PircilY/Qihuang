@@ -52,9 +52,11 @@ class InMemoryKnowledgeBaseRepositoryTest {
     void snapshotRestoresAllImportsAndRejectsDuplicates() {
         Path snapshot = tempDir.resolve("imports.json");
         var first = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());
-        first.registerDocument(document("IMPORT-1", "hash-1"), List.of(chunk("IMPORT-1", "C-1")));
+        first.registerDocument(document("IMPORT-1", "hash-1", "B"), List.of(chunk("IMPORT-1", "C-1", "B")));
         var second = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());
         assertThat(second.findById("C-1")).isPresent();
+        assertThat(second.findById("C-1").orElseThrow().evidenceLevel()).isEqualTo("B");
+        assertThat(second.findDocumentById("IMPORT-1").orElseThrow().evidenceLevel()).isEqualTo("B");
         second.registerDocument(document("IMPORT-2", "hash-2"), List.of(chunk("IMPORT-2", "C-2")));
         var restored = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());
         assertThat(restored.findById("C-1")).isPresent();
@@ -78,16 +80,24 @@ class InMemoryKnowledgeBaseRepositoryTest {
     }
 
     private KnowledgeDocument document(String id, String checksum) {
-        return new KnowledgeDocument(id, "测试", "测试", "测试", 2025, "", "未评级",
+        return document(id, checksum, "未评级");
+    }
+
+    private KnowledgeDocument document(String id, String checksum, String evidenceLevel) {
+        return new KnowledgeDocument(id, "测试", "测试", "测试", 2025, "", evidenceLevel,
                 List.of("高血压"), "", checksum, "v1", "ACTIVE", Instant.now(),
                 "测试数据", "", "https://example.org/fixture", null);
     }
 
     private KnowledgeChunk chunk(String documentId, String id) {
+        return chunk(documentId, id, "C");
+    }
+
+    private KnowledgeChunk chunk(String documentId, String id, String evidenceLevel) {
         return new KnowledgeChunk(
                 id, documentId, "测试文档", "测试", "测试机构", 2024,
                 "高血压", List.of(), List.of(), List.of(), 0, 0,
-                "正文", "C", List.of(), "测试内容", id + "-checksum",
+                "正文", evidenceLevel, List.of(), "测试内容", id + "-checksum",
                 "ACTIVE", "v1", Instant.now()
         );
     }

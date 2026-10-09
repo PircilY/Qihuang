@@ -93,7 +93,7 @@ class KnowledgeBaseControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value("OK"))
                 .andExpect(jsonPath("$.data.status").value("LOCAL_READY"))
-                .andExpect(jsonPath("$.data.document.evidenceLevel").value("未评级"))
+                .andExpect(jsonPath("$.data.document.evidenceLevel").value("B"))
                 .andExpect(jsonPath("$.data.document.sourceUrl").value("https://example.org/test-fixture"))
                 .andExpect(jsonPath("$.data.chunkCount").value(greaterThanOrEqualTo(1)))
                 .andExpect(jsonPath("$.data.document.diseaseScope[0]").value(disease))
@@ -102,13 +102,13 @@ class KnowledgeBaseControllerTest {
         mockMvc.perform(get("/api/v1/knowledge/chunks")
                         .param("disease", disease)
                         .param("sourceType", "临床研究")
-                        .param("evidenceLevel", "未评级"))
+                        .param("evidenceLevel", "B"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value("OK"))
                 .andExpect(jsonPath("$.data").isNotEmpty())
                 .andExpect(jsonPath("$.data[*].disease", everyItem(containsString(disease))))
                 .andExpect(jsonPath("$.data[*].sourceType", everyItem(containsString("临床研究"))))
-                .andExpect(jsonPath("$.data[*].evidenceLevel", everyItem(containsString("未评级"))));
+                .andExpect(jsonPath("$.data[*].evidenceLevel", everyItem(containsString("B"))));
     }
 
     @Test
@@ -145,6 +145,27 @@ class KnowledgeBaseControllerTest {
                 .andExpect(jsonPath("$.message", containsString("publisher: 发布机构不能为空")))
                 .andExpect(jsonPath("$.message", containsString("publicationYear: 出版年份不正确")))
                 .andExpect(jsonPath("$.message", containsString("content: 正文长度应在 30-12000 个字符之间")));
+    }
+
+    @Test
+    void importShouldRejectUnsupportedEvidenceLevel() throws Exception {
+        mockMvc.perform(post("/api/v1/knowledge/import")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "title": "非法证据等级测试材料",
+                                  "sourceType": "测试",
+                                  "publisher": "测试",
+                                  "publicationYear": 2026,
+                                  "evidenceLevel": "D",
+                                  "licenseNote": "仅用于自动化测试",
+                                  "sourceUrl": "https://example.org/invalid-evidence-level",
+                                  "content": "这段内容用于验证非法证据等级会在进入持久化之前被拒绝处理。"
+                                }
+                                """))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"))
+                .andExpect(jsonPath("$.message", containsString("evidenceLevel: 证据等级不正确")));
     }
 
     @Test

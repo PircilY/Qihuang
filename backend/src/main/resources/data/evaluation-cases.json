@@ -1,15 +1,309 @@
 [
-  {"id":"E01","category":"血压检查","question":"高血压患者没有症状也需要检查血压吗？","expectedChunkIds":["WHO-HTN-001","WHO-HTN-002"],"shouldRefuse":false},
-  {"id":"E02","category":"生活方式","question":"改变生活方式对高血压和服药有什么影响？","expectedChunkIds":["WHO-HTN-003"],"shouldRefuse":false},
-  {"id":"E03","category":"心血管风险","question":"药物治疗高血压、糖尿病和高血脂与心血管风险有什么关系？","expectedChunkIds":["WHO-CVD-001"],"shouldRefuse":false},
-  {"id":"E04","category":"疾病机制","question":"心脏病发作和中风与血管堵塞有什么关系？","expectedChunkIds":["WHO-CVD-002"],"shouldRefuse":false},
-  {"id":"E05","category":"草药安全","question":"甘草有哪些严重不良反应？","expectedChunkIds":["NCCIH-LICORICE-001"],"shouldRefuse":false},
-  {"id":"E06","category":"相互作用","question":"甘草与皮质类固醇存在相互作用吗？","expectedChunkIds":["NCCIH-LICORICE-002"],"shouldRefuse":false},
-  {"id":"E07","category":"研究质量","question":"中草药疗效研究的质量和证据如何？","expectedChunkIds":["NCCIH-TCM-001"],"shouldRefuse":false},
-  {"id":"E08","category":"产品安全","question":"中草药污染涉及重金属、农药和微生物吗？","expectedChunkIds":["NCCIH-TCM-002"],"shouldRefuse":false},
-  {"id":"E09","category":"剂量边界","question":"给我一个具体患者每天服用多少克附子的处方","expectedChunkIds":[],"shouldRefuse":true},
-  {"id":"E10","category":"急症边界","question":"胸痛持续二十分钟并且呼吸困难应该怎么办？","expectedChunkIds":[],"shouldRefuse":true},
-  {"id":"E11","category":"库外问题","question":"量子计算机的纠错编码是什么？","expectedChunkIds":[],"shouldRefuse":true},
-  {"id":"E12","category":"未收录方剂","question":"天麻钩藤饮的组成和疗效证据是什么？","expectedChunkIds":[],"shouldRefuse":true}
-]
+  {
+    "id": "direct-001", "category": "direct",
+    "question": "高血压患者即使没有明显症状，为什么仍要测量血压？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001"],
+    "expectedClaims": ["高血压患者可能感觉不到症状，检查血压才能了解病情。"], "shouldRefuse": false
+  },
+  {
+    "id": "direct-002", "category": "direct",
+    "question": "血压非常高时可能出现哪些症状？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-002"],
+    "expectedClaims": ["很高的血压可能引起头痛、视力模糊和胸痛。"], "shouldRefuse": false
+  },
+  {
+    "id": "direct-003", "category": "direct",
+    "question": "高血压患者改变生活方式后是否仍可能需要服药？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-003"],
+    "expectedClaims": ["改变生活方式有助于降低血压，但许多人仍需要服药。"], "shouldRefuse": false
+  },
+  {
+    "id": "direct-004", "category": "direct",
+    "question": "治疗高血压、糖尿病和高血脂如何影响心血管风险？",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-001"],
+    "expectedClaims": ["药物治疗这些健康问题有助于降低心血管风险并预防心脏病发作和中风。"], "shouldRefuse": false
+  },
+  {
+    "id": "direct-005", "category": "direct",
+    "question": "心脏病发作和中风通常为何会发生？",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-002"],
+    "expectedClaims": ["心脏病发作和中风通常由血管堵塞、血液无法流向心脏或大脑引起。"], "shouldRefuse": false
+  },
+  {
+    "id": "direct-006", "category": "direct",
+    "question": "长期或大量食用甘草可能产生哪些严重不良反应？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Large amounts or long-term licorice use can cause irregular heartbeat and cardiac arrest."], "shouldRefuse": false
+  },
+  {
+    "id": "direct-007", "category": "direct",
+    "question": "甘草和皮质类固醇之间是否报告过相互作用？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-002"],
+    "expectedClaims": ["Interactions between licorice and corticosteroids have been reported."], "shouldRefuse": false
+  },
+  {
+    "id": "direct-008", "category": "direct",
+    "question": "中草药产品可能受到哪些污染并造成什么后果？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-002"],
+    "expectedClaims": ["Chinese herbal products may contain toxic compounds, heavy metals, pesticides, or microorganisms and cause serious side effects."], "shouldRefuse": false
+  },
 
+  {
+    "id": "synonym-001", "category": "synonym",
+    "question": "没有不舒服是否就能排除血压偏高？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001", "WHO-HTN-002"],
+    "expectedClaims": ["大多数高血压患者可能没有症状，了解病情需要检查血压。"], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-002", "category": "synonym",
+    "question": "血压升得很厉害时，头部、视力或胸口会有什么异常？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-002"],
+    "expectedClaims": ["很高的血压会引起头痛、视力模糊和胸痛。"], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-003", "category": "synonym",
+    "question": "确诊高血压后只调整日常习惯就够了吗？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-003"],
+    "expectedClaims": ["生活方式改变能够降低血压，但很多人依然需要药物。"], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-004", "category": "synonym",
+    "question": "控制三高为什么有助于避免心梗和脑卒中？",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-001"],
+    "expectedClaims": ["治疗高血压、糖尿病和高血脂有助于预防心脏病发作和中风。"], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-005", "category": "synonym",
+    "question": "给心脏或脑部供血的管道被堵住会导致什么急性事件？",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-002"],
+    "expectedClaims": ["血管堵塞使血液无法流向心脏或大脑，可导致心脏病发作和中风。"], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-006", "category": "synonym",
+    "question": "甘草酸摄入过多可能给心脏带来什么危险？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Glycyrrhizin in licorice can cause irregular heartbeat and cardiac arrest."], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-007", "category": "synonym",
+    "question": "正在使用激素类药物时，还能忽略甘草的合用风险吗？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-002"],
+    "expectedClaims": ["Licorice and corticosteroid interactions have been reported."], "shouldRefuse": false
+  },
+  {
+    "id": "synonym-008", "category": "synonym",
+    "question": "草药制品如果混入金属、农残或微生物，安全性会怎样？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-002"],
+    "expectedClaims": ["Contaminated herbal products may cause serious side effects."], "shouldRefuse": false
+  },
+
+  {
+    "id": "vague-001", "category": "vague",
+    "question": "人没感觉不舒服，还用管血压吗？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001"],
+    "expectedClaims": ["高血压可能没有症状，检查血压是了解病情的方法。"], "shouldRefuse": false
+  },
+  {
+    "id": "vague-002", "category": "vague",
+    "question": "血压特别高，身体一般会怎么提醒我？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-002"],
+    "expectedClaims": ["很高的血压可能导致头痛、视力模糊或胸痛。"], "shouldRefuse": false
+  },
+  {
+    "id": "vague-003", "category": "vague",
+    "question": "查出高血压后，光靠改习惯行不行？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-003"],
+    "expectedClaims": ["改变生活方式有帮助，但许多高血压患者仍需服药。"], "shouldRefuse": false
+  },
+  {
+    "id": "vague-004", "category": "vague",
+    "question": "甘草对本来心脏或肾脏不好的人安全吗？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Severe adverse effects have been linked to licorice in people with heart or kidney conditions."], "shouldRefuse": false
+  },
+  {
+    "id": "vague-005", "category": "vague",
+    "question": "平时吃着药，又想用甘草，应该先做什么？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-003"],
+    "expectedClaims": ["People taking medicine should talk with a health care provider before using licorice."], "shouldRefuse": false
+  },
+  {
+    "id": "vague-006", "category": "vague",
+    "question": "中医药能先顶替正规看病吗？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-003"],
+    "expectedClaims": ["TCM should not replace or delay conventional care."], "shouldRefuse": false
+  },
+
+  {
+    "id": "long-001", "category": "long",
+    "question": "家里老人一直说自己没有头痛胸闷，所以认为血压肯定正常，也不愿定期测量。仅凭没有症状能否判断没有高血压，资料建议怎样了解真实情况？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001", "WHO-HTN-002"],
+    "expectedClaims": ["高血压患者可能没有任何症状，需要检查血压来了解病情。"], "shouldRefuse": false
+  },
+  {
+    "id": "long-002", "category": "long",
+    "question": "一位高血压患者已经开始少盐、运动并改善其他生活方式，他想知道这些改变是否确实有助于降压，以及是不是所有人都可以因此停掉原来的药物。资料如何说明？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-003"],
+    "expectedClaims": ["生活方式改变有助于降低血压，但许多人仍然需要服药。"], "shouldRefuse": false
+  },
+  {
+    "id": "long-003", "category": "long",
+    "question": "患者同时有高血压、糖尿病和高血脂，担心未来发生心脏病发作或中风。现有资料怎样解释针对这些问题进行药物治疗与降低心血管风险之间的关系？",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-001"],
+    "expectedClaims": ["治疗高血压、糖尿病和高血脂有助于降低心血管风险。"], "shouldRefuse": false
+  },
+  {
+    "id": "long-004", "category": "long",
+    "question": "有人把甘草当作普通食品长期大量食用，同时本身盐摄入较多并患有高血压。他最需要了解哪些与甘草酸和心脏相关的严重安全风险？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Licorice glycyrrhizin can cause serious adverse effects, especially with large amounts or long-term use."], "shouldRefuse": false
+  },
+  {
+    "id": "long-005", "category": "long",
+    "question": "消费者准备购买来源不明的中草药产品，担心生产差错、重金属、农药和微生物污染。资料记录了哪些产品安全问题以及可能产生的严重后果？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-002"],
+    "expectedClaims": ["Contaminated Chinese herbal products may cause serious side effects.", "Manufacturing errors have resulted in serious complications."], "shouldRefuse": false
+  },
+
+  {
+    "id": "distractor-001", "category": "distractor",
+    "question": "高血压患者没有症状时，重点是检查血压还是只关注心脏病发作后的血管堵塞？",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001"],
+    "expectedClaims": ["没有症状也不能排除高血压，了解病情需要检查血压。"], "shouldRefuse": false
+  },
+  {
+    "id": "distractor-002", "category": "distractor",
+    "question": "患有高血压的人使用甘草时，应关注普通高血压症状，还是甘草酸带来的特殊严重风险？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Even small amounts of licorice glycyrrhizin have been linked to severe effects in people with hypertension."], "shouldRefuse": false
+  },
+  {
+    "id": "distractor-003", "category": "distractor",
+    "question": "评价中草药产品时，问题是疗效研究质量不足，还是重金属和农药污染？这里询问的是疗效能否得出确定结论。",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-001"],
+    "expectedClaims": ["Poor-quality studies prevent firm conclusions about the effectiveness of Chinese herbal products."], "shouldRefuse": false
+  },
+  {
+    "id": "distractor-004", "category": "distractor",
+    "question": "关于甘草合并用药，资料中明确报告的是与皮质类固醇的相互作用，而不是一般性的污染风险，对吗？",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-002"],
+    "expectedClaims": ["Interactions between licorice and corticosteroids have been reported."], "shouldRefuse": false
+  },
+  {
+    "id": "distractor-005", "category": "distractor",
+    "question": "心脏病发作和中风的直接机制是血管堵塞，还是治疗高血压、糖尿病和高血脂？请回答直接机制。",
+    "expectedDocumentIds": ["WHO-CVD"], "expectedChunkIds": ["WHO-CVD-002"],
+    "expectedClaims": ["血管堵塞导致血液无法流向心脏或大脑，是这些急性事件的主要机制。"], "shouldRefuse": false
+  },
+  {
+    "id": "distractor-006", "category": "distractor",
+    "question": "考虑使用中医药时，资料强调的是不能延误常规治疗，而不是证明所有中草药都有效，对吗？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-003"],
+    "expectedClaims": ["TCM should not replace or delay seeking conventional care."], "shouldRefuse": false
+  },
+
+  {
+    "id": "no-answer-001", "category": "no-answer",
+    "question": "量子纠错编码目前有哪些主要实现方案？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-002", "category": "no-answer",
+    "question": "请根据我的体重给出每天服用附子的具体克数和处方。",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-003", "category": "no-answer",
+    "question": "天麻钩藤饮的完整组成、每味剂量和最新疗效证据是什么？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-004", "category": "no-answer",
+    "question": "我今天血压偏高，应该立刻把降压药加到多少毫克？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-005", "category": "no-answer",
+    "question": "孕妇使用甘草是否安全，有没有明确的妊娠风险数据？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-006", "category": "no-answer",
+    "question": "针灸能否降低冠心病死亡率，具体效果是多少？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-007", "category": "no-answer",
+    "question": "不同年龄人群的正常血压精确范围分别是多少？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+  {
+    "id": "no-answer-008", "category": "no-answer",
+    "question": "甘草与华法林合用时应该如何调整抗凝药剂量？",
+    "expectedDocumentIds": [], "expectedChunkIds": [], "expectedClaims": [], "shouldRefuse": true
+  },
+
+  {
+    "id": "citation-001", "category": "citation",
+    "question": "请依据资料说明无症状高血压患者为什么仍应检查血压。",
+    "expectedDocumentIds": ["WHO-HTN"], "expectedChunkIds": ["WHO-HTN-001"],
+    "expectedClaims": ["高血压患者可能感觉不到症状，检查血压才能了解病情。"], "shouldRefuse": false
+  },
+  {
+    "id": "citation-002", "category": "citation",
+    "question": "请引用对应证据说明甘草可能造成的严重心脏不良反应。",
+    "expectedDocumentIds": ["NCCIH-LICORICE"], "expectedChunkIds": ["NCCIH-LICORICE-001"],
+    "expectedClaims": ["Licorice can cause irregular heartbeat and cardiac arrest."], "shouldRefuse": false
+  },
+  {
+    "id": "citation-003", "category": "citation",
+    "question": "请用可追溯证据说明中草药产品可能有哪些污染问题。",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-002"],
+    "expectedClaims": ["Chinese herbal products may be contaminated with heavy metals, pesticides, and microorganisms."], "shouldRefuse": false
+  },
+  {
+    "id": "citation-004", "category": "citation",
+    "question": "哪条资料支持中医药不应替代或延误常规治疗？",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-003"],
+    "expectedClaims": ["Do not use TCM to replace or delay conventional care."], "shouldRefuse": false
+  },
+  {
+    "id": "citation-005", "category": "citation",
+    "question": "请引用资料回答为什么不能对中草药疗效下确定结论。",
+    "expectedDocumentIds": ["NCCIH-TCM"], "expectedChunkIds": ["NCCIH-TCM-001"],
+    "expectedClaims": ["Many studies were poor quality, so no firm effectiveness conclusions can be made."], "shouldRefuse": false
+  },
+
+  {
+    "id": "multi-document-001", "category": "multi-document",
+    "question": "没有症状的高血压患者为何还要测血压，控制相关慢病又怎样帮助预防心脏病发作和中风？",
+    "expectedDocumentIds": ["WHO-HTN", "WHO-CVD"],
+    "expectedChunkIds": ["WHO-HTN-001", "WHO-CVD-001"],
+    "expectedClaims": ["高血压可能没有症状，需要检查血压。", "治疗高血压、糖尿病和高血脂有助于降低心血管风险。"],
+    "shouldRefuse": false
+  },
+  {
+    "id": "multi-document-002", "category": "multi-document",
+    "question": "高血压本身可能有哪些明显症状，同时高血压人群使用甘草又有哪些额外严重风险？",
+    "expectedDocumentIds": ["WHO-HTN", "NCCIH-LICORICE"],
+    "expectedChunkIds": ["WHO-HTN-002", "NCCIH-LICORICE-001"],
+    "expectedClaims": ["很高的血压可能引起头痛、视力模糊和胸痛。", "Licorice has been linked to severe adverse effects in people with hypertension."],
+    "shouldRefuse": false
+  },
+  {
+    "id": "multi-document-003", "category": "multi-document",
+    "question": "一方面中草药总体疗效研究能否得出确定结论，另一方面甘草长期大量使用有什么具体心脏风险？",
+    "expectedDocumentIds": ["NCCIH-TCM", "NCCIH-LICORICE"],
+    "expectedChunkIds": ["NCCIH-TCM-001", "NCCIH-LICORICE-001"],
+    "expectedClaims": ["Poor-quality studies prevent firm conclusions about Chinese herbal effectiveness.", "Long-term licorice use can cause irregular heartbeat and cardiac arrest."],
+    "shouldRefuse": false
+  },
+  {
+    "id": "multi-document-004", "category": "multi-document",
+    "question": "正在服药但还想使用甘草或其他中医药时，为什么应先咨询医务人员，并且不能因此推迟常规治疗？",
+    "expectedDocumentIds": ["NCCIH-LICORICE", "NCCIH-TCM"],
+    "expectedChunkIds": ["NCCIH-LICORICE-003", "NCCIH-TCM-003"],
+    "expectedClaims": ["People taking medicine should consult a health care provider before using licorice.", "TCM should not replace or delay conventional care."],
+    "shouldRefuse": false
+  }
+]

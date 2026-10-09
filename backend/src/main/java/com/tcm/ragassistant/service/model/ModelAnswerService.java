@@ -86,6 +86,7 @@ public class ModelAnswerService {
                 retrieved.latencyMs() + Math.max(1, (System.nanoTime() - start) / 1_000_000),
                 retrieved.citations(), new RetrievalTrace(trace.strategy(), trace.lexicalCandidateCount(),
                 trace.vectorCandidateCount(), trace.fusedCandidateCount(), trace.selectedCount(),
-                trace.sufficientEvidence(), notes), Instant.now());
+                trace.sufficientEvidence(), notes, trace.engine(), trace.version(), trace.threshold(),
+                trace.rejected()), Instant.now());
     }
 }

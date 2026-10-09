@@ -49,3 +49,14 @@ def test_identical_upsert_does_not_require_reindexing() -> None:
     assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1")]) is True
     assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1")]) is False
     assert repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1", "changed")]) is True
+
+
+def test_imported_evidence_level_survives_into_retrieval_node_metadata() -> None:
+    repository = KnowledgeRepository(Path("unused.json"))
+    repository.upsert(
+        {"id": "DOC-1"},
+        [_chunk("DOC-1", "C-1", "该资料记录用于核对导入证据等级可以进入检索节点元数据。")],
+    )
+
+    node = repository.nodes()[0]
+    assert node.metadata["evidence_level"] == "A"

@@ -6,6 +6,7 @@ import com.tcm.ragassistant.domain.KnowledgeChunk;
 import com.tcm.ragassistant.domain.RetrievalFilter;
 import com.tcm.ragassistant.dto.RetrievalTrace;
 import com.tcm.ragassistant.service.ScoredChunk;
+import com.tcm.ragassistant.service.EvidenceCoverageGate;
 import com.tcm.ragassistant.service.TextTokenizer;
 import org.springframework.stereotype.Component;
 
@@ -38,19 +39,30 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
 
     @Override
     public RetrievalOutput retrieve(String question, RetrievalFilter filter) {
-        RetrievalOutput hybrid = hybridStrategy.retrieve(question, filter);
+        RetrievalOutput hybrid = hybridStrategy.retrieveCandidates(question, filter);
         List<ScoredChunk> reranked = hybrid.chunks().stream()
                 .map(candidate -> rerank(question, candidate))
-                .sorted(Comparator.comparingDouble(ScoredChunk::score).reversed())
+                .sorted(Comparator.comparingDouble(ScoredChunk::score).reversed()
+                        .thenComparing(candidate -> candidate.chunk().id()))
                 .toList();
         boolean sufficient = !reranked.isEmpty()
                 && reranked.get(0).score() >= properties.minimumEvidenceScore();
-        List<ScoredChunk> selected = sufficient
+        List<ScoredChunk> rankedTopK = sufficient
                 ? reranked.stream().limit(properties.finalLimit()).toList()
                 : List.of();
+        EvidenceCoverageGate.Assessment coverage = EvidenceCoverageGate.assess(
+                question,
+                rankedTopK.stream().map(candidate -> candidate.chunk().content()).toList()
+        );
+        sufficient = sufficient && coverage.covered();
+        List<ScoredChunk> selected = sufficient ? rankedTopK : List.of();
         List<String> notes = new ArrayList<>(hybrid.trace().notes());
-        notes.add("按疾病、证型、方剂和中药元数据重排");
-        notes.add(sufficient ? "证据分数达到回答阈值" : "证据不足，触发拒答");
+        notes.add("fusion=weighted-rrf");
+        notes.add("deduplication=chunk-id");
+        notes.add("ranking=rrf+metadata");
+        notes.add("gate=post-ranking-score+question-evidence-coverage");
+        notes.add("evidence-coverage=" + coverage.reasonCode());
+        notes.add(sufficient ? "证据分数与问题属性覆盖均通过" : "证据不足或问题属性未覆盖，触发拒答");
 
         return new RetrievalOutput(
                 selected,
@@ -61,7 +73,11 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
                         hybrid.trace().fusedCandidateCount(),
                         selected.size(),
                         sufficient,
-                        notes
+                        notes,
+                        "java-local",
+                        version().name(),
+                        properties.minimumEvidenceScore(),
+                        !sufficient
                 ),
                 sufficient
         );
@@ -85,7 +101,8 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
     }
 
     private boolean containsAny(String question, String value) {
-        return value != null && !value.isBlank() && question.contains(value.toLowerCase(Locale.ROOT));
+        return value != null && !value.isBlank()
+                && question.contains(tokenizer.normalize(value));
     }
 
     private boolean containsAny(String question, List<String> values) {

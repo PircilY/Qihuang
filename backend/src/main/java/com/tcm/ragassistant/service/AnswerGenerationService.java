@@ -33,6 +33,13 @@ public class AnswerGenerationService {
                     "胸痛持续不缓解、呼吸困难、晕厥或意识异常需要立即就医或联系急救（中国大陆拨打 120）。",
                     retrievalOutput, 0);
         }
+        if (EvidenceCoverageGate.isIndividualizedDoseAdjustment(question)) {
+            return refusal(
+                    "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。",
+                    "不能根据在线资料调整当前用药剂量，请联系开药医生并由医师判断。",
+                    retrievalOutput, 0
+            );
+        }
         if (INDIVIDUAL_PRESCRIPTION_PATTERN.matcher(question).find()
                 || question.matches("(?s).*(多少克|几克|开.{0,3}处方|用量|剂量|怎么服用).*")) {
             return refusal("涉及个体化处方或剂量判断，超出知识问答边界",
@@ -51,10 +58,17 @@ public class AnswerGenerationService {
         }
 
         if (retrievalOutput.chunks().isEmpty()) {
+            EvidenceCoverageGate.Assessment coverage = EvidenceCoverageGate.assess(question, List.of());
+            String reason = coverage.covered()
+                    ? "未检索到达到阈值的相关证据"
+                    : coverage.refusalReason();
+            String answer = coverage.covered()
+                    ? "当前知识库中没有找到足以支持回答的证据。系统已停止生成具体诊疗建议。"
+                    : coverage.refusalReason();
             return new GeneratedAnswer(
-                    "当前知识库中没有找到足以支持回答的证据。系统已停止生成具体诊疗建议。",
+                    answer,
                     true,
-                    "未检索到达到阈值的相关证据",
+                    reason,
                     0.2,
                     List.of()
             );
@@ -62,7 +76,7 @@ public class AnswerGenerationService {
 
         List<ScoredChunk> chunks = retrievalOutput.chunks();
         List<String> statements = new ArrayList<>();
-        int statementLimit = Math.min(3, chunks.size());
+        int statementLimit = chunks.size();
         for (int index = 0; index < statementLimit; index++) {
             String sentence = firstSentence(chunks.get(index).chunk().content());
             statements.add((index + 1) + ". " + sentence + " [" + (index + 1) + "]");

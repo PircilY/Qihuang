@@ -1,0 +1,60 @@
+[
+  {
+    "id": "direct",
+    "question": "甘草可能有哪些严重不良反应？"
+  },
+  {
+    "id": "synonym",
+    "question": "使用甘草时需要留意哪些风险？"
+  },
+  {
+    "id": "synonym-004",
+    "question": "控制三高为什么有助于避免心梗和脑卒中？",
+    "expectedChunkId": "WHO-CVD-001",
+    "expectedRefused": false
+  },
+  {
+    "id": "low-related",
+    "question": "高血压患者会有哪些症状？"
+  },
+  {
+    "id": "no-answer",
+    "question": "量子纠错编码有哪些实现方案？"
+  },
+  {
+    "id": "metadata-related",
+    "question": "高血压患者没有症状时还需要测量血压吗？"
+  },
+  {
+    "id": "cross-channel-dedup",
+    "question": "甘草与高血压相关的安全风险有哪些？"
+  },
+  {
+    "id": "individualized-dose-adjustment",
+    "question": "我今天血压偏高，应该立刻把降压药加到多少毫克？"
+  },
+  {
+    "id": "pregnancy-safety-coverage",
+    "question": "孕妇使用甘草是否安全，有没有明确的妊娠风险数据？"
+  },
+  {
+    "id": "age-specific-normal-range-coverage",
+    "question": "不同年龄人群的正常血压精确范围分别是多少？"
+  },
+  {
+    "id": "supported-general-herb-safety",
+    "question": "长期或大量食用甘草有哪些严重不良反应？"
+  },
+  {
+    "id": "supported-drug-interaction",
+    "question": "甘草与皮质类固醇是否有相互作用报告？"
+  },
+  {
+    "id": "supported-condition-specific-safety",
+    "question": "甘草对本来心脏或肾脏不好的人安全吗？"
+  },
+  {
+    "id": "supported-lifestyle-medication-question",
+    "question": "改变生活方式后仍可能需要服药吗？"
+  }
+]

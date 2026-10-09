@@ -17,6 +17,11 @@ from llama_index.retrievers.bm25 import BM25Retriever
 
 from app.config import Settings
 from app.embeddings import HashEmbedding
+from app.evidence_coverage import (
+    DOSE_REFUSAL,
+    assess_evidence_coverage,
+    is_individualized_dose_adjustment,
+)
 from app.knowledge_repository import KnowledgeRepository
 from app.schemas import (
     ChatRequest,
@@ -127,6 +132,12 @@ class LlamaIndexEngine:
                 "胸痛持续不缓解、呼吸困难、晕厥或意识异常需要立即就医或联系急救（中国大陆拨打 120）。",
                 [], [], [], [], False, started_at,
             )
+        if is_individualized_dose_adjustment(question):
+            return self._refusal(
+                request, version, DOSE_REFUSAL,
+                "不能根据在线资料调整当前用药剂量，请联系开药医生并由医师判断。",
+                [], [], [], [], False, started_at,
+            )
         if _PRESCRIPTION_PATTERN.search(question):
             return self._refusal(
                 request, version, "涉及个体化处方或剂量判断，超出知识问答边界",
@@ -153,30 +164,61 @@ class LlamaIndexEngine:
                     selected_count=0,
                     sufficient_evidence=False,
                     notes=["engine=llama-index", "generation=none", "knowledge base bypassed"],
+                    engine="llama-index",
+                    version=version,
+                    threshold=None,
+                    rejected=False,
                 ),
                 started_at=started_at,
             )
 
-        vector_nodes = self._retrieve_vector(question, request.to_filter())
-        lexical_nodes = self._retrieve_lexical(question, request.to_filter()) if version != "V1_VECTOR" else []
-        fused_nodes = (
-            self._retrieve_hybrid(question, request.to_filter())
-            if version != "V1_VECTOR"
-            else vector_nodes
-        )
+        filters = request.to_filter()
+        vector_nodes = self._retrieve_vector(question, filters)
+        lexical_nodes = self._retrieve_lexical(question, filters) if version != "V1_VECTOR" else []
+        if version == "V3_GUARDED":
+            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
+            lexical_nodes = [node for node in lexical_nodes if _is_related(question, node)]
+            fused_nodes = self._fuse_ranked_candidates(vector_nodes, lexical_nodes)
+        elif version == "V1_VECTOR":
+            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
+            fused_nodes = vector_nodes
+        else:
+            fused_nodes = [
+                node for node in self._retrieve_hybrid(question, filters)
+                if _is_related(question, node)
+            ]
         selected = self._select_nodes(
-            [node for node in fused_nodes if _is_related(question, node)],
-            request.to_filter(),
+            fused_nodes,
+            filters,
+            question if version == "V3_GUARDED" else None,
         )
         top_score = selected[0].score or 0.0 if selected else 0.0
         sufficient = bool(selected) and top_score >= self.settings.minimum_evidence_score
+        coverage = None
+        if version == "V3_GUARDED" and sufficient:
+            coverage = assess_evidence_coverage(
+                question, [node.node.text for node in selected]
+            )
+            if not coverage.covered:
+                selected = []
+                sufficient = False
 
         if not selected or (version == "V3_GUARDED" and not sufficient):
+            reason = (
+                coverage.refusal_reason
+                if coverage is not None and not coverage.covered
+                else "未检索到达到阈值的相关证据"
+            )
+            answer = (
+                coverage.refusal_reason
+                if coverage is not None and not coverage.covered
+                else "当前知识库中没有找到足以支持回答的证据。系统已停止生成具体诊疗建议。"
+            )
             return self._refusal(
                 request,
                 version,
-                "未检索到达到阈值的相关证据",
-                "当前知识库中没有找到足以支持回答的证据。系统已停止生成具体诊疗建议。",
+                reason,
+                answer,
                 [],
                 vector_nodes,
                 lexical_nodes,
@@ -185,7 +227,6 @@ class LlamaIndexEngine:
                 started_at,
             )
 
-        selected = selected[:3]
         citations = self._citations(selected)
         answer, generation = self._grounded_answer(question, selected, citations, request.extractive_only)
         confidence = (
@@ -289,6 +330,7 @@ class LlamaIndexEngine:
         self,
         nodes: list[NodeWithScore],
         filters: RagFilter,
+        metadata_question: str | None = None,
     ) -> list[NodeWithScore]:
         best_by_id: dict[str, NodeWithScore] = {}
         for node in nodes:
@@ -296,14 +338,46 @@ class LlamaIndexEngine:
                 continue
             node_id = node.node.node_id
             current = best_by_id.get(node_id)
-            if current is None or (node.score or 0.0) > (current.score or 0.0):
-                best_by_id[node_id] = node
+            score = (node.score or 0.0)
+            if metadata_question is not None:
+                score += _metadata_boost(metadata_question, node)
+            ranked_node = NodeWithScore(node=node.node, score=score)
+            if current is None or score > (current.score or 0.0):
+                best_by_id[node_id] = ranked_node
         ranked = sorted(
             best_by_id.values(),
-            key=lambda item: item.score or 0.0,
-            reverse=True,
+            key=lambda item: (-(item.score or 0.0), item.node.node_id),
         )
         return ranked[: self.settings.final_limit]
+
+    def _fuse_ranked_candidates(
+        self,
+        vector_nodes: list[NodeWithScore],
+        lexical_nodes: list[NodeWithScore],
+    ) -> list[NodeWithScore]:
+        scores: dict[str, tuple[Any, float]] = {}
+        for nodes, weight in (
+            (lexical_nodes, self.settings.lexical_weight),
+            (vector_nodes, self.settings.vector_weight),
+        ):
+            seen_in_channel: set[str] = set()
+            for rank, candidate in enumerate(nodes, start=1):
+                chunk_id = candidate.node.node_id
+                if chunk_id in seen_in_channel:
+                    continue
+                seen_in_channel.add(chunk_id)
+                contribution = weight / (self.settings.rrf_rank_constant + rank)
+                current = scores.get(chunk_id)
+                scores[chunk_id] = (
+                    candidate.node,
+                    contribution + (current[1] if current else 0.0),
+                )
+        return [
+            NodeWithScore(node=node, score=score)
+            for _, (node, score) in sorted(
+                scores.items(), key=lambda item: (-item[1][1], item[0])
+            )
+        ]
 
     def _metadata_filters(self, filters: RagFilter) -> MetadataFilters | None:
         items: list[MetadataFilter] = []
@@ -368,7 +442,7 @@ class LlamaIndexEngine:
                 logging.getLogger(__name__).warning("LLM unavailable; using extractive answer")
 
         statements = []
-        for index, node in enumerate(nodes[:3], start=1):
+        for index, node in enumerate(nodes, start=1):
             statements.append(f"{index}. {_first_sentence(node.node.text)} [{index}]")
         return (
             "相关文献摘录：\n"
@@ -463,7 +537,14 @@ class LlamaIndexEngine:
         if remote:
             notes.append("transport=remote")
         if version == "V3_GUARDED":
-            notes.append("metadata guard and evidence threshold enabled")
+            notes.extend(
+                [
+                    "fusion=weighted-rrf",
+                    "deduplication=chunk-id",
+                    "ranking=rrf+metadata",
+                    "gate=post-ranking-score+question-evidence-coverage",
+                ]
+            )
         return RetrievalTrace(
             strategy=strategy,
             lexical_candidate_count=len(lexical_nodes),
@@ -472,6 +553,10 @@ class LlamaIndexEngine:
             selected_count=len(selected),
             sufficient_evidence=sufficient,
             notes=notes,
+            engine="llama-index",
+            version=version,
+            threshold=self.settings.minimum_evidence_score if version == "V3_GUARDED" else None,
+            rejected=not bool(selected),
         )
 
     def _create_llm(self):
@@ -533,8 +618,36 @@ def _is_related(question: str, node: NodeWithScore) -> bool:
     if any(len(term) >= 2 and term not in generic and term.casefold() in question
            for term in topics):
         return True
+    disease_tokens = set(tokenize(str(node.metadata.get("disease", ""))))
+    if any(
+        len(term) >= 2 and term not in generic
+        for term in set(tokenize(question)) & disease_tokens
+    ):
+        return True
     shared = set(tokenize(question)) & set(tokenize(node.node.text))
     return len({term for term in shared if len(term) >= 2 and term not in generic}) >= 3
+
+
+def _metadata_boost(question: str, node: NodeWithScore) -> float:
+    normalized_question = re.sub(r"\s+", "", question).casefold()
+
+    def mentioned(values: str | list[str]) -> bool:
+        items = values.split("|") if isinstance(values, str) else values
+        return any(
+            value and re.sub(r"\s+", "", str(value)).casefold() in normalized_question
+            for value in items
+        )
+
+    metadata = node.metadata
+    boost = 0.0
+    boost += 0.22 if mentioned(str(metadata.get("disease", ""))) else 0.0
+    boost += 0.20 if mentioned(str(metadata.get("syndromes", ""))) else 0.0
+    boost += 0.18 if mentioned(str(metadata.get("formulas", ""))) else 0.0
+    boost += 0.10 if mentioned(str(metadata.get("herbs", ""))) else 0.0
+    boost += {"A": 0.12, "B": 0.08, "C": 0.04}.get(
+        str(metadata.get("evidence_level", "")).strip().upper(), 0.0
+    )
+    return boost
 
 
 def _page_label(page_start: int, page_end: int) -> str:

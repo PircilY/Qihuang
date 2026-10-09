@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
+from app import main
 import pytest
 
 
@@ -13,6 +14,40 @@ def test_health_exposes_llamaindex_engine() -> None:
     assert body["status"] == "UP"
     assert body["engine"] == "llama-index"
     assert body["chunkCount"] > 0
+
+
+def test_import_endpoint_forwards_evidence_level_to_python_engine(monkeypatch) -> None:
+    captured = {}
+
+    def capture_import(document, chunks):
+        captured["document"] = document
+        captured["chunks"] = chunks
+        return {"documentId": document["id"], "importedChunkCount": 1,
+                "totalChunkCount": 1, "status": "READY"}
+
+    monkeypatch.setattr(main.engine, "ingest", capture_import)
+    payload = {
+        "document": {
+            "id": "SYNC-EVIDENCE-1", "title": "同步测试", "sourceType": "指南",
+            "publisher": "测试机构", "publicationYear": 2026, "evidenceLevel": "B",
+            "registeredAt": "2026-01-01T00:00:00Z"
+        },
+        "chunks": [{
+            "id": "SYNC-EVIDENCE-1-C001", "documentId": "SYNC-EVIDENCE-1",
+            "title": "同步测试", "sourceType": "指南", "publisher": "测试机构",
+            "publicationYear": 2026, "disease": "测试病种", "pageStart": 0,
+            "pageEnd": 0, "section": "正文", "evidenceLevel": "B",
+            "content": "用于验证 Java 同步载荷中的等级可被 Python 正确接收。",
+            "checksum": "fixture", "ingestedAt": "2026-01-01T00:00:00Z"
+        }]
+    }
+
+    with TestClient(app) as client:
+        response = client.post("/v1/knowledge/import", json=payload)
+
+    assert response.status_code == 200
+    assert captured["document"]["evidenceLevel"] == "B"
+    assert captured["chunks"][0]["evidenceLevel"] == "B"
 
 
 def test_hybrid_query_returns_traceable_citation() -> None:
