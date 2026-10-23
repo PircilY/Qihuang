@@ -1,0 +1,24 @@
+[
+  {
+    "title": "[FIXTURE] 测试夹具 非医学事实",
+    "sourceType": "病案",
+    "publisher": "占位测试机构",
+    "publicationYear": 2026,
+    "evidenceLevel": "未评级",
+    "version": "import-v1",
+    "status": "ACTIVE",
+    "id": "IMPORT-35457ab315fa18af-C0001",
+    "documentId": "IMPORT-35457ab315fa18af",
+    "disease": "",
+    "syndromes": [],
+    "formulas": [],
+    "herbs": [],
+    "pageStart": 2,
+    "pageEnd": 3,
+    "section": "[FIXTURE] 占位章节",
+    "keywords": [],
+    "content": "主诉：[FIXTURE] 占位主诉 非医学事实\n\n方药组成：[FIXTURE] 占位组成 非医学事实\n\n疗效：[FIXTURE] 占位结果 非医学事实\n\n原文：[FIXTURE] 本文仅为软件导入测试的占位正文，不陈述任何医学事实或真实病案。占位字段用于验证切分和来源保留。",
+    "checksum": "5f3793afadbd0a9b3046fc562c641079b37cf5fc740a8bd8acca2fbf1025d0da",
+    "ingestedAt": "1970-01-01T00:00:00Z"
+  }
+]

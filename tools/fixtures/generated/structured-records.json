@@ -1,0 +1,10 @@
+[
+  {
+    "documentId": "IMPORT-35457ab315fa18af",
+    "fields": {
+      "chiefComplaint": "[FIXTURE] 占位主诉 非医学事实",
+      "composition": "[FIXTURE] 占位组成 非医学事实",
+      "efficacy": "[FIXTURE] 占位结果 非医学事实"
+    }
+  }
+]

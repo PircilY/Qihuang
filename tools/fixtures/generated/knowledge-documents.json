@@ -1,0 +1,21 @@
+[
+  {
+    "title": "[FIXTURE] 测试夹具 非医学事实",
+    "sourceType": "病案",
+    "publisher": "占位测试机构",
+    "publicationYear": 2026,
+    "evidenceLevel": "未评级",
+    "version": "import-v1",
+    "status": "ACTIVE",
+    "id": "IMPORT-35457ab315fa18af",
+    "authority": "待人工核验",
+    "diseaseScope": [],
+    "fileName": "offline-import",
+    "checksum": "5f3793afadbd0a9b3046fc562c641079b37cf5fc740a8bd8acca2fbf1025d0da",
+    "registeredAt": "1970-01-01T00:00:00Z",
+    "accessedAt": "1970-01-01T00:00:00Z",
+    "licenseNote": "测试夹具，非医学事实；仅用于软件测试",
+    "description": "离线导入，来源与等级按输入登记，未经独立事实核查",
+    "sourceUrl": "https://example.org/fixture"
+  }
+]

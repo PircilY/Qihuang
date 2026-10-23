@@ -1,0 +1,15 @@
+title: [FIXTURE] 测试夹具 非医学事实
+sourceType: 病案
+publisher: 占位测试机构
+publicationYear: 2026
+licenseNote: 测试夹具，非医学事实；仅用于软件测试
+sourceUrl: https://example.org/fixture
+chiefComplaint: [FIXTURE] 占位主诉 非医学事实
+composition: [FIXTURE] 占位组成 非医学事实
+efficacy: [FIXTURE] 占位结果 非医学事实
+section: [FIXTURE] 占位章节
+pageStart: 2
+pageEnd: 3
+evidenceLevel: 未评级
+---
+[FIXTURE] 本文仅为软件导入测试的占位正文，不陈述任何医学事实或真实病案。占位字段用于验证切分和来源保留。
