@@ -17,3 +17,13 @@
 具体取舍与旧清单测试预期变更理由见 decisions.md。
 
 A 阶段验收：Java 123 项（0 失败、2 留出集测试跳过、1 可选报告测试默认跳过）；Python 65 项全部通过。已有 FastAPI/httpx 弃用提示将在 F 的版本锁中记录处理。
+
+## B：检索质量
+
+完成共享二元组词频、知识库变更时增量缓存特征/向量/倒排统计、全库 IDF、带权归一化 RRF、比例元数据评分、逐片段覆盖、英文换行切句与长度限制、空字段默认、空疾病查询、拒答支持度 .2。
+
+原50题 V3：Hit@1 .667→.762，Hit@3 .881→.976，Hit@K .976→.976，MRR .782→.857，Recall@K .976→.964；拒答 TR/FR/FA/TA=8/0/0/42 不变。Recall 的下降及 V1/V2 部分下降如实记录，不能宣称所有指标改善。元数据权重非零没有改善调参排名，所选配置权重0、阈值.9。
+
+新增 `RetrievalIndexTest`、比例加分回归、逐片段覆盖回归、`test_lexical_index.py`、分词频率/边界回归；显式可选 `ResearchParameterGridTest` 与报告工具。Java全量与原50题网格/评测通过，Python68项通过（包含跨引擎拒答100%、Top1>=.90、Jaccard>=.75契约门槛）。
+
+完整四版本指标、30组网格及逐题证据排序见 [retrieval-quality.md](retrieval-quality.md)。性能见 [performance.md](performance.md)：扩充4036片段 V3 中位4730.2007→66.1940ms，同机并发测试条件限制已注明。

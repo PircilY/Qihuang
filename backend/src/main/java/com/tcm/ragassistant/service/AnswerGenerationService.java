@@ -89,7 +89,7 @@ public class AnswerGenerationService {
                 answer,
                 true,
                 reason,
-                0.72,
+                0.2,
                 toCitations(retrievalOutput, citationLimit)
         );
     }
@@ -114,12 +114,12 @@ public class AnswerGenerationService {
                 .toList();
     }
 
-    private String firstSentence(String value) {
-        int firstStop = value.indexOf('。');
-        if (firstStop < 0) {
-            return value.trim();
-        }
-        return value.substring(0, firstStop + 1).trim();
+    static String firstSentence(String value) {
+        String text = value == null ? "" : value.trim();
+        var stop = java.util.regex.Pattern.compile("[。！？.!?](?:\\s|$)|[。！？]|[\\r\\n]").matcher(text);
+        int end = stop.find() ? stop.start() + 1 : text.length();
+        String excerpt = text.substring(0, Math.min(end, 400)).trim();
+        return end > 400 ? excerpt + "…" : excerpt;
     }
 
     private double round(double value) {

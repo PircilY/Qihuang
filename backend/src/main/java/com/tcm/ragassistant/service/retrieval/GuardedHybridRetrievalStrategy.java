@@ -98,7 +98,7 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
             case "C" -> 0.04;
             default -> 0.0;
         };
-        return candidate.withScore(candidate.score() + metadataBoost + evidenceBoost, "guarded-hybrid-rerank");
+        return candidate.withScore(properties.normalizedFusion() ? candidate.score() * (1 + properties.metadataWeight() * (metadataBoost + evidenceBoost)) : candidate.score() + metadataBoost + evidenceBoost, "guarded-hybrid-rerank");
     }
 
     private boolean containsAny(String question, String value) {

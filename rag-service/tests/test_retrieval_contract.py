@@ -100,7 +100,7 @@ def test_java_python_v3_retrieval_contract_agreement() -> None:
             rrf_rank_constant=60,
             lexical_weight=1.0,
             vector_weight=0.85,
-            minimum_evidence_score=0.016,
+            minimum_evidence_score=0.9,
             llm_api_base="",
             llm_model="",
         )
@@ -153,7 +153,7 @@ def test_java_python_v3_retrieval_contract_agreement() -> None:
                 citation.document_id == chunk_documents[citation.chunk_id]
                 for citation in python_citations
             )
-            assert java_trace["threshold"] == python_trace.threshold == 0.016
+            assert java_trace["threshold"] == python_trace.threshold == 0.9
             if case["id"] == "cross-channel-dedup":
                 assert java_trace["fusedCandidateCount"] < (
                     java_trace["lexicalCandidateCount"] + java_trace["vectorCandidateCount"]

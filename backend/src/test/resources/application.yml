@@ -3,3 +3,12 @@ app:
     store-path: ""
   rag-engine:
     mode: local
+  retrieval:
+    candidate-limit: 8
+    final-limit: 4
+    rrf-rank-constant: 60
+    lexical-weight: 1.0
+    vector-weight: 0.85
+    normalized-fusion: true
+    metadata-weight: 0.0
+    minimum-evidence-score: 0.9

@@ -102,7 +102,7 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
                         .thenComparing(score -> score.chunk().chunk().id()))
                 .map(score -> new ScoredChunk(
                         score.chunk().chunk(),
-                        score.fusedScore(),
+                        (properties.normalizedFusion() ? score.fusedScore() / properties.maximumFusionScore() : score.fusedScore()),
                         score.chunk().lexicalScore(),
                         score.chunk().vectorScore(),
                         "hybrid"
@@ -115,8 +115,10 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
             List<ScoredChunk> rankedChunks,
             double weight
     ) {
+        java.util.Set<String> seen = new java.util.HashSet<>();
         for (int index = 0; index < rankedChunks.size(); index++) {
             ScoredChunk candidate = rankedChunks.get(index);
+            if (!seen.add(candidate.chunk().id())) continue;
             double rankContribution = weight / (properties.rrfRankConstant() + index + 1.0);
             scores.compute(candidate.chunk().id(), (id, current) -> {
                 if (current == null) {

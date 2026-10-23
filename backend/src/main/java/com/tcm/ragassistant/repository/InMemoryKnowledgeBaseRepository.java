@@ -48,6 +48,10 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     private int maxImportDocuments = 1000;
     private long maxImportCharacters = 10_000_000;
     private int journalEntries;
+    private final List<java.util.function.Consumer<CorpusId>> listeners = new ArrayList<>();
+
+    @Override
+    public synchronized void onChange(java.util.function.Consumer<CorpusId> listener) { listeners.add(listener); }
 
     @org.springframework.beans.factory.annotation.Autowired
     void configureLimits(@Value("${app.knowledge.max-import-documents:1000}") int documents,
@@ -183,6 +187,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
 
     @Override
     public synchronized List<KnowledgeChunk> findByDisease(String disease, CorpusId corpus) {
+        if (disease == null || disease.isBlank()) return List.of();
         if (disease == null || disease.isBlank()) {
             return findAll(corpus);
         }
@@ -249,6 +254,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
         addToMemory(document, newChunks);
         baselineRevision = KnowledgeRevision.calculate(findImportedDocuments());
         baselineImportRevision.incrementAndGet();
+        listeners.forEach(listener -> listener.accept(CorpusId.BASELINE));
     }
 
     public synchronized void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> newChunks,

@@ -27,8 +27,10 @@ public record KnowledgeChunk(
 ) {
     public KnowledgeChunk {
         title = title == null ? "" : title;
+        sourceType = sourceType == null ? "" : sourceType;
+        checksum = checksum == null ? "" : checksum;
         disease = disease == null ? "" : disease;
-        evidenceLevel = evidenceLevel == null ? "" : evidenceLevel;
+        evidenceLevel = evidenceLevel == null || evidenceLevel.isBlank() ? "未评级" : evidenceLevel;
         content = content == null ? "" : content;
         syndromes = syndromes == null ? List.of() : List.copyOf(syndromes);
         formulas = formulas == null ? List.of() : List.copyOf(formulas);

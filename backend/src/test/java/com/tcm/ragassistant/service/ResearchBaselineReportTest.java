@@ -18,11 +18,13 @@ class ResearchBaselineReportTest {
     @Autowired EvaluationService evaluation;
     @Autowired RagOrchestrationService rag;
     @Autowired ObjectMapper mapper;
+    @Autowired com.tcm.ragassistant.config.RetrievalProperties properties;
     @Test
     void exportOnlyOriginalTuningCasesAndMeasuredLatency() throws Exception {
         var output = Path.of(System.getProperty("researchOutput", "../.tmp/research-before.json"));
         Files.createDirectories(output.toAbsolutePath().getParent());
         var report = new LinkedHashMap<String, Object>();
+        report.put("configuration", properties);
         report.put("evaluation", evaluation.run());
         var latency = new LinkedHashMap<String, Object>();
         for (var corpus : CorpusId.values()) {

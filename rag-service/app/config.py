@@ -43,6 +43,8 @@ class Settings:
     llm_api_key: str
     llm_model: str
     sync_batch_size: int
+    normalized_fusion: bool = True
+    metadata_weight: float = 0.0
     max_import_documents: int = 1000
     max_import_characters: int = 10_000_000
     import_requests_per_minute: int = 60
@@ -76,11 +78,13 @@ class Settings:
             rrf_rank_constant=_env_int("RAG_RRF_RANK_CONSTANT", 60),
             lexical_weight=_env_float("RAG_RRF_LEXICAL_WEIGHT", 1.0),
             vector_weight=_env_float("RAG_RRF_VECTOR_WEIGHT", 0.85),
-            minimum_evidence_score=_env_float("RAG_MINIMUM_EVIDENCE_SCORE", 0.016),
+            minimum_evidence_score=_env_float("RAG_MINIMUM_EVIDENCE_SCORE", 0.9),
             llm_api_base=os.getenv("LLM_API_BASE", "").strip(),
             llm_api_key=os.getenv("LLM_API_KEY", "").strip(),
             llm_model=os.getenv("LLM_MODEL", "").strip(),
             sync_batch_size=_env_int("RAG_SYNC_BATCH_SIZE", 20),
+            normalized_fusion=os.getenv("RAG_NORMALIZED_FUSION", "true").lower() == "true",
+            metadata_weight=_env_float("RAG_METADATA_WEIGHT", 0.0),
             max_import_documents=_env_int("KNOWLEDGE_MAX_IMPORT_DOCUMENTS", 1000),
             max_import_characters=_env_int("KNOWLEDGE_MAX_IMPORT_CHARACTERS", 10_000_000),
             import_requests_per_minute=_env_int("RAG_IMPORT_REQUESTS_PER_MINUTE", 60),

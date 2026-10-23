@@ -21,7 +21,7 @@ class HashEmbedding(BaseEmbedding):
     def _embed(self, text: str) -> List[float]:
         vector = [0.0] * self.dimension
         for token in tokenize(text):
-            digest = hashlib.blake2b(token.encode("utf-8"), digest_size=8).digest()
+            digest = hashlib.sha256(token.encode("utf-8")).digest()
             index = int.from_bytes(digest[:4], "big") % self.dimension
             sign = 1.0 if digest[4] & 1 else -1.0
             vector[index] += sign * (1.0 + min(len(token), 8) / 8.0)

@@ -60,42 +60,32 @@ public class TextTokenizer {
                 .anyMatch(diseaseTokens::contains);
     }
 
+    /** Unique features for overlap tests; BM25 must use tokenizeWithFrequency. */
     public List<String> tokenize(String text) {
-        if (text == null || text.isBlank()) {
-            return List.of();
-        }
-        String normalized = normalize(text);
+        return new ArrayList<>(new LinkedHashSet<>(tokenizeWithFrequency(text)));
+    }
+
+    public List<String> tokenizeWithFrequency(String text) {
+        if (text == null || text.isBlank()) return List.of();
+        String normalized = text.toLowerCase(Locale.ROOT);
         StringBuilder featureText = new StringBuilder(normalized);
-        DOMAIN_ALIASES.forEach((alias, expansions) -> {
-            if (normalized.contains(alias)) {
-                expansions.forEach(expansion -> featureText.append(' ').append(expansion));
-            }
+        DOMAIN_ALIASES.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+            if (normalized.contains(entry.getKey())) entry.getValue().forEach(term -> featureText.append(' ').append(term));
         });
-        Set<String> tokens = new LinkedHashSet<>();
-
+        List<String> tokens = new ArrayList<>();
         Matcher latinMatcher = LATIN_TERM.matcher(featureText);
-        while (latinMatcher.find()) {
-            tokens.add(latinMatcher.group());
-        }
-
+        while (latinMatcher.find()) tokens.add(latinMatcher.group());
         Matcher hanMatcher = HAN_SEQUENCE.matcher(featureText);
         while (hanMatcher.find()) {
             String sequence = hanMatcher.group();
-            if (sequence.length() == 2) {
-                tokens.add(sequence);
-            }
-            for (int index = 0; index < sequence.length() - 1; index++) {
-                tokens.add(sequence.substring(index, index + 2));
-            }
+            for (int index = 0; index < sequence.length() - 1; index++) tokens.add(sequence.substring(index, index + 2));
         }
-
-        SYNONYMS.forEach((term, relatedTerms) -> {
-            if (normalized.contains(term)) {
-                tokens.add(term);
-                tokens.addAll(relatedTerms);
+        SYNONYMS.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
+            if (normalized.contains(entry.getKey())) {
+                tokens.add(entry.getKey()); tokens.addAll(entry.getValue());
             }
         });
-        return new ArrayList<>(tokens);
+        return tokens;
     }
 
     public String normalize(String text) {

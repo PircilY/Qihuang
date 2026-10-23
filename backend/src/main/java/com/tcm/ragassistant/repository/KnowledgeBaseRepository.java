@@ -33,5 +33,7 @@ public interface KnowledgeBaseRepository {
         return Long.parseUnsignedLong(importRevision(corpus).substring(0, 16), 16);
     }
 
+    default void onChange(java.util.function.Consumer<CorpusId> listener) { }
+
     void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> chunks);
 }

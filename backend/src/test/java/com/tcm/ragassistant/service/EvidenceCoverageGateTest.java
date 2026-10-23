@@ -9,6 +9,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 class EvidenceCoverageGateTest {
 
     @Test
+    void relationshipMustOccurWithinOneChunk() {
+        String question = "甘草相互作用涉及皮质类固醇吗？";
+        var result = EvidenceCoverageGate.assess(question, List.of("[FIXTURE] licorice", "[FIXTURE] corticosteroids interaction"));
+        assertThat(result.covered()).isFalse();
+    }
+
+    @Test
     void rejectsIndividualizedAntihypertensiveDoseAdjustment() {
         var assessment = EvidenceCoverageGate.assess(
                 "我今天血压偏高，应该立刻把降压药加到多少毫克？",

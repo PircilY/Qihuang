@@ -9,9 +9,18 @@ public record RetrievalProperties(
         int rrfRankConstant,
         double lexicalWeight,
         double vectorWeight,
-        double minimumEvidenceScore
+        double minimumEvidenceScore,
+        boolean normalizedFusion,
+        double metadataWeight
 ) {
+    public RetrievalProperties(int candidateLimit, int finalLimit, int rrfRankConstant,
+                               double lexicalWeight, double vectorWeight, double minimumEvidenceScore) {
+        this(candidateLimit, finalLimit, rrfRankConstant, lexicalWeight, vectorWeight, minimumEvidenceScore, false, 0.25);
+    }
+    public double maximumFusionScore() { return (lexicalWeight + vectorWeight) / (rrfRankConstant + 1.0); }
+    @org.springframework.boot.context.properties.bind.ConstructorBinding
     public RetrievalProperties {
+        if (!Double.isFinite(metadataWeight) || metadataWeight < 0 || metadataWeight > 1) metadataWeight = 0.25;
         if (candidateLimit <= 0) {
             candidateLimit = 8;
         }

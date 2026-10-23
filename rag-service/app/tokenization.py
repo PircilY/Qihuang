@@ -1,38 +1,28 @@
 from __future__ import annotations
-
 import re
 
-
-_ASCII_WORD = re.compile(r"[a-z0-9][a-z0-9._-]*")
-_CJK = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
+_ASCII_WORD = re.compile(r"[a-z0-9]{2,}")
+_HAN_SEQUENCE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]{2,}")
 _DOMAIN_ALIASES = {
-    "三高": ("高血压", "糖尿病", "高血脂"),
-    "心梗": ("心脏病发作",),
-    "脑卒中": ("中风",),
-    "血压偏高": ("高血压",),
+    "三高": ("高血压", "糖尿病", "高血脂"), "心梗": ("心脏病发作",),
+    "脑卒中": ("中风",), "血压偏高": ("高血压",),
 }
+_SYNONYMS = {"心力衰竭": ("心衰",), "心衰": ("心力衰竭",)}
 
 
 def tokenize(text: str) -> list[str]:
-    """Create lightweight lexical tokens suitable for short Chinese medical text."""
+    """Shared contiguous Han bigrams and ASCII terms, retaining term frequency."""
     normalized = (text or "").lower()
-    feature_text = [normalized]
-    feature_text.extend(
-        expansion
-        for alias, expansions in _DOMAIN_ALIASES.items()
-        if alias in normalized
-        for expansion in expansions
-    )
-    searchable = " ".join(feature_text)
+    features = [normalized]
+    for alias, expansions in sorted(_DOMAIN_ALIASES.items()):
+        if alias in normalized:
+            features.extend(expansions)
+    searchable = " ".join(features)
     tokens = _ASCII_WORD.findall(searchable)
-    characters = _CJK.findall(searchable)
-    tokens.extend(characters)
-    tokens.extend(
-        "".join(characters[index : index + 2])
-        for index in range(max(0, len(characters) - 1))
-    )
-    tokens.extend(
-        "".join(characters[index : index + 3])
-        for index in range(max(0, len(characters) - 2))
-    )
+    for sequence in _HAN_SEQUENCE.findall(searchable):
+        tokens.extend(sequence[index:index + 2] for index in range(len(sequence) - 1))
+    for term, related in sorted(_SYNONYMS.items()):
+        if term in normalized:
+            tokens.append(term)
+            tokens.extend(related)
     return tokens

@@ -7,7 +7,7 @@ This contract defines guarded retrieval (`V3_GUARDED`) for the Java local fallba
 - `query`: the trimmed user question.
 - `candidateK`: the existing `candidateLimit` / `RAG_CANDIDATE_LIMIT`; default `8` per retriever.
 - `finalK`: the existing `finalLimit` / `RAG_FINAL_LIMIT`; default `4`.
-- `threshold`: `minimumEvidenceScore` / `RAG_MINIMUM_EVIDENCE_SCORE`; default `0.016`.
+- `threshold`: `minimumEvidenceScore` / `RAG_MINIMUM_EVIDENCE_SCORE`; default `0.9`.
 - `retrievalVersion`: `V3_GUARDED`.
 - Existing disease, source type, and evidence-level filters are applied before candidate ranking.
 - Query tokenization may append the following finite, corpus-backed aliases as retrieval features while retaining all original query features: `三高` → `高血压` / `糖尿病` / `高血脂`; `心梗` → `心脏病发作`; `脑卒中` → `中风`; `血压偏高` → `高血压`. The Java and Python tokenizers apply the same alias map. This is candidate-recall normalization only: it does not rewrite the displayed question/evidence, metadata-match text, RRF weights, score bonuses, threshold, or evidence-coverage rules. Unlisted terms are not expanded.
@@ -18,12 +18,12 @@ This contract defines guarded retrieval (`V3_GUARDED`) for the Java local fallba
 2. Normalize both result lists to stable `chunkId` identity. Fuse ranks using weighted Reciprocal Rank Fusion with constant `60`, lexical weight `1.0`, and vector weight `0.85`:
    `rrf = lexicalWeight / (60 + lexicalRank) + vectorWeight / (60 + vectorRank)`; ranks start at `1` and a missing-channel contribution is `0`.
 3. Deduplicate by `chunkId`. If an ID appears more than once in one channel, keep its best (first) rank. Do not deduplicate by text or title. `documentId` remains citation provenance and is not a substitute for chunk identity.
-4. Add the established V3 metadata bonuses to the RRF score: exact normalized query mention of disease `+0.22`, syndrome `+0.20`, formula `+0.18`, herb `+0.10`; evidence level A `+0.12`, B `+0.08`, C `+0.04`, other/unrated `+0.00`. Each category contributes at most once. Metadata bonuses affect ranking and the relevance gate; source type and arbitrary keywords do not receive ranking bonuses.
+4. Normalize RRF by `(lexicalWeight + vectorWeight)/(rankConstant + 1)` and multiply by `(1 + metadataWeight * bonus)`, with calibrated default `metadataWeight=0`. The available category bonuses are: exact normalized query mention of disease `+0.22`, syndrome `+0.20`, formula `+0.18`, herb `+0.10`; evidence level A `+0.12`, B `+0.08`, C `+0.04`, other/unrated `+0.00`. Each category contributes at most once. Metadata bonuses affect ranking and the relevance gate; source type and arbitrary keywords do not receive ranking bonuses.
 5. Sort by the resulting `rankScore` descending, with `chunkId` ascending as a deterministic tie-breaker.
 6. Apply the relevance gate to the highest `rankScore`. A candidate is sufficient when `rankScore >= threshold`. If there are no candidates or the highest score is below threshold, return `REJECT` with no citations. Otherwise form the `finalK` ranked evidence set.
-7. Apply the question-evidence coverage check to that returned evidence set. Individualized medication dose adjustment requests are rejected as unsafe to personalize from general retrieval evidence. For supported attribute checks (currently pregnancy-specific safety, blood-pressure normal ranges including age-stratified ranges, heart/kidney-condition-specific licorice safety, and the stated licorice/corticosteroid interaction), the requested attribute/relation must be present in the selected evidence text. A topic match alone is insufficient. If the required attribute is absent, return `REJECT` with no citations; otherwise return the selected evidence unchanged. This check does not modify RRF, metadata bonuses, ranking, or the configured threshold.
+7. Apply the question-evidence coverage check to that returned evidence set. Individualized medication dose adjustment requests are rejected as unsafe to personalize from general retrieval evidence. For supported attribute checks (currently pregnancy-specific safety, blood-pressure normal ranges including age-stratified ranges, heart/kidney-condition-specific licorice safety, and the stated licorice/corticosteroid interaction), the requested attribute/relation must be present together within one selected chunk. A topic match alone is insufficient. If the required attribute is absent, return `REJECT` with no citations; otherwise return the selected evidence unchanged. This check does not modify RRF, metadata bonuses, ranking, or the configured threshold.
 
-The score is a rank-fusion score plus explicit metadata bonuses, not a calibrated probability. The threshold has the same meaning in both engines: it is applied after metadata ranking. Raw vector and BM25 scores are implementation-specific and are not compared across engines. No extra score normalization is currently defined.
+The score is a normalized rank-fusion score with proportional metadata adjustments, not a calibrated probability. The threshold has the same meaning in both engines: it is applied after metadata ranking. Raw vector and BM25 scores are implementation-specific and are not compared across engines. Normalized scores express rank agreement, not a probability; legacy addition is available only with the explicit compatibility switch.
 
 ## Citation and trace
 
@@ -36,3 +36,7 @@ The existing trace counts retain their meanings: lexical and vector candidate co
 For the same snapshot, query, filters, and configuration, the contract tests require 100% reject agreement, at least 0.90 top-1 document agreement, and mean per-case top-K Jaccard overlap of at least 0.75. Exact raw scores and internal retrieval traces are intentionally not required to match. Lower agreement is reported as a contract failure for investigation; thresholds must not be weakened to conceal it.
 
 Changes to either V3 engine must update this contract and the shared cross-engine fixtures/tests in the same change.
+
+## Shared token and score implementation
+
+Both engines use contiguous Han bigrams and ASCII terms of at least two characters, retaining frequency. BM25 uses k1=1.4, b=.72, whole-corpus IDF and mean length, cached at corpus change. Hash vectors use 512 SHA-256 signed buckets and identical term weights. V2 and V3 share weighted RRF; source filters and relatedness do not rebuild corpus statistics.

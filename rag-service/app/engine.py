@@ -17,6 +17,7 @@ from llama_index.retrievers.bm25 import BM25Retriever
 
 from app.config import Settings
 from app.embeddings import HashEmbedding
+from app.lexical_index import LexicalIndex, searchable
 from app.evidence_coverage import (
     DOSE_REFUSAL,
     assess_evidence_coverage,
@@ -53,6 +54,7 @@ class LlamaIndexEngine:
         self.embedding = HashEmbedding()
         self._nodes: dict[str, list[Any]] = {}
         self._vector_indexes: dict[str, VectorStoreIndex | None] = {}
+        self._lexical_indexes: dict[str, LexicalIndex] = {}
         self._bm25_retrievers: dict[str, BM25Retriever | None] = {}
         self._llm = self._create_llm()
         self._lock = threading.RLock()
@@ -213,10 +215,9 @@ class LlamaIndexEngine:
             vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
             fused_nodes = vector_nodes
         else:
-            fused_nodes = [
-                node for node in self._retrieve_hybrid(question, filters, corpus)
-                if _is_related(question, node)
-            ]
+            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
+            lexical_nodes = [node for node in lexical_nodes if _is_related(question, node)]
+            fused_nodes = self._fuse_ranked_candidates(vector_nodes, lexical_nodes)
         selected = self._select_nodes(
             fused_nodes,
             filters,
@@ -289,75 +290,45 @@ class LlamaIndexEngine:
         nodes = [node for node in self.repository.nodes(corpus)
                        if node.metadata.get("status") == "ACTIVE"]
         self._nodes[corpus] = nodes
+        lexical = self._lexical_indexes.setdefault(corpus, LexicalIndex())
+        lexical.update(nodes)
         if not nodes:
             self._vector_indexes[corpus] = None
             self._bm25_retrievers[corpus] = None
             return
+        if isinstance(self.embedding, HashEmbedding):
+            for node in nodes:
+                node.embedding = self.embedding._embed(searchable(node))
         self._vector_indexes[corpus] = VectorStoreIndex(
             nodes=nodes,
             embed_model=self.embedding,
             show_progress=False,
         )
-        self._bm25_retrievers[corpus] = BM25Retriever.from_defaults(
-            nodes=nodes,
-            similarity_top_k=self.settings.candidate_limit,
-            token_pattern=_CJK_BM25_TOKEN_PATTERN,
-            skip_stemming=True,
-        )
+        self._bm25_retrievers[corpus] = None
+        # LlamaIndex owns semantic-vector retrieval; lexical scoring uses the shared BM25 contract.
 
     def _retrieve_vector(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
         index = self._vector_indexes.get(corpus)
         if index is None:
             return []
         retriever = index.as_retriever(
-            similarity_top_k=self.settings.candidate_limit,
+            similarity_top_k=len(self._nodes.get(corpus, [])),
             filters=self._metadata_filters(filters, corpus),
         )
-        return list(retriever.retrieve(question))
+        candidates = [node for node in retriever.retrieve(question)
+                      if (node.score or 0) > 0 and _matches_filter(node, filters) and self._lexical_indexes[corpus].related(question, node)]
+        return sorted(candidates, key=lambda node: (-(node.score or 0), node.node.node_id))[:self.settings.candidate_limit]
 
     def _retrieve_lexical(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
-        retriever = self._scoped_lexical_retriever(filters, corpus)
-        if retriever is None:
+        index = self._lexical_indexes.get(corpus)
+        if index is None:
             return []
-        nodes = list(retriever.retrieve(question))
-        return [node for node in nodes if _matches_filter(node, filters)]
-
-    def _scoped_lexical_retriever(self, filters: RagFilter, corpus: str) -> BM25Retriever | None:
-        if not any((filters.disease, filters.source_type, filters.evidence_level)):
-            return self._bm25_retrievers.get(corpus)
-        nodes = [node for node in self._nodes.get(corpus, []) if _matches_filter(node, filters)]
-        if not nodes:
-            return None
-        return BM25Retriever.from_defaults(
-            nodes=nodes,
-            similarity_top_k=min(self.settings.candidate_limit, len(nodes)),
-            token_pattern=_CJK_BM25_TOKEN_PATTERN,
-            skip_stemming=True,
-        )
+        return index.retrieve(question, self.settings.candidate_limit,
+                              lambda node: _matches_filter(node, filters) and index.related(question, node))
 
     def _retrieve_hybrid(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
-        lexical_retriever = self._scoped_lexical_retriever(filters, corpus)
-        index = self._vector_indexes.get(corpus)
-        if index is None or lexical_retriever is None:
-            return []
-        vector_retriever = index.as_retriever(
-            similarity_top_k=self.settings.candidate_limit,
-            filters=self._metadata_filters(filters, corpus),
-        )
-        fused = QueryFusionRetriever(
-            retrievers=[vector_retriever, lexical_retriever],
-            similarity_top_k=self.settings.candidate_limit,
-            num_queries=1,
-            mode="reciprocal_rerank",
-            llm=MockLLM(max_tokens=32),
-            use_async=False,
-            verbose=False,
-        )
-        return [
-            node
-            for node in fused.retrieve(question)
-            if _matches_filter(node, filters)
-        ]
+        return self._fuse_ranked_candidates(self._retrieve_vector(question, filters, corpus),
+                                            self._retrieve_lexical(question, filters, corpus))
 
     def _select_nodes(
         self,
@@ -373,7 +344,8 @@ class LlamaIndexEngine:
             current = best_by_id.get(node_id)
             score = (node.score or 0.0)
             if metadata_question is not None:
-                score += _metadata_boost(metadata_question, node)
+                boost = _metadata_boost(metadata_question, node)
+                score = score * (1 + self.settings.metadata_weight * boost) if self.settings.normalized_fusion else score + boost
             ranked_node = NodeWithScore(node=node.node, score=score)
             if current is None or score > (current.score or 0.0):
                 best_by_id[node_id] = ranked_node
@@ -405,8 +377,9 @@ class LlamaIndexEngine:
                     candidate.node,
                     contribution + (current[1] if current else 0.0),
                 )
+        maximum = (self.settings.lexical_weight + self.settings.vector_weight) / (self.settings.rrf_rank_constant + 1)
         return [
-            NodeWithScore(node=node, score=score)
+            NodeWithScore(node=node, score=score / maximum if self.settings.normalized_fusion else score)
             for _, (node, score) in sorted(
                 scores.items(), key=lambda item: (-item[1][1], item[0])
             )
@@ -504,7 +477,7 @@ class LlamaIndexEngine:
             answer=answer,
             refused=True,
             refusal_reason=reason,
-            confidence=0.72,
+            confidence=0.2,
             citations=citations,
             retrieval=self._trace(
                 version,
@@ -692,6 +665,8 @@ def _page_label(page_start: int, page_end: int) -> str:
 
 
 def _first_sentence(value: str) -> str:
-    text = re.sub(r"\s+", " ", value).strip()
-    stop = text.find("。")
-    return text if stop < 0 else text[: stop + 1]
+    text = (value or "").strip()
+    stop = re.search(r"[。！？.!?](?:\s|$)|[。！？]|[\r\n]", text)
+    end = stop.start() + 1 if stop else len(text)
+    excerpt = text[:min(end, 400)].strip()
+    return excerpt + "…" if end > 400 else excerpt

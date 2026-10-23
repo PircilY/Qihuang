@@ -143,7 +143,7 @@ public class RagOrchestrationService {
                 List.of("safety=emergency", "retrieval=bypassed", "generation=bypassed"),
                 engineProperties.remoteEnabled() ? "safety-gateway" : "java-local", version.name(), null, true);
         return new ChatResponse(UUID.randomUUID().toString(), question, version, message, true,
-                "问题可能涉及急症，超出线上问答边界", 0.95, 1, List.of(), trace, Instant.now());
+                "问题可能涉及急症，超出线上问答边界", 0.2, 1, List.of(), trace, Instant.now());
     }
 
     private ChatResponse callRemote(String question, IterationVersion version, RetrievalFilter filter,

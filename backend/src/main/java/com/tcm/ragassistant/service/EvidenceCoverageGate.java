@@ -16,7 +16,8 @@ public final class EvidenceCoverageGate {
 
     public static Assessment assess(String question, List<String> evidenceTexts) {
         String normalizedQuestion = SafetyRules.normalize(question);
-        String evidence = SafetyRules.normalize(String.join(" ", evidenceTexts == null ? List.of() : evidenceTexts));
+        List<String> evidence = (evidenceTexts == null ? List.<String>of() : evidenceTexts).stream()
+                .map(SafetyRules::normalize).toList();
 
         if (SafetyRules.isIndividualizedRequest(question)) {
             return new Assessment(false, "individualized-dose-adjustment", DOSE_REFUSAL);
@@ -24,7 +25,7 @@ public final class EvidenceCoverageGate {
 
         // Population-specific claims need evidence for that population and its requested safety attribute.
         if (matches("pregnancy_request", normalizedQuestion)
-                && !matches("pregnancy_evidence", evidence)) {
+                && !covered("pregnancy_evidence", evidence)) {
             return new Assessment(false, "population-attribute-uncovered", COVERAGE_REFUSAL);
         }
 
@@ -33,23 +34,23 @@ public final class EvidenceCoverageGate {
         if (asksForRange) {
             String requiredEvidence = matches("age_group", normalizedQuestion)
                     ? "age_range_evidence" : "range_evidence";
-            if (!matches(requiredEvidence, evidence)) {
+            if (!covered(requiredEvidence, evidence)) {
                 return new Assessment(false, "population-attribute-uncovered", COVERAGE_REFUSAL);
             }
         }
 
         if (matches("condition_safety_request", normalizedQuestion)
-                && !matches("condition_safety_evidence", evidence)) {
+                && !covered("condition_safety_evidence", evidence)) {
             return new Assessment(false, "population-attribute-uncovered", COVERAGE_REFUSAL);
         }
 
         if (matches("herb_drug_interaction_request", normalizedQuestion)
-                && !matches("herb_drug_interaction_evidence", evidence)) {
+                && !covered("herb_drug_interaction_evidence", evidence)) {
             return new Assessment(false, "population-attribute-uncovered", COVERAGE_REFUSAL);
         }
 
         if (matches("anticoagulant_adjustment_request", normalizedQuestion)
-                && !matches("anticoagulant_adjustment_evidence", evidence)) {
+                && !covered("anticoagulant_adjustment_evidence", evidence)) {
             return new Assessment(false, "population-attribute-uncovered", COVERAGE_REFUSAL);
         }
 
@@ -58,6 +59,10 @@ public final class EvidenceCoverageGate {
 
     public static boolean isIndividualizedDoseAdjustment(String question) {
         return SafetyRules.isIndividualizedRequest(question);
+    }
+
+    private static boolean covered(String rule, List<String> evidence) {
+        return evidence.stream().anyMatch(chunk -> matches(rule, chunk));
     }
 
     private static boolean matches(String rule, String normalizedText) {

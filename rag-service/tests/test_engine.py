@@ -85,7 +85,7 @@ def test_rank_fusion_deduplicates_same_chunk_across_retrievers(engine):
     )
 
     assert [item.node.node_id for item in fused] == ["CONTRACT-C1"]
-    assert fused[0].score == 1 / 61 + 0.85 / 61
+    assert fused[0].score == pytest.approx(1.0)
 
 
 def test_metadata_rank_weights_match_contract():

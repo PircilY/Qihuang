@@ -40,7 +40,7 @@ public class ModelAnswerService {
         if (retrieved.citations().isEmpty() || !retrieved.retrieval().sufficientEvidence()) {
             return new ChatResponse(retrieved.requestId(), retrieved.question(), retrieved.version(),
                     "当前知识库没有足以支持模型回答的证据。", true, "证据不足，已停止模型生成",
-                    retrieved.confidence(), retrieved.latencyMs(), List.of(), retrieved.retrieval(), Instant.now());
+                    0.2, retrieved.latencyMs(), List.of(), retrieved.retrieval(), Instant.now());
         }
         long start = System.nanoTime();
         String evidence;

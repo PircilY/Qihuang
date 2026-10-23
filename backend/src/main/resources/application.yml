@@ -58,7 +58,9 @@ app:
     rrf-rank-constant: 60
     lexical-weight: 1.0
     vector-weight: 0.85
-    minimum-evidence-score: 0.016
+    normalized-fusion: ${RAG_NORMALIZED_FUSION:true}
+    metadata-weight: ${RAG_METADATA_WEIGHT:0.0}
+    minimum-evidence-score: ${RAG_MINIMUM_EVIDENCE_SCORE:0.9}
 
 logging:
   level:

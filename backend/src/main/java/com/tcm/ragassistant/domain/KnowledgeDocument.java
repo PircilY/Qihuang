@@ -23,6 +23,9 @@ public record KnowledgeDocument(
         Instant accessedAt
 ) {
     public KnowledgeDocument {
+        title = title == null ? "" : title;
+        sourceType = sourceType == null ? "" : sourceType;
+        evidenceLevel = evidenceLevel == null || evidenceLevel.isBlank() ? "未评级" : evidenceLevel;
         diseaseScope = diseaseScope == null ? List.of() : List.copyOf(diseaseScope);
         publisher = publisher == null ? "" : publisher;
         publicationYear = publicationYear == null ? 0 : publicationYear;

@@ -70,6 +70,19 @@ class GuardedHybridRetrievalStrategyTest {
         assertThat(score).isCloseTo(0.83, within(1.0e-12));
     }
 
+    @Test
+    void proportionalMetadataCannotOverturnStrongFusionWithWeakEvidence() {
+        HybridRetrievalStrategy hybrid = mock(HybridRetrievalStrategy.class);
+        var properties = new RetrievalProperties(8, 4, 60, 1, .85, .3, true, .25);
+        var strategy = new GuardedHybridRetrievalStrategy(hybrid, properties, new TextTokenizer());
+        when(hybrid.retrieveCandidates("高血压", RetrievalFilter.none(), CorpusId.BASELINE)).thenReturn(
+                new RetrievalOutput(List.of(scored("FIXTURE-STRONG", "其他", .9), scored("FIXTURE-WEAK", "高血压", .2)),
+                        new RetrievalTrace("hybrid", 2, 2, 2, 2, true, List.of()), true));
+        var result = strategy.retrieve("高血压", RetrievalFilter.none(), CorpusId.BASELINE);
+        assertThat(result.chunks().get(0).chunk().id()).isEqualTo("FIXTURE-STRONG");
+        assertThat(result.chunks().get(1).score()).isCloseTo(.211, within(1e-12));
+    }
+
     private ScoredChunk scored(String id, String disease, double score) {
         KnowledgeChunk chunk = new KnowledgeChunk(
                 id, "DOC-" + id, "测试", "指南", "测试机构", 2026, disease,
