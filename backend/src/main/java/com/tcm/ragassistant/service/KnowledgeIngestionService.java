@@ -35,15 +35,18 @@ public class KnowledgeIngestionService {
     private final RagEngineProperties engineProperties;
     private final LlamaIndexRagClient llamaIndexRagClient;
     private final KnowledgeBaseRepository repository;
+    private final RemoteSyncState remoteSyncState;
 
     public KnowledgeIngestionService(
             RagEngineProperties engineProperties,
             LlamaIndexRagClient llamaIndexRagClient,
-            KnowledgeBaseRepository repository
+            KnowledgeBaseRepository repository,
+            RemoteSyncState remoteSyncState
     ) {
         this.engineProperties = engineProperties;
         this.llamaIndexRagClient = llamaIndexRagClient;
         this.repository = repository;
+        this.remoteSyncState = remoteSyncState;
     }
 
     public KnowledgeImportResponse ingest(KnowledgeImportRequest request) {
@@ -87,12 +90,21 @@ public class KnowledgeIngestionService {
 
     private String syncToLlamaIndex(KnowledgeDocument document, List<KnowledgeChunk> chunks) {
         if (!engineProperties.remoteEnabled()) {
+            remoteSyncState.markInSync(repository.knowledgeRevision(com.tcm.ragassistant.domain.CorpusId.BASELINE));
             return "LOCAL_READY";
         }
         try {
             llamaIndexRagClient.importKnowledge(document, chunks);
-            return "READY";
+            String revision = repository.knowledgeRevision(com.tcm.ragassistant.domain.CorpusId.BASELINE);
+            Object remoteRevision = llamaIndexRagClient.health().get("knowledgeRevision");
+            if (revision.equals(remoteRevision == null ? "" : remoteRevision.toString())) {
+                remoteSyncState.markInSync(revision);
+                return "READY";
+            }
+            remoteSyncState.markPending();
+            return "SYNC_PENDING";
         } catch (RuntimeException exception) {
+            remoteSyncState.markPending();
             log.warn("Document {} was registered locally but LlamaIndex sync failed: {}",
                     document.id(), exception.getMessage());
             return "SYNC_PENDING";

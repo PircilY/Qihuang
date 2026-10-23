@@ -7,6 +7,7 @@ spring:
       write-dates-as-timestamps: false
 
 server:
+  forward-headers-strategy: framework
   port: ${SERVER_PORT:8080}
   address: ${SERVER_ADDRESS:127.0.0.1}
   shutdown: graceful
@@ -24,9 +25,15 @@ management:
         include: health,info
   endpoint:
     health:
-      show-details: never
+      show-components: always
+      show-details: always
 
 app:
+  limits:
+    import-requests-per-minute: ${IMPORT_REQUESTS_PER_MINUTE:30}
+    evaluation-requests-per-minute: ${EVALUATION_REQUESTS_PER_MINUTE:2}
+    evaluation-max-characters: ${EVALUATION_MAX_CHARACTERS:100000}
+    evaluation-max-cases: ${EVALUATION_MAX_CASES:200}
   model:
     api-base: ${MODEL_API_BASE:}
     name: ${MODEL_NAME:}
@@ -34,6 +41,8 @@ app:
     timeout: ${MODEL_TIMEOUT:60s}
     allowed-base-urls: ${MODEL_ALLOWED_BASE_URLS:https://api.deepseek.com/v1,https://api.deepseek.com,https://dashscope.aliyuncs.com/compatible-mode/v1,https://api.openai.com/v1}
   knowledge:
+    max-import-documents: ${KNOWLEDGE_MAX_IMPORT_DOCUMENTS:1000}
+    max-import-characters: ${KNOWLEDGE_MAX_IMPORT_CHARACTERS:10000000}
     store-path: ${KNOWLEDGE_STORE_PATH:./runtime/knowledge-imports.json}
   rag-engine:
     mode: ${RAG_ENGINE_MODE:auto}
@@ -42,6 +51,7 @@ app:
     read-timeout: ${RAG_READ_TIMEOUT:30s}
     fallback-to-local: ${RAG_FALLBACK_TO_LOCAL:true}
     retry-interval: ${RAG_RETRY_INTERVAL:10s}
+    sync-batch-size: ${RAG_SYNC_BATCH_SIZE:20}
   retrieval:
     candidate-limit: 8
     final-limit: 4

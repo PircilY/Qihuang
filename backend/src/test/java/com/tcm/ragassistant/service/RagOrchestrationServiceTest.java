@@ -18,6 +18,7 @@ import com.tcm.ragassistant.repository.KnowledgeBaseRepository;
 import com.tcm.ragassistant.service.remote.LlamaIndexRagClient;
 import com.tcm.ragassistant.service.retrieval.RetrievalStrategyRegistry;
 import java.time.Duration;
+import org.springframework.web.client.ResourceAccessException;
 
 @SpringBootTest
 class RagOrchestrationServiceTest {
@@ -57,7 +58,7 @@ class RagOrchestrationServiceTest {
     @EnumSource(IterationVersion.class)
     void everyVersionEnforcesSafety(IterationVersion version) {
         for (String question : java.util.List.of("胸痛持续不缓解，\n能不能给我一个具体处方？",
-                "每天服用多少克附子？")) {
+                "我每天服用多少克附子？")) {
             ChatResponse response = ragOrchestrationService.ask(question, version);
             assertThat(response.refused()).isTrue();
             assertThat(response.citations()).isEmpty();
@@ -79,12 +80,13 @@ class RagOrchestrationServiceTest {
         var properties = new RagEngineProperties("llama-index", null, null, null, false, Duration.ofHours(1));
         var service = new RagOrchestrationService(properties, remote, registry,
                 new AnswerGenerationService(), mock(KnowledgeBaseRepository.class));
-        when(remote.chat(anyString(), any(), any())).thenThrow(new IllegalStateException("offline"));
+        when(remote.chat(anyString(), any(), any(), any(), anyString()))
+                .thenThrow(new ResourceAccessException("offline"));
         for (int attempt = 0; attempt < 2; attempt++) {
             assertThatThrownBy(() -> service.ask("高血压", IterationVersion.V3_GUARDED, RetrievalFilter.none()))
                     .isInstanceOf(BusinessException.class);
         }
-        verify(remote, times(1)).chat(anyString(), any(), any());
+        verify(remote, times(1)).chat(anyString(), any(), any(), any(), anyString());
         verifyNoInteractions(registry);
     }
 
@@ -109,6 +111,32 @@ class RagOrchestrationServiceTest {
 
         assertThat(response.refused()).isTrue();
         assertThat(response.refusalReason()).contains("急症");
-        assertThat(response.answer()).contains("立即就医");
+        assertThat(response.answer()).contains("立即拨打 120 / 前往急诊");
+    }
+
+    @ParameterizedTest
+    @EnumSource(IterationVersion.class)
+    void everyVersionShortCircuitsCurrentEmergencyBeforeRetrieval(IterationVersion version) {
+        ChatResponse response = ragOrchestrationService.ask("我现在胸痛", version);
+        assertThat(response.refused()).isTrue();
+        assertThat(response.answer()).contains("立即拨打 120 / 前往急诊");
+        assertThat(response.citations()).isEmpty();
+        assertThat(response.retrieval().strategy()).isEqualTo("safety-triage");
+    }
+
+    @ParameterizedTest
+    @EnumSource(IterationVersion.class)
+    void emergencyBypassesRemoteAndRetrievalForEveryVersion(IterationVersion version) {
+        var remote = mock(LlamaIndexRagClient.class);
+        var registry = mock(RetrievalStrategyRegistry.class);
+        var properties = new RagEngineProperties("llama-index", null, null, null, false, Duration.ofSeconds(1));
+        var service = new RagOrchestrationService(properties, remote, registry,
+                new AnswerGenerationService(), mock(KnowledgeBaseRepository.class));
+
+        ChatResponse response = service.ask("突然胸口很痛，喘不上气", version);
+
+        assertThat(response.refused()).isTrue();
+        assertThat(response.answer()).contains("立即拨打 120 / 前往急诊");
+        verifyNoInteractions(remote, registry);
     }
 }

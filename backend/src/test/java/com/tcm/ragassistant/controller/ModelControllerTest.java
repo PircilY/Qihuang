@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -156,7 +157,19 @@ class ModelControllerTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"胸痛持续不缓解，怎么办？", "甘草每天吃多少克？", "如何修理汽车发动机？"})
+    @EnumSource(com.tcm.ragassistant.domain.IterationVersion.class)
+    void emergencyIsReturnedEvenWhenModelIsRequestedButNotConfigured(
+            com.tcm.ragassistant.domain.IterationVersion version) throws Exception {
+        mvc.perform(post("/api/v1/rag/chat").contentType(MediaType.APPLICATION_JSON)
+                        .content(chat("我现在胸痛", version.name(), true)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.refused").value(true))
+                .andExpect(jsonPath("$.data.answer").value(org.hamcrest.Matchers.containsString("立即拨打 120 / 前往急诊")));
+        assertThat(calls.get()).isZero();
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"胸痛持续不缓解，怎么办？", "我每天吃甘草多少克？", "如何修理汽车发动机？"})
     void refusesUnsafeOrUnsupportedQuestionsWithoutCallingModel(String question) throws Exception {
         save();
         mvc.perform(post("/api/v1/rag/chat").session(session).contentType(MediaType.APPLICATION_JSON)

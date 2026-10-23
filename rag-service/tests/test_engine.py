@@ -4,7 +4,7 @@ from unittest.mock import Mock, patch
 import pytest
 
 from app.config import Settings
-from app.engine import LlamaIndexEngine
+from app.engine import KnowledgeOutOfSync, LlamaIndexEngine
 from app.schemas import ChatRequest
 from app.engine import _is_related, _metadata_boost
 from llama_index.core.schema import NodeWithScore, TextNode
@@ -32,7 +32,7 @@ def test_unchanged_upsert_does_not_rebuild_indexes(engine):
 def test_filtered_retrieval_is_case_insensitive_and_excludes_inactive_nodes(engine, version):
     for node in engine.repository.nodes():
         node.metadata["source_type"] = "Public Health"
-    engine._rebuild_indexes()
+    engine._rebuild_indexes("BASELINE")
     response = engine.query(ChatRequest(
         question="高血压没有症状也需要检查血压吗？",
         version=version, source_type="public",
@@ -42,7 +42,7 @@ def test_filtered_retrieval_is_case_insensitive_and_excludes_inactive_nodes(engi
 
     for node in engine.repository.nodes():
         node.metadata["status"] = "RETIRED"
-    engine._rebuild_indexes()
+    engine._rebuild_indexes("BASELINE")
     response = engine.query(ChatRequest(question="高血压的症状是什么？", version=version))
     assert response.refused
     assert not response.citations
@@ -57,6 +57,24 @@ def test_extractive_request_does_not_call_configured_legacy_model(engine):
     assert response.citations
     assert "generation=grounded-extractive" in response.retrieval.notes
     engine._llm.complete.assert_not_called()
+
+
+def test_query_reuses_corpus_indexes_and_health_does_not_rebuild(engine):
+    request = ChatRequest(question="高血压的症状是什么？", version="V1_VECTOR")
+    with patch.object(engine, "_rebuild_indexes", wraps=engine._rebuild_indexes) as rebuild:
+        engine.query(request)
+        engine.query(request)
+        engine.health()
+        rebuild.assert_not_called()
+
+
+def test_query_reports_revision_inventory_after_reload_or_restart(engine):
+    with pytest.raises(KnowledgeOutOfSync) as failure:
+        engine.query(ChatRequest(
+            question="高血压的症状是什么？", version="V1_VECTOR", expectedRevision="stale"
+        ))
+    assert failure.value.documents == []
+    assert failure.value.revision == engine.repository.knowledge_revision("BASELINE")
 
 
 def test_rank_fusion_deduplicates_same_chunk_across_retrievers(engine):

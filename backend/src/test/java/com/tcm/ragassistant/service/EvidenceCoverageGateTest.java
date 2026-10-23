@@ -63,6 +63,19 @@ class EvidenceCoverageGateTest {
     }
 
     @Test
+    void genericAnticoagulantDoseQuestionNeedsSpecificEvidenceWithoutBecomingPersonalized() {
+        String question = "甘草与华法林合用时应该如何调整抗凝药剂量？";
+        var uncovered = EvidenceCoverageGate.assess(question, List.of("甘草可能影响心脏健康。"));
+
+        assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment(question)).isFalse();
+        assertThat(uncovered.covered()).isFalse();
+        assertThat(uncovered.reasonCode()).isEqualTo("population-attribute-uncovered");
+        assertThat(EvidenceCoverageGate.assess(question, List.of(
+                "甘草与华法林之间的相互作用可能需要评估抗凝药剂量调整。"
+        )).covered()).isTrue();
+    }
+
+    @Test
     void acceptsHeartOrKidneyRiskWhenEvidenceCoversThoseConditions() {
         var assessment = EvidenceCoverageGate.assess(
                 "甘草对本来心脏或肾脏不好的人安全吗？",
@@ -80,8 +93,8 @@ class EvidenceCoverageGateTest {
         assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment(
                 "血压非常高时可能出现哪些症状？"
         )).isFalse();
-        assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment("每天吃几片降压药？")).isTrue();
+        assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment("我每天吃几片降压药？")).isTrue();
         assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment("是否可以调整当前药物剂量？")).isTrue();
-        assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment("增加药量或减少药量应该怎么做？")).isTrue();
+        assertThat(EvidenceCoverageGate.isIndividualizedDoseAdjustment("我应该增加药量或减少药量吗？")).isTrue();
     }
 }

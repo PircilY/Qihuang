@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="zh" article-type="review-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">3417</journal-id><journal-id journal-id-type="pmc-domain">cjlc</journal-id><journal-title-group><journal-title>Chinese Journal of Lung Cancer</journal-title><abbrev-journal-title>Zhongguo Fei Ai Za Zhi</abbrev-journal-title></journal-title-group><publisher><publisher-name>Editorial office of Chinese Journal of Lung Cancer</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC10663776</article-id><article-id pub-id-type="pmcaid">10663776</article-id><article-id pub-id-type="pmcaiid">10663776</article-id><article-id pub-id-type="pmid">37989339</article-id><article-id pub-id-type="doi">10.3779/j.issn.1009-3419.2023.101.31</article-id><title-group><article-title>Nrf2与铁死亡在肿瘤耐药中的研究进展</article-title><trans-title-group xml:lang="en"><trans-title xml:lang="en">Research Progress of Nrf2 and Ferroptosis in Tumor Drug Resistance</trans-title></trans-title-group></title-group><contrib-group content-type="author"><contrib><name name-style="western" xml:lang="en"><surname>HU</surname><given-names initials="S">Shuning</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff2">2</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>ZOU</surname><given-names initials="X">Xinru</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff2">2</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>FANG</surname><given-names initials="Y">Yixuan</given-names></name><xref ref-type="aff" rid="aff3">3</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>LIU</surname><given-names initials="C">Chengrui</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff2">2</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>CHEN</surname><given-names initials="R">Rui</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff2">2</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>JI</surname><given-names initials="L">Lili</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff2">2</xref><xref rid="cor1" ref-type="author-notes">✉</xref><xref rid="cor2" ref-type="author-notes">✉</xref></contrib></contrib-group><aff id="aff1" xml:lang="en"><sup>1</sup>Department of Pathological Anatomy, School of Medicine, Nantong University</aff><aff id="aff2" xml:lang="en"><sup>2</sup>Department of Pathology, Affiliated Hospital of Nantong University, Nantong 226001, China</aff><aff id="aff3" xml:lang="en"><sup>3</sup>Department of Pathology, First Affiliated Hospital of Soochow University, Suzhou 215006, China</aff><author-notes><fn id="cor1"><label>✉</label><p>季俐俐，E-mail: <email>liliji79@ntu.edu.cn</email></p></fn><fn id="cor2" xml:lang="en"><label>✉</label><p>Lili JI, E-mail: <email>liliji79@ntu.edu.cn</email></p></fn></author-notes><pub-date><day>20</day><month>10</month><year>2023</year></pub-date><volume>26</volume><issue>10</issue><fpage>765</fpage><page-range>765–773</page-range><pub-history><event event-type="pmc-release"><date><day>20</day><month>10</month><year>2023</year></date></event></pub-history><permissions><copyright-statement>版权所有 © 2023《中国肺癌杂志》编辑部</copyright-statement><copyright-statement>Copyright © 2023, Chinese Journal of Lung Cancer.</copyright-statement><license><license-p>This is an open access article distributed in accordance with the terms of the Creative Commons Attribution (CC BY 3.0) License. See: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/3.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/3.0/</ext-link>.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="zgfazz-26-10-765.pdf" content-type="pmc-pdf"><?cloudpmc-path 9fbc/10663776/9c8d2ad2f0af/zgfazz-26-10-765.pdf?><?cloudpmc-bucket app?><?size 1620022?></self-uri><abstract id="abstract1"><title>Abstract</title><p id="p00000">肺癌作为全球最常见的癌症之一，其治疗策略主要为手术结合放化疗。但是，长期化疗会产生耐药，也是肺癌治疗的难点之一。铁死亡是当细胞中存在氧化还原稳态失衡时，一种铁依赖和脂质过氧化驱动的非凋亡性细胞死亡级联反应。细胞核因子E2相关因子2（nuclear factor erythroid 2-related factor 2, Nrf2）是细胞抗氧化反应的关键。大量研究表明Nrf2信号通路在铁、脂质和氨基酸代谢等方面具有多种功能，在铁死亡调控中发挥重要作用。因此，本文对近十年来铁死亡的研究进展作一简要综述。特别是，将讨论铁死亡的机制和Nrf2对铁死亡的调节，以及Nrf2通路与铁死亡在肿瘤耐药中的作用，为耐药肺癌患者的治疗提供新的研究方向。</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> 肿瘤, 耐药, 铁死亡, Nrf2</p></sec></abstract><trans-abstract id="trans-abstract1" xml:lang="en"><title>Abstract</title><p id="p00005">Lung cancer is one of the most common cancers in the world, and its treatment strategy is mainly surgery combined with radiotherapy and chemotherapy. However, long-term chemotherapy will result in drug resistance, which is also one of the difficulties in the treatment of lung cancer. Ferroptosis is an iron-dependent and lipid peroxidation-driven non-apoptotic cell death cascade, occurring when there is an imbalance of redox homeostasis in the cell. Nuclear factor erythroid 2-related factor 2 (Nrf2) is key for cellular antioxidant responses. Numerous studies suggest that Nrf2 assumes an extremely important role in regulation of ferroptosis, for its various functions in iron, lipid, and amino acid metabolism, and so on. In this review, a brief overview of the research progress of ferroptosis over the past decade will be presented. In particular, the mechanism of ferroptosis and the regulation of ferroptosis by Nrf2 will be discussed, as well as the role of the Nrf2 pathway and ferroptosis in tumor drug resistance, which will provide new research directions for the treatment of drug-resistant lung cancer patients.</p><sec id="kwd-group2" xml:lang="en" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> Cancer, Drug resistance, Ferroptosis, Nrf2</p></sec></trans-abstract><custom-meta-group><custom-meta><meta-name>language</meta-name><meta-value>Chinese</meta-value></custom-meta><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2023 Sep 9.</p></sec></notes></front><body><p id="p00010">肺癌是最常见的癌症之一，据估计，截至2020年，每年有220万新病例和179万人死亡<sup>[<xref rid="b1" ref-type="bibr">1</xref>]</sup>。早期肺癌多以手术治疗为主，而晚期肺癌患者的一线治疗方案是以顺铂为基础的联合化疗，但长期化疗会产生耐药，也是肺癌治疗的难点之一。</p><p id="p00015">细胞核因子E2相关因子2（nuclear factor erythroid 2-related factor 2, Nrf2）最早发现参与氧化应激的适应性调节因子<sup>[<xref rid="b2" ref-type="bibr">2</xref>]</sup>。Nrf2的信号通路主要受Kelch样环氧氯丙烷相关蛋白1（Kelch-like ECH associated protein 1, Keap1）负性调控，后者在非应激条件下，通过泛素化来诱导Nrf2的蛋白酶体降解<sup>[<xref rid="b3" ref-type="bibr">3</xref>]</sup>。在氧化应激中，抗氧化因子Nrf2被激活以保护细胞免受氧化应激损伤，从而导致肿瘤细胞化疗耐药，然而其具体机制仍然有待研究。研究<sup>[<xref rid="b4" ref-type="bibr">4</xref>]</sup>表明，Nrf2通路在肺癌中常处于异常活化状态，在人类多种恶性肿瘤中，Keap1和Nrf2的基因改变频率最高的为肺癌。肺癌中高组成型Nrf2活性可以引发肺癌恶性进展和对治疗的药物抵抗。</p><p id="p00020">肿瘤耐药是导致患者治疗失败的主要原因，其发生涉及体内多通路及基因激活表达。肿瘤细胞耐药程度与细胞内活性氧（reactive oxygen species, ROS）刺激引起的氧化应激防御通路激活有着密不可分的联系。ROS对细胞生命至关重要，它们在细胞外信号的转导和控制中扮演着第二信使的角色，并调控着细胞增殖、分化和存活相关基因的表达。事实上，ROS在癌症中具有双重重要性。一方面，它们可以促进正常到癌细胞的修饰发生；另一方面，持续的氧化应激使癌细胞对额外的应激源越来越脆弱，并逆转肿瘤耐药性。铁死亡是一种非凋亡形式的细胞死亡<sup>[<xref rid="b5" ref-type="bibr">5</xref>]</sup>，其发生的主要原因和特征是细胞的抗氧化能力下降，导致细胞内出现铁超载和ROS依赖的脂质过氧化物累积<sup>[<xref rid="b6" ref-type="bibr">6</xref>]</sup>。并且铁死亡与癌症治疗的耐药性相关，诱导铁死亡可以逆转肿瘤耐药性<sup>[<xref rid="b7" ref-type="bibr">7</xref>]</sup>。过多的ROS可导致氧化应激和严重后果。然而，身体可以使用抗氧化防御机制来维持ROS平衡。而作为氧化应激信号的主要调节者，Nrf2可通过调控其靶基因的表达来影响铁死亡。</p><p id="p00025">本文将从Nrf2的结构、调控与功能，铁死亡的发生机制，Nrf2在抗脂质过氧化和铁死亡中的作用，靶向Nrf2和铁死亡作为克服肿瘤耐药的癌症疗法等4个方面进行综述，为耐药肺癌患者的治疗提供新思路。</p><sec id="s1" disp-level="1"><title>1 Nrf2的结构、调控与功能</title><sec id="s1.1" disp-level="2"><title>1.1 Nrf2的结构</title><p id="p00030">肺癌是全球癌症中死亡率最高的癌症，大多数死亡与转移有关，其中1/3的肺癌有Nrf2突变<sup>[<xref rid="b8" ref-type="bibr">8</xref>]</sup>。由基因NFE2L2编码的转录因子Nrf2，含有一高度保守的碱性亮氨酸拉链（basic leucine zipper, BZIP）结构，并被鉴定为帽领（Cap-n-collar, Cnc）家族的成员，包括核因子红系衍生2（nuclear factor-erythroid 2, NFE2）和Nrf1、Nrf2、Nrf3<sup>[<xref rid="b9" ref-type="bibr">9</xref>]</sup>。而由于在氧化应激反应中的细胞保护作用，Nrf2是其中最著名的家族成员<sup>[<xref rid="b10" ref-type="bibr">10</xref>]</sup>。通过细胞氧化还原稳态，Nrf2可改变细胞对外源性物质和氧化应激的适应性反应来保护细胞。从Neh1到Neh7，Nrf2的蛋白质结构由7个结构域组成<sup>[<xref rid="b2" ref-type="bibr">2</xref>]</sup>。为了与Maf蛋白和DNA相互作用，Neh1结构域具有CNC-bZIP区域。DLG和ETGE是Neh2的N端上的两个结合位点，它们募集以结合Kelch，与ECH相关蛋白1（Keap 1）相似，后者是Nrf2的负性调控分子。在Neh3的C-末端基于cullin E3泛素连接酶（Cul3）的A区将通过募集解旋酶DNA结合蛋白和染色体ATP酶参与上游基因传递（CHD）。Neh4和Neh5区吸引SRC3和cAMP元件结合蛋白（cAMP-response element binding protein, CREB）与靶基因的结合。Neh6区域中的DSGIS和DSAPGS基序与含有β转导重复序列的蛋白（beta-transducin repeats-containing proteins, β-TrCP）相关，通过募集Rocl核心E3泛素连接酶来抑制Nrf2，Neh6与Nrf2氧还非依赖的负性调节有关。最后一个结构域Neh7区域可以通过与类视黄醇X受体结合来减少抑制转录<sup>[<xref rid="b11" ref-type="bibr">11</xref>]</sup>。</p></sec><sec id="s1.2" disp-level="2"><title>1.2 Nrf2通路的调控</title><p id="p00035">Nrf2及其下游靶基因的激活是一个复杂的过程，研究其激活机制是当前的重点。</p><sec id="s1.2.1" disp-level="3"><title>1.2.1 Keap1介导的Nrf2降解机制</title><p id="p00040">Keap1作为氧化应激敏感性的分子开关，可负性调控细胞内Nrf2的蛋白水平。其通过Cullin3依赖的E3泛素酶连接底物，可以捕捉Nrf2并迅速使其泛素化，然后转至26S蛋白酶体降解，从而使细胞内的Nrf2在未受到刺激时保持低水平；而在氧化应激条件下，Keap1分子构象发生改变，Nrf2从Keap1上脱离，并在细胞核中与Maf蛋白结合形成Nrf2-Maf异二聚体，此异二聚体可以识别抗氧化反应元件（antioxidant response element, ARE）基因序列，并诱导抗氧化和代谢基因的表达<sup>[<xref rid="b12" ref-type="bibr">12</xref>]</sup>。</p></sec><sec id="s1.2.2" disp-level="3"><title>1.2.2 Nrf2磷酸化对Nrf2的降解机制</title><p id="p00045">Nrf2是蛋白激酶C（protein kinase C, PKC）、酪蛋白激酶2（casein kinase 2, CK2）、酪氨酸蛋白激酶Fyn、糖原合酶激酶3（glycogen synthase kinase-3, GSK-3）等一些蛋白激酶的底物<sup>[<xref rid="b13" ref-type="bibr">13</xref>]</sup>。研究<sup>[<xref rid="b14" ref-type="bibr">14</xref>]</sup>发现，除了氧化应激及Keap1介导的Nrf2泛素化修饰直接参与Nrf2的调控，胞内Nrf2的负调节还可通过几种激酶的磷酸化而发生。例如，PKC作为激酶可介导Nrf2发生磷酸化，磷酸化的Nrf2分子得以从其负性调控分子Keap1中释放出来并入核，从而启动相关基因的表达。此外，CK2对Nrf2蛋白结构域的磷酸化是神经母细胞瘤中Nrf2发生核定位及转录激活的必须环节<sup>[<xref rid="b15" ref-type="bibr">15</xref>]</sup>。同时磷酸化的Fyn可在细胞核中积累，并使Nrf2的Y568处酪氨酸发生磷酸化，这会导致Nrf2的核输出、泛素化和降解，并导致下游靶基因转录受影响<sup>[<xref rid="b16" ref-type="bibr">16</xref>]</sup>。Nrf2在其Neh6结构域上受两个不同的β-Trcp识别基序控制，其中一个可以受到糖原合成酶激酶-3β（glycogen synthase kinase-3β, GSK-3β）活性的调节，并导致其磷酸化从而引起Keap1非依赖性的泛素化降解<sup>[<xref rid="b17" ref-type="bibr">17</xref>]</sup>；另一个机制涉及GSK-3β的活化导致核Fyn激酶的磷酸化和易位，导致Nrf2在酪氨酸568处的磷酸化，从而刺激Nrf2从核中移出并通过蛋白体的降解<sup>[<xref rid="b18" ref-type="bibr">18</xref>]</sup>。</p></sec></sec><sec id="s1.3" disp-level="2"><title>1.3 Nrf2的功能</title><p id="p00050">在肿瘤的发生和发展中，Nrf2作为多效性转录因子，发挥着肿瘤抑制和肿瘤促进的作用。</p><sec id="s1.3.1" disp-level="3"><title>1.3.1 Nrf2抗氧化细胞保护作用</title><p id="p00055">作为重要的抗氧化转录因子，Nrf2可通过激活一系列含有ARE基因序列的靶基因来降低ROS水平，维持细胞的ROS相对稳态，这些基因负责一部分调节谷胱甘肽（glutathione, GSH）代谢，包括谷氨酸/胱氨酸反向转运蛋白xCT、谷氨酸-半胱氨酸连接酶（glutamate-cysteine ligase, GCLC/GCLM）、硫氧还蛋白（thioredoxin, TXN）和谷胱甘肽合成酶（glutathione synthetase, GSS）等；另一部分负责酶促抗氧化系统，包括含硒半胱氨酸抗氧化蛋白GPX、喹啉酮氧还蛋白1（NADPH quinone oxidoreductase 1, NQO1）等<sup>[<xref rid="b19" ref-type="bibr">19</xref>]</sup>。因此，Nrf2被普遍认为是细胞抗氧化反应的主要调节剂。在许多与氧化应激相关的疾病中，Nrf2激活的细胞保护作用已被报道<sup>[<xref rid="b10" ref-type="bibr">10</xref>]</sup>；因此，对各种天然来源（食品和药用植物）激活Nrf2的能力以及用作抗氧化剂和化学预防剂的能力进行了测试<sup>[<xref rid="b20" ref-type="bibr">20</xref>]</sup>。在健康组织中，Nrf2信号通路的瞬时激活通过调节多种不同的转录网络来阻止癌症的发生，在氧化应激过程中，超过1000个具有ARE的基因启动子可被Nrf2激活<sup>[<xref rid="b21" ref-type="bibr">21</xref>]</sup>。</p></sec><sec id="s1.3.2" disp-level="3"><title>1.3.2 Nrf2调节控制增殖基因的基础和诱导型表达</title><p id="p00060">例如Nrf2可通过调控NOTCH 1、NPNT、BMPR1A、IFG1、ITGB2、PDGFC、VEGFC和JAG1等促进肿瘤细胞的增殖；并且为了支持瘤细胞的增殖和生长，使癌细胞具有更高的蛋白质合成速率，通过ATF4的活化来调节丝氨酸/甘氨酸生物合成途径基因的表达（包括PHGDH、PSAT1、PSPH、SHMT1和SHMT2）<sup>[<xref rid="b22" ref-type="bibr">22</xref>]</sup>。</p></sec><sec id="s1.3.3" disp-level="3"><title>1.3.3 Nrf2通路可促进肿瘤细胞抗凋亡及耐药</title><p id="p00065">Nrf2的短暂激活可以保护氧化应激下的正常细胞，而癌细胞中Nrf2的过度激活可能有助于它们在氧化应激下生存和适应。这可能是有害的，与癌症进展和化疗耐药性有关。Nrf2可调控多药耐药蛋白（multidrug resistance-associated protein, MRP）家族基因，包括MRP1、MRP2、MRP3、MRP4等多个基因的转录，这些基因在细胞防御中起关键作用，因此，Nrf2通路过度激活很大可能决定了肿瘤对放化疗的抵抗性。并且Nrf2通过诱导BCL-2和BCL-xL的表达，减少细胞色素c从线粒体的释放，以及在用细胞毒性剂如顺铂或依托泊苷处理后减少胱天蛋白酶3/7活化来直接抑制细胞凋亡<sup>[<xref rid="b23" ref-type="bibr">23</xref>]</sup>。而且有研究<sup>[<xref rid="b24" ref-type="bibr">24</xref>]</sup>显示，Nrf2通过ROS非依赖的同源重组修复途径促进辐射诱导的DNA损伤修复，从而导致肿瘤细胞对放疗和化疗的耐药。因此，抑制Nrf2活性可能是使癌细胞对抗癌药物敏感的有效途径。</p></sec></sec></sec><sec id="s2" disp-level="1"><title>2 铁死亡的发生机制</title><sec id="s2.1" disp-level="2"><title>2.1 铁死亡的基本定义</title><p id="p00070">铁死亡最初是由Dixon等<sup>[<xref rid="b25" ref-type="bibr">25</xref>]</sup>在2012年发现的一种细胞死亡形式，最初是通过高通量筛选抗肿瘤药物发现，一开始发现小分子Erastin和RSL3能对RAS突变的肿瘤细胞诱发一种独特的铁依赖性的细胞死亡，并且它在遗传学和生物化学上不同于其他类型的细胞死亡，如细胞凋亡。随着对铁死亡的越来越深入的研究，它的定义越来越清晰，主要有3个方面：游离铁的增加，脂质过氧化物的积累以及在形态上与自噬、凋亡或坏死性细胞死亡不同的死亡类型<sup>[<xref rid="b26" ref-type="bibr">26</xref>]</sup>。在形态学方面，铁死亡导致线粒体变小，线粒体膜密度增加，细胞在收缩之后，细胞质成分凝结成“膨胀”表型，包括形成主要由空胞质溶胶组成的清晰、圆形的形态，还涉及质膜变薄、不稳定，显著的细胞骨架重排和蛋白质稳态的普遍破坏<sup>[<xref rid="b27" ref-type="bibr">27</xref>]</sup>。</p></sec><sec id="s2.2" disp-level="2"><title>2.2 铁死亡发生的主要条件</title><p id="p00075">铁死亡的本质是GSH的耗竭，引起谷胱甘肽过氧化物酶4（glutathione peroxidase 4, GPX4）活性下降，细胞内铁代谢失衡造成不稳定铁水平增高，使脂质氧化物不能通过GPX4催化还原，之后与二价铁离子发生反应产生脂质活性氧，从而促使铁死亡的发生。铁积累、自由基产生及多不饱和脂肪酸（polyunsaturated fatty acids, PUFAs）参与的代谢紊乱对于诱导铁死亡是至关重要的。</p></sec><sec id="s2.3" disp-level="2"><title>2.3 铁死亡的调控机制</title><sec id="s2.3.1" disp-level="3"><title>2.3.1 脂质过氧化途径</title><p id="p00080">PUFAs的氧化是值得注意的铁死亡指标。当PUFA存在于细胞膜中时，对脂质过氧化敏感，最容易产生过氧化反应，这可能导致对这些膜的有害影响。铁死亡的特征是ROS诱导的脂质过氧化为特征的细胞死亡，主要影响含有PUFA的特定磷脂并直接损害细胞膜的完整性。参与细胞膜中PUFAPE生物合成和修饰的关键酶包括ACSL4和LPCAT3。因此，在ACSL4和LPCAT3的参与下，PUFA被活化，然后与PE和PC结合形成PUFA-PE/PC复合物<sup>[<xref rid="b28" ref-type="bibr">28</xref>]</sup>。脂氧合酶（lipoxygenases, LOXS）通过促进铁死亡途径中PUFA-PE的过氧化而在促进铁凋亡中起重要作用<sup>[<xref rid="b29" ref-type="bibr">29</xref>]</sup>。下一步涉及PUFA-PE/PC通过与游离铁的芬顿反应（Fenton reaction）转化为PI-OOH。PI-OOH的产生增加可使膜不稳定，特别是在渗透压下，导致铁死亡。并且PI-OOH可引发新的PUFA氧化以产生细胞死亡诱导化合物，如4-HNE和丙二醛。因此，构成细胞膜的PUFAs的氧化是铁死亡的一个重要特征。过量的脂质过氧化将PUFA转化为PUFA PI-OOH，并分解细胞膜，使细胞发生铁死亡。</p></sec><sec id="s2.3.2" disp-level="3"><title>2.3.2 细胞内GSH的缺乏</title><p id="p00085">细胞膜转运蛋白胱氨酸/谷氨酸转运蛋白（也称为Xc-系统）以1:1的谷氨酸反向转运将胱氨酸（cystine）导入细胞。在胱氨酸/谷氨酸反向转运系统中，氨基酸不能直接扩散到细胞中，如需穿过细胞膜必须在特定运输蛋白的帮助下才能完成。细胞膜上的Xc-系统是运输工具之一，由轻链SLC7A11和重链SLC3A2两个核心部分组成。胱氨酸一旦进入细胞，可用于合成还原型GSH，而后者是细胞内重要的抗氧化剂。它在细胞内的合成分两步：首先，胱氨酸可以被氧化成半胱氨酸（cysteine, Cys），与谷氨酸由谷氨酸-Cys连接酶（glutamate-cysteine ligase, GCL）连接到一起；随后，其产物与甘氨酸在GSS催化的反应中合成GSH。通过使用GSH作为还原辅因子，GPX4能够将脂质氢过氧化物还原成脂质醇，因此GSH-GPX4抗氧化系统在保护细胞免于铁死亡中具有重要作用<sup>[<xref rid="b30" ref-type="bibr">30</xref>]</sup>。SLC7A11所属的System Xc-被抑制可导致Cys消耗，造成GSH合成底物的缺失，从而削弱抗氧化酶GPX4的功能，导致氧失衡，最终导致铁死亡。</p></sec><sec id="s2.3.3" disp-level="3"><title>2.3.3 铁代谢相关的铁死亡调节途径</title><p id="p00090">铁是参与氧化还原反应的几种酶的基本辅因子，因为它能够以两种离子形式存在：二价铁（Fe<sup>2+</sup>）和三价铁（Fe<sup>3+</sup>）。然而，铁的氧化还原能力可导致氧自由基的产生，其可破坏各种细胞组分。尤其Fe<sup>2+</sup>可以与过氧化氢通过芬顿反应形成羟基自由基，随后与PUFA反应形成脂质过氧化物引起膜损伤。为了防止铁中毒，游离不稳定铁（Fe<sup>2+</sup>）在系统和细胞水平上被多个系统控制，以维持铁稳态。过剩的游离铁作为不稳定铁库（labile iron pool, LIP）的一部分存在，LIP的变化是由摄取增加、储存减少、含铁蛋白质分解或铁输出蛋白功能障碍引起的<sup>[<xref rid="b31" ref-type="bibr">31</xref>]</sup>。细胞铁稳态伴随着铁蛋白和包括转铁蛋白在内的其他蛋白质的协调调节表达。细胞具有调节铁代谢的转铁蛋白受体（transferrin receptor, TFRC）。铁是通过Fe<sup>3+</sup>负载的铁蛋白的内吞作用与其TFRC在严格调控的反馈控制下相互作用而摄入的，而细胞膜蛋白SLC40A1则介导铁输出。大部分细胞内铁可以过铁蛋白以Fe<sup>3+</sup>形式储存。铁蛋白吞噬是用来描述通过自噬机制去除主要的铁储存蛋白即铁蛋白。在此背景下，已知3种铁储存蛋白，包括铁蛋白重链1、铁蛋白轻链和线粒体铁蛋白。核受体共激活因子4（nuclear receptor coactivator 4, NCOA4）是一种胞质自噬受体，用于结合铁蛋白，随后通过选择性自噬来释放铁蛋白中的铁离子，有助于铁死亡的发生<sup>[<xref rid="b32" ref-type="bibr">32</xref>]</sup>。并且，有研究<sup>[<xref rid="b33" ref-type="bibr">33</xref>]</sup>显示NCOA 4的遗传敲低可预防Erastin诱导的铁死亡，而单独NCOA 4的过表达足以引起铁死亡表型。因此，铁代谢对于铁死亡的调控关键在于对不稳定铁池容量的调控。通过运用相关诱导剂或抑制剂调节铁的转运与吸收，或许是调节细胞铁死亡水平的有效方法。</p></sec></sec></sec><sec id="s3" disp-level="1"><title>3 Nrf2在抗脂质过氧化和铁死亡中的作用</title><p id="p00095">由于铁死亡是一种氧化形式的细胞死亡，Nrf2最初被认为主要通过调节抗氧化反应来发挥其抗铁死亡作用。然而，研究<sup>[<xref rid="b26" ref-type="bibr">26</xref>]</sup>揭示了Nrf2调控铁死亡的新机制，该机制超出了抗氧化功能，延伸到了铁和脂质稳态的关键层面。在这篇综述中，我们将深入探讨Nrf2如何通过调控铁稳态和脂质过氧化在介导铁死亡调节方面发挥重要作用。参与铁死亡调节的Nrf2靶基因，根据其功能，可将其分为3大类：铁代谢、中间代谢和GSH合成代谢。</p><p id="p00100">研究<sup>[<xref rid="b34" ref-type="bibr">34</xref>]</sup>表明，几个Nrf2靶基因调控铁稳态的关键方面，包括血红素的生物合成和分解代谢，以及铁的吸收、输出、储存和利用。铁蛋白负责隔离游离铁并阻止其参与芬顿反应。铁蛋白笼子由铁蛋白重链和铁蛋白轻链的24个重复亚基组成，两者的启动子区域均含有ARE；并且铁运素（SLC40A1/FPN1）介导过量Fe<sup>2+</sup>的输出，也被鉴定为含有ARE，并可被Nrf2转录上调<sup>[<xref rid="b35" ref-type="bibr">35</xref>,<xref rid="b36" ref-type="bibr">36</xref>]</sup>。由于体内功能铁的重要组成部分是血红素，血红素代谢异常可增加铁死亡的风险。许多参与血红素代谢的Nrf2靶基因最初通过Chip-seq分析鉴定出来，包括ATP结合盒亚家族B成员6、亚铁螯合酶（ferrochelatase, FECH）和溶质载体家族成员48成员A1以及血红素转运蛋白都被Nrf2上调；血红素加氧酶1（heme oxygenase-1, HMOX1）是一种催化血红素降解产生胆绿素的酶，最初被鉴定为姜黄素处理的肾上皮细胞中Nrf2的靶基因<sup>[<xref rid="b37" ref-type="bibr">37</xref>,<xref rid="b38" ref-type="bibr">⇓</xref>,<xref rid="b39" ref-type="bibr">⇓</xref>-<xref rid="b40" ref-type="bibr">40</xref>]</sup>；胆绿素还原酶A和B也可通过Nrf2活化直接上调<sup>[<xref rid="b35" ref-type="bibr">35</xref>]</sup>。总的来说，Nrf2对铁稳态的调节是细胞对铁死亡敏感性或抗性的关键决定因素，而这独立于其抗氧化功能。</p><p id="p00105">除铁和血红素外，Nrf2还调节参与中间代谢的代谢物，其中许多对于反应性中间体的分解代谢/解毒和还原型烟酰胺腺嘌呤二核苷酸磷酸（nicotinamide adenine dinucleotide phosphate, NADPH）（还原铁和血红素所需的关键电子供体）再生是重要的，后者（NADPH）是还原氧化底物所需的关键电子供体。脂质合成高度消耗NADPH，并与细胞抗氧化系统竞争。研究<sup>[<xref rid="b41" ref-type="bibr">41</xref>]</sup>表明，激活Nrf2可减轻小鼠肝脏中脂肪酸的生成和去饱和，从而增加NADPH含量，实现小鼠肝脏的解毒作用。核受体亚家族O,B组成员2（nuclear receptor subfamily O, group B, member 2, NROB2）和过氧化物酶体增殖物激活受体γ（peroxisome proliferation-activated receptor γ, PPARγ）是核受体，在胆固醇代谢的调节和控制中发挥重要作用，可能有助于抗过氧化作用。这两个基因都可以被Nrf2激活，从而在缓解脂质过氧化物积累中发挥关键作用<sup>[<xref rid="b42" ref-type="bibr">42</xref>,<xref rid="b43" ref-type="bibr">⇓</xref>-<xref rid="b44" ref-type="bibr">44</xref>]</sup>。</p><p id="p00110">此外，Nrf2在GSH的合成代谢过程中也发挥重要作用。SLC7A11是System Xc-的两个亚基之一，在GSH代谢中受到Nrf2的调控，它负责将Cys转运到细胞中，从而增加Cys含量，促进GSH的生成。在GSH生物合成过程中，还有两种重要的酶受到Nrf2正向调控，包括GCLC/GCLM和GSS<sup>[<xref rid="b45" ref-type="bibr">45</xref>,<xref rid="b46" ref-type="bibr">⇓</xref>,<xref rid="b47" ref-type="bibr">⇓</xref>,<xref rid="b48" ref-type="bibr">⇓</xref>-<xref rid="b49" ref-type="bibr">49</xref>]</sup>。溶质连接载体家族A1成员5可被Nrf2激活，在谷氨酰胺摄取中发挥重要作用，有助于GSH的生物合成。此外，Nrf2还在转录水平上调控许多氧化还原酶，这些酶包括：谷胱甘肽-S-转移酶GSTP1和GSTA1、过氧化物氧还蛋白PRDX1和PRDX6、硫氧还蛋白还原酶TXNRD1<sup>[<xref rid="b50" ref-type="bibr">50</xref>]</sup>。最重要的是，作为对抗脂质过氧化的重要作用而参与铁死亡调控的一个关键酶，GPX4也受到了Nrf2的转录调控<sup>[<xref rid="b51" ref-type="bibr">51</xref>]</sup>。总之，通过调节Nrf2信号通路促进或抑制铁死亡的疗法是可行的，值得花费时间和精力进行探索。</p></sec><sec id="s4" disp-level="1"><title>4 靶向Nrf2和铁死亡作为克服肿瘤耐药的癌症疗法</title><p id="p00115">铁死亡最初是研究者通过高通量筛选针对RAS基因转化致癌细胞的抗癌药的研发过程中发现的，研究者<sup>[<xref rid="b52" ref-type="bibr">52</xref>]</sup>发现过表达RAS癌细胞会对Erastin启动的非凋亡死亡过程敏感。研究表明，对传统抗肿瘤药物产生耐药的患者而言，诱导肿瘤细胞铁死亡可作为其新的抗癌治疗策略。近年来，人们发现了越来越多的铁死亡诱导剂，并在许多临床前癌症模型中证实了它们用于杀死耐药癌细胞的作用。随着我们对Nrf2抗铁死亡作用的了解越来越多，可以明显预测抑制Nrf2将显著增强铁死亡诱导剂的作用。此外，许多癌细胞具有组成性激活的Nrf2，这导致细胞保护基因的上调，从而促进肿瘤进展并保护癌细胞免受化疗损伤，这被称为Nrf2的黑暗面<sup>[<xref rid="b53" ref-type="bibr">53</xref>]</sup>。在不同的癌症模型中，激活Nrf2可以预防铁死亡。例如，自噬受体p62依赖的Keap1的隔离导致Nrf2上调，降低了肝细胞癌对Erastin和索拉非尼诱导的铁死亡的敏感性<sup>[<xref rid="b54" ref-type="bibr">54</xref>]</sup>。另一项使用头颈癌细胞的研究<sup>[<xref rid="b55" ref-type="bibr">55</xref>]</sup>表明，Nrf2对这些细胞逃避RSL3诱导的铁死亡反应至关重要。采用CRISPR筛选的3D培养模型揭示了高度活跃的Nrf2通过调节增殖和铁死亡而成为肺肿瘤球状体形成的先决条件<sup>[<xref rid="b56" ref-type="bibr">56</xref>]</sup>。顺铂（Cisplatin, DDP）被认为是治疗晚期非靶向肺癌的一线药物。然而，对DDP的耐药性也是肺癌治疗的一个主要障碍。有研究<sup>[<xref rid="b57" ref-type="bibr">57</xref>]</sup>表明，Isoorientin与DDP联合治疗，通过体外和体内实验，可导致耐药细胞的生存能力明显下降。在机制上，Isoorientin作为调控SIRT6/Nrf2/GPX4信号通路的调节剂（下调SIRT6蛋白、Nrf2和GPX4的表达），从而调节肺癌细胞的铁死亡，逆转耐药。因此，Nrf2的水平与铁死亡敏感性直接相关，通过调控Nrf2表达水平将影响癌细胞对铁死亡的敏感性<sup>[<xref rid="b54" ref-type="bibr">54</xref>,<xref rid="b58" ref-type="bibr">58</xref>]</sup>。</p><p id="p00120">在寻找诱导铁死亡化合物的大筛选中，发现了一系列小分子诱导剂。大多数铁死亡诱导剂其作用机制与最初鉴定的两种铁死亡诱导化合物Erastin和RSL-3类似，即通过抑制xCT系统造成GSH耗竭或直接阻断GPX4的活性<sup>[<xref rid="b59" ref-type="bibr">59</xref>]</sup>。正如所预期的，基于Nrf2对xCT及GPX4这两个靶标以及许多其他关键途径的转录调节，抑制Nrf2可显著增强促铁死亡试剂的治疗敏感性。事实上，用胡芦巴碱作为一种Nrf2抑制剂，其治疗已经被证实是有效的，可阻断血红素和铁代谢相关的Nrf2靶基因的表达，与Erastin和索拉菲尼协同作用，可促进肝癌细胞的铁死亡<sup>[<xref rid="b54" ref-type="bibr">54</xref>]</sup>。对头颈癌的研究<sup>[<xref rid="b60" ref-type="bibr">60</xref>]</sup>发现，Nrf2通路激活有助于头颈癌细胞对青蒿琥酯的耐药性，通过使用胡芦巴碱抑制该通路可消除头颈癌细胞对青蒿琥酯诱导的铁死亡耐药。此外，零价铁纳米颗粒（ZVI-NP）因其可用于去除地表和地下废水中有毒重金属而在环境污染治理中发挥重要作用，最近因其抗肿瘤疗效，现在正逐渐进入人们的视线<sup>[<xref rid="b61" ref-type="bibr">61</xref>]</sup>。已有研究<sup>[<xref rid="b62" ref-type="bibr">62</xref>]</sup>发现ZVI-NP在癌细胞的溶酶体中而不是在正常细胞中优先转化为Fe<sup>3+</sup>，因为癌细胞内部更具酸性。铁离子的突然释放进一步诱导癌细胞中的ROS激增，并导致癌细胞中的铁死亡。为了探索ZVI-NP在肺癌模型中调节肿瘤微环境的潜在作用，一项研究<sup>[<xref rid="b63" ref-type="bibr">63</xref>]</sup>鉴定了其诱导铁死亡的新分子机制。从机制上讲，ZVI-NP增强了Nrf2的磷酸盐依赖性泛素化降解，从而因过度氧化应激和脂质过氧化引发铁死亡。所有这些都揭示了ZVI-NP在癌症治疗方面的潜力，从而减少了副作用并提高了疗效。总的来说，我们有理由相信，未来会有越来越多的疗效和预后更好的治疗策略出现。靶向Nrf2信号通路和诱导铁死亡的药物应用于肿瘤的治疗是一种新颖且有前景的方法。</p></sec><sec id="s5" disp-level="1"><title>5 靶向Nrf2信号通路抑制铁凋亡在其他疾病治疗中的应用</title><p id="p00125">Nrf2和铁死亡之间的联系也已在癌症以外的疾病的发病机制中得到阐明，表明在其他病理学背景下靶向该级联反应的可能相关性。例如，对阿尔茨海默病和帕金森病以及心血管疾病的研究<sup>[<xref rid="b27" ref-type="bibr">27</xref>,<xref rid="b64" ref-type="bibr">64</xref>]</sup>表明，铁死亡可能是这些疾病的主要驱动因素。Nrf2的激活可以上调xCT的表达，增强谷氨酸分泌，并恢复GPX4活性，从而抑制铁凋亡。随着年龄的增长，Nrf2活性的逐渐丧失被认为增加了对铁死亡的易感性，最近已经证明铁死亡在阿尔茨海默病、帕金森病、多发性硬化和其他神经退行性疾病的发病机制中起关键作用<sup>[<xref rid="b27" ref-type="bibr">27</xref>]</sup>。因此，激活Nrf2以抑制铁死亡可能成为治疗神经退行性疾病和心血管疾病的新途径。DMF（Tecfidera®）可视为激活Nrf2的最成功病例<sup>[<xref rid="b65" ref-type="bibr">65</xref>]</sup>。该药物最初用于治疗银屑病患者，但新的研究<sup>[<xref rid="b66" ref-type="bibr">66</xref>]</sup>表明，在进入体内后，它发生了转化，从而共价修饰KEAP1上的关键Cys残基，从而阻断Nrf2泛素化并促进Nrf2稳定以及Nrf2靶基因的后续激活。此外，许多可通过激活Nrf2来治疗阿尔茨海默病的药物，如白藜芦醇、吡哆醇、正丁基苯酞等，也已进入临床试验。此外靶向Nrf2在心血管疾病的治疗中具有广阔的前景。SIRT1（Sirtuin 1）是一种NAD依赖性脱乙酰酶，在糖尿病引起的多种心血管疾病中发挥重要作用。在糖尿病Sprague道利大鼠模型中，可增加Nrf2在细胞核中的定位，从而减轻心肌缺血-再灌注损伤<sup>[<xref rid="b67" ref-type="bibr">67</xref>]</sup>。并且铁抑素已被证明可防止脑、肝、肾和心脏中的缺血性损伤，并在许多细胞和动物模型中减少神经退行性表型，以及防止心肌细胞中过量铁诱导的铁死亡<sup>[<xref rid="b59" ref-type="bibr">59</xref>,<xref rid="b68" ref-type="bibr">68</xref>,<xref rid="b69" ref-type="bibr">69</xref>]</sup>。利用Nrf2信号转导途径对铁死亡进行激活或抑制的药理学调节已被证明是有效的，这取决于疾病背景。</p></sec><sec id="s6" disp-level="1"><title>6 总结与展望</title><p id="p00130">随着对铁死亡的深入研究，许多关键的抗铁死亡成员分子都被发现受到Nrf2的转录调控。因此Nrf2在铁死亡调控中的重要性日益凸显。Nrf2作为细胞抗氧化反应的关键调节因子，广泛参与铁、脂质、氨基酸等代谢。因此，通过Nrf2及其下游效应物的药理学调节，可以实现诸如逆转癌症耐药，预防和治疗多种疾病包括神经退行性疾病、心血管疾病等。因此靶向Nrf2信号通路的治疗策略可用于多种铁死亡相关疾病，具有广阔的治疗前景。</p></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>参 考 文 献</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="b1"><label>1.</label><mixed-citation><named-content content-type="citation-string">
+Thai AA,
+Solomon BJ,
+Sequist LV,
+et al. 
+Lung cancer.
+Lancet,
+2021,
+398(10299): 535-554. doi: 10.1016/s0140-6736(21)00312-3
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/s0140-6736(21)00312-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34273294"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Lancet&amp;title=Lung cancer&amp;author=AA Thai&amp;author=BJ Solomon&amp;author=LV Sequist&amp;volume=398&amp;issue=10299&amp;publication_year=2021&amp;pages=535-554&amp;pmid=34273294&amp;doi=10.1016/s0140-6736(21)00312-3&amp;"/></mixed-citation></ref><ref id="b2"><label>2.</label><mixed-citation><named-content content-type="citation-string">
+Rojo de la Vega M,
+Chapman E,
+Zhang DD.
+. 
+NRF2 and the hallmarks of cancer.
+Cancer Cell,
+2018,
+34(1): 21-43. doi: 10.1016/j.ccell.2018.03.022
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.ccell.2018.03.022"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6039250"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29731393"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Cell&amp;title=NRF2 and the hallmarks of cancer&amp;author=M Rojo de la Vega&amp;author=E Chapman&amp;author=DD Zhang&amp;volume=34&amp;issue=1&amp;publication_year=2018&amp;pages=21-43&amp;pmid=29731393&amp;doi=10.1016/j.ccell.2018.03.022&amp;"/></mixed-citation></ref><ref id="b3"><label>3.</label><mixed-citation><named-content content-type="citation-string">
+Nezu M,
+Suzuki N,
+Yamamoto M.
+. 
+Targeting the KEAP1-NRF2 system to prevent kidney disease progression.
+Am J Nephrol,
+2017,
+45(6): 473-483. doi: 10.1159/000475890
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1159/000475890"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28502971"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Am J Nephrol&amp;title=Targeting the KEAP1-NRF2 system to prevent kidney disease progression&amp;author=M Nezu&amp;author=N Suzuki&amp;author=M Yamamoto&amp;volume=45&amp;issue=6&amp;publication_year=2017&amp;pages=473-483&amp;pmid=28502971&amp;doi=10.1159/000475890&amp;"/></mixed-citation></ref><ref id="b4"><label>4.</label><mixed-citation><named-content content-type="citation-string">
+Singh A,
+Daemen A,
+Nickles D,
+et al. 
+NRF2 activation promotes aggressive lung cancer and associates with poor clinical outcomes.
+Clin Cancer Res,
+2021,
+27(3): 877-888. doi: 10.1158/1078-0432.CCR-20-1985
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/1078-0432.CCR-20-1985"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10867786"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33077574"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Clin Cancer Res&amp;title=NRF2 activation promotes aggressive lung cancer and associates with poor clinical outcomes&amp;author=A Singh&amp;author=A Daemen&amp;author=D Nickles&amp;volume=27&amp;issue=3&amp;publication_year=2021&amp;pages=877-888&amp;pmid=33077574&amp;doi=10.1158/1078-0432.CCR-20-1985&amp;"/></mixed-citation></ref><ref id="b5"><label>5.</label><mixed-citation><named-content content-type="citation-string">
+Song X,
+Long D.
+. 
+Nrf2 and ferroptosis: a new research direction for neurodegenerative diseases.
+Front Neurosci,
+2020,
+14: 267. doi: 10.3389/fnins.2020.00267
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fnins.2020.00267"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7186402"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32372896"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Neurosci&amp;title=Nrf2 and ferroptosis: a new research direction for neurodegenerative diseases&amp;author=X Song&amp;author=D Long&amp;volume=14&amp;publication_year=2020&amp;pages=267&amp;pmid=32372896&amp;doi=10.3389/fnins.2020.00267&amp;"/></mixed-citation></ref><ref id="b6"><label>6.</label><mixed-citation><named-content content-type="citation-string">
+Seibt TM,
+Proneth B,
+Conrad M.
+. 
+Role of GPX4 in ferroptosis and its pharmacological implication.
+Free Radic Biol Med,
+2019,
+133: 144-152. doi: 10.1016/j.freeradbiomed.2018.09.014
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2018.09.014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30219704"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Role of GPX4 in ferroptosis and its pharmacological implication&amp;author=TM Seibt&amp;author=B Proneth&amp;author=M Conrad&amp;volume=133&amp;publication_year=2019&amp;pages=144-152&amp;pmid=30219704&amp;doi=10.1016/j.freeradbiomed.2018.09.014&amp;"/></mixed-citation></ref><ref id="b7"><label>7.</label><mixed-citation><named-content content-type="citation-string">
+Zhang C,
+Liu X,
+Jin S,
+et al. 
+Ferroptosis in cancer therapy: a novel approach to reversing drug resistance.
+Mol Cancer,
+2022,
+21(1): 47. doi: 10.1186/s12943-022-01530-y
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12943-022-01530-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8840702"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35151318"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cancer&amp;title=Ferroptosis in cancer therapy: a novel approach to reversing drug resistance&amp;author=C Zhang&amp;author=X Liu&amp;author=S Jin&amp;volume=21&amp;issue=1&amp;publication_year=2022&amp;pages=47&amp;pmid=35151318&amp;doi=10.1186/s12943-022-01530-y&amp;"/></mixed-citation></ref><ref id="b8"><label>8.</label><mixed-citation><named-content content-type="citation-string">
+Wiel C,
+Le Gal K,
+Ibrahim MX,
+et al. 
+BACH1 stabilization by antioxidants stimulates lung cancer metastasis.
+Cell,
+2019,
+178(2): 330-345.e22. doi: 10.1016/j.cell.2019.06.005
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2019.06.005"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31257027"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=BACH1 stabilization by antioxidants stimulates lung cancer metastasis&amp;author=C Wiel&amp;author=Gal K Le&amp;author=MX Ibrahim&amp;volume=178&amp;issue=2&amp;publication_year=2019&amp;pages=330-345&amp;pmid=31257027&amp;doi=10.1016/j.cell.2019.06.005&amp;"/></mixed-citation></ref><ref id="b9"><label>9.</label><mixed-citation><named-content content-type="citation-string">
+He F,
+Antonucci L,
+Karin M. 
+. 
+NRF2 as a regulator of cell metabolism and inflammation in cancer.
+Carcinogenesis,
+2020,
+41(4): 405-416. doi: 10.1093/carcin/bgaa039
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/carcin/bgaa039"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7298623"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32347301"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carcinogenesis&amp;title=NRF2 as a regulator of cell metabolism and inflammation in cancer&amp;author=F He&amp;author=L Antonucci&amp;author=M Karin&amp;volume=41&amp;issue=4&amp;publication_year=2020&amp;pages=405-416&amp;pmid=32347301&amp;doi=10.1093/carcin/bgaa039&amp;"/></mixed-citation></ref><ref id="b10"><label>10.</label><mixed-citation><named-content content-type="citation-string">
+Sykiotis GP,
+Bohmann D.
+. 
+Stress-activated cap’n’collar transcription factors in aging and human disease.
+Sci Signal,
+2010,
+3(112): re3. doi: 10.1126/scisignal.3112re3
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/scisignal.3112re3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2991085"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20215646"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Sci Signal&amp;title=Stress-activated cap’n’collar transcription factors in aging and human disease&amp;author=GP Sykiotis&amp;author=D Bohmann&amp;volume=3&amp;issue=112&amp;publication_year=2010&amp;pages=re3&amp;pmid=20215646&amp;doi=10.1126/scisignal.3112re3&amp;"/></mixed-citation></ref><ref id="b11"><label>11.</label><mixed-citation><named-content content-type="citation-string">
+Zhu J,
+Wang H,
+Chen F,
+et al. 
+An overview of chemical inhibitors of the Nrf2-ARE signaling pathway and their potential applications in cancer therapy.
+Free Radic Biol Med,
+2016,
+99: 544-556. doi: 10.1016/j.freeradbiomed.2016.09.010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2016.09.010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27634172"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=An overview of chemical inhibitors of the Nrf2-ARE signaling pathway and their potential applications in cancer therapy&amp;author=J Zhu&amp;author=H Wang&amp;author=F Chen&amp;volume=99&amp;publication_year=2016&amp;pages=544-556&amp;pmid=27634172&amp;doi=10.1016/j.freeradbiomed.2016.09.010&amp;"/></mixed-citation></ref><ref id="b12"><label>12.</label><mixed-citation><named-content content-type="citation-string">
+Bellezza I,
+Giambanco I,
+Minelli A,
+et al. 
+Nrf2-Keap 1 signaling in oxidative and reductive stress.
+Biochim Biophys Acta Mol Cell Res,
+2018,
+1865(5): 721-733. doi: 10.1016/j.bbamcr.2018.02.010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bbamcr.2018.02.010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29499228"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochim Biophys Acta Mol Cell Res&amp;title=Nrf2-Keap 1 signaling in oxidative and reductive stress&amp;author=I Bellezza&amp;author=I Giambanco&amp;author=A Minelli&amp;volume=1865&amp;issue=5&amp;publication_year=2018&amp;pages=721-733&amp;pmid=29499228&amp;doi=10.1016/j.bbamcr.2018.02.010&amp;"/></mixed-citation></ref><ref id="b13"><label>13.</label><mixed-citation><named-content content-type="citation-string">
+Iniaghe LO,
+Krafft PR,
+Klebe DW,
+et al. 
+Dimethyl fumarate confers neuroprotection by casein kinase 2 phosphorylation of Nrf2 in murine intracerebral hemorrhage.
+Neurobiol Dis,
+2015,
+82: 349-358. doi: 10.1016/j.nbd.2015.07.001
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.nbd.2015.07.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4640980"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26176793"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Neurobiol Dis&amp;title=Dimethyl fumarate confers neuroprotection by casein kinase 2 phosphorylation of Nrf2 in murine intracerebral hemorrhage&amp;author=LO Iniaghe&amp;author=PR Krafft&amp;author=DW Klebe&amp;volume=82&amp;publication_year=2015&amp;pages=349-358&amp;pmid=26176793&amp;doi=10.1016/j.nbd.2015.07.001&amp;"/></mixed-citation></ref><ref id="b14"><label>14.</label><mixed-citation><named-content content-type="citation-string">
+Liu T,
+Lv YF,
+Zhao JL,
+et al. 
+Regulation of Nrf2 by phosphorylation: Consequences for biological function and therapeutic implications.
+Free Radic Biol Med,
+2021,
+168: 129-141. doi: 10.1016/j.freeradbiomed.2021.03.034
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2021.03.034"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33794311"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Regulation of Nrf2 by phosphorylation: Consequences for biological function and therapeutic implications&amp;author=T Liu&amp;author=YF Lv&amp;author=JL Zhao&amp;volume=168&amp;publication_year=2021&amp;pages=129-141&amp;pmid=33794311&amp;doi=10.1016/j.freeradbiomed.2021.03.034&amp;"/></mixed-citation></ref><ref id="b15"><label>15.</label><mixed-citation><named-content content-type="citation-string">
+Apopa PL,
+He X,
+Ma Q. 
+. 
+Phosphorylation of Nrf2 in the transcription activation domain by casein kinase 2 (CK2) is critical for the nuclear translocation and transcription activation function of Nrf2 in IMR-32 neuroblastoma cells.
+J Biochem Mol Toxicol,
+2008,
+22(1): 63-76. doi: 10.1002/jbt.20212
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/jbt.20212"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18273910"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biochem Mol Toxicol&amp;title=Phosphorylation of Nrf2 in the transcription activation domain by casein kinase 2 (CK2) is critical for the nuclear translocation and transcription activation function of Nrf2 in IMR-32 neuroblastoma cells&amp;author=PL Apopa&amp;author=X He&amp;author=Q Ma&amp;volume=22&amp;issue=1&amp;publication_year=2008&amp;pages=63-76&amp;pmid=18273910&amp;doi=10.1002/jbt.20212&amp;"/></mixed-citation></ref><ref id="b16"><label>16.</label><mixed-citation><named-content content-type="citation-string">
+Jain AK,
+Jaiswal AK.
+. 
+GSK-3beta acts upstream of Fyn kinase in regulation of nuclear export and degradation of NF-E2 related factor 2.
+J Biol Chem,
+2007,
+282(22): 16502-16510. doi: 10.1074/jbc.M611336200
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.M611336200"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17403689"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biol Chem&amp;title=GSK-3beta acts upstream of Fyn kinase in regulation of nuclear export and degradation of NF-E2 related factor 2&amp;author=AK Jain&amp;author=AK Jaiswal&amp;volume=282&amp;issue=22&amp;publication_year=2007&amp;pages=16502-16510&amp;pmid=17403689&amp;doi=10.1074/jbc.M611336200&amp;"/></mixed-citation></ref><ref id="b17"><label>17.</label><mixed-citation><named-content content-type="citation-string">
+Chowdhry S,
+Zhang Y,
+McMahon M,
+et al. 
+Nrf2 is controlled by two distinct beta-TrCP recognition motifs in its Neh6 domain, one of which can be modulated by GSK-3 activity.
+Oncogene,
+2013,
+32(32): 3765-3781. doi: 10.1038/onc.2012.388
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/onc.2012.388"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3522573"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22964642"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncogene&amp;title=Nrf2 is controlled by two distinct beta-TrCP recognition motifs in its Neh6 domain, one of which can be modulated by GSK-3 activity&amp;author=S Chowdhry&amp;author=Y Zhang&amp;author=M McMahon&amp;volume=32&amp;issue=32&amp;publication_year=2013&amp;pages=3765-3781&amp;pmid=22964642&amp;doi=10.1038/onc.2012.388&amp;"/></mixed-citation></ref><ref id="b18"><label>18.</label><mixed-citation><named-content content-type="citation-string">
+Rizvi F,
+Shukla S,
+Kakkar P.
+. 
+Essential role of PH domain and leucine-rich repeat protein phosphatase 2 in Nrf2 suppression via modulation of Akt/GSK3beta/Fyn kinase axis during oxidative hepatocellular toxicity.
+Cell Death Dis,
+2014,
+5(3): e1153. doi: 10.1038/cddis.2014.118
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/cddis.2014.118"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3973230"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24675471"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Dis&amp;title=Essential role of PH domain and leucine-rich repeat protein phosphatase 2 in Nrf2 suppression via modulation of Akt/GSK3beta/Fyn kinase axis during oxidative hepatocellular toxicity&amp;author=F Rizvi&amp;author=S Shukla&amp;author=P Kakkar&amp;volume=5&amp;issue=3&amp;publication_year=2014&amp;pmid=24675471&amp;doi=10.1038/cddis.2014.118&amp;"/></mixed-citation></ref><ref id="b19"><label>19.</label><mixed-citation><named-content content-type="citation-string">
+Xiang M,
+Namani A,
+Wu S,
+et al. 
+Nrf2: bane or blessing in cancer?
+J Cancer Res Clin Oncol,
+2014,
+140(8): 1251-1259. doi: 10.1007/s00432-014-1627-1
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00432-014-1627-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11823804"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24599821"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Cancer Res Clin Oncol&amp;title=Nrf2: bane or blessing in cancer?&amp;author=M Xiang&amp;author=A Namani&amp;author=S Wu&amp;volume=140&amp;issue=8&amp;publication_year=2014&amp;pages=1251-1259&amp;pmid=24599821&amp;doi=10.1007/s00432-014-1627-1&amp;"/></mixed-citation></ref><ref id="b20"><label>20.</label><mixed-citation><named-content content-type="citation-string">
+Knatko EV,
+Ibbotson SH,
+Zhang Y,
+et al. 
+Nrf2 activation protects against solar-simulated ultraviolet radiation in mice and humans.
+Cancer Prev Res (Phila),
+2015,
+8(6): 475-486. doi: 10.1158/1940-6207.CAPR-14-0362
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/1940-6207.CAPR-14-0362"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4454593"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25804610"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Prev Res (Phila)&amp;title=Nrf2 activation protects against solar-simulated ultraviolet radiation in mice and humans&amp;author=EV Knatko&amp;author=SH Ibbotson&amp;author=Y Zhang&amp;volume=8&amp;issue=6&amp;publication_year=2015&amp;pages=475-486&amp;pmid=25804610&amp;doi=10.1158/1940-6207.CAPR-14-0362&amp;"/></mixed-citation></ref><ref id="b21"><label>21.</label><mixed-citation><named-content content-type="citation-string">
+Harder B,
+Jiang T,
+Wu T,
+et al. 
+Molecular mechanisms of Nrf 2 regulation and how these influence chemical modulation for disease intervention.
+Biochem Soc Trans,
+2015,
+43(4): 680-686. doi: 10.1042/BST20150020
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1042/BST20150020"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4613518"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26551712"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochem Soc Trans&amp;title=Molecular mechanisms of Nrf 2 regulation and how these influence chemical modulation for disease intervention&amp;author=B Harder&amp;author=T Jiang&amp;author=T Wu&amp;volume=43&amp;issue=4&amp;publication_year=2015&amp;pages=680-686&amp;pmid=26551712&amp;doi=10.1042/BST20150020&amp;"/></mixed-citation></ref><ref id="b22"><label>22.</label><mixed-citation><named-content content-type="citation-string">
+DeNicola GM,
+Chen PH,
+Mullarky E,
+et al. 
+NRF2 regulates serine biosynthesis in non-small cell lung cancer.
+Nat Genet,
+2015,
+47(12): 1475-1481. doi: 10.1038/ng0329-473a
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ng0329-473a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4721512"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26482881"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Genet&amp;title=NRF2 regulates serine biosynthesis in non-small cell lung cancer&amp;author=GM DeNicola&amp;author=PH Chen&amp;author=E Mullarky&amp;volume=47&amp;issue=12&amp;publication_year=2015&amp;pages=1475-1481&amp;pmid=26482881&amp;doi=10.1038/ng0329-473a&amp;"/></mixed-citation></ref><ref id="b23"><label>23.</label><mixed-citation><named-content content-type="citation-string">
+Tung MC,
+Lin PL,
+Wang YC,
+et al. 
+Mutant p53 confers chemoresistance in non-small cell lung cancer by upregulating Nrf2.
+Oncotarget,
+2015,
+6(39): 41692-41705. doi: 10.18632/oncotarget.6150
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18632/oncotarget.6150"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4747182"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26497680"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncotarget&amp;title=Mutant p53 confers chemoresistance in non-small cell lung cancer by upregulating Nrf2&amp;author=MC Tung&amp;author=PL Lin&amp;author=YC Wang&amp;volume=6&amp;issue=39&amp;publication_year=2015&amp;pages=41692-41705&amp;pmid=26497680&amp;doi=10.18632/oncotarget.6150&amp;"/></mixed-citation></ref><ref id="b24"><label>24.</label><mixed-citation><named-content content-type="citation-string">
+Jayakumar S,
+Pal D,
+Sandur SK. 
+. 
+Nrf2 facilitates repair of radiation induced DNA damage through homologous recombination repair pathway in a ROS independent manner in cancer cells.
+Mutat Res,
+2015,
+779: 33-45. doi: 10.1016/j.mrfmmm.2015.06.007
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.mrfmmm.2015.06.007"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26133502"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mutat Res&amp;title=Nrf2 facilitates repair of radiation induced DNA damage through homologous recombination repair pathway in a ROS independent manner in cancer cells&amp;author=S Jayakumar&amp;author=D Pal&amp;author=SK Sandur&amp;volume=779&amp;publication_year=2015&amp;pages=33-45&amp;pmid=26133502&amp;doi=10.1016/j.mrfmmm.2015.06.007&amp;"/></mixed-citation></ref><ref id="b25"><label>25.</label><mixed-citation><named-content content-type="citation-string">
+Dixon SJ,
+Lemberg KM,
+Lamprecht MR,
+et al. 
+Ferroptosis: an iron-dependent form of nonapoptotic cell death.
+Cell,
+2012,
+149(5): 1060-1072. doi: 10.1016/j.cell.2012.03.042
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2012.03.042"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3367386"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22632970"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=Ferroptosis: an iron-dependent form of nonapoptotic cell death&amp;author=SJ Dixon&amp;author=KM Lemberg&amp;author=MR Lamprecht&amp;volume=149&amp;issue=5&amp;publication_year=2012&amp;pages=1060-1072&amp;pmid=22632970&amp;doi=10.1016/j.cell.2012.03.042&amp;"/></mixed-citation></ref><ref id="b26"><label>26.</label><mixed-citation><named-content content-type="citation-string">
+Dodson M,
+Castro-Portuguez R,
+Zhang DD. 
+. 
+NRF2 plays a critical role in mitigating lipid peroxidation and ferroptosis.
+Redox Biol,
+2019,
+23: 101107. doi: 10.1016/j.redox.2019.101107
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.redox.2019.101107"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6859567"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30692038"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Redox Biol&amp;title=NRF2 plays a critical role in mitigating lipid peroxidation and ferroptosis&amp;author=M Dodson&amp;author=R Castro-Portuguez&amp;author=DD Zhang&amp;volume=23&amp;publication_year=2019&amp;pages=101107&amp;pmid=30692038&amp;doi=10.1016/j.redox.2019.101107&amp;"/></mixed-citation></ref><ref id="b27"><label>27.</label><mixed-citation><named-content content-type="citation-string">
+Abdalkader M,
+Lampinen R,
+Kanninen KM,
+et al. 
+Targeting Nrf2 to suppress ferroptosis and mitochondrial dysfunction in neurodegeneration.
+Front Neurosci,
+2018,
+12: 466. doi: 10.3389/fnins.2018.00466
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fnins.2018.00466"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6048292"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30042655"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Neurosci&amp;title=Targeting Nrf2 to suppress ferroptosis and mitochondrial dysfunction in neurodegeneration&amp;author=M Abdalkader&amp;author=R Lampinen&amp;author=KM Kanninen&amp;volume=12&amp;publication_year=2018&amp;pages=466&amp;pmid=30042655&amp;doi=10.3389/fnins.2018.00466&amp;"/></mixed-citation></ref><ref id="b28"><label>28.</label><mixed-citation><named-content content-type="citation-string">
+Yuan H,
+Li X,
+Zhang X,
+et al. 
+Identification of ACSL 4 as a biomarker and contributor of ferroptosis.
+Biochem Biophys Res Commun,
+2016,
+478(3): 1338-1343. doi: 10.1016/j.bbrc.2016.08.124.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bbrc.2016.08.124"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27565726"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochem Biophys Res Commun&amp;title=Identification of ACSL 4 as a biomarker and contributor of ferroptosis&amp;author=H Yuan&amp;author=X Li&amp;author=X Zhang&amp;volume=478&amp;issue=3&amp;publication_year=2016&amp;pages=1338-1343&amp;pmid=27565726&amp;doi=10.1016/j.bbrc.2016.08.124&amp;"/></mixed-citation></ref><ref id="b29"><label>29.</label><mixed-citation><named-content content-type="citation-string">
+Chu B,
+Kon N,
+Chen D,
+et al. 
+ALOX12 is required for p53-mediated tumour suppression through a distinct ferroptosis pathway.
+Nat Cell Biol,
+2019,
+21(5): 579-591. doi: 10.1038/s41556-019-0305-6
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41556-019-0305-6"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6624840"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30962574"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Cell Biol&amp;title=ALOX12 is required for p53-mediated tumour suppression through a distinct ferroptosis pathway&amp;author=B Chu&amp;author=N Kon&amp;author=D Chen&amp;volume=21&amp;issue=5&amp;publication_year=2019&amp;pages=579-591&amp;pmid=30962574&amp;doi=10.1038/s41556-019-0305-6&amp;"/></mixed-citation></ref><ref id="b30"><label>30.</label><mixed-citation><named-content content-type="citation-string">
+Yang WS,
+SriRamaratnam R,
+Welsch ME,
+et al. 
+Regulation of ferroptotic cancer cell death by GPX4.
+Cell,
+2014,
+156(1-2): 317-331. doi: 10.1016/j.cell.2013.12.010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2013.12.010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4076414"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24439385"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=Regulation of ferroptotic cancer cell death by GPX4&amp;author=WS Yang&amp;author=R SriRamaratnam&amp;author=ME Welsch&amp;volume=156&amp;issue=1-2&amp;publication_year=2014&amp;pages=317-331&amp;pmid=24439385&amp;doi=10.1016/j.cell.2013.12.010&amp;"/></mixed-citation></ref><ref id="b31"><label>31.</label><mixed-citation><named-content content-type="citation-string">
+Kakhlon O,
+Cabantchik ZI.
+. 
+The labile iron pool: characterization, measurement, and participation in cellular processes.
+Free Radic Biol Med,
+2002,
+33(8): 1037-1046. doi: 10.1016/s0891-5849(02)01006-7
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/s0891-5849(02)01006-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12374615"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=The labile iron pool: characterization, measurement, and participation in cellular processes&amp;author=O Kakhlon&amp;author=ZI Cabantchik&amp;volume=33&amp;issue=8&amp;publication_year=2002&amp;pages=1037-1046&amp;pmid=12374615&amp;doi=10.1016/s0891-5849(02)01006-7&amp;"/></mixed-citation></ref><ref id="b32"><label>32.</label><mixed-citation><named-content content-type="citation-string">
+Mancias JD,
+Wang X,
+Gygi SP,
+et al. 
+Quantitative proteomics identifies NCOA 4 as the cargo receptor mediating ferritinophagy.
+Nature,
+2014,
+509(7498): 105-109. doi: 10.1038/nature13148
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature13148"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4180099"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24695223"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Quantitative proteomics identifies NCOA 4 as the cargo receptor mediating ferritinophagy&amp;author=JD Mancias&amp;author=X Wang&amp;author=SP Gygi&amp;volume=509&amp;issue=7498&amp;publication_year=2014&amp;pages=105-109&amp;pmid=24695223&amp;doi=10.1038/nature13148&amp;"/></mixed-citation></ref><ref id="b33"><label>33.</label><mixed-citation><named-content content-type="citation-string">
+Hou W,
+Xie Y,
+Song X,
+et al. 
+Autophagy promotes ferroptosis by degradation of ferritin.
+Autophagy,
+2016,
+12(8): 1425-1428. doi: 10.1080/15548627.2016.1187366
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/15548627.2016.1187366"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4968231"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27245739"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Autophagy&amp;title=Autophagy promotes ferroptosis by degradation of ferritin&amp;author=W Hou&amp;author=Y Xie&amp;author=X Song&amp;volume=12&amp;issue=8&amp;publication_year=2016&amp;pages=1425-1428&amp;pmid=27245739&amp;doi=10.1080/15548627.2016.1187366&amp;"/></mixed-citation></ref><ref id="b34"><label>34.</label><mixed-citation><named-content content-type="citation-string">
+Kerins MJ,
+Ooi A.
+. 
+The roles of NRF2 in modulating cellular iron homeostasis.
+Antioxid Redox Signal,
+2018,
+29(17): 1756-1773. doi: 10.1089/ars.2017.7176
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1089/ars.2017.7176"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6208163"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28793787"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Antioxid Redox Signal&amp;title=The roles of NRF2 in modulating cellular iron homeostasis&amp;author=MJ Kerins&amp;author=A Ooi&amp;volume=29&amp;issue=17&amp;publication_year=2018&amp;pages=1756-1773&amp;pmid=28793787&amp;doi=10.1089/ars.2017.7176&amp;"/></mixed-citation></ref><ref id="b35"><label>35.</label><mixed-citation><named-content content-type="citation-string">
+Agyeman AS,
+Chaerkady R,
+Shaw PG,
+et al. 
+Transcriptomic and proteomic profiling of KEAP 1 disrupted and sulforaphane-treated human breast epithelial cells reveals common expression profiles.
+Breast Cancer Res Treat,
+2012,
+132(1): 175-187. doi: 10.1007/s10549-011-1536-9
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s10549-011-1536-9"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3564494"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21597922"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Breast Cancer Res Treat&amp;title=Transcriptomic and proteomic profiling of KEAP 1 disrupted and sulforaphane-treated human breast epithelial cells reveals common expression profiles&amp;author=AS Agyeman&amp;author=R Chaerkady&amp;author=PG Shaw&amp;volume=132&amp;issue=1&amp;publication_year=2012&amp;pages=175-187&amp;pmid=21597922&amp;doi=10.1007/s10549-011-1536-9&amp;"/></mixed-citation></ref><ref id="b36"><label>36.</label><mixed-citation><named-content content-type="citation-string">
+Harada N,
+Kanayama M,
+Maruyama A,
+et al. 
+Nrf2 regulates ferroportin 1-mediated iron efflux and counteracts lipopolysaccharide-induced ferroportin 1 mRNA suppression in macrophages.
+Arch Biochem Biophys,
+2011,
+508(1): 101-109. doi: 10.1016/j.abb.2011.02.001
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.abb.2011.02.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21303654"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Arch Biochem Biophys&amp;title=Nrf2 regulates ferroportin 1-mediated iron efflux and counteracts lipopolysaccharide-induced ferroportin 1 mRNA suppression in macrophages&amp;author=N Harada&amp;author=M Kanayama&amp;author=A Maruyama&amp;volume=508&amp;issue=1&amp;publication_year=2011&amp;pages=101-109&amp;pmid=21303654&amp;doi=10.1016/j.abb.2011.02.001&amp;"/></mixed-citation></ref><ref id="b37"><label>37.</label><mixed-citation><named-content content-type="citation-string">
+Alam J,
+Stewart D,
+Touchard C,
+et al. 
+Nrf2, a Cap’n’Collar transcription factor, regulates induction of the heme oxygenase-1 gene.
+J Biol Chem,
+1999,
+274(37): 26071-26078. doi: 10.1074/jbc.274.37.26071
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.274.37.26071"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="10473555"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biol Chem&amp;title=Nrf2, a Cap’n’Collar transcription factor, regulates induction of the heme oxygenase-1 gene&amp;author=J Alam&amp;author=D Stewart&amp;author=C Touchard&amp;volume=274&amp;issue=37&amp;publication_year=1999&amp;pages=26071-26078&amp;pmid=10473555&amp;doi=10.1074/jbc.274.37.26071&amp;"/></mixed-citation></ref><ref id="b38"><label>38.</label><mixed-citation><named-content content-type="citation-string">
+Chorley BN,
+Campbell MR,
+Wang X,
+et al. 
+Identification of novel NRF2-regulated genes by ChIP-Seq: influence on retinoid X receptor alpha.
+Nucleic Acids Res,
+2012,
+40(15): 7416-7429. doi: 10.1093/nar/gks409
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/nar/gks409"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3424561"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22581777"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nucleic Acids Res&amp;title=Identification of novel NRF2-regulated genes by ChIP-Seq: influence on retinoid X receptor alpha&amp;author=BN Chorley&amp;author=MR Campbell&amp;author=X Wang&amp;volume=40&amp;issue=15&amp;publication_year=2012&amp;pages=7416-7429&amp;pmid=22581777&amp;doi=10.1093/nar/gks409&amp;"/></mixed-citation></ref><ref id="b39"><label>39.</label><mixed-citation><named-content content-type="citation-string">
+Hubner RH,
+Schwartz JD,
+De Bishnu P,
+et al. 
+Coordinate control of expression of Nrf2-modulated genes in the human small airway epithelium is highly responsive to cigarette smoking.
+Mol Med,
+2009,
+15(7-8): 203-219. doi: 10.2119/molmed.2008.00130
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2119/molmed.2008.00130"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2707520"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19593404"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Med&amp;title=Coordinate control of expression of Nrf2-modulated genes in the human small airway epithelium is highly responsive to cigarette smoking&amp;author=RH Hubner&amp;author=JD Schwartz&amp;author=Bishnu P De&amp;volume=15&amp;issue=7-8&amp;publication_year=2009&amp;pages=203-219&amp;pmid=19593404&amp;doi=10.2119/molmed.2008.00130&amp;"/></mixed-citation></ref><ref id="b40"><label>40.</label><mixed-citation><named-content content-type="citation-string">
+Campbell MR,
+Karaca M,
+Adamski KN,
+et al. 
+Novel hematopoietic target genes in the NRF2-mediated transcriptional pathway.
+Oxid Med Cell Longev,
+2013,
+2013: 120305. doi: 10.1155/2013/120305
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1155/2013/120305"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3677633"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23766848"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oxid Med Cell Longev&amp;title=Novel hematopoietic target genes in the NRF2-mediated transcriptional pathway&amp;author=MR Campbell&amp;author=M Karaca&amp;author=KN Adamski&amp;volume=2013&amp;publication_year=2013&amp;pages=120305&amp;pmid=23766848&amp;doi=10.1155/2013/120305&amp;"/></mixed-citation></ref><ref id="b41"><label>41.</label><mixed-citation><named-content content-type="citation-string">
+Wu KC,
+Cui JY,
+Klaassen CD.
+. 
+Beneficial role of Nrf2 in regulating NADPH generation and consumption.
+Toxicol Sci.
+2011.  Oct; 123(2): 590-600. doi: 10.1093/toxsci/kfr183
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/toxsci/kfr183"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3179677"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21775727"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Toxicol Sci&amp;title=Beneficial role of Nrf2 in regulating NADPH generation and consumption&amp;author=KC Wu&amp;author=JY Cui&amp;author=CD Klaassen&amp;volume=123&amp;issue=2&amp;publication_year=2011&amp;pages=590-600&amp;pmid=21775727&amp;doi=10.1093/toxsci/kfr183&amp;"/></mixed-citation></ref><ref id="b42"><label>42.</label><mixed-citation><named-content content-type="citation-string">
+Huang J,
+Tabbi-Anneni I,
+Gunda V,
+et al. 
+Transcription factor Nrf 2 regulates SHP and lipogenic gene expression in hepatic lipid metabolism.
+Am J Physiol Gastrointest Liver Physiol,
+2010,
+299(6): G1211-G1221. doi: 10.1152/ajpgi.00322.2010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1152/ajpgi.00322.2010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3006243"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20930048"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Am J Physiol Gastrointest Liver Physiol&amp;title=Transcription factor Nrf 2 regulates SHP and lipogenic gene expression in hepatic lipid metabolism&amp;author=J Huang&amp;author=I Tabbi-Anneni&amp;author=V Gunda&amp;volume=299&amp;issue=6&amp;publication_year=2010&amp;pmid=20930048&amp;doi=10.1152/ajpgi.00322.2010&amp;"/></mixed-citation></ref><ref id="b43"><label>43.</label><mixed-citation><named-content content-type="citation-string">
+Cho HY,
+Gladwell W,
+Wang X,
+et al. 
+Nrf2-regulated PPARgamma expression is critical to protection against acute lung injury in mice.
+Am J Respir Crit Care Med,
+2010,
+182(2): 170-182. doi: 10.1164/rccm.200907-1047OC
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1164/rccm.200907-1047OC"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC2913232"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20224069"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Am J Respir Crit Care Med&amp;title=Nrf2-regulated PPARgamma expression is critical to protection against acute lung injury in mice&amp;author=HY Cho&amp;author=W Gladwell&amp;author=X Wang&amp;volume=182&amp;issue=2&amp;publication_year=2010&amp;pages=170-182&amp;pmid=20224069&amp;doi=10.1164/rccm.200907-1047OC&amp;"/></mixed-citation></ref><ref id="b44"><label>44.</label><mixed-citation><named-content content-type="citation-string">
+Jung KA,
+Choi BH,
+Nam CW,
+et al. 
+Identification of aldo-keto reductases as NRF2-target marker genes in human cells.
+Toxicol Lett,
+2013,
+218(1): 39-49. doi: 10.1016/j.toxlet.2012.12.026
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.toxlet.2012.12.026"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23305850"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Toxicol Lett&amp;title=Identification of aldo-keto reductases as NRF2-target marker genes in human cells&amp;author=KA Jung&amp;author=BH Choi&amp;author=CW Nam&amp;volume=218&amp;issue=1&amp;publication_year=2013&amp;pages=39-49&amp;pmid=23305850&amp;doi=10.1016/j.toxlet.2012.12.026&amp;"/></mixed-citation></ref><ref id="b45"><label>45.</label><mixed-citation><named-content content-type="citation-string">
+Yang H,
+Magilnick N,
+Lee C,
+et al. 
+Nrf1 and Nrf2 regulate rat glutamate-cysteine ligase catalytic subunit transcription indirectly via NF-kappaB and AP-1.
+Mol Cell Biol,
+2005,
+25(14): 5933-5946. doi: 10.1128/MCB.25.14.5933-5946.2005
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1128/MCB.25.14.5933-5946.2005"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC1168815"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15988009"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cell Biol&amp;title=Nrf1 and Nrf2 regulate rat glutamate-cysteine ligase catalytic subunit transcription indirectly via NF-kappaB and AP-1&amp;author=H Yang&amp;author=N Magilnick&amp;author=C Lee&amp;volume=25&amp;issue=14&amp;publication_year=2005&amp;pages=5933-5946&amp;pmid=15988009&amp;doi=10.1128/MCB.25.14.5933-5946.2005&amp;"/></mixed-citation></ref><ref id="b46"><label>46.</label><mixed-citation><named-content content-type="citation-string">
+Chan JY,
+Kwong M.
+. 
+Impaired expression of glutathione synthetic enzyme genes in mice with targeted deletion of the Nrf2 basic-leucine zipper protein.
+Biochim Biophys Acta,
+2000,
+1517(1): 19-26. doi: 10.1016/s0167-4781(00)00238-4
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/s0167-4781(00)00238-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="11118612"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochim Biophys Acta&amp;title=Impaired expression of glutathione synthetic enzyme genes in mice with targeted deletion of the Nrf2 basic-leucine zipper protein&amp;author=JY Chan&amp;author=M Kwong&amp;volume=1517&amp;issue=1&amp;publication_year=2000&amp;pages=19-26&amp;pmid=11118612&amp;doi=10.1016/s0167-4781(00)00238-4&amp;"/></mixed-citation></ref><ref id="b47"><label>47.</label><mixed-citation><named-content content-type="citation-string">
+Sasaki H,
+Sato H,
+Kuriyama-Matsumura K,
+et al. 
+Electrophile response element-mediated induction of the cystine/glutamate exchange transporter gene expression.
+J Biol Chem,
+2002,
+277(47): 44765-44771. doi: 10.1074/jbc.M208704200
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.M208704200"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12235164"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biol Chem&amp;title=Electrophile response element-mediated induction of the cystine/glutamate exchange transporter gene expression&amp;author=H Sasaki&amp;author=H Sato&amp;author=K Kuriyama-Matsumura&amp;volume=277&amp;issue=47&amp;publication_year=2002&amp;pages=44765-44771&amp;pmid=12235164&amp;doi=10.1074/jbc.M208704200&amp;"/></mixed-citation></ref><ref id="b48"><label>48.</label><mixed-citation><named-content content-type="citation-string">
+Ishii T,
+Itoh K,
+Takahashi S,
+et al. 
+Transcription factor Nrf 2 coordinately regulates a group of oxidative stress-inducible genes in macrophages.
+J Biol Chem,
+2000,
+275(21): 16023-16029. doi: 10.1074/jbc.275.21.16023
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1074/jbc.275.21.16023"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="10821856"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biol Chem&amp;title=Transcription factor Nrf 2 coordinately regulates a group of oxidative stress-inducible genes in macrophages&amp;author=T Ishii&amp;author=K Itoh&amp;author=S Takahashi&amp;volume=275&amp;issue=21&amp;publication_year=2000&amp;pages=16023-16029&amp;pmid=10821856&amp;doi=10.1074/jbc.275.21.16023&amp;"/></mixed-citation></ref><ref id="b49"><label>49.</label><mixed-citation><named-content content-type="citation-string">
+Kwak MK,
+Itoh K,
+Yamamoto M,
+et al. 
+Enhanced expression of the transcription factor Nrf2 by cancer chemopreventive agents: role of antioxidant response element-like sequences in the nrf2 promoter.
+Mol Cell Biol,
+2002,
+22(9): 2883-2892. doi: 10.1128/MCB.22.9.2883-2892.2002
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1128/MCB.22.9.2883-2892.2002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC133753"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="11940647"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cell Biol&amp;title=Enhanced expression of the transcription factor Nrf2 by cancer chemopreventive agents: role of antioxidant response element-like sequences in the nrf2 promoter&amp;author=MK Kwak&amp;author=K Itoh&amp;author=M Yamamoto&amp;volume=22&amp;issue=9&amp;publication_year=2002&amp;pages=2883-2892&amp;pmid=11940647&amp;doi=10.1128/MCB.22.9.2883-2892.2002&amp;"/></mixed-citation></ref><ref id="b50"><label>50.</label><mixed-citation><named-content content-type="citation-string">
+Hayes JD,
+Dinkova-Kostova AT. 
+. 
+The Nrf2 regulatory network provides an interface between redox and intermediary metabolism.
+Trends Biochem Sci,
+2014,
+39(4): 199-218. doi: 10.1016/j.tibs.2014.02.002
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.tibs.2014.02.002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24647116"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trends Biochem Sci&amp;title=The Nrf2 regulatory network provides an interface between redox and intermediary metabolism&amp;author=JD Hayes&amp;author=AT Dinkova-Kostova&amp;volume=39&amp;issue=4&amp;publication_year=2014&amp;pages=199-218&amp;pmid=24647116&amp;doi=10.1016/j.tibs.2014.02.002&amp;"/></mixed-citation></ref><ref id="b51"><label>51.</label><mixed-citation><named-content content-type="citation-string">
+Gong D,
+Chen M,
+Wang Y,
+et al. 
+Role of ferroptosis on tumor progression and immunotherapy.
+Cell Death Discov,
+2022,
+8(1): 427. doi: 10.1038/s41420-022-01218-8
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41420-022-01218-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9605952"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36289191"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Discov&amp;title=Role of ferroptosis on tumor progression and immunotherapy&amp;author=D Gong&amp;author=M Chen&amp;author=Y Wang&amp;volume=8&amp;issue=1&amp;publication_year=2022&amp;pages=427&amp;pmid=36289191&amp;doi=10.1038/s41420-022-01218-8&amp;"/></mixed-citation></ref><ref id="b52"><label>52.</label><mixed-citation><named-content content-type="citation-string">
+Dolma S,
+Lessnick SL,
+Hahn WC,
+et al. 
+Identification of genotype-selective antitumor agents using synthetic lethal chemical screening in engineered human tumor cells.
+Cancer Cell,
+2003,
+3(3): 285-296. doi: 10.1016/s1535-6108(03)00050-3
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/s1535-6108(03)00050-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12676586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Cell&amp;title=Identification of genotype-selective antitumor agents using synthetic lethal chemical screening in engineered human tumor cells&amp;author=S Dolma&amp;author=SL Lessnick&amp;author=WC Hahn&amp;volume=3&amp;issue=3&amp;publication_year=2003&amp;pages=285-296&amp;pmid=12676586&amp;doi=10.1016/s1535-6108(03)00050-3&amp;"/></mixed-citation></ref><ref id="b53"><label>53.</label><mixed-citation><named-content content-type="citation-string">
+Wang XJ,
+Sun Z,
+Villeneuve NF,
+et al. 
+Nrf2 enhances resistance of cancer cells to chemotherapeutic drugs, the dark side of Nrf2.
+Carcinogenesis,
+2008,
+29(6): 1235-1243. doi: 10.1093/carcin/bgn095
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/carcin/bgn095"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3312612"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18413364"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carcinogenesis&amp;title=Nrf2 enhances resistance of cancer cells to chemotherapeutic drugs, the dark side of Nrf2&amp;author=XJ Wang&amp;author=Z Sun&amp;author=NF Villeneuve&amp;volume=29&amp;issue=6&amp;publication_year=2008&amp;pages=1235-1243&amp;pmid=18413364&amp;doi=10.1093/carcin/bgn095&amp;"/></mixed-citation></ref><ref id="b54"><label>54.</label><mixed-citation><named-content content-type="citation-string">
+Sun X,
+Ou Z,
+Chen R,
+et al. 
+Activation of the p62-Keap1-NRF 2 pathway protects against ferroptosis in hepatocellular carcinoma cells.
+Hepatology,
+2016,
+63(1): 173-184. doi: 10.1002/hep.28251
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/hep.28251"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4688087"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26403645"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Hepatology&amp;title=Activation of the p62-Keap1-NRF 2 pathway protects against ferroptosis in hepatocellular carcinoma cells&amp;author=X Sun&amp;author=Z Ou&amp;author=R Chen&amp;volume=63&amp;issue=1&amp;publication_year=2016&amp;pages=173-184&amp;pmid=26403645&amp;doi=10.1002/hep.28251&amp;"/></mixed-citation></ref><ref id="b55"><label>55.</label><mixed-citation><named-content content-type="citation-string">
+Shin D,
+Kim EH,
+Lee J,
+et al. 
+Nrf2 inhibition reverses resistance to GPX4 inhibitor-induced ferroptosis in head and neck cancer.
+Free Radic Biol Med,
+2018,
+129: 454-462. doi: 10.1016/j.freeradbiomed.2018.10.426
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2018.10.426"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30339884"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Nrf2 inhibition reverses resistance to GPX4 inhibitor-induced ferroptosis in head and neck cancer&amp;author=D Shin&amp;author=EH Kim&amp;author=J Lee&amp;volume=129&amp;publication_year=2018&amp;pages=454-462&amp;pmid=30339884&amp;doi=10.1016/j.freeradbiomed.2018.10.426&amp;"/></mixed-citation></ref><ref id="b56"><label>56.</label><mixed-citation><named-content content-type="citation-string">
+Takahashi N,
+Cho P,
+Selfors LM,
+et al. 
+3D culture models with CRISPR screens reveal hyperactive NRF 2 as a prerequisite for spheroid formation via regulation of proliferation and ferroptosis.
+Mol Cell,
+2020,
+80(5): 828-844.e6. doi: 10.1016/j.molcel.2020.10.010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molcel.2020.10.010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7718371"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33128871"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cell&amp;title=3D culture models with CRISPR screens reveal hyperactive NRF 2 as a prerequisite for spheroid formation via regulation of proliferation and ferroptosis&amp;author=N Takahashi&amp;author=P Cho&amp;author=LM Selfors&amp;volume=80&amp;issue=5&amp;publication_year=2020&amp;pages=828-844&amp;pmid=33128871&amp;doi=10.1016/j.molcel.2020.10.010&amp;"/></mixed-citation></ref><ref id="b57"><label>57.</label><mixed-citation><named-content content-type="citation-string">
+Feng S,
+Li Y,
+Huang H,
+et al. 
+Isoorientin reverses lung cancer drug resistance by promoting ferroptosis via the SIRT6/Nrf2/GPX4 signaling pathway.
+Eur J Pharmacol,
+2023,
+954: 175853. doi: 10.1016/j.ejphar.2023.175853
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.ejphar.2023.175853"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37329975"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Eur J Pharmacol&amp;title=Isoorientin reverses lung cancer drug resistance by promoting ferroptosis via the SIRT6/Nrf2/GPX4 signaling pathway&amp;author=S Feng&amp;author=Y Li&amp;author=H Huang&amp;volume=954&amp;publication_year=2023&amp;pages=175853&amp;pmid=37329975&amp;doi=10.1016/j.ejphar.2023.175853&amp;"/></mixed-citation></ref><ref id="b58"><label>58.</label><mixed-citation><named-content content-type="citation-string">
+Fan Z,
+Wirth AK,
+Chen D,
+et al. 
+Nrf2-Keap 1 pathway promotes cell proliferation and diminishes ferroptosis.
+Oncogenesis,
+2017,
+6(8): e371. doi: 10.1038/oncsis.2017.65
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/oncsis.2017.65"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5608917"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28805788"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncogenesis&amp;title=Nrf2-Keap 1 pathway promotes cell proliferation and diminishes ferroptosis&amp;author=Z Fan&amp;author=AK Wirth&amp;author=D Chen&amp;volume=6&amp;issue=8&amp;publication_year=2017&amp;pmid=28805788&amp;doi=10.1038/oncsis.2017.65&amp;"/></mixed-citation></ref><ref id="b59"><label>59.</label><mixed-citation><named-content content-type="citation-string">
+Stockwell BR,
+Friedmann Angeli JP,
+Bayir H,
+et al. 
+Ferroptosis: a regulated cell death nexus linking metabolism, redox biology, and disease.
+Cell,
+2017,
+171(2): 273-285. doi: 10.1016/j.cell.2017.09.021
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2017.09.021"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5685180"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28985560"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=Ferroptosis: a regulated cell death nexus linking metabolism, redox biology, and disease&amp;author=BR Stockwell&amp;author=Angeli JP Friedmann&amp;author=H Bayir&amp;volume=171&amp;issue=2&amp;publication_year=2017&amp;pages=273-285&amp;pmid=28985560&amp;doi=10.1016/j.cell.2017.09.021&amp;"/></mixed-citation></ref><ref id="b60"><label>60.</label><mixed-citation><named-content content-type="citation-string">
+Roh JL,
+Kim EH,
+Jang H,
+et al. 
+Nrf2 inhibition reverses the resistance of cisplatin-resistant head and neck cancer cells to artesunate-induced ferroptosis.
+Redox Biol,
+2017,
+11: 254-262. doi: 10.1016/j.redox.2016.12.010
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.redox.2016.12.010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5198738"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28012440"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Redox Biol&amp;title=Nrf2 inhibition reverses the resistance of cisplatin-resistant head and neck cancer cells to artesunate-induced ferroptosis&amp;author=JL Roh&amp;author=EH Kim&amp;author=H Jang&amp;volume=11&amp;publication_year=2017&amp;pages=254-262&amp;pmid=28012440&amp;doi=10.1016/j.redox.2016.12.010&amp;"/></mixed-citation></ref><ref id="b61"><label>61.</label><mixed-citation><named-content content-type="citation-string">
+Zou Y,
+Wang X,
+Khan A,
+et al. 
+Environmental remediation and application of nanoscale zero-valent iron and its composites for the removal of heavy metal ions: a review.
+Environ Sci Technol,
+2016,
+50(14): 7290-7304. doi: 10.1021/acs.est.6b01897
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.est.6b01897"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27331413"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Environ Sci Technol&amp;title=Environmental remediation and application of nanoscale zero-valent iron and its composites for the removal of heavy metal ions: a review&amp;author=Y Zou&amp;author=X Wang&amp;author=A Khan&amp;volume=50&amp;issue=14&amp;publication_year=2016&amp;pages=7290-7304&amp;pmid=27331413&amp;doi=10.1021/acs.est.6b01897&amp;"/></mixed-citation></ref><ref id="b62"><label>62.</label><mixed-citation><named-content content-type="citation-string">
+Yang LX,
+Wu YN,
+Wang PW,
+et al. 
+Silver-coated zero-valent iron nanoparticles enhance cancer therapy in mice through lysosome-dependent dual programed cell death pathways: triggering simultaneous apoptosis and autophagy only in cancerous cells.
+J Mater Chem B,
+2020,
+8(18): 4122-4131. doi: 10.1039/c9tb01477b
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/c9tb01477b"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32267258"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Mater Chem B&amp;title=Silver-coated zero-valent iron nanoparticles enhance cancer therapy in mice through lysosome-dependent dual programed cell death pathways: triggering simultaneous apoptosis and autophagy only in cancerous cells&amp;author=LX Yang&amp;author=YN Wu&amp;author=PW Wang&amp;volume=8&amp;issue=18&amp;publication_year=2020&amp;pages=4122-4131&amp;pmid=32267258&amp;doi=10.1039/c9tb01477b&amp;"/></mixed-citation></ref><ref id="b63"><label>63.</label><mixed-citation><named-content content-type="citation-string">
+Hsieh CH,
+Hsieh HC,
+Shih FS,
+et al. 
+An innovative NRF 2 nano-modulator induces lung cancer ferroptosis and elicits an immunostimulatory tumor microenvironment.
+Theranostics,
+2021,
+11(14): 7072-7091. doi: 10.7150/thno.57803
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7150/thno.57803"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8171079"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34093872"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theranostics&amp;title=An innovative NRF 2 nano-modulator induces lung cancer ferroptosis and elicits an immunostimulatory tumor microenvironment&amp;author=CH Hsieh&amp;author=HC Hsieh&amp;author=FS Shih&amp;volume=11&amp;issue=14&amp;publication_year=2021&amp;pages=7072-7091&amp;pmid=34093872&amp;doi=10.7150/thno.57803&amp;"/></mixed-citation></ref><ref id="b64"><label>64.</label><mixed-citation><named-content content-type="citation-string">
+NaveenKumar SK,
+SharathBabu BN,
+Hemshekhar M,
+et al. 
+The role of reactive oxygen species and ferroptosis in heme-mediated activation of human platelets.
+ACS Chem Biol,
+2018,
+13(8): 1996-2002. doi: 10.1021/acschembio.8b00458
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acschembio.8b00458"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29869870"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Chem Biol&amp;title=The role of reactive oxygen species and ferroptosis in heme-mediated activation of human platelets&amp;author=SK NaveenKumar&amp;author=BN SharathBabu&amp;author=M Hemshekhar&amp;volume=13&amp;issue=8&amp;publication_year=2018&amp;pages=1996-2002&amp;pmid=29869870&amp;doi=10.1021/acschembio.8b00458&amp;"/></mixed-citation></ref><ref id="b65"><label>65.</label><mixed-citation><named-content content-type="citation-string">
+Havrdova E,
+Giovannoni G,
+Gold R,
+et al. 
+Effect of delayed-release dimethyl fumarate on no evidence of disease activity in relapsing-remitting multiple sclerosis: integrated analysis of the phase III DEFINE and CONFIRM studies.
+Eur J Neurol,
+2017,
+24(5): 726-733. doi: 10.1111/ene.13272
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/ene.13272"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5413827"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28328179"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Eur J Neurol&amp;title=Effect of delayed-release dimethyl fumarate on no evidence of disease activity in relapsing-remitting multiple sclerosis: integrated analysis of the phase III DEFINE and CONFIRM studies&amp;author=E Havrdova&amp;author=G Giovannoni&amp;author=R Gold&amp;volume=24&amp;issue=5&amp;publication_year=2017&amp;pages=726-733&amp;pmid=28328179&amp;doi=10.1111/ene.13272&amp;"/></mixed-citation></ref><ref id="b66"><label>66.</label><mixed-citation><named-content content-type="citation-string">
+Takaya K,
+Suzuki T,
+Motohashi H,
+et al. 
+Validation of the multiple sensor mechanism of the Keap1-Nrf2 system.
+Free Radic Biol Med.
+2012.  Aug 15; 53(4): 817-827. doi: 10.1016/j.freeradbiomed.2012.06.023
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2012.06.023"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3539416"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22732183"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Validation of the multiple sensor mechanism of the Keap1-Nrf2 system&amp;author=K Takaya&amp;author=T Suzuki&amp;author=H Motohashi&amp;publication_year=2012&amp;pmid=22732183&amp;doi=10.1016/j.freeradbiomed.2012.06.023&amp;"/></mixed-citation></ref><ref id="b67"><label>67.</label><mixed-citation><named-content content-type="citation-string">
+Zhang B,
+Zhai M,
+Li B,
+et al. 
+Honokiol ameliorates myocardial ischemia/reperfusion injury in type 1 diabetic rats by reducing oxidative stress and apoptosis through activating the SIRT1-Nrf2 signaling pathway.
+Oxid Med Cell Longev,
+2018,
+2018: 3159801. doi: 10.1155/2018/3159801
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1155/2018/3159801"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5838504"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29675132"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oxid Med Cell Longev&amp;title=Honokiol ameliorates myocardial ischemia/reperfusion injury in type 1 diabetic rats by reducing oxidative stress and apoptosis through activating the SIRT1-Nrf2 signaling pathway&amp;author=B Zhang&amp;author=M Zhai&amp;author=B Li&amp;volume=2018&amp;publication_year=2018&amp;pmid=29675132&amp;doi=10.1155/2018/3159801&amp;"/></mixed-citation></ref><ref id="b68"><label>68.</label><mixed-citation><named-content content-type="citation-string">
+Skouta R,
+Dixon SJ,
+Wang J,
+et al. 
+Ferrostatins inhibit oxidative lipid damage and cell death in diverse disease models.
+J Am Chem Soc,
+2014,
+136(12): 4551-4556. doi: 10.1021/ja411006a
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja411006a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3985476"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24592866"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Am Chem Soc&amp;title=Ferrostatins inhibit oxidative lipid damage and cell death in diverse disease models&amp;author=R Skouta&amp;author=SJ Dixon&amp;author=J Wang&amp;volume=136&amp;issue=12&amp;publication_year=2014&amp;pages=4551-4556&amp;pmid=24592866&amp;doi=10.1021/ja411006a&amp;"/></mixed-citation></ref><ref id="b69"><label>69.</label><mixed-citation><named-content content-type="citation-string">
+Baba Y,
+Higa JK,
+Shimada BK,
+et al. 
+Protective effects of the mechanistic target of rapamycin against excess iron and ferroptosis in cardiomyocytes.
+Am J Physiol Heart Circ Physiol,
+2018,
+314(3): H659-H668. doi: 10.1152/ajpheart.00452.2017
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1152/ajpheart.00452.2017"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5899260"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29127238"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Am J Physiol Heart Circ Physiol&amp;title=Protective effects of the mechanistic target of rapamycin against excess iron and ferroptosis in cardiomyocytes&amp;author=Y Baba&amp;author=JK Higa&amp;author=BK Shimada&amp;volume=314&amp;issue=3&amp;publication_year=2018&amp;pages=H659&amp;pmid=29127238&amp;doi=10.1152/ajpheart.00452.2017&amp;"/></mixed-citation></ref></ref-list></sec></sec></body></article>

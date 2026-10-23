@@ -1,0 +1,72 @@
+{
+  "normalization": {
+    "traditional_to_simplified": {
+      "胸": "胸", "痛": "痛", "喘": "喘", "氣": "气", "腦": "脑", "頭": "头", "劇": "剧", "烈": "烈",
+      "肢": "肢", "體": "体", "無": "无", "力": "力", "歪": "歪", "斜": "斜", "語": "语", "言": "言",
+      "暈": "晕", "厥": "厥", "臟": "脏", "現": "现", "時": "时", "間": "间",
+      "藥": "药", "劑": "剂", "量": "量", "調": "调", "個": "个", "人": "人", "風": "风", "險": "险",
+      "飲": "饮", "食": "食", "範": "范", "圍": "围", "過": "过", "沒": "没", "嗎": "吗", "為": "为",
+      "這": "这", "種": "种", "應": "应", "該": "该", "從": "从", "醫": "医", "療": "疗", "發": "发",
+      "現": "现", "會": "会", "與": "与", "並": "并", "嗎": "吗", "邊": "边", "側": "侧", "臉": "脸",
+      "口": "口", "角": "角", "歸": "归", "後": "后", "前": "前", "曾": "曾", "經": "经", "沒": "没"
+    }
+  },
+  "emergency": {
+    "symptom_terms": [
+      "胸痛", "胸口痛", "胸口疼", "胸闷", "心前区痛", "呼吸困难", "喘不上气", "气短", "窒息",
+      "心跳骤停", "心脏骤停", "濒死感", "晕厥", "昏厥", "意识异常", "失去意识", "大汗", "冷汗",
+      "一侧肢体无力", "单侧肢体无力", "肢体动不了", "身体动不了", "半身不遂", "口角歪斜", "嘴角歪", "言语不清", "说话含糊",
+      "突发剧烈头痛", "剧烈头痛", "爆炸样头痛", "视物不清", "突然看不清", "抽搐",
+      "chest pain", "chest pressure", "chest tightness", "shortness of breath", "difficulty breathing", "cannot breathe", "can't breathe", "cardiac arrest", "heart stopped", "fainting", "fainted", "loss of consciousness", "confusion", "cold sweat", "one-sided weakness", "weakness on one side", "facial droop", "slurred speech", "sudden severe headache", "worst headache", "seizure"
+    ],
+    "critical_symptom_terms": ["心跳骤停", "心脏骤停", "濒死感", "失去意识", "半身不遂", "cardiac arrest", "heart stopped", "loss of consciousness", "worst headache"],
+    "current_person_terms": ["我", "本人", "患者", "此刻", "现在", "刚刚", "i", "my", "me", "currently", "right now", "just now"],
+    "time_severity_help_terms": [
+      "突然", "突发", "刚刚", "此刻", "现在", "持续", "不缓解", "加重", "剧烈", "严重", "无法",
+      "立即", "马上", "急救", "急诊", "就医", "怎么办", "求助", "拨打120", "120",
+      "now", "right now", "currently", "suddenly", "sudden", "severe", "severely", "unbearable",
+      "cannot breathe", "can't breathe", "shortness of breath", "call emergency", "emergency", "ambulance", "er"
+    ],
+    "negation_terms": ["没有", "未出现", "否认", "不再", "无胸痛", "无胸口痛", "无呼吸困难", "无气短", "not", "no", "never", "without", "denies"],
+    "history_terms": ["以前", "曾经", "过去", "既往", "曾有", "had", "previously", "history of"],
+    "knowledge_intent_terms": ["原因", "为什么", "有哪些原因", "机制", "通常", "一般", "常见", "原因有哪些", "what causes", "causes of", "why does", "common causes", "mechanism"],
+    "score_threshold": 2
+  },
+  "personalized": {
+    "person_terms": [
+      "我", "我的", "本人", "患者", "病人", "具体患者", "家人", "妈妈", "爸爸", "孩子", "老人",
+      "孕妇", "他", "她", "当前", "现用", "正在服用", "正在吃", "已经服用",
+      "i", "i'm", "im", "my", "myself", "me", "patient", "my patient", "my child", "my mother", "my father", "currently taking"
+    ],
+    "medication_action_terms": [
+      "服用", "吃药", "吃", "停药", "停用", "换药", "更换", "开始服", "继续服", "正在用药", "当前用药",
+      "调整", "增加", "减少", "加到", "减到", "改成", "改为", "加药", "减药", "停药", "停用", "换药", "更换", "调高", "调低",
+      "take", "taking", "use", "using", "stop", "start", "switch", "change", "adjust", "increase", "decrease", "raise", "lower", "skip", "hold"
+    ],
+    "dose_or_adjustment_terms": [
+      "剂量", "药量", "用量", "多少克", "几克", "多少毫克", "多少mg", "多少片", "多少粒", "每天几",
+      "每天多少", "每天吃几片", "每天服用几片", "每天吃多少", "每天服用多少", "片", "粒", "克", "毫克", "mg", "加药", "减药", "停药", "停用", "换药", "更换", "加到", "减到", "调整", "增加", "减少", "加量", "减量", "调高", "调低", "怎么服用",
+      "怎么吃", "吃多少", "服多少", "dose", "dosage", "how many", "how much", "mg", "milligram", "tablet", "pills", "grams", "increase", "decrease", "adjust", "stop taking", "switch to", "should i take"
+    ],
+    "whitelist_patterns": [
+      "常见用量范围", "通常用量范围", "推荐用量范围", "一般用量", "常用剂量范围", "剂量范围是什么",
+      "会增加.*风险吗", "增加.*风险吗", "可能增加.*风险", "饮食.*可以吃什么", "可以吃什么.*饮食",
+      "哪些食物可以吃", "饮食建议", "饮食注意什么", "what are common.*dose", "typical dosage range", "does .* increase .* risk", "what foods can .* eat"
+    ]
+  },
+  "evidence_coverage": {
+    "pregnancy_request": "孕妇|妊娠|怀孕|孕期|pregnan",
+    "pregnancy_evidence": "(?=.*(?:孕妇|妊娠|怀孕|孕期|pregnan))(?=.*(?:安全|风险|不良|禁忌|safe|safety|risk|adverse|harm))",
+    "blood_pressure": "血压|高血压|blood\\s*pressure|hypertension",
+    "range_request": "正常范围|正常值|标准范围|精确范围|正常区间|血压范围|正常数值|normal\\s*(?:range|value)|range",
+    "age_group": "不同年龄|年龄分层|年龄段|年龄|儿童|孩子|老人|老年人|成人|age\\s*groups?|children|child|elderly|older\\s*adults?",
+    "range_evidence": "(?=.*(?:正常|范围|区间|normal|range))(?=.*\\d{2,3})",
+    "age_range_evidence": "(?=.*(?:不同年龄|年龄分层|年龄段|儿童|孩子|老人|老年人|成人|age\\s*groups?|children|child|elderly|older\\s*adults?))(?=.*(?:正常|范围|区间|normal|range))(?=.*\\d{2,3})",
+    "condition_safety_request": "甘草.{0,16}(?:心脏|肾脏|心肾|heart|kidney).{0,16}(?:安全|风险|不良|safe|risk)|(?:心脏|肾脏|心肾|heart|kidney).{0,16}甘草.{0,16}(?:安全|风险|不良|safe|risk)",
+    "condition_safety_evidence": "(?=.*(?:心脏|肾脏|心肾|heart|cardiac|kidney))(?=.*(?:安全|风险|不良|严重|safe|risk|adverse|severe))",
+    "herb_drug_interaction_request": "甘草.{0,24}(?:相互作用|合用|interaction).{0,24}(?:皮质类固醇|激素|corticosteroid)|(?:皮质类固醇|激素|corticosteroid).{0,24}甘草.{0,24}(?:相互作用|合用|interaction)",
+    "herb_drug_interaction_evidence": "(?=.*(?:甘草|licorice))(?=.*(?:皮质类固醇|corticosteroid))(?=.*(?:相互作用|interaction|reported|报告))",
+    "anticoagulant_adjustment_request": "甘草.{0,24}(?:华法林|抗凝药|抗凝药物|warfarin|anticoagulant).{0,24}(?:调整|剂量|用量|adjust|dose)|(?:华法林|抗凝药|抗凝药物|warfarin|anticoagulant).{0,24}甘草.{0,24}(?:调整|剂量|用量|adjust|dose)",
+    "anticoagulant_adjustment_evidence": "(?=.*(?:甘草|licorice))(?=.*(?:华法林|抗凝药|抗凝药物|warfarin|anticoagulant))(?=.*(?:调整|剂量|用量|interaction|adjust|dose))"
+  }
+}

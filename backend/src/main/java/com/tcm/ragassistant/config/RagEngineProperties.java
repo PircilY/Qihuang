@@ -1,6 +1,7 @@
 package com.tcm.ragassistant.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 import java.net.URI;
 import java.time.Duration;
@@ -14,11 +15,13 @@ public record RagEngineProperties(
         Duration connectTimeout,
         Duration readTimeout,
         boolean fallbackToLocal,
-        Duration retryInterval
+        Duration retryInterval,
+        int syncBatchSize
 ) {
 
     private static final Set<String> SUPPORTED_MODES = Set.of("auto", "llama-index", "local");
 
+    @ConstructorBinding
     public RagEngineProperties {
         mode = normalizeMode(mode);
         if (!SUPPORTED_MODES.contains(mode)) {
@@ -30,6 +33,12 @@ public record RagEngineProperties(
         connectTimeout = positiveOrDefault(connectTimeout, Duration.ofMillis(500));
         readTimeout = positiveOrDefault(readTimeout, Duration.ofSeconds(30));
         retryInterval = positiveOrDefault(retryInterval, Duration.ofSeconds(10));
+        syncBatchSize = syncBatchSize <= 0 ? 20 : syncBatchSize;
+    }
+
+    public RagEngineProperties(String mode, URI baseUrl, Duration connectTimeout, Duration readTimeout,
+                               boolean fallbackToLocal, Duration retryInterval) {
+        this(mode, baseUrl, connectTimeout, readTimeout, fallbackToLocal, retryInterval, 20);
     }
 
     public boolean remoteEnabled() {

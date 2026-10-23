@@ -61,6 +61,15 @@ class CitationSupportEvaluatorTest {
         )).isTrue();
     }
 
+    @Test
+    void checksEachAnswerSentenceForItsOwnSupportingCitation() {
+        List<CitationResponse> evidence = List.of(citation("C-1", "甘草可能引起严重心律失常。"));
+        assertThat(evaluator.sentenceSupport("甘草可能引起心律失常。[1]", evidence))
+                .containsExactly("SUPPORTED\t甘草可能引起心律失常。[1]");
+        assertThat(evaluator.sentenceSupport("甘草可能引起心律失常。[1] 高血压也需要治疗。", evidence))
+                .anyMatch(sentence -> sentence.startsWith("UNSUPPORTED\t"));
+    }
+
     private CitationResponse citation(String chunkId, String quote) {
         return new CitationResponse(chunkId, "DOC-1", "test", "test", "test", 2026,
                 "test", "test", "", "A", quote, 0.5);

@@ -3,7 +3,9 @@ package com.tcm.ragassistant.repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tcm.ragassistant.domain.KnowledgeChunk;
 import com.tcm.ragassistant.domain.KnowledgeDocument;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.exception.BusinessException;
+import com.tcm.ragassistant.service.KnowledgeRevision;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Repository;
@@ -25,6 +27,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository {
@@ -36,6 +39,30 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     private final ObjectMapper objectMapper;
     private final Path storePath;
     private final Set<String> seedDocumentIds = new HashSet<>();
+    private final List<KnowledgeChunk> expandedChunks = new CopyOnWriteArrayList<>();
+    private final Map<String, KnowledgeChunk> expandedChunkById = new LinkedHashMap<>();
+    private final List<KnowledgeDocument> expandedDocuments = new CopyOnWriteArrayList<>();
+    private final Map<String, KnowledgeDocument> expandedDocumentById = new LinkedHashMap<>();
+    private volatile String baselineRevision;
+    private final AtomicLong baselineImportRevision = new AtomicLong();
+    private int maxImportDocuments = 1000;
+    private long maxImportCharacters = 10_000_000;
+    private int journalEntries;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    void configureLimits(@Value("${app.knowledge.max-import-documents:1000}") int documents,
+                         @Value("${app.knowledge.max-import-characters:10000000}") long characters) {
+        if (documents < 1 || characters < 1) throw new IllegalArgumentException("Import limits must be positive");
+        maxImportDocuments = documents;
+        maxImportCharacters = characters;
+    }
+
+    private Path journalPath() { return storePath.resolveSibling(storePath.getFileName() + ".jsonl"); }
+
+    @Override
+    public synchronized List<KnowledgeDocument> findImportedDocuments() {
+        return documents.stream().filter(document -> !seedDocumentIds.contains(document.id())).toList();
+    }
 
     public InMemoryKnowledgeBaseRepository(
             ObjectMapper objectMapper,
@@ -66,6 +93,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
                 chunks.add(chunk);
                 chunkById.put(chunk.id(), chunk);
             });
+            loadExpanded(resourceLoader);
             if (this.storePath != null && Files.exists(this.storePath)) {
                 Snapshot saved = objectMapper.readValue(this.storePath.toFile(), Snapshot.class);
                 for (KnowledgeDocument document : saved.documents()) {
@@ -78,28 +106,88 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
                     throw new IOException("Orphaned persisted knowledge chunk");
                 }
             }
+            if (this.storePath != null && Files.exists(journalPath())) {
+                byte[] bytes = Files.readAllBytes(journalPath());
+                int complete = bytes.length;
+                while (complete > 0 && bytes[complete - 1] != '\n') complete--;
+                String journal = new String(bytes, 0, complete, java.nio.charset.StandardCharsets.UTF_8);
+                for (String line : journal.split("\n")) {
+                    if (line.isBlank()) continue;
+                    Snapshot entry = objectMapper.readValue(line, Snapshot.class);
+                    for (KnowledgeDocument document : entry.documents()) {
+                        if (documentById.containsKey(document.id())) continue; // checkpoint replay
+                        List<KnowledgeChunk> imported = entry.chunks().stream()
+                                .filter(chunk -> document.id().equals(chunk.documentId())).toList();
+                        validateBatch(document, imported);
+                        addToMemory(document, imported);
+                    }
+                    journalEntries++;
+                }
+                if (complete != bytes.length) {
+                    try (FileChannel channel = FileChannel.open(journalPath(), StandardOpenOption.WRITE)) {
+                        channel.truncate(complete);
+                        channel.force(true);
+                    }
+                }
+            }
+            baselineRevision = KnowledgeRevision.calculate(findImportedDocuments());
+            baselineImportRevision.set(Long.parseUnsignedLong(baselineRevision.substring(0, 16), 16));
         } catch (IOException | RuntimeException exception) {
             throw new BusinessException("KNOWLEDGE_BASE_LOAD_ERROR", "知识库初始化失败", exception);
         }
     }
 
-    @Override
-    public synchronized List<KnowledgeChunk> findAll() {
-        return List.copyOf(chunks);
+    private void loadExpanded(ResourceLoader resourceLoader) throws IOException {
+        Resource documentsResource = resourceLoader.getResource("classpath:data/expanded/knowledge-documents.json");
+        Resource chunksResource = resourceLoader.getResource("classpath:data/expanded/knowledge-base.json");
+        if (!documentsResource.exists() || !chunksResource.exists()) {
+            return;
+        }
+        readJson(objectMapper, resourceLoader, "classpath:data/expanded/knowledge-documents.json", KnowledgeDocument.class)
+                .forEach(document -> {
+                    expandedDocuments.add(document);
+                    expandedDocumentById.put(document.id(), document);
+                });
+        readJson(objectMapper, resourceLoader, "classpath:data/expanded/knowledge-base.json", KnowledgeChunk.class)
+                .forEach(chunk -> {
+                    expandedChunks.add(chunk);
+                    expandedChunkById.put(chunk.id(), chunk);
+                });
+    }
+
+    private List<KnowledgeChunk> chunks(CorpusId corpus) {
+        return corpus == CorpusId.EXPANDED ? expandedChunks : chunks;
+    }
+
+    private Map<String, KnowledgeChunk> chunkById(CorpusId corpus) {
+        return corpus == CorpusId.EXPANDED ? expandedChunkById : chunkById;
+    }
+
+    private List<KnowledgeDocument> documents(CorpusId corpus) {
+        return corpus == CorpusId.EXPANDED ? expandedDocuments : documents;
+    }
+
+    private Map<String, KnowledgeDocument> documentById(CorpusId corpus) {
+        return corpus == CorpusId.EXPANDED ? expandedDocumentById : documentById;
     }
 
     @Override
-    public synchronized Optional<KnowledgeChunk> findById(String id) {
-        return Optional.ofNullable(chunkById.get(id));
+    public synchronized List<KnowledgeChunk> findAll(CorpusId corpus) {
+        return List.copyOf(chunks(corpus));
     }
 
     @Override
-    public synchronized List<KnowledgeChunk> findByDisease(String disease) {
+    public synchronized Optional<KnowledgeChunk> findById(String id, CorpusId corpus) {
+        return Optional.ofNullable(chunkById(corpus).get(id));
+    }
+
+    @Override
+    public synchronized List<KnowledgeChunk> findByDisease(String disease, CorpusId corpus) {
         if (disease == null || disease.isBlank()) {
-            return findAll();
+            return findAll(corpus);
         }
         String normalized = disease.toLowerCase(Locale.ROOT);
-        return chunks.stream()
+        return chunks(corpus).stream()
                 .filter(chunk -> normalized.contains(chunk.disease().toLowerCase(Locale.ROOT))
                         || chunk.disease().toLowerCase(Locale.ROOT).contains(normalized))
                 .toList();
@@ -110,10 +198,11 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
             String keyword,
             String disease,
             String sourceType,
-            String evidenceLevel
+            String evidenceLevel,
+            CorpusId corpus
     ) {
         String normalizedKeyword = normalize(keyword);
-        return chunks.stream()
+        return chunks(corpus).stream()
                 .filter(chunk -> matches(chunk.disease(), disease))
                 .filter(chunk -> matches(chunk.sourceType(), sourceType))
                 .filter(chunk -> matches(chunk.evidenceLevel(), evidenceLevel))
@@ -123,20 +212,51 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     }
 
     @Override
-    public synchronized List<KnowledgeDocument> findDocuments() {
-        return List.copyOf(documents);
+    public synchronized List<KnowledgeDocument> findDocuments(CorpusId corpus) {
+        return List.copyOf(documents(corpus));
     }
 
     @Override
-    public synchronized Optional<KnowledgeDocument> findDocumentById(String id) {
-        return Optional.ofNullable(documentById.get(id));
+    public synchronized Optional<KnowledgeDocument> findDocumentById(String id, CorpusId corpus) {
+        return Optional.ofNullable(documentById(corpus).get(id));
+    }
+
+    @Override
+    public synchronized String knowledgeRevision(CorpusId corpus) {
+        if (corpus == CorpusId.BASELINE && baselineRevision != null) {
+            return baselineRevision;
+        }
+        return ""; // EXPANDED is a read-only build artifact, outside runtime revision protocol
+    }
+
+    @Override
+    public synchronized long importRevisionNumber(CorpusId corpus) {
+        return corpus == CorpusId.BASELINE
+                ? baselineImportRevision.get()
+                : 0L;
     }
 
     @Override
     public synchronized void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
         validateBatch(document, newChunks);
+        long characters = chunks.stream().filter(chunk -> !seedDocumentIds.contains(chunk.documentId()))
+                .mapToLong(chunk -> chunk.content().length()).sum()
+                + newChunks.stream().mapToLong(chunk -> chunk.content().length()).sum();
+        if (findImportedDocuments().size() >= maxImportDocuments || characters > maxImportCharacters) {
+            throw new BusinessException("KNOWLEDGE_CAPACITY_EXCEEDED", "运行时导入文档数或总字符数超过配置上限");
+        }
         persist(document, newChunks);
         addToMemory(document, newChunks);
+        baselineRevision = KnowledgeRevision.calculate(findImportedDocuments());
+        baselineImportRevision.incrementAndGet();
+    }
+
+    public synchronized void registerDocument(KnowledgeDocument document, List<KnowledgeChunk> newChunks,
+                                              CorpusId corpus) {
+        if (corpus == CorpusId.EXPANDED) {
+            throw new BusinessException("EXPANDED_CORPUS_READ_ONLY", "扩充语料为构建产物，不支持运行时覆盖");
+        }
+        registerDocument(document, newChunks);
     }
 
     private void validateBatch(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
@@ -185,34 +305,57 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
         if (storePath == null) {
             return;
         }
-        Path temporary = null;
+        long originalLength = 0;
         try {
             Files.createDirectories(storePath.getParent());
-            List<KnowledgeDocument> savedDocuments = new ArrayList<>(documents.stream()
-                    .filter(item -> !seedDocumentIds.contains(item.id())).toList());
-            savedDocuments.add(document);
-            Set<String> ids = savedDocuments.stream().map(KnowledgeDocument::id)
-                    .collect(java.util.stream.Collectors.toSet());
-            List<KnowledgeChunk> savedChunks = new ArrayList<>(chunks.stream()
-                    .filter(item -> ids.contains(item.documentId())).toList());
-            savedChunks.addAll(newChunks);
-            temporary = Files.createTempFile(storePath.getParent(), "knowledge-", ".tmp");
-            objectMapper.writeValue(temporary.toFile(), new Snapshot(savedDocuments, savedChunks));
-            try (FileChannel channel = FileChannel.open(temporary, StandardOpenOption.WRITE)) {
-                channel.force(true);
-            }
-            // Publish memory changes only after the complete snapshot is durable.
-            Files.move(temporary, storePath, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException exception) {
-            throw new BusinessException("KNOWLEDGE_STORE_ERROR", "知识库保存失败，文档未登记", exception);
-        } finally {
-            if (temporary != null) {
+            byte[] entry = (objectMapper.writeValueAsString(new Snapshot(List.of(document), newChunks)) + "\n")
+                    .getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            try (FileChannel channel = FileChannel.open(journalPath(), StandardOpenOption.CREATE,
+                    StandardOpenOption.WRITE)) {
+                originalLength = channel.size();
+                channel.position(originalLength);
                 try {
-                    Files.deleteIfExists(temporary);
-                } catch (IOException ignored) {
-                    // A leftover temporary file is not a committed snapshot.
+                    java.nio.ByteBuffer buffer = java.nio.ByteBuffer.wrap(entry);
+                    while (buffer.hasRemaining()) channel.write(buffer);
+                    channel.force(true);
+                } catch (IOException failure) {
+                    channel.truncate(originalLength);
+                    channel.force(true);
+                    throw failure;
                 }
             }
+            journalEntries++;
+        } catch (IOException exception) {
+            throw new BusinessException("KNOWLEDGE_STORE_ERROR", "知识库保存失败，文档未登记", exception);
+        }
+        // Geometrically spaced checkpoints keep total rewritten bytes linear in import volume.
+        int count = findImportedDocuments().size() + 1;
+        if ((count & (count - 1)) == 0) checkpoint(document, newChunks);
+    }
+
+    private void checkpoint(KnowledgeDocument document, List<KnowledgeChunk> newChunks) {
+        Path temporary = null;
+        try {
+            List<KnowledgeDocument> saved = new ArrayList<>(findImportedDocuments());
+            saved.add(document);
+            Set<String> ids = saved.stream().map(KnowledgeDocument::id).collect(java.util.stream.Collectors.toSet());
+            List<KnowledgeChunk> evidence = new ArrayList<>(chunks.stream()
+                    .filter(chunk -> ids.contains(chunk.documentId())).toList());
+            evidence.addAll(newChunks);
+            temporary = Files.createTempFile(storePath.getParent(), "knowledge-", ".tmp");
+            objectMapper.writeValue(temporary.toFile(), new Snapshot(saved, evidence));
+            try (FileChannel channel = FileChannel.open(temporary, StandardOpenOption.WRITE)) { channel.force(true); }
+            Files.move(temporary, storePath, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+            try (FileChannel channel = FileChannel.open(journalPath(), StandardOpenOption.WRITE)) {
+                channel.truncate(0);
+                channel.force(true);
+            }
+            journalEntries = 0;
+        } catch (IOException exception) {
+            // The journal is already durable; checkpoint failure must not turn a committed import into a failure.
+            org.slf4j.LoggerFactory.getLogger(getClass()).warn("Knowledge checkpoint postponed", exception);
+        } finally {
+            if (temporary != null) try { Files.deleteIfExists(temporary); } catch (IOException ignored) { }
         }
     }
 
@@ -261,4 +404,3 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
         return value == null ? "" : value.toLowerCase(Locale.ROOT).replaceAll("\\s+", "");
     }
 }
-

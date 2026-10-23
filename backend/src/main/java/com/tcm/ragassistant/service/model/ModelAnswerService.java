@@ -49,9 +49,9 @@ public class ModelAnswerService {
                     "question", retrieved.question(),
                     "evidence", IntStream.range(0, retrieved.citations().size()).mapToObj(index -> {
                         var citation = retrieved.citations().get(index);
-                        return Map.of("number", index + 1, "title", citation.documentTitle(),
-                                "section", citation.section(), "quote", citation.quote(),
-                                "evidenceLevel", citation.evidenceLevel());
+                        return Map.of("number", index + 1, "title", safe(citation.documentTitle()),
+                                "section", safe(citation.section()), "quote", safe(citation.quote()),
+                                "evidenceLevel", safe(citation.evidenceLevel()));
                     }).toList()));
         } catch (JsonProcessingException exception) {
             throw new BusinessException("MODEL_INVALID_CONTEXT", "证据序列化失败");
@@ -88,5 +88,9 @@ public class ModelAnswerService {
                 trace.vectorCandidateCount(), trace.fusedCandidateCount(), trace.selectedCount(),
                 trace.sufficientEvidence(), notes, trace.engine(), trace.version(), trace.threshold(),
                 trace.rejected()), Instant.now());
+    }
+
+    private String safe(String value) {
+        return value == null ? "" : value;
     }
 }

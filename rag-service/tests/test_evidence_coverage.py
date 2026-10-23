@@ -58,6 +58,20 @@ def test_supported_general_and_attribute_specific_questions_are_not_rejected():
         assert assess_evidence_coverage(question, evidence).covered, question
 
 
+def test_generic_anticoagulant_dose_question_requires_specific_evidence_not_personal_refusal():
+    question = "甘草与华法林合用时应该如何调整抗凝药剂量？"
+    assert not is_individualized_dose_adjustment(question)
+    uncovered = assess_evidence_coverage(question, ["甘草可能影响心脏健康。"])
+    assert not uncovered.covered
+    assert uncovered.reason_code == "population-attribute-uncovered"
+
+    supported = assess_evidence_coverage(
+        question,
+        ["甘草与华法林之间的相互作用可能需要评估抗凝药剂量调整。"],
+    )
+    assert supported.covered
+
+
 def test_real_v3_engine_rejects_only_uncovered_false_accepts():
     settings = replace(Settings.from_env(), llm_model="", llm_api_base="")
     engine = LlamaIndexEngine(settings)

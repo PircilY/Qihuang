@@ -3,6 +3,7 @@ package com.tcm.ragassistant.service.retrieval;
 import com.tcm.ragassistant.config.RetrievalProperties;
 import com.tcm.ragassistant.domain.IterationVersion;
 import com.tcm.ragassistant.domain.RetrievalFilter;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.dto.RetrievalTrace;
 import com.tcm.ragassistant.service.ScoredChunk;
 import com.tcm.ragassistant.service.VectorSimilarityScorer;
@@ -30,8 +31,8 @@ public class VectorRetrievalStrategy implements RetrievalStrategy {
     }
 
     @Override
-    public RetrievalOutput retrieve(String question, RetrievalFilter filter) {
-        List<ScoredChunk> chunks = vectorScorer.score(question, properties.finalLimit(), filter);
+    public RetrievalOutput retrieve(String question, RetrievalFilter filter, CorpusId corpus) {
+        List<ScoredChunk> chunks = vectorScorer.score(question, properties.finalLimit(), filter, corpus);
         return new RetrievalOutput(
                 chunks,
                 new RetrievalTrace(

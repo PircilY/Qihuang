@@ -33,6 +33,39 @@ class KnowledgeBaseControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
+    void invalidCorpusIsRejectedAsBadRequest() throws Exception {
+        mockMvc.perform(get("/api/v1/knowledge/overview").param("corpus", "unknown"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("INVALID_CORPUS"));
+    }
+
+    @Test
+    void frameworkErrorsKeepTheirHttpStatus() throws Exception {
+        mockMvc.perform(post("/api/v1/knowledge/overview"))
+                .andExpect(status().isMethodNotAllowed());
+        mockMvc.perform(post("/api/v1/knowledge/import").contentType(MediaType.TEXT_PLAIN)
+                        .content("not-json"))
+                .andExpect(status().isUnsupportedMediaType());
+    }
+
+    @Test
+    void corporaEndpointExposesBaselineAndIndependentExpandedView() throws Exception {
+        mockMvc.perform(get("/api/v1/knowledge/corpora"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data[0].id").value("BASELINE"))
+                .andExpect(jsonPath("$.data[0].documentCount").value(4))
+                .andExpect(jsonPath("$.data[0].chunkCount").value(11))
+                .andExpect(jsonPath("$.data[0].frozen").value(true))
+                .andExpect(jsonPath("$.data[1].id").value("EXPANDED"))
+                .andExpect(jsonPath("$.data[1].documentCount").value(100))
+                .andExpect(jsonPath("$.data[1].chunkCount").value(greaterThanOrEqualTo(1)))
+                .andExpect(jsonPath("$.data[1].note").value(containsString("不属于 Experiment A")));
+        mockMvc.perform(get("/api/v1/knowledge/overview"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.remoteSyncState").value("IN_SYNC"));
+    }
+
+    @Test
     void importShouldRejectUnsafeSourcesFutureYearsAndDuplicateContent() throws Exception {
         Map<String, Object> payload = new HashMap<>(Map.of(
                 "title", "Isolated import validation fixture",

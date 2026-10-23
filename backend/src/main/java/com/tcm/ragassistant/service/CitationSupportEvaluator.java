@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.ArrayList;
 
 @Component
 public class CitationSupportEvaluator {
@@ -84,6 +85,55 @@ public class CitationSupportEvaluator {
                 .filter(claim -> evidence.stream().anyMatch(value -> supports(claim, value)))
                 .count();
         return (double) supported / expectedClaims.size();
+    }
+
+    public List<String> sentenceSupport(String answer, List<CitationResponse> citations) {
+        List<String> results = new ArrayList<>();
+        if (answer == null || answer.isBlank()) return results;
+        for (String raw : splitSentences(answer)) {
+            String sentence = raw.trim();
+            if (sentence.isBlank()) continue;
+            if (sentence.contains("不替代医生诊断和处方") || sentence.contains("不替代医疗建议")) continue;
+            Matcher refs = CITATION.matcher(sentence);
+            List<Integer> indexes = new ArrayList<>();
+            while (refs.find()) indexes.add(Integer.parseInt(refs.group(1)) - 1);
+            String claim = CITATION.matcher(sentence).replaceAll("").trim()
+                    .replaceFirst("^[\\d.、)）]+\\s*", "");
+            boolean supported = !claim.isBlank() && !indexes.isEmpty() && citations != null
+                    && indexes.stream().allMatch(index -> index >= 0 && index < citations.size()
+                    && citations.get(index).chunkId() != null && citations.get(index).documentId() != null
+                    && supports(claim, citations.get(index).quote()));
+            results.add((supported ? "SUPPORTED" : "UNSUPPORTED") + "\t" + sentence);
+        }
+        return List.copyOf(results);
+    }
+
+    private List<String> splitSentences(String answer) {
+        List<String> sentences = new ArrayList<>();
+        int start = 0;
+        for (int index = 0; index < answer.length(); index++) {
+            char current = answer.charAt(index);
+            if (current == '\r' || current == '\n') {
+                if (index > start) sentences.add(answer.substring(start, index));
+                if (current == '\r' && index + 1 < answer.length() && answer.charAt(index + 1) == '\n') index++;
+                start = index + 1;
+                continue;
+            }
+            if (".!?。！？".indexOf(current) < 0) continue;
+            int boundary = index + 1;
+            while (boundary < answer.length() && answer.charAt(boundary) == '[') {
+                int close = answer.indexOf(']', boundary + 1);
+                if (close < 0 || !answer.substring(boundary + 1, close).matches("\\d+")) break;
+                boundary = close + 1;
+            }
+            if (boundary == answer.length() || Character.isWhitespace(answer.charAt(boundary))) {
+                sentences.add(answer.substring(start, boundary));
+                start = boundary;
+                index = boundary - 1;
+            }
+        }
+        if (start < answer.length()) sentences.add(answer.substring(start));
+        return sentences;
     }
 
     boolean supports(String claim, String evidence) {

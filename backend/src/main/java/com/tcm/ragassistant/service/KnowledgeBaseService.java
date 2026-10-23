@@ -7,9 +7,13 @@ import com.tcm.ragassistant.dto.KnowledgeChunkResponse;
 import com.tcm.ragassistant.dto.KnowledgeDocumentResponse;
 import com.tcm.ragassistant.dto.KnowledgeOverviewResponse;
 import com.tcm.ragassistant.dto.PipelineStageResponse;
+import com.tcm.ragassistant.dto.CorpusInfoResponse;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.exception.BusinessException;
 import com.tcm.ragassistant.repository.KnowledgeBaseRepository;
+import com.tcm.ragassistant.config.RagEngineProperties;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Instant;
 import java.util.Comparator;
@@ -23,32 +27,58 @@ import java.util.stream.Collectors;
 public class KnowledgeBaseService {
 
     private final KnowledgeBaseRepository repository;
+    private final RemoteSyncState remoteSyncState;
+    private final RagEngineProperties engineProperties;
 
     public KnowledgeBaseService(KnowledgeBaseRepository repository) {
+        this(repository, new RemoteSyncState(),
+                new RagEngineProperties("local", null, null, null, true, null));
+    }
+
+    @Autowired
+    public KnowledgeBaseService(KnowledgeBaseRepository repository, RemoteSyncState remoteSyncState,
+                                RagEngineProperties engineProperties) {
         this.repository = repository;
+        this.remoteSyncState = remoteSyncState;
+        this.engineProperties = engineProperties;
+    }
+
+    public List<CorpusInfoResponse> corpora() {
+            int baselineDocuments = repository.findDocuments(CorpusId.BASELINE).size();
+            int baselineChunks = repository.findAll(CorpusId.BASELINE).size();
+            int expandedDocuments = repository.findDocuments(CorpusId.EXPANDED).size();
+            int expandedChunks = repository.findAll(CorpusId.EXPANDED).size();
+            return List.of(
+                    new CorpusInfoResponse(CorpusId.BASELINE, "标准语料", baselineDocuments, baselineChunks,
+                            baselineDocuments, true, "正式评测与历史结果使用此语料"),
+                    new CorpusInfoResponse(CorpusId.EXPANDED, "扩充语料", expandedDocuments, expandedChunks,
+                            expandedDocuments, false,
+                            "许可和全文已核验；主题相关性仍需人工复核；不属于 Experiment A")
+            );
     }
 
     public List<KnowledgeChunkResponse> chunks(
             String keyword,
             String disease,
             String sourceType,
-            String evidenceLevel
+            String evidenceLevel,
+            CorpusId corpus
     ) {
-        return repository.search(keyword, disease, sourceType, evidenceLevel).stream()
+        return repository.search(keyword, disease, sourceType, evidenceLevel, corpus).stream()
                 .map(KnowledgeChunkResponse::from)
                 .toList();
     }
 
-    public KnowledgeChunkResponse chunk(String id) {
-        return repository.findById(id)
+    public KnowledgeChunkResponse chunk(String id, CorpusId corpus) {
+        return repository.findById(id, corpus)
                 .map(KnowledgeChunkResponse::from)
                 .orElseThrow(() -> new BusinessException("CHUNK_NOT_FOUND", "知识片段不存在：" + id));
     }
 
-    public List<KnowledgeDocumentResponse> documents() {
-        Map<String, Long> counts = repository.findAll().stream()
+    public List<KnowledgeDocumentResponse> documents(CorpusId corpus) {
+        Map<String, Long> counts = repository.findAll(corpus).stream()
                 .collect(Collectors.groupingBy(KnowledgeChunk::documentId, Collectors.counting()));
-        return repository.findDocuments().stream()
+        return repository.findDocuments(corpus).stream()
                 .map(document -> KnowledgeDocumentResponse.from(
                         document,
                         counts.getOrDefault(document.id(), 0L).intValue()
@@ -56,18 +86,18 @@ public class KnowledgeBaseService {
                 .toList();
     }
 
-    public KnowledgeDocumentResponse document(String id) {
-        KnowledgeDocument document = repository.findDocumentById(id)
+    public KnowledgeDocumentResponse document(String id, CorpusId corpus) {
+        KnowledgeDocument document = repository.findDocumentById(id, corpus)
                 .orElseThrow(() -> new BusinessException("DOCUMENT_NOT_FOUND", "知识文档不存在：" + id));
-        int chunkCount = (int) repository.findAll().stream()
+        int chunkCount = (int) repository.findAll(corpus).stream()
                 .filter(chunk -> chunk.documentId().equals(id))
                 .count();
         return KnowledgeDocumentResponse.from(document, chunkCount);
     }
 
-    public KnowledgeOverviewResponse overview() {
-        List<KnowledgeChunk> chunks = repository.findAll();
-        List<KnowledgeDocument> documents = repository.findDocuments();
+    public KnowledgeOverviewResponse overview(CorpusId corpus) {
+        List<KnowledgeChunk> chunks = repository.findAll(corpus);
+        List<KnowledgeDocument> documents = repository.findDocuments(corpus);
         Instant lastUpdatedAt = chunks.stream()
                 .map(KnowledgeChunk::ingestedAt)
                 .max(Comparator.naturalOrder())
@@ -85,13 +115,14 @@ public class KnowledgeBaseService {
                 distribution(chunks, KnowledgeChunk::disease),
                 distribution(chunks, KnowledgeChunk::sourceType),
                 distribution(chunks, KnowledgeChunk::evidenceLevel),
-                distribution(chunks, KnowledgeChunk::status)
+                distribution(chunks, KnowledgeChunk::status),
+                engineProperties.remoteEnabled() ? remoteSyncState.status().name() : "IN_SYNC"
         );
     }
 
-    public List<PipelineStageResponse> pipeline() {
-        List<KnowledgeChunk> chunks = repository.findAll();
-        List<KnowledgeDocument> documents = repository.findDocuments();
+    public List<PipelineStageResponse> pipeline(CorpusId corpus) {
+        List<KnowledgeChunk> chunks = repository.findAll(corpus);
+        List<KnowledgeDocument> documents = repository.findDocuments(corpus);
         Instant lastUpdatedAt = chunks.stream()
                 .map(KnowledgeChunk::ingestedAt)
                 .max(Comparator.naturalOrder())

@@ -3,11 +3,11 @@ package com.tcm.ragassistant.domain;
 public enum IterationVersion {
     V0_DIRECT(
             "V0",
-            "直接问答",
-            "固定边界提示，不调用模型或知识库。",
-            "无知识库",
+            "无检索对照",
+            "固定边界提示，不调用模型或知识库，用于衡量检索增益。",
+            "不执行检索",
             "未校准",
-            "无引用"
+            "无引用对照"
     ),
     V1_VECTOR(
             "V1",
@@ -81,4 +81,3 @@ public enum IterationVersion {
         return citationFeature;
     }
 }
-

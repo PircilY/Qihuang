@@ -3,6 +3,7 @@ package com.tcm.ragassistant.service.retrieval;
 import com.tcm.ragassistant.config.RetrievalProperties;
 import com.tcm.ragassistant.domain.IterationVersion;
 import com.tcm.ragassistant.domain.RetrievalFilter;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.dto.RetrievalTrace;
 import com.tcm.ragassistant.service.LexicalScorer;
 import com.tcm.ragassistant.service.ScoredChunk;
@@ -38,8 +39,8 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
     }
 
     @Override
-    public RetrievalOutput retrieve(String question, RetrievalFilter filter) {
-        RetrievalOutput candidates = retrieveCandidates(question, filter);
+    public RetrievalOutput retrieve(String question, RetrievalFilter filter, CorpusId corpus) {
+        RetrievalOutput candidates = retrieveCandidates(question, filter, corpus);
         List<ScoredChunk> selected = candidates.chunks().stream()
                 .limit(properties.finalLimit())
                 .toList();
@@ -62,9 +63,9 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
         );
     }
 
-    public RetrievalOutput retrieveCandidates(String question, RetrievalFilter filter) {
-        List<ScoredChunk> lexical = lexicalScorer.score(question, properties.candidateLimit(), filter);
-        List<ScoredChunk> vector = vectorScorer.score(question, properties.candidateLimit(), filter);
+    public RetrievalOutput retrieveCandidates(String question, RetrievalFilter filter, CorpusId corpus) {
+        List<ScoredChunk> lexical = lexicalScorer.score(question, properties.candidateLimit(), filter, corpus);
+        List<ScoredChunk> vector = vectorScorer.score(question, properties.candidateLimit(), filter, corpus);
         List<ScoredChunk> fused = fuse(lexical, vector);
         return new RetrievalOutput(
                 fused,

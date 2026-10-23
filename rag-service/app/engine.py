@@ -20,8 +20,8 @@ from app.embeddings import HashEmbedding
 from app.evidence_coverage import (
     DOSE_REFUSAL,
     assess_evidence_coverage,
-    is_individualized_dose_adjustment,
 )
+from app.safety_rules import RULES_SHA256, is_emergency, is_individualized_request
 from app.knowledge_repository import KnowledgeRepository
 from app.schemas import (
     ChatRequest,
@@ -36,61 +36,86 @@ from app.schemas import (
 from app.tokenization import tokenize
 
 
-_EMERGENCY_PATTERN = re.compile(
-    r"(胸痛|胸闷|呼吸困难|晕厥|意识异常|大汗).*(持续|不缓解|加重|怎么办|急救|急诊|就医)|"
-    r"(立即|马上|急救|急诊).*(胸痛|胸闷|呼吸困难|晕厥|意识异常)",
-    re.DOTALL | re.IGNORECASE,
-)
-_PRESCRIPTION_PATTERN = re.compile(
-    r"(给我|帮我|直接|能不能|可以|该不该).*(处方|用药|吃|服|剂量)|"
-    r"(处方|剂量|每天吃|吃多少|怎么吃).*(吗|呢|合适|可以)|"
-    r"多少克|几克|开.{0,3}处方|用量|剂量|怎么服用",
-    re.DOTALL | re.IGNORECASE,
-)
 _CJK_BM25_TOKEN_PATTERN = r"(?u)[a-z0-9][a-z0-9._-]*|[\u3400-\u4dbf\u4e00-\u9fff]"
+
+
+class KnowledgeOutOfSync(Exception):
+    def __init__(self, revision: str, documents: list[dict[str, str]]) -> None:
+        super().__init__("knowledge revision mismatch")
+        self.revision = revision
+        self.documents = documents
 
 
 class LlamaIndexEngine:
     def __init__(self, settings: Settings) -> None:
         self.settings = settings
-        self.repository = KnowledgeRepository(settings.data_path)
+        self.repository = KnowledgeRepository(settings.data_path, settings.expanded_data_path)
         self.embedding = HashEmbedding()
-        self._nodes: list[Any] = []
-        self._vector_index: VectorStoreIndex | None = None
-        self._bm25_retriever: BM25Retriever | None = None
+        self._nodes: dict[str, list[Any]] = {}
+        self._vector_indexes: dict[str, VectorStoreIndex | None] = {}
+        self._bm25_retrievers: dict[str, BM25Retriever | None] = {}
         self._llm = self._create_llm()
         self._lock = threading.RLock()
-        self._index_dirty = False
+        self._index_dirty: set[str] = {"BASELINE", "EXPANDED"}
 
     def reload(self) -> None:
         with self._lock:
             self.repository.load()
-            self._index_dirty = True
-            self._rebuild_indexes()
-            self._index_dirty = False
+            self._index_dirty = {"BASELINE", "EXPANDED"}
+            for corpus in ("BASELINE", "EXPANDED"):
+                self._rebuild_indexes(corpus)
+            self._index_dirty.clear()
 
-    def ingest(self, document: dict, chunks: list[dict]) -> KnowledgeImportResponse:
+    def ingest(self, document: dict, chunks: list[dict], corpus: str | None = None,
+               rebuild: bool = True) -> KnowledgeImportResponse:
         with self._lock:
-            changed = self.repository.upsert(document, chunks)
-            self._index_dirty = self._index_dirty or changed
-            if self._index_dirty:
-                self._rebuild_indexes()
-                self._index_dirty = False
+            if (corpus or "BASELINE").strip().upper() != "BASELINE":
+                raise ValueError("expanded corpus is read-only")
+            changed = self.repository.upsert_batch([(document, chunks)], self.settings.max_import_documents, self.settings.max_import_characters)
+            if changed and rebuild:
+                self._index_dirty.add("BASELINE")
+                self._rebuild_indexes("BASELINE")
+                self._index_dirty.discard("BASELINE")
             return KnowledgeImportResponse(
                 document_id=document["id"],
                 imported_chunk_count=len(chunks),
-                total_chunk_count=self.repository.chunk_count(),
+                total_chunk_count=self.repository.chunk_count("BASELINE"),
                 status="READY",
             )
 
+    def ingest_batch(self, items: list[tuple[dict, list[dict]]], corpus: str | None = None) -> KnowledgeImportResponse:
+        with self._lock:
+            if len(items) > self.settings.sync_batch_size:
+                raise ValueError(f"import batch exceeds limit {self.settings.sync_batch_size}")
+            if (corpus or "BASELINE").strip().upper() != "BASELINE":
+                raise ValueError("runtime imports require BASELINE")
+            if not items:
+                raise ValueError("import batch must not be empty")
+            changed = self.repository.upsert_batch(items, self.settings.max_import_documents,
+                                                   self.settings.max_import_characters)
+            if changed:
+                self._index_dirty.add("BASELINE")
+                self._rebuild_indexes("BASELINE")
+                self._index_dirty.discard("BASELINE")
+            return KnowledgeImportResponse(document_id=items[-1][0]["id"],
+                imported_chunk_count=sum(len(chunks) for _, chunks in items),
+                total_chunk_count=self.repository.chunk_count("BASELINE"), status="READY")
+
     def health(self) -> HealthResponse:
-        return HealthResponse(
-            status="UP",
-            engine="llama-index",
-            chunk_count=self.repository.chunk_count(),
-            document_count=self.repository.document_count(),
-            llm_configured=self._llm is not None,
-        )
+        with self._lock:
+            counts: dict[str, dict[str, int | bool]] = {}
+            for corpus in ("BASELINE", "EXPANDED"):
+                chunk_count = self.repository.chunk_count(corpus)
+                counts[corpus] = {"documentCount": self.repository.document_count(corpus), "chunkCount": chunk_count, "available": chunk_count > 0}
+            return HealthResponse(
+                status="UP", engine="llama-index",
+                chunk_count=self.repository.chunk_count("BASELINE"),
+                document_count=self.repository.document_count("BASELINE"),
+                llm_configured=self._llm is not None, corpora=counts,
+                knowledge_revision=self.repository.knowledge_revision("BASELINE"),
+                documents=self.repository.document_inventory("BASELINE"),
+                safety_rules_sha256=RULES_SHA256,
+            )
 
     def info(self) -> EngineInfoResponse:
         return EngineInfoResponse(
@@ -116,32 +141,37 @@ class LlamaIndexEngine:
 
     def query(self, request: ChatRequest) -> ChatResponse:
         with self._lock:
-            if self._index_dirty:
-                self._rebuild_indexes()
-                self._index_dirty = False
+            corpus = (request.corpus or "BASELINE").strip().upper()
+            if corpus in self._index_dirty:
+                self._rebuild_indexes(corpus)
+                self._index_dirty.discard(corpus)
             return self._query(request)
 
     def _query(self, request: ChatRequest) -> ChatResponse:
         started_at = time.perf_counter()
+        corpus = (request.corpus or "BASELINE").strip().upper()
+        if corpus not in {"BASELINE", "EXPANDED"}:
+            raise ValueError(f"unsupported corpus: {request.corpus}")
+        if request.expected_revision is not None:
+            actual_revision = self.repository.knowledge_revision(corpus)
+            if request.expected_revision != actual_revision:
+                raise KnowledgeOutOfSync(
+                    actual_revision,
+                    self.repository.document_inventory(corpus),
+                )
         version = _normalize_version(request.version)
         question = request.question.strip()
 
-        if _EMERGENCY_PATTERN.search(question):
+        if is_emergency(question):
             return self._refusal(
                 request, version, "问题可能涉及急症，超出线上问答边界",
-                "胸痛持续不缓解、呼吸困难、晕厥或意识异常需要立即就医或联系急救（中国大陆拨打 120）。",
+                "问题可能涉及急症，请立即拨打 120 / 前往急诊。",
                 [], [], [], [], False, started_at,
             )
-        if is_individualized_dose_adjustment(question):
+        if is_individualized_request(question):
             return self._refusal(
                 request, version, DOSE_REFUSAL,
                 "不能根据在线资料调整当前用药剂量，请联系开药医生并由医师判断。",
-                [], [], [], [], False, started_at,
-            )
-        if _PRESCRIPTION_PATTERN.search(question):
-            return self._refusal(
-                request, version, "涉及个体化处方或剂量判断，超出知识问答边界",
-                "不能为具体患者确定处方或剂量。个体用药必须结合面诊、既往史、合并用药和医师判断。",
                 [], [], [], [], False, started_at,
             )
         if version == "V0_DIRECT":
@@ -173,8 +203,8 @@ class LlamaIndexEngine:
             )
 
         filters = request.to_filter()
-        vector_nodes = self._retrieve_vector(question, filters)
-        lexical_nodes = self._retrieve_lexical(question, filters) if version != "V1_VECTOR" else []
+        vector_nodes = self._retrieve_vector(question, filters, corpus)
+        lexical_nodes = self._retrieve_lexical(question, filters, corpus) if version != "V1_VECTOR" else []
         if version == "V3_GUARDED":
             vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
             lexical_nodes = [node for node in lexical_nodes if _is_related(question, node)]
@@ -184,7 +214,7 @@ class LlamaIndexEngine:
             fused_nodes = vector_nodes
         else:
             fused_nodes = [
-                node for node in self._retrieve_hybrid(question, filters)
+                node for node in self._retrieve_hybrid(question, filters, corpus)
                 if _is_related(question, node)
             ]
         selected = self._select_nodes(
@@ -255,45 +285,47 @@ class LlamaIndexEngine:
             started_at=started_at,
         )
 
-    def _rebuild_indexes(self) -> None:
-        self._nodes = [node for node in self.repository.nodes()
+    def _rebuild_indexes(self, corpus: str) -> None:
+        nodes = [node for node in self.repository.nodes(corpus)
                        if node.metadata.get("status") == "ACTIVE"]
-        if not self._nodes:
-            self._vector_index = None
-            self._bm25_retriever = None
+        self._nodes[corpus] = nodes
+        if not nodes:
+            self._vector_indexes[corpus] = None
+            self._bm25_retrievers[corpus] = None
             return
-        self._vector_index = VectorStoreIndex(
-            nodes=self._nodes,
+        self._vector_indexes[corpus] = VectorStoreIndex(
+            nodes=nodes,
             embed_model=self.embedding,
             show_progress=False,
         )
-        self._bm25_retriever = BM25Retriever.from_defaults(
-            nodes=self._nodes,
+        self._bm25_retrievers[corpus] = BM25Retriever.from_defaults(
+            nodes=nodes,
             similarity_top_k=self.settings.candidate_limit,
             token_pattern=_CJK_BM25_TOKEN_PATTERN,
             skip_stemming=True,
         )
 
-    def _retrieve_vector(self, question: str, filters: RagFilter) -> list[NodeWithScore]:
-        if self._vector_index is None:
+    def _retrieve_vector(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
+        index = self._vector_indexes.get(corpus)
+        if index is None:
             return []
-        retriever = self._vector_index.as_retriever(
+        retriever = index.as_retriever(
             similarity_top_k=self.settings.candidate_limit,
-            filters=self._metadata_filters(filters),
+            filters=self._metadata_filters(filters, corpus),
         )
         return list(retriever.retrieve(question))
 
-    def _retrieve_lexical(self, question: str, filters: RagFilter) -> list[NodeWithScore]:
-        retriever = self._scoped_lexical_retriever(filters)
+    def _retrieve_lexical(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
+        retriever = self._scoped_lexical_retriever(filters, corpus)
         if retriever is None:
             return []
         nodes = list(retriever.retrieve(question))
         return [node for node in nodes if _matches_filter(node, filters)]
 
-    def _scoped_lexical_retriever(self, filters: RagFilter) -> BM25Retriever | None:
+    def _scoped_lexical_retriever(self, filters: RagFilter, corpus: str) -> BM25Retriever | None:
         if not any((filters.disease, filters.source_type, filters.evidence_level)):
-            return self._bm25_retriever
-        nodes = [node for node in self._nodes if _matches_filter(node, filters)]
+            return self._bm25_retrievers.get(corpus)
+        nodes = [node for node in self._nodes.get(corpus, []) if _matches_filter(node, filters)]
         if not nodes:
             return None
         return BM25Retriever.from_defaults(
@@ -303,13 +335,14 @@ class LlamaIndexEngine:
             skip_stemming=True,
         )
 
-    def _retrieve_hybrid(self, question: str, filters: RagFilter) -> list[NodeWithScore]:
-        lexical_retriever = self._scoped_lexical_retriever(filters)
-        if self._vector_index is None or lexical_retriever is None:
+    def _retrieve_hybrid(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
+        lexical_retriever = self._scoped_lexical_retriever(filters, corpus)
+        index = self._vector_indexes.get(corpus)
+        if index is None or lexical_retriever is None:
             return []
-        vector_retriever = self._vector_index.as_retriever(
+        vector_retriever = index.as_retriever(
             similarity_top_k=self.settings.candidate_limit,
-            filters=self._metadata_filters(filters),
+            filters=self._metadata_filters(filters, corpus),
         )
         fused = QueryFusionRetriever(
             retrievers=[vector_retriever, lexical_retriever],
@@ -379,13 +412,13 @@ class LlamaIndexEngine:
             )
         ]
 
-    def _metadata_filters(self, filters: RagFilter) -> MetadataFilters | None:
+    def _metadata_filters(self, filters: RagFilter, corpus: str) -> MetadataFilters | None:
         items: list[MetadataFilter] = []
         for key in ("disease", "source_type", "evidence_level"):
             requested = getattr(filters, key)
             if requested:
                 values = sorted({
-                    str(node.metadata.get(key, "")) for node in self._nodes
+                    str(node.metadata.get(key, "")) for node in self._nodes.get(corpus, [])
                     if requested.casefold() in str(node.metadata.get(key, "")).casefold()
                 })
                 items.append(MetadataFilter(key=key, value=values, operator=FilterOperator.IN))

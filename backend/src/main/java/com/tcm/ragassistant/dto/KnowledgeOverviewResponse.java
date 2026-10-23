@@ -15,12 +15,14 @@ public record KnowledgeOverviewResponse(
         List<DistributionItem> diseaseDistribution,
         List<DistributionItem> sourceDistribution,
         List<DistributionItem> evidenceDistribution,
-        List<DistributionItem> statusDistribution
+        List<DistributionItem> statusDistribution,
+        String remoteSyncState
 ) {
     public KnowledgeOverviewResponse {
         diseaseDistribution = diseaseDistribution == null ? List.of() : List.copyOf(diseaseDistribution);
         sourceDistribution = sourceDistribution == null ? List.of() : List.copyOf(sourceDistribution);
         evidenceDistribution = evidenceDistribution == null ? List.of() : List.copyOf(evidenceDistribution);
         statusDistribution = statusDistribution == null ? List.of() : List.copyOf(statusDistribution);
+        remoteSyncState = remoteSyncState == null ? "UNKNOWN" : remoteSyncState;
     }
 }

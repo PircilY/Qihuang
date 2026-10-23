@@ -29,13 +29,19 @@ public record EvaluationCaseResult(
         boolean citationSupported,
         boolean refusalCorrect,
         double confidence,
-        long latencyMs
+        long latencyMs,
+        String engine,
+        String answer,
+        List<String> sentenceSupport,
+        List<String> llmSentenceSupport
 ) {
     public EvaluationCaseResult {
         expectedDocumentIds = copy(expectedDocumentIds);
         expectedChunkIds = copy(expectedChunkIds);
         retrievedDocumentIds = copy(retrievedDocumentIds);
         retrievedChunkIds = copy(retrievedChunkIds);
+        sentenceSupport = copy(sentenceSupport);
+        llmSentenceSupport = copy(llmSentenceSupport);
     }
 
     private static List<String> copy(List<String> values) {

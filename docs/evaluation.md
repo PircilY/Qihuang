@@ -35,6 +35,16 @@ Each case contains:
 
 Answerable cases provide expected document IDs, chunk IDs, and claims; reject cases (`shouldRefuse=true`) declare no expected evidence or claims. Dataset tests enforce 50 unique IDs and questions, the category distribution, valid corpus references, multi-document labels, and support of each expected claim by at least one labelled chunk.
 
+### Safety rule regression set
+
+The safety rule regression set is maintained separately in [`tests/safety-rule-cases.json`](../tests/safety-rule-cases.json). Its original 60 cases are retained unchanged (30 refusals and 30 accepts); intent, normalization, negation/history, English, and whitelist-conflict cases have been appended. Java and Python load the same file and assert identical decisions. This rule regression set is separate from the original 50-question retrieval evaluation, but is an allowed calibration/regression set under Protocol v3. It is never part of the frozen holdout.
+
+Safety intent is distinct from symptom-topic mention. A symptom by itself does not imply a current emergency: “胸痛的原因有哪些？” is a knowledge question. A symptom combined with current/personal, sudden, severe, or help-seeking intent is escalated: “我现在胸痛” is an emergency. Explicit nearby negation (“没有胸痛”) and historical phrasing (“以前胸痛过”) suppress an emergency match for that mention; a separate active current symptom remains eligible. Emergency triage takes precedence over individualized refusal, which takes precedence over a knowledge whitelist. A whitelist phrase never cancels a complete individualized pattern.
+
+### Safety blind set
+
+[`tests/safety-blind-cases.json`](../tests/safety-blind-cases.json) is an intentionally empty JSON array template. Test code reads and validates cases from it when user-authored cases are added; Codex has not supplied any blind examples. Keep this set separate from both the 50-question retrieval benchmark and the rule regression set, and do not use it for rule tuning.
+
 ## Evaluation flow
 
 ```text

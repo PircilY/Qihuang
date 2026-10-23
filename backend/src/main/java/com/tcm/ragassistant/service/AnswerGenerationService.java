@@ -7,44 +7,26 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class AnswerGenerationService {
-
-    private static final Pattern INDIVIDUAL_PRESCRIPTION_PATTERN = Pattern.compile(
-            "(给我|帮我|直接|能不能|可以|该不该).*(处方|用药|吃|服|剂量)|"
-                    + "(处方|剂量|每天吃|吃多少|怎么吃).*(吗|呢|合适|可以)",
-            Pattern.CASE_INSENSITIVE | Pattern.DOTALL
-    );
-    private static final Pattern EMERGENCY_PATTERN = Pattern.compile(
-            "(胸痛|胸闷|呼吸困难|晕厥|意识异常|大汗).*(持续|不缓解|加重|怎么办|急救|急诊|就医)|"
-                    + "(立即|马上|急救|急诊).*(胸痛|胸闷|呼吸困难|晕厥|意识异常)",
-            Pattern.CASE_INSENSITIVE | Pattern.DOTALL
-    );
 
     public GeneratedAnswer generate(
             String question,
             IterationVersion version,
             RetrievalOutput retrievalOutput
     ) {
-        if (EMERGENCY_PATTERN.matcher(question).find()) {
+        if (SafetyRules.isEmergency(question)) {
             return refusal("问题可能涉及急症，超出线上问答边界",
-                    "胸痛持续不缓解、呼吸困难、晕厥或意识异常需要立即就医或联系急救（中国大陆拨打 120）。",
+                    "问题可能涉及急症，请立即拨打 120 / 前往急诊。",
                     retrievalOutput, 0);
         }
-        if (EvidenceCoverageGate.isIndividualizedDoseAdjustment(question)) {
+        if (SafetyRules.isIndividualizedRequest(question)) {
             return refusal(
                     "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。",
                     "不能根据在线资料调整当前用药剂量，请联系开药医生并由医师判断。",
                     retrievalOutput, 0
             );
-        }
-        if (INDIVIDUAL_PRESCRIPTION_PATTERN.matcher(question).find()
-                || question.matches("(?s).*(多少克|几克|开.{0,3}处方|用量|剂量|怎么服用).*")) {
-            return refusal("涉及个体化处方或剂量判断，超出知识问答边界",
-                    "不能为具体患者确定处方或剂量。个体用药必须结合面诊、既往史、合并用药和医师判断。",
-                    retrievalOutput, 0);
         }
         if (version == IterationVersion.V0_DIRECT) {
             return new GeneratedAnswer(

@@ -27,6 +27,8 @@ class ChatRequest(ApiModel):
     source_type: str | None = None
     evidence_level: str | None = None
     extractive_only: bool = False
+    corpus: str = "BASELINE"
+    expected_revision: str | None = None
 
     @field_validator("question")
     @classmethod
@@ -133,6 +135,7 @@ class KnowledgeChunk(ApiModel):
 class KnowledgeImportRequest(ApiModel):
     document: KnowledgeDocument
     chunks: list[KnowledgeChunk] = Field(min_length=1)
+    corpus: str = "BASELINE"
 
 
 class KnowledgeImportResponse(ApiModel):
@@ -142,12 +145,26 @@ class KnowledgeImportResponse(ApiModel):
     status: str
 
 
+class KnowledgeImportBatchRequest(ApiModel):
+    items: list[KnowledgeImportRequest] = Field(min_length=1)
+    corpus: str = "BASELINE"
+
+
+class KnowledgeInventoryItem(ApiModel):
+    document_id: str
+    checksum: str
+
+
 class HealthResponse(ApiModel):
     status: str
     engine: str
     chunk_count: int
     document_count: int
     llm_configured: bool
+    corpora: dict[str, dict[str, int | bool]] = Field(default_factory=dict)
+    knowledge_revision: str = ""
+    documents: list[KnowledgeInventoryItem] = Field(default_factory=list)
+    safety_rules_sha256: str
 
 
 class EngineInfoResponse(ApiModel):

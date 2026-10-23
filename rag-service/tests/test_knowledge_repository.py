@@ -60,3 +60,24 @@ def test_imported_evidence_level_survives_into_retrieval_node_metadata() -> None
 
     node = repository.nodes()[0]
     assert node.metadata["evidence_level"] == "A"
+
+
+def test_corpora_use_independent_storage() -> None:
+    root = Path(__file__).resolve().parents[2]
+    baseline = root / "backend/src/main/resources/data/knowledge-base.json"
+    expanded = root / "backend/src/main/resources/data/expanded/knowledge-base.json"
+    repository = KnowledgeRepository(baseline, expanded)
+    repository.load()
+
+    assert repository.chunk_count("BASELINE") == 11
+    assert repository.chunk_count("EXPANDED") == 4036
+    assert repository.chunk_count("BASELINE") == 11
+
+
+def test_revision_uses_the_cross_language_canonical_vector() -> None:
+    repository = KnowledgeRepository(Path("unused.json"))
+    repository.upsert({"id": "DOC-B", "checksum": "def"}, [_chunk("DOC-B", "C-B")])
+    repository.upsert({"id": "DOC-A", "checksum": "abc"}, [_chunk("DOC-A", "C-A")])
+    assert repository.knowledge_revision() == (
+        "679852034c6e66a9aceff2816972266392a6a651cd00a353ce8bd8ed21ddd6c0"
+    )

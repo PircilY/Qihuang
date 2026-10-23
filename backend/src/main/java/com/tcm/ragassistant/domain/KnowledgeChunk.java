@@ -26,6 +26,10 @@ public record KnowledgeChunk(
         Instant ingestedAt
 ) {
     public KnowledgeChunk {
+        title = title == null ? "" : title;
+        disease = disease == null ? "" : disease;
+        evidenceLevel = evidenceLevel == null ? "" : evidenceLevel;
+        content = content == null ? "" : content;
         syndromes = syndromes == null ? List.of() : List.copyOf(syndromes);
         formulas = formulas == null ? List.of() : List.copyOf(formulas);
         herbs = herbs == null ? List.of() : List.copyOf(herbs);

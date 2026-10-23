@@ -2,6 +2,7 @@ package com.tcm.ragassistant.service;
 
 import com.tcm.ragassistant.domain.KnowledgeChunk;
 import com.tcm.ragassistant.domain.RetrievalFilter;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.repository.KnowledgeBaseRepository;
 import org.springframework.stereotype.Component;
 
@@ -21,12 +22,12 @@ public class VectorSimilarityScorer {
     }
 
     public List<ScoredChunk> score(String question, int limit) {
-        return score(question, limit, RetrievalFilter.none());
+        return score(question, limit, RetrievalFilter.none(), CorpusId.BASELINE);
     }
 
-    public List<ScoredChunk> score(String question, int limit, RetrievalFilter filter) {
+    public List<ScoredChunk> score(String question, int limit, RetrievalFilter filter, CorpusId corpus) {
         Map<String, Double> queryVector = toVector(question);
-        List<KnowledgeChunk> chunks = repository.findAll().stream()
+        List<KnowledgeChunk> chunks = repository.findAll(corpus).stream()
                 .filter(chunk -> "ACTIVE".equals(chunk.status()))
                 .filter(chunk -> tokenizer.isRelated(question, chunk))
                 .filter(filter == null ? chunk -> true : filter::matches)

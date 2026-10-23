@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class EvaluationDatasetTest {
 
@@ -67,6 +68,39 @@ class EvaluationDatasetTest {
                                 .anyMatch(content -> evaluator.supports(claim, content)))
                                 .as(item.id() + ": " + claim)
                                 .isTrue()));
+    }
+
+    @Test
+    void holdoutDatasetIsLargeDisjointAndUsesOnlyBaselineChunks() throws Exception {
+        assumeTrue(Boolean.getBoolean("runHoldoutEvaluation"),
+                "Holdout inspection is opt-in; pass -DrunHoldoutEvaluation=true after explicit approval");
+        List<EvaluationCase> holdout;
+        try (InputStream input = resource("data/holdout-cases.json")) {
+            holdout = objectMapper.readValue(input, new TypeReference<>() { });
+        }
+        Set<String> baselineIds = readCases().stream().map(EvaluationCase::id).collect(Collectors.toSet());
+        Set<String> chunkIds = new HashSet<>();
+        try (InputStream input = resource("data/knowledge-base.json")) {
+            for (JsonNode chunk : objectMapper.readTree(input)) {
+                chunkIds.add(chunk.get("id").asText());
+            }
+        }
+        assertThat(holdout).hasSizeGreaterThanOrEqualTo(100);
+        assertThat(holdout.stream().map(EvaluationCase::id)).doesNotHaveDuplicates();
+        assertThat(holdout.stream().map(EvaluationCase::id)).doesNotContainAnyElementsOf(baselineIds);
+        assertThat(holdout.stream().map(EvaluationCase::category).collect(Collectors.toSet()))
+                .contains("benign-common", "acute-colloquial", "paraphrase", "distractor",
+                        "prompt-injection", "out-of-scope");
+        assertThat(holdout).allSatisfy(item -> {
+            assertThat(item.expectedChunkIds()).allMatch(chunkIds::contains);
+            if (item.shouldRefuse()) {
+                assertThat(item.expectedChunkIds()).isEmpty();
+                assertThat(item.expectedClaims()).isEmpty();
+            } else {
+                assertThat(item.expectedChunkIds()).isNotEmpty();
+                assertThat(item.expectedClaims()).isNotEmpty();
+            }
+        });
     }
 
     private List<EvaluationCase> readCases() throws Exception {

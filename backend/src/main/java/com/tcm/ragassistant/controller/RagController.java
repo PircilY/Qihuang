@@ -47,14 +47,16 @@ public class RagController {
     @PostMapping("/rag/chat")
     public ApiResponse<ChatResponse> chat(@Valid @RequestBody ChatRequest request, HttpServletRequest http) {
         var connection = modelSessions.current(http.getSession(false));
-        if (request.useModel() && (connection == null || !connection.enabled())) {
-            throw new BusinessException("MODEL_NOT_CONFIGURED", "当前会话尚未启用模型，请先配置模型");
-        }
         ChatResponse retrieved = ragOrchestrationService.askExtractive(
                 request.question().trim(),
                 request.version(),
-                request.toRetrievalFilter()
+                request.toRetrievalFilter(),
+                request.corpusId()
         );
+        if (retrieved.refused()) return ApiResponse.success(retrieved);
+        if (request.useModel() && (connection == null || !connection.enabled())) {
+            throw new BusinessException("MODEL_NOT_CONFIGURED", "当前会话尚未启用模型，请先配置模型");
+        }
         return ApiResponse.success(request.useModel() ? modelAnswers.generate(retrieved, connection) : retrieved);
     }
 
@@ -68,4 +70,3 @@ public class RagController {
         ));
     }
 }
-

@@ -4,6 +4,7 @@ import com.tcm.ragassistant.config.RetrievalProperties;
 import com.tcm.ragassistant.domain.IterationVersion;
 import com.tcm.ragassistant.domain.KnowledgeChunk;
 import com.tcm.ragassistant.domain.RetrievalFilter;
+import com.tcm.ragassistant.domain.CorpusId;
 import com.tcm.ragassistant.dto.RetrievalTrace;
 import com.tcm.ragassistant.service.ScoredChunk;
 import com.tcm.ragassistant.service.EvidenceCoverageGate;
@@ -38,8 +39,8 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
     }
 
     @Override
-    public RetrievalOutput retrieve(String question, RetrievalFilter filter) {
-        RetrievalOutput hybrid = hybridStrategy.retrieveCandidates(question, filter);
+    public RetrievalOutput retrieve(String question, RetrievalFilter filter, CorpusId corpus) {
+        RetrievalOutput hybrid = hybridStrategy.retrieveCandidates(question, filter, corpus);
         List<ScoredChunk> reranked = hybrid.chunks().stream()
                 .map(candidate -> rerank(question, candidate))
                 .sorted(Comparator.comparingDouble(ScoredChunk::score).reversed()
