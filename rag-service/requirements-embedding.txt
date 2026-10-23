@@ -1,0 +1,2 @@
+# Optional; install explicitly. Model downloads remain opt-in.
+sentence-transformers==3.3.1

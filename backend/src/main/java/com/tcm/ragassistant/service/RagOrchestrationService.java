@@ -42,6 +42,7 @@ public class RagOrchestrationService {
     private final KnowledgeBaseRepository repository;
     private final RemoteSyncState remoteSyncState;
     private final ReentrantLock syncLock = new ReentrantLock();
+    private volatile String remoteFailureNote = "remote-unavailable";
     private final AtomicLong syncEpoch = new AtomicLong();
 
     public RagOrchestrationService(
@@ -125,7 +126,7 @@ public class RagOrchestrationService {
                     if (corpus == CorpusId.BASELINE) remoteSyncState.markInSync(retriedRevision);
                     return response;
                 } catch (KnowledgeOutOfSyncException | ResourceAccessException |
-                         RestClientResponseException | IllegalStateException retryFailure) {
+                         RestClientResponseException | com.tcm.ragassistant.service.remote.IndexUnavailableException | IllegalStateException retryFailure) {
                     return handleRemoteFailure(question, version, effectiveFilter, corpus, retryFailure);
                 }
             } catch (RuntimeException exception) {
@@ -164,12 +165,15 @@ public class RagOrchestrationService {
                 && responseException.getStatusCode().is4xxClientError()) {
             throw new BusinessException("RAG_SERVICE_REQUEST_REJECTED", "远程检索服务拒绝了请求", exception);
         }
-        if (!(exception instanceof KnowledgeOutOfSyncException)
+        if (!(exception instanceof com.tcm.ragassistant.service.remote.IndexUnavailableException)
+                && !(exception instanceof KnowledgeOutOfSyncException)
                 && !(exception instanceof ResourceAccessException)
                 && !(exception instanceof RestClientResponseException responseException
                 && responseException.getStatusCode().is5xxServerError())) {
             throw exception;
         }
+        remoteFailureNote = exception instanceof com.tcm.ragassistant.service.remote.IndexUnavailableException unavailable
+                ? "remote-index=" + unavailable.state() : "remote-unavailable";
         remoteRetryAfter.set(System.nanoTime() + engineProperties.retryInterval().toNanos());
         remoteSyncState.markPending();
         if (engineProperties.strictRemote()) {
@@ -256,9 +260,23 @@ public class RagOrchestrationService {
                 round(generated.confidence()),
                 latencyMs,
                 generated.citations(),
-                retrievalOutput.trace(),
+                localTrace(retrievalOutput.trace(), version, corpus),
                 Instant.now()
         );
+    }
+
+    private com.tcm.ragassistant.dto.RetrievalTrace localTrace(com.tcm.ragassistant.dto.RetrievalTrace trace,
+                                                            IterationVersion version, CorpusId corpus) {
+        var notes = new ArrayList<>(trace.notes());
+        notes.add("embedding-backend=hash");
+        notes.add("embedding-model=hash-sha256-bigram-v1");
+        notes.add("corpus=" + corpus.name());
+        if (engineProperties.remoteEnabled()) {
+            notes.add("fallback=local"); notes.add(remoteFailureNote); notes.add("已使用本地引擎");
+        }
+        return new com.tcm.ragassistant.dto.RetrievalTrace(trace.strategy(), trace.lexicalCandidateCount(),
+                trace.vectorCandidateCount(), trace.fusedCandidateCount(), trace.selectedCount(), trace.sufficientEvidence(),
+                notes, "java-local", version.name(), trace.threshold(), trace.rejected());
     }
 
     private boolean shouldTryRemote() {

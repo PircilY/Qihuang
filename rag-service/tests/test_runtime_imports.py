@@ -73,7 +73,7 @@ def test_import_rate_limit_returns_429(monkeypatch):
     from fastapi.testclient import TestClient
     from app import main
     monkeypatch.setattr(main, "settings", replace(main.settings, import_requests_per_minute=1))
-    monkeypatch.setattr(main.engine, "reload", lambda: None)
+    monkeypatch.setattr(main.engine, "start_warmup", lambda: None)
     main._import_windows.clear()
     with TestClient(main.app) as client:
         first = client.post("/v1/knowledge/import", json={})

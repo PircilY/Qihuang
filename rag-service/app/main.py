@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 
 from app.config import Settings
-from app.engine import KnowledgeOutOfSync, LlamaIndexEngine
+from app.engine import IndexNotReady, KnowledgeOutOfSync, LlamaIndexEngine
 from app.schemas import (
     ChatRequest,
     ChatResponse,
@@ -26,7 +26,7 @@ engine = LlamaIndexEngine(settings)
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    engine.reload()
+    engine.start_warmup()
     yield
 
 
@@ -55,6 +55,12 @@ async def import_rate_limit(request: Request, call_next):
                                     headers={"Retry-After": "60"})
             _import_windows[peer] = (minute, previous + 1)
     return await call_next(request)
+
+
+@app.exception_handler(IndexNotReady)
+async def index_not_ready(_: Request, exception: IndexNotReady):
+    return JSONResponse(status_code=503, content={"code": "RAG_INDEX_" + exception.state,
+                        "indexState": exception.state, "message": "检索索引尚未就绪"})
 
 
 @app.exception_handler(KnowledgeOutOfSync)

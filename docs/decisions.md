@@ -37,3 +37,10 @@
 - 新增跨片段覆盖测试最初问题词序未触发现有共享规则，修正测试问题使其触发既有规则；没有改正则或已有 safety 测试预期。
 
 - 测试资源 application.yml 覆盖主配置，导致早期测量使用构造器缺省参数而非线上值；B 显式固定测试检索参数为线上所选配置，并在 JSON 导出实际配置。比较基线重新用 A 提交源与明确线上参数测量，不用混合配置冒称提升。
+
+## C：可选语义嵌入
+
+- 默认hash保持B参数与查询结果；sentence-transformers单独依赖，默认local_files_only且不信任远端代码。只有显式EMBEDDING_ALLOW_DOWNLOAD=true才允许自动下载；Java本地始终SHA-256哈希。
+- 启动后台预热，健康实时显示BUILDING/READY/FAILED；查询未就绪返回503并含indexState，Java在允许回退时明确标记fallback=local与remote-index状态。
+- 索引按语料/后端/模型和内容哈希缓存，EXPANDED嵌入向量按相同身份与文本哈希原子落盘到忽略runtime目录。切换模型自动重建；损坏缓存重新计算，缓存不可写时内存索引继续。
+- 旧API测试在启动后显式等待READY再执行已有断言；新增独立测试验证BUILDING期间健康不阻塞，未降低任何功能断言。

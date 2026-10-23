@@ -42,3 +42,32 @@ class HashEmbedding(BaseEmbedding):
 
     async def _aget_text_embedding(self, text: str) -> List[float]:
         return self._embed(text)
+
+
+class SentenceTransformerEmbedding(BaseEmbedding):
+    """Optional offline-first adapter; initialization runs in the warmup worker."""
+    model_name: str
+    _model: object = __import__("pydantic").PrivateAttr()
+
+    def __init__(self, model_name, allow_download=False):
+        super().__init__(model_name=model_name)
+        from sentence_transformers import SentenceTransformer
+        self._model = SentenceTransformer(model_name, local_files_only=not allow_download,
+                                          trust_remote_code=False, device="cpu")
+
+    def _get_query_embedding(self, query):
+        return self._model.encode(query, normalize_embeddings=True).tolist()
+
+    def _get_text_embedding(self, text):
+        return self._get_query_embedding(text)
+
+    async def _aget_query_embedding(self, query):
+        return self._get_query_embedding(query)
+
+
+def create_embedding(settings):
+    if settings.embedding_backend == "hash":
+        return HashEmbedding()
+    if settings.embedding_backend == "sentence-transformers":
+        return SentenceTransformerEmbedding(settings.embedding_model, settings.embedding_allow_download)
+    raise ValueError("unsupported EMBEDDING_BACKEND")

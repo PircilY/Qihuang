@@ -43,6 +43,10 @@ class Settings:
     llm_api_key: str
     llm_model: str
     sync_batch_size: int
+    embedding_backend: str = "hash"
+    embedding_model: str = "hash-sha256-bigram-v1"
+    embedding_allow_download: bool = False
+    embedding_cache_path: Path | None = None
     normalized_fusion: bool = True
     metadata_weight: float = 0.0
     max_import_documents: int = 1000
@@ -83,6 +87,10 @@ class Settings:
             llm_api_key=os.getenv("LLM_API_KEY", "").strip(),
             llm_model=os.getenv("LLM_MODEL", "").strip(),
             sync_batch_size=_env_int("RAG_SYNC_BATCH_SIZE", 20),
+            embedding_backend=os.getenv("EMBEDDING_BACKEND", "hash").strip(),
+            embedding_model=os.getenv("EMBEDDING_MODEL", "hash-sha256-bigram-v1" if os.getenv("EMBEDDING_BACKEND", "hash") == "hash" else "BAAI/bge-small-zh-v1.5"),
+            embedding_allow_download=os.getenv("EMBEDDING_ALLOW_DOWNLOAD", "false").lower() == "true",
+            embedding_cache_path=Path(os.getenv("EMBEDDING_CACHE_PATH", str(Path(__file__).resolve().parents[2] / "runtime" / "embedding-cache"))),
             normalized_fusion=os.getenv("RAG_NORMALIZED_FUSION", "true").lower() == "true",
             metadata_weight=_env_float("RAG_METADATA_WEIGHT", 0.0),
             max_import_documents=_env_int("KNOWLEDGE_MAX_IMPORT_DOCUMENTS", 1000),

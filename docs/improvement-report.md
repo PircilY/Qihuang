@@ -27,3 +27,9 @@ A 阶段验收：Java 123 项（0 失败、2 留出集测试跳过、1 可选报
 新增 `RetrievalIndexTest`、比例加分回归、逐片段覆盖回归、`test_lexical_index.py`、分词频率/边界回归；显式可选 `ResearchParameterGridTest` 与报告工具。Java全量与原50题网格/评测通过，Python68项通过（包含跨引擎拒答100%、Top1>=.90、Jaccard>=.75契约门槛）。
 
 完整四版本指标、30组网格及逐题证据排序见 [retrieval-quality.md](retrieval-quality.md)。性能见 [performance.md](performance.md)：扩充4036片段 V3 中位4730.2007→66.1940ms，同机并发测试条件限制已注明。
+
+## C：可选语义嵌入
+
+完成离线优先 Sentence Transformers 适配器、独立依赖、按语料/后端/模型缓存索引、EXPANDED 内容哈希磁盘向量缓存、后台预热与 BUILDING/READY/FAILED 健康状态、Java 明确回退和后端/模型 trace。
+
+新增 `test_embedding_backend.py` 与 `IndexFallbackTest`，全部使用 mock/占位内容。Java130项无失败（3可选/留出集测试跳过），Python73项通过。默认 hash 原50题指标及混淆矩阵与 B 一致；两端 hash 测量一致。未安装语义依赖或模型，真实语义对比跳过；原因与可选复现见 [embedding-experiment.md](embedding-experiment.md)。

@@ -71,6 +71,12 @@ public class LlamaIndexRagClient {
                             corpus.name(), expectedRevision))
                     .retrieve().body(ChatResponse.class);
         } catch (org.springframework.web.client.RestClientResponseException exception) {
+            if (exception.getStatusCode().value() == 503) {
+                try {
+                    String state = objectMapper.readTree(exception.getResponseBodyAsString()).path("indexState").asText();
+                    if (java.util.Set.of("BUILDING", "FAILED").contains(state)) throw new IndexUnavailableException(state);
+                } catch (com.fasterxml.jackson.core.JsonProcessingException ignored) { }
+            }
             throw translateOutOfSync(exception);
         }
     }

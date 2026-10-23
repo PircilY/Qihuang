@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import logging
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
 import re
 import threading
 import time
@@ -16,7 +21,7 @@ from llama_index.core.vector_stores import FilterOperator, MetadataFilter, Metad
 from llama_index.retrievers.bm25 import BM25Retriever
 
 from app.config import Settings
-from app.embeddings import HashEmbedding
+from app.embeddings import HashEmbedding, create_embedding
 from app.lexical_index import LexicalIndex, searchable
 from app.evidence_coverage import (
     DOSE_REFUSAL,
@@ -40,6 +45,11 @@ from app.tokenization import tokenize
 _CJK_BM25_TOKEN_PATTERN = r"(?u)[a-z0-9][a-z0-9._-]*|[\u3400-\u4dbf\u4e00-\u9fff]"
 
 
+class IndexNotReady(Exception):
+    def __init__(self, state):
+        self.state = state
+
+
 class KnowledgeOutOfSync(Exception):
     def __init__(self, revision: str, documents: list[dict[str, str]]) -> None:
         super().__init__("knowledge revision mismatch")
@@ -51,7 +61,13 @@ class LlamaIndexEngine:
     def __init__(self, settings: Settings) -> None:
         self.settings = settings
         self.repository = KnowledgeRepository(settings.data_path, settings.expanded_data_path)
-        self.embedding = HashEmbedding()
+        self.embedding = None
+        self.index_state = "BUILDING"
+        self.index_error = None
+        self.index_build_ms = {}
+        self._embedding_key = None
+        self._index_cache = {}
+        self._warmup_thread = None
         self._nodes: dict[str, list[Any]] = {}
         self._vector_indexes: dict[str, VectorStoreIndex | None] = {}
         self._lexical_indexes: dict[str, LexicalIndex] = {}
@@ -60,13 +76,31 @@ class LlamaIndexEngine:
         self._lock = threading.RLock()
         self._index_dirty: set[str] = {"BASELINE", "EXPANDED"}
 
+    def start_warmup(self):
+        if self._warmup_thread and self._warmup_thread.is_alive():
+            return
+        self.index_state = "BUILDING"
+        def work():
+            try:
+                self.reload()
+            except Exception:
+                self.index_state = "FAILED"
+                self.index_error = "Index build failed; verify optional dependency/local model and data files"
+                logging.getLogger(__name__).exception("Index warmup failed")
+        self._warmup_thread = threading.Thread(target=work, daemon=True, name="rag-index-warmup")
+        self._warmup_thread.start()
+
     def reload(self) -> None:
+        self.index_state = "BUILDING"
         with self._lock:
+            self._ensure_embedding()
             self.repository.load()
             self._index_dirty = {"BASELINE", "EXPANDED"}
             for corpus in ("BASELINE", "EXPANDED"):
                 self._rebuild_indexes(corpus)
             self._index_dirty.clear()
+            self.index_error = None
+            self.index_state = "READY"
 
     def ingest(self, document: dict, chunks: list[dict], corpus: str | None = None,
                rebuild: bool = True) -> KnowledgeImportResponse:
@@ -104,20 +138,22 @@ class LlamaIndexEngine:
                 total_chunk_count=self.repository.chunk_count("BASELINE"), status="READY")
 
     def health(self) -> HealthResponse:
-        with self._lock:
-            counts: dict[str, dict[str, int | bool]] = {}
-            for corpus in ("BASELINE", "EXPANDED"):
-                chunk_count = self.repository.chunk_count(corpus)
-                counts[corpus] = {"documentCount": self.repository.document_count(corpus), "chunkCount": chunk_count, "available": chunk_count > 0}
-            return HealthResponse(
-                status="UP", engine="llama-index",
-                chunk_count=self.repository.chunk_count("BASELINE"),
-                document_count=self.repository.document_count("BASELINE"),
-                llm_configured=self._llm is not None, corpora=counts,
-                knowledge_revision=self.repository.knowledge_revision("BASELINE"),
-                documents=self.repository.document_inventory("BASELINE"),
-                safety_rules_sha256=RULES_SHA256,
-            )
+        # Health must remain responsive while the warmup worker builds indexes.
+        counts: dict[str, dict[str, int | bool]] = {}
+        for corpus in ("BASELINE", "EXPANDED"):
+            chunk_count = self.repository.chunk_count(corpus)
+            counts[corpus] = {"documentCount": self.repository.document_count(corpus), "chunkCount": chunk_count, "available": chunk_count > 0}
+        return HealthResponse(
+            status="UP", engine="llama-index",
+            chunk_count=self.repository.chunk_count("BASELINE"),
+            document_count=self.repository.document_count("BASELINE"),
+            llm_configured=self._llm is not None, corpora=counts,
+            knowledge_revision=self.repository.knowledge_revision("BASELINE"),
+            documents=self.repository.document_inventory("BASELINE"),
+            safety_rules_sha256=RULES_SHA256, index_state=self.index_state,
+            embedding_backend=self.settings.embedding_backend, embedding_model=self.settings.embedding_model,
+            index_build_ms=dict(self.index_build_ms), index_error=self.index_error,
+        )
 
     def info(self) -> EngineInfoResponse:
         return EngineInfoResponse(
@@ -134,7 +170,9 @@ class LlamaIndexEngine:
                 "V3_GUARDED",
             ],
             metadata={
-                "embedding": "deterministic-hash-ngram",
+                "embedding": self.settings.embedding_backend,
+                "embeddingModel": self.settings.embedding_model,
+                "indexState": self.index_state,
                 "lexicalRetriever": "BM25",
                 "fusion": "reciprocal-rank-fusion",
                 "generation": "grounded-extractive" if self._llm is None else "llm",
@@ -142,11 +180,15 @@ class LlamaIndexEngine:
         )
 
     def query(self, request: ChatRequest) -> ChatResponse:
+        if self.index_state != "READY":
+            raise IndexNotReady(self.index_state)
         with self._lock:
+            self._ensure_embedding()
             corpus = (request.corpus or "BASELINE").strip().upper()
             if corpus in self._index_dirty:
                 self._rebuild_indexes(corpus)
                 self._index_dirty.discard(corpus)
+            self.index_state = "READY"
             return self._query(request)
 
     def _query(self, request: ChatRequest) -> ChatResponse:
@@ -161,6 +203,7 @@ class LlamaIndexEngine:
                     actual_revision,
                     self.repository.document_inventory(corpus),
                 )
+        self._active_corpus = corpus
         version = _normalize_version(request.version)
         question = request.question.strip()
 
@@ -195,7 +238,7 @@ class LlamaIndexEngine:
                     fused_candidate_count=0,
                     selected_count=0,
                     sufficient_evidence=False,
-                    notes=["engine=llama-index", "generation=none", "knowledge base bypassed"],
+                    notes=["engine=llama-index", "generation=none", "knowledge base bypassed", "embedding-backend=" + self.settings.embedding_backend, "embedding-model=" + self.settings.embedding_model, "corpus=" + corpus],
                     engine="llama-index",
                     version=version,
                     threshold=None,
@@ -286,25 +329,75 @@ class LlamaIndexEngine:
             started_at=started_at,
         )
 
+    def _ensure_embedding(self):
+        key = (self.settings.embedding_backend, self.settings.embedding_model)
+        if key != self._embedding_key:
+            self.index_state = "BUILDING"
+            try:
+                replacement = create_embedding(self.settings)
+            except Exception:
+                self.index_state = "FAILED"
+                self.index_error = "Optional embedding dependency or local model unavailable"
+                raise
+            self.embedding = replacement
+            self._embedding_key = key
+            self._index_dirty = {"BASELINE", "EXPANDED"}
+
+    def _cached_embedding(self, corpus, node):
+        text = searchable(node)
+        identity = json.dumps(["shared-bigram-v1", self.settings.embedding_backend,
+                               self.settings.embedding_model, text], ensure_ascii=False)
+        key = hashlib.sha256(identity.encode("utf-8")).hexdigest()
+        cache = self.settings.embedding_cache_path if corpus == "EXPANDED" else None
+        path = cache / (key + ".json") if cache else None
+        if path and path.exists():
+            try:
+                vector = json.loads(path.read_text(encoding="utf-8"))
+                if vector and isinstance(vector, list) and all(isinstance(value, (int, float)) and math.isfinite(value) for value in vector):
+                    return vector
+            except (ValueError, OSError):
+                pass
+        vector = self.embedding.get_text_embedding(text)
+        if path:
+            try:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                temporary = path.with_suffix(".tmp-" + uuid.uuid4().hex)
+                temporary.write_text(json.dumps(vector), encoding="utf-8")
+                os.replace(temporary, path)
+            except OSError:
+                logging.getLogger(__name__).warning("Embedding cache unavailable; keeping in-memory index")
+        return vector
+
     def _rebuild_indexes(self, corpus: str) -> None:
+        started = time.perf_counter()
         nodes = [node for node in self.repository.nodes(corpus)
                        if node.metadata.get("status") == "ACTIVE"]
         self._nodes[corpus] = nodes
-        lexical = self._lexical_indexes.setdefault(corpus, LexicalIndex())
+        content_hash = hashlib.sha256(json.dumps([(node.node_id, searchable(node), node.metadata)
+            for node in nodes], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+        cached = self._index_cache.get((corpus, *self._embedding_key))
+        if cached and cached[0] == content_hash:
+            self._vector_indexes[corpus], self._lexical_indexes[corpus] = cached[1], cached[2]
+            self.index_build_ms[corpus] = round((time.perf_counter() - started) * 1000, 3)
+            return
+        lexical = self._lexical_indexes.get(corpus, LexicalIndex())
         lexical.update(nodes)
+        self._lexical_indexes[corpus] = lexical
         if not nodes:
             self._vector_indexes[corpus] = None
             self._bm25_retrievers[corpus] = None
             return
-        if isinstance(self.embedding, HashEmbedding):
-            for node in nodes:
-                node.embedding = self.embedding._embed(searchable(node))
+        for node in nodes:
+            node.embedding = self._cached_embedding(corpus, node)
         self._vector_indexes[corpus] = VectorStoreIndex(
             nodes=nodes,
             embed_model=self.embedding,
             show_progress=False,
         )
         self._bm25_retrievers[corpus] = None
+        self._index_cache[(corpus, *self._embedding_key)] = (
+            content_hash, self._vector_indexes[corpus], lexical)
+        self.index_build_ms[corpus] = round((time.perf_counter() - started) * 1000, 3)
         # LlamaIndex owns semantic-vector retrieval; lexical scoring uses the shared BM25 contract.
 
     def _retrieve_vector(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
@@ -558,7 +651,9 @@ class LlamaIndexEngine:
             fused_candidate_count=len(fused_nodes),
             selected_count=len(selected),
             sufficient_evidence=sufficient,
-            notes=notes,
+            notes=notes + ["embedding-backend=" + self.settings.embedding_backend,
+                           "embedding-model=" + self.settings.embedding_model,
+                           "corpus=" + getattr(self, "_active_corpus", "BASELINE")],
             engine="llama-index",
             version=version,
             threshold=self.settings.minimum_evidence_score if version == "V3_GUARDED" else None,

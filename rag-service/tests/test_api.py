@@ -1,4 +1,15 @@
-from fastapi.testclient import TestClient
+from fastapi.testclient import TestClient as FastAPITestClient
+from contextlib import contextmanager
+import time
+
+@contextmanager
+def TestClient(application):
+    with FastAPITestClient(application) as client:
+        deadline = time.monotonic() + 60
+        while main.engine.index_state == "BUILDING" and time.monotonic() < deadline:
+            time.sleep(.01)
+        assert main.engine.index_state == "READY"
+        yield client
 
 from app.main import app
 from app import main

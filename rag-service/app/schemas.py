@@ -164,6 +164,11 @@ class HealthResponse(ApiModel):
     corpora: dict[str, dict[str, int | bool]] = Field(default_factory=dict)
     knowledge_revision: str = ""
     documents: list[KnowledgeInventoryItem] = Field(default_factory=list)
+    index_state: str = "BUILDING"
+    embedding_backend: str = "hash"
+    embedding_model: str = "hash-sha256-bigram-v1"
+    index_build_ms: dict[str, float] = Field(default_factory=dict)
+    index_error: str | None = None
     safety_rules_sha256: str
 
 
