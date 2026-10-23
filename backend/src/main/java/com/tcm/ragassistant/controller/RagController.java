@@ -66,7 +66,7 @@ public class RagController {
     ) {
         return ApiResponse.success(ragOrchestrationService.compare(
                 request.question().trim(),
-                request.toRetrievalFilter()
+                request.toRetrievalFilter(), request.corpusId()
         ));
     }
 }

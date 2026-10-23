@@ -18,3 +18,9 @@ rag-service/.env
 .tmp/
 runtime/
 .env
+
+# Pre-existing user material and frozen holdout kept untouched; excluded from delivery.
+/backend/src/main/resources/data/holdout-cases.json
+/docs/evaluation-holdout.md
+/学业奖学金申请书_公文格式.docx
+/Codex毕业设计RAG大模型.tmppytest-safety/

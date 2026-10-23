@@ -18,6 +18,8 @@ const state = {
     knowledgeError: "",
     modelConfig: null,
     modelBusy: false
+    ,corpora: []
+    ,activeCorpus: "BASELINE"
 };
 
 const elements = {
@@ -52,6 +54,9 @@ const elements = {
     knowledgeDisease: document.getElementById("knowledgeDisease"),
     knowledgeSource: document.getElementById("knowledgeSource"),
     knowledgeEvidence: document.getElementById("knowledgeEvidence"),
+    knowledgeCorpus: document.getElementById("knowledgeCorpus"),
+    workbenchCorpus: document.getElementById("workbenchCorpus"),
+    workbenchCorpusNotice: document.getElementById("workbenchCorpusNotice"),
     resetKnowledgeFilters: document.getElementById("resetKnowledgeFilters"),
     documentSummary: document.getElementById("documentSummary"),
     documentList: document.getElementById("documentList"),
@@ -199,6 +204,18 @@ function bindEvents() {
     elements.closeCompareButton.addEventListener("click", () => elements.compareSection.classList.add("hidden"));
     elements.closeChunkDetail.addEventListener("click", closeChunkDetail);
     elements.resetKnowledgeFilters.addEventListener("click", resetKnowledgeFilters);
+    elements.knowledgeCorpus.addEventListener("change", () => {
+        state.activeCorpus = elements.knowledgeCorpus.value;
+        elements.workbenchCorpus.value = state.activeCorpus;
+        refreshKnowledgeData();
+        updateCorpusNotice();
+    });
+    elements.workbenchCorpus.addEventListener("change", () => {
+        state.activeCorpus = elements.workbenchCorpus.value;
+        elements.knowledgeCorpus.value = state.activeCorpus;
+        refreshKnowledgeData();
+        updateCorpusNotice();
+    });
 
     elements.questionInput.addEventListener("input", updateCharacterCount);
     elements.questionInput.addEventListener("keydown", event => {
@@ -263,11 +280,29 @@ async function loadVersions() {
 
 async function loadKnowledgeData() {
     try {
+        if (!state.corpora.length) {
+            state.corpora = await request("/api/v1/knowledge/corpora");
+            const expanded = state.corpora.find(item => item.id === "EXPANDED");
+            elements.knowledgeCorpus.replaceChildren();
+            state.corpora.forEach(item => elements.knowledgeCorpus.append(
+                node("option", "", `${item.name} · ${item.documentCount} 文档 / ${item.chunkCount} 切片`, {value: item.id})
+            ));
+            elements.workbenchCorpus.replaceChildren();
+            state.corpora.forEach(item => elements.workbenchCorpus.append(
+                node("option", "", `${item.name} · ${item.documentCount} 文档 / ${item.chunkCount} 切片`, {value: item.id})
+            ));
+            elements.knowledgeCorpus.value = state.activeCorpus;
+            elements.workbenchCorpus.value = state.activeCorpus;
+            if (expanded && expanded.documentCount < 100) {
+                elements.knowledgeCorpus.title = `扩充语料当前仅核验 ${expanded.documentCount} 篇全文，未达到 100 篇目标`;
+            }
+        }
+        const query = `?corpus=${encodeURIComponent(state.activeCorpus)}`;
         const [overview, chunks, documents, pipeline] = await Promise.all([
-            request("/api/v1/knowledge/overview"),
-            request("/api/v1/knowledge/chunks"),
-            request("/api/v1/knowledge/documents"),
-            request("/api/v1/knowledge/pipeline")
+            request(`/api/v1/knowledge/overview${query}`),
+            request(`/api/v1/knowledge/chunks${query}`),
+            request(`/api/v1/knowledge/documents${query}`),
+            request(`/api/v1/knowledge/pipeline${query}`)
         ]);
         state.overview = overview;
         state.allChunks = chunks;
@@ -277,10 +312,19 @@ async function loadKnowledgeData() {
         state.knowledgeLoaded = true;
         state.knowledgeError = "";
         updateKnowledgeCounts();
+        updateCorpusNotice();
     } catch (error) {
         state.knowledgeError = error.message;
         showToast(error.message, true);
     }
+}
+
+function updateCorpusNotice() {
+    const item = state.corpora.find(value => value.id === state.activeCorpus);
+    if (!item || !elements.workbenchCorpusNotice) return;
+    elements.workbenchCorpusNotice.textContent = item.id === "BASELINE"
+        ? "当前使用标准语料；正式评测与历史结果使用此版本。"
+        : `当前使用扩充语料：${item.documentCount} 篇文档、${item.chunkCount} 个切片。主题相关性仍需人工复核；该结果不属于 Experiment A 历史评测。`;
 }
 
 async function refreshKnowledgeData() {
@@ -497,6 +541,9 @@ function renderComparisonOptions() {
     state.versions.forEach(version => {
         elements.failureVersionFilter.append(new Option(`${version.code} ${version.name}`, version.version));
     });
+    if (state.versions.some(version => version.version === "V3_GUARDED")) {
+        elements.failureVersionFilter.value = "V3_GUARDED";
+    }
 }
 
 function renderOverview() {
@@ -866,6 +913,7 @@ async function askQuestion() {
                 disease: elements.workbenchDisease.value || null,
                 sourceType: elements.workbenchSource.value || null,
                 evidenceLevel: elements.workbenchEvidence.value || null
+                ,corpus: state.activeCorpus
             })
         });
         renderAnswer(state.currentResult);
@@ -901,6 +949,18 @@ function renderError(message) {
     elements.answerStage.replaceChildren(wrapper);
 }
 
+function resultContext(result) {
+    const notes = result.retrieval?.notes || [];
+    const detail = key => notes.find(note => note.startsWith(`${key}=`))?.slice(key.length + 1);
+    return {
+        engine: result.retrieval?.engine || detail("engine") || "java-local",
+        corpus: detail("corpus") || state.activeCorpus,
+        embedding: detail("embedding-backend") || "hash",
+        embeddingModel: detail("embedding-model") || "hash-sha256-bigram-v1",
+        fallback: notes.includes("fallback=local") || notes.some(note => note.includes("已使用本地引擎"))
+    };
+}
+
 function renderAnswer(result) {
     const version = state.versions.find(item => item.version === result.version);
     elements.answerStatus.textContent = `已完成 ${version?.code || result.version} 检索与生成`;
@@ -914,9 +974,8 @@ function renderAnswer(result) {
         node("strong", "", `${version?.code || result.version} · ${version?.name || "迭代版本"}`),
         node("span", "", formatDateTime(result.generatedAt))
     );
-    const engineLabel = result.retrieval.notes.includes("engine=llama-index")
-        ? "LlamaIndex"
-        : "Java Local";
+    const context = resultContext(result);
+    const engineLabel = context.engine;
     const modelName = result.retrieval.notes.find(note => note.startsWith("model="))?.slice(6);
     const generationLabel = result.refused ? "安全拒答" : result.retrieval.notes.includes("generation=llm")
         ? (modelName || "大模型生成")
@@ -929,6 +988,9 @@ function renderAnswer(result) {
         ["引用证据", `${result.citations.length} 条`],
         ["检索引擎", engineLabel],
         ["生成方式", generationLabel],
+        ["语料", context.corpus],
+        ["嵌入后端", `${context.embedding} · ${context.embeddingModel}`],
+        ["耗时", `${result.latencyMs} ms`],
         ["安全状态", result.refused ? "已拒答" : result.retrieval.sufficientEvidence ? "阈值通过" : "证据不足"]
     ].forEach(([label, value]) => {
         const item = node("span");
@@ -936,6 +998,7 @@ function renderAnswer(result) {
         summary.append(item);
     });
     card.append(meta, summary);
+    if (context.fallback) card.append(node("div", "fallback-notice", "已使用本地引擎：远程服务不可用或索引尚未就绪。"));
     if (result.refused) {
         card.append(refusalBanner(result.refusalReason));
     }
@@ -1094,6 +1157,7 @@ async function compareVersions() {
                 question,
                 disease: elements.workbenchDisease.value || null,
                 sourceType: elements.workbenchSource.value || null,
+                corpus: state.activeCorpus,
                 evidenceLevel: elements.workbenchEvidence.value || null
             })
         });
@@ -1132,7 +1196,12 @@ function renderComparison(result) {
             row.append(node("em", "", label), node("strong", "", value));
             stats.append(row);
         });
+        const context = resultContext(response);
+        stats.append(node("span", "", `${context.engine} · ${context.corpus} · ${context.embedding}`));
         article.append(head, answer, stats);
+        if (context.fallback) article.append(node("div", "fallback-notice", "已使用本地引擎"));
+        if (response.citations.length) article.append(citationSection(response.citations));
+        else article.append(node("p", "compare-no-evidence", "本版本未命中可展示的证据"));
         elements.compareGrid.append(article);
     });
 }
@@ -1195,7 +1264,7 @@ function renderEvaluationInsight(result) {
     const failureReduction = baseline.failureCount - current.failureCount;
 
     elements.evaluationInsight.replaceChildren();
-    const eyebrow = node("span", "", "V0 / V3");
+    const eyebrow = node("span", "", "V0 无检索对照 / V3 证据约束");
     const copy = node("p");
     copy.append(
         node("strong", "", "本次指标差值"),
@@ -1360,7 +1429,7 @@ function renderFailureSummary(cases) {
             node("strong", "", item.question),
             node("p", "", `${item.caseId} · ${version?.code || item.version} · ${item.category} · ${failureReason(item)}`)
         );
-        row.append(copy, node("span", "failure-rank", item.hitRank > 0 ? `RANK ${item.hitRank}` : "NO HIT"));
+        row.append(copy, node("span", "failure-rank", failureRankLabel(item)));
         elements.failureSummary.append(row);
     });
 }
@@ -1516,6 +1585,11 @@ function failureReason(item) {
     return "未达到预期";
 }
 
+function failureRankLabel(item) {
+    if (item.version === "V0_DIRECT") return "无检索对照";
+    return item.hitRank > 0 ? `命中第 ${item.hitRank} 条` : "未命中";
+}
+
 function evidenceTag(level) {
     const normalized = String(level || "").toUpperCase();
     const className = normalized === "B" ? "level-b" : normalized === "C" ? "level-c" : "";
@@ -1568,13 +1642,16 @@ function loadingBlock(message) {
     return wrapper;
 }
 
-function node(tagName, className = "", text = null) {
+function node(tagName, className = "", text = null, attributes = null) {
     const element = document.createElement(tagName);
     if (className) {
         element.className = className;
     }
     if (text !== null && text !== undefined) {
         element.textContent = String(text);
+    }
+    if (attributes) {
+        Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, String(value)));
     }
     return element;
 }

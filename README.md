@@ -1,4 +1,4 @@
-# 中医药心血管疾病辅助诊疗 RAG 原型
+# 岐黄脉证：中医药与心血管公开资料 RAG 研究原型
 
 > 以中医药与心血管相关公开资料为实验领域。
 
@@ -20,7 +20,7 @@ Spring Boot 3.3 / Java 17  :8080
 FastAPI + LlamaIndex       :8000
   |-- TextNode 知识片段
   |-- Query 预处理与 Tokenization
-  |-- BM25 + 确定性哈希特征向量混合召回
+  |-- 全库统计缓存 BM25 + 确定性哈希特征向量混合召回
   |-- 候选预过滤 → Weighted RRF 与 chunkId 去重
   |-- metadata rerank
   |-- Evidence Coverage Gate / Reject
@@ -177,7 +177,7 @@ java -jar backend\target\tcm-cvd-rag-prototype-0.1.0-SNAPSHOT.jar
 - `RAG_READ_TIMEOUT`：读取超时，默认 `30s`
 - `RAG_RETRY_INTERVAL`：远程失败后的重试间隔，默认 `10s`
 - `MODEL_API_BASE`、`MODEL_API_KEY`、`MODEL_NAME`：Java 工作台默认生成模型
-- `LLM_API_BASE`、`LLM_API_KEY`、`LLM_MODEL`：旧版 Python 直连接口生成配置；工作台强制只取检索证据，避免双重生成
+- 旧 Python `LLM_*` 配置已移除；生成统一使用 Java `MODEL_*`。
 - `SERVER_ADDRESS`、`SERVER_PORT`：默认绑定 `127.0.0.1:8080`
 - `KNOWLEDGE_STORE_PATH`：导入快照路径，默认相对启动目录的 `runtime/knowledge-imports.json`；部署时建议指定固定绝对路径
 
@@ -240,3 +240,81 @@ Python 服务另提供：
 持久化快照只支持单进程、单写入者，不支持多个 Java 实例共享同一路径。备份应在停止写入后复制完整快照；恢复时停止服务、替换快照再启动，损坏快照会阻止启动而不是静默丢数据。Python 索引是可重建缓存，导入应通过 Java 接口完成。
 
 未实现用户登录、租户隔离、专家审核或临床认证；不要直接暴露公网，不要输入患者隐私。规则式急症与剂量识别只能覆盖部分表达，不能承担临床分诊。启用外部 LLM 会将问题和检索片段发送给配置的服务方，需事先审核隐私和授权。公网或临床部署前必须补齐访问控制、审计、授权复核、独立安全评估及真实语义模型，并重新验证。
+
+
+## 5 分钟演示（默认无模型、无联网调用）
+
+前提：Java 17+、Maven、Python 3.11+、PowerShell 7 已安装且依赖已有缓存。首次依赖准备是可选联网步骤：`mvn -f backend/pom.xml package` 与 `python -m pip install -r rag-service/requirements-dev.txt`。离线默认测试不下载模型、不读取密钥、不访问外部模型；依赖本身需事先安装或缓存。
+
+```powershell
+# 仅Java本地：自动使用Maven离线缓存构建缺失jar
+.\start.cmd
+# Java + Python，两端均就绪后返回URL；日志/PID仅在runtime
+.\start.cmd -WithPython -Port 8080 -RagPort 8000
+# 关闭此脚本启动的服务，校验PID创建时间避免误关其他进程
+.\stop.cmd -Port 8080
+```
+
+1. 打开 http://127.0.0.1:8080，概览查看 BASELINE 的4个来源/11个片段，再在知识库切换 EXPANDED 查看100个来源/4036个片段。健康资料不代表临床分级。
+2. 工作台选择 BASELINE/V3，提问“高血压没有症状也需要检查血压吗？”，查看来源、原文、引擎、版本、语料、嵌入后端与耗时。
+3. 点击版本对比，V0–V3并排展示回答、指标和命中证据；V0保持无检索。对比沿用所选语料。
+4. 提问原安全回归问题“胸痛持续不缓解，怎么办？”，查看急症边界提示。系统只用于资料研究。
+5. 模型弹窗可选择原文摘录；未配置模型时请求生成会提示。已有兼容模型时才显式启用。
+
+自动演示验收：`python tools/smoke_e2e.py` 自行启动隔离端口和临时导入库，验证提问、版本对比、真实公开原文导入后检索、模型未配置、远程中断本地回退、Python重启后自动补同步及安全规则哈希。全部进程由测试关闭。
+
+## 已验证依赖与默认模型边界
+
+2026-10-23 本机完整测试组合：llama-index-core **0.14.25**、llama-index-retrievers-bm25 **0.6.5**、bm25s **0.3.11**、FastAPI **0.141.1**、Pydantic **2.13.5**、Uvicorn **0.54.0**、pytest **9.1.1**、httpx **0.28.1**。requirements.txt 固定直接依赖；requirements-lock.txt 固定运行时依赖闭包（Linux/Python3.12 marker）；requirements-dev.txt 复用锁并固定测试依赖。安装到全新 Linux 环境及容器仍需单独验证，不能把本机已装环境等同于镜像验证。
+
+当前词法打分使用自有 LexicalIndex，BM25 retriever 包保留可导入兼容组合；向量索引使用 LlamaIndex VectorStoreIndex。这避免旧 BM25 检索器对预过滤子集统计和逐次重建的开销。默认 hash 保持离线；`requirements-embedding.txt` 与 `EMBEDDING_BACKEND=sentence-transformers` 为独立可选安装。`EMBEDDING_ALLOW_DOWNLOAD=false` 默认禁止模型下载；详情见 docs/embedding-experiment.md。
+
+Python不再读取旧 LLM_*，不直连生成模型；所有生成与密钥统一通过 Java MODEL_*。Python健康中的llmConfigured固定false表示其不负责生成，不表示Java未配置模型。
+
+## 新增配置摘要
+
+|配置|默认|作用|
+|---|---|---|
+|RAG_NORMALIZED_FUSION|true|归一化 weighted RRF；false恢复旧量纲，需要同时旧阈值|
+|RAG_METADATA_WEIGHT|0.0|只用原50题标定的比例权重|
+|RAG_MINIMUM_EVIDENCE_SCORE|0.9|对应归一化分数的证据阈值|
+|KNOWLEDGE_MAX_IMPORT_DOCUMENTS / CHARACTERS|1000 / 10000000|运行时导入总量上限|
+|IMPORT_REQUESTS_PER_MINUTE / EVALUATION_REQUESTS_PER_MINUTE|30 / 2|研究接口限流|
+|GENERATION_EXPERIMENT_ENABLED|false|显式启用A/B/C生成对照接口|
+|GENERATION_EXPERIMENT_MAX_CASES|50|实验问题上限|
+|JUDGE_ENABLED|false|独立配置评审；JUDGE_API_BASE/MODEL/API_KEY/TEMPERATURE|
+|EMBEDDING_BACKEND|hash|Python hash或显式sentence-transformers|
+|EMBEDDING_ALLOW_DOWNLOAD|false|显式允许下载；默认只读取本地模型|
+|EMBEDDING_CACHE_PATH|runtime/embedding-cache|EXPANDED向量缓存|
+
+健康接口返回Python indexState BUILDING/READY/FAILED及embeddingBackend/Model/build耗时，BUILDING查询503；Java允许回退时回答明确包含“已使用本地引擎”。安全规则健康字段两端应等于仓库safety-rules.json的SHA256。
+
+## 容器与交付
+
+```powershell
+# 可选联网镜像构建；PIP_INDEX_URL默认官方源，可自行设置镜像
+ docker compose build
+ docker compose up -d --wait
+ docker compose exec rag-service python -c "from app.safety_rules import RULES_SHA256; print(RULES_SHA256)"
+ curl.exe http://127.0.0.1:8080/actuator/health
+ docker compose down
+# 源码干净交付包与逐文件SHA256清单
+ python tools/package_delivery.py
+```
+
+两个镜像均使用UID10001非root，HEALTHCHECK，Java MaxRAMPercentage=75；运行时知识卷允许UID10001写入。默认容器仅映射127.0.0.1。Docker未在本机完成构建/启动：已安装CLI和compose，但Docker引擎管道不存在，实际compose build失败；完整记录在docs/deployment-validation.md。
+
+交付包只取Git跟踪源码，不包含依赖、模型、target、日志、缓存、运行时导入数据、冻结留出集和用户无关文件；文件不删除，打包在读之前按路径排除。归档runtime/delivery/qihuang-rag.zip附delivery-manifest.json，需依赖预装环境才能离线构建。
+
+## 故障排查
+
+- 端口占用：start-local明确拒绝占用端口，换`-Port/-RagPort`；stop-local只关闭其记录且创建时间一致的PID。
+- Python导入失败：使用同一Python安装锁定依赖，或配置PYTHONPATH指向已有.rag-deps；不要把依赖目录提交。
+- BUILDING：首次EXPANDED缓存构建可能较慢，健康仍响应；启动脚本等待READY。FAILED查看runtime日志、模型路径和embedding配置；默认hash无需模型。
+- 远程不可用：默认auto回退Java并显示提示；恢复后等待RAG_RETRY_INTERVAL，下一次请求自动同步运行时文档。EXPANDED不参与运行时修订号。
+- 409持续：检查Java知识快照与追加日志是否对应同一实例；同步会先清理Python额外导入再批量补发；评测在同步未确认时拒绝运行。
+- 429：按Retry-After等待，或在受控研究环境配置限额；不绕过保护循环重试。
+- 模型未配置/鉴权/截断/引用越界：页面明确提示。默认摘录不依赖模型。实验每种模式保留失败行，见docs/generation-experiment.md。
+- 离线Maven缺缓存：可选联网准备依赖一次；测试`mvn -o -f backend/pom.xml -DrunHoldoutEvaluation=false test`，Python`python -m pytest rag-service/tests -q`。
+
+阶段结果与局限见 docs/improvement-report.md、docs/retrieval-quality.md、docs/performance.md、docs/knowledge-base.md、docs/decisions.md。冻结留出集本次未读取、未运行、不用于调参。

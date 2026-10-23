@@ -46,12 +46,32 @@ async function main() {
         assert.equal(answer.refused, false);
         assert.ok(answer.citations.some(c => c.chunkId === "NCCIH-LICORICE-001"));
         assert.ok(answer.retrieval.notes.includes("engine=llama-index"));
+        assert.ok((await page.locator(".answer-summary").innerText()).includes("BASELINE"));
+        assert.ok((await page.locator(".answer-summary").innerText()).includes("hash"));
         await page.screenshot({path: path.join(output, "answer-desktop.png"), fullPage: true});
+        await page.route("**/api/v1/rag/chat", route => route.fulfill({
+            status: 200, contentType: "application/json",
+            body: JSON.stringify({code: "OK", data: {...answer,
+                retrieval: {...answer.retrieval, engine: "java-local", notes: [
+                    "engine=java-local", "fallback=local", "已使用本地引擎", "corpus=BASELINE", "embedding-backend=hash"
+                ]}}})
+        }));
+        await ask("高血压没有症状也需要检查血压吗？");
+        assert.match(await page.locator(".fallback-notice").innerText(), /已使用本地引擎/);
+        assert.match(await page.locator(".answer-summary").innerText(), /java-local/);
+        await page.screenshot({path: path.join(output, "local-fallback.png"), fullPage: true});
+        await page.unroute("**/api/v1/rag/chat");
+        await page.locator("#workbenchCorpus").selectOption("EXPANDED");
+        const expanded = await ask("高血压没有症状也需要检查血压吗？");
+        assert.ok(expanded.retrieval.notes.includes("corpus=EXPANDED"));
+        await page.locator("#workbenchCorpus").selectOption("BASELINE");
+
         const comparison = page.waitForResponse(r => r.url().endsWith("/api/v1/rag/compare"));
         await page.locator("#compareButton").click();
         await comparison;
         await page.waitForFunction(() => !document.querySelector("#compareButton").disabled);
         assert.equal(await page.locator("#compareGrid .compare-result").count(), 4);
+        assert.ok(await page.locator("#compareGrid .citation-item").count() > 0);
         const refused = await ask("胸痛持续不缓解，怎么办？");
         assert.equal(refused.refused, true);
         assert.equal(refused.citations.length, 0);
@@ -78,8 +98,10 @@ async function main() {
         await page.locator("#evaluationRunButton").click();
         const result = (await (await evaluation).json()).data;
         await page.waitForFunction(() => !document.querySelector("#evaluationRunButton").disabled);
-        assert.equal(result.caseResults.length, 48);
-        assert.equal(await page.locator("#evaluationCaseRows tr").count(), 48);
+        assert.equal(result.caseResults.length, 200);
+        const selectedVersion = await page.locator("#failureVersionFilter").inputValue();
+        const expectedRows = selectedVersion ? result.caseResults.filter(item => item.version === selectedVersion).length : result.caseResults.length;
+        assert.equal(await page.locator("#evaluationCaseRows tr").count(), expectedRows);
         await page.waitForFunction(() => !document.querySelector("#toast").classList.contains("visible"));
 
         const overflow = [];
@@ -106,7 +128,7 @@ async function main() {
         await fs.writeFile(path.join(output, "results.json"), JSON.stringify({
             baseURL, javascriptErrors: errors, overflow, evaluation: result.summaries,
             checks: ["five views", "filters", "source links", "remote chat", "comparison",
-                "emergency refusal", "request retry", "evaluation retry", "four viewport widths"]
+                "emergency refusal", "local fallback notice", "expanded corpus", "request retry", "evaluation retry", "four viewport widths"]
         }, null, 2));
         console.log("PASS: browser workflows and responsive checks");
     } finally {

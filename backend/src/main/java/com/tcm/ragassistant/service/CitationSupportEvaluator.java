@@ -120,9 +120,13 @@ public class CitationSupportEvaluator {
                 continue;
             }
             if (".!?。！？".indexOf(current) < 0) continue;
+            if (current == '.' && answer.substring(start, index).trim().matches("\\d+")) continue;
             if (current == '.' && index > 0 && index + 1 < answer.length()
                     && Character.isDigit(answer.charAt(index - 1)) && Character.isDigit(answer.charAt(index + 1))) continue;
             int boundary = index + 1;
+            int refStart = boundary;
+            while (refStart < answer.length() && (answer.charAt(refStart) == ' ' || answer.charAt(refStart) == '\t')) refStart++;
+            if (refStart < answer.length() && answer.charAt(refStart) == '[') boundary = refStart;
             while (boundary < answer.length() && answer.charAt(boundary) == '[') {
                 int close = answer.indexOf(']', boundary + 1);
                 if (close < 0 || !answer.substring(boundary + 1, close).matches("\\d+")) break;

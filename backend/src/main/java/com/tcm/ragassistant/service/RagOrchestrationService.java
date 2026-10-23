@@ -290,9 +290,13 @@ public class RagOrchestrationService {
     }
 
     public Map<IterationVersion, ChatResponse> compare(String question, RetrievalFilter filter) {
+        return compare(question, filter, CorpusId.BASELINE);
+    }
+
+    public Map<IterationVersion, ChatResponse> compare(String question, RetrievalFilter filter, CorpusId corpus) {
         Map<IterationVersion, ChatResponse> responses = new EnumMap<>(IterationVersion.class);
         for (IterationVersion version : IterationVersion.values()) {
-            responses.put(version, ask(question, version, filter));
+            responses.put(version, askExtractive(question, version, filter, corpus));
         }
         return responses;
     }

@@ -5,13 +5,12 @@ services:
       dockerfile: rag-service/Dockerfile
       args:
         PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim}
-        INSTALL_LLM: ${INSTALL_LLM:-false}
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
     environment:
       RAG_HOST: 0.0.0.0
       RAG_PORT: 8000
-      LLM_API_BASE: ${LLM_API_BASE:-}
-      LLM_API_KEY: ${LLM_API_KEY:-}
-      LLM_MODEL: ${LLM_MODEL:-}
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-hash}
+      EMBEDDING_ALLOW_DOWNLOAD: "false"
     ports:
       - "127.0.0.1:${RAG_PORT:-8000}:8000"
     healthcheck:
@@ -42,6 +41,12 @@ services:
       MODEL_API_KEY: ${MODEL_API_KEY:-}
       MODEL_TIMEOUT: ${MODEL_TIMEOUT:-60s}
       MODEL_ALLOWED_BASE_URLS: ${MODEL_ALLOWED_BASE_URLS:-https://api.deepseek.com/v1,https://api.deepseek.com,https://dashscope.aliyuncs.com/compatible-mode/v1,https://api.openai.com/v1}
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:8080/actuator/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
     depends_on:
       rag-service:
         condition: service_healthy

@@ -39,9 +39,6 @@ class Settings:
     lexical_weight: float
     vector_weight: float
     minimum_evidence_score: float
-    llm_api_base: str
-    llm_api_key: str
-    llm_model: str
     sync_batch_size: int
     embedding_backend: str = "hash"
     embedding_model: str = "hash-sha256-bigram-v1"
@@ -83,9 +80,6 @@ class Settings:
             lexical_weight=_env_float("RAG_RRF_LEXICAL_WEIGHT", 1.0),
             vector_weight=_env_float("RAG_RRF_VECTOR_WEIGHT", 0.85),
             minimum_evidence_score=_env_float("RAG_MINIMUM_EVIDENCE_SCORE", 0.9),
-            llm_api_base=os.getenv("LLM_API_BASE", "").strip(),
-            llm_api_key=os.getenv("LLM_API_KEY", "").strip(),
-            llm_model=os.getenv("LLM_MODEL", "").strip(),
             sync_batch_size=_env_int("RAG_SYNC_BATCH_SIZE", 20),
             embedding_backend=os.getenv("EMBEDDING_BACKEND", "hash").strip(),
             embedding_model=os.getenv("EMBEDDING_MODEL", "hash-sha256-bigram-v1" if os.getenv("EMBEDDING_BACKEND", "hash") == "hash" else "BAAI/bge-small-zh-v1.5"),

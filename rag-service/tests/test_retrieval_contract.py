@@ -101,8 +101,6 @@ def test_java_python_v3_retrieval_contract_agreement() -> None:
             lexical_weight=1.0,
             vector_weight=0.85,
             minimum_evidence_score=0.9,
-            llm_api_base="",
-            llm_model="",
         )
         python_engine = LlamaIndexEngine(settings)
         python_engine.reload()

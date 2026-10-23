@@ -67,6 +67,12 @@ class GenerationExperimentServiceTest {
         assertThat(metrics.get("uncitedSentences")).isEqualTo(0.5);
         assertThat(evaluator.splitSentences("数值为 1.5。[1] 第二句。第三句！")).hasSize(3);
     }
+    @Test void numberedExtractiveSentencesKeepSpacedCitationWithClaim() {
+        var checks=evaluator.sentenceSupport("相关文献摘录：\n1. 测试记录包含蓝色样本。 [1]\n2. 测试记录包含蓝色样本。 [1]",List.of(citation));
+        assertThat(checks).hasSize(3);
+        assertThat(checks.stream().filter(c->c.startsWith("SUPPORTED\t"))).hasSize(2);
+        assertThat(GenerationMetrics.measure("测试记录包含蓝色样本。 [1]",List.of(citation),evaluator).get("sentenceSupport")).isEqualTo(1.0);
+    }
     @Test void invalidJudgeConfigurationIsExplicitAndSafetySkipsModel() {
         setupRetrieval();
         when(client.complete(eq(connection),anyList(),eq(2048),eq(0.0))).thenReturn("测试记录包含蓝色样本。[1]");

@@ -153,3 +153,5 @@ TR=应拒且拒；FR=应答却拒；FA=应拒却答；TA=应答且答。检索�
 Hit/MRR使用冻结调参标签衡量检索命中；它们不等于医学事实正确率。本次桶哈希统一可能使V1部分指标下降；需要真实语义模型的实验在C单独列示，不能估算替代。
 
 复现：在A提交白名单源码运行旧配置；当前运行 `mvn -o test -DresearchReport=true -DresearchGrid=true -DresearchOutput=../.tmp/research-b-configured.json -DrunHoldoutEvaluation=false`。再用 `python tools/report_retrieval.py --before .tmp/research-before-production.json --after .tmp/research-b-configured.json --grid .tmp/research-grid.json`。
+
+最终F复测：四版本Hit@1/3/K、MRR、Recall与B表逐字段相同。V3拒答准确率1、TR/FR/FA/TA=8/0/0/42，检索命中失败2条属于原调参集既有局限。生成实验的新逐句代理指标使用不同分母，不能与这里按回答的citationSupportRate直接比较。

@@ -14,8 +14,6 @@ from datetime import UTC, datetime
 from typing import Any
 
 from llama_index.core import VectorStoreIndex
-from llama_index.core.llms import MockLLM
-from llama_index.core.retrievers import QueryFusionRetriever
 from llama_index.core.schema import NodeWithScore
 from llama_index.core.vector_stores import FilterOperator, MetadataFilter, MetadataFilters
 from llama_index.retrievers.bm25 import BM25Retriever
@@ -72,7 +70,6 @@ class LlamaIndexEngine:
         self._vector_indexes: dict[str, VectorStoreIndex | None] = {}
         self._lexical_indexes: dict[str, LexicalIndex] = {}
         self._bm25_retrievers: dict[str, BM25Retriever | None] = {}
-        self._llm = self._create_llm()
         self._lock = threading.RLock()
         self._index_dirty: set[str] = {"BASELINE", "EXPANDED"}
 
@@ -147,7 +144,7 @@ class LlamaIndexEngine:
             status="UP", engine="llama-index",
             chunk_count=self.repository.chunk_count("BASELINE"),
             document_count=self.repository.document_count("BASELINE"),
-            llm_configured=self._llm is not None, corpora=counts,
+            llm_configured=False, corpora=counts,
             knowledge_revision=self.repository.knowledge_revision("BASELINE"),
             documents=self.repository.document_inventory("BASELINE"),
             safety_rules_sha256=RULES_SHA256, index_state=self.index_state,
@@ -162,7 +159,7 @@ class LlamaIndexEngine:
             candidate_limit=self.settings.candidate_limit,
             final_limit=self.settings.final_limit,
             minimum_evidence_score=self.settings.minimum_evidence_score,
-            llm_configured=self._llm is not None,
+            llm_configured=False,
             supported_versions=[
                 "V0_DIRECT",
                 "V1_VECTOR",
@@ -175,7 +172,7 @@ class LlamaIndexEngine:
                 "indexState": self.index_state,
                 "lexicalRetriever": "BM25",
                 "fusion": "reciprocal-rank-fusion",
-                "generation": "grounded-extractive" if self._llm is None else "llm",
+                "generation": "grounded-extractive",
             },
         )
 
@@ -519,27 +516,6 @@ class LlamaIndexEngine:
         citations: list[CitationResponse],
         extractive_only: bool = False,
     ) -> tuple[str, str]:
-        if self._llm is not None and not extractive_only:
-            context = "\n\n".join(
-                f"[{index}] {citation.quote}"
-                for index, citation in enumerate(citations, start=1)
-            )
-            prompt = (
-                "你是中医药心血管文献检索助手。只能依据给定证据回答，"
-                "不得生成个体化诊断或处方。回答中使用 [1] 形式引用来源。\n\n"
-                f"问题：{question}\n\n证据：\n{context}"
-            )
-            try:
-                generated = self._llm.complete(prompt).text.strip()
-                cited = [int(value) for value in re.findall(r"\[(\d+)\]", generated)]
-                if generated and cited and all(1 <= index <= len(citations) for index in cited):
-                    return (
-                        generated + "\n\n以上内容用于专科文献检索参考，不替代医生诊断和处方。",
-                        "llm",
-                    )
-            except Exception:
-                logging.getLogger(__name__).warning("LLM unavailable; using extractive answer")
-
         statements = []
         for index, node in enumerate(nodes, start=1):
             statements.append(f"{index}. {_first_sentence(node.node.text)} [{index}]")
@@ -631,7 +607,7 @@ class LlamaIndexEngine:
             "engine=llama-index",
             "fusion=reciprocal-rank-fusion",
             "embedding=deterministic-hash-ngram",
-            f"generation={generation or ('llm' if self._llm is not None else 'grounded-extractive')}",
+            f"generation={generation or 'grounded-extractive'}",
         ]
         if remote:
             notes.append("transport=remote")
@@ -659,24 +635,6 @@ class LlamaIndexEngine:
             threshold=self.settings.minimum_evidence_score if version == "V3_GUARDED" else None,
             rejected=not bool(selected),
         )
-
-    def _create_llm(self):
-        if not (self.settings.llm_model and self.settings.llm_api_base):
-            return None
-        try:
-            from llama_index.llms.openai_like import OpenAILike
-
-            return OpenAILike(
-                model=self.settings.llm_model,
-                api_base=self.settings.llm_api_base,
-                api_key=self.settings.llm_api_key or "local",
-                is_chat_model=True,
-                context_window=32768,
-                timeout=60,
-            )
-        except ImportError:
-            logging.getLogger(__name__).warning("Optional LLM dependency missing; using extractive answers")
-            return None
 
 
 def _normalize_version(value: str) -> str:

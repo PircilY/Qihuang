@@ -292,6 +292,12 @@
                 </div>
 
                 <section class="filter-bar">
+                    <label>
+                        <span>语料版本</span>
+                        <select id="knowledgeCorpus">
+                            <option value="BASELINE">标准语料</option>
+                        </select>
+                    </label>
                     <label class="search-field">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="11" cy="11" r="7"></circle>
@@ -394,6 +400,7 @@
                         </button>
                     </div>
                 </div>
+                <div class="corpus-notice" id="workbenchCorpusNotice">当前使用标准语料；正式评测与历史结果使用此版本。</div>
 
                 <div class="version-rail" id="versionRail" aria-label="选择 RAG 迭代版本"></div>
 
@@ -434,6 +441,12 @@
                         </label>
 
                         <div class="query-filter-grid">
+                            <label>
+                                <span>语料版本</span>
+                                <select id="workbenchCorpus">
+                                    <option value="BASELINE">标准语料</option>
+                                </select>
+                            </label>
                             <label>
                                 <span>疾病范围</span>
                                 <select id="workbenchDisease">
@@ -564,7 +577,7 @@
             </section>
 
             <section class="view" id="view-evaluation" data-title="评估实验" data-index="04"
-                     data-subtitle="检索命中、拒答准确率与失败样本">
+                     data-subtitle="检索增益、证据覆盖与安全拒答">
                 <div class="view-intro compact-intro">
                     <div>
                         <p class="intro-kicker">检索回归</p>
@@ -585,6 +598,11 @@
                      <div><span>版本数</span><strong id="versionSize">--</strong></div>
                     <div><span>运行状态</span><strong id="evaluationStatus">等待运行</strong></div>
                 </section>
+
+                <div class="evaluation-note">
+                    <strong>指标阅读方式</strong>
+                    <span>V0 是无检索对照，Hit@1、Hit@3、MRR 与引用覆盖显示为 0% 属于设计结果；论文重点比较 V1、V2、V3 的检索增益与安全指标。</span>
+                </div>
 
                 <section class="board">
                     <header class="board-heading">
@@ -620,7 +638,7 @@
                         <header class="board-heading">
                             <div>
                                 <h2>失败分析</h2>
-                                <p>未通过样本</p>
+                                <p>未通过样本；V0 的无检索对照不代表系统故障</p>
                             </div>
                             <select id="failureVersionFilter" class="compact-select" aria-label="筛选失败分析版本">
                                 <option value="">全部版本</option>

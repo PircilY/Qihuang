@@ -54,9 +54,9 @@
         "n": 1
       },
       "latencyMs": {
-        "mean": 7.73,
-        "lower95": 7.73,
-        "upper95": 7.73,
+        "mean": 1.5433,
+        "lower95": 1.5433,
+        "upper95": 1.5433,
         "n": 1
       },
       "failureRate": {
@@ -110,9 +110,9 @@
         "n": 1
       },
       "latencyMs": {
-        "mean": 3.665301,
-        "lower95": 3.665301,
-        "upper95": 3.665301,
+        "mean": 2.939301,
+        "lower95": 2.939301,
+        "upper95": 2.939301,
         "n": 1
       },
       "failureRate": {
@@ -166,9 +166,9 @@
         "n": 1
       },
       "latencyMs": {
-        "mean": 0.5559,
-        "lower95": 0.5559,
-        "upper95": 0.5559,
+        "mean": 0.4725,
+        "lower95": 0.4725,
+        "upper95": 0.4725,
         "n": 1
       },
       "failureRate": {

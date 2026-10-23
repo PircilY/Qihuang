@@ -1,6 +1,7 @@
 package com.tcm.ragassistant.dto;
 
 import com.tcm.ragassistant.domain.RetrievalFilter;
+import com.tcm.ragassistant.domain.CorpusId;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -11,8 +12,14 @@ public record CompareRequest(
 
         String disease,
         String sourceType,
-        String evidenceLevel
+        String evidenceLevel,
+        String corpus
 ) {
+    public CompareRequest(String question, String disease, String sourceType, String evidenceLevel) {
+        this(question, disease, sourceType, evidenceLevel, null);
+    }
+    public CorpusId corpusId() { return CorpusId.from(corpus); }
+
     public RetrievalFilter toRetrievalFilter() {
         return new RetrievalFilter(disease, sourceType, evidenceLevel);
     }

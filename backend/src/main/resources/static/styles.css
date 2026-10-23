@@ -2528,6 +2528,24 @@ textarea:hover {
     white-space: nowrap;
 }
 
+.evaluation-note {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: -4px 0 16px;
+    padding: 10px 12px;
+    color: var(--muted);
+    background: #f5f8f6;
+    border-left: 3px solid var(--primary);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.evaluation-note strong {
+    flex: 0 0 auto;
+    color: var(--ink-soft);
+}
+
 .evaluation-summary-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3930,3 +3948,7 @@ textarea:hover {
         gap: 8px;
     }
 }
+
+.fallback-notice { padding: 12px 16px; margin-top: 12px; color: #855015; background: #fff3da; border-left: 3px solid #b47724; font-size: 13px; }
+.compare-result .citation-list { margin-top: 14px; }
+.compare-no-evidence { color: var(--muted); font-size: 12px; }

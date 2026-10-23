@@ -12,7 +12,7 @@ from llama_index.core.schema import NodeWithScore, TextNode
 
 @pytest.fixture
 def engine():
-    instance = LlamaIndexEngine(replace(Settings.from_env(), llm_model="", llm_api_base=""))
+    instance = LlamaIndexEngine(Settings.from_env())
     instance.reload()
     return instance
 
@@ -48,15 +48,15 @@ def test_filtered_retrieval_is_case_insensitive_and_excludes_inactive_nodes(engi
     assert not response.citations
 
 
-def test_extractive_request_does_not_call_configured_legacy_model(engine):
-    engine._llm = Mock()
+def test_extractive_request_has_no_python_model_path(engine):
     response = engine.query(ChatRequest(
         question="高血压没有症状也需要检查血压吗？",
         version="V3_GUARDED", extractiveOnly=True,
     ))
     assert response.citations
     assert "generation=grounded-extractive" in response.retrieval.notes
-    engine._llm.complete.assert_not_called()
+    assert not hasattr(engine, "_create_llm")
+    assert engine.health().llm_configured is False
 
 
 def test_query_reuses_corpus_indexes_and_health_does_not_rebuild(engine):

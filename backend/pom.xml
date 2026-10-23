@@ -51,6 +51,7 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <excludes><exclude>data/holdout-cases.json</exclude></excludes>
             </resource>
             <resource>
                 <directory>..</directory>
@@ -60,6 +61,11 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration><excludes><exclude>**/holdout-cases.json</exclude></excludes></configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

@@ -73,7 +73,7 @@ def test_generic_anticoagulant_dose_question_requires_specific_evidence_not_pers
 
 
 def test_real_v3_engine_rejects_only_uncovered_false_accepts():
-    settings = replace(Settings.from_env(), llm_model="", llm_api_base="")
+    settings = Settings.from_env()
     engine = LlamaIndexEngine(settings)
     engine.reload()
 
