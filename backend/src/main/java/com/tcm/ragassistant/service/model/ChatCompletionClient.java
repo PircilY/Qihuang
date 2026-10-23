@@ -39,13 +39,21 @@ public class ChatCompletionClient {
     }
 
     public String complete(ModelConnection connection, List<Map<String, String>> messages, int maxTokens) {
+        return complete(connection, messages, maxTokens, null);
+    }
+
+    public String complete(ModelConnection connection, List<Map<String, String>> messages, int maxTokens, Double temperature) {
+        if (temperature != null && (!Double.isFinite(temperature) || temperature < 0 || temperature > 2))
+            throw new BusinessException("MODEL_INVALID_PARAMETERS", "temperature 必须在 0–2 之间");
         if (!requests.tryAcquire()) {
             throw new BusinessException("MODEL_BUSY", "模型请求较多，请稍后重试");
         }
         try {
-            String body = mapper.writeValueAsString(Map.of(
+            Map<String, Object> payload = new java.util.LinkedHashMap<>(Map.of(
                     "model", connection.model(), "messages", messages,
                     "stream", false, "max_tokens", maxTokens));
+            if (temperature != null) payload.put("temperature", temperature);
+            String body = mapper.writeValueAsString(payload);
             HttpRequest.Builder builder = HttpRequest.newBuilder()
                     .uri(URI.create(connection.baseUrl() + "/chat/completions"))
                     .timeout(timeout).header("Content-Type", "application/json")

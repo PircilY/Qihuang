@@ -29,6 +29,14 @@ management:
       show-details: always
 
 app:
+  experiments:
+    enabled: ${GENERATION_EXPERIMENT_ENABLED:false}
+    max-cases: ${GENERATION_EXPERIMENT_MAX_CASES:50}
+    judge-enabled: ${JUDGE_ENABLED:false}
+    judge-base: ${JUDGE_API_BASE:}
+    judge-model: ${JUDGE_MODEL:}
+    judge-key: ${JUDGE_API_KEY:}
+    judge-temperature: ${JUDGE_TEMPERATURE:0}
   limits:
     import-requests-per-minute: ${IMPORT_REQUESTS_PER_MINUTE:30}
     evaluation-requests-per-minute: ${EVALUATION_REQUESTS_PER_MINUTE:2}

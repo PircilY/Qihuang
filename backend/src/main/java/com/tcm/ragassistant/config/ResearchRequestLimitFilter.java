@@ -28,7 +28,7 @@ public class ResearchRequestLimitFilter extends OncePerRequestFilter {
                                     FilterChain chain) throws IOException, ServletException {
         String path = request.getRequestURI();
         int limit = path.equals("/api/v1/knowledge/import") ? importLimit
-                : path.startsWith("/api/v1/evaluations/") ? evaluationLimit : 0;
+                : (path.startsWith("/api/v1/evaluations/") || path.startsWith("/api/v1/experiments/")) ? evaluationLimit : 0;
         if (limit > 0 && "POST".equals(request.getMethod()) && !accept(request.getRemoteAddr() + path, limit)) {
             response.setStatus(429);
             response.setHeader("Retry-After", "60");

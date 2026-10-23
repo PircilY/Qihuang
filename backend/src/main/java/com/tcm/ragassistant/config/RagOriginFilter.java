@@ -15,7 +15,7 @@ public class RagOriginFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain chain) throws ServletException, IOException {
-        if (request.getRequestURI().startsWith("/api/v1/rag/")) {
+        if ((request.getRequestURI().startsWith("/api/v1/rag/") || request.getRequestURI().startsWith("/api/v1/experiments/"))) {
             response.setHeader("Cache-Control", "no-store");
             String origin = request.getHeader("Origin");
             boolean denied = "cross-site".equals(request.getHeader("Sec-Fetch-Site"));

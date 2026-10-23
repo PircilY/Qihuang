@@ -50,7 +50,7 @@ public class CitationSupportEvaluator {
         boolean support = true;
         int claimStart = 0;
         while (matcher.find()) {
-            int citationNumber = Integer.parseInt(matcher.group(1));
+            int citationNumber = referenceNumber(matcher.group(1));
             if (citationNumber < 1 || citationNumber > safeCitations.size()) {
                 validity = false;
                 support = false;
@@ -96,7 +96,7 @@ public class CitationSupportEvaluator {
             if (sentence.contains("不替代医生诊断和处方") || sentence.contains("不替代医疗建议")) continue;
             Matcher refs = CITATION.matcher(sentence);
             List<Integer> indexes = new ArrayList<>();
-            while (refs.find()) indexes.add(Integer.parseInt(refs.group(1)) - 1);
+            while (refs.find()) indexes.add(referenceNumber(refs.group(1)) - 1);
             String claim = CITATION.matcher(sentence).replaceAll("").trim()
                     .replaceFirst("^[\\d.、)）]+\\s*", "");
             boolean supported = !claim.isBlank() && !indexes.isEmpty() && citations != null
@@ -108,7 +108,7 @@ public class CitationSupportEvaluator {
         return List.copyOf(results);
     }
 
-    private List<String> splitSentences(String answer) {
+    public List<String> splitSentences(String answer) {
         List<String> sentences = new ArrayList<>();
         int start = 0;
         for (int index = 0; index < answer.length(); index++) {
@@ -120,13 +120,15 @@ public class CitationSupportEvaluator {
                 continue;
             }
             if (".!?。！？".indexOf(current) < 0) continue;
+            if (current == '.' && index > 0 && index + 1 < answer.length()
+                    && Character.isDigit(answer.charAt(index - 1)) && Character.isDigit(answer.charAt(index + 1))) continue;
             int boundary = index + 1;
             while (boundary < answer.length() && answer.charAt(boundary) == '[') {
                 int close = answer.indexOf(']', boundary + 1);
                 if (close < 0 || !answer.substring(boundary + 1, close).matches("\\d+")) break;
                 boundary = close + 1;
             }
-            if (boundary == answer.length() || Character.isWhitespace(answer.charAt(boundary))) {
+            if ("。！？".indexOf(current) >= 0 || boundary == answer.length() || Character.isWhitespace(answer.charAt(boundary))) {
                 sentences.add(answer.substring(start, boundary));
                 start = boundary;
                 index = boundary - 1;
@@ -136,7 +138,7 @@ public class CitationSupportEvaluator {
         return sentences;
     }
 
-    boolean supports(String claim, String evidence) {
+    public boolean supports(String claim, String evidence) {
         if (claim == null || claim.isBlank() || evidence == null || evidence.isBlank()) {
             return false;
         }
@@ -161,6 +163,10 @@ public class CitationSupportEvaluator {
         Set<String> evidenceTerms = meaningfulTerms(normalizedEvidence);
         claimTerms.retainAll(evidenceTerms);
         return claimTerms.size() >= 2;
+    }
+
+    private int referenceNumber(String value) {
+        return value.length() > 9 ? Integer.MAX_VALUE : Integer.parseInt(value);
     }
 
     private boolean compatiblePolarity(Polarity claim, Polarity evidence) {
