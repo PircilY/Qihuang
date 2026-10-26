@@ -108,3 +108,9 @@ F 最终验收：Maven143项、0失败、0错误（原50题报告与生成报告
 - 自动复核服务对整批 `git reset --mixed HEAD` 两次返回503，均未执行；遵循审批机制，改为经核准的单文件 `git restore --staged -- README.md`，随后常规 `git restore --staged -- .` 成功。文件内容未回退，当前改动已全部取消暂存。
 - 重新运行 `python tools/build_expanded_eval.py --check`，1946个样本校验通过；`python tools/package_delivery.py --output .tmp/gk-delivery.zip` 成功，425个文件、6,075,807字节。`git -c core.whitespace=cr-at-eol diff --check` 无空白错误；仓库换行配置提示若干LF将规范为CRLF。
 - 受保护文件没有差异；此处仅检查受保护路径名列表，不打开其内容。当前 HEAD 仍为 `c9652d3`、分支为 `main`。阶段提交尚待按文件边界组织，不能称工作区干净。
+
+## G–K 阶段提交完成（2026-10-26）
+
+- 按阶段提交：G `204d4a9`、H `d921a2d` 与兼容测试补充 `84c105f`、I `774bd30`、J `c3e594b`、K `4768ead`。各阶段/收尾全量测试结果：Maven 153项、0失败/0错误、5项既有条件跳过；pytest 104项通过。pytest 首轮有两例因共享索引预热超过60秒失败；针对API套件单独复跑20项全过，随后全量复跑104项全过，未修改测试断言。
+- 所有实际存在的校验工具通过：术语、语料、评测、来源台账、导入审计、交付包和 BASELINE corpus `--check`。`package_delivery.py` 输出424个文件归档。工具目录没有名为 `audit_knowledge_base.py` 的脚本，未将不存在的命令作为验收项。
+- 最新工作区状态干净。基线50题报告与F阶段数据一致；安全规则共享回归6项通过。没有执行 holdout 评测，冻结路径内容未读取或改动。
