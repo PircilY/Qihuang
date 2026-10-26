@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import urlparse
+from terminology_utils import extract_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ("title", "sourceType", "publisher", "publicationYear", "licenseNote", "sourceUrl", "content")
@@ -115,6 +116,12 @@ def build(records, privacy=False, minimum=30, maximum=1_000_000):
             filtered.append({"row":number, "title":record.get("title", ""), "reasons":reasons}); continue
         if privacy:
             record = {key:redact(value) if isinstance(value, str) else value for key,value in record.items()}
+        doc_terms = extract_metadata(str(record["title"]) + "\n" + content)
+        supplied_terms = {field: tags(record.get(field)) for field in ("syndromes", "formulas", "herbs")}
+        merged_terms = {field: supplied_terms[field] or doc_terms[field]
+                        for field in ("syndromes", "formulas", "herbs")}
+        metadata_source = "用户导入" if any(supplied_terms.values()) else (
+            "词典匹配" if any(doc_terms.values()) else "")
         structured = {key:str(record[key]) for key in STRUCTURED if record.get(key) is not None and str(record[key]).strip()}
         if privacy:
             content = redact(content)
@@ -135,16 +142,24 @@ def build(records, privacy=False, minimum=30, maximum=1_000_000):
                   "version":str(record.get("version") or "import-v1"), "status":"ACTIVE"}
         timestamp = str(record.get("accessedAt") or "1970-01-01T00:00:00Z")
         documents.append({**shared, "id":doc_id, "authority":str(record.get("authority") or "待人工核验"),
-            "diseaseScope":tags(record.get("disease")), "fileName":"offline-import", "checksum":digest(content),
+            "diseaseScope":tags(record.get("disease")) or doc_terms["disease"],
+            "herbs":merged_terms["herbs"], "formulas":merged_terms["formulas"],
+            "syndromes":merged_terms["syndromes"], "metadataSource":metadata_source,
+            "fileName":"offline-import", "checksum":digest(content),
             "registeredAt":timestamp, "accessedAt":timestamp, "licenseNote":str(record["licenseNote"]).strip(),
             "description":"离线导入，来源与等级按输入登记，未经独立事实核查", "sourceUrl":str(record["sourceUrl"]).strip()})
         for index, text in enumerate(split_chunks(content), 1):
+            chunk_terms = extract_metadata(str(record["title"]) + "\n" + text)
             chunks.append({**shared, "id":f"{doc_id}-C{index:04}", "documentId":doc_id,
-                "disease":str(record.get("disease") or ""), "syndromes":tags(record.get("syndromes")),
-                "formulas":tags(record.get("formulas")), "herbs":tags(record.get("herbs")),
+                "disease":str(record.get("disease") or "、".join(chunk_terms["disease"])),
+                "syndromes":supplied_terms["syndromes"] or chunk_terms["syndromes"],
+                "formulas":supplied_terms["formulas"] or chunk_terms["formulas"],
+                "herbs":supplied_terms["herbs"] or chunk_terms["herbs"],
                 "pageStart":int(record.get("pageStart") or 0), "pageEnd":int(record.get("pageEnd") or record.get("pageStart") or 0),
                 "section":str(record.get("section") or "正文"), "keywords":tags(record.get("keywords")),
-                "content":text, "checksum":digest(text), "ingestedAt":timestamp})
+                "content":text, "checksum":digest(text), "ingestedAt":timestamp,
+                "metadataSource": "用户导入" if any(supplied_terms.values()) else
+                    ("词典匹配" if any(chunk_terms.values()) else "")})
         if structured: structured_records.append({"documentId":doc_id, "fields":structured})
     return {"knowledge-documents.json":documents, "knowledge-base.json":chunks, "structured-records.json":structured_records,
             "import-report.json":{"inputCount":len(records), "acceptedCount":len(documents), "filtered":filtered,
@@ -173,6 +188,13 @@ def audit_markdown(import_payload=None):
         for key in ("sourceTypes", "years", "evidenceLevels"):
             lines.append("|" + key + "|" + "; ".join(f"{label}: {count}" for label,count in summary[key].items()) + "|")
         lines += ["", "已有构建产物未在此审计中额外过滤：过滤0条；来源清洗与许可状态由原来源台账维护。", ""]
+        if name == "EXPANDED":
+            lines += ["阶段 H 自动词典名称匹配覆盖："]
+            for field in ("herbs", "formulas", "syndromes"):
+                document_hits = sum(bool(document.get(field)) for document in documents)
+                chunk_hits = sum(bool(chunk.get(field)) for chunk in chunks)
+                lines.append(f"- {field}：文档标题 {document_hits}/{len(documents)}（{document_hits/max(1,len(documents)):.2%}）；片段 {chunk_hits}/{len(chunks)}（{chunk_hits/max(1,len(chunks)):.2%}）。")
+            lines += ["Disease 使用来源台账 topicTags 并追加标题/片段中词典命中名称。命中结果只表示共享词典名称出现；metadataSource 标示来源台账和/或词典匹配；不是人工标注，可能漏标或误标，不推断疗效、剂量、诊断或医学关系。", ""]
     if import_payload:
         audit = import_payload["import-report.json"]
         counts = Counter(reason for row in audit["filtered"] for reason in row["reasons"])

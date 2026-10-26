@@ -93,6 +93,55 @@ class InMemoryKnowledgeBaseRepositoryTest {
     }
 
     @Test
+    void oldKnowledgeJsonWithoutTerminologyFieldsUsesEmptyLists() throws Exception {
+        String json = "{\"id\":\"DOC-OLD\",\"title\":\"旧格式\",\"sourceType\":\"指南\","
+                + "\"publisher\":\"机构\",\"publicationYear\":2024,\"authority\":\"\","
+                + "\"evidenceLevel\":\"未评级\",\"diseaseScope\":[],\"fileName\":\"old.txt\","
+                + "\"checksum\":\"x\",\"version\":\"v1\",\"status\":\"ACTIVE\","
+                + "\"registeredAt\":\"2024-01-01T00:00:00Z\",\"licenseNote\":\"\","
+                + "\"description\":\"\",\"sourceUrl\":\"https://example.org\",\"accessedAt\":null}";
+
+        KnowledgeDocument document = objectMapper.readValue(json, KnowledgeDocument.class);
+
+        assertThat(document.herbs()).isEmpty();
+        assertThat(document.formulas()).isEmpty();
+        assertThat(document.syndromes()).isEmpty();
+    }
+
+    @Test
+    void newKnowledgeJsonPreservesTerminologyFields() throws Exception {
+        String json = "{\"id\":\"DOC-NEW\",\"title\":\"新格式\",\"sourceType\":\"指南\","
+                + "\"publisher\":\"机构\",\"publicationYear\":2024,\"authority\":\"\","
+                + "\"evidenceLevel\":\"未评级\",\"diseaseScope\":[],\"herbs\":[\"黄芪\"],"
+                + "\"formulas\":[\"补阳还五汤\"],\"syndromes\":[\"气虚\"],\"fileName\":\"new.txt\","
+                + "\"checksum\":\"x\",\"version\":\"v1\",\"status\":\"ACTIVE\","
+                + "\"registeredAt\":\"2024-01-01T00:00:00Z\",\"licenseNote\":\"\","
+                + "\"description\":\"\",\"sourceUrl\":\"https://example.org\",\"accessedAt\":null}";
+
+        KnowledgeDocument document = objectMapper.readValue(json, KnowledgeDocument.class);
+
+        assertThat(document.herbs()).containsExactly("黄芪");
+        assertThat(document.formulas()).containsExactly("补阳还五汤");
+        assertThat(document.syndromes()).containsExactly("气虚");
+    }
+
+    @Test
+    void oldChunkJsonWithoutMetadataFieldsUsesEmptyLists() throws Exception {
+        String json = "{\"id\":\"C-OLD\",\"documentId\":\"DOC-OLD\",\"title\":\"旧格式\","
+                + "\"sourceType\":\"指南\",\"publisher\":\"机构\",\"publicationYear\":2024,"
+                + "\"disease\":\"\",\"pageStart\":0,\"pageEnd\":0,\"section\":\"正文\","
+                + "\"evidenceLevel\":\"未评级\",\"keywords\":[],\"content\":\"内容\","
+                + "\"checksum\":\"x\",\"status\":\"ACTIVE\",\"version\":\"v1\","
+                + "\"ingestedAt\":\"2024-01-01T00:00:00Z\"}";
+
+        KnowledgeChunk chunk = objectMapper.readValue(json, KnowledgeChunk.class);
+
+        assertThat(chunk.herbs()).isEmpty();
+        assertThat(chunk.formulas()).isEmpty();
+        assertThat(chunk.syndromes()).isEmpty();
+    }
+
+    @Test
     void seedAndExpandedAreExcludedFromRuntimeRevision() {
         var isolated = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), "");
         assertThat(isolated.knowledgeRevision(CorpusId.BASELINE)).isEqualTo(

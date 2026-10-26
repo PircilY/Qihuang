@@ -25,7 +25,8 @@ public record KnowledgeChunkResponse(
         String status,
         String version,
         Instant ingestedAt,
-        int contentLength
+        int contentLength,
+        String metadataSource
 ) {
     public static KnowledgeChunkResponse from(KnowledgeChunk chunk) {
         return new KnowledgeChunkResponse(
@@ -48,7 +49,8 @@ public record KnowledgeChunkResponse(
                 chunk.status(),
                 chunk.version(),
                 chunk.ingestedAt(),
-                chunk.content().length()
+                chunk.content().length(),
+                chunk.metadataSource()
         );
     }
 }

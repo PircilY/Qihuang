@@ -105,11 +105,15 @@ public class AnswerGenerationService {
                         scored.chunk().publisher(),
                         scored.chunk().publicationYear(),
                         scored.chunk().disease(),
+                        scored.chunk().syndromes(),
+                        scored.chunk().formulas(),
+                        scored.chunk().herbs(),
                         scored.chunk().section(),
                         scored.chunk().pageLabel(),
                         scored.chunk().evidenceLevel(),
                         scored.chunk().content(),
-                        round(scored.score())
+                        round(scored.score()),
+                        scored.chunk().metadataSource()
                 ))
                 .toList();
     }

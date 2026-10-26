@@ -14,6 +14,9 @@ public record KnowledgeDocumentResponse(
         String authority,
         String evidenceLevel,
         List<String> diseaseScope,
+        List<String> herbs,
+        List<String> formulas,
+        List<String> syndromes,
         String fileName,
         String checksum,
         String version,
@@ -23,7 +26,8 @@ public record KnowledgeDocumentResponse(
         String description,
         int chunkCount,
         String sourceUrl,
-        Instant accessedAt
+        Instant accessedAt,
+        String metadataSource
 ) {
     public static KnowledgeDocumentResponse from(KnowledgeDocument document, int chunkCount) {
         return new KnowledgeDocumentResponse(
@@ -35,6 +39,9 @@ public record KnowledgeDocumentResponse(
                 document.authority(),
                 document.evidenceLevel(),
                 document.diseaseScope(),
+                document.herbs(),
+                document.formulas(),
+                document.syndromes(),
                 document.fileName(),
                 document.checksum(),
                 document.version(),
@@ -44,7 +51,8 @@ public record KnowledgeDocumentResponse(
                 document.description(),
                 chunkCount,
                 document.sourceUrl(),
-                document.accessedAt()
+                document.accessedAt(),
+                document.metadataSource()
         );
     }
 }

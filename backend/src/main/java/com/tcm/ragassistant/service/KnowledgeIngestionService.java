@@ -55,8 +55,15 @@ public class KnowledgeIngestionService {
         String documentId = "DOC-" + LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE)
                 + "-" + UUID.randomUUID().toString().substring(0, 6).toUpperCase(Locale.ROOT);
         String checksum = sha256(request.content().replace("\r\n", "\n").strip());
+        var extracted = Terminology.SHARED.extract(request.title() + "\n" + request.content());
+        List<String> herbs = request.herbs() == null || request.herbs().isEmpty()
+                ? extracted.get("herbs") : request.herbs();
+        List<String> formulas = request.formulas() == null || request.formulas().isEmpty()
+                ? extracted.get("formulas") : request.formulas();
+        List<String> syndromes = request.syndromes() == null || request.syndromes().isEmpty()
+                ? extracted.get("syndromes") : request.syndromes();
         List<String> diseaseScope = request.disease() == null || request.disease().isBlank()
-                ? List.of("未归类")
+                ? (extracted.get("disease").isEmpty() ? List.of("未归类") : extracted.get("disease"))
                 : List.of(request.disease().trim());
         KnowledgeDocument document = new KnowledgeDocument(
                 documentId,
@@ -67,6 +74,9 @@ public class KnowledgeIngestionService {
                 valueOrDefault(request.authority(), "待人工核验"),
                 valueOrDefault(request.evidenceLevel(), "未评级"),
                 diseaseScope,
+                herbs,
+                formulas,
+                syndromes,
                 "runtime-import.txt",
                 checksum,
                 valueOrDefault(request.version(), "v1"),
@@ -75,9 +85,11 @@ public class KnowledgeIngestionService {
                 request.licenseNote().trim(),
                 "用户登记，来源与临床适用性未经独立复核",
                 request.sourceUrl().trim(),
-                null
+                null,
+                hasUserTerms(request) || (request.disease() != null && !request.disease().isBlank())
+                        ? "用户导入" : "词典匹配"
         );
-        List<KnowledgeChunk> chunks = buildChunks(document, request, now);
+        List<KnowledgeChunk> chunks = buildChunks(document, request, now, extracted);
         repository.registerDocument(document, chunks);
         String syncStatus = syncToLlamaIndex(document, chunks);
         return new KnowledgeImportResponse(
@@ -132,11 +144,13 @@ public class KnowledgeIngestionService {
     private List<KnowledgeChunk> buildChunks(
             KnowledgeDocument document,
             KnowledgeImportRequest request,
-            Instant now
+            Instant now,
+            java.util.Map<String, List<String>> extracted
     ) {
         List<String> paragraphs = splitIntoChunks(request.content());
         List<KnowledgeChunk> chunks = new ArrayList<>();
         for (int index = 0; index < paragraphs.size(); index++) {
+            var chunkTerms = Terminology.SHARED.extract(document.title() + "\n" + paragraphs.get(index));
             chunks.add(new KnowledgeChunk(
                     document.id() + "-C" + String.format("%03d", index + 1),
                     document.id(),
@@ -144,10 +158,10 @@ public class KnowledgeIngestionService {
                     document.sourceType(),
                     document.publisher(),
                     document.publicationYear(),
-                    document.diseaseScope().get(0),
-                    request.syndromes(),
-                    request.formulas(),
-                    request.herbs(),
+                    String.join("、", document.diseaseScope()),
+                    request.syndromes() == null || request.syndromes().isEmpty() ? chunkTerms.get("syndromes") : request.syndromes(),
+                    request.formulas() == null || request.formulas().isEmpty() ? chunkTerms.get("formulas") : request.formulas(),
+                    request.herbs() == null || request.herbs().isEmpty() ? chunkTerms.get("herbs") : request.herbs(),
                     0,
                     0,
                     valueOrDefault(request.section(), "正文"),
@@ -157,10 +171,18 @@ public class KnowledgeIngestionService {
                     sha256(paragraphs.get(index)),
                     "ACTIVE",
                     document.version(),
-                    now
+                    now,
+                    !hasUserTerms(request)
+                            ? (chunkTerms.values().stream().anyMatch(values -> !values.isEmpty()) ? "词典匹配" : "") : "用户导入"
             ));
         }
         return chunks;
+    }
+
+    private boolean hasUserTerms(KnowledgeImportRequest request) {
+        return (request.syndromes() != null && !request.syndromes().isEmpty())
+                || (request.formulas() != null && !request.formulas().isEmpty())
+                || (request.herbs() != null && !request.herbs().isEmpty());
     }
 
     private List<String> splitIntoChunks(String content) {

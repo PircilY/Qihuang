@@ -1060,7 +1060,17 @@ function citationSection(citations) {
             node("span", "", citation.page),
             node("span", "", `证据 ${citation.evidenceLevel}`)
         );
-        item.append(head, meta, node("p", "citation-quote", citation.quote));
+        item.append(head, meta);
+        const termTags = tagGroup("证据词典匹配", [
+            ...(citation.syndromes || []),
+            ...(citation.formulas || []),
+            ...(citation.herbs || [])
+        ]);
+        if (termTags) item.append(termTags);
+        if (citation.metadataSource) {
+            item.append(node("p", "metadata-source", `元数据来源：${citation.metadataSource}`));
+        }
+        item.append(node("p", "citation-quote", citation.quote));
         const actions = node("div", "citation-actions");
         const detail = node("button", "text-button", "片段详情");
         detail.type = "button";

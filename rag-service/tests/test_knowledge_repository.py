@@ -81,3 +81,16 @@ def test_revision_uses_the_cross_language_canonical_vector() -> None:
     assert repository.knowledge_revision() == (
         "679852034c6e66a9aceff2816972266392a6a651cd00a353ce8bd8ed21ddd6c0"
     )
+
+
+def test_metadata_only_change_does_not_change_revision() -> None:
+    repository = KnowledgeRepository(Path("unused.json"))
+    chunk = _chunk("DOC-META", "C-META", "稳定校验内容")
+    repository.upsert({"id": "DOC-META", "checksum": "stable"}, [chunk])
+    before = repository.knowledge_revision()
+
+    updated = {**chunk, "herbs": ["黄芪"], "formulas": ["补阳还五汤"], "syndromes": ["气虚"],
+               "metadataSource": "词典匹配"}
+    repository.upsert({"id": "DOC-META", "checksum": "stable", "herbs": ["黄芪"]}, [updated])
+
+    assert repository.knowledge_revision() == before

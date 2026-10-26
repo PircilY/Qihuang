@@ -130,6 +130,10 @@ class KnowledgeBaseControllerTest {
                 .andExpect(jsonPath("$.data.document.sourceUrl").value("https://example.org/test-fixture"))
                 .andExpect(jsonPath("$.data.chunkCount").value(greaterThanOrEqualTo(1)))
                 .andExpect(jsonPath("$.data.document.diseaseScope[0]").value(disease))
+                .andExpect(jsonPath("$.data.document.syndromes[0]").value("测试证型"))
+                .andExpect(jsonPath("$.data.document.formulas[0]").value("测试方"))
+                .andExpect(jsonPath("$.data.document.herbs[0]").value("测试药"))
+                .andExpect(jsonPath("$.data.document.metadataSource").value("用户导入"))
                 .andExpect(jsonPath("$.data.document.checksum").isNotEmpty());
 
         mockMvc.perform(get("/api/v1/knowledge/chunks")
@@ -141,7 +145,11 @@ class KnowledgeBaseControllerTest {
                 .andExpect(jsonPath("$.data").isNotEmpty())
                 .andExpect(jsonPath("$.data[*].disease", everyItem(containsString(disease))))
                 .andExpect(jsonPath("$.data[*].sourceType", everyItem(containsString("临床研究"))))
-                .andExpect(jsonPath("$.data[*].evidenceLevel", everyItem(containsString("B"))));
+                .andExpect(jsonPath("$.data[*].evidenceLevel", everyItem(containsString("B"))))
+                .andExpect(jsonPath("$.data[*].syndromes[0]", everyItem(containsString("测试证型"))))
+                .andExpect(jsonPath("$.data[*].formulas[0]", everyItem(containsString("测试方"))))
+                .andExpect(jsonPath("$.data[*].herbs[0]", everyItem(containsString("测试药"))))
+                .andExpect(jsonPath("$.data[*].metadataSource", everyItem(containsString("用户导入"))));
     }
 
     @Test

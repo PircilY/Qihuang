@@ -54,11 +54,20 @@ class CitationResponse(ApiModel):
     publisher: str
     publication_year: int
     disease: str
+    syndromes: list[str] = Field(default_factory=list)
+    formulas: list[str] = Field(default_factory=list)
+    herbs: list[str] = Field(default_factory=list)
     section: str
     page: str
     evidence_level: str
     quote: str
     relevance_score: float
+    metadata_source: str = ""
+
+    @field_validator("syndromes", "formulas", "herbs", mode="before")
+    @classmethod
+    def empty_metadata_lists(cls, value):
+        return [] if value is None else value
 
 
 class RetrievalTrace(ApiModel):
@@ -98,6 +107,9 @@ class KnowledgeDocument(ApiModel):
     authority: str = ""
     evidence_level: str = "未评级"
     disease_scope: list[str] = Field(default_factory=list)
+    herbs: list[str] = Field(default_factory=list)
+    formulas: list[str] = Field(default_factory=list)
+    syndromes: list[str] = Field(default_factory=list)
     file_name: str = ""
     checksum: str = ""
     version: str = "v1"
@@ -107,6 +119,12 @@ class KnowledgeDocument(ApiModel):
     description: str = ""
     source_url: str = ""
     accessed_at: str | None = None
+    metadata_source: str = ""
+
+    @field_validator("herbs", "formulas", "syndromes", mode="before")
+    @classmethod
+    def empty_metadata_lists(cls, value):
+        return [] if value is None else value
 
 
 class KnowledgeChunk(ApiModel):
@@ -130,6 +148,12 @@ class KnowledgeChunk(ApiModel):
     status: str = "ACTIVE"
     version: str = "v1"
     ingested_at: str
+    metadata_source: str = ""
+
+    @field_validator("syndromes", "formulas", "herbs", mode="before")
+    @classmethod
+    def empty_metadata_lists(cls, value):
+        return [] if value is None else value
 
 
 class KnowledgeImportRequest(ApiModel):

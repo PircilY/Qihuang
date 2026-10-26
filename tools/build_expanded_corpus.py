@@ -5,10 +5,12 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import argparse
 from datetime import datetime, timezone
 from pathlib import Path
 
 from validate_expanded_sources import validate, ROOT
+from terminology_utils import extract_metadata
 
 
 OUT = ROOT / "backend" / "src" / "main" / "resources" / "data" / "expanded"
@@ -35,6 +37,7 @@ def build() -> tuple[list[dict], list[dict]]:
     for record in ledger["records"]:
         raw = (ROOT / record["fullTextPath"]).read_text(encoding="utf-8").strip()
         source_digest = digest(raw)
+        title_metadata = extract_metadata(record["title"])
         documents.append({
             "id": record["documentId"],
             "title": record["title"],
@@ -43,7 +46,10 @@ def build() -> tuple[list[dict], list[dict]]:
             "publicationYear": record.get("publicationYear", 0),
             "authority": record["sourceName"],
             "evidenceLevel": "未评级",
-            "diseaseScope": record.get("topicTags", []),
+            "diseaseScope": list(dict.fromkeys(record.get("topicTags", []) + title_metadata["disease"])),
+            "herbs": title_metadata["herbs"],
+            "formulas": title_metadata["formulas"],
+            "syndromes": title_metadata["syndromes"],
             "fileName": record["fullTextPath"],
             "checksum": source_digest,
             "version": "expanded-v1",
@@ -53,9 +59,12 @@ def build() -> tuple[list[dict], list[dict]]:
             "description": record.get("abstractOrDescription", ""),
             "sourceUrl": record["sourceUrl"],
             "accessedAt": record.get("accessedAt", now),
+            "metadataSource": "来源台账+词典匹配" if any(title_metadata.values()) else "来源台账",
         })
         for index, content in enumerate(chunks(raw), start=1):
             chunk_id = f"{record['documentId']}-C{index:04d}"
+            metadata = extract_metadata(record["title"] + "\n" + content)
+            disease_values = list(dict.fromkeys(record.get("topicTags", []) + title_metadata["disease"] + metadata["disease"]))
             knowledge_chunks.append({
                 "id": chunk_id,
                 "documentId": record["documentId"],
@@ -63,8 +72,8 @@ def build() -> tuple[list[dict], list[dict]]:
                 "sourceType": record["documentType"],
                 "publisher": record["sourceName"],
                 "publicationYear": record.get("publicationYear", 0),
-                "disease": "、".join(record.get("topicTags", [])),
-                "syndromes": [], "formulas": [], "herbs": [],
+                "disease": "、".join(disease_values),
+                "syndromes": metadata["syndromes"], "formulas": metadata["formulas"], "herbs": metadata["herbs"],
                 "pageStart": 0, "pageEnd": 0,
                 "section": "全文正文",
                 "evidenceLevel": "未评级",
@@ -74,11 +83,35 @@ def build() -> tuple[list[dict], list[dict]]:
                 "status": "ACTIVE",
                 "version": "expanded-v1",
                 "ingestedAt": record.get("accessedAt", now),
+                "metadataSource": "词典匹配" if any(metadata.values()) else "",
             })
     return documents, knowledge_chunks
 
 
+def check() -> dict:
+    expected_documents, expected_chunks = build()
+    documents_path = OUT / "knowledge-documents.json"
+    chunks_path = OUT / "knowledge-base.json"
+    actual_documents = json.loads(documents_path.read_text(encoding="utf-8"))
+    actual_chunks = json.loads(chunks_path.read_text(encoding="utf-8"))
+    if actual_documents != expected_documents or actual_chunks != expected_chunks:
+        raise SystemExit("expanded corpus is stale; run tools/build_expanded_corpus.py")
+    coverage = {}
+    for field in ("herbs", "formulas", "syndromes"):
+        document_hits = sum(bool(document.get(field)) for document in actual_documents)
+        chunk_hits = sum(bool(chunk.get(field)) for chunk in actual_chunks)
+        coverage[field] = {"documents": document_hits, "documentRate": round(document_hits / max(1, len(actual_documents)), 4),
+                           "chunks": chunk_hits, "chunkRate": round(chunk_hits / max(1, len(actual_chunks)), 4)}
+    return {"documents": len(actual_documents), "chunks": len(actual_chunks), "coverage": coverage, "status": "ok"}
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    if args.check:
+        print(json.dumps(check(), ensure_ascii=False))
+        raise SystemExit(0)
     documents, knowledge_chunks = build()
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "knowledge-documents.json").write_text(json.dumps(documents, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
