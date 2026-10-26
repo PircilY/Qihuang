@@ -4,6 +4,20 @@
 
 本机实查：未安装 sentence_transformers，默认 BGE 模型缓存不存在。真实语义模型实验跳过，不能将 mock 测试当作模型质量结果，也没有估算 hash 与 BGE 的比较指标。可选依赖和模型不影响默认构建。
 
+建议的本地多语言模型配置示例（先在受控环境下载到本地目录，再运行；模型目录不加入仓库）：
+
+```powershell
+pip install -r rag-service/requirements-embedding.txt
+pip install huggingface_hub
+hf download BAAI/bge-m3 --local-dir D:/models/bge-m3
+$env:EMBEDDING_BACKEND='sentence-transformers'
+$env:EMBEDDING_MODEL='D:/models/bge-m3'
+$env:EMBEDDING_ALLOW_DOWNLOAD='false'
+python tools/build_expanded_eval.py --service-eval
+```
+
+适配器采用 `trust_remote_code=false`。下载/缓存模型的准备命令需由操作者在确认模型许可及网络环境后单独执行；运行期保持 `EMBEDDING_ALLOW_DOWNLOAD=false`，避免意外联网。上述模型实验在当前环境待验证。
+
 本地模型条件可用时复现（无密钥）：
 
 ```powershell
