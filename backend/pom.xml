@@ -57,6 +57,8 @@
                 <directory>..</directory>
                 <includes>
                     <include>safety-rules.json</include>
+                    <include>data/tcm-terminology.json</include>
+                    <include>data/retrieval-stopwords.json</include>
                 </includes>
             </resource>
         </resources>

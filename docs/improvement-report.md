@@ -61,6 +61,16 @@ BASELINE4文档/11片段、均长147.91；EXPANDED100文档/4036片段、均长6
 
 ## 已知局限与可选后续增强
 
+## G–K：EXPANDED 中文检索与评测
+
+- G：共享名称词典 654 条（药材574、疾病30、证候12、方剂12、检查14、药物类别12）；共享停用词策略、低权重查询扩展和高频主题过滤。默认查询桥接关闭，避免改变既有 BASELINE 默认路径。
+- H：EXPANDED 重建为100篇/4036片段，片段级词典命中 herbs 342（8.47%）、formulas 111（2.75%）、syndromes 41（1.02%）；文档标题级命中 herbs 0%、formulas 1%、syndromes 0%。自动名称匹配可能漏标/误标，不是人工标注。
+- I：自监督代理集固定种子42、1946个查询、K=4、bootstrap 1000次；语言分组为标题同语言398/跨语言0、术语同语言736/跨语言812。已通过 Python 实际 `LlamaIndexEngine.query` 分别运行 V0–V3，使用 hash，before 为 G/H 前提交快照且桥接关闭，after 为重建语料且桥接开启；按类别、版本、阶段的 Hit@1/3/K、MRR 和区间见 `expanded-evaluation.md` 与机器结果 JSON。示例：V3 after 跨语言术语组（812样本）Hit@1/3/K/MRR=.1121/.1970/.2143/.1544；标题词面整体基线 Hit@1/3/K/MRR=.1948/.2497/.2564/.2500，随机选择基线见报告。V0–V3 是真实检索策略输出，但自动目标有词面重合偏差，不代表人工相关性判断；各类别变化如实按表报告。
+- J：默认仍为 hash。当前未安装 sentence-transformers、未加载 BAAI/bge-m3，真实多语言嵌入比较待验证；没有估算指标。
+- K：空远程响应现按可回退故障处理；Hybrid RRF 保持排名融合并报告独立通道分数。`expanded-raw` 未引用的80个文件已先列入 `expanded-raw-orphans.md` 再删除。
+
+BASELINE 原50题研究报告本轮已通过 `-DresearchReport=true -DrunHoldoutEvaluation=false` 重测（50题、42题计检索，K=4）。与 F 报告记录相比，V0–V3 的 Hit@1/3/K、MRR、拒答准确率逐项一致（V0 0/0/0/0、.88；V1 .667/.952/.952/.790、.94；V2 .762/.976/.976/.861、.94；V3 .762/.976/.976/.857、1.00），因此未观察到 BASELINE 指标下降。安全规则共享回归 6 项通过，规则文件与 holdout 标签均未修改；本轮未运行 holdout。Docker/真实模型网络运行仍按环境条件标记待验证。
+
 1. Docker可用环境验证：`docker compose build`、`docker compose up -d --wait`、`docker compose exec rag-service python -c "from app.safety_rules import RULES_SHA256; print(RULES_SHA256)"`，对照`/actuator/health`与本地安全文件SHA256；命令已文档化，当前只缺可用引擎。
 2. 本地语义模型与真实生成/judge均不可用：安装独立requirements-embedding.txt、显式本地权重和EMBEDDING_BACKEND后运行`python tools/compare_embeddings.py --help`；模型实验显式开启GENERATION_EXPERIMENT_ENABLED与MODEL_*、可选独立JUDGE_*后用`python tools/generation_experiment.py --limit 42 --seed 42 --temperature 0`。本次没有下载或估造效果。
 3. 原50题为标定集，指标存在调参偏差；冻结留出集本次完全隔离。自动引用规则对复杂否定/多句陈述有限；无人工事实核查结果。不要把Hit/MRR、置信分或规则支持率用于临床决策。

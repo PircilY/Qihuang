@@ -168,6 +168,8 @@ public class RagOrchestrationService {
         if (!(exception instanceof com.tcm.ragassistant.service.remote.IndexUnavailableException)
                 && !(exception instanceof KnowledgeOutOfSyncException)
                 && !(exception instanceof ResourceAccessException)
+                && !(exception instanceof IllegalStateException stateException
+                && "Empty RAG response".equals(stateException.getMessage()))
                 && !(exception instanceof RestClientResponseException responseException
                 && responseException.getStatusCode().is5xxServerError())) {
             throw exception;

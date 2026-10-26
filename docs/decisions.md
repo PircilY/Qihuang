@@ -83,3 +83,28 @@ UI冒烟旧脚本还使用48条旧结果预期；原50题×4版本现在返回20
 停止脚本实测发现PowerShell ConvertFrom-Json会将ISO日期自动转DateTime，字符串比对误拒绝自己的PID；改为UTC ticks比较，保留PID创建时间保护。
 
 F 最终验收：Maven143项、0失败、0错误（原50题报告与生成报告已启用，3可选隔离/网格项跳过）；Python94项通过。两次真实HTTP端到端冒烟通过；最终浏览器五页面/四宽度/EXPANDED/回退提示通过；start/stop实测关闭自有双进程。jar安全规则SHA256与仓库一致且不包含冻结文件；docker compose config通过、build因引擎缺失未执行完成。
+# G–K 补充决策
+
+## 续做起点（2026-10-25）
+
+- 本轮接续时 `git status` 显示当前分支为 `main` 且领先 `origin/main` 7 个提交；工作区含 G–K 的未提交实现和 80 个 orphan 文件删除。未按交接摘要推断分支名，需在整理提交前核实目标分支。
+- 本轮初始 `mvn test` 已启动，完整结果待收尾；此前 `pytest` 命令不可用，仓库 `.venv` 也未安装 pytest。发现 `.rag-deps` 含 pytest 及运行依赖，将使用隔离 PYTHONPATH 验证而不安装或升级依赖。
+- 当前评测文档仍有 1652 样本和空同语言分组的旧统计；脚本已新增术语组合，必须重新生成并核对分组/区间。交接确认当前 V0–V3 是词面代理，不能冒称真实服务实测。
+- 元数据已在 Java/Python schema、导入与 Java 引用响应部分贯通；Python `_citations` 目前未把 herbs/formulas/syndromes/metadata_source 从节点元数据传给响应。前端需定位静态资源中的引用渲染后补齐。
+- 修订号现有规范不包含 herbs/formulas/syndromes 字段，续做时先核验 Java/Python 规范向量和计算字段；保持既定算法，元数据字段变化不应改变修订号。
+- 本轮不读取冻结留出集及失败明细，不运行 holdout 开关，也不修改原 50 题标签或 `safety-rules.json`。BASELINE 50 题研究报告尚未在本轮重测，变化状态只能记录为待验证。
+- 当前环境将 `.git` 明确设为只读，尝试按用户指定创建 `wip/g-k-partial` 分支时收到 `fatal: unable to create directory for .git/refs/heads/wip/g-k-partial`。因此无法在本轮写 ref、暂存或提交；未绕过权限。`package_delivery.py` 在工作树尚未提交时也因 git 索引仍列出已删除 orphan 文件而失败，提交后应重试并验证归档清单。
+- `tools/package_delivery.py` 无 `--check` 参数；按其实际接口尝试临时构建时，因上述未提交 orphan 删除与 tracked inventory 不一致而失败。无需改动验收脚本来隐藏该差异。
+
+- `RAG_QUERY_BRIDGE` 默认为 false。用户要求保持 BASELINE 原行为，因此跨语言扩展和严格高频主题门槛只在显式启用时生效；词典和停用词文件两端共用。
+- EXPANDED 元数据仅由共享词典名称匹配生成。来源台账原始 topicTags 保留；没有依据时不推断疾病、疗效、剂量或关系。自动字段不是人工标签。
+- 评测使用标题/词典命中自动生成目标，存在词面重合偏差；标题和术语按同语言/跨语言分类，空分组保留样本数和区间。当前机器结果已由 Python `LlamaIndexEngine.query` 的 V0–V3 实际策略生成；不是人工相关性标注。Java 对照服务未运行。
+- 80个 orphan 文件先按台账未引用清单记录，再仅删除清单所列路径；台账和交付脚本校验继续运行。
+- 最终回归续记（2026-10-26）：Maven 全量 153 项 0 失败、0 错误（默认模式 5 项按现有开关跳过）；研究报告模式 153 项 0 失败、0 错误（5 项既有可选项跳过），BASELINE 原 50 题各版本关键检索与拒答指标和 F 报告一致。pytest 104 项通过。术语校验、EXPANDED 重建 `--check`、来源校验、评测 `--check`、知识库审计 `--check` 和导入 fixture `--check` 通过。首次打包因已删除文件仍留在只读 Git 索引而失败；Git 写操作需经环境授权后再打包和提交。
+- 交付验证不为通过而改写打包器：其输入明确来自 `git ls-files`，所以在工作区 orphan 删除未暂存/提交时会将删除项视为缺失跟踪文件。`.git` 当前只读；未尝试替代写入或绕过审批。Docker 与 BGE-M3 未运行，记为待验证。
+
+## 续做收尾（2026-10-26）
+
+- 自动复核服务对整批 `git reset --mixed HEAD` 两次返回503，均未执行；遵循审批机制，改为经核准的单文件 `git restore --staged -- README.md`，随后常规 `git restore --staged -- .` 成功。文件内容未回退，当前改动已全部取消暂存。
+- 重新运行 `python tools/build_expanded_eval.py --check`，1946个样本校验通过；`python tools/package_delivery.py --output .tmp/gk-delivery.zip` 成功，425个文件、6,075,807字节。`git -c core.whitespace=cr-at-eol diff --check` 无空白错误；仓库换行配置提示若干LF将规范为CRLF。
+- 受保护文件没有差异；此处仅检查受保护路径名列表，不打开其内容。当前 HEAD 仍为 `c9652d3`、分支为 `main`。阶段提交尚待按文件边界组织，不能称工作区干净。

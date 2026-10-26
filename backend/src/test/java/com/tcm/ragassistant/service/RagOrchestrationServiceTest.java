@@ -91,6 +91,45 @@ class RagOrchestrationServiceTest {
     }
 
     @Test
+    void emptyRemoteResponseFallsBackToLocalEngine() {
+        var remote = mock(LlamaIndexRagClient.class);
+        var registry = mock(RetrievalStrategyRegistry.class);
+        var repository = mock(KnowledgeBaseRepository.class);
+        var properties = new RagEngineProperties("auto", null, null, null, true, Duration.ZERO);
+        var service = new RagOrchestrationService(properties, remote, registry,
+                new AnswerGenerationService(), repository);
+        var output = new com.tcm.ragassistant.service.retrieval.RetrievalOutput(
+                java.util.List.of(), new com.tcm.ragassistant.dto.RetrievalTrace(
+                "local", 0, 0, 0, 0, false, java.util.List.of()), false);
+        var retrieval = mock(com.tcm.ragassistant.service.retrieval.RetrievalStrategy.class);
+        when(registry.get(IterationVersion.V3_GUARDED)).thenReturn(retrieval);
+        when(retrieval.retrieve(anyString(), any(), any())).thenReturn(output);
+        when(remote.chat(anyString(), any(), any(), any(), anyString())).thenReturn(null);
+        when(repository.knowledgeRevision(any())).thenReturn("");
+
+        ChatResponse response = service.ask("高血压", IterationVersion.V3_GUARDED);
+
+        assertThat(response.refused()).isTrue();
+        assertThat(response.retrieval().notes()).contains("fallback=local", "已使用本地引擎");
+        verify(registry).get(IterationVersion.V3_GUARDED);
+    }
+
+    @Test
+    void strictRemoteModeReportsEmptyResponseAsUnavailable() {
+        var remote = mock(LlamaIndexRagClient.class);
+        var registry = mock(RetrievalStrategyRegistry.class);
+        var properties = new RagEngineProperties("llama-index", null, null, null, false, Duration.ZERO);
+        var service = new RagOrchestrationService(properties, remote, registry,
+                new AnswerGenerationService(), mock(KnowledgeBaseRepository.class));
+        when(remote.chat(anyString(), any(), any(), any(), anyString())).thenReturn(null);
+
+        assertThatThrownBy(() -> service.ask("高血压", IterationVersion.V3_GUARDED))
+                .isInstanceOf(BusinessException.class)
+                .hasMessageContaining("不可用");
+        verifyNoInteractions(registry);
+    }
+
+    @Test
     void guardedVersionShouldRefuseIndividualPrescriptionDose() {
         ChatResponse response = ragOrchestrationService.ask(
                 "给我一个具体患者每天服用多少克附子的处方",
