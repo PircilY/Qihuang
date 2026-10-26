@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "genericWeight": 0.1,
+  "expansionWeight": 0.35,
+  "maximumRelatedFrequency": 0.2,
+  "zh": ["治疗", "临床", "疗效", "研究", "作用", "影响", "进展", "证据", "安全", "检查", "症状", "未归类", "相关", "中医药", "心血管", "中药", "患者", "是否", "哪些", "什么", "如何", "对", "的", "与", "和"],
+  "en": ["a", "an", "the", "of", "and", "or", "in", "on", "for", "to", "with", "by", "from", "is", "are", "was", "were", "be", "as", "at", "that", "this", "it", "its", "which", "can", "may", "not", "we", "our", "their", "patients", "patient", "study", "studies", "research", "clinical", "treatment", "therapy", "effect", "effects", "efficacy", "influence", "progress", "review", "traditional", "chinese", "medicine", "cardiovascular", "herba", "radix", "rhizoma", "semen", "folium", "fructus", "et", "cortex"]
+}

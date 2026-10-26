@@ -69,6 +69,7 @@ app:
     normalized-fusion: ${RAG_NORMALIZED_FUSION:true}
     metadata-weight: ${RAG_METADATA_WEIGHT:0.0}
     minimum-evidence-score: ${RAG_MINIMUM_EVIDENCE_SCORE:0.9}
+    query-bridge: ${RAG_QUERY_BRIDGE:false}
 
 logging:
   level:

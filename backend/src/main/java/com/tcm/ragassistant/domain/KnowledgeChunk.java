@@ -23,8 +23,18 @@ public record KnowledgeChunk(
         String checksum,
         String status,
         String version,
-        Instant ingestedAt
+        Instant ingestedAt,
+        String metadataSource
 ) {
+    public KnowledgeChunk(String id, String documentId, String title, String sourceType, String publisher,
+                           Integer publicationYear, String disease, List<String> syndromes, List<String> formulas,
+                           List<String> herbs, int pageStart, int pageEnd, String section, String evidenceLevel,
+                           List<String> keywords, String content, String checksum, String status, String version,
+                           Instant ingestedAt) {
+        this(id, documentId, title, sourceType, publisher, publicationYear, disease, syndromes, formulas, herbs,
+                pageStart, pageEnd, section, evidenceLevel, keywords, content, checksum, status, version,
+                ingestedAt, "");
+    }
     public KnowledgeChunk {
         title = title == null ? "" : title;
         sourceType = sourceType == null ? "" : sourceType;
@@ -42,6 +52,7 @@ public record KnowledgeChunk(
         status = status == null ? "ACTIVE" : status;
         version = version == null ? "v1" : version;
         ingestedAt = ingestedAt == null ? Instant.now() : ingestedAt;
+        metadataSource = metadataSource == null ? "" : metadataSource;
     }
 
     public String pageLabel() {

@@ -14,11 +14,42 @@ from pathlib import Path
 from app.config import Settings
 from app.engine import LlamaIndexEngine
 from app.schemas import ChatRequest
+from app.terminology import query_features
+from app.lexical_index import LexicalIndex
+from llama_index.core.schema import TextNode, NodeWithScore
 
 
 ROOT = Path(__file__).resolve().parents[2]
 CASES_PATH = Path(__file__).parent / "fixtures" / "retrieval-contract-cases.json"
 SNAPSHOT_PATH = ROOT / "backend" / "src" / "main" / "resources" / "data" / "knowledge-base.json"
+
+
+def test_query_bridge_and_generic_policy_share_dictionary_contract() -> None:
+    weights, notes = query_features("黄芪治疗慢性心力衰竭", True)
+    assert notes and any("Astragalus" in note or "Radix Astragali" in note for note in notes)
+    assert any(term in weights for term in ("astragalus", "radix"))
+    reverse, reverse_notes = query_features("Salvia miltiorrhiza coronary heart disease", True)
+    assert reverse_notes and any("丹参" in term for term in reverse)
+    astragalus, astragalus_notes = query_features("Astragalus membranaceus chronic heart failure treatment efficacy", True)
+    assert astragalus_notes and any("黄芪" in note for note in astragalus_notes)
+    salvia, salvia_notes = query_features("丹参对冠心病心绞痛有什么作用", True)
+    assert salvia_notes and any("Salvia miltiorrhiza" in note for note in salvia_notes)
+    assert any(term in salvia for term in ("angina", "pectoris"))
+    assert weights["治疗"] < weights.get("黄芪", 1.0)
+    assert "作用" in " ".join(__import__("app.terminology", fromlist=["POLICY"]).POLICY["zh"])
+
+
+def test_high_frequency_topic_is_not_a_standalone_related_pass() -> None:
+    index = LexicalIndex()
+    nodes = [TextNode(id_=f"topic-{i}", text="unrelated placeholder evidence",
+                      metadata={"document_title": "fixture", "disease": "",
+                                "keywords": "心血管", "herbs": "", "formulas": "", "syndromes": ""})
+             for i in range(5)]
+    index.update(nodes)
+    candidate = NodeWithScore(node=nodes[0], score=1.0)
+
+    assert index.topic_frequency["心血管"] / index.document_count > 0.2
+    assert not index.related("心血管", candidate, {"心血", "血管"}, strict_topics=True)
 
 
 def _free_port() -> int:

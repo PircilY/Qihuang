@@ -88,6 +88,45 @@ def test_rank_fusion_deduplicates_same_chunk_across_retrievers(engine):
     assert fused[0].score == pytest.approx(1.0)
 
 
+def test_citations_carry_automatic_metadata_and_source_marker(engine):
+    node = TextNode(
+        id_="CONTRACT-METADATA",
+        text="可追溯引用内容。",
+        metadata={
+            "chunk_id": "CONTRACT-METADATA", "document_id": "DOC-META",
+            "document_title": "元数据材料", "syndromes": "气虚证|血瘀证",
+            "formulas": "补阳还五汤", "herbs": "黄芪|丹参",
+            "metadata_source": "词典匹配",
+        },
+    )
+    citation = engine._citations([NodeWithScore(node=node, score=0.8)])[0]
+
+    assert citation.syndromes == ["气虚证", "血瘀证"]
+    assert citation.formulas == ["补阳还五汤"]
+    assert citation.herbs == ["黄芪", "丹参"]
+    assert citation.metadata_source == "词典匹配"
+
+
+def test_import_fills_only_dictionary_name_metadata_and_preserves_user_terms(engine):
+    document, chunks = engine._enrich_import_metadata(
+        {"id": "DOC-TERM", "title": "黄芪名称核对", "checksum": "x"},
+        [{"id": "C-TERM", "documentId": "DOC-TERM", "content": "仅验证名称词典匹配。"}],
+    )
+    assert "黄芪" in document["herbs"]
+    assert "黄芪" in chunks[0]["herbs"]
+    assert document["metadataSource"] == "词典匹配"
+    assert chunks[0]["metadataSource"] == "词典匹配"
+
+    user_document, user_chunks = engine._enrich_import_metadata(
+        {"id": "DOC-USER", "title": "黄芪名称核对", "herbs": ["用户术语"]},
+        [{"id": "C-USER", "documentId": "DOC-USER", "content": "仅验证名称词典匹配。",
+          "herbs": ["用户术语"]}],
+    )
+    assert user_document["herbs"] == ["用户术语"]
+    assert user_chunks[0]["herbs"] == ["用户术语"]
+    assert user_document["metadataSource"] == user_chunks[0]["metadataSource"] == "用户导入"
+
+
 def test_metadata_rank_weights_match_contract():
     node = NodeWithScore(
         node=TextNode(

@@ -8,17 +8,19 @@ import java.util.*;
 public class VectorSimilarityScorer {
     private final RetrievalIndex index;
     private final TextTokenizer tokenizer;
+    @org.springframework.beans.factory.annotation.Value("${app.retrieval.query-bridge:false}")
+    private boolean queryBridge;
     public VectorSimilarityScorer(KnowledgeBaseRepository repository, TextTokenizer tokenizer) { this(new RetrievalIndex(repository, tokenizer), tokenizer); }
     @org.springframework.beans.factory.annotation.Autowired
     public VectorSimilarityScorer(RetrievalIndex index, TextTokenizer tokenizer) { this.index = index; this.tokenizer = tokenizer; }
     public List<ScoredChunk> score(String question, int limit) { return score(question, limit, RetrievalFilter.none(), CorpusId.BASELINE); }
     public List<ScoredChunk> score(String question, int limit, RetrievalFilter filter, CorpusId corpus) {
         var snapshot = index.snapshot(corpus);
-        var tokens = tokenizer.tokenizeWithFrequency(question);
-        var unique = new HashSet<>(tokens);
+        var features = features(question);
+        var unique = features.weights().keySet();
         Set<String> ids = new HashSet<>();
         unique.forEach(term -> ids.addAll(snapshot.postings().getOrDefault(term, Set.of())));
-        double[] query = RetrievalIndex.hashVector(tokens);
+        double[] query = RetrievalIndex.hashVector(features.weights());
         ids.addAll(snapshot.entries().keySet());
         return ids.stream().map(snapshot.entries()::get)
                 .filter(entry -> filter == null || filter.matches(entry.chunk()))
@@ -30,5 +32,12 @@ public class VectorSimilarityScorer {
                 }).filter(entry -> entry.score() > 0)
                 .sorted(Comparator.comparingDouble(ScoredChunk::score).reversed().thenComparing(entry -> entry.chunk().id()))
                 .limit(limit).toList();
+    }
+
+    private Terminology.Features features(String question) {
+        if (queryBridge) return tokenizer.queryFeatures(question);
+        var weights = new java.util.LinkedHashMap<String, Double>();
+        tokenizer.tokenizeWithFrequency(question).forEach(term -> weights.merge(term, 1.0, Double::sum));
+        return new Terminology.Features(weights, List.of());
     }
 }

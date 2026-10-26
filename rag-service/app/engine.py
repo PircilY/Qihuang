@@ -38,6 +38,7 @@ from app.schemas import (
     RetrievalTrace,
 )
 from app.tokenization import tokenize
+from app.terminology import expanded_query, is_generic, matches as terminology_matches, query_features
 
 
 _CJK_BM25_TOKEN_PATTERN = r"(?u)[a-z0-9][a-z0-9._-]*|[\u3400-\u4dbf\u4e00-\u9fff]"
@@ -104,6 +105,8 @@ class LlamaIndexEngine:
         with self._lock:
             if (corpus or "BASELINE").strip().upper() != "BASELINE":
                 raise ValueError("expanded corpus is read-only")
+            if document.get("id") not in self.repository._seed_ids:
+                document, chunks = self._enrich_import_metadata(document, chunks)
             changed = self.repository.upsert_batch([(document, chunks)], self.settings.max_import_documents, self.settings.max_import_characters)
             if changed and rebuild:
                 self._index_dirty.add("BASELINE")
@@ -124,6 +127,11 @@ class LlamaIndexEngine:
                 raise ValueError("runtime imports require BASELINE")
             if not items:
                 raise ValueError("import batch must not be empty")
+            items = [
+                (document, chunks) if document.get("id") in self.repository._seed_ids
+                else self._enrich_import_metadata(document, chunks)
+                for document, chunks in items
+            ]
             changed = self.repository.upsert_batch(items, self.settings.max_import_documents,
                                                    self.settings.max_import_characters)
             if changed:
@@ -133,6 +141,45 @@ class LlamaIndexEngine:
             return KnowledgeImportResponse(document_id=items[-1][0]["id"],
                 imported_chunk_count=sum(len(chunks) for _, chunks in items),
                 total_chunk_count=self.repository.chunk_count("BASELINE"), status="READY")
+
+    @staticmethod
+    def _enrich_import_metadata(document: dict, chunks: list[dict]) -> tuple[dict, list[dict]]:
+        """Fill absent name-only terms from the shared terminology resource."""
+        document = dict(document)
+        title = str(document.get("title", ""))
+        document_text = title + "\n" + "\n".join(str(chunk.get("content", "")) for chunk in chunks)
+        candidates: dict[str, list[str]] = {key: [] for key in ("herb", "formula", "syndrome", "disease")}
+        for entry in terminology_matches(document_text):
+            if entry["kind"] in candidates:
+                candidates[entry["kind"]].append(entry["zh"])
+        field_map = {"herb": "herbs", "formula": "formulas", "syndrome": "syndromes", "disease": "diseaseScope"}
+        supplied = any(document.get(field) for field in ("herbs", "formulas", "syndromes"))
+        supplied_disease = bool(document.get("diseaseScope"))
+        for kind, field in field_map.items():
+            if not document.get(field):
+                document[field] = list(dict.fromkeys(candidates[kind]))
+        document["metadataSource"] = document.get("metadataSource") or (
+            "用户导入" if supplied else ("词典匹配" if any(candidates.values()) else
+                ("用户导入" if supplied_disease else "")))
+        enriched = []
+        for chunk in chunks:
+            chunk = dict(chunk)
+            chunk_supplied = any(chunk.get(field) for field in ("herbs", "formulas", "syndromes"))
+            text = title + "\n" + str(chunk.get("content", ""))
+            chunk_candidates: dict[str, list[str]] = {key: [] for key in candidates}
+            for entry in terminology_matches(text):
+                if entry["kind"] in chunk_candidates:
+                    chunk_candidates[entry["kind"]].append(entry["zh"])
+            for kind, field in field_map.items():
+                chunk_field = "disease" if kind == "disease" else field
+                if not chunk.get(chunk_field):
+                    values = list(dict.fromkeys(chunk_candidates[kind]))
+                    chunk[chunk_field] = "、".join(values) if kind == "disease" else values
+            chunk["metadataSource"] = chunk.get("metadataSource") or (
+                "用户导入" if chunk_supplied
+                else ("词典匹配" if any(chunk_candidates.values()) else ""))
+            enriched.append(chunk)
+        return document, enriched
 
     def health(self) -> HealthResponse:
         # Health must remain responsive while the warmup worker builds indexes.
@@ -203,18 +250,20 @@ class LlamaIndexEngine:
         self._active_corpus = corpus
         version = _normalize_version(request.version)
         question = request.question.strip()
+        query_weights, query_expansions = query_features(question, self.settings.query_bridge)
+        retrieval_query = expanded_query(question, self.settings.query_bridge)
 
         if is_emergency(question):
             return self._refusal(
                 request, version, "问题可能涉及急症，超出线上问答边界",
                 "问题可能涉及急症，请立即拨打 120 / 前往急诊。",
-                [], [], [], [], False, started_at,
+                [], [], [], [], False, started_at, query_expansions,
             )
         if is_individualized_request(question):
             return self._refusal(
                 request, version, DOSE_REFUSAL,
                 "不能根据在线资料调整当前用药剂量，请联系开药医生并由医师判断。",
-                [], [], [], [], False, started_at,
+                [], [], [], [], False, started_at, query_expansions,
             )
         if version == "V0_DIRECT":
             return self._response(
@@ -235,7 +284,7 @@ class LlamaIndexEngine:
                     fused_candidate_count=0,
                     selected_count=0,
                     sufficient_evidence=False,
-                    notes=["engine=llama-index", "generation=none", "knowledge base bypassed", "embedding-backend=" + self.settings.embedding_backend, "embedding-model=" + self.settings.embedding_model, "corpus=" + corpus],
+                    notes=["engine=llama-index", "generation=none", "knowledge base bypassed", "查询扩展=" + ("；".join(query_expansions) if query_expansions else "无"), "embedding-backend=" + self.settings.embedding_backend, "embedding-model=" + self.settings.embedding_model, "corpus=" + corpus],
                     engine="llama-index",
                     version=version,
                     threshold=None,
@@ -245,18 +294,18 @@ class LlamaIndexEngine:
             )
 
         filters = request.to_filter()
-        vector_nodes = self._retrieve_vector(question, filters, corpus)
-        lexical_nodes = self._retrieve_lexical(question, filters, corpus) if version != "V1_VECTOR" else []
+        vector_nodes = self._retrieve_vector(question, filters, corpus, query_weights, retrieval_query)
+        lexical_nodes = self._retrieve_lexical(question, filters, corpus, query_weights) if version != "V1_VECTOR" else []
         if version == "V3_GUARDED":
-            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
-            lexical_nodes = [node for node in lexical_nodes if _is_related(question, node)]
+            vector_nodes = [node for node in vector_nodes if self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
+            lexical_nodes = [node for node in lexical_nodes if self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
             fused_nodes = self._fuse_ranked_candidates(vector_nodes, lexical_nodes)
         elif version == "V1_VECTOR":
-            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
+            vector_nodes = [node for node in vector_nodes if self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
             fused_nodes = vector_nodes
         else:
-            vector_nodes = [node for node in vector_nodes if _is_related(question, node)]
-            lexical_nodes = [node for node in lexical_nodes if _is_related(question, node)]
+            vector_nodes = [node for node in vector_nodes if self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
+            lexical_nodes = [node for node in lexical_nodes if self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
             fused_nodes = self._fuse_ranked_candidates(vector_nodes, lexical_nodes)
         selected = self._select_nodes(
             fused_nodes,
@@ -296,6 +345,7 @@ class LlamaIndexEngine:
                 fused_nodes,
                 sufficient,
                 started_at,
+                query_expansions,
             )
 
         citations = self._citations(selected)
@@ -322,6 +372,7 @@ class LlamaIndexEngine:
                 sufficient,
                 remote=False,
                 generation=generation,
+                query_expansions=query_expansions,
             ),
             started_at=started_at,
         )
@@ -397,24 +448,54 @@ class LlamaIndexEngine:
         self.index_build_ms[corpus] = round((time.perf_counter() - started) * 1000, 3)
         # LlamaIndex owns semantic-vector retrieval; lexical scoring uses the shared BM25 contract.
 
-    def _retrieve_vector(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
+    def _retrieve_vector(self, question: str, filters: RagFilter, corpus: str,
+                         query_weights=None, retrieval_query: str | None = None) -> list[NodeWithScore]:
         index = self._vector_indexes.get(corpus)
         if index is None:
             return []
+        if self.settings.query_bridge and query_weights:
+            if self.settings.embedding_backend == "hash":
+                query_vector = _weighted_hash_vector(query_weights)
+            else:
+                query_vector = self.embedding.get_query_embedding(question)
+                original_terms = set(tokenize(question))
+                for term, weight in query_weights.items():
+                    if term in original_terms or weight >= 1.0:
+                        continue
+                    alias_vector = self.embedding.get_query_embedding(term)
+                    query_vector = [left + float(weight) * right
+                                    for left, right in zip(query_vector, alias_vector)]
+                norm = math.sqrt(sum(value * value for value in query_vector))
+                if norm:
+                    query_vector = [value / norm for value in query_vector]
+            candidates = []
+            for node in self._nodes.get(corpus, []):
+                wrapped = NodeWithScore(node=node, score=0.0)
+                if not _matches_filter(wrapped, filters):
+                    continue
+                if not self._lexical_indexes[corpus].related(question, wrapped, query_weights, strict_topics=True):
+                    continue
+                score = sum(left * right for left, right in zip(query_vector, node.embedding or []))
+                if score > 0:
+                    candidates.append(NodeWithScore(node=node, score=score))
+            return sorted(candidates, key=lambda item: (-(item.score or 0), item.node.node_id))[:self.settings.candidate_limit]
         retriever = index.as_retriever(
             similarity_top_k=len(self._nodes.get(corpus, [])),
             filters=self._metadata_filters(filters, corpus),
         )
-        candidates = [node for node in retriever.retrieve(question)
-                      if (node.score or 0) > 0 and _matches_filter(node, filters) and self._lexical_indexes[corpus].related(question, node)]
+        candidates = [node for node in retriever.retrieve(retrieval_query or question)
+                      if (node.score or 0) > 0 and _matches_filter(node, filters)
+                      and self._lexical_indexes[corpus].related(question, node, query_weights, self.settings.query_bridge)]
         return sorted(candidates, key=lambda node: (-(node.score or 0), node.node.node_id))[:self.settings.candidate_limit]
 
-    def _retrieve_lexical(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
+    def _retrieve_lexical(self, question: str, filters: RagFilter, corpus: str,
+                          query_weights=None) -> list[NodeWithScore]:
         index = self._lexical_indexes.get(corpus)
         if index is None:
             return []
         return index.retrieve(question, self.settings.candidate_limit,
-                              lambda node: _matches_filter(node, filters) and index.related(question, node))
+                              lambda node: _matches_filter(node, filters) and index.related(question, node, query_weights, self.settings.query_bridge),
+                              query_weights)
 
     def _retrieve_hybrid(self, question: str, filters: RagFilter, corpus: str) -> list[NodeWithScore]:
         return self._fuse_ranked_candidates(self._retrieve_vector(question, filters, corpus),
@@ -456,11 +537,13 @@ class LlamaIndexEngine:
             (vector_nodes, self.settings.vector_weight),
         ):
             seen_in_channel: set[str] = set()
-            for rank, candidate in enumerate(nodes, start=1):
+            rank = 0
+            for candidate in nodes:
                 chunk_id = candidate.node.node_id
                 if chunk_id in seen_in_channel:
                     continue
                 seen_in_channel.add(chunk_id)
+                rank += 1
                 contribution = weight / (self.settings.rrf_rank_constant + rank)
                 current = scores.get(chunk_id)
                 scores[chunk_id] = (
@@ -497,6 +580,9 @@ class LlamaIndexEngine:
                 publisher=str(node.metadata.get("publisher", "")),
                 publication_year=int(node.metadata.get("publication_year") or 0),
                 disease=str(node.metadata.get("disease", "")),
+                syndromes=[value for value in str(node.metadata.get("syndromes", "")).split("|") if value],
+                formulas=[value for value in str(node.metadata.get("formulas", "")).split("|") if value],
+                herbs=[value for value in str(node.metadata.get("herbs", "")).split("|") if value],
                 section=str(node.metadata.get("section", "")),
                 page=_page_label(
                     int(node.metadata.get("page_start") or 0),
@@ -505,6 +591,7 @@ class LlamaIndexEngine:
                 evidence_level=str(node.metadata.get("evidence_level", "")),
                 quote=node.node.text,
                 relevance_score=round(float(node.score or 0.0), 3),
+                metadata_source=str(node.metadata.get("metadata_source", "")),
             )
             for node in nodes
         ]
@@ -538,6 +625,7 @@ class LlamaIndexEngine:
         fused_nodes: list[NodeWithScore],
         sufficient: bool,
         started_at: float,
+        query_expansions: list[str] | None = None,
     ) -> ChatResponse:
         citations = self._citations(selected[:2])
         return self._response(
@@ -557,6 +645,7 @@ class LlamaIndexEngine:
                 sufficient,
                 remote=False,
                 generation="none",
+                query_expansions=query_expansions,
             ),
             started_at=started_at,
         )
@@ -597,6 +686,7 @@ class LlamaIndexEngine:
         sufficient: bool,
         remote: bool,
         generation: str | None = None,
+        query_expansions: list[str] | None = None,
     ) -> RetrievalTrace:
         strategy = {
             "V1_VECTOR": "vector",
@@ -608,6 +698,7 @@ class LlamaIndexEngine:
             "fusion=reciprocal-rank-fusion",
             "embedding=deterministic-hash-ngram",
             f"generation={generation or 'grounded-extractive'}",
+            "查询扩展=" + ("；".join(query_expansions) if query_expansions else "无"),
         ]
         if remote:
             notes.append("transport=remote")
@@ -668,23 +759,34 @@ def _matches_filter(node: NodeWithScore, filters: RagFilter) -> bool:
     return True
 
 
+def _weighted_hash_vector(weights: dict[str, float] | Any) -> list[float]:
+    vector = [0.0] * 512
+    for term, weight in weights.items():
+        digest = hashlib.sha256(term.encode("utf-8")).digest()
+        index = int.from_bytes(digest[:4], "big") % len(vector)
+        sign = 1.0 if digest[4] & 1 else -1.0
+        vector[index] += sign * (1.0 + min(len(term), 8) / 8.0) * float(weight)
+    norm = math.sqrt(sum(value * value for value in vector))
+    return [value / norm for value in vector] if norm else vector
+
+
 def _is_related(question: str, node: NodeWithScore) -> bool:
     generic = {"证据", "研究", "安全", "疗效", "检查", "症状", "未归类"}
     question = question.casefold()
     topics = [str(node.metadata.get("disease", ""))]
     for key in ("keywords", "herbs", "formulas", "syndromes"):
         topics.extend(str(node.metadata.get(key, "")).split("|"))
-    if any(len(term) >= 2 and term not in generic and term.casefold() in question
+    if any(len(term) >= 2 and term not in generic and not is_generic(term) and term.casefold() in question
            for term in topics):
         return True
     disease_tokens = set(tokenize(str(node.metadata.get("disease", ""))))
     if any(
-        len(term) >= 2 and term not in generic
+        len(term) >= 2 and term not in generic and not is_generic(term)
         for term in set(tokenize(question)) & disease_tokens
     ):
         return True
     shared = set(tokenize(question)) & set(tokenize(node.node.text))
-    return len({term for term in shared if len(term) >= 2 and term not in generic}) >= 3
+    return len({term for term in shared if len(term) >= 2 and term not in generic and not is_generic(term)}) >= 3
 
 
 def _metadata_boost(question: str, node: NodeWithScore) -> float:

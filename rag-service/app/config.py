@@ -49,6 +49,7 @@ class Settings:
     max_import_documents: int = 1000
     max_import_characters: int = 10_000_000
     import_requests_per_minute: int = 60
+    query_bridge: bool = False
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -90,4 +91,5 @@ class Settings:
             max_import_documents=_env_int("KNOWLEDGE_MAX_IMPORT_DOCUMENTS", 1000),
             max_import_characters=_env_int("KNOWLEDGE_MAX_IMPORT_CHARACTERS", 10_000_000),
             import_requests_per_minute=_env_int("RAG_IMPORT_REQUESTS_PER_MINUTE", 60),
+            query_bridge=os.getenv("RAG_QUERY_BRIDGE", "false").lower() == "true",
         )

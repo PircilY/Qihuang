@@ -53,6 +53,29 @@ class RetrievalIndexTest {
         assertThat(tokenizer.tokenize("占位占位")).containsExactly("占位", "位占");
         assertThat(tokenizer.tokenizeWithFrequency("占位，字段")).containsExactly("占位", "字段");
     }
+
+    @Test
+    void frequentTopicDoesNotIndividuallyPassRelatedPreFilterWhenBridgeEnabled() {
+        var mapper = new ObjectMapper().findAndRegisterModules();
+        var repository = new InMemoryKnowledgeBaseRepository(mapper, new DefaultResourceLoader(), "");
+        for (int i = 1; i <= 3; i++) {
+            String id = "TOPIC-" + i;
+            repository.registerDocument(new KnowledgeDocument("DOC-" + id, "fixture", "测试", "测试", 2026,
+                            "", "未评级", List.of(), "", "fixture-" + i, "v1", "ACTIVE", Instant.EPOCH,
+                            "fixture", "", "https://example.org", null),
+                    List.of(new KnowledgeChunk(id, "DOC-" + id, "fixture", "测试", "测试", 2026, "",
+                            List.of(), List.of(), List.of(), 0, 0, "", "未评级", List.of("心血管"),
+                            "无关占位内容", "fixture-" + i, "ACTIVE", "v1", Instant.EPOCH)));
+        }
+        var tokenizer = new TextTokenizer();
+        var index = new RetrievalIndex(repository, tokenizer);
+        index.initialize();
+        org.springframework.test.util.ReflectionTestUtils.setField(index, "queryBridge", true);
+        var entry = index.snapshot(CorpusId.BASELINE).entries().get("TOPIC-1");
+
+        assertThat(index.snapshot(CorpusId.BASELINE).topicFrequency().get("心血管")).isGreaterThan(0.2);
+        assertThat(index.related("心血管", java.util.Set.of("心血", "血管"), entry)).isFalse();
+    }
     private KnowledgeDocument document() {
         return new KnowledgeDocument("FIXTURE-DOC", "[FIXTURE] 非医学事实", "测试", "测试", 2026,
                 "", "未评级", List.of(), "", "fixture", "v1", "ACTIVE", Instant.EPOCH,

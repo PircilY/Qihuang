@@ -14,6 +14,19 @@ import java.util.regex.Pattern;
 
 @Component
 public class TextTokenizer {
+    @org.springframework.beans.factory.annotation.Value("${app.retrieval.query-bridge:false}")
+    private boolean queryBridge;
+
+    public void setQueryBridge(boolean enabled) { queryBridge = enabled; }
+    public boolean queryBridge() { return queryBridge; }
+    public Terminology.Features queryFeatures(String question) {
+        if (!queryBridge) {
+            var weights = new java.util.LinkedHashMap<String, Double>();
+            tokenizeWithFrequency(question).forEach(term -> weights.merge(term, 1.0, Double::sum));
+            return new Terminology.Features(weights, List.of());
+        }
+        return Terminology.SHARED.query(question, true, this);
+    }
 
     private static final Pattern LATIN_TERM = Pattern.compile("[a-z0-9]{2,}");
     private static final Pattern HAN_SEQUENCE = Pattern.compile("[\\p{IsHan}]{2,}");

@@ -8,6 +8,7 @@ import com.tcm.ragassistant.dto.RetrievalTrace;
 import com.tcm.ragassistant.service.LexicalScorer;
 import com.tcm.ragassistant.service.ScoredChunk;
 import com.tcm.ragassistant.service.VectorSimilarityScorer;
+import com.tcm.ragassistant.service.TextTokenizer;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -22,15 +23,27 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
     private final LexicalScorer lexicalScorer;
     private final VectorSimilarityScorer vectorScorer;
     private final RetrievalProperties properties;
+    private final TextTokenizer tokenizer;
 
     public HybridRetrievalStrategy(
             LexicalScorer lexicalScorer,
             VectorSimilarityScorer vectorScorer,
             RetrievalProperties properties
     ) {
+        this(lexicalScorer, vectorScorer, properties, new TextTokenizer());
+    }
+
+    @org.springframework.beans.factory.annotation.Autowired
+    public HybridRetrievalStrategy(
+            LexicalScorer lexicalScorer,
+            VectorSimilarityScorer vectorScorer,
+            RetrievalProperties properties,
+            TextTokenizer tokenizer
+    ) {
         this.lexicalScorer = lexicalScorer;
         this.vectorScorer = vectorScorer;
         this.properties = properties;
+        this.tokenizer = tokenizer;
     }
 
     @Override
@@ -80,6 +93,7 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
                                 "BM25 与向量式召回并行",
                                 "使用 Reciprocal Rank Fusion 融合排序",
                                 "generation=grounded-extractive",
+                                queryNote(question),
                                 filter == null || filter.isEmpty()
                                         ? "检索范围为全库"
                                         : "检索范围：" + filter.description()
@@ -93,18 +107,23 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
         );
     }
 
+    private String queryNote(String question) {
+        var expansion = tokenizer.queryFeatures(question).expansions();
+        return "查询扩展=" + (expansion.isEmpty() ? "无" : String.join("；", expansion));
+    }
+
     public List<ScoredChunk> fuse(List<ScoredChunk> lexical, List<ScoredChunk> vector) {
         Map<String, FusionScore> scores = new LinkedHashMap<>();
-        addRankScores(scores, lexical, properties.lexicalWeight());
-        addRankScores(scores, vector, properties.vectorWeight());
+        addRankScores(scores, lexical, properties.lexicalWeight(), true);
+        addRankScores(scores, vector, properties.vectorWeight(), false);
         return scores.values().stream()
                 .sorted(Comparator.comparingDouble(FusionScore::fusedScore).reversed()
                         .thenComparing(score -> score.chunk().chunk().id()))
                 .map(score -> new ScoredChunk(
                         score.chunk().chunk(),
                         (properties.normalizedFusion() ? score.fusedScore() / properties.maximumFusionScore() : score.fusedScore()),
-                        score.chunk().lexicalScore(),
-                        score.chunk().vectorScore(),
+                        score.lexicalScore(),
+                        score.vectorScore(),
                         "hybrid"
                 ))
                 .toList();
@@ -113,23 +132,29 @@ public class HybridRetrievalStrategy implements RetrievalStrategy {
     private void addRankScores(
             Map<String, FusionScore> scores,
             List<ScoredChunk> rankedChunks,
-            double weight
+            double weight,
+            boolean lexicalChannel
     ) {
         java.util.Set<String> seen = new java.util.HashSet<>();
-        for (int index = 0; index < rankedChunks.size(); index++) {
-            ScoredChunk candidate = rankedChunks.get(index);
+        int rank = 0;
+        for (ScoredChunk candidate : rankedChunks) {
             if (!seen.add(candidate.chunk().id())) continue;
-            double rankContribution = weight / (properties.rrfRankConstant() + index + 1.0);
+            rank++;
+            double rankContribution = weight / (properties.rrfRankConstant() + rank);
             scores.compute(candidate.chunk().id(), (id, current) -> {
                 if (current == null) {
-                    return new FusionScore(candidate, rankContribution);
+                    return new FusionScore(candidate, rankContribution,
+                            lexicalChannel ? candidate.lexicalScore() : 0,
+                            lexicalChannel ? 0 : candidate.vectorScore());
                 }
-                return new FusionScore(current.chunk(), current.fusedScore() + rankContribution);
+                return new FusionScore(current.chunk(), current.fusedScore() + rankContribution,
+                        current.lexicalScore() + (lexicalChannel ? candidate.lexicalScore() : 0),
+                        current.vectorScore() + (lexicalChannel ? 0 : candidate.vectorScore()));
             });
         }
     }
 
-    private record FusionScore(ScoredChunk chunk, double fusedScore) {
+    private record FusionScore(ScoredChunk chunk, double fusedScore, double lexicalScore, double vectorScore) {
     }
 }
 

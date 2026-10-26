@@ -50,6 +50,23 @@ class TextTokenizerTest {
     }
 
     @Test
+    void sharedDictionaryExpandsChineseAndEnglishQueriesWithTraceableSource() {
+        tokenizer.setQueryBridge(true);
+        var chinese = tokenizer.queryFeatures("黄芪治疗慢性心力衰竭");
+        assertThat(chinese.expansions()).isNotEmpty();
+        assertThat(chinese.expansions().toString()).contains("黄芪");
+        assertThat(chinese.weights().keySet()).contains("astragalus");
+        var chineseSalvia = tokenizer.queryFeatures("丹参对冠心病心绞痛有什么作用");
+        assertThat(chineseSalvia.expansions()).anyMatch(item -> item.contains("Salvia miltiorrhiza"));
+        assertThat(chineseSalvia.weights().keySet()).contains("salvia", "miltiorrhiza");
+        var english = tokenizer.queryFeatures("Salvia miltiorrhiza coronary heart disease");
+        assertThat(english.expansions()).isNotEmpty();
+        assertThat(english.weights().keySet()).contains("丹参");
+        var englishAstragalus = tokenizer.queryFeatures("Astragalus membranaceus chronic heart failure treatment efficacy");
+        assertThat(englishAstragalus.expansions()).anyMatch(item -> item.contains("黄芪"));
+    }
+
+    @Test
     void allowsSingleSharedTokenWhenItAnchorsToDiseaseMetadata() {
         KnowledgeChunk chunk = chunk("高血压", "完全无关的证据内容。");
 
