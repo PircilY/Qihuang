@@ -46,9 +46,14 @@ def build_samples() -> list[dict]:
             q = entry["zh"]
             chinese_hit = any(alias and alias.casefold() in text.casefold()
                               for alias in [entry["zh"], *entry.get("zhAliases", [])])
-            samples.append({"query": q, "kind": "term",
+            samples.append({"query": q, "kind": "term-dictionary",
                             "language": "same-language" if chinese_hit else "cross-language",
                             "targets": [doc_id], "rule": "dictionary-name", "seed": SEED})
+            independent_hit = source_term_match(text, q)
+            if independent_hit:
+                samples.append({"query": q, "kind": "term-independent",
+                                "language": "same-language", "targets": [doc_id],
+                                "rule": "chinese-source-name", "seed": SEED})
         # Add up to three deterministic two-term combinations per document.
         for left_index, left in enumerate(hits):
             for right in hits[left_index + 1:]:
@@ -56,7 +61,7 @@ def build_samples() -> list[dict]:
                               for alias in [left["zh"], *left.get("zhAliases", [])])
                 right_zh = any(alias and alias.casefold() in text.casefold()
                                for alias in [right["zh"], *right.get("zhAliases", [])])
-                samples.append({"query": left["zh"] + " " + right["zh"], "kind": "term",
+                samples.append({"query": left["zh"] + " " + right["zh"], "kind": "term-dictionary",
                                 "language": "same-language" if left_zh and right_zh else "cross-language",
                                 "targets": [doc_id], "rule": "dictionary-name-pair", "seed": SEED})
                 if sum(sample["rule"] == "dictionary-name-pair" and sample["targets"] == [doc_id]
@@ -134,6 +139,10 @@ def score_documents(ranked, targets, k=4):
     return (float(position == 1), float(position is not None and position <= 3),
             float(position is not None and position <= k), 1 / position if position else 0.0)
 
+def source_term_match(source_text: str, query: str, _terminology_entries=None) -> bool:
+    """Judge by Chinese source-string overlap; no dictionary or expansion lookup."""
+    return any(term in source_text for term in re.findall(r"[\u3400-\u9fff]{2,}", query))
+
 def _metrics_payload(values):
     return {"sampleCount": len(values), "metrics": metrics_from_observations(values),
             "bootstrap95": bootstrap_observations(values)}
@@ -160,17 +169,22 @@ def service_observations(samples, engine, version):
 
 def service_evaluation(samples, embedding_backend=None):
     from dataclasses import replace
+    sys.path.insert(0, str(ROOT / "rag-service"))
     from app.config import Settings
     from app.terminology import POLICY
     versions = ("V0_DIRECT", "V1_VECTOR", "V2_HYBRID", "V3_GUARDED")
     settings = Settings.from_env()
     backend = embedding_backend or settings.embedding_backend
-    # HEAD is the committed pre-G/H corpus snapshot; only the permitted EXPANDED data file is read.
+    # The requested delivery-c9652d3 tag is absent locally; its commit exists and is the pre-G snapshot.
+    baseline_ref = "delivery-c9652d3"
+    if subprocess.run(["git", "rev-parse", "--verify", "refs/tags/delivery-c9652d3"], cwd=ROOT,
+                      capture_output=True).returncode != 0:
+        baseline_ref = "c9652d3"
     old_bytes = subprocess.run(
-        ["git", "show", "HEAD:backend/src/main/resources/data/expanded/knowledge-base.json"],
+        ["git", "show", f"{baseline_ref}:backend/src/main/resources/data/expanded/knowledge-base.json"],
         cwd=ROOT, check=True, capture_output=True,
     ).stdout
-    with tempfile.TemporaryDirectory(prefix="expanded-eval-before-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="expanded-eval-before-", dir=ROOT / ".tmp") as temporary:
         before_path = Path(temporary) / "knowledge-base.json"
         before_path.write_bytes(old_bytes)
         phases = {
@@ -185,7 +199,7 @@ def service_evaluation(samples, embedding_backend=None):
             )
             engine = _python_engine(phase_settings)
             for version in versions:
-                for kind in ("title", "term"):
+                for kind in ("title", "term-dictionary", "term-independent"):
                     for language in ("same-language", "cross-language"):
                         subset = [sample for sample in samples
                                   if sample["kind"] == kind and sample["language"] == language]
@@ -196,7 +210,7 @@ def service_evaluation(samples, embedding_backend=None):
             "mode": "actual-python-engine-query",
             "engine": "LlamaIndexEngine.query",
             "embeddingBackend": backend,
-            "beforeSnapshot": "committed HEAD EXPANDED knowledge-base.json; query bridge disabled",
+            "beforeSnapshot": f"{baseline_ref} EXPANDED knowledge-base.json; query bridge disabled",
             "afterSnapshot": "working tree rebuilt EXPANDED corpus; query bridge enabled",
             "metadataWeight": 0.0,
             "genericWeight": POLICY["genericWeight"],
@@ -211,36 +225,62 @@ def baseline_evaluation(samples, docs, k=4):
     for sample in samples:
         random_values.append(score_documents(rng.sample(document_ids, min(k, len(document_ids))), set(sample["targets"]), k))
     title_values = observations(samples, docs, False, title_only=True)
-    return {"random": _metrics_payload(random_values), "title-only": _metrics_payload(title_values)}
+    result = {"random": _metrics_payload(random_values), "title-only": _metrics_payload(title_values), "groups": {}}
+    for kind in ("title", "term-dictionary", "term-independent"):
+        for language in ("same-language", "cross-language"):
+            subset = [sample for sample in samples if sample["kind"] == kind and sample["language"] == language]
+            group_random = []
+            group_rng = random.Random(SEED)
+            for sample in subset:
+                group_random.append(score_documents(
+                    group_rng.sample(document_ids, min(k, len(document_ids))), set(sample["targets"]), k))
+            result["groups"][f"{kind}/{language}"] = {
+                "random": _metrics_payload(group_random),
+                "title-only": _metrics_payload(observations(subset, docs, False, title_only=True)),
+            }
+    return result
 
 def render_report(result):
     counts = Counter((sample["kind"], sample["language"]) for sample in result["samples"])
     lines = [
         "# EXPANDED 自监督检索评测",
         "",
-        "评测对从 EXPANDED 语料标题变体与正文/标题实际命中的共享术语词典自动生成，固定种子 42，K=4，1000 次样本 bootstrap 百分位 95% 区间。目标为词典/标题命中文档，属于自监督代理评测，存在显著词面重合偏差，不能替代人工相关性判断。未读取 holdout 或原 50 题。",
+        "## 结论可信度",
         "",
-        f"总样本 {result['sampleCount']}；标题同语言 {counts[('title', 'same-language')]}、标题跨语言 {counts[('title', 'cross-language')]}；术语同语言 {counts[('term', 'same-language')]}、术语跨语言 {counts[('term', 'cross-language')]}。术语样本含单词与确定性二词组合；标题样本使用原始、截断、固定种子乱序及去标点变体，不使用机器翻译。",
+        "|结果|可信度|理由|",
+        "|---|---|---|",
+        "|标题类|较可信的检索代理证据|查询和目标来自原始标题，但仍为标题词面自监督，不是人工相关性判断。|",
+        "|术语类，词典目标|设计验证；循环风险|查询扩展与目标构造共用词典；提升仅说明扩展按设计工作，不能证明检索能力。|",
+        "|术语类，中文原文目标|较可信的检索代理证据|目标判定只查文档原始字段中的中文术语，不使用扩展出来的英文词。|",
+        "|真实医学相关性|未验证|没有人工相关性标注或独立 judge。|",
+        "",
+        "固定种子42，K=4，1000次样本 bootstrap 百分位95%区间。未读取 holdout 或原50题。",
+        "",
+        f"总样本 {result['sampleCount']}；标题同语言 {counts[('title', 'same-language')]}、标题跨语言 {counts[('title', 'cross-language')]}；词典目标术语同/跨语言 {counts[('term-dictionary', 'same-language')]}/{counts[('term-dictionary', 'cross-language')]}；中文原文独立目标术语 {counts[('term-independent', 'same-language')]}。标题样本只由标题构造；中文原文组不使用扩展出来的英文词判定目标。",
         "",
         "V0–V3 通过真实 Python `LlamaIndexEngine.query` 执行，默认 SHA-256 hash 向量；before 读取提交时 G/H 前 EXPANDED 快照并关闭查询桥接，after 使用工作区重建语料并启用桥接。元数据排序权重为 0。结果是实际检索策略的自监督代理结果，不是人工评审。",
         "",
-        "|基线|Hit@1|Hit@3|Hit@4|MRR|",
+        "|基线 / 类别 / 语言|Hit@1|Hit@3|Hit@4|MRR|",
         "|---|---:|---:|---:|---:|",
     ]
-    for label, key in (("随机选择 K 个文档", "random"), ("仅标题词面", "title-only")):
-        metric = result["baselines"][key]["metrics"]
-        lines.append(f"|{label}|{metric['hit@1']:.4f}|{metric['hit@3']:.4f}|{metric['hit@4']:.4f}|{metric['mrr']:.4f}|")
+    for kind in ("title", "term-dictionary", "term-independent"):
+        for language in ("same-language", "cross-language"):
+            key = f"{kind}/{language}"
+            for baseline in ("random", "title-only"):
+                metric = result["baselines"]["groups"][key][baseline]["metrics"]
+                lines.append(f"|{baseline} / {kind} / {language}|{metric['hit@1']:.4f}|{metric['hit@3']:.4f}|{metric['hit@4']:.4f}|{metric['mrr']:.4f}|")
     lines += ["", "|版本 / 阶段 / 类别|样本数|Hit@1 [95% CI]|Hit@3 [95% CI]|Hit@4 [95% CI]|MRR [95% CI]|", "|---|---:|---:|---:|---:|---:|"]
     for version in ("V0_DIRECT", "V1_VECTOR", "V2_HYBRID", "V3_GUARDED"):
         for phase in ("before", "after"):
-            for kind in ("title", "term"):
+            for kind in ("title", "term-dictionary", "term-independent"):
                 for language in ("same-language", "cross-language"):
                     key = f"{phase}/{version}/{kind}/{language}"
                     group = result["groups"][key]
                     m, ci = group["metrics"], group["bootstrap95"]
                     cells = [f"{m[name]:.4f} [{ci[name][0]:.4f}, {ci[name][1]:.4f}]"
                              for name in ("hit@1", "hit@3", "hit@4", "mrr")]
-                    label = f"{version} / {phase} / {kind} {language}"
+                    friendly = {"term-dictionary": "术语词典目标（循环风险）", "term-independent": "术语中文原文目标", "title": "标题"}[kind]
+                    label = f"{version} / {phase} / {friendly} {language}"
                     lines.append("|" + label + "|" + str(group["sampleCount"]) + "|" + "|".join(cells) + "|")
     lines += [
         "",
@@ -263,7 +303,7 @@ def build_result(check=False, run_service=False):
         result["groups"] = service_evaluation(samples)
     else:
         for phase, bridge in (("before", False), ("after", True)):
-            for kind in ("title", "term"):
+            for kind in ("title", "term-dictionary", "term-independent"):
                 for language in ("same-language", "cross-language"):
                     group = [s for s in samples if s["kind"] == kind and s["language"] == language]
                     result["groups"][f"proxy/{phase}/{kind}/{language}"] = _metrics_payload(observations(group, docs, bridge))
@@ -276,7 +316,7 @@ def build_result(check=False, run_service=False):
         if existing.get("groups", {}).get("provenance", {}).get("mode") == "actual-python-engine-query":
             for version in ("V0_DIRECT", "V1_VECTOR", "V2_HYBRID", "V3_GUARDED"):
                 for phase in ("before", "after"):
-                    for kind in ("title", "term"):
+                    for kind in ("title", "term-dictionary", "term-independent"):
                         for language in ("same-language", "cross-language"):
                             key = f"{phase}/{version}/{kind}/{language}"
                             assert key in existing["groups"] and "bootstrap95" in existing["groups"][key]
