@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<a class="skip-link" href="#mainContent">跳到当前工作区</a>
 <div class="app-frame">
     <aside class="sidebar">
         <a class="brand" href="#overview" aria-label="返回总览">
@@ -98,6 +99,11 @@
                 </div>
             </div>
             <div class="topbar-actions">
+                <div class="theme-switch" role="group" aria-label="界面主题">
+                    <button type="button" data-theme-choice="system" title="跟随系统主题" aria-pressed="true">系统</button>
+                    <button type="button" data-theme-choice="light" title="浅色主题" aria-pressed="false">浅色</button>
+                    <button type="button" data-theme-choice="dark" title="深色主题" aria-pressed="false">深色</button>
+                </div>
                 <span class="service-state" id="serviceState">
                     <span class="status-dot"></span>
                     <span id="serviceText">服务检查中</span>
@@ -105,7 +111,7 @@
             </div>
         </header>
 
-        <main class="content">
+        <main class="content" id="mainContent" tabindex="-1">
             <section class="view active" id="view-overview" data-title="研究总览" data-index="01"
                      data-subtitle="语料构成、证据质量与迭代状态">
                 <div class="view-intro research-hero">
@@ -824,6 +830,11 @@
                 </div>
             </section>
         </main>
+        <footer class="research-footer">
+            <strong>岐黄脉证</strong>
+            <span>仅供研究、不用于诊断治疗</span>
+            <span>公开文献 / 无患者数据</span>
+        </footer>
     </div>
 </div>
 

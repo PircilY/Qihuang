@@ -163,6 +163,9 @@ async function initialize() {
 }
 
 function bindEvents() {
+    document.querySelectorAll("[data-theme-choice]").forEach(button => {
+        button.addEventListener("click", () => window.uiTheme.set(button.dataset.themeChoice));
+    });
     elements.modelSettingsButton.addEventListener("click", openModelDialog);
     elements.closeModelButton.addEventListener("click", () => elements.modelDialog.close());
     elements.modelDialog.addEventListener("cancel", event => {
