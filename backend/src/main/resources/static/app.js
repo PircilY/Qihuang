@@ -281,6 +281,7 @@ async function loadVersions() {
         renderVersionRail();
         renderComparisonOptions();
     } catch (error) {
+        elements.versionRail.replaceChildren(emptyCompact("版本未加载", error.message, loadVersions));
         showToast(error.message, true);
     }
 }
@@ -396,6 +397,7 @@ function updateKnowledgeCounts() {
 }
 
 function renderVersionRail() {
+    const focusedVersion = document.activeElement?.dataset.version;
     elements.versionRail.replaceChildren();
     state.versions.forEach(version => {
         const button = node("button", "version-option");
@@ -417,6 +419,7 @@ function renderVersionRail() {
         elements.versionRail.append(button);
     });
     updateMethodNote();
+    if (focusedVersion) elements.versionRail.querySelector(`[data-version="${focusedVersion}"]`)?.focus({preventScroll: true});
 }
 
 function updateMethodNote() {
@@ -557,7 +560,7 @@ function renderOverview() {
     const overview = state.overview;
     if (!overview) {
         elements.overviewDataState.textContent = state.knowledgeError || "暂无数据";
-        elements.diseaseDistribution.replaceChildren(emptyCompact("数据未加载", state.knowledgeError));
+        elements.diseaseDistribution.replaceChildren(emptyCompact("数据未加载", state.knowledgeError, refreshKnowledgeData));
         return;
     }
     elements.overviewDocumentCount.textContent = formatInteger(overview.documentCount);
@@ -667,10 +670,12 @@ function renderPipelineStrip(container, compact) {
 }
 
 function renderDocuments() {
+    const focusedDocument = document.activeElement?.dataset.documentId;
     elements.documentList.replaceChildren();
     elements.documentSummary.textContent = `${state.documents.length} 份来源已登记`;
     if (!state.documents.length) {
-        elements.documentList.append(emptyCompact(state.knowledgeError || "尚无文档"));
+        elements.documentList.append(emptyCompact(state.knowledgeError || "尚无文档", "",
+            state.knowledgeError ? refreshKnowledgeData : null));
         return;
     }
     state.documents.forEach((document, index) => {
@@ -693,9 +698,12 @@ function renderDocuments() {
         button.append(copy, node("span", "document-count", `${document.chunkCount} 片`));
         elements.documentList.append(button);
     });
+    if (focusedDocument) [...elements.documentList.querySelectorAll("[data-document-id]")]
+        .find(button => button.dataset.documentId === focusedDocument)?.focus({preventScroll: true});
 }
 
 function renderChunks(chunks) {
+    const focusedChunk = document.activeElement?.dataset.chunkId;
     state.filteredChunks = chunks;
     elements.chunkList.replaceChildren();
     elements.chunkResultCount.textContent = `${chunks.length} 条`;
@@ -703,7 +711,14 @@ function renderChunks(chunks) {
         ? `来源 ${state.selectedDocumentId} 的片段`
         : "全部来源";
     if (!chunks.length) {
-        elements.chunkList.append(emptyCompact(state.knowledgeError || "没有匹配片段"));
+        const empty = emptyCompact(state.knowledgeError || "没有匹配片段", "",
+            state.knowledgeError ? refreshKnowledgeData : null);
+        if (!state.knowledgeError) {
+            const reset = node("button", "button button-secondary", "重置筛选", {type: "button"});
+            reset.addEventListener("click", resetKnowledgeFilters);
+            empty.append(reset);
+        }
+        elements.chunkList.append(empty);
         return;
     }
     chunks.forEach(chunk => {
@@ -740,6 +755,8 @@ function renderChunks(chunks) {
         button.append(head, idLine, sourceLine, content, tags);
         elements.chunkList.append(button);
     });
+    if (focusedChunk) [...elements.chunkList.querySelectorAll("[data-chunk-id]")]
+        .find(button => button.dataset.chunkId === focusedChunk)?.focus({preventScroll: true});
 }
 
 function loadFilteredChunks() {
@@ -824,9 +841,12 @@ function renderChunkDetail(chunk) {
 }
 
 function closeChunkDetail() {
+    const chunkId = state.selectedChunk?.id;
     state.selectedChunk = null;
     elements.chunkDetailBoard.classList.add("hidden");
     renderChunks(state.filteredChunks);
+    if (chunkId) [...elements.chunkList.querySelectorAll("[data-chunk-id]")]
+        .find(button => button.dataset.chunkId === chunkId)?.focus({preventScroll: true});
 }
 
 function populateFilterOptions() {
@@ -952,7 +972,7 @@ function renderLoading(message) {
 
 function renderError(message) {
     const wrapper = node("div", "error-state");
-    wrapper.append(node("strong", "", "请求未完成"), node("span", "", message));
+    wrapper.append(node("strong", "", "请求未完成"), node("span", "", message), retryButton(askQuestion));
     elements.answerStage.replaceChildren(wrapper);
 }
 
@@ -1199,7 +1219,7 @@ async function compareVersions() {
         renderComparison(state.compareResult);
         elements.compareSection.scrollIntoView({behavior: "smooth", block: "start"});
     } catch (error) {
-        elements.compareGrid.replaceChildren(emptyCompact("对比运行失败", error.message));
+        elements.compareGrid.replaceChildren(emptyCompact("对比运行失败", error.message, compareVersions));
         showToast(error.message, true);
     } finally {
         setBusy(false);
@@ -1270,7 +1290,7 @@ async function runEvaluation({silent = false} = {}) {
     } catch (error) {
         elements.evaluationStatus.textContent = "运行失败";
         elements.evaluationRunTime.textContent = "失败";
-        elements.evaluationSummary.replaceChildren(emptyCompact("评估失败", error.message));
+        elements.evaluationSummary.replaceChildren(emptyCompact("评估失败", error.message, () => runEvaluation()));
         showToast(error.message, true);
     } finally {
         setBusy(false);
@@ -1574,6 +1594,8 @@ function renderRegistry() {
 
 function setBusy(busy) {
     state.busy = busy;
+    [elements.answerStage, elements.compareGrid, elements.evaluationSummary, elements.importForm]
+        .forEach(region => region.setAttribute("aria-busy", String(busy)));
     [
         elements.askButton,
         elements.compareButton,
@@ -1586,7 +1608,8 @@ function setBusy(busy) {
         }
     });
     [elements.questionInput, elements.workbenchDisease, elements.workbenchSource,
-        elements.workbenchEvidence, ...elements.versionRail.querySelectorAll("button"),
+        elements.workbenchEvidence, elements.workbenchCorpus, elements.knowledgeCorpus,
+        ...elements.versionRail.querySelectorAll("button"),
         ...document.querySelectorAll("[data-question]")].forEach(control => {
         control.disabled = busy;
     });
@@ -1672,9 +1695,16 @@ function tagGroup(label, values) {
     return wrapper;
 }
 
-function emptyCompact(title, description = "") {
+function retryButton(action) {
+    const button = node("button", "button button-secondary retry-button", "重试", {type: "button"});
+    button.addEventListener("click", action);
+    return button;
+}
+
+function emptyCompact(title, description = "", retry = null) {
     const empty = node("div", "empty-compact");
     empty.append(node("strong", "", title), node("span", "", description));
+    if (retry) empty.append(retryButton(retry));
     return empty;
 }
 
