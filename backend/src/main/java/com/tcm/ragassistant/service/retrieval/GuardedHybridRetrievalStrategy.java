@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.HashSet;
 
 @Component
 public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
@@ -88,10 +91,10 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
         KnowledgeChunk chunk = candidate.chunk();
         String normalizedQuestion = tokenizer.normalize(question);
         double metadataBoost = 0.0;
-        metadataBoost += containsAny(normalizedQuestion, chunk.disease()) ? 0.22 : 0.0;
-        metadataBoost += containsAny(normalizedQuestion, chunk.syndromes()) ? 0.20 : 0.0;
-        metadataBoost += containsAny(normalizedQuestion, chunk.formulas()) ? 0.18 : 0.0;
-        metadataBoost += containsAny(normalizedQuestion, chunk.herbs()) ? 0.10 : 0.0;
+        metadataBoost += containsAny(normalizedQuestion, Arrays.asList(chunk.disease().split("、")), chunk.metadataConfidence().get("disease")) ? 0.22 : 0.0;
+        metadataBoost += containsAny(normalizedQuestion, chunk.syndromes(), chunk.metadataConfidence().get("syndromes")) ? 0.20 : 0.0;
+        metadataBoost += containsAny(normalizedQuestion, chunk.formulas(), chunk.metadataConfidence().get("formulas")) ? 0.18 : 0.0;
+        metadataBoost += containsAny(normalizedQuestion, chunk.herbs(), chunk.metadataConfidence().get("herbs")) ? 0.10 : 0.0;
         double evidenceBoost = switch (chunk.evidenceLevel().toUpperCase(Locale.ROOT)) {
             case "A" -> 0.12;
             case "B" -> 0.08;
@@ -104,6 +107,13 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
     private boolean containsAny(String question, String value) {
         return value != null && !value.isBlank()
                 && question.contains(tokenizer.normalize(value));
+    }
+
+    private boolean containsAny(String question, List<String> values, List<String> lowConfidence) {
+        if (values == null) return false;
+        Set<String> low = lowConfidence == null ? Set.of() : new HashSet<>(lowConfidence);
+        return values.stream().anyMatch(value -> !low.contains(value)
+                && question.contains(tokenizer.normalize(value)));
     }
 
     private boolean containsAny(String question, List<String> values) {

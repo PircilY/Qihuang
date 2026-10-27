@@ -65,7 +65,7 @@ BASELINE4文档/11片段、均长147.91；EXPANDED100文档/4036片段、均长6
 
 - G：共享名称词典 654 条（药材574、疾病30、证候12、方剂12、检查14、药物类别12）；共享停用词策略、低权重查询扩展和高频主题过滤。默认查询桥接关闭，避免改变既有 BASELINE 默认路径。
 - H：EXPANDED 重建为100篇/4036片段，片段级词典命中 herbs 342（8.47%）、formulas 111（2.75%）、syndromes 41（1.02%）；文档标题级命中 herbs 0%、formulas 1%、syndromes 0%。自动名称匹配可能漏标/误标，不是人工标注。
-- I：自监督代理集固定种子42、1946个查询、K=4、bootstrap 1000次；语言分组为标题同语言398/跨语言0、术语同语言736/跨语言812。已通过 Python 实际 `LlamaIndexEngine.query` 分别运行 V0–V3，使用 hash，before 为 G/H 前提交快照且桥接关闭，after 为重建语料且桥接开启；按类别、版本、阶段的 Hit@1/3/K、MRR 和区间见 `expanded-evaluation.md` 与机器结果 JSON。示例：V3 after 跨语言术语组（812样本）Hit@1/3/K/MRR=.1121/.1970/.2143/.1544；标题词面整体基线 Hit@1/3/K/MRR=.1948/.2497/.2564/.2500，随机选择基线见报告。V0–V3 是真实检索策略输出，但自动目标有词面重合偏差，不代表人工相关性判断；各类别变化如实按表报告。
+- I：自监督代理集固定种子42、2522个查询、K=4、bootstrap 1000次；语言分组为标题同语言398/跨语言0、词典目标术语同/跨语言736/812、中文原文独立目标576。已通过 Python 实际 `LlamaIndexEngine.query` 分别运行 V0–V3，使用 hash，before 为提交 `c9652d3` 的 G/H 前快照且桥接关闭，after 为重建语料且桥接开启；按类别、版本、阶段的 Hit@1/3/K、MRR 和区间见 `expanded-evaluation.md` 与机器结果 JSON。结果分组含随机和标题基线；词典目标组明确是循环风险，不能作为检索能力证明。
 - J：默认仍为 hash。当前未安装 sentence-transformers、未加载 BAAI/bge-m3，真实多语言嵌入比较待验证；没有估算指标。
 - K：空远程响应现按可回退故障处理；Hybrid RRF 保持排名融合并报告独立通道分数。`expanded-raw` 未引用的80个文件已先列入 `expanded-raw-orphans.md` 再删除。
 
@@ -89,3 +89,20 @@ python tools/package_delivery.py
 ```
 
 PowerShell运行Maven时建议把每个-D参数用单引号包裹；所有可选报告开关均不会打开冻结评测。原始测量、临时服务日志与完整生成结果在忽略的.tmp/runtime；可用命令重现，正式交付包保留报告、测试和夹具。
+
+## 复核与加固（L–O）
+
+- L 拆分为标题、词典目标术语、中文原文目标术语三组并报告同/跨语言、随机/标题基线、V0–V3、G 前后及 bootstrap 区间。标题和中文原文组是较可信的检索代理证据，仍非人工相关性评审；词典目标组明确标作循环风险，只说明扩展按设计工作。
+- M 新增 `tools/probe_expanded.py`，固定七个中英文问题，在临时端口启动 Java/Python 服务及隔离导入库。全库字符串扫描给出覆盖片段数；有覆盖而前三条没命中将失败。本机报告保留实际未命中回归；`delivery-c9652d3` 对照因标签缺失只用其提交 `c9652d3` 的快照进行评测对照，端到端旧服务未重建。
+- N 等待 Python `indexState=READY` 的上限由 `RAG_TEST_INDEX_READY_TIMEOUT_SECONDS` 控制，默认180秒，超时含健康状态诊断，不改变断言。Java 5 个跳过项的条件与原因、Python无skip列表见 `docs/verification.md`。在可写仓库临时目录连续运行 pytest 三轮，均为107 passed；Maven 三轮也均通过153项、0失败、0错误、5项既有条件跳过。
+- O 词典自动核验：654条中1已验证、652无证据、1冲突（仅2个双语标题）；冲突条目默认不参与中英扩展，可由配置开关关闭降级。固定种子42抽取200个自动标记片段，低置信比例 herbs 0/37、formulas 0/5、syndromes 0/3、disease 8/822（0.97%）。低置信名称写入 `metadataConfidence` 并不参与检索主题特征和元数据加分。字符串规则是自动一致性代理，不等于人工核对。
+- 未验证：Docker 引擎不可用、BGE-M3 及真实生成模型/judge 未下载/配置。相应复现：`docker compose build` 与 `docker compose up -d --wait`；`python tools/compare_embeddings.py --help` 后显式配置本地模型；配置 generator 与独立 judge 后运行 `python tools/generation_experiment.py --limit 42 --seed 42 --temperature 0`。无模型时结果保持待验证，不估算。
+
+```powershell
+python tools/build_expanded_eval.py --service-eval
+python tools/probe_expanded.py
+python tools/check_terminology_consistency.py
+python tools/audit_terminology_metadata.py
+python -m pytest rag-service/tests
+mvn -f backend/pom.xml test
+```

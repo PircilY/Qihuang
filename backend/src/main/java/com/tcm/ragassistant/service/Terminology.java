@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 public final class Terminology {
     public static final Terminology SHARED = new Terminology();
     private final JsonNode entries;
+    private final Set<String> conflictingIds = new HashSet<>();
     public final Set<String> stop = new HashSet<>();
     public final double genericWeight, expansionWeight, maximumRelatedFrequency;
     private Terminology() {
@@ -17,6 +18,11 @@ public final class Terminology {
             var mapper = new ObjectMapper();
             try (var in = new ClassPathResource("data/tcm-terminology.json").getInputStream()) {
                 entries = mapper.readTree(in).get("entries");
+            }
+            if (Boolean.parseBoolean(System.getProperty("terminology.downgrade-conflicts", "true"))) {
+                try (var in = new ClassPathResource("data/terminology-conflicts.json").getInputStream()) {
+                    mapper.readTree(in).path("conflictingEntryIds").forEach(value -> conflictingIds.add(value.asText()));
+                }
             }
             JsonNode policy;
             try (var in = new ClassPathResource("data/retrieval-stopwords.json").getInputStream()) {
@@ -54,6 +60,7 @@ public final class Terminology {
         if (enabled) {
             var extra = new TreeSet<String>();
             for (var entry : entries) {
+                if (conflictingIds.contains(entry.path("id").asText())) continue;
                 boolean zh = aliases(entry, true).stream().anyMatch(alias -> contains(question, alias));
                 if (!zh && aliases(entry, false).stream().noneMatch(alias -> contains(question, alias))) continue;
                 var expansion = aliases(entry, !zh);
@@ -71,6 +78,7 @@ public final class Terminology {
         result.put("formulas", new ArrayList<>()); result.put("syndromes", new ArrayList<>());
         var targets = Map.of("disease", "disease", "herb", "herbs", "formula", "formulas", "syndrome", "syndromes");
         for (var entry : entries) {
+            if (conflictingIds.contains(entry.path("id").asText())) continue;
             String target = targets.get(entry.path("kind").asText());
             if (target == null) continue;
             var aliases = new ArrayList<String>(); aliases.add(entry.path("zh").asText());

@@ -24,7 +24,8 @@ public record KnowledgeChunk(
         String status,
         String version,
         Instant ingestedAt,
-        String metadataSource
+        String metadataSource,
+        java.util.Map<String, java.util.List<String>> metadataConfidence
 ) {
     public KnowledgeChunk(String id, String documentId, String title, String sourceType, String publisher,
                            Integer publicationYear, String disease, List<String> syndromes, List<String> formulas,
@@ -33,7 +34,16 @@ public record KnowledgeChunk(
                            Instant ingestedAt) {
         this(id, documentId, title, sourceType, publisher, publicationYear, disease, syndromes, formulas, herbs,
                 pageStart, pageEnd, section, evidenceLevel, keywords, content, checksum, status, version,
-                ingestedAt, "");
+                ingestedAt, "", java.util.Map.of());
+    }
+    public KnowledgeChunk(String id, String documentId, String title, String sourceType, String publisher,
+                           Integer publicationYear, String disease, List<String> syndromes, List<String> formulas,
+                           List<String> herbs, int pageStart, int pageEnd, String section, String evidenceLevel,
+                           List<String> keywords, String content, String checksum, String status, String version,
+                           Instant ingestedAt, String metadataSource) {
+        this(id, documentId, title, sourceType, publisher, publicationYear, disease, syndromes, formulas, herbs,
+                pageStart, pageEnd, section, evidenceLevel, keywords, content, checksum, status, version,
+                ingestedAt, metadataSource, java.util.Map.of());
     }
     public KnowledgeChunk {
         title = title == null ? "" : title;
@@ -53,6 +63,7 @@ public record KnowledgeChunk(
         version = version == null ? "v1" : version;
         ingestedAt = ingestedAt == null ? Instant.now() : ingestedAt;
         metadataSource = metadataSource == null ? "" : metadataSource;
+        metadataConfidence = metadataConfidence == null ? java.util.Map.of() : java.util.Map.copyOf(metadataConfidence);
     }
 
     public String pageLabel() {

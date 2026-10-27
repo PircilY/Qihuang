@@ -173,7 +173,8 @@ public class KnowledgeIngestionService {
                     document.version(),
                     now,
                     !hasUserTerms(request)
-                            ? (chunkTerms.values().stream().anyMatch(values -> !values.isEmpty()) ? "词典匹配" : "") : "用户导入"
+                            ? (chunkTerms.values().stream().anyMatch(values -> !values.isEmpty()) ? "词典匹配" : "") : "用户导入",
+                    java.util.Map.of()
             ));
         }
         return chunks;

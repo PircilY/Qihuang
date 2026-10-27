@@ -5,6 +5,7 @@ retrievers consume the JSON resources in ``data/``; this module is deliberately
 small so the scoring contract stays visible and testable.
 """
 import json
+import os
 import re
 from pathlib import Path
 from collections import Counter
@@ -12,6 +13,11 @@ from app.tokenization import tokenize
 
 ROOT = Path(__file__).resolve().parents[2]
 ENTRIES = json.loads((ROOT / "data/tcm-terminology.json").read_text("utf-8"))["entries"]
+_conflict_path = ROOT / "data/terminology-conflicts.json"
+_conflicts = set(json.loads(_conflict_path.read_text("utf-8")).get("conflictingEntryIds", [])) if _conflict_path.exists() else set()
+_downgrade_conflicts = os.environ.get("TERMINOLOGY_DOWNGRADE_CONFLICTS", "true").strip().lower() not in {"0", "false", "no"}
+if _downgrade_conflicts:
+    ENTRIES = [entry for entry in ENTRIES if entry.get("id") not in _conflicts]
 POLICY = json.loads((ROOT / "data/retrieval-stopwords.json").read_text("utf-8"))
 STOP = set(POLICY["en"]) | set(POLICY["zh"])
 STOP |= {term for word in POLICY["zh"] for term in tokenize(word)}

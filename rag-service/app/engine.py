@@ -800,6 +800,11 @@ def _metadata_boost(question: str, node: NodeWithScore) -> float:
         )
 
     metadata = node.metadata
+    low_terms = {value.casefold() for value in str(metadata.get("low_metadata_terms", "")).split("|") if value}
+    def mentioned(values: str | list[str]) -> bool:
+        items = values.split("|") if isinstance(values, str) else values
+        return any(value and value.casefold() not in low_terms
+                   and re.sub(r"\s+", "", str(value)).casefold() in normalized_question for value in items)
     boost = 0.0
     boost += 0.22 if mentioned(str(metadata.get("disease", ""))) else 0.0
     boost += 0.20 if mentioned(str(metadata.get("syndromes", ""))) else 0.0

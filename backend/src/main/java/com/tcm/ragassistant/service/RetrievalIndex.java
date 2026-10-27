@@ -71,17 +71,27 @@ public class RetrievalIndex {
         entry.frequencies().keySet().forEach(term -> { Set<String> ids = postings.get(term); if (ids != null) ids.remove(entry.chunk().id()); });
     }
     private Entry entry(KnowledgeChunk chunk) {
-        String searchable = String.join(" ", chunk.title(), chunk.disease(), String.join(" ", chunk.syndromes()),
-                String.join(" ", chunk.formulas()), String.join(" ", chunk.herbs()), String.join(" ", chunk.keywords()), chunk.content());
+        var lowMetadata = chunk.metadataConfidence().values().stream().flatMap(Collection::stream).collect(java.util.stream.Collectors.toSet());
+        String searchable = String.join(" ", chunk.title(), filterLow(chunk.disease(), lowMetadata),
+                String.join(" ", chunk.syndromes().stream().filter(value -> !lowMetadata.contains(value)).toList()),
+                String.join(" ", chunk.formulas().stream().filter(value -> !lowMetadata.contains(value)).toList()),
+                String.join(" ", chunk.herbs().stream().filter(value -> !lowMetadata.contains(value)).toList()), String.join(" ", chunk.keywords()), chunk.content());
         Map<String, Integer> frequencies = new HashMap<>();
         tokenizer.tokenizeWithFrequency(searchable).forEach(term -> frequencies.merge(term, 1, Integer::sum));
         List<String> topics = new ArrayList<>(chunk.keywords());
-        topics.add(chunk.disease()); topics.addAll(chunk.syndromes()); topics.addAll(chunk.formulas()); topics.addAll(chunk.herbs());
+        if (!lowMetadata.contains(chunk.disease())) topics.add(chunk.disease());
+        topics.addAll(chunk.syndromes().stream().filter(value -> !lowMetadata.contains(value)).toList());
+        topics.addAll(chunk.formulas().stream().filter(value -> !lowMetadata.contains(value)).toList());
+        topics.addAll(chunk.herbs().stream().filter(value -> !lowMetadata.contains(value)).toList());
         return new Entry(chunk, Map.copyOf(frequencies), frequencies.values().stream().mapToInt(Integer::intValue).sum(),
                 hashVector(tokenizer.tokenizeWithFrequency(searchable)), Set.copyOf(tokenizer.tokenize(chunk.content())),
                 Set.copyOf(tokenizer.tokenize(chunk.disease())), topics.stream().filter(Objects::nonNull)
                 .filter(term -> term.length() >= 2 && !term.isBlank())
                 .map(tokenizer::normalize).distinct().toList());
+    }
+
+    private String filterLow(String values, Set<String> low) {
+        return Arrays.stream(values.split("、")).filter(value -> !low.contains(value)).collect(java.util.stream.Collectors.joining(" "));
     }
     private static final Set<String> GENERIC = Set.of("证据", "研究", "安全", "疗效", "检查", "症状", "未归类");
     public boolean related(String question, Set<String> query, Entry entry) {

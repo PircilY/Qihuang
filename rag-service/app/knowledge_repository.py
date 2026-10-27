@@ -207,6 +207,8 @@ class KnowledgeRepository:
             "status": chunk.get("status", "ACTIVE"),
             "version": chunk.get("version", "v1"),
             "metadata_source": chunk.get("metadataSource", chunk.get("metadata_source", "")),
+            "low_metadata_terms": "|".join(value for values in (chunk.get("metadataConfidence") or {}).values()
+                                           for value in values if value),
         }
         return TextNode(
             id_=chunk["id"],

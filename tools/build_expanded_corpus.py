@@ -21,6 +21,14 @@ def digest(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def metadata_confidence(values: dict[str, list[str]], title: str, description: str, content: str) -> dict[str, list[str]]:
+    early = " ".join((title, description, content[:500])).casefold()
+    full = (title + " " + content).casefold()
+    return {field: [value for value in items if value and value.casefold() not in early
+                    and full.count(value.casefold()) == 1]
+            for field, items in values.items()}
+
+
 def chunks(text: str) -> list[str]:
     normalized = re.sub(r"\s+", " ", text).strip()
     return [normalized[index:index + CHUNK_SIZE] for index in range(0, len(normalized), CHUNK_SIZE)]
@@ -64,6 +72,7 @@ def build() -> tuple[list[dict], list[dict]]:
         for index, content in enumerate(chunks(raw), start=1):
             chunk_id = f"{record['documentId']}-C{index:04d}"
             metadata = extract_metadata(record["title"] + "\n" + content)
+            confidence = metadata_confidence(metadata, record["title"], record.get("abstractOrDescription", ""), content)
             disease_values = list(dict.fromkeys(record.get("topicTags", []) + title_metadata["disease"] + metadata["disease"]))
             knowledge_chunks.append({
                 "id": chunk_id,
@@ -84,6 +93,7 @@ def build() -> tuple[list[dict], list[dict]]:
                 "version": "expanded-v1",
                 "ingestedAt": record.get("accessedAt", now),
                 "metadataSource": "词典匹配" if any(metadata.values()) else "",
+                "metadataConfidence": confidence,
             })
     return documents, knowledge_chunks
 

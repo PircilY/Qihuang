@@ -321,3 +321,9 @@ Python不再读取旧 LLM_*，不直连生成模型；所有生成与密钥统�
 - 离线Maven缺缓存：可选联网准备依赖一次；测试`mvn -o -f backend/pom.xml -DrunHoldoutEvaluation=false test`，Python`python -m pytest rag-service/tests -q`。
 
 阶段结果与局限见 docs/improvement-report.md、docs/retrieval-quality.md、docs/performance.md、docs/knowledge-base.md、docs/decisions.md。冻结留出集本次未读取、未运行、不用于调参。
+
+## 复核与加固（L–O）
+
+EXPANDED 评测按标题、词典目标术语（循环风险，仅验证扩展设计）和不依赖词典的中文原文术语三组独立报告。服务探测记录真实 Java/Python hash 检索结果；语料覆盖但前三条未命中的问题会使探测失败。自动词典双语标题核验与固定种子元数据抽样见 `docs/terminology-check.md` 和 `docs/knowledge-base.md`。这些字符串命中与代理指标不等于人工医学相关性判断。
+
+复现：`python tools/build_expanded_eval.py --service-eval`、`python tools/probe_expanded.py`、`python tools/check_terminology_consistency.py`、`python tools/audit_terminology_metadata.py`。真实服务报告见 `docs/service-probe.md`；Docker、BGE-M3、本地模型权重及真实生成模型/judge 尚未验证，参见 `docs/improvement-report.md`。

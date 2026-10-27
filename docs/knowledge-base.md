@@ -32,6 +32,10 @@
 - syndromes：文档标题 0/100（0.00%）；片段 41/4036（1.02%）。
 Disease 使用来源台账 topicTags 并追加标题/片段中词典命中名称。命中结果只表示共享词典名称出现；metadataSource 标示来源台账和/或词典匹配；不是人工标注，可能漏标或误标，不推断疗效、剂量、诊断或医学关系。
 
+## 自动元数据低置信度检查（待实现）
+
+L–O 复核已为自动词典字段生成逐标签 `metadataConfidence`，并在 Java/Python 检索的主题特征和元数据加分中忽略 `low` 标签。固定种子42抽样200个候选片段的规则审计结果为：herbs 0/37、formulas 0/5、syndromes 0/3、disease 8/822（0.97%）低置信。该比例是“名称仅在远离主题处出现一次”的自动代理，不等于人工误标率；详见 `docs/terminology-check.md` 与 `docs/improvement-report.md`。
+
 ## 使用与数据格式
 
 CSV首行为字段名；JSONL每行一个对象；TXT以key: value元数据头、独立---行及正文组成。
@@ -47,3 +51,16 @@ python tools/import_knowledge.py tools/fixtures/import.jsonl --output .tmp/impor
 python tools/import_knowledge.py --audit --report docs/knowledge-base.md
 python tools/import_knowledge.py --audit --report docs/knowledge-base.md --check
 ```
+
+## 词典自动元数据低置信度抽样（固定种子42）
+
+按固定种子从词典自动标记片段中抽取 200 条（请求200条；候选3272条）。低置信规则：术语不在所属文档标题、摘要/描述或正文前500字符出现，且在所属片段标题+正文中恰好出现一次。此为自动规则代理，不等于人工误标率。
+
+|字段|标记数|低置信数|低置信比例|
+|---|---:|---:|---:|
+|herbs|37|0|0.00%|
+|formulas|5|0|0.00%|
+|syndromes|3|0|0.00%|
+|disease|822|8|0.97%|
+
+重建器把符合上述规则的名称列入各片段 `metadataConfidence` 对象；Java/Python guarded 元数据加分默认忽略这些 low 名称。过滤阶段也不以这些字段拒绝候选。非低置信自动匹配仍不是人工核对。
