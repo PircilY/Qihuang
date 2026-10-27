@@ -1,0 +1,125 @@
+{
+  "provenance": "Real local API responses; static source served by tools/ui-preview.cjs",
+  "widths": [
+    1440,
+    1280,
+    390,
+    320
+  ],
+  "files": [
+    {
+      "filename": "overview-1440.jpg",
+      "bytes": 69918
+    },
+    {
+      "filename": "knowledge-1440.jpg",
+      "bytes": 84478
+    },
+    {
+      "filename": "workbench-1440.jpg",
+      "bytes": 106457
+    },
+    {
+      "filename": "evaluation-1440.jpg",
+      "bytes": 89753
+    },
+    {
+      "filename": "pipeline-1440.jpg",
+      "bytes": 74856
+    },
+    {
+      "filename": "comparison-1440.jpg",
+      "bytes": 135881
+    },
+    {
+      "filename": "model-1440.jpg",
+      "bytes": 83467
+    },
+    {
+      "filename": "overview-1280.jpg",
+      "bytes": 67132
+    },
+    {
+      "filename": "knowledge-1280.jpg",
+      "bytes": 81025
+    },
+    {
+      "filename": "workbench-1280.jpg",
+      "bytes": 102328
+    },
+    {
+      "filename": "evaluation-1280.jpg",
+      "bytes": 84952
+    },
+    {
+      "filename": "pipeline-1280.jpg",
+      "bytes": 71663
+    },
+    {
+      "filename": "comparison-1280.jpg",
+      "bytes": 127943
+    },
+    {
+      "filename": "model-1280.jpg",
+      "bytes": 79435
+    },
+    {
+      "filename": "overview-390.jpg",
+      "bytes": 28748
+    },
+    {
+      "filename": "knowledge-390.jpg",
+      "bytes": 28797
+    },
+    {
+      "filename": "workbench-390.jpg",
+      "bytes": 31311
+    },
+    {
+      "filename": "evaluation-390.jpg",
+      "bytes": 31398
+    },
+    {
+      "filename": "pipeline-390.jpg",
+      "bytes": 27255
+    },
+    {
+      "filename": "comparison-390.jpg",
+      "bytes": 33032
+    },
+    {
+      "filename": "model-390.jpg",
+      "bytes": 24207
+    },
+    {
+      "filename": "overview-320.jpg",
+      "bytes": 27353
+    },
+    {
+      "filename": "knowledge-320.jpg",
+      "bytes": 26380
+    },
+    {
+      "filename": "workbench-320.jpg",
+      "bytes": 30038
+    },
+    {
+      "filename": "evaluation-320.jpg",
+      "bytes": 29241
+    },
+    {
+      "filename": "pipeline-320.jpg",
+      "bytes": 26295
+    },
+    {
+      "filename": "comparison-320.jpg",
+      "bytes": 31020
+    },
+    {
+      "filename": "model-320.jpg",
+      "bytes": 22694
+    }
+  ],
+  "totalBytes": 1657057,
+  "javascriptErrors": []
+}
