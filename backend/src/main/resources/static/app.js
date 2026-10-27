@@ -138,7 +138,11 @@ const elements = {
 };
 
 document.addEventListener("DOMContentLoaded", initialize);
-window.addEventListener("hashchange", () => setView(window.location.hash.replace("#", "") || "overview"));
+window.addEventListener("hashchange", () => {
+    const fragment = window.location.hash.replace("#", "");
+    if (fragment === "mainContent" || /-citation-\d+$/.test(fragment)) return;
+    setView(fragment || "overview");
+});
 
 async function initialize() {
     bindEvents();
@@ -987,6 +991,7 @@ function renderAnswer(result) {
             : result.version === "V0_DIRECT" ? "基线提示" : "原文摘录";
     const summary = node("div", "answer-summary");
     [
+        ["检索版本", version?.code || result.version],
         ["检索策略", version?.retrievalFeature || "--"],
         ["引用证据", `${result.citations.length} 条`],
         ["检索引擎", engineLabel],
@@ -1008,7 +1013,17 @@ function renderAnswer(result) {
 
     const answer = node("div", "answer-copy");
     result.answer.split(/\n{2,}/).filter(Boolean).forEach(paragraph => {
-        answer.append(node("p", "", paragraph));
+        const copy = node("p");
+        paragraph.split(/(\[\d+\])/).filter(Boolean).forEach(part => {
+            const number = /^\[(\d+)\]$/.exec(part);
+            if (number && Number(number[1]) > 0 && Number(number[1]) <= result.citations.length) {
+                copy.append(node("a", "citation-reference", part, {
+                    href: `#answer-citation-${Number(number[1])}`,
+                    "aria-label": `引用证据 ${Number(number[1])}`
+                }));
+            } else copy.append(document.createTextNode(part));
+        });
+        answer.append(copy);
     });
     card.append(answer);
     if (result.citations.length) {
@@ -1031,35 +1046,38 @@ async function copyCurrentAnswer() {
 }
 
 function refusalBanner(reason) {
-    const banner = node("div", "refusal-banner");
-    banner.innerHTML = `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <path d="M12 8v5"></path>
-            <path d="M12 17h.01"></path>
-        </svg>
-    `;
+    const banner = node("div", "refusal-banner", null, {role: "alert"});
+    banner.append(node("span", "warning-symbol", "!", {"aria-hidden": "true"}));
     const copy = node("div");
-    copy.append(node("strong", "", "已触发安全拒答"), node("p", "", reason || "当前问题超出系统安全边界。"));
+    const title = /急症|120|急救|立即就医/.test(reason || "") ? "急症安全提示 / 已拒答" : "已触发安全拒答";
+    copy.append(node("strong", "", title), node("p", "", reason || "当前问题超出系统安全边界。"));
     banner.append(copy);
     return banner;
 }
 
-function citationSection(citations) {
+function citationSection(citations, scope = "answer") {
     const section = node("section", "citation-section");
-    section.append(node("h3", "", `引用证据 · ${citations.length}`));
+    section.append(node("h3", "", `证据来源（${citations.length}）`));
     const list = node("div", "citation-list");
     citations.forEach((citation, index) => {
-        const item = node("article", "citation-item");
+        const sourceDocument = state.documents.find(item => item.id === citation.documentId);
+        const sourceChunk = state.allChunks.find(item => item.id === citation.chunkId);
+        const item = node("article", "citation-item", null, {
+            id: `${scope}-citation-${index + 1}`, tabindex: "-1"
+        });
         const head = node("div", "citation-head");
         head.append(
-            node("strong", "", `${index + 1}. ${citation.documentTitle}`),
+            node("span", "citation-number", `[${index + 1}]`),
+            node("strong", "", citation.documentTitle),
             node("span", "", `R ${formatDecimal(citation.relevanceScore, 3)}`)
         );
         const meta = node("div", "citation-meta");
         meta.append(
             node("span", "", citation.chunkId),
             node("span", "", citation.sourceType),
+            node("span", "", citation.publisher || sourceDocument?.publisher || "机构未标注"),
+            node("span", "", String(citation.publicationYear || sourceDocument?.publicationYear || "年份未标注")),
+            node("span", "", citation.section || sourceChunk?.section || "章节未标注"),
             node("span", "", citation.page),
             node("span", "", `证据 ${citation.evidenceLevel}`)
         );
@@ -1073,14 +1091,13 @@ function citationSection(citations) {
         if (citation.metadataSource) {
             item.append(node("p", "metadata-source", `元数据来源：${citation.metadataSource}`));
         }
-        item.append(node("p", "citation-quote", citation.quote));
+        item.append(node("blockquote", "citation-quote", citation.quote));
         const actions = node("div", "citation-actions");
         const detail = node("button", "text-button", "片段详情");
         detail.type = "button";
         detail.addEventListener("click", () => openCitation(citation.chunkId));
         actions.append(detail);
-        const document = state.documents.find(item => item.id === citation.documentId);
-        if (document) actions.append(sourceLink(document));
+        if (sourceDocument) actions.append(sourceLink(sourceDocument));
         item.append(actions);
         list.append(item);
     });

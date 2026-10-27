@@ -387,36 +387,10 @@
                             </button>
                         </div>
                     </div>
-                    <div class="workbench-actions">
-                        <button class="button button-secondary" id="compareButton" type="button">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M8 3v18"></path>
-                                <path d="M16 3v18"></path>
-                                <path d="M3 8h5"></path>
-                                <path d="M16 8h5"></path>
-                                <path d="M3 16h5"></path>
-                                <path d="M16 16h5"></path>
-                            </svg>
-                            <span>四版本对比</span>
-                        </button>
-                        <button class="button button-primary" id="askButton" type="button">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="m5 12 4 4L19 6"></path>
-                            </svg>
-                            <span>运行检索</span>
-                        </button>
-                    </div>
                 </div>
                 <div class="corpus-notice" id="workbenchCorpusNotice">当前使用标准语料；正式评测与历史结果使用此版本。</div>
 
                 <div class="version-rail" id="versionRail" aria-label="选择 RAG 迭代版本"></div>
-
-                <section class="rag-workflow" aria-label="RAG 问答链路">
-                    <div><span>01</span><strong>提问</strong><small>输入专科问题</small></div>
-                    <div><span>02</span><strong>检索</strong><small>BM25 + 向量召回</small></div>
-                    <div><span>03</span><strong>证据</strong><small>融合、重排、阈值校验</small></div>
-                    <div><span>04</span><strong>回答</strong><small>生成摘要并附引用</small></div>
-                </section>
 
                 <div class="workbench-grid">
                     <section class="board query-board">
@@ -446,6 +420,23 @@
                                       placeholder="文献问题">高血压患者没有症状也需要检查血压吗？</textarea>
                             <span class="field-meta"><span id="characterCount">0</span>/500</span>
                         </label>
+
+                        <div class="workbench-actions">
+                            <button class="button button-primary" id="askButton" type="button">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="m5 12 4 4L19 6"></path>
+                                </svg>
+                                <span>运行检索</span>
+                            </button>
+                            <button class="button button-secondary" id="compareButton" type="button">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M8 3v18"></path><path d="M16 3v18"></path>
+                                    <path d="M3 8h5"></path><path d="M16 8h5"></path>
+                                    <path d="M3 16h5"></path><path d="M16 16h5"></path>
+                                </svg>
+                                <span>四版本对比</span>
+                            </button>
+                        </div>
 
                         <div class="query-filter-grid">
                             <label>
@@ -488,8 +479,8 @@
                     <section class="board answer-board">
                         <header class="board-heading">
                             <div>
-                                <h2>生成回答与引用</h2>
-                                <p id="answerStatus">等待运行检索</p>
+                                <h2>回答与证据</h2>
+                                <p id="answerStatus" role="status" aria-live="polite">等待运行检索</p>
                             </div>
                             <div class="answer-head-actions">
                                 <button class="icon-button hidden" id="copyAnswerButton" type="button"
@@ -502,7 +493,7 @@
                                 <span class="request-id" id="requestIdValue">NO REQUEST</span>
                             </div>
                         </header>
-                        <div class="answer-stage" id="answerStage" role="status" aria-live="polite" aria-atomic="true">
+                        <div class="answer-stage" id="answerStage" role="region" aria-label="回答与引用证据" aria-busy="false">
                             <div class="empty-state">
                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
