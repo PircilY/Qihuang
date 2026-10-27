@@ -1,14 +1,19 @@
 from fastapi.testclient import TestClient as FastAPITestClient
 from contextlib import contextmanager
+import os
 import time
 
 @contextmanager
 def TestClient(application):
     with FastAPITestClient(application) as client:
-        deadline = time.monotonic() + 60
+        timeout = float(os.environ.get("RAG_TEST_INDEX_READY_TIMEOUT_SECONDS", "180"))
+        deadline = time.monotonic() + timeout
         while main.engine.index_state == "BUILDING" and time.monotonic() < deadline:
             time.sleep(.01)
-        assert main.engine.index_state == "READY"
+        assert main.engine.index_state == "READY", (
+            f"Python index did not reach READY within {timeout:g}s; "
+            f"indexState={main.engine.index_state}; health={main.health()}"
+        )
         yield client
 
 from app.main import app

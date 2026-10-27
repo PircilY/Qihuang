@@ -114,3 +114,20 @@ F 最终验收：Maven143项、0失败、0错误（原50题报告与生成报告
 - 按阶段提交：G `204d4a9`、H `d921a2d` 与兼容测试补充 `84c105f`、I `774bd30`、J `c3e594b`、K `4768ead`。各阶段/收尾全量测试结果：Maven 153项、0失败/0错误、5项既有条件跳过；pytest 104项通过。pytest 首轮有两例因共享索引预热超过60秒失败；针对API套件单独复跑20项全过，随后全量复跑104项全过，未修改测试断言。
 - 所有实际存在的校验工具通过：术语、语料、评测、来源台账、导入审计、交付包和 BASELINE corpus `--check`。`package_delivery.py` 输出424个文件归档。工具目录没有名为 `audit_knowledge_base.py` 的脚本，未将不存在的命令作为验收项。
 - 最新工作区状态干净。基线50题报告与F阶段数据一致；安全规则共享回归6项通过。没有执行 holdout 评测，冻结路径内容未读取或改动。
+
+## G–K 复核起点（2026-10-26）
+
+- 接手时实际分支为 `main`，HEAD=`763bc6b`，最近10条历史以 G–K 分阶段提交结束；工作区干净。按任务切换至 `wip/g-k-partial` 后开始复核。
+- 按字面在仓库根目录执行 `mvn test` 失败：根目录无 `pom.xml`；正确 Maven 项目在 `backend/`。在 `backend/` 执行全量 `mvn test`：153项、0失败、0错误、5项条件跳过（默认配置）。
+- 按字面执行 `pytest` 失败：命令未安装到 PATH；仓库 `.venv` 中也没有 pytest。系统 `python -m pytest` 在 `rag-service/` 收集102项时失败，原因是 `test_expanded_eval.py` 动态加载脚本时未把 `tools/` 加入模块搜索路径（`terminology_utils` 无法导入）。这是测试启动缺陷，阶段 L 修复。
+- 原评测的正确文档规则：标题查询由同一文档标题的原文/截断/固定种子乱序/去标点变体构造，目标是标题来源文档；术语查询由共享词典别名与标题或正文命中构造，目标也是该命中文档。查询桥接与自动元数据使用 `data/tcm-terminology.json` 的 `tools/terminology_utils.py` 词条；旧评测目标判定同样遍历 `ENTRIES`，存在循环论证风险。
+- 起点评测采用1946个样本；标题398、术语1548（同/跨语言分别736/812），标题跨语言为0。旧报告仅有title/term分组，尚未拆出词典独立判定组；术语指标只能说明扩展按设计工作，不能证明检索相关性。
+- 本复核继续禁止读取冻结留出失败明细或运行 holdout；原50题标签与 `safety-rules.json` 保持不变。
+
+## L–O 复核说明（2026-10-27）
+
+- 术语评测拆为标题、词典目标术语（循环风险，仅说明扩展按设计工作）、中文源文本术语三组。后者只由查询中的中文原词与文档原始标题/正文字符串交集判定，完全不调用词典扩展输出；空扩展替换测试仍可判定。
+- before 快照使用 `delivery-c9652d3` 对应提交 `c9652d3`；本地没有同名 tag，脚本在 tag 不存在时读取该提交。baseline 50题报告和安全集未打开；本阶段不执行 holdout。
+- O 的词典检查只有2个双语标题（1已验证、1冲突、652无证据）。冲突 ID 通过 `data/terminology-conflicts.json` 配置；Python 默认降级，`TERMINOLOGY_DOWNGRADE_CONFLICTS=false` 可显式关闭；Java 默认由 `terminology.downgrade-conflicts=true` 降级。
+- 元数据抽样固定种子42、200片段。低置信为名称不在标题/描述/正文前500字符，且所属片段中只出现一次。样本统计：herbs 0/37、formulas 0/5、syndromes 0/3、disease 8/822。实现将名称写入片段 `metadataConfidence` 中相应字段的 low 名称列表，Java/Python检索忽略这些名称的元数据加分和主题特征。此比例仅自动规则代理，不等于人工误标率。
+- 服务探测以当前 `wip/g-k-partial` 的实际运行结果为准。`docs/service-probe.md` 有多题表现为语料有覆盖但前三条没命中，作为回归断言失败保留；Docker/BGE-M3/真实生成模型和 judge 均待验证。

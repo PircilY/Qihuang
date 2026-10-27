@@ -18,6 +18,22 @@
 
 截图及浏览器结果在本机 `.tmp/ui`、`.tmp/model-ui`、`.tmp/live-model`，Maven 报告在 `backend/target/surefire-reports`。模型密钥仅通过进程环境提供，未写入仓库；当前进程退出后需要重新配置。
 
+## G–K stability and skipped-test audit (2026-10-26)
+
+Default Java test run: 153 tests, 0 failures, 0 errors, 5 conditionally skipped tests. The five skips are intentional opt-in research runs:
+
+|Test class|Condition|Reason|
+|---|---|---|
+|`EvaluationDatasetTest` holdout-only test|`runHoldoutDatasetTest=true`|Inspects the separately frozen holdout dataset; kept opt-in to prevent routine test runs from touching protected evaluation data. No holdout failure details were read in this review.|
+|`EvaluationHoldoutReportTest`|`runHoldoutEvaluation=true`|Runs the frozen holdout evaluation. Not enabled in this review.|
+|`ResearchBaselineReportTest`|`researchReport=true`|Explicit export/replay of the original BASELINE research report; opt-in because it performs a full report run.|
+|`ResearchGenerationReportTest`|`generationReport` is set|Exports the generation proxy report; opt-in to keep model/judge experiments explicit.|
+|`ResearchParameterGridTest`|`researchGrid=true`|Runs the optional parameter grid, which is slower than normal regression.|
+
+No Python tests are marked skipped or conditionally skipped. No new feature test was made conditional in this review. `test_api.py` waits up to `RAG_TEST_INDEX_READY_TIMEOUT_SECONDS` (default 180 seconds) for `indexState=READY`; timeout fails with state and health diagnostics. It does not retry a test or accept a non-READY state.
+
+The Python suite needs a writable temp root in this managed Windows environment. Default user Temp and the first workspace temp attempt returned `PermissionError`; with `TEMP`/`TMP` set to repository `.tmp`, three consecutive full runs each passed 107 tests. This is an environment restriction, not a skipped test.
+
 ## 复验
 
 完成 README 中的构建与启动步骤后，在 PowerShell 7 运行：
