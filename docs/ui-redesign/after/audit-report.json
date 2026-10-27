@@ -1,0 +1,1096 @@
+{
+  "provenance": "Offline replay of captured local API envelopes; synthetic injection/state cases only",
+  "widths": [
+    1440,
+    1280,
+    390,
+    320
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "checks": [
+    "Evaluation default V3=50 / all versions=200; no labels modified",
+    "Native comparison details and citation/knowledge provenance keyboard access",
+    "Refusal, fallback, error retry, busy semantics, reduced motion",
+    "Question/import-title payload rendered literally; no dynamic HTML sinks or injected nodes",
+    "Empty filter reset",
+    "Theme persistence, system changes and denied localStorage"
+  ],
+  "failures": [],
+  "contrastFailures": [],
+  "javascriptErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "unexpectedRequests": [],
+  "screenshots": [
+    {
+      "filename": "overview-1440-light.jpg",
+      "bytes": 74602
+    },
+    {
+      "filename": "knowledge-1440-light.jpg",
+      "bytes": 113384
+    },
+    {
+      "filename": "workbench-1440-light.jpg",
+      "bytes": 109317
+    },
+    {
+      "filename": "evaluation-1440-light.jpg",
+      "bytes": 87828
+    },
+    {
+      "filename": "pipeline-1440-light.jpg",
+      "bytes": 84735
+    },
+    {
+      "filename": "comparison-1440-light.jpg",
+      "bytes": 134952
+    },
+    {
+      "filename": "model-1440-light.jpg",
+      "bytes": 70210
+    },
+    {
+      "filename": "overview-1280-light.jpg",
+      "bytes": 71707
+    },
+    {
+      "filename": "knowledge-1280-light.jpg",
+      "bytes": 109483
+    },
+    {
+      "filename": "workbench-1280-light.jpg",
+      "bytes": 102328
+    },
+    {
+      "filename": "evaluation-1280-light.jpg",
+      "bytes": 84056
+    },
+    {
+      "filename": "pipeline-1280-light.jpg",
+      "bytes": 81110
+    },
+    {
+      "filename": "comparison-1280-light.jpg",
+      "bytes": 119398
+    },
+    {
+      "filename": "model-1280-light.jpg",
+      "bytes": 67134
+    },
+    {
+      "filename": "overview-390-light.jpg",
+      "bytes": 30094
+    },
+    {
+      "filename": "knowledge-390-light.jpg",
+      "bytes": 28537
+    },
+    {
+      "filename": "workbench-390-light.jpg",
+      "bytes": 33476
+    },
+    {
+      "filename": "evaluation-390-light.jpg",
+      "bytes": 29724
+    },
+    {
+      "filename": "pipeline-390-light.jpg",
+      "bytes": 28420
+    },
+    {
+      "filename": "comparison-390-light.jpg",
+      "bytes": 35661
+    },
+    {
+      "filename": "model-390-light.jpg",
+      "bytes": 24018
+    },
+    {
+      "filename": "overview-320-light.jpg",
+      "bytes": 28941
+    },
+    {
+      "filename": "knowledge-320-light.jpg",
+      "bytes": 27276
+    },
+    {
+      "filename": "workbench-320-light.jpg",
+      "bytes": 30527
+    },
+    {
+      "filename": "evaluation-320-light.jpg",
+      "bytes": 27698
+    },
+    {
+      "filename": "pipeline-320-light.jpg",
+      "bytes": 28080
+    },
+    {
+      "filename": "comparison-320-light.jpg",
+      "bytes": 31446
+    },
+    {
+      "filename": "model-320-light.jpg",
+      "bytes": 21419
+    },
+    {
+      "filename": "overview-1440-dark.jpg",
+      "bytes": 76400
+    },
+    {
+      "filename": "knowledge-1440-dark.jpg",
+      "bytes": 116970
+    },
+    {
+      "filename": "workbench-1440-dark.jpg",
+      "bytes": 114038
+    },
+    {
+      "filename": "evaluation-1440-dark.jpg",
+      "bytes": 91535
+    },
+    {
+      "filename": "pipeline-1440-dark.jpg",
+      "bytes": 87872
+    },
+    {
+      "filename": "comparison-1440-dark.jpg",
+      "bytes": 137175
+    },
+    {
+      "filename": "model-1440-dark.jpg",
+      "bytes": 71383
+    },
+    {
+      "filename": "overview-1280-dark.jpg",
+      "bytes": 73523
+    },
+    {
+      "filename": "knowledge-1280-dark.jpg",
+      "bytes": 112794
+    },
+    {
+      "filename": "workbench-1280-dark.jpg",
+      "bytes": 106343
+    },
+    {
+      "filename": "evaluation-1280-dark.jpg",
+      "bytes": 87575
+    },
+    {
+      "filename": "pipeline-1280-dark.jpg",
+      "bytes": 84233
+    },
+    {
+      "filename": "comparison-1280-dark.jpg",
+      "bytes": 121426
+    },
+    {
+      "filename": "model-1280-dark.jpg",
+      "bytes": 68081
+    },
+    {
+      "filename": "overview-390-dark.jpg",
+      "bytes": 30951
+    },
+    {
+      "filename": "knowledge-390-dark.jpg",
+      "bytes": 29116
+    },
+    {
+      "filename": "workbench-390-dark.jpg",
+      "bytes": 34016
+    },
+    {
+      "filename": "evaluation-390-dark.jpg",
+      "bytes": 30702
+    },
+    {
+      "filename": "pipeline-390-dark.jpg",
+      "bytes": 29579
+    },
+    {
+      "filename": "comparison-390-dark.jpg",
+      "bytes": 36514
+    },
+    {
+      "filename": "model-390-dark.jpg",
+      "bytes": 23106
+    },
+    {
+      "filename": "overview-320-dark.jpg",
+      "bytes": 29868
+    },
+    {
+      "filename": "knowledge-320-dark.jpg",
+      "bytes": 28001
+    },
+    {
+      "filename": "workbench-320-dark.jpg",
+      "bytes": 31094
+    },
+    {
+      "filename": "evaluation-320-dark.jpg",
+      "bytes": 28637
+    },
+    {
+      "filename": "pipeline-320-dark.jpg",
+      "bytes": 29108
+    },
+    {
+      "filename": "comparison-320-dark.jpg",
+      "bytes": 32156
+    },
+    {
+      "filename": "model-320-dark.jpg",
+      "bytes": 20655
+    }
+  ],
+  "keyboard": [
+    {
+      "label": "overview-1440-light",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-1440-light",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-1440-light",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-1440-light",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-1440-light",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-1440-light",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-1440-light",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-1280-light",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-1280-light",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-1280-light",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-1280-light",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-1280-light",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-1280-light",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-1280-light",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-390-light",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-390-light",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-390-light",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-390-light",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-390-light",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-390-light",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-390-light",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-320-light",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-320-light",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-320-light",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-320-light",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-320-light",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-320-light",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-320-light",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-1440-dark",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-1440-dark",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-1440-dark",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-1440-dark",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-1440-dark",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-1440-dark",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-1440-dark",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-1280-dark",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-1280-dark",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-1280-dark",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-1280-dark",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-1280-dark",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-1280-dark",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-1280-dark",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-390-dark",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-390-dark",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-390-dark",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-390-dark",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-390-dark",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-390-dark",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-390-dark",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "overview-320-dark",
+      "controls": 12,
+      "reached": 12,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "knowledge-320-dark",
+      "controls": 31,
+      "reached": 31,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "workbench-320-dark",
+      "controls": 36,
+      "reached": 36,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "evaluation-320-dark",
+      "controls": 13,
+      "reached": 13,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "pipeline-320-dark",
+      "controls": 30,
+      "reached": 30,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "comparison-320-dark",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "model-320-dark",
+      "controls": 9,
+      "reached": 9,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "expanded-comparison-390-dark",
+      "controls": 55,
+      "reached": 55,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "citation-provenance-390-dark",
+      "controls": 33,
+      "reached": 33,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "chunk-detail-390-dark",
+      "controls": 33,
+      "reached": 33,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "error-light",
+      "controls": 27,
+      "reached": 27,
+      "missing": [],
+      "hiddenFocus": []
+    },
+    {
+      "label": "error-dark",
+      "controls": 27,
+      "reached": 27,
+      "missing": [],
+      "hiddenFocus": []
+    }
+  ],
+  "contrast": [
+    {
+      "label": "overview-1440-light",
+      "checked": 50,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-1440-light",
+      "checked": 38,
+      "minimum": 5.4,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-1440-light",
+      "checked": 65,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-1440-light",
+      "checked": 43,
+      "minimum": 5.4,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-1440-light",
+      "checked": 36,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-1440-light",
+      "checked": 82,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-1440-light",
+      "checked": 76,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-1280-light",
+      "checked": 50,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-1280-light",
+      "checked": 38,
+      "minimum": 5.4,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-1280-light",
+      "checked": 65,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-1280-light",
+      "checked": 43,
+      "minimum": 5.4,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-1280-light",
+      "checked": 36,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-1280-light",
+      "checked": 82,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-1280-light",
+      "checked": 76,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-390-light",
+      "checked": 45,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-390-light",
+      "checked": 33,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-390-light",
+      "checked": 61,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-390-light",
+      "checked": 38,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-390-light",
+      "checked": 31,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-390-light",
+      "checked": 78,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-390-light",
+      "checked": 72,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-320-light",
+      "checked": 45,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-320-light",
+      "checked": 33,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-320-light",
+      "checked": 61,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-320-light",
+      "checked": 38,
+      "minimum": 5.703,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-320-light",
+      "checked": 31,
+      "minimum": 5.837,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-320-light",
+      "checked": 78,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-320-light",
+      "checked": 72,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-1440-dark",
+      "checked": 50,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-1440-dark",
+      "checked": 38,
+      "minimum": 6.358,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-1440-dark",
+      "checked": 65,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-1440-dark",
+      "checked": 43,
+      "minimum": 6.358,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-1440-dark",
+      "checked": 36,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-1440-dark",
+      "checked": 82,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-1440-dark",
+      "checked": 76,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-1280-dark",
+      "checked": 50,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-1280-dark",
+      "checked": 38,
+      "minimum": 6.358,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-1280-dark",
+      "checked": 65,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-1280-dark",
+      "checked": 43,
+      "minimum": 6.358,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-1280-dark",
+      "checked": 36,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-1280-dark",
+      "checked": 82,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-1280-dark",
+      "checked": 76,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-390-dark",
+      "checked": 45,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-390-dark",
+      "checked": 33,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-390-dark",
+      "checked": 61,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-390-dark",
+      "checked": 38,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-390-dark",
+      "checked": 31,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-390-dark",
+      "checked": 78,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-390-dark",
+      "checked": 72,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "overview-320-dark",
+      "checked": 45,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "knowledge-320-dark",
+      "checked": 33,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "workbench-320-dark",
+      "checked": 61,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "evaluation-320-dark",
+      "checked": 38,
+      "minimum": 7.646,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "pipeline-320-dark",
+      "checked": 31,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "comparison-320-dark",
+      "checked": 78,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "model-320-dark",
+      "checked": 72,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "expanded-comparison-390-dark",
+      "checked": 78,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "citation-provenance-390-dark",
+      "checked": 42,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "chunk-detail-390-dark",
+      "checked": 42,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "refused-light",
+      "checked": 54,
+      "minimum": 5.589,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "fallback-light",
+      "checked": 62,
+      "minimum": 5.624,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "error-light",
+      "checked": 52,
+      "minimum": 5.589,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "loading-light",
+      "checked": 42,
+      "minimum": 5.589,
+      "excludedDisabled": 21
+    },
+    {
+      "label": "refused-dark",
+      "checked": 55,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "fallback-dark",
+      "checked": 63,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "error-dark",
+      "checked": 52,
+      "minimum": 6.508,
+      "excludedDisabled": 0
+    },
+    {
+      "label": "loading-dark",
+      "checked": 42,
+      "minimum": 6.508,
+      "excludedDisabled": 21
+    },
+    {
+      "label": "empty-filter-dark",
+      "checked": 31,
+      "minimum": 7.086,
+      "excludedDisabled": 0
+    }
+  ],
+  "expectedErrors": [],
+  "totalBytes": 3478412,
+  "passed": true
+}

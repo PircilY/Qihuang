@@ -1,0 +1,240 @@
+{
+  "provenance": "Offline replay of captured local API envelopes; synthetic injection/state cases only",
+  "widths": [
+    1440,
+    1280,
+    390,
+    320
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "files": [
+    {
+      "filename": "overview-1440-light.jpg",
+      "bytes": 74602
+    },
+    {
+      "filename": "knowledge-1440-light.jpg",
+      "bytes": 113384
+    },
+    {
+      "filename": "workbench-1440-light.jpg",
+      "bytes": 109317
+    },
+    {
+      "filename": "evaluation-1440-light.jpg",
+      "bytes": 87828
+    },
+    {
+      "filename": "pipeline-1440-light.jpg",
+      "bytes": 84735
+    },
+    {
+      "filename": "comparison-1440-light.jpg",
+      "bytes": 134952
+    },
+    {
+      "filename": "model-1440-light.jpg",
+      "bytes": 70210
+    },
+    {
+      "filename": "overview-1280-light.jpg",
+      "bytes": 71707
+    },
+    {
+      "filename": "knowledge-1280-light.jpg",
+      "bytes": 109483
+    },
+    {
+      "filename": "workbench-1280-light.jpg",
+      "bytes": 102328
+    },
+    {
+      "filename": "evaluation-1280-light.jpg",
+      "bytes": 84056
+    },
+    {
+      "filename": "pipeline-1280-light.jpg",
+      "bytes": 81110
+    },
+    {
+      "filename": "comparison-1280-light.jpg",
+      "bytes": 119398
+    },
+    {
+      "filename": "model-1280-light.jpg",
+      "bytes": 67134
+    },
+    {
+      "filename": "overview-390-light.jpg",
+      "bytes": 30094
+    },
+    {
+      "filename": "knowledge-390-light.jpg",
+      "bytes": 28537
+    },
+    {
+      "filename": "workbench-390-light.jpg",
+      "bytes": 33476
+    },
+    {
+      "filename": "evaluation-390-light.jpg",
+      "bytes": 29724
+    },
+    {
+      "filename": "pipeline-390-light.jpg",
+      "bytes": 28420
+    },
+    {
+      "filename": "comparison-390-light.jpg",
+      "bytes": 35661
+    },
+    {
+      "filename": "model-390-light.jpg",
+      "bytes": 24018
+    },
+    {
+      "filename": "overview-320-light.jpg",
+      "bytes": 28941
+    },
+    {
+      "filename": "knowledge-320-light.jpg",
+      "bytes": 27276
+    },
+    {
+      "filename": "workbench-320-light.jpg",
+      "bytes": 30527
+    },
+    {
+      "filename": "evaluation-320-light.jpg",
+      "bytes": 27698
+    },
+    {
+      "filename": "pipeline-320-light.jpg",
+      "bytes": 28080
+    },
+    {
+      "filename": "comparison-320-light.jpg",
+      "bytes": 31446
+    },
+    {
+      "filename": "model-320-light.jpg",
+      "bytes": 21419
+    },
+    {
+      "filename": "overview-1440-dark.jpg",
+      "bytes": 76400
+    },
+    {
+      "filename": "knowledge-1440-dark.jpg",
+      "bytes": 116970
+    },
+    {
+      "filename": "workbench-1440-dark.jpg",
+      "bytes": 114038
+    },
+    {
+      "filename": "evaluation-1440-dark.jpg",
+      "bytes": 91535
+    },
+    {
+      "filename": "pipeline-1440-dark.jpg",
+      "bytes": 87872
+    },
+    {
+      "filename": "comparison-1440-dark.jpg",
+      "bytes": 137175
+    },
+    {
+      "filename": "model-1440-dark.jpg",
+      "bytes": 71383
+    },
+    {
+      "filename": "overview-1280-dark.jpg",
+      "bytes": 73523
+    },
+    {
+      "filename": "knowledge-1280-dark.jpg",
+      "bytes": 112794
+    },
+    {
+      "filename": "workbench-1280-dark.jpg",
+      "bytes": 106343
+    },
+    {
+      "filename": "evaluation-1280-dark.jpg",
+      "bytes": 87575
+    },
+    {
+      "filename": "pipeline-1280-dark.jpg",
+      "bytes": 84233
+    },
+    {
+      "filename": "comparison-1280-dark.jpg",
+      "bytes": 121426
+    },
+    {
+      "filename": "model-1280-dark.jpg",
+      "bytes": 68081
+    },
+    {
+      "filename": "overview-390-dark.jpg",
+      "bytes": 30951
+    },
+    {
+      "filename": "knowledge-390-dark.jpg",
+      "bytes": 29116
+    },
+    {
+      "filename": "workbench-390-dark.jpg",
+      "bytes": 34016
+    },
+    {
+      "filename": "evaluation-390-dark.jpg",
+      "bytes": 30702
+    },
+    {
+      "filename": "pipeline-390-dark.jpg",
+      "bytes": 29579
+    },
+    {
+      "filename": "comparison-390-dark.jpg",
+      "bytes": 36514
+    },
+    {
+      "filename": "model-390-dark.jpg",
+      "bytes": 23106
+    },
+    {
+      "filename": "overview-320-dark.jpg",
+      "bytes": 29868
+    },
+    {
+      "filename": "knowledge-320-dark.jpg",
+      "bytes": 28001
+    },
+    {
+      "filename": "workbench-320-dark.jpg",
+      "bytes": 31094
+    },
+    {
+      "filename": "evaluation-320-dark.jpg",
+      "bytes": 28637
+    },
+    {
+      "filename": "pipeline-320-dark.jpg",
+      "bytes": 29108
+    },
+    {
+      "filename": "comparison-320-dark.jpg",
+      "bytes": 32156
+    },
+    {
+      "filename": "model-320-dark.jpg",
+      "bytes": 20655
+    }
+  ],
+  "totalBytes": 3478412
+}
