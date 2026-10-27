@@ -1,0 +1,124 @@
+{
+  "frontendCommit": "e8c6828",
+  "auditCommit": "44fe1d5",
+  "scope": "Native frontend, UI tools, screenshots and documentation only",
+  "skill": {
+    "installed": true,
+    "source": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+    "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "directory": "skills/frontend-design",
+    "scriptsExecuted": false
+  },
+  "originalAssertions": {
+    "modified": false,
+    "selectorChanges": [],
+    "smokeUiSha256": "0f0ba375e7ee5f84c9c16240af306595b41103cf46c217bb846c92f350319c24",
+    "smokeModelUiSha256": "5361758b1d96b7844613e1017886750bcff3a1b7361f81d1330af5b80dae6c01"
+  },
+  "uiSmoke": {
+    "passed": true,
+    "baseURL": "http://127.0.0.1:8099",
+    "provenance": "Original tools/smoke-ui.cjs against local source preview and existing Java/Python services",
+    "output": "PASS: browser workflows and responsive checks",
+    "javascriptErrors": [],
+    "overflow": [],
+    "checks": ["five views", "filters", "source links", "remote chat", "comparison",
+      "emergency refusal", "local fallback notice", "expanded corpus", "request retry",
+      "evaluation retry", "four viewport widths"]
+  },
+  "modelSmoke": {
+    "passed": true,
+    "exitCode": 0,
+    "engine": "java-local",
+    "provenance": "Original tools/smoke-model-ui.cjs with isolated fresh Java and loopback protocol mock",
+    "securityOverrides": false,
+    "assertionsModified": false,
+    "output": "PASS: model configuration, session isolation, grounded protocol, error recovery and unchanged grid",
+    "testProcessesClosed": true,
+    "realExternalModelTested": false
+  },
+  "uiAudit": {
+    "passed": true,
+    "provenance": "Offline replay of captured local API envelopes with synthetic injection and state cases",
+    "report": "docs/ui-redesign/after/audit-report.json",
+    "views": ["overview", "knowledge", "workbench", "evaluation", "pipeline", "comparison", "model"],
+    "widths": [1440, 1280, 390, 320],
+    "themes": ["light", "dark"],
+    "contrastSamplesAcrossScenarios": 3607,
+    "minimumTextContrast": 5.4,
+    "contrastFailures": [],
+    "keyboardTargetsAcrossScenarios": 1663,
+    "keyboardFailures": [],
+    "overflowFailures": [],
+    "javascriptErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "externalRequests": [],
+    "unexpectedRequests": [],
+    "injectionEscaped": true,
+    "reducedMotionDisabled": true,
+    "defaultV3Rows": 50,
+    "allVersionRows": 200
+  },
+  "screenshots": {
+    "singleFileLimitBytes": 300000,
+    "before": {"count": 28, "bytes": 1657057, "maximumFileBytes": 135881, "limitBytes": 3000000},
+    "after": {"count": 56, "bytes": 3478412, "maximumFileBytes": 137175, "limitBytes": 6000000}
+  },
+  "maven": {
+    "passed": true,
+    "command": "mvn -o -f backend/pom.xml -DrunHoldoutEvaluation=false test",
+    "tests": 155,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 5,
+    "output": "BUILD SUCCESS",
+    "evidence": "Summed backend/target/surefire-reports/TEST-*.xml and final Maven output",
+    "backendAssertionsModified": false
+  },
+  "pytest": {
+    "passed": true,
+    "command": "python -m pytest -q -p no:cacheprovider --ignore=tests/test_safety_rules_shared.py --basetemp=../.tmp/ui-pytest-final --junitxml=../.tmp/ui-pytest-results.xml",
+    "cwd": ".tmp/ui-test-snapshot/rag-service",
+    "tests": 113,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 413.483,
+    "warnings": ["Existing Starlette TestClient httpx deprecation"],
+    "excludedModules": ["tests/test_safety_rules_shared.py"],
+    "exclusionReason": "Task prohibits holdout; this module contains blind-test naming and import-time data reads",
+    "unconditionalFullSuiteClaimed": false,
+    "contractTestPassed": true,
+    "snapshot": "tools/prepare_ui_test_snapshot.py filters frozen names before copying or reading",
+    "backendAssertionsModified": false
+  },
+  "packaging": {
+    "unitTestsPassed": 4,
+    "assertions": ["exact screenshot whitelist", "runtime and unlisted evidence excluded",
+      "single screenshot <= 300KB", "before <= 3MB", "after <= 6MB"],
+    "archiveValidation": {
+      "passed": true,
+      "files": 529,
+      "blockedEntries": [],
+      "unlistedEvidence": [],
+      "beforeCount": 28,
+      "beforeBytes": 1657057,
+      "afterCount": 56,
+      "afterBytes": 3478412,
+      "allScreenshotsUnder300KB": true,
+      "archive": ".tmp/ui-delivery.zip",
+      "provenance": "Inspected ZIP entry names and delivery-manifest.json; no excluded source files read"
+    }
+  },
+  "resolvedFailures": [
+    "Skill installer IncompleteRead: approved shallow clone fallback succeeded",
+    "Model smoke against older running service timed out: fresh isolated Java passed without security overrides",
+    "Original pytest run: 112 passed, 1 failed because Spring Boot could not rename running JAR",
+    "Isolated pytest initially lacked temporary parent directory: parent added and all 113 permitted tests passed",
+    "Default Windows Temp was sandbox-restricted: approved project-local packaging test rerun passed"
+  ],
+  "unverified": ["Real external model / tools/smoke-live-model.cjs", "Manual screen-reader evaluation"],
+  "intentionallyNotRun": ["Frozen holdout", "Excluded Python shared safety blind-test module", "Maven opt-in reports"],
+  "preexistingUserChangesPreserved": true
+}
