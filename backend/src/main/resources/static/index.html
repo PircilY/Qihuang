@@ -654,8 +654,9 @@
                         </div>
                         <span class="board-badge" id="caseResultCount">0 条</span>
                     </header>
-                    <div class="table-scroll">
+                    <div class="table-scroll" tabindex="0" role="region" aria-label="样本级结果表">
                         <table class="data-table">
+                            <caption class="sr-only">正式评估样本，按所选版本筛选</caption>
                             <thead>
                             <tr>
                                 <th>样本</th>
@@ -830,7 +831,7 @@
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<dialog class="model-dialog" id="modelDialog" aria-labelledby="modelDialogTitle">
+<dialog class="model-dialog" id="modelDialog" aria-labelledby="modelDialogTitle" aria-modal="true">
     <header class="board-heading">
         <h2 id="modelDialogTitle">模型配置</h2>
         <button class="icon-button" id="closeModelButton" type="button" title="关闭" aria-label="关闭模型配置">&times;</button>

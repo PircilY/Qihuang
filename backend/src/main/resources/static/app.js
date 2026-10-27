@@ -1337,7 +1337,7 @@ function renderEvaluationSummary(result) {
         const head = node("div", "evaluation-version-head");
         head.append(
             node("strong", "", `${version?.code || summary.version} ${version?.name || ""}`),
-            node("span", "", `${formatDecimal(summary.averageLatencyMs, 1)} ms`)
+            node("span", "", `${result.totalCases} 样本 / ${formatDecimal(summary.averageLatencyMs, 1)} ms`)
         );
         block.append(head);
         [
