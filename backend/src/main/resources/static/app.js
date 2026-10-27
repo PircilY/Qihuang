@@ -1055,7 +1055,7 @@ function refusalBanner(reason) {
     return banner;
 }
 
-function citationSection(citations, scope = "answer") {
+function citationSection(citations, scope = "answer", sharedEvidence = null) {
     const section = node("section", "citation-section");
     section.append(node("h3", "", `证据来源（${citations.length}）`));
     const list = node("div", "citation-list");
@@ -1081,6 +1081,11 @@ function citationSection(citations, scope = "answer") {
             node("span", "", citation.page),
             node("span", "", `证据 ${citation.evidenceLevel}`)
         );
+        if (sharedEvidence) {
+            const shared = sharedEvidence.get(citation.chunkId) || 0;
+            meta.append(node("span", shared > 1 ? "evidence-shared" : "evidence-unique",
+                shared > 1 ? `${shared} 版共有证据` : "仅本版命中"));
+        }
         item.append(head, meta);
         const termTags = tagGroup("证据词典匹配", [
             ...(citation.syndromes || []),
@@ -1203,18 +1208,25 @@ async function compareVersions() {
 
 function renderComparison(result) {
     elements.compareGrid.replaceChildren();
+    const sharedEvidence = new Map();
     state.versions.forEach(version => {
+        new Set((result?.[version.version]?.citations || []).map(citation => citation.chunkId))
+            .forEach(id => sharedEvidence.set(id, (sharedEvidence.get(id) || 0) + 1));
+    });
+    state.versions.forEach((version, index) => {
         const response = result?.[version.version];
         if (!response) {
             return;
         }
-        const article = node("article", "compare-result");
+        const article = node("article", "compare-result", null, {"aria-label": `${version.code} 版本对比`});
         const head = node("div", "compare-result-head");
         head.append(
             node("strong", "", `${version.code} ${version.name}`),
-            node("span", `result-status ${response.refused ? "fail" : "pass"}`, response.refused ? "REFUSED" : "ANSWERED")
+            node("span", `result-status ${response.refused ? "fail" : "pass"}`, response.refused ? "已拒答" : "有回答")
         );
         const answer = node("p", "compare-answer", response.answer);
+        const fullAnswer = node("details", "compare-full-answer");
+        fullAnswer.append(node("summary", "", "回答全文"), node("p", "compare-answer-full", response.answer));
         const stats = node("div", "compare-stats");
         [
             ["检索参考分", formatPercent(response.confidence, 0)],
@@ -1228,9 +1240,9 @@ function renderComparison(result) {
         });
         const context = resultContext(response);
         stats.append(node("span", "", `${context.engine} · ${context.corpus} · ${context.embedding}`));
-        article.append(head, answer, stats);
+        article.append(head, answer, fullAnswer, stats);
         if (context.fallback) article.append(node("div", "fallback-notice", "已使用本地引擎"));
-        if (response.citations.length) article.append(citationSection(response.citations));
+        if (response.citations.length) article.append(citationSection(response.citations, `compare-${index}`, sharedEvidence));
         else article.append(node("p", "compare-no-evidence", "本版本未命中可展示的证据"));
         elements.compareGrid.append(article);
     });
