@@ -167,7 +167,7 @@ async function initialize() {
 }
 
 function bindEvents() {
-    document.querySelectorAll("[data-theme-choice]").forEach(button => {
+    document.querySelectorAll("button[data-theme-choice]").forEach(button => {
         button.addEventListener("click", () => window.uiTheme.set(button.dataset.themeChoice));
     });
     elements.modelSettingsButton.addEventListener("click", openModelDialog);
@@ -1311,7 +1311,6 @@ function renderEvaluation() {
     renderEvaluationInsight(result);
     renderEvaluationSummary(result);
     renderEvaluationResults();
-    renderEvaluationGlance(result);
 }
 
 function renderEvaluationInsight(result) {
@@ -1382,64 +1381,6 @@ function renderEvaluationResults() {
     renderMetricMatrix(result.summaries);
     renderFailureSummary(result.caseResults);
     renderCaseRows(result.caseResults);
-}
-
-function renderEvaluationGlance(result) {
-    if (!elements.evaluationGlance || !elements.overviewVersionLadder || !elements.evaluationTimestamp) {
-        return;
-    }
-    elements.overviewVersionLadder.replaceChildren();
-    elements.evaluationGlance.querySelector(".empty-compact")?.remove();
-    if (!result) {
-        return;
-    }
-    const summary = result.summaries.find(item => item.version === "V3_GUARDED") || result.summaries.at(-1);
-    if (!summary) {
-        return;
-    }
-    elements.evaluationTimestamp.textContent = formatTime(result.generatedAt);
-    const bestVersion = bestEvaluationVersion(result.summaries);
-    result.summaries.forEach(item => {
-        const version = findVersion(item.version);
-        const step = node("article", `iteration-step${item.version === bestVersion ? " best" : ""}`);
-        const head = node("div", "iteration-step-head");
-        const identity = node("div", "iteration-identity");
-        identity.append(
-            node("span", "version-code", version?.code || item.version),
-            node("strong", "", version?.name || item.version)
-        );
-        head.append(
-            identity,
-            node("span", "iteration-score", formatPercent(item.hitRateAt3, 0))
-        );
-        const track = node("div", "iteration-track");
-        const scoreFill = node("div", "iteration-score-fill");
-        scoreFill.style.width = `${clamp(item.hitRateAt3, 0, 1) * 100}%`;
-        track.append(scoreFill);
-        const metrics = node("div", "iteration-metrics");
-        [
-            ["Hit@1", item.hitRateAt1],
-            ["引用", item.citationCoverage],
-            ["拒答", item.refusalAccuracy],
-            ["失败", item.failureCount]
-        ].forEach(([label, value]) => {
-            const metric = node("span");
-            metric.append(
-                node("small", "", label),
-                node("strong", "", label === "失败" ? String(value) : formatPercent(value, 0))
-            );
-            metrics.append(metric);
-        });
-        step.append(head, track, metrics);
-        elements.overviewVersionLadder.append(step);
-    });
-    const note = node(
-        "p",
-        "glance-note",
-        `${result.totalCases} 条问题 × ${result.summaries.length} 个版本，共 ${result.caseResults.length} 条结果；宽条代表 Hit@3。`
-    );
-    elements.evaluationGlance.querySelector(".glance-note")?.remove();
-    elements.evaluationGlance.append(note);
 }
 
 function renderMetricMatrix(summaries) {

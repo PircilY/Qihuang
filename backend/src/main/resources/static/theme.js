@@ -11,8 +11,8 @@
     function apply() {
         const theme = choice === "system" ? (system.matches ? "dark" : "light") : choice;
         document.documentElement.dataset.theme = theme;
-        document.documentElement.dataset.themeChoice = choice;
-        document.querySelectorAll("[data-theme-choice]").forEach(button =>
+        document.documentElement.dataset.themePreference = choice;
+        document.querySelectorAll("button[data-theme-choice]").forEach(button =>
             button.setAttribute("aria-pressed", String(button.dataset.themeChoice === choice)));
         const meta = document.querySelector('meta[name="theme-color"]');
         if (meta && document.body) meta.content = getComputedStyle(document.documentElement).getPropertyValue("--canvas").trim();
