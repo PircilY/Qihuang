@@ -61,7 +61,8 @@ def run():
     if deps.is_dir(): env["PYTHONPATH"]=str(deps)
     env.update(SERVER_ADDRESS="127.0.0.1",SERVER_PORT=str(java_port),RAG_SERVICE_URL=rag_url,RAG_ENGINE_MODE="auto",
         RAG_RETRY_INTERVAL="1s",KNOWLEDGE_STORE_PATH=str(folder/"imports.json"),MODEL_API_BASE="",MODEL_NAME="",MODEL_API_KEY="",
-        EMBEDDING_BACKEND="hash",EMBEDDING_MODEL="hash-sha256-bigram-v1",EMBEDDING_ALLOW_DOWNLOAD="false")
+        EMBEDDING_BACKEND="hash",EMBEDDING_MODEL="hash-sha256-bigram-v1",EMBEDDING_ALLOW_DOWNLOAD="false",
+        RAG_QUERY_BRIDGE="false")
     processes=[]; logs=[]; checks=[]
     def start_rag(suffix):
         log=(folder/f"python-{suffix}.log").open("wb"); logs.append(log)

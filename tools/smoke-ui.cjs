@@ -123,12 +123,44 @@ async function main() {
                 }
             }
         }
+        await page.setViewportSize({width: 1440, height: 1000});
+        await view("pipeline");
+        const sources = JSON.parse(await fs.readFile(path.resolve("data/sources.json"), "utf8"));
+        const record = sources.find(item => item.id === "NCCIH-LICORICE");
+        const excerpt = record.excerpts[0];
+        async function fillImport() {
+            for (const name of ["title", "publisher", "publicationYear", "sourceUrl", "licenseNote"]) {
+                await page.locator(`#importForm [name="${name}"]`).fill(String(record[name]));
+            }
+            await page.locator('#importForm [name="sourceType"]').selectOption(record.sourceType);
+            await page.locator('#importForm [name="content"]').fill(excerpt.content);
+            await page.locator('#importForm [name="section"]').fill(excerpt.section);
+        }
+        await fillImport();
+        const importedResponse = page.waitForResponse(r => r.url().endsWith("/api/v1/knowledge/import"));
+        await page.locator("#importButton").click();
+        const imported = await importedResponse;
+        assert.equal(imported.status(), 200);
+        const importedData = (await imported.json()).data;
+        assert.ok(["READY", "SYNC_PENDING"].includes(importedData.status));
+        await page.waitForFunction(() => !document.querySelector("#importButton").disabled);
+        const stored = (await (await page.context().request.get(
+            `${baseURL}/api/v1/knowledge/documents/${importedData.document.id}`)).json()).data;
+        assert.equal(stored.sourceUrl, record.sourceUrl);
+        await fillImport();
+        const duplicateResponse = page.waitForResponse(r => r.url().endsWith("/api/v1/knowledge/import"));
+        await page.locator("#importButton").click();
+        assert.equal((await duplicateResponse).status(), 409);
+        await page.waitForFunction(() => !document.querySelector("#importButton").disabled);
+        assert.match(await page.locator("#importHint").innerText(), /导入失败/);
+        assert.equal(await page.locator('#importForm [name="content"]').inputValue(), excerpt.content);
         assert.deepEqual(errors, []);
         assert.deepEqual(overflow, []);
         await fs.writeFile(path.join(output, "results.json"), JSON.stringify({
             baseURL, javascriptErrors: errors, overflow, evaluation: result.summaries,
             checks: ["five views", "filters", "source links", "remote chat", "comparison",
-                "emergency refusal", "local fallback notice", "expanded corpus", "request retry", "evaluation retry", "four viewport widths"]
+                "emergency refusal", "local fallback notice", "expanded corpus", "request retry", "evaluation retry", "four viewport widths",
+                "browser import", "duplicate import and retained form"]
         }, null, 2));
         console.log("PASS: browser workflows and responsive checks");
     } finally {

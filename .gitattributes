@@ -1,0 +1,2 @@
+# Keep the frozen audit label byte hash identical on Windows and Linux.
+data/audit-relevance-cases.json -text

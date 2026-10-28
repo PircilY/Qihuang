@@ -3,12 +3,11 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const net = require("node:net");
 const {spawn} = require("node:child_process");
-const {createHash} = require("node:crypto");
+const {createHash, randomUUID} = require("node:crypto");
 const {startPreview} = require("./ui-preview.cjs");
 
 const root = path.resolve(__dirname, "..");
-const snapshot = path.join(root, ".tmp/ui-test-snapshot");
-const jar = path.join(snapshot, "backend/target/tcm-cvd-rag-prototype-0.1.0-SNAPSHOT.jar");
+const jar = path.join(root, "backend/target/tcm-cvd-rag-prototype-0.1.0-SNAPSHOT.jar");
 
 async function freePort() {
     const listener = net.createServer();
@@ -27,8 +26,10 @@ async function main() {
     const javaURL = `http://127.0.0.1:${port}`;
     const java = spawn("java", ["-jar", jar, "--app.rag-engine.mode=local",
         "--server.address=127.0.0.1", `--server.port=${port}`,
-        `--app.knowledge.store-path=${path.join(snapshot, ".tmp/model-smoke-store.json")}`],
-    {cwd: snapshot, windowsHide: true, stdio: ["ignore", "pipe", "pipe"]});
+        `--app.knowledge.store-path=${path.join(root, ".tmp", `model-smoke-${randomUUID()}.json`)}`],
+    {cwd: root, windowsHide: true, env: {...process.env,
+        MODEL_API_BASE: "", MODEL_NAME: "", MODEL_API_KEY: ""},
+        stdio: ["ignore", "pipe", "pipe"]});
     let log = "";
     let launchError;
     let preview;
@@ -65,6 +66,7 @@ async function main() {
         const source = await fs.readFile(path.join(__dirname, "smoke-model-ui.cjs"));
         const result = {passed: code === 0, exitCode: code, javaURL, previewURL: preview.url,
             engine: "java-local", securityOverrides: false, assertionsModified: false,
+            jarSha256: createHash("sha256").update(await fs.readFile(jar)).digest("hex"),
             scriptSha256: createHash("sha256").update(source).digest("hex"), output};
         await fs.mkdir(path.join(root, ".tmp/model-ui"), {recursive: true});
         await fs.writeFile(path.join(root, ".tmp/model-ui/result.json"),

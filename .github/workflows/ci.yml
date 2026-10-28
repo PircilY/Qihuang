@@ -17,6 +17,10 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
       - run: python ../tools/build_corpus.py --check
+      - run: python ../tools/review_expanded_sources.py --check
+      - run: python ../tools/validate_expanded_sources.py
+      - run: python ../tools/build_expanded_corpus.py --check
+      - run: python ../tools/validate_terminology.py
       - run: python ../tools/import_knowledge.py --audit --report ../docs/knowledge-base.md --check
       - run: python ../tools/import_knowledge.py ../tools/fixtures/import.jsonl --output ../tools/fixtures/generated --redact --check
       - run: pytest -q
