@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from corpus_governance import indexed, ROLES, source_path, source_url, parse_article, redistribution_license
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,14 +30,15 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate() -> dict[str, object]:
-    payload = json.loads(LEDGER.read_text(encoding="utf-8"))
+def validate(ledger_path: Path = LEDGER, root: Path = ROOT) -> dict[str, object]:
+    payload = json.loads(ledger_path.read_text(encoding="utf-8"))
     records = payload.get("records", [])
     errors: list[str] = []
     ids: set[str] = set()
     keys: set[tuple[str, str]] = set()
     text_hashes: set[str] = set()
     counts = {"zh": 0, "en": 0}
+    roles = {"core": 0, "background": 0, "excluded": 0}
     topic_counts = {
         "tcm_and_cardiovascular": 0,
         "cardiovascular_only": 0,
@@ -47,12 +49,16 @@ def validate() -> dict[str, object]:
     for record in records:
         document_id = str(record.get("documentId", "")).strip()
         url = str(record.get("sourceUrl", "")).strip()
-        raw_path = ROOT / str(record.get("fullTextPath", ""))
+        try:
+            raw_path = source_path(str(record.get("fullTextPath", "")), root)
+        except ValueError as error:
+            errors.append(f"unsafe source path: {document_id}: {error}")
+            continue
         language = record.get("language")
         if not document_id or document_id in ids:
             errors.append(f"duplicate or missing documentId: {document_id}")
         ids.add(document_id)
-        if not re.match(r"^https?://", url):
+        if not source_url(url):
             errors.append(f"missing source URL: {document_id}")
         if language not in ALLOWED_LANGUAGES:
             errors.append(f"unsupported language: {document_id}")
@@ -60,8 +66,13 @@ def validate() -> dict[str, object]:
             counts[language] += 1
         if record.get("licenseStatus") != "verified" or record.get("verificationStatus") != "verified-full-text":
             errors.append(f"unverified license/full text: {document_id}")
-        if record.get("inclusionDecision") != "include":
-            errors.append(f"record is not included: {document_id}")
+        role = record.get("corpusRole", "background")
+        if role not in ROLES:
+            errors.append(f"invalid corpusRole: {document_id}")
+        else:
+            roles[role] += 1
+        if record.get("inclusionDecision") not in {"include", "exclude"}:
+            errors.append(f"invalid inclusion decision: {document_id}")
         if not raw_path.is_file():
             errors.append(f"missing full text: {document_id} -> {raw_path}")
             continue
@@ -98,7 +109,19 @@ def validate() -> dict[str, object]:
         text_hashes.add(digest)
         if record.get("sourceChecksum") != digest:
             errors.append(f"source checksum mismatch: {document_id}")
-        for key in (("doi", str(record.get("doi", "")).strip()), ("pmid", str(record.get("pmid", "")).strip()), ("sourceUrl", url)):
+        try:
+            xml_path = source_path(record["rawSourcePath"], root)
+            xml = xml_path.read_text(encoding="utf-8")
+            article = parse_article(xml)
+            if record.get("rawSourceChecksum") and hashlib.sha256(xml.encode("utf-8")).hexdigest() != record["rawSourceChecksum"]:
+                errors.append(f"raw XML checksum mismatch: {document_id}")
+            if record.get("redistributionStatus") == "permissive-verified" and not redistribution_license(article["licenses"]):
+                errors.append(f"redistribution license proof missing: {document_id}")
+        except (OSError, ValueError, KeyError) as error:
+            errors.append(f"invalid raw source: {document_id}: {error}")
+        for key in (("pmcid", str(record.get("pmcid", "")).strip().casefold()),
+                    ("doi", str(record.get("doi", "")).strip().casefold()),
+                    ("pmid", str(record.get("pmid", "")).strip()), ("sourceUrl", url)):
             if key[1] and key in keys:
                 errors.append(f"duplicate {key[0]}: {document_id}")
             if key[1]:
@@ -106,6 +129,8 @@ def validate() -> dict[str, object]:
     return {
         "total": len(records),
         "languageCounts": counts,
+        "roleCounts": roles,
+        "indexedCount": sum(indexed(record) for record in records),
         "topicCounts": topic_counts,
         "manualReviewCount": sum(1 for item in topic_review if item["manualReviewRequired"]),
         "topicReview": topic_review,

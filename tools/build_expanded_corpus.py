@@ -11,6 +11,7 @@ from pathlib import Path
 
 from validate_expanded_sources import validate, ROOT
 from terminology_utils import extract_metadata
+from corpus_governance import indexed
 
 
 OUT = ROOT / "backend" / "src" / "main" / "resources" / "data" / "expanded"
@@ -43,6 +44,8 @@ def build() -> tuple[list[dict], list[dict]]:
     knowledge_chunks: list[dict] = []
     now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     for record in ledger["records"]:
+        if not indexed(record):
+            continue
         raw = (ROOT / record["fullTextPath"]).read_text(encoding="utf-8").strip()
         source_digest = digest(raw)
         title_metadata = extract_metadata(record["title"])
