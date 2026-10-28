@@ -112,7 +112,7 @@ public class GuardedHybridRetrievalStrategy implements RetrievalStrategy {
     private boolean containsAny(String question, List<String> values, List<String> lowConfidence) {
         if (values == null) return false;
         Set<String> low = lowConfidence == null ? Set.of() : new HashSet<>(lowConfidence);
-        return values.stream().anyMatch(value -> !low.contains(value)
+        return values.stream().anyMatch(value -> value != null && !value.isBlank() && !low.contains(value)
                 && question.contains(tokenizer.normalize(value)));
     }
 

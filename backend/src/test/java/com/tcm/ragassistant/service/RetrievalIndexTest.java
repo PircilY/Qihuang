@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.core.io.DefaultResourceLoader;
 import java.time.Instant;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
@@ -75,6 +77,26 @@ class RetrievalIndexTest {
 
         assertThat(index.snapshot(CorpusId.BASELINE).topicFrequency().get("心血管")).isGreaterThan(0.2);
         assertThat(index.related("心血管", java.util.Set.of("心血", "血管"), entry)).isFalse();
+    }
+
+    @Test
+    void lowConfidenceDiseaseCannotPassRelatedFilterButOriginalBodyRemainsSearchable() {
+        var repository = mock(com.tcm.ragassistant.repository.KnowledgeBaseRepository.class);
+        var chunk = new KnowledgeChunk("FIXTURE-LOW", "FIXTURE-DOC", "Fixture", "fixture",
+                "fixture", 2026, "AlphaCondition、BetaCondition", List.of(), List.of(),
+                List.of("AlphaHerb", "BetaHerb"), 0, 0, "body", "UNRATED", List.of(),
+                "AlphaHerb source mention", "fixture", "ACTIVE", "v1", Instant.EPOCH,
+                "dictionary", Map.of("disease", List.of("AlphaCondition"), "herbs", List.of("AlphaHerb")));
+        when(repository.findAll(CorpusId.BASELINE)).thenReturn(List.of(chunk));
+        var tokenizer = new TextTokenizer();
+        var index = new RetrievalIndex(repository, tokenizer);
+        var entry = index.snapshot(CorpusId.BASELINE).entries().get(chunk.id());
+
+        assertThat(entry.frequencies()).doesNotContainKey("alphacondition");
+        assertThat(entry.frequencies().get("alphaherb")).isEqualTo(1);
+        assertThat(index.related("AlphaCondition", Set.copyOf(tokenizer.tokenize("AlphaCondition")), entry)).isFalse();
+        assertThat(index.related("AlphaHerb", Set.copyOf(tokenizer.tokenize("AlphaHerb")), entry)).isFalse();
+        assertThat(index.related("BetaCondition", Set.copyOf(tokenizer.tokenize("BetaCondition")), entry)).isTrue();
     }
     private KnowledgeDocument document() {
         return new KnowledgeDocument("FIXTURE-DOC", "[FIXTURE] 非医学事实", "测试", "测试", 2026,

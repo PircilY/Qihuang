@@ -51,3 +51,23 @@ def test_explicit_null_metadata_lists_default_to_empty_for_import_and_citation_m
         "relevanceScore": 1.0, "herbs": None, "formulas": None, "syndromes": None,
     })
     assert citation.herbs == citation.formulas == citation.syndromes == []
+
+
+def test_import_schema_preserves_low_confidence_names_and_defaults_missing_map():
+    from app.knowledge_repository import KnowledgeRepository
+
+    payload = {
+        "id": "FIXTURE-LOW", "documentId": "FIXTURE-DOC", "title": "Fixture",
+        "sourceType": "fixture", "publisher": "fixture", "publicationYear": 2026,
+        "disease": "AlphaCondition", "pageStart": 0, "pageEnd": 0, "section": "body",
+        "evidenceLevel": "UNRATED", "content": "Fixture body", "checksum": "fixture",
+        "ingestedAt": "2026-01-01T00:00:00Z",
+    }
+    assert KnowledgeChunk.model_validate(payload).metadata_confidence == {}
+    assert KnowledgeChunk.model_validate({**payload, "metadataConfidence": None}).metadata_confidence == {}
+    chunk = KnowledgeChunk.model_validate({
+        **payload, "metadataConfidence": {"disease": ["AlphaCondition"]},
+    })
+    dumped = chunk.model_dump(by_alias=True)
+    assert dumped["metadataConfidence"] == {"disease": ["AlphaCondition"]}
+    assert KnowledgeRepository._to_node(dumped).metadata["low_metadata_terms"] == "AlphaCondition"

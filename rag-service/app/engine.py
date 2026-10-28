@@ -20,7 +20,7 @@ from llama_index.retrievers.bm25 import BM25Retriever
 
 from app.config import Settings
 from app.embeddings import HashEmbedding, create_embedding
-from app.lexical_index import LexicalIndex, searchable
+from app.lexical_index import LexicalIndex, metadata_values, searchable
 from app.evidence_coverage import (
     DOSE_REFUSAL,
     assess_evidence_coverage,
@@ -773,13 +773,12 @@ def _weighted_hash_vector(weights: dict[str, float] | Any) -> list[float]:
 def _is_related(question: str, node: NodeWithScore) -> bool:
     generic = {"证据", "研究", "安全", "疗效", "检查", "症状", "未归类"}
     question = question.casefold()
-    topics = [str(node.metadata.get("disease", ""))]
-    for key in ("keywords", "herbs", "formulas", "syndromes"):
-        topics.extend(str(node.metadata.get(key, "")).split("|"))
+    topics = [value for key in ("disease", "keywords", "herbs", "formulas", "syndromes")
+              for value in metadata_values(node.metadata, key)]
     if any(len(term) >= 2 and term not in generic and not is_generic(term) and term.casefold() in question
            for term in topics):
         return True
-    disease_tokens = set(tokenize(str(node.metadata.get("disease", ""))))
+    disease_tokens = set(tokenize(" ".join(metadata_values(node.metadata, "disease"))))
     if any(
         len(term) >= 2 and term not in generic and not is_generic(term)
         for term in set(tokenize(question)) & disease_tokens
@@ -791,25 +790,17 @@ def _is_related(question: str, node: NodeWithScore) -> bool:
 
 def _metadata_boost(question: str, node: NodeWithScore) -> float:
     normalized_question = re.sub(r"\s+", "", question).casefold()
-
-    def mentioned(values: str | list[str]) -> bool:
-        items = values.split("|") if isinstance(values, str) else values
-        return any(
-            value and re.sub(r"\s+", "", str(value)).casefold() in normalized_question
-            for value in items
-        )
-
     metadata = node.metadata
-    low_terms = {value.casefold() for value in str(metadata.get("low_metadata_terms", "")).split("|") if value}
-    def mentioned(values: str | list[str]) -> bool:
-        items = values.split("|") if isinstance(values, str) else values
-        return any(value and value.casefold() not in low_terms
-                   and re.sub(r"\s+", "", str(value)).casefold() in normalized_question for value in items)
+
+    def mentioned(key: str) -> bool:
+        return any(re.sub(r"\s+", "", value).casefold() in normalized_question
+                   for value in metadata_values(metadata, key))
+
     boost = 0.0
-    boost += 0.22 if mentioned(str(metadata.get("disease", ""))) else 0.0
-    boost += 0.20 if mentioned(str(metadata.get("syndromes", ""))) else 0.0
-    boost += 0.18 if mentioned(str(metadata.get("formulas", ""))) else 0.0
-    boost += 0.10 if mentioned(str(metadata.get("herbs", ""))) else 0.0
+    boost += 0.22 if mentioned("disease") else 0.0
+    boost += 0.20 if mentioned("syndromes") else 0.0
+    boost += 0.18 if mentioned("formulas") else 0.0
+    boost += 0.10 if mentioned("herbs") else 0.0
     boost += {"A": 0.12, "B": 0.08, "C": 0.04}.get(
         str(metadata.get("evidence_level", "")).strip().upper(), 0.0
     )

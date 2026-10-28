@@ -106,3 +106,9 @@ python tools/audit_terminology_metadata.py
 python -m pytest rag-service/tests
 mvn -f backend/pom.xml test
 ```
+
+### L–O 契约修复复验（2026-10-27）
+
+修复服务探测误读引用字段、Python 导入丢失低置信名称、疾病锚点漏过滤、空白元数据错误加分及可变节点索引缓存失效。Java 全量155项（5项既有可选跳过）和 Python 全量122项通过；JAR 已离线重建。
+
+七题真实 HTTP 探测使用 hash 和 `llama-index` / `V3_GUARDED`，默认桥接关闭与显式开启均为3/7通过，均保留4题失败并返回退出码1。桥接改善中文黄芪问题的词面命中，却使英文 Astragalus 问题转为拒答；不存在可声称的总体提升。旧服务探测因读取 `content` 而非 `quote` 不可作为比较基准，现以 `docs/service-probe.md`、`docs/service-probe-bridge.md` 及其 JSON 为准。未改问题、术语列表、默认配置、阈值、正式语料或安全规则；未重跑2522题代理评测，前述指标仍是其原阶段结果，不代表本轮新测值。同步和回退冒烟结果另见 `docs/verification.md`。

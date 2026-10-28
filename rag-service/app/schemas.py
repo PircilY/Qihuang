@@ -149,6 +149,12 @@ class KnowledgeChunk(ApiModel):
     version: str = "v1"
     ingested_at: str
     metadata_source: str = ""
+    metadata_confidence: dict[str, list[str]] = Field(default_factory=dict)
+
+    @field_validator("metadata_confidence", mode="before")
+    @classmethod
+    def empty_metadata_confidence(cls, value):
+        return {} if value is None else value
 
     @field_validator("syndromes", "formulas", "herbs", mode="before")
     @classmethod

@@ -34,6 +34,18 @@ No Python tests are marked skipped or conditionally skipped. No new feature test
 
 The Python suite needs a writable temp root in this managed Windows environment. Default user Temp and the first workspace temp attempt returned `PermissionError`; with `TEMP`/`TMP` set to repository `.tmp`, three consecutive full runs each passed 107 tests. This is an environment restriction, not a skipped test.
 
+## L–O 契约修复复验（2026-10-27）
+
+- `mvn -o test`：155 项、0 失败、0 错误、5 项既有条件跳过，未启用留出集或研究报告开关。定向 Java 回归 9 项通过。
+- `python -m pytest rag-service/tests -q -p no:cacheprovider`：122 项通过，无跳过；使用仓库 `.rag-deps` 和 `.tmp`，耗时 242.48 秒。保留一个现有 Starlette/httpx 弃用告警，未升级依赖。覆盖引用协议、前三条边界、异常/错误路径、低置信导入保留和索引缓存更新。
+- `mvn -o '-DskipTests' package` 成功；以下服务探测使用刚构建的 JAR，不使用旧产物。
+- `python tools/probe_expanded.py`：3/7 通过，4 题失败，退出码 1；`--query-bridge --report docs/service-probe-bridge.md` 同为 3/7 通过、退出码 1。两个报告均核验 `documentTitle` / `quote`，实际引擎/版本全部正确。失败是有覆盖但未命中（包括拒答），不是 HTTP/协议异常。桥接前后命中集合不同，不能解释为净提升。详细结果见两份 Markdown 及同名 JSON。
+- `python tools/build_expanded_corpus.py --check`：100 文档/4036 片段校验通过；`python tools/validate_expanded_sources.py` 无校验错误，61 条主题分类仍需人工复核，不能解释为来源已获医学质量评审。
+- `python tools/smoke_e2e.py` 六项真实 HTTP 检查通过：远程 V3、同语料版本对比、模型未配置报错、公开原文导入后检索、远程故障显式本地回退、Python 重启自动补同步和安全规则哈希一致。隔离导入库及临时端口，测试自有进程已全部关闭；本机日志在 `.tmp/e2e-1793113743518850900`。
+- 本地预览通过 `start-local.ps1 -Port 8081 -RagPort 8001 -WithPython` 启动，独立快照在 `runtime/preview-20261027-1793113934131/knowledge-imports.json`。双服务 UP、Python READY/hash、首页 HTTP 200；BASELINE 远程 V3 实际返回4条引用且未拒答。预览保留运行，生成配置为空、桥接关闭；停止用 `.\tools\stop-local.ps1 -Port 8081`，脚本核对自有 PID 和创建时间。
+- `git -c core.whitespace=cr-at-eol diff --check` 通过，仅有仓库既有 LF/CRLF 规范化提示。当前改动未提交；没有重建交付压缩包，以免把旧 Git 跟踪清单的包冒充本轮完整交付。
+- 受保护路径差异检查为空：原50题、安全规则、冻结留出文件及报告均未修改；未读取冻结内容，也未执行真实生成模型、judge、Docker 或语义模型实验。
+
 ## 复验
 
 完成 README 中的构建与启动步骤后，在 PowerShell 7 运行：

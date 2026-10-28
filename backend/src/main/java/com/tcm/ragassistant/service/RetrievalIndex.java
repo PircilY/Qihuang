@@ -72,20 +72,21 @@ public class RetrievalIndex {
     }
     private Entry entry(KnowledgeChunk chunk) {
         var lowMetadata = chunk.metadataConfidence().values().stream().flatMap(Collection::stream).collect(java.util.stream.Collectors.toSet());
-        String searchable = String.join(" ", chunk.title(), filterLow(chunk.disease(), lowMetadata),
+        String disease = filterLow(chunk.disease(), lowMetadata);
+        String searchable = String.join(" ", chunk.title(), disease,
                 String.join(" ", chunk.syndromes().stream().filter(value -> !lowMetadata.contains(value)).toList()),
                 String.join(" ", chunk.formulas().stream().filter(value -> !lowMetadata.contains(value)).toList()),
                 String.join(" ", chunk.herbs().stream().filter(value -> !lowMetadata.contains(value)).toList()), String.join(" ", chunk.keywords()), chunk.content());
         Map<String, Integer> frequencies = new HashMap<>();
         tokenizer.tokenizeWithFrequency(searchable).forEach(term -> frequencies.merge(term, 1, Integer::sum));
         List<String> topics = new ArrayList<>(chunk.keywords());
-        if (!lowMetadata.contains(chunk.disease())) topics.add(chunk.disease());
+        topics.addAll(Arrays.stream(chunk.disease().split("、")).filter(value -> !lowMetadata.contains(value)).toList());
         topics.addAll(chunk.syndromes().stream().filter(value -> !lowMetadata.contains(value)).toList());
         topics.addAll(chunk.formulas().stream().filter(value -> !lowMetadata.contains(value)).toList());
         topics.addAll(chunk.herbs().stream().filter(value -> !lowMetadata.contains(value)).toList());
         return new Entry(chunk, Map.copyOf(frequencies), frequencies.values().stream().mapToInt(Integer::intValue).sum(),
                 hashVector(tokenizer.tokenizeWithFrequency(searchable)), Set.copyOf(tokenizer.tokenize(chunk.content())),
-                Set.copyOf(tokenizer.tokenize(chunk.disease())), topics.stream().filter(Objects::nonNull)
+                Set.copyOf(tokenizer.tokenize(disease)), topics.stream().filter(Objects::nonNull)
                 .filter(term -> term.length() >= 2 && !term.isBlank())
                 .map(tokenizer::normalize).distinct().toList());
     }

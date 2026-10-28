@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
@@ -81,6 +82,26 @@ class GuardedHybridRetrievalStrategyTest {
         var result = strategy.retrieve("高血压", RetrievalFilter.none(), CorpusId.BASELINE);
         assertThat(result.chunks().get(0).chunk().id()).isEqualTo("FIXTURE-STRONG");
         assertThat(result.chunks().get(1).score()).isCloseTo(.211, within(1e-12));
+    }
+
+    @Test
+    void blankAndLowConfidenceMetadataDoNotAddRankingBonus() {
+        var hybrid = mock(HybridRetrievalStrategy.class);
+        var strategy = new GuardedHybridRetrievalStrategy(hybrid,
+                new RetrievalProperties(8, 4, 60, 1, .85, .016), new TextTokenizer());
+        var chunk = new KnowledgeChunk("FIXTURE-LOW", "FIXTURE-DOC", "Fixture", "fixture",
+                "fixture", 2026, "", List.of("AlphaSyndrome"), List.of("AlphaFormula"),
+                List.of("AlphaHerb"), 0, 0, "body", "UNRATED", List.of(), "Fixture body",
+                "fixture", "ACTIVE", "v1", Instant.EPOCH, "dictionary",
+                Map.of("syndromes", List.of("AlphaSyndrome"), "formulas", List.of("AlphaFormula"),
+                        "herbs", List.of("AlphaHerb")));
+        String question = "AlphaSyndrome AlphaFormula AlphaHerb";
+        when(hybrid.retrieveCandidates(question, RetrievalFilter.none(), CorpusId.BASELINE))
+                .thenReturn(new RetrievalOutput(List.of(new ScoredChunk(chunk, .5, .5, .5, "fixture")),
+                        new RetrievalTrace("hybrid", 1, 1, 1, 1, true, List.of()), true));
+
+        assertThat(strategy.retrieve(question, RetrievalFilter.none(), CorpusId.BASELINE)
+                .chunks().get(0).score()).isCloseTo(.5, within(1e-12));
     }
 
     private ScoredChunk scored(String id, String disease, double score) {

@@ -1,14 +1,23 @@
 """Incremental shared-token BM25 with corpus-wide statistics."""
 from collections import Counter, defaultdict
 import math
+import re
 from llama_index.core.schema import NodeWithScore
 from app.tokenization import tokenize
 from app.terminology import POLICY, is_generic
 
 
+def metadata_values(metadata, key):
+    separator = r"[|、]" if key == "disease" else r"\|"
+    values = re.split(separator, str(metadata.get(key) or ""))
+    low = {value.casefold() for value in str(metadata.get("low_metadata_terms") or "").split("|") if value}
+    return [value for value in values if value.strip()
+            and (key not in {"disease", "syndromes", "formulas", "herbs"} or value.casefold() not in low)]
+
+
 def searchable(node):
     metadata = node.metadata
-    return " ".join([str(metadata.get(key) or "").replace("|", " ") for key in
+    return " ".join([" ".join(metadata_values(metadata, key)) for key in
                      ("document_title", "disease", "syndromes", "formulas", "herbs", "keywords")] + [node.text])
 
 
@@ -24,31 +33,37 @@ class LexicalIndex:
 
     def update(self, nodes):
         incoming = {node.node_id: node for node in nodes}
+        signatures = {}
+        for node_id, node in incoming.items():
+            topics = [value for key in ("disease", "keywords", "herbs", "formulas", "syndromes")
+                      for value in metadata_values(node.metadata, key)]
+            disease = " ".join(metadata_values(node.metadata, "disease"))
+            signatures[node_id] = (searchable(node), node.text, disease, tuple(topics))
         for node_id in list(self.entries):
-            previous, terms, _ = self.entries[node_id]
-            node = incoming.get(node_id)
-            if node is None or searchable(previous) != searchable(node):
+            _, terms, _ = self.entries[node_id]
+            # Compare a saved signature, not mutable node metadata.
+            if node_id not in incoming or self.features[node_id][0] != signatures[node_id]:
                 for term in terms:
                     self.postings[term].discard(node_id)
                 del self.entries[node_id]
         for node_id, node in incoming.items():
             if node_id not in self.entries:
-                terms = Counter(tokenize(searchable(node)))
+                terms = Counter(tokenize(signatures[node_id][0]))
                 self.entries[node_id] = (node, terms, sum(terms.values()))
                 for term in terms:
                     self.postings[term].add(node_id)
+            elif self.entries[node_id][0] is not node:
+                _, terms, length = self.entries[node_id]
+                self.entries[node_id] = (node, terms, length)
         self.topic_frequency = Counter()
         self.document_count = len(incoming)
         for node_id, node in incoming.items():
-            if node_id not in self.features or self.features[node_id][0] != searchable(node):
-                topics = [str(node.metadata.get("disease") or "")]
-                for key in ("keywords", "herbs", "formulas", "syndromes"):
-                    topics.extend(str(node.metadata.get(key) or "").split("|"))
+            signature = signatures[node_id]
+            if node_id not in self.features or self.features[node_id][0] != signature:
+                _, text, disease, topics = signature
                 topic_values = ["".join(topic.lower().split()) for topic in topics
                                 if len(topic) >= 2 and topic.strip()]
-                self.features[node_id] = (searchable(node), set(tokenize(node.text)),
-                    set(tokenize(str(node.metadata.get("disease") or ""))),
-                    topic_values)
+                self.features[node_id] = (signature, set(tokenize(text)), set(tokenize(disease)), topic_values)
         self.features = {key: value for key, value in self.features.items() if key in incoming}
         for value in self.features.values():
             self.topic_frequency.update(set(value[3]))

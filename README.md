@@ -346,3 +346,5 @@ Python不再读取旧 LLM_*，不直连生成模型；所有生成与密钥统�
 EXPANDED 评测按标题、词典目标术语（循环风险，仅验证扩展设计）和不依赖词典的中文原文术语三组独立报告。服务探测记录真实 Java/Python hash 检索结果；语料覆盖但前三条未命中的问题会使探测失败。自动词典双语标题核验与固定种子元数据抽样见 `docs/terminology-check.md` 和 `docs/knowledge-base.md`。这些字符串命中与代理指标不等于人工医学相关性判断。
 
 复现：`python tools/build_expanded_eval.py --service-eval`、`python tools/probe_expanded.py`、`python tools/check_terminology_consistency.py`、`python tools/audit_terminology_metadata.py`。真实服务报告见 `docs/service-probe.md`；Docker、BGE-M3、本地模型权重及真实生成模型/judge 尚未验证，参见 `docs/improvement-report.md`。
+
+服务探测默认关闭查询桥接；使用 `python tools/probe_expanded.py --query-bridge --report docs/service-probe-bridge.md` 单独比较。探测按真实引用字段 `documentTitle` / `quote` 检查前三条，并校验 `llama-index` / `V3_GUARDED` 执行路径；失败仍保存 Markdown 和同名 JSON（引用、拒答原因、轨迹、耗时）。2026-10-27 实测默认和开启桥接均为 3/7 通过，命中问题不同，不能视为整体提升。脚本自有服务强制 hash、禁止模型下载且清空生成模型配置，不改变正式导入库或检索阈值。启动前须用 `mvn -o -f backend/pom.xml '-DskipTests' package` 更新 JAR；已有本地依赖未安装到当前 Python 时，可将 `PYTHONPATH` 指向 `.rag-deps`。
