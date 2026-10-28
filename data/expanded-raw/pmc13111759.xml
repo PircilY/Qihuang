@@ -1,0 +1,1423 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="fsn371755" xml:lang="en" article-type="review-article" dtd-version="1.4"><?da-xref-anchor-style superscripted?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Food Sci Nutr</journal-id><journal-id journal-id-type="iso-abbrev">Food Sci Nutr</journal-id><journal-id journal-id-type="pmc-domain-id">2357</journal-id><journal-id journal-id-type="pmc-domain">fsn</journal-id><journal-id journal-id-type="nlm-id">101605473</journal-id><journal-id journal-id-type="publisher-id">FSN3</journal-id><journal-title-group><journal-title>Food Science &amp; Nutrition</journal-title></journal-title-group><issn pub-type="epub">2048-7177</issn><?publisher_abbrev blackwell?><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC13111759</article-id><article-id pub-id-type="pmcid-ver">PMC13111759.1</article-id><article-id pub-id-type="pmcaid">13111759</article-id><article-id pub-id-type="pmcaiid">13111759</article-id><article-id pub-id-type="pmid">42052427</article-id><article-id pub-id-type="doi">10.1002/fsn3.71755</article-id><article-id pub-id-type="publisher-id">FSN371755</article-id><article-id pub-id-type="other">2485691</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Review</subject></subj-group><subj-group subj-group-type="heading"><subject>Review</subject></subj-group></article-categories><title-group><article-title>Cardiovascular Benefits of <italic toggle="no">Salvia miltiorrhiza</italic> (Danshen) Supplementation: Bioactive Constituents, Mechanisms, Clinical Evidence and Implications for Nutritional Care</article-title></title-group><contrib-group><contrib id="fsn371755-cr-0001" contrib-type="author"><name name-style="western"><surname>Vikal</surname><given-names initials="A">Akash</given-names></name><xref rid="fsn371755-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="fsn371755-cr-0002" contrib-type="author"><name name-style="western"><surname>Maurya</surname><given-names initials="R">Rashmi</given-names></name><xref rid="fsn371755-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="fsn371755-cr-0003" contrib-type="author"><name name-style="western"><surname>Patel</surname><given-names initials="P">Preeti</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-1606-2241</contrib-id><xref rid="fsn371755-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="fsn371755-cr-0004" contrib-type="author" corresp="yes"><name name-style="western"><surname>Kurmi</surname><given-names initials="BD">Balak Das</given-names></name><xref rid="fsn371755-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><address><email>bdkurmi@gmail.com</email><email>balakdaskurmi@isfcp.org</email></address></contrib><contrib id="fsn371755-cr-0005" contrib-type="author"><name name-style="western"><surname>Setzer</surname><given-names initials="WN">William N.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-3639-0528</contrib-id><xref rid="fsn371755-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref><xref rid="fsn371755-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="fsn371755-cr-0006" contrib-type="author" corresp="yes"><name name-style="western"><surname>Sharifi‐Rad</surname><given-names initials="J">Javad</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-7301-8151</contrib-id><xref rid="fsn371755-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref><xref rid="fsn371755-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref><xref rid="fsn371755-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref><address><email>javadsharifirad@uees.edu.ec</email></address></contrib><contrib id="fsn371755-cr-0007" contrib-type="author" corresp="yes"><name name-style="western"><surname>Calina</surname><given-names initials="D">Daniela</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-1523-9116</contrib-id><xref rid="fsn371755-aff-0009" ref-type="aff">
+<sup>9</sup>
+</xref><address><email>daniela.calina@umfcv.ro</email></address></contrib></contrib-group><aff id="fsn371755-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Sahu Onkar Saran School of Pharmacy, Faculty of Pharmacy</named-content>
+<institution>IFTM University</institution>
+<city>Moradabad</city>
+<country country="IN">India</country>
+</aff><aff id="fsn371755-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Pharmaceutics</named-content>
+<institution>ISF College of Pharmacy</institution>
+<city>Moga</city>
+<named-content content-type="country-part">Punjab</named-content>
+<country country="IN">India</country>
+</aff><aff id="fsn371755-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Department of Pharmaceutics</named-content>
+<institution>ISF College of Pharmacy</institution>
+<city>Moga</city>
+<country country="IN">India</country>
+</aff><aff id="fsn371755-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">Aromatic Plant Research Center</named-content>
+<city>Suite</city>
+<named-content content-type="country-part">Lehi</named-content>
+<country country="US">USA</country>
+</aff><aff id="fsn371755-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Department of Chemistry</named-content>
+<institution>University of Alabama in Huntsville</institution>
+<city>Huntsville</city>
+<named-content content-type="country-part">Alabama</named-content>
+<country country="US">USA</country>
+</aff><aff id="fsn371755-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<institution>Universidad Espíritu Santo</institution>
+<city>Samborondón</city>
+<country country="EC">Ecuador</country>
+</aff><aff id="fsn371755-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<named-content content-type="organisation-division">Department of Medicine, College of Medicine</named-content>
+<institution>Korea University</institution>
+<city>Seoul</city>
+<country country="KR">Republic of Korea</country>
+</aff><aff id="fsn371755-aff-0008">
+<label>
+<sup>8</sup>
+</label>
+<institution>Centro de Estudios Tecnológicos y Universitarios del Golfo</institution>
+<city>Veracruz</city>
+<country country="MX">Mexico</country>
+</aff><aff id="fsn371755-aff-0009">
+<label>
+<sup>9</sup>
+</label>
+<named-content content-type="organisation-division">Department of Clinical Pharmacy</named-content>
+<institution>University of Medicine and Pharmacy of Craiova</institution>
+<city>Craiova</city>
+<country country="RO">Romania</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence:</bold>
+<break/>
+Balak Das Kurmi (<email>bdkurmi@gmail.com</email>)<break/>
+Javad Sharifi‐Rad (<email>javadsharifirad@uees.edu.ec</email>)<break/>
+Daniela Calina (<email>daniela.calina@umfcv.ro</email>)<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>26</day><month>4</month><year>2026</year></pub-date><pub-date pub-type="collection"><month>5</month><year>2026</year></pub-date><volume>14</volume><issue seq="450">5</issue><issue-id pub-id-type="pmc-issue-id">512356</issue-id><issue-id pub-id-type="doi">10.1002/fsn3.v14.5</issue-id><elocation-id>e71755</elocation-id><history>
+<date date-type="rev-recd"><day>26</day><month>2</month><year>2026</year></date>
+<date date-type="received"><day>17</day><month>12</month><year>2025</year></date>
+<date date-type="accepted"><day>26</day><month>3</month><year>2026</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>26</day><month>04</month><year>2026</year></date></event><event event-type="pmc-live"><date><day>28</day><month>04</month><year>2026</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-04-29 09:25:17.050"><day>29</day><month>04</month><year>2026</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2026 The Author(s). <italic toggle="yes">Food Science &amp; Nutrition</italic> published by Wiley Periodicals LLC.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="FSN3-14-e71755.pdf"><?pdf-name FSN3-14-e71755.pdf?><?pdf-size 945678?><?pdf-md5 715761e93a1261e0630f9740e41661d6?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:b6d4/13111759/715761e93a12/FSN3-14-e71755.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:FSN3-14-e71755.pdf"/><abstract><title>ABSTRACT</title><p>Cardiovascular diseases (CVDs) remain the leading cause of mortality worldwide, creating interest in adjunctive strategies that complement standard care. <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> (Danshen), a traditional Chinese medicinal herb rich in tanshinones and salvianolic acids, has been investigated for multi‐target cardiovascular effects. This narrative review summarizes key phytochemical classes, preclinical mechanisms, human clinical findings, and formulation approaches aimed at improving bioavailability. Preclinical studies consistently report antioxidative, anti‐inflammatory, vasodilatory, antithrombotic, and anti‐fibrotic activities, involving pathways such as endothelial nitric oxide signaling and modulation of NF‐κB/MAPK‐related inflammation. Clinical studies have reported potential benefits in conditions such as coronary artery disease and myocardial ischemia; however, the overall evidence is limited by heterogeneity in preparations and dosing, variable product composition, small sample sizes, and a shortage of rigorously designed trials. Practical translation is further constrained by poor solubility and rapid metabolism of key constituents, though delivery platforms (e.g., liposomes, nanoparticles, and self‐microemulsifying systems) may enhance exposure in experimental settings. Overall, Danshen remains a plausible adjunct candidate, but standardization and high‐quality randomized clinical trials are needed to establish efficacy, safety, and interaction risk with conventional cardiovascular therapies.</p></abstract><abstract abstract-type="graphical"><p>
+<italic toggle="yes">Salvia miltiorrhiza</italic> (Danshen) contains bioactive tanshinones, including tanshinone IIA, cryptotanshinone, and tanshinone I, that exert cardioprotective effects through coordinated modulation of vascular endothelial growth factor receptor (VEGFR), transforming growth factor beta 1 (TGF‐β1), transforming growth factor beta receptor (TGF‐βR), toll‐like receptor 4 (TLR4), nuclear factor kappa B (NF‐κB), NOD‐like receptor family pyrin domain containing 3 (NLRP3), Janus kinase 2 (JAK‐2), signal transducer and activator of transcription 3 (STAT‐3), and Smad signaling, thereby promoting angiogenesis and attenuating cardiac fibrosis, inflammation and apoptosis.<boxed-text position="anchor" content-type="graphic" id="fsn371755-blkfxd-0001" orientation="portrait"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="FSN3-14-e71755-g003.jpg"><?image-name FSN3-14-e71755-g003.jpg?><?image-size 49884?><?image-md5 91a60a89f1cdd082960d06106e4c2123?><?image-image-server-status NEVER_LOAD?><?image-original-height 175?><?image-original-width 331?><?image-scaled-height 175?><?image-scaled-width 331?><?image-cloudpmc-urn urn:cdn:blobs/b6d4/13111759/91a60a89f1cd/FSN3-14-e71755-g003.jpg?></graphic></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="fsn371755-kwd-0001">cardiovascular therapy</kwd><kwd id="fsn371755-kwd-0002">Danshen</kwd><kwd id="fsn371755-kwd-0003">drug bioavailability</kwd><kwd id="fsn371755-kwd-0004">endothelial function</kwd><kwd id="fsn371755-kwd-0005">natural products</kwd><kwd id="fsn371755-kwd-0006">oxidative stress</kwd></kwd-group><counts><fig-count count="3"/><table-count count="3"/><page-count count="14"/><word-count count="9600"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>May 2026</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.7.3 mode:remove_FC converted:27.04.2026</meta-value></custom-meta></custom-meta-group></article-meta></front><body id="fsn371755-body-0001"><def-list list-content="abbreviations" id="fsn371755-dl-0001"><title>Abbreviations</title><def-item><term id="fsn371755-li-0001">CHD</term><def id="fsn371755-li-0002"><p>coronary heart disease</p></def></def-item><def-item><term id="fsn371755-li-0003">CVDs</term><def id="fsn371755-li-0004"><p>cardiovascular diseases</p></def></def-item><def-item><term id="fsn371755-li-0005">CYP</term><def id="fsn371755-li-0006"><p>cytochrome P450</p></def></def-item><def-item><term id="fsn371755-li-0007">ECM</term><def id="fsn371755-li-0008"><p>extracellular matrix</p></def></def-item><def-item><term id="fsn371755-li-0009">MI</term><def id="fsn371755-li-0010"><p>myocardial Infarction</p></def></def-item><def-item><term id="fsn371755-li-0011">MMP</term><def id="fsn371755-li-0012"><p>matrix metalloproteinase</p></def></def-item><def-item><term id="fsn371755-li-0013">PEG</term><def id="fsn371755-li-0014"><p>polyethylene glycol</p></def></def-item><def-item><term id="fsn371755-li-0015">P‐gp</term><def id="fsn371755-li-0016"><p>P‐glycoprotein</p></def></def-item><def-item><term id="fsn371755-li-0017">ROS</term><def id="fsn371755-li-0018"><p>reactive oxygen species</p></def></def-item><def-item><term id="fsn371755-li-0019">Sal‐A</term><def id="fsn371755-li-0020"><p>salvianolic cid A</p></def></def-item><def-item><term id="fsn371755-li-0021">Sal‐B</term><def id="fsn371755-li-0022"><p>salvianolic cid B</p></def></def-item><def-item><term id="fsn371755-li-0023">SLNs</term><def id="fsn371755-li-0024"><p>solid lipid nanoparticles</p></def></def-item><def-item><term id="fsn371755-li-0025">SM</term><def id="fsn371755-li-0026"><p>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</p></def></def-item><def-item><term id="fsn371755-li-0027">SMEDDS</term><def id="fsn371755-li-0028"><p>self‐microemulsifying drug delivery system</p></def></def-item><def-item><term id="fsn371755-li-0029">S‐SMEDDS</term><def id="fsn371755-li-0030"><p>solid self‐microemulsifying drug delivery system</p></def></def-item><def-item><term id="fsn371755-li-0031">TCM</term><def id="fsn371755-li-0032"><p>traditional chinese medicine</p></def></def-item></def-list><sec id="fsn371755-sec-0001"><label>1</label><title>Introduction</title><p>Cardiovascular diseases (CVDs) are the main cause of mortality in the world, responsible for nearly 17.9 million fatalities annually. This category of conditions affects the heart and blood vessels, encompassing ailments such as coronary artery disease, cerebrovascular disorders, and rheumatic heart disease. Alarmingly, over 80% of deaths linked to CVDs stem from heart attacks and strokes, with one‐third occurring prematurely in individuals younger than 70 years old (Di Cesare et al. <xref rid="fsn371755-bib-0013" ref-type="bibr">2024</xref>). Despite the availability of various conventional treatments such as medications, lifestyle modifications, surgical interventions, and rehabilitative therapies, the global burden of CVD continues to rise (Ullah et al. <xref rid="fsn371755-bib-0062" ref-type="bibr">2023</xref>). While these conventional approaches help manage symptoms and reduce complications, they often have significant drawbacks (Kaiser et al. <xref rid="fsn371755-bib-0029" ref-type="bibr">2020</xref>). Medications, including blood thinners, statins, beta‐blockers, and nitrates, though effective, are related to adverse effects such as uncontrolled bleeding, liver dysfunction, muscle pain, fatigue, and dizziness. Similarly, surgical interventions like stent placement, coronary artery bypass grafting, and pacemaker implantation are invasive, carry potential complications, and do not always provide a lasting solution (Netala et al. <xref rid="fsn371755-bib-0044" ref-type="bibr">2024</xref>). Moreover, lifestyle modifications, despite being a cornerstone of prevention, demand long‐term commitment and may not be sufficient for individuals with advanced CVD. Given these limitations, there is a growing need for alternative and complementary therapies to provide a more comprehensive and sustainable approach to cardiovascular health (Ghodeshwar et al. <xref rid="fsn371755-bib-0019" ref-type="bibr">2023</xref>; Hossain et al. <xref rid="fsn371755-bib-0024" ref-type="bibr">2025</xref>).</p><p>Traditional Chinese Medicine (TCM) has received growing recognition as a possible supplement or substitute for traditional CVD therapies (Wang et al. <xref rid="fsn371755-bib-0068" ref-type="bibr">2024</xref>). Among the various herbal remedies in TCM, Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Bunge) stands out for its well‐documented cardioprotective effects. This medicinal herb has been used for centuries to improve blood circulation, decrease oxidative stress, and mitigate the progression of atherosclerosis and hypertension (Wang et al. <xref rid="fsn371755-bib-0065" ref-type="bibr">2017</xref>; Lin and Hsieh <xref rid="fsn371755-bib-0036" ref-type="bibr">2010</xref>). Studies suggest that Danshen possesses anti‐inflammatory, vasodilatory, and anticoagulant properties, making it a favorable candidate for CVD management with potentially fewer side effects than standard pharmaceuticals (Li et al. <xref rid="fsn371755-bib-0033" ref-type="bibr">2023</xref>). Given the urgent need for more effective and well‐tolerated treatments for CVD, this review delves into the potential of Danshen in cardiovascular therapy, exploring its mechanisms of action, clinical efficacy, and possible integration into modern treatment strategies (Dai et al. <xref rid="fsn371755-bib-0012" ref-type="bibr">2024</xref>). By bridging traditional knowledge with contemporary research, this review aims to comprehensively understand Danshen's role in CVD management and its potential to complement or enhance current therapeutic approaches (Netala et al. <xref rid="fsn371755-bib-0044" ref-type="bibr">2024</xref>). Although several narrative reviews, systematic reviews, and meta‐analyses have summarized Danshen's cardiovascular effects, they often focus on either pharmacology/mechanisms or pooled clinical outcomes. In contrast, this review provides an updated translational synthesis that (i) links key constituents and quality/standardization issues to mechanistic pathways, (ii) interprets human evidence in the context of recent systematic reviews and meta‐analyses, and (iii) integrates formulation/advanced delivery strategies and practical safety considerations (including herb–drug interaction risk) to better inform clinical and nutritional applicability.</p></sec><sec id="fsn371755-sec-0002"><label>2</label><title>Literature Search and Study Selection</title><p>This review employed a structured approach to examine the pharmacological properties of Danshen in relation to cardiovascular health, drawing on both experimental and clinical evidence. The methodology included an extensive literature search, eligibility criteria, data extraction, and qualitative synthesis. A comprehensive search was conducted in PubMed, Scopus, Web of Science, and Google Scholar to identify relevant articles published up to 2025. The search used keywords including “Danshen,” “<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>,” “cardiovascular disease,” “myocardial infarction,” “hypertension,” “atherosclerosis,” “stroke,” and “clinical trials,” and Boolean operators (AND/OR) were applied to refine results. Studies were included if they were peer‐reviewed and reported preclinical or clinical findings on Danshen and cardiovascular outcomes. Studies examining pharmacological mechanisms, therapeutic effects, and safety of Danshen extracts or isolated bioactive compounds were prioritized. Only English‐language articles were included. Non‐peer‐reviewed sources (e.g., commentaries, editorials, opinion pieces) were excluded. Studies with insufficient methodological detail, those not focused on cardiovascular relevance, and duplicate or inconclusive reports were omitted. Data were extracted on study design, model (in vitro, in vivo, or clinical), sample size, intervention details (dose and formulation), outcomes, pharmacokinetic parameters, and main conclusions. Discrepancies in interpretation were resolved through discussion among reviewers. Findings were synthesized qualitatively and grouped by experimental model and clinical relevance, with emphasis on mechanisms, therapeutic potential, and safety considerations.</p></sec><sec id="fsn371755-sec-0003"><label>3</label><title>Phytochemistry, Bioactive Constituents, and Standardization of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</title><p>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> (SM), usually known as Danshen, is a perennial herb from the Lamiaceae (mint) family, native to China and Japan, and widely cultivated or introduced in Korea and Vietnam. It thrives in temperate climates, preferring well‐drained soils and mountainous regions, and is typically harvested in autumn when its bioactive compounds reach peak concentration (Xing et al. <xref rid="fsn371755-bib-0079" ref-type="bibr">2024</xref>). SM is widely used in traditional Chinese medicine, with the roots serving as the principal medicinal part for cardiovascular indications. These effects are mainly attributed to two major classes of bioactives: lipophilic diterpenoid tanshinones and hydrophilic phenolic acids, particularly salvianolic acids.</p><p>These compounds exhibit significant cardioprotective, antioxidant, anti‐inflammatory, and anti‐thrombotic properties, making Danshen a promising alternative or complementary therapy for CVDs (Su et al. <xref rid="fsn371755-bib-0058" ref-type="bibr">2015</xref>). Tanshinones, tanshinone I, tanshinone IIA, cryptotanshinone, and dihydrotanshinone I are the most lipophilic constituents associated with the anti‐thrombotic, anti‐atherosclerotic, and vasodilating activities of the herb (Figure <xref rid="fsn371755-fig-0001" ref-type="fig">1</xref>) (Wang et al. <xref rid="fsn371755-bib-0070" ref-type="bibr">2020</xref>).</p><fig position="float" fig-type="FIGURE" id="fsn371755-fig-0001" orientation="portrait"><label>FIGURE 1</label><caption><p>Chemical structures of major bioactive constituents from <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="FSN3-14-e71755-g002.jpg"><?image-name FSN3-14-e71755-g002.jpg?><?image-size 82141?><?image-md5 8dc41798b572507d31ded5981a47f73a?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 752?><?image-original-width 1064?><?image-scaled-height 501?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/b6d4/13111759/8dc41798b572/FSN3-14-e71755-g002.jpg?><?thumb-name FSN3-14-e71755-g002.gif?><?thumb-size 3078?><?thumb-md5 55abfc60df0c9d6b7c5395242244a01e?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 113?><?thumb-cloudpmc-urn urn:cdn:blobs/b6d4/13111759/55abfc60df0c/FSN3-14-e71755-g002.gif?></graphic></fig><p>Tanshinone IIA, in particular, has been thoroughly researched for its capacity to prevent myocardial ischemia–reperfusion injury, inhibit vascular smooth muscle proliferation, and reduce oxidative stress (Wang et al. <xref rid="fsn371755-bib-0071" ref-type="bibr">2024</xref>). Cryptotanshinone enhances endothelial nitric oxide (NO) production, promoting vasodilation, while dihydrotanshinone I modulates inflammatory pathways and protects cardiac cells from oxidative damage (Zhou et al. <xref rid="fsn371755-bib-0092" ref-type="bibr">2006</xref>). The mechanism of action of tanshinones involves scavenging reactive oxygen species (ROS), inhibiting platelet aggregation, reducing inflammation through NF‐κB and TNF‐α pathways, and regulating calcium channels to prevent arrhythmias (Li et al. <xref rid="fsn371755-bib-0035" ref-type="bibr">2018</xref>).</p><p>Salvianolic acids, such as salvianolic acid A, salvianolic acid B, and rosmarinic acid, contribute to Danshen's antioxidant, anti‐thrombotic, and vasoprotective properties (He et al. <xref rid="fsn371755-bib-0021" ref-type="bibr">2023</xref>). Salvianolic acid B, the most abundant and well‐studied phenolic acid, enhances endothelial nitric oxide synthase (eNOS) activity, prevents LDL oxidation, and inhibits platelet aggregation, thus lowering the likelihood of atherosclerosis and high blood pressure. These compounds also protect endothelial cells by reducing oxidative stress and improving vascular elasticity, which helps maintain proper blood flow and prevents clot formation (Ho and Hong <xref rid="fsn371755-bib-0023" ref-type="bibr">2011</xref>; Wu et al. <xref rid="fsn371755-bib-0075" ref-type="bibr">2020</xref>).</p><p>The extraction and standardization of Danshen bioactives are fundamental for ensuring high yield, purity, and pharmacological efficacy. Conventional extraction methods include solvent extraction using ethanol, methanol, or water, which is widely used but has limitations in selectivity and efficiency (Zhang, Zhao, et al. <xref rid="fsn371755-bib-0086" ref-type="bibr">2023</xref>). Cutting‐edge methods, including ultrasound‐enhanced extraction (UAE), supercritical fluid extraction (SFE), and microwave‐assisted extraction (MAE), have been devised to enhance the extraction effectiveness and bioavailability of bioactive compounds (Shen et al. <xref rid="fsn371755-bib-0054" ref-type="bibr">2023</xref>; Bhadange et al. <xref rid="fsn371755-bib-0006" ref-type="bibr">2024</xref>). Chromatographic techniques like high‐performance liquid chromatography (HPLC), ultra‐performance liquid chromatography (UPLC), and liquid chromatography‐mass spectrometry (LC–MS) are used for the quantification and standardization of key bioactive markers, primarily tanshinone IIA and salvianolic acid B (Vanitha Madhuri et al. <xref rid="fsn371755-bib-0063" ref-type="bibr">2024</xref>). Despite its therapeutic potential, the pharmacokinetics and bioavailability of Danshen compounds pose challenges due to poor solubility and rapid metabolism (Mahalakshmi et al. <xref rid="fsn371755-bib-0042" ref-type="bibr">2021</xref>). Tanshinones, being highly lipophilic, have low water solubility, which limits their absorption. Strategies such as liposomal formulations, nanoemulsions, and solid dispersion systems have been explored to improve their bioavailability (Wang et al. <xref rid="fsn371755-bib-0067" ref-type="bibr">2021</xref>). Although more water‐soluble, salvianolic acids undergo rapid metabolism in the liver via glucuronidation and sulfation, leading to reduced systemic availability (Li et al. <xref rid="fsn371755-bib-0032" ref-type="bibr">2006</xref>). Novel drug delivery systems (DDS), including polymeric nanoparticles and sustained‐release formulations, are being investigated to enhance their therapeutic potential (Begines et al. <xref rid="fsn371755-bib-0004" ref-type="bibr">2020</xref>). The phytochemical complexity of SM highlights its potential as a multi‐targeted cardiovascular therapy. By modulating oxidative stress, improving endothelial function, and preventing thrombosis, Danshen offers a promising complementary approach to conventional CVD treatments (Gao and Hou <xref rid="fsn371755-bib-0018" ref-type="bibr">2023</xref>). Future research focusing on enhancing bioavailability, optimizing extraction techniques, and understanding molecular mechanisms will be fundamental for integrating Danshen into modern cardiovascular pharmacotherapy (Liu et al. <xref rid="fsn371755-bib-0039" ref-type="bibr">2022</xref>).</p></sec><sec id="fsn371755-sec-0004"><label>4</label><title>Mechanistic Insights: Preclinical Evidence and Molecular Pharmacology</title><p>Danshen has been widely studied for its cardiovascular protective effects. Its bioactive compounds, including tanshinones, salvianolic acids, and diterpenoids, exert multiple pharmacological actions through various molecular mechanisms (Li et al. <xref rid="fsn371755-bib-0035" ref-type="bibr">2018</xref>). Below is a detailed exploration of Danshen's role in endothelial function, nitric oxide modulation, anti‐inflammatory and antioxidant properties, platelet aggregation, lipid metabolism, and cardiac remodeling (Table <xref rid="fsn371755-tbl-0001" ref-type="table">1</xref>).</p><table-wrap position="float" id="fsn371755-tbl-0001" content-type="TABLE" orientation="portrait"><label>TABLE 1</label><caption><p>Molecular mechanisms underlying the cardiovascular effects of key Danshen bioactive compounds.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Mechanism</th><th align="center" valign="bottom" rowspan="1" colspan="1">Compound</th><th align="center" valign="bottom" rowspan="1" colspan="1">Molecular targets</th><th align="center" valign="bottom" rowspan="1" colspan="1">Pathways modulated</th><th align="center" valign="bottom" rowspan="1" colspan="1">Outcomes</th><th align="center" valign="bottom" rowspan="1" colspan="1">References</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Vascular inflammation suppression</td><td align="center" valign="top" rowspan="1" colspan="1">Salvianolic Acid A</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ ICAM‐1</p>
+<p>↓ VCAM‐1</p>
+<p>↓ MCP‐1</p>
+<p>↓ IL‐1β,</p>
+<p>↓ COX2</p>
+<p>↓ iNOS</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ NF‐κB</p>
+<p>↓ JAK/STAT</p>
+<p>↓ IKKβ</p>
+<p>↓ PDGFRβ/ERK</p>
+<p>↑ cAMP/PKA/CREB</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Inhibits endothelial inflammation and proliferation; antithrombotic effect</td><td align="center" valign="top" rowspan="1" colspan="1">Teng et al. (<xref rid="fsn371755-bib-0060" ref-type="bibr">2016</xref>), Chen et al. (<xref rid="fsn371755-bib-0009" ref-type="bibr">2017</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">NO production and lipid regulation</td><td align="center" valign="top" rowspan="1" colspan="1">Salvianolic Acid B</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↑ eNOS,</p>
+<p>↓ NF‐κB,</p>
+<p>↑ LDL receptors</p>
+<p>↓ CD36</p>
+<p>↓ CXCR4</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↑ PI3K/Akt, ↑ AMPK</p>
+<p>↑ PPARγ/LXRα/ABCA1</p>
+<p>↑ Nrf2/HO‐1</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↑ NO synthesis;</p>
+<p>Improves lipid metabolism</p>
+<p>↑endothelial protection</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Zhao et al. (<xref rid="fsn371755-bib-0090" ref-type="bibr">2023</xref>), Franceschelli et al. (<xref rid="fsn371755-bib-0017" ref-type="bibr">2023</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Anti‐fibrotic and antithrombotic action</td><td align="center" valign="top" rowspan="1" colspan="1">Tanshinone IIA</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ TGF‐β1</p>
+<p>↓ Smad</p>
+<p>↓ COX‐1</p>
+<p>↓ TXA2</p>
+<p>↓ ICAM‐1</p>
+<p>↓ ET‐1</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ TGF‐β1/Smad, ↓ MAPK,</p>
+<p>↓ JAK/STAT, ↑ PI3K/Akt,</p>
+<p>↑ Nrf2/HO‐1</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Reduces fibrosis, platelet aggregation, and inflammation; enhances vasodilation</td><td align="center" valign="top" rowspan="1" colspan="1">Shi et al. (<xref rid="fsn371755-bib-0055" ref-type="bibr">2020</xref>), Tran et al. (<xref rid="fsn371755-bib-0061" ref-type="bibr">2022</xref>), Yang et al. (<xref rid="fsn371755-bib-0083" ref-type="bibr">2018</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Antioxidant</td><td align="center" valign="top" rowspan="1" colspan="1">Salvianolic Acid B</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ ROS</p>
+<p>↑ SOD</p>
+<p>↑ CAT</p>
+<p>↓ oxLDL uptake</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">↑ Nrf2/HO‐1</td><td align="center" valign="top" rowspan="1" colspan="1">Boosts antioxidant defenses and endothelial resistance to oxidative damage</td><td align="center" valign="top" rowspan="1" colspan="1">He et al. (<xref rid="fsn371755-bib-0021" ref-type="bibr">2023</xref>), Sun et al. (<xref rid="fsn371755-bib-0059" ref-type="bibr">2009</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mitochondrial function restoration</td><td align="center" valign="top" rowspan="1" colspan="1">Cryptotanshinone</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ MMP‐9</p>
+<p>↓ LOX1</p>
+<p>↑ ATP synthase</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>↓ NF‐κB, ↓ AP‐1</p>
+<p>↓ mitochondrial ROS</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p>Reduces VSMC proliferation, Improves energy balance</p>
+<p>Suppresses inflammation</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Jin et al. (<xref rid="fsn371755-bib-0027" ref-type="bibr">2009</xref>)</td></tr></tbody></table><table-wrap-foot id="fsn371755-ntgp-0001"><fn id="fsn371755-note-0001"><p>Abbreviations: ↑, upregulation or activation; ↓, downregulation or inhibition; ABCA1, ATP‐binding cassette transporter A1; Akt, protein kinase B; AMPK, AMP‐activated protein kinase; AP‐1, activator protein 1; ATP, adenosine triphosphate; CAT, catalase; CD36, cluster of differentiation 36; COX‐1/COX2, cyclooxygenase‐1/2; CREB, cAMP response element‐binding protein; CXCR4, C‐X‐C chemokine receptor type 4; eNOS, endothelial nitric oxide synthase; ERK, extracellular signal‐regulated kinase; ET‐1, endothelin‐1; HO‐1, heme oxygenase‐1; ICAM‐1, intercellular adhesion molecule‐1; IKKβ, inhibitor of nuclear factor kappa‐B kinase subunit beta; IL‐1β, interleukin‐1 beta; iNOS, inducible nitric oxide synthase; JAK/STAT, Janus kinase/signal transducer and activator of transcription; LDL, low‐density lipoprotein; LOX1, lectin‐like oxidized LDL receptor‐1; LXRα, liver X receptor alpha; MCP‐1, monocyte chemoattractant protein‐1; MMP‐9, matrix metallopeptidase 9; NF‐κB, nuclear factor kappa‐light‐chain‐enhancer of activated B cells; NO, nitric oxide; Nrf2, nuclear factor erythroid 2‐related factor 2; PDGFRβ, platelet‐derived growth factor receptor beta; PI3K, phosphoinositide 3‐kinase; PKA, protein kinase A; PPARγ, peroxisome proliferator‐activated receptor gamma; ROS, reactive oxygen species; SOD, superoxide dismutase; Smad, mothers against decapentaplegic homolog; TXA2, thromboxane A2; VCAM‐1, vascular cell adhesion molecule‐1; VSMC, vascular smooth muscle cell.</p></fn></table-wrap-foot></table-wrap><sec id="fsn371755-sec-0005"><label>4.1</label><title>Endothelial Function and Nitric Oxide Modulation</title><p>Endothelial dysfunction is a major contributor to CVDs, characterized by reduced nitric oxide (NO) bioavailability and increased oxidative stress (Ray et al. <xref rid="fsn371755-bib-0051" ref-type="bibr">2023</xref>). Danshen enhances endothelial function through multiple mechanisms. Salvianolic acid B stimulates endothelial nitric oxide synthase (eNOS) activity via the PI3K/Akt pathway, promoting NO synthesis and improving vascular relaxation (Cheng et al. <xref rid="fsn371755-bib-0010" ref-type="bibr">2021</xref>). Additionally, its polyphenolic compounds inhibit NADPH oxidase while enhancing superoxide dismutase (SOD) activity, reducing ROS that degrade NO. Furthermore, tanshinone IIA facilitates vascular regeneration by stimulating the proliferation and migration of endothelial progenitor cells (Qin et al. <xref rid="fsn371755-bib-0049" ref-type="bibr">2023</xref>). Through these actions, Danshen helps restore vascular homeostasis, prevent endothelial dysfunction, and lower hypertension risk (Bernard and Thannickal <xref rid="fsn371755-bib-0005" ref-type="bibr">2020</xref>).</p></sec><sec id="fsn371755-sec-0006"><label>4.2</label><title>Anti‐Inflammatory and Antioxidant Properties</title><p>Chronic inflammation and oxidative stress are key drivers of cardiovascular disease (CVD) progression, and Danshen exerts significant anti‐inflammatory and antioxidant effects through multiple pathways (Yan et al. <xref rid="fsn371755-bib-0081" ref-type="bibr">2023</xref>). Salvianolic acids help suppress the expression of pro‐inflammatory cytokines such as TNF‐α, IL‐6, and IL‐1β by blocking NF‐κB activation, thereby reducing inflammation (He et al. <xref rid="fsn371755-bib-0021" ref-type="bibr">2023</xref>). Additionally, tanshinones and salvianolic acids act as free radical scavengers, enhancing the activity of endogenous antioxidants like glutathione peroxidase (GSH‐Px) and catalase (CAT) to mitigate oxidative damage (Sun et al. <xref rid="fsn371755-bib-0059" ref-type="bibr">2009</xref>). Danshen also modulates inflammatory signaling by inhibiting the MAPK and JAK/STAT pathways, which reduces inflammatory cell infiltration and prevents tissue damage. Through these mechanisms, Danshen contributes to cardioprotection, reduces vascular inflammation, and prevents atherosclerosis (Guo et al. <xref rid="fsn371755-bib-0020" ref-type="bibr">2024</xref>).</p></sec><sec id="fsn371755-sec-0007"><label>4.3</label><title>Platelet Aggregation and Thrombotic Pathways</title><p>Danshen is well known for its antithrombotic effects, which play a fundamental role in preventing stroke, myocardial infarction, and other thrombotic events. It inhibits platelet aggregation through salvianolic acid B and tanshinone IIA, which block ADP, thrombin, and collagen‐induced platelet activation by reducing intracellular calcium mobilization (Neves et al. <xref rid="fsn371755-bib-0045" ref-type="bibr">2024</xref>). Additionally, Danshen helps suppress fibrin clot formation by lowering the expression of fibrinogen and von Willebrand factor, thereby preventing thrombus development. It also downregulates thromboxane A2 (TXA2) synthesis, a potent vasoconstrictor and pro‐thrombotic agent, by inhibiting cyclooxygenase‐1 (COX‐1) (Kubatka et al. <xref rid="fsn371755-bib-0031" ref-type="bibr">2022</xref>). These combined mechanisms make Danshen a natural antiplatelet and anticoagulant agent, offering significant benefits in the prevention of cardiovascular complications (Yuan et al. <xref rid="fsn371755-bib-0084" ref-type="bibr">2024</xref>).</p></sec><sec id="fsn371755-sec-0008"><label>4.4</label><title>Lipid Metabolism and Atherogenesis</title><p>Dysregulated lipid metabolism is a key factor in atherosclerosis, leading to the buildup of plaques in arteries and increasing the risk of heart disease. Danshen helps regulate lipid levels through multiple mechanisms (Linton et al. <xref rid="fsn371755-bib-0037" ref-type="bibr">2019</xref>). Salvianolic acids enhance LDL receptor expression and activate AMPK, promoting lipid breakdown and reducing fat accumulation, which helps lower LDL cholesterol and triglycerides (Son et al. <xref rid="fsn371755-bib-0057" ref-type="bibr">2024</xref>). Additionally, Danshen compounds increase HDL cholesterol by upregulating ApoA1 and PPAR‐α, improving lipid transport and enhancing cholesterol efflux (Soltani et al. <xref rid="fsn371755-bib-0056" ref-type="bibr">2021</xref>). Moreover, Danshen prevents foam cell formation by inhibiting oxidized LDL (ox‐LDL) uptake, stopping macrophages from turning into foam cells—a fundamental step in atherosclerosis development. These actions collectively help reduce plaque formation, improve lipid profiles, and lower cardiovascular risk (Yang et al. <xref rid="fsn371755-bib-0083" ref-type="bibr">2018</xref>).</p></sec><sec id="fsn371755-sec-0009"><label>4.5</label><title>Cardiac Remodeling and Fibrosis</title><p>Cardiac remodeling, often triggered by hypertension, myocardial infarction, or heart failure, involves fibrosis, hypertrophy, and ventricular dysfunction (Azevedo et al. <xref rid="fsn371755-bib-0003" ref-type="bibr">2016</xref>). Danshen mitigates these effects through several mechanisms. Tanshinone IIA inhibits cardiac fibroblast activation by blocking the TGF‐β1/Smad signaling pathway, reducing collagen deposition and myocardial fibrosis (Shi et al. <xref rid="fsn371755-bib-0055" ref-type="bibr">2020</xref>). Additionally, salvianolic acids protect against myocardial apoptosis by activating the Nrf2/HO‐1 pathway, which lowers oxidative stress‐induced cardiomyocyte death (Ji et al. <xref rid="fsn371755-bib-0025" ref-type="bibr">2020</xref>). Danshen also improves mitochondrial function by enhancing ATP production and reducing mitochondrial ROS generation, preventing energy depletion in heart cells. Through these mechanisms, Danshen helps preserve cardiac structure and function, reducing the risk of heart failure progression (Pan et al. <xref rid="fsn371755-bib-0047" ref-type="bibr">2025</xref>; Chiu et al. <xref rid="fsn371755-bib-0011" ref-type="bibr">2012</xref>).</p></sec><sec id="fsn371755-sec-0010"><label>4.6</label><title>Compound‐Specific Mechanisms: Tanshinones and Salvianolic Acids in Cardiovascular Protection</title><p>Tanshinone IIA exerts its cardiovascular protective effects through multiple mechanisms (Figure <xref rid="fsn371755-fig-0002" ref-type="fig">2</xref>). It protects endothelial cells by reducing oxidative stress‐induced injury via Nrf2 activation and inhibits inflammatory responses by suppressing TNF‐α (Tumor Necrosis Factor‐alpha), ICAM‐1 (Intercellular Adhesion Molecule‐1), VCAM‐1 (Vascular Cell Adhesion Molecule‐1), MCP‐1 (Monocyte Chemoattractant Protein‐1), E‐selectin (Endothelial Selectin), IL‐8 (Interleukin‐8), and IL‐1β (Interleukin‐1 β), thereby preventing monocyte adhesion (Yang et al. <xref rid="fsn371755-bib-0082" ref-type="bibr">2023</xref>). It also promotes vasodilation by enhancing NO bioavailability through eNOS activation/phosphorylation and by reducing endothelin‐1 (ET‐1) levels (Tran et al. <xref rid="fsn371755-bib-0061" ref-type="bibr">2022</xref>). Tanshinone IIA may reduce endothelial nitric oxide synthase (eNOS) uncoupling by restoring the tetrahydrobiopterin/dihydrobiopterin (BH4/BH2) balance and upregulating key regulators of BH4 homeostasis—GTP cyclohydrolase I (GTPCH1) and dihydrofolate reductase (DHFR)—together with heat shock protein 90 (HSP90). In vascular smooth muscle cells (VSMCs), it suppresses extracellular signal–regulated kinase (ERK) and 3‐phosphoinositide‐dependent protein kinase‐1 (PDK1) signaling and activates large‐conductance Ca<sup>2+</sup>‐activated K<sup>+</sup> channels (BKCa), AMP‐activated protein kinase (AMPK), and nuclear factor erythroid 2–related factor 2 (Nrf2), which may help limit vascular remodeling and plaque instability (Ren et al. <xref rid="fsn371755-bib-0052" ref-type="bibr">2015</xref>). In macrophages, it exhibits anti‐atherogenic effects by blocking scavenger receptor‐mediated oxidized LDL (oxLDL) uptake, reducing foam cell formation, and promoting cholesterol efflux via ABCA1 and ABCG1 through the Nrf2/HO‐1 pathway. Moreover, it inhibits platelet aggregation and activation, contributing to its overall atheroprotective effects (Zhang, Wu, et al. <xref rid="fsn371755-bib-0085" ref-type="bibr">2023</xref>). Cryptotanshinone, another active compound of Danshen, shares similar protective effects by reducing endothelial inflammation, inhibiting LOX1‐mediated pro‐inflammatory signaling, and suppressing monocyte adhesion. It also prevents VSMC proliferation and migration by inhibiting MMP‐9 expression through the NF‐κB and AP‐1 pathways, further supporting its role in reducing atherosclerosis progression (Jin et al. <xref rid="fsn371755-bib-0027" ref-type="bibr">2009</xref>). Additionally, salvianolic acid A (Sal‐A) enhances endothelial function by increasing NO bioavailability through MKP‐3 inhibition, improving endothelial barrier function, and acting as an ET1 type A receptor (ETAR) antagonist to reduce vascular remodeling. It inhibits NF‐κB by targeting IKKβ, suppressing pro‐inflammatory mediators (COX2, iNOS, TNFα, IL‐6), and preventing Ang II‐induced endothelial proliferation by blocking ROS generation, Src, and Akt phosphorylation (Teng et al. <xref rid="fsn371755-bib-0060" ref-type="bibr">2016</xref>). Sal‐A also represses endothelial‐to‐mesenchymal transition (EndMT) via Nrf2 activation and Smad modulation while exhibiting anti‐thrombotic effects by inhibiting platelet aggregation through cAMP/PKA/CREB and PDGFRβ/ERK signaling (Chen et al. <xref rid="fsn371755-bib-0009" ref-type="bibr">2017</xref>). Salvianolic acid B (Sal‐B) improves endothelial function by decreasing TNFα‐induced adhesion molecule expression (ICAM‐1, VCAM‐1) via NF‐κB and AP1 inhibition, activates Nrf2/HO‐1 to prevent LDL oxidation and oxLDL‐induced endothelial injury, and inhibits VSMC proliferation and migration by blocking CXCR4 and activating Nrf2 (Zhao et al. <xref rid="fsn371755-bib-0090" ref-type="bibr">2023</xref>). Additionally, Sal‐B reduces foam cell formation by suppressing CD36‐mediated oxLDL uptake and enhancing cholesterol efflux through the PPARγ/LXRα/ABCA1 pathway (Franceschelli et al. <xref rid="fsn371755-bib-0017" ref-type="bibr">2023</xref>). The major bioactive constituents and their mechanisms are summarized in Table <xref rid="fsn371755-tbl-0001" ref-type="table">1</xref>.</p><fig position="float" fig-type="FIGURE" id="fsn371755-fig-0002" orientation="portrait"><label>FIGURE 2</label><caption><p>Cardioprotective mechanisms of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> bioactive compounds against cardiovascular diseases. Bioactive compounds such as tanshinones and salvianolic acids enhance endothelial function by upregulating eNOS and increasing nitric oxide (NO) production, while reducing reactive oxygen species (ROS) via antioxidant enzymes (SOD, CAT, GSH‐Px). Anti‐inflammatory effects are mediated by suppression of pro‐inflammatory cytokines (TNF‐α, IL‐6, IL‐1β), leading to inhibition of COX‐1 and thromboxane A2 (TxA2), ultimately reducing platelet aggregation. Lipid metabolism is modulated by upregulating LDL receptors (LDLR), ApoA1, and PPAR‐γ, as well as activating AMPK, which together reduce fat accumulation, LDL, and foam cell formation, contributing to the prevention of atherosclerosis. Anti‐fibrotic and cardioprotective effects are achieved through inhibition of the TGF‐β1/Smad pathway and activation of Nrf2/HO‐1, which reduce collagen deposition and cardiomyocyte death, thereby limiting cardiac remodeling. ↑, increase; ↓, decrease; AMPK, AMP‐activated protein kinase; ApoA1, apolipoprotein A1; CAT, catalase; COX‐1, cyclooxygenase‐1; CSE, cystathionine γ‐lyase; eNOS, endothelial nitric oxide synthase; FTH1, ferritin heavy chain 1; GSH‐Px, glutathione peroxidase; IL‐1β, interleukin‐1 beta; IL‐6, interleukin‐6; LDL, low‐density lipoprotein; LDLR, low‐density lipoprotein receptor; NO, nitric oxide; NQO‐1, NAD(P)H quinone dehydrogenase 1; Nrf2, nuclear factor erythroid 2–related factor 2; ox‐LDL, oxidized low‐density lipoprotein; PPAR‐γ, peroxisome proliferator‐activated receptor gamma; ROS, reactive oxygen species; SOD, superoxide dismutase; TGF‐β1, transforming growth factor‐beta 1; TG, triglycerides; TNF‐α, tumor necrosis factor‐alpha; TxA2, thromboxane A2.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="FSN3-14-e71755-g001.jpg"><?image-name FSN3-14-e71755-g001.jpg?><?image-size 107072?><?image-md5 a3f374227303726b12bf198c38242d82?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 596?><?image-original-width 1064?><?image-scaled-height 397?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/b6d4/13111759/a3f374227303/FSN3-14-e71755-g001.jpg?><?thumb-name FSN3-14-e71755-g001.gif?><?thumb-size 14926?><?thumb-md5 31c69ea6e203ee7594c4429707f71431?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 142?><?thumb-cloudpmc-urn urn:cdn:blobs/b6d4/13111759/31c69ea6e203/FSN3-14-e71755-g001.gif?></graphic></fig><p>Representative preclinical models demonstrating cardioprotective effects are summarized in Table <xref rid="fsn371755-tbl-0002" ref-type="table">2</xref>.</p><table-wrap position="float" id="fsn371755-tbl-0002" content-type="TABLE" orientation="portrait"><label>TABLE 2</label><caption><p>Summary of preclinical models demonstrating cardioprotective effects of Danshen compounds.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Model</th><th align="center" valign="bottom" rowspan="1" colspan="1">Tested compound</th><th align="center" valign="bottom" rowspan="1" colspan="1">Dose/Concentration</th><th align="center" valign="bottom" rowspan="1" colspan="1">Primary endpoint</th><th align="center" valign="bottom" rowspan="1" colspan="1">Major findings</th><th align="center" valign="bottom" rowspan="1" colspan="1">References</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">
+<p>In vitro</p>
+<p>H9c2 cardiomyocytes</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Salvianolic Acid B</td><td align="center" valign="top" rowspan="1" colspan="1">10–50 μM</td><td align="center" valign="top" rowspan="1" colspan="1">Oxidative stress, apoptosis</td><td align="center" valign="top" rowspan="1" colspan="1">Reduced ROS, increased cell survival</td><td align="center" valign="top" rowspan="1" colspan="1">Wang et al. (<xref rid="fsn371755-bib-0072" ref-type="bibr">2018</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">
+<p>In vitro</p>
+<p>Human umbilical vein endothelial cells (HUVECs)</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Tanshinone IIA</td><td align="center" valign="top" rowspan="1" colspan="1">5–20 μM</td><td align="center" valign="top" rowspan="1" colspan="1">Endothelial dysfunction</td><td align="center" valign="top" rowspan="1" colspan="1">Enhanced NO production, reduced inflammation</td><td align="center" valign="top" rowspan="1" colspan="1">Yang et al. (<xref rid="fsn371755-bib-0082" ref-type="bibr">2023</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">
+<p>In vivo</p>
+<p>Rat model of myocardial infarction</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Danshen extract</td><td align="center" valign="top" rowspan="1" colspan="1">100 mg/kg (oral)</td><td align="center" valign="top" rowspan="1" colspan="1">Infarct size, cardiac function</td><td align="center" valign="top" rowspan="1" colspan="1">Reduced infarct size, improved ejection fraction</td><td align="center" valign="top" rowspan="1" colspan="1">Wang et al. (<xref rid="fsn371755-bib-0069" ref-type="bibr">2020</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">
+<p>In vivo</p>
+<p>Mouse model of atherosclerosis</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Salvianolic Acid A</td><td align="center" valign="top" rowspan="1" colspan="1">50 mg/kg (oral)</td><td align="center" valign="top" rowspan="1" colspan="1">Atherosclerotic plaque formation</td><td align="center" valign="top" rowspan="1" colspan="1">Decreased lipid accumulation, reduced inflammation</td><td align="center" valign="top" rowspan="1" colspan="1">Xie et al. (<xref rid="fsn371755-bib-0077" ref-type="bibr">2023</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">
+<p>In vivo</p>
+<p>Rat model of hypertension</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">Cryptotanshinone</td><td align="center" valign="top" rowspan="1" colspan="1">20 mg/kg (intraperitoneal)</td><td align="center" valign="top" rowspan="1" colspan="1">Blood pressure regulation</td><td align="center" valign="top" rowspan="1" colspan="1">Lowered systolic BP, improved endothelial function</td><td align="center" valign="top" rowspan="1" colspan="1">Li et al. (<xref rid="fsn371755-bib-0034" ref-type="bibr">2020</xref>)</td></tr></tbody></table></table-wrap></sec></sec><sec id="fsn371755-sec-0011"><label>5</label><title>Clinical Studies</title><p>Danshen has been evaluated in human studies for cardiovascular indications (Table <xref rid="fsn371755-tbl-0003" ref-type="table">3</xref>); however, the clinical evidence is heterogeneous in intervention type (extracts, multi‐herb formulations, injections), standardization, dosing, populations, and endpoints. Many trials have small sample sizes, short follow‐up, and incomplete reporting of randomization/blinding, which limits statistical power and confidence in effect estimates. Mechanistic findings from in vitro and animal studies should not be extrapolated to humans unless supported by clinical endpoints or relevant biomarkers. As this is a narrative review and the studies are not sufficiently comparable, no meta‐analysis was conducted; findings are summarized descriptively.</p><table-wrap position="float" id="fsn371755-tbl-0003" content-type="TABLE" orientation="portrait"><label>TABLE 3</label><caption><p>Summary of clinical studies.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Model/Population</th><th align="center" valign="bottom" rowspan="1" colspan="1">Dose/Form</th><th align="center" valign="bottom" rowspan="1" colspan="1">Outcomes</th><th align="center" valign="bottom" rowspan="1" colspan="1">References</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Human adults &gt; 40 years (with peripheral arterial disease)</td><td align="center" valign="top" rowspan="1" colspan="1">Danshen Gegen Capsule (3 capsules (500 mg per capsule) twice daily for 24 weeks)</td><td align="center" valign="top" rowspan="1" colspan="1">The study assesses changes in walking distance, quality of life (EuroQol‐5D), and functional status (Walking Impairment Questionnaire) over 24 weeks. It also evaluates cardiovascular event rates, ankle‐brachial index before and after exercise, and arterial stiffness (brachial‐to‐ankle pulse wave velocity) to measure vascular health improvements</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:clinical-trial" xlink:href="NCT02380794">NCT02380794</ext-link> (<xref rid="fsn371755-bib-0002" ref-type="bibr">2015</xref>)</p>
+<p>
+<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://clinicaltrials.gov/study/NCT02380794" ext-link-type="uri">https://clinicaltrials.gov/study/NCT02380794</ext-link>
+</p>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Human (with hypertension)</td><td align="center" valign="top" rowspan="1" colspan="1">Danshen &amp; Gegen 2 g, 1 g</td><td align="center" valign="top" rowspan="1" colspan="1">Reduced hypertension symptoms in 1‐year observation</td><td align="center" valign="top" rowspan="1" colspan="1"><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:clinical-trial" xlink:href="NCT01033630">NCT01033630</ext-link> (<xref rid="fsn371755-bib-0001" ref-type="bibr">2009</xref>)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Human adults (with unstable angina)</td><td align="center" valign="top" rowspan="1" colspan="1">Gualou Xiebai Banxia Decoction &amp; Danshen Decoction</td><td align="center" valign="top" rowspan="1" colspan="1">The study measures myocardial enzymes, blood lipids, and treadmill test results at baseline and four weeks, with myocardial infarction or heart failure incidence tracked over six months</td><td align="center" valign="top" rowspan="1" colspan="1">
+<p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:clinical-trial" xlink:href="NCT03179514">NCT03179514</ext-link></p>
+<p>
+<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://cdek.pharmacy.purdue.edu/trial/NCT03179514/" ext-link-type="uri">https://cdek.pharmacy.purdue.edu/trial/NCT03179514/</ext-link>
+</p>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Human adults (with coronary heart disease, primary hypertension)</td><td align="center" valign="top" rowspan="1" colspan="1">Danshen dripping pill</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1">
+<p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:clinical-trial" xlink:href="NCT01825759">NCT01825759</ext-link></p>
+<p>
+<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://cdek.pharmacy.purdue.edu/trial/NCT01825759/" ext-link-type="uri">https://cdek.pharmacy.purdue.edu/trial/NCT01825759/</ext-link>
+</p>
+</td></tr></tbody></table></table-wrap></sec><sec id="fsn371755-sec-0012"><label>6</label><title>Translational Cardiovascular Applications of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>: Integrative Evidence From Mechanisms to Clinical Validation</title><sec id="fsn371755-sec-0013"><label>6.1</label><title>Therapeutic Perspectives</title><p>The bioactive compounds of Danshen are being considerably investigated for their cardiovascular benefits, with growing evidence supporting its use from molecular mechanisms to clinical applications. Its bioactive compounds, including tanshinones and salvianolic acids, exhibit diverse pharmacological effects such as vasodilation, anti‐thrombosis, anti‐inflammatory activity, and myocardial protection (Li et al. <xref rid="fsn371755-bib-0035" ref-type="bibr">2018</xref>). These properties have been explored in preclinical models and human trials, offering promising insights into their therapeutic potential. However, challenges such as standardization, safety concerns, and herb‐drug interactions must be carefully considered to ensure its effective integration into cardiovascular treatment strategies (Wang et al. <xref rid="fsn371755-bib-0064" ref-type="bibr">2023</xref>). This section provides a comprehensive review of mechanistic actions of Danshen, experimental validation, clinical evidence, safety considerations, and future research directions.</p><p>The cardiovascular benefits of SM are primarily attributed to its bioactive constituents, notably tanshinones and salvianolic acids, which exhibit a range of pharmacological activities (Jung et al. <xref rid="fsn371755-bib-0028" ref-type="bibr">2020</xref>). One of its key effects is antioxidative, as Tanshinone IIA has been shown to activate the Nrf2 pathway, enhancing the expression of antioxidative proteins such as NQO‐1 while promoting iron homeostasis through ferritin heavy chain 1 (FTH1). This mechanism plays a fundamental role in mitigating oxidative stress‐induced endothelial damage, a significant contributor to atherosclerosis development (He et al. <xref rid="fsn371755-bib-0022" ref-type="bibr">2021</xref>). Additionally, Danshen demonstrates strong anti‐inflammatory properties, with salvianolic acids reducing leukocyte‐endothelial adherence and inhibiting the expression of metalloproteinases in aortic smooth muscle cells, thereby decreasing vascular inflammation and remodeling. The herb also contributes to vasodilation by stimulating the production of endogenous hydrogen sulfide (H<sub>2</sub>S), a potent vasodilator, through the activation of the cystathionine γ‐lyase (CSE) pathway, which enhances blood vessel relaxation and helps regulate blood pressure (Ho and Hong <xref rid="fsn371755-bib-0023" ref-type="bibr">2011</xref>). Furthermore, its anti‐fibrotic properties have been linked to the ability of tanshinones to inhibit myocardial fibrosis by modulating signaling pathways such as PI3K/Akt, ultimately contributing to the preservation of cardiac function. Together, these mechanisms highlight the therapeutic potential of Danshen in cardiovascular protection (Jung et al. <xref rid="fsn371755-bib-0028" ref-type="bibr">2020</xref>).</p><p>Animal and in vitro studies provide fundamental evidence supporting the cardiovascular benefits of Danshen. Research has demonstrated its potential in models of atherosclerosis, myocardial infarction, and hypertension (Wang et al. <xref rid="fsn371755-bib-0066" ref-type="bibr">2017</xref>). Additionally, the treatment has been found to ameliorate ultrastructural changes in the thoracic aorta's adventitial fibroblasts, suggesting vascular protective properties (Liu et al. <xref rid="fsn371755-bib-0038" ref-type="bibr">2016</xref>). In atherosclerosis models, preclinical studies indicate that tanshinones and salvianolic acids help inhibit lipid accumulation and reduce plaque formation, likely due to their strong antioxidative and anti‐inflammatory properties (Xu et al. <xref rid="fsn371755-bib-0080" ref-type="bibr">2024</xref>). Furthermore, in myocardial infarction models, tanshinone IIA has demonstrated the ability to reduce infarct size and enhance cardiac function post‐myocardial infarction by modulating apoptotic pathways and boosting antioxidative defenses (Fang et al. <xref rid="fsn371755-bib-0015" ref-type="bibr">2021</xref>). These findings collectively support the potential of SM as a therapeutic agent for cardiovascular diseases.</p><p>Clinical investigations have highlighted the therapeutic potential of SM in various cardiovascular conditions (Lyu et al. <xref rid="fsn371755-bib-0040" ref-type="bibr">2021</xref>). In patients with coronary artery disease (CAD), clinical trials suggest that Danshen preparations can alleviate angina symptoms and enhance myocardial perfusion, effects largely attributed to the vasodilatory and anti‐thrombotic properties of its bioactive compounds (Dai et al. <xref rid="fsn371755-bib-0012" ref-type="bibr">2024</xref>). Additionally, research indicates that Danshen may be beneficial for individuals with heart failure by improving cardiac output and reducing symptoms, likely due to its positive inotropic and anti‐fibrotic effects. Furthermore, evidence supports its neuroprotective role in ischemic stroke, with studies suggesting that its antioxidative and anti‐inflammatory properties help mitigate ischemia–reperfusion injury, reducing brain damage and improving recovery outcomes (Lin and Hsieh <xref rid="fsn371755-bib-0036" ref-type="bibr">2010</xref>).</p><p>The bioavailability of SM is significantly restricted by poor solubility, extensive first‐pass metabolism, and rapid clearance, which hinder its therapeutic potential. The major bioactive components, including lipophilic tanshinones (tanshinone I, tanshinone IIA, cryptotanshinone, and dihydrotanshinone I) and hydrophilic salvianolic acids (Sal‐A and Sal‐B), face absorption challenges due to their chemical properties (Kim et al. <xref rid="fsn371755-bib-0030" ref-type="bibr">2008</xref>). Tanshinones have extremely low water solubility, leading to poor gastrointestinal absorption, while salvianolic acids, despite their hydrophilicity, exhibit rapid metabolism and a short elimination half‐life. Additionally, these compounds are substrates for P‐glycoprotein (P‐gp), which pumps them out of intestinal cells, further reducing systemic absorption (Xing et al. <xref rid="fsn371755-bib-0078" ref-type="bibr">2017</xref>). Extensive metabolism by cytochrome P450 (CYP) enzymes also contributes to their low bioavailability.</p><p>To overcome these challenges, various strategies have been explored, including nanoformulations such as liposomes, solid lipid nanoparticles (SLNs), and polymeric nanoparticles, which enhance solubility and protect against metabolism (Zhang, Dong, et al. <xref rid="fsn371755-bib-0087" ref-type="bibr">2021</xref>). Co‐administration with bioenhancers like piperine and polyethylene glycol (PEG) helps inhibit P‐gp efflux, improving intestinal absorption. Structural modifications and prodrug approaches, such as magnesium lithospermate B (a modified form of Sal‐B), have shown improved pharmacokinetics and therapeutic effects (Nguyen et al. <xref rid="fsn371755-bib-0046" ref-type="bibr">2021</xref>). Cyclodextrin inclusion complexes enhance solubility by forming stable drug complexes, while self‐microemulsifying DDSs (SMEDDS) improve oral absorption by facilitating dispersion in gastrointestinal fluids (Salawi <xref rid="fsn371755-bib-0053" ref-type="bibr">2022</xref>). Additionally, alternative delivery methods like transdermal patches and injectable formulations bypass first‐pass metabolism, ensuring higher systemic exposure. Despite these challenges, advancements in novel DDS continue to enhance the bioavailability of SM, making it a promising therapeutic agent for cardiovascular and inflammatory diseases (Ezike et al. <xref rid="fsn371755-bib-0014" ref-type="bibr">2023</xref>).</p><p>Besides this, Bi et al. formulated a solid self‐microemulsifying DDS (S‐SMEDDS) to improve the oral bioavailability of both fat‐soluble compounds (e.g., tanshinone IIA, tanshinone I, cryptotanshinone, dihydrotanshinone I) and water‐soluble compounds (e.g., danshensu, salvianolic acid B) of SM. The S‐SMEDDS formulation was refined through solubility analysis and phase diagram development to achieve excellent self‐emulsification properties; stability, optimal droplet size, polydispersity index, and zeta potential were ensured. The formulation was fabricated by adding a liposoluble extract into an aqueous solution containing a hydrophilic polymer and subjecting it to freeze‐drying. In vitro release experiments demonstrated that 60%–80% of each active is released in 20 min. In vivo rat bioavailability tests verified that the oral absorption of these constituents improved considerably with S‐SMEDDS compared to the drug suspension. The research concludes that S‐SMEDDS is a viable method for the delivery of SM extract and other multi‐component drugs, efficiently improving dissolution rates and oral absorption of compounds with different polarities (Bi et al. <xref rid="fsn371755-bib-0007" ref-type="bibr">2016</xref>).</p><p>A similar conclusion was reached by Pan et al., who studied the pharmacokinetics of cryptotanshinone, a key lipophilic constituent of SM, using a hydroxypropyl‐β‐cyclodextrin inclusion complex in dogs and rats. Given the low oral bioavailability of cryptotanshinone, the study aimed to enhance its absorption and systemic exposure. The inclusion complex improved bioavailability, which was 6.9% ± 1.9% in rats (60 mg/kg) and 11.1% ± 1.8% in dogs (53.4 mg/kg), compared to its conventional formulation. The drug exhibited slow absorption and dose‐proportional pharmacokinetics, with a half‐life of 5.3–7.4 h in rats and 6.0–10.0 h in dogs (Pan et al. <xref rid="fsn371755-bib-0048" ref-type="bibr">2008</xref>). These findings align with other studies on SM bioavailability enhancement strategies, such as the S‐SMEDDS developed by Bi et al., which improved the dissolution and absorption of both lipophilic (e.g., cryptotanshinone, tanshinone IIA) and hydrophilic (e.g., salvianolic acid B, danshensu) components. The pharmacokinetic improvements observed with cyclodextrin inclusion further highlight the importance of advanced delivery systems in enhancing the therapeutic efficacy of SM‐derived bioactives (Bi et al. <xref rid="fsn371755-bib-0007" ref-type="bibr">2016</xref>).</p></sec><sec id="fsn371755-sec-0014"><label>6.2</label><title>Safety, Toxicity, and Herb‐Drug Interactions</title><p>While Danshen is generally regarded as safe, certain considerations must be considered. Adverse effects are rare but can include mild gastrointestinal discomfort and allergic reactions in some individuals. One of the primary concerns is its potential for herb‐drug interactions, particularly with anticoagulant medications like warfarin (Zhou et al. <xref rid="fsn371755-bib-0091" ref-type="bibr">2005</xref>).</p><p>This interaction is largely attributed to the inhibition of cytochrome P450 enzymes, specifically CYP1A2 and CYP3A4, by tanshinones, which may alter drug metabolism and efficacy. As a result, careful monitoring is necessary when Danshen is used alongside medications processed by these enzymes (Qiu et al. <xref rid="fsn371755-bib-0050" ref-type="bibr">2010</xref>). From a clinical perspective, the main safety concern is bleeding risk when Danshen is used with antithrombotic therapy, so medication reconciliation and risk stratification are advisable in routine practice. Additionally, although the herb is well‐tolerated at recommended dosages, excessive intake may lead to toxicity, reinforcing the importance of adhering to appropriate dosing guidelines to minimize potential risks (Zhang, Luo, et al. <xref rid="fsn371755-bib-0088" ref-type="bibr">2021</xref>).</p><p>Extensive experimental and clinical research has demonstrated that Danshen, in both its crude form and various preparations (such as Danshen injection, Danshen dripping pill, Danhong injection, and Danshen‐Gegen decoction), provides significant cardioprotective benefits during pathological conditions like myocardial ischemia, myocardial infarction, and reperfusion injury (Jia et al. <xref rid="fsn371755-bib-0026" ref-type="bibr">2011</xref>). Key bioactive components of Danshen, including the lipophilic tanshinone IIa and cryptotanshinone, as well as the hydrophilic Danshensu, Sal‐A, and Sal‐B, exhibit potent cardioprotective effects. These compounds primarily protect the heart from acute ischemic injury through their antioxidant, anti‐inflammatory, and anti‐apoptotic properties (Wei et al. <xref rid="fsn371755-bib-0073" ref-type="bibr">2023</xref>). Additionally, some components contribute to mitigating pathological cardiac remodeling, highlighting their potential as therapeutic agents for chronic heart diseases such as heart failure (Fang et al. <xref rid="fsn371755-bib-0016" ref-type="bibr">2023</xref>). In 2023, Ma et al. explored the mechanism of SM and tanshinone IIA (Tan IIA) in treating atherosclerosis through network pharmacology and molecular biology experiments. They elucidated 35 significant overlapping targets between SM and coronary artery disease (CAD) and built a protein–protein interaction (PPI) network. GO and KEGG analyses demonstrated that SM reduces CAD mainly by anti‐inflammatory pathways targeting TNF, COX‐2 (PTGS2), MMP9, and NF‐κB. Molecular docking validated Tan IIA as the major active compound, inhibiting vascular inflammation and plaque formation through the COX‐2/TNF‐α/NF‐κB pathway. In vivo and in vitro experiments proved that SM and Tan IIA inhibited lipid deposition and inflammatory cytokine expression in ApoE−/− mice and ox‐LDL‐cultured HUVECs. Considering the drawbacks of traditional CAD therapy, their research validates SM and Tan IIA as novel plant‐derived therapeutics for the control of atherosclerosis (Ma et al. <xref rid="fsn371755-bib-0041" ref-type="bibr">2023</xref>).</p><p>Apart from this, Chang et al. examined SM effects on oxidative stress in CVDs related to aging via a systematic review of the literature. They observed that SM is an antioxidant, antiapoptotic, and anti‐inflammatory but also angiogenic and cardioprotective. SM suppresses ROS generation by blocking oxidases, inhibiting oxidative modification of low‐density lipoproteins, and reducing mitochondrial oxidative stress. It increases antioxidant enzyme function, such as catalase, MnSOD, glutathione peroxidase, and coupled eNOS. SM also decreases ischemia/reperfusion injury, suppresses cardiac fibrosis following myocardial infarction, maintains cardiac function in coronary artery disease, and sustains blood–brain barrier integrity and neural stem cell regeneration following stroke. These data indicate that SM may represent a novel therapeutic agent for CVDs, although well‐conducted clinical trials are essential to confirm its effectiveness (Chang et al. <xref rid="fsn371755-bib-0008" ref-type="bibr">2016</xref>). Furthermore, Wu et al. reviewed the cardiovascular protective effects of salvianolic acids A (SalA) and B (SalB), the primary water‐soluble bioactive compounds extracted from SM. These compounds have demonstrated potent antioxidant, anti‐inflammatory, and antifibrotic characteristics, rendering them suitable contenders for cardiovascular disease treatment. Comprehensive in vivo and in vitro research indicates that SalA and SalB alleviate oxidative stress, platelet clumping, blood clotting, thrombosis, endothelial dysfunction, and vascular inflammation by acting on various vascular cell types. As polyphenolic compounds, they possess direct ROS scavenging abilities, but more quantitative methods, such as electron spin resonance spin trapping, are needed to precisely measure these effects in pharmacokinetic studies. Additionally, improving formulation techniques to enhance their bioavailability and stability remains fundamental. The broad cardiovascular benefits of SalA and SalB provide a strong scientific rationale for their continued exploration as small‐molecule drug candidates for cardiovascular disease treatment (Wu et al. <xref rid="fsn371755-bib-0075" ref-type="bibr">2020</xref>).</p><p>Additionally, Zhang et al. investigated the additive effects of <italic toggle="yes">Huang Qi</italic> (HQ, <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Astragalus mongholicus</italic>
+</styled-content>) and <italic toggle="yes">Dan Shen</italic> (DS, <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>) in treating coronary heart disease (CHD). Using network pharmacology and a myocardial infarction (MI) rat model, they identified 170 shared and specific genes targeted by HQ and DS. The combination therapy significantly improved cardiac function, reduced myocardial infarction size and fibrosis, regulated lipid metabolism, and maintained circulatory homeostasis more effectively than either herb alone. HQ specifically alleviated cardiac remodeling by reducing ventricular dilation and myocardial hypertrophy, while DS had a distinct advantage in regulating hypercoagulability and hemodynamics. Given the limitations of conventional CHD treatments such as aspirin and statins, HQ and DS offer a promising alternative with fewer side effects. Their combined effects on lipid metabolism, oxidative stress, inflammation, and fibrosis highlight their potential as complementary therapies for preventing heart failure post‐MI (Zhang, Wang, et al. <xref rid="fsn371755-bib-0089" ref-type="bibr">2021</xref>).</p><p>Furthermore, Wu et al. evaluated the antihypertensive effects of SABP, a combination of hydrophilic active metabolites from SM, in spontaneously hypertensive rats (SHRs). SABP was administered intraperitoneally, with perindopril as a control, and its impact on oxidative stress, inflammation, and vascular remodeling was assessed through histochemical staining, Western blot, and electron microscopy. Additionally, adventitial fibroblasts were isolated to evaluate their proliferation, migration, and transformation in response to SABP. Results showed that SABP significantly reduced systolic blood pressure, suppressed oxidative stress and inflammation via the ROS/TLR4/NF‐κB pathway, and inhibited vascular fibrosis and remodeling in SHRs. It also prevented fibroblast activation and myofibroblast differentiation through the TGFβ/Smad3 pathway. These outcomes highlight the adventitia's role in vascular dysfunction and suggest SABP as a promising alternative antihypertensive therapy. Future research will focus on its effects on peripheral arteries to further elucidate its therapeutic potential (Wu et al. <xref rid="fsn371755-bib-0074" ref-type="bibr">2023</xref>).</p><p>Additionally, Xia et al. investigated whether antioxidant therapy with SM extract prevents the postoperative increase of endothelin‐1 in children with congenital heart defects undergoing cardiopulmonary bypass. Twenty children with pulmonary hypertension were randomized into a placebo control group (A) or a treatment group (B) receiving SM (200 mg/kg intravenously). Blood samples were collected at multiple time points before, during, and after surgery to measure malondialdehyde (MDA), creatine kinase‐MB (CK‐MB), thromboxane B2, and prostacyclin metabolites. Results showed that MDA significantly increased in the placebo group but remained stable in the treatment group, indicating reduced oxidative stress. At 30 min post‐bypass, CK‐MB, thromboxane B2, and endothelin‐1 levels were significantly lower in group B, with MDA correlating with CK‐MB (<italic toggle="yes">r</italic> = 0.71, <italic toggle="yes">p</italic> = 0.0005). Endothelin‐1 negatively correlated with the 6‐keto‐prostaglandin F1α/thromboxane B2 ratio (<italic toggle="yes">r</italic> = −0.64, <italic toggle="yes">p</italic> = 0.0025) at 24 h post‐bypass. These findings suggest that SM reduces oxidative stress, mitigates myocardial damage, and improves the balance of vasoactive mediators after cardiopulmonary bypass, highlighting its potential as a cardioprotective therapy (Xia et al. <xref rid="fsn371755-bib-0076" ref-type="bibr">2003</xref>).</p><p>A similar conclusion was reached by Mu et al., who explored the cardioprotective effects of SM extract in an isoproterenol (ISO)‐induced acute myocardial ischemia (AMI) rat model. Rats were pretreated with SM extract (0.8, 0.9, and 1.8 g/kg/day), and their effects were assessed through histopathological analysis, cytokine levels, and untargeted metabolomics. LC–MS/MS analysis identified 25 major compounds in the SM extract, including salvianolic acid B, lithospermic acid, salvianolic acid A, and caffeic acid. Results indicated that SM extract markedly decreased myocardial infarct size, normalized electrocardiographic patterns, and repaired histopathological irregularities, lowered proinflammatory cytokines, and inhibited oxidative stress. Metabolomics analysis revealed 24 differential metabolites that returned to control levels post‐treatment, mainly linked to the metabolism of histidine, alanine, aspartate, glutamate, glycerophospholipids, glycine, serine, and threonine. Correlation analysis revealed that the heart‐protective effects of SM extract were associated with changes in endogenous metabolites. These results underscore SM extract as a potential therapeutic candidate for myocardial ischemia through anti‐inflammatory, antioxidative, and metabolic regulatory mechanisms (Mu et al. <xref rid="fsn371755-bib-0043" ref-type="bibr">2024</xref>).</p></sec></sec><sec id="fsn371755-sec-0015"><label>7</label><title>Conclusion and Future Directions</title><p>Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>) shows cardioprotective potential, including antioxidant, anti‐inflammatory, vasodilatory, and anticoagulant effects. Its major bioactive classes—tanshinones and salvianolic acids—are associated with improved endothelial function, reduced oxidative stress, antithrombotic activity, and attenuation of cardiac remodeling. However, poor bioavailability, compositional variability, and regulatory barriers remain key limitations. Future research should focus on improving bioavailability using nanotechnology‐based delivery systems (e.g., liposomes, polymeric nanoparticles, SLNs, SMEDDS) and exploring alternative transdermal and injectable formulations. Mechanistic studies should further clarify roles in atherosclerosis, heart failure, and ischemic heart disease, while well‐designed clinical trials are needed to confirm safety, efficacy, and optimal dosing. Standardization using phytochemical fingerprinting and bioassay‐guided quality control will be essential for regulatory acceptance and clinical adoption. Potential herb–drug interactions with cardiovascular medications should also be systematically evaluated. Overall, integrating traditional knowledge with modern research may support Danshen as a complementary option in cardiovascular care, provided interdisciplinary work advances its safe clinical translation.</p></sec><sec id="fsn371755-sec-0021"><title>Author Contributions</title><p>
+<bold>Daniela Calina:</bold> supervision, writing – review and editing, writing – original draft, investigation, visualization, validation, methodology, data curation. <bold>William N. Setzer:</bold> writing – review and editing, investigation, validation, methodology, data curation, supervision, visualization. <bold>Preeti Patel:</bold> writing – review and editing, writing – original draft, investigation, visualization, methodology, data curation. <bold>Javad Sharifi‐Rad:</bold> writing – original draft, writing – review and editing, visualization, validation, methodology, conceptualization, investigation, data curation, project administration, supervision. <bold>Akash Vikal:</bold> writing – review and editing, writing – original draft, investigation, visualization, methodology, data curation. <bold>Rashmi Maurya:</bold> writing – review and editing, writing – original draft, investigation, visualization, methodology, data curation. <bold>Balak Das Kurmi:</bold> writing – review and editing, writing – original draft, investigation, visualization, methodology, data curation.</p></sec><sec id="fsn371755-sec-0018"><title>Funding</title><p>The authors have nothing to report.</p></sec><sec sec-type="COI-statement" id="fsn371755-sec-0017"><title>Conflicts of Interest</title><p>The authors declare no conflicts of interest.</p></sec></body><back><ack id="fsn371755-sec-0016"><title>Acknowledgments</title><p>The authors would like to express their gratitude to Dr. Irina Zamfir, MD, RCP London, Basildon University Hospital, UK, for providing professional English editing of this manuscript and for editorial support.</p></ack><sec sec-type="data-availability" id="fsn371755-sec-0020"><title>Data Availability Statement</title><p>Data sharing not applicable to this article as no datasets were generated or analysed during the current study.</p></sec><ref-list content-type="cited-references" id="fsn371755-bibl-0001"><title>References</title><ref id="fsn371755-bib-0001"><mixed-citation publication-type="miscellaneous" id="fsn371755-cit-0001">
+<year>2009</year>. <article-title>A Novel Randomized Double‐Blind Placebo‐Control Clinical Trial in High‐Risk Hypertensive Subjects</article-title>.</mixed-citation></ref><ref id="fsn371755-bib-0002"><mixed-citation publication-type="miscellaneous" id="fsn371755-cit-0002">
+<year>2015</year>. <article-title>Novel Treatment of Intermittent Claudication in Patients With Peripheral Arterial Disease Using Danshen Gegen (D&amp;G) Capsule</article-title>.</mixed-citation></ref><ref id="fsn371755-bib-0003"><mixed-citation publication-type="journal" id="fsn371755-cit-0003">
+<string-name name-style="western">
+<surname>Azevedo</surname>, <given-names>P. S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>B. F.</given-names>
+<surname>Polegato</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. F.</given-names>
+<surname>Minicucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. A.</given-names>
+<surname>Paiva</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>L. A.</given-names>
+<surname>Zornoff</surname>
+</string-name>. <year>2016</year>. “<article-title>Cardiac Remodeling: Concepts, Clinical Impact, Pathophysiological Mechanisms and Pharmacologic Treatment</article-title>.” <source>Arquivos Brasileiros de Cardiologia</source>
+<volume>106</volume>: <fpage>62</fpage>–<lpage>69</lpage>.<pub-id pub-id-type="pmid">26647721</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.5935/abc.20160005</pub-id><pub-id pub-id-type="pmcid">PMC4728597</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0004"><mixed-citation publication-type="journal" id="fsn371755-cit-0004">
+<string-name name-style="western">
+<surname>Begines</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Ortiz</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Pérez‐Aranda</surname>
+</string-name>, et al. <year>2020</year>. “<article-title>Polymeric Nanoparticles for Drug Delivery: Recent Developments and Future Prospects</article-title>.” <source>Nanomaterials (Basel)</source>
+<volume>10</volume>, no. <issue>7</issue>: <fpage>1403</fpage>. <pub-id pub-id-type="doi">10.3390/nano10071403</pub-id>.<pub-id pub-id-type="pmid">32707641</pub-id>
+<pub-id pub-id-type="pmcid">PMC7408012</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0005"><mixed-citation publication-type="journal" id="fsn371755-cit-0005">
+<string-name name-style="western">
+<surname>Bernard</surname>, <given-names>K.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>V. J.</given-names>
+<surname>Thannickal</surname>
+</string-name>. <year>2020</year>. “<article-title>NADPH Oxidase Inhibition in Fibrotic Pathologies</article-title>.” <source>Antioxidants &amp; Redox Signaling</source>
+<volume>33</volume>: <fpage>455</fpage>–<lpage>479</lpage>.<pub-id pub-id-type="pmid">32129665</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1089/ars.2020.8032</pub-id><pub-id pub-id-type="pmcid">PMC7370982</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0006"><mixed-citation publication-type="journal" id="fsn371755-cit-0006">
+<string-name name-style="western">
+<surname>Bhadange</surname>, <given-names>Y. A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Carpenter</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>V. K.</given-names>
+<surname>Saharan</surname>
+</string-name>. <year>2024</year>. “<article-title>A Comprehensive Review on Advanced Extraction Techniques for Retrieving Bioactive Components From Natural Sources</article-title>.” <source>ACS Omega</source>
+<volume>9</volume>: <fpage>31274</fpage>–<lpage>31297</lpage>.<pub-id pub-id-type="pmid">39072073</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1021/acsomega.4c02718</pub-id><pub-id pub-id-type="pmcid">PMC11270575</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0007"><mixed-citation publication-type="journal" id="fsn371755-cit-0007">
+<string-name name-style="western">
+<surname>Bi</surname>, <given-names>X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Di</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Zu</surname>
+</string-name>. <year>2016</year>. “<article-title>Improved Oral Bioavailability Using a Solid Self‐Microemulsifying Drug Delivery System Containing a Multicomponent Mixture Extracted From <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</article-title>.” <source>Molecules</source>
+<volume>21</volume>, no. <issue>4</issue>: <fpage>456</fpage>. <pub-id pub-id-type="doi">10.3390/molecules21040456</pub-id>.<pub-id pub-id-type="pmid">27070565</pub-id>
+<pub-id pub-id-type="pmcid">PMC6273239</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0008"><mixed-citation publication-type="journal" id="fsn371755-cit-0008">
+<string-name name-style="western">
+<surname>Chang</surname>, <given-names>C.‐C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐C.</given-names>
+<surname>Chang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.‐L.</given-names>
+<surname>Hu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Y.‐C.</given-names>
+<surname>Hung</surname>
+</string-name>. <year>2016</year>. “<article-title>Oxidative Stress and <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> in Aging‐Associated Cardiovascular Diseases</article-title>.” <source>Oxidative Medicine and Cellular Longevity</source>
+<volume>2016</volume>: <elocation-id>4797102</elocation-id>.<pub-id pub-id-type="pmid">27807472</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2016/4797102</pub-id><pub-id pub-id-type="pmcid">PMC5078662</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0009"><mixed-citation publication-type="journal" id="fsn371755-cit-0009">
+<string-name name-style="western">
+<surname>Chen</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Yuan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Zhang</surname>
+</string-name>, et al. <year>2017</year>. “<article-title>Activation of Nrf2 Attenuates Pulmonary Vascular Remodeling via Inhibiting Endothelial‐To‐Mesenchymal Transition: An Insight From a Plant Polyphenol</article-title>.” <source>International Journal of Biological Sciences</source>
+<volume>13</volume>: <fpage>1067</fpage>–<lpage>1081</lpage>.<pub-id pub-id-type="pmid">28924387</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.7150/ijbs.20316</pub-id><pub-id pub-id-type="pmcid">PMC5599911</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0010"><mixed-citation publication-type="journal" id="fsn371755-cit-0010">
+<string-name name-style="western">
+<surname>Cheng</surname>, <given-names>Y. C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>I. L.</given-names>
+<surname>Hung</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. N.</given-names>
+<surname>Liao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W. L.</given-names>
+<surname>Hu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Y. C.</given-names>
+<surname>Hung</surname>
+</string-name>. <year>2021</year>. “<article-title>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Protects Endothelial Dysfunction Against Mitochondrial Oxidative Stress</article-title>.” <source>Life (Basel)</source>
+<volume>11</volume>: <fpage>1257</fpage>. <pub-id pub-id-type="doi">10.3390/life11111257</pub-id>.<pub-id pub-id-type="pmid">34833133</pub-id>
+<pub-id pub-id-type="pmcid">PMC8622679</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0011"><mixed-citation publication-type="journal" id="fsn371755-cit-0011">
+<string-name name-style="western">
+<surname>Chiu</surname>, <given-names>P. Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H. Y.</given-names>
+<surname>Leung</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. K.</given-names>
+<surname>Leong</surname>
+</string-name>, et al. <year>2012</year>. “<article-title>Danshen–Gegen Decoction Protects Against Hypoxia/Reoxygenation‐Induced Apoptosis by Inhibiting Mitochondrial Permeability Transition via the Redox‐Sensitive ERK/Nrf2 and PKCɛ/mKATP Pathways in H9c2 Cardiomyocytes</article-title>.” <source>Phytomedicine</source>
+<volume>19</volume>: <fpage>99</fpage>–<lpage>110</lpage>.<pub-id pub-id-type="pmid">21899994</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.phymed.2011.07.002</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0012"><mixed-citation publication-type="journal" id="fsn371755-cit-0012">
+<string-name name-style="western">
+<surname>Dai</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Guo</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>. <year>2024</year>. “<article-title>Efficacy and Safety of Danshen Class Injections in the Treatment of Coronary Heart Disease: A Network Meta‐Analysis</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>15</volume>: <elocation-id>1487119</elocation-id>.<pub-id pub-id-type="pmid">39726778</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2024.1487119</pub-id><pub-id pub-id-type="pmcid">PMC11669530</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0013"><mixed-citation publication-type="journal" id="fsn371755-cit-0013">
+<string-name name-style="western">
+<surname>Di Cesare</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Perel</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Taylor</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>The Heart of the World</article-title>.” <source>Global Heart</source>
+<volume>19</volume>: <elocation-id>11</elocation-id>.<pub-id pub-id-type="pmid">38273998</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.5334/gh.1288</pub-id><pub-id pub-id-type="pmcid">PMC10809869</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0014"><mixed-citation publication-type="journal" id="fsn371755-cit-0014">
+<string-name name-style="western">
+<surname>Ezike</surname>, <given-names>T. C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>U. S.</given-names>
+<surname>Okpala</surname>
+</string-name>, <string-name name-style="western">
+<given-names>U. L.</given-names>
+<surname>Onoja</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Advances in Drug Delivery Systems, Challenges and Future Directions</article-title>.” <source>Heliyon</source>
+<volume>9</volume>: <elocation-id>e17488</elocation-id>.<pub-id pub-id-type="pmid">37416680</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.heliyon.2023.e17488</pub-id><pub-id pub-id-type="pmcid">PMC10320272</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0015"><mixed-citation publication-type="journal" id="fsn371755-cit-0015">
+<string-name name-style="western">
+<surname>Fang</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Duan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Chen</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Tanshinone‐IIA Inhibits Myocardial Infarct via Decreasing of the Mitochondrial Apoptotic Signaling Pathway in Myocardiocytes</article-title>.” <source>International Journal of Molecular Medicine</source>
+<volume>48</volume>: <elocation-id>158</elocation-id>.<pub-id pub-id-type="pmid">34212981</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3892/ijmm.2021.4991</pub-id><pub-id pub-id-type="pmcid">PMC8262657</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0016"><mixed-citation publication-type="journal" id="fsn371755-cit-0016">
+<string-name name-style="western">
+<surname>Fang</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Yushanjiang</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Curcumol Alleviates Cardiac Remodeling via the AKT/NF‐κB Pathway</article-title>.” <source>International Immunopharmacology</source>
+<volume>122</volume>: <elocation-id>110527</elocation-id>.<pub-id pub-id-type="pmid">37392572</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.intimp.2023.110527</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0017"><mixed-citation publication-type="journal" id="fsn371755-cit-0017">
+<string-name name-style="western">
+<surname>Franceschelli</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>DE Cecco</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Pesce</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Hydroxytyrosol Reduces Foam Cell Formation and Endothelial Inflammation Regulating the PPARγ/LXRα/ABCA1 Pathway</article-title>.” <source>International Journal of Molecular Sciences</source>
+<volume>24</volume>: <elocation-id>2057</elocation-id>.<pub-id pub-id-type="pmid">36768382</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/ijms24032057</pub-id><pub-id pub-id-type="pmcid">PMC9916557</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0018"><mixed-citation publication-type="journal" id="fsn371755-cit-0018">
+<string-name name-style="western">
+<surname>Gao</surname>, <given-names>J.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Hou</surname>
+</string-name>. <year>2023</year>. “<article-title>Cardiovascular Disease Treatment Using Traditional Chinese Medicine: Mitochondria as the Achilles' Heel</article-title>.” <source>Biomedicine &amp; Pharmacotherapy</source>
+<volume>164</volume>: <elocation-id>114999</elocation-id>.<pub-id pub-id-type="pmid">37311280</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biopha.2023.114999</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0019"><mixed-citation publication-type="journal" id="fsn371755-cit-0019">
+<string-name name-style="western">
+<surname>Ghodeshwar</surname>, <given-names>G. K.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Dube</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Khobragade</surname>
+</string-name>. <year>2023</year>. “<article-title>Impact of Lifestyle Modifications on Cardiovascular Health: A Narrative Review</article-title>.” <source>Cureus</source>
+<volume>15</volume>: <elocation-id>e42616</elocation-id>.<pub-id pub-id-type="pmid">37641769</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.7759/cureus.42616</pub-id><pub-id pub-id-type="pmcid">PMC10460604</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0020"><mixed-citation publication-type="journal" id="fsn371755-cit-0020">
+<string-name name-style="western">
+<surname>Guo</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Wang</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Targeting the JAK2/STAT3 Signaling Pathway With Natural Plants and Phytochemical Ingredients: A Novel Therapeutic Method for Combatting Cardiovascular Diseases</article-title>.” <source>Biomedicine &amp; Pharmacotherapy</source>
+<volume>172</volume>: <elocation-id>116313</elocation-id>.<pub-id pub-id-type="pmid">38377736</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biopha.2024.116313</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0021"><mixed-citation publication-type="journal" id="fsn371755-cit-0021">
+<string-name name-style="western">
+<surname>He</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Liu</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Salvianolic Acid B: A Review of Pharmacological Effects, Safety, Combination Therapy, New Dosage Forms, and Novel Drug Delivery Routes</article-title>.” <source>Pharmaceutics</source>
+<volume>15</volume>: <elocation-id>2235</elocation-id>.<pub-id pub-id-type="pmid">37765204</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/pharmaceutics15092235</pub-id><pub-id pub-id-type="pmcid">PMC10538146</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0022"><mixed-citation publication-type="journal" id="fsn371755-cit-0022">
+<string-name name-style="western">
+<surname>He</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Wang</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Tanshinone IIA Protects Human Coronary Artery Endothelial Cells From Ferroptosis by Activating the NRF2 Pathway</article-title>.” <source>Biochemical and Biophysical Research Communications</source>
+<volume>575</volume>: <fpage>1</fpage>–<lpage>7</lpage>.<pub-id pub-id-type="pmid">34454174</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.bbrc.2021.08.067</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0023"><mixed-citation publication-type="journal" id="fsn371755-cit-0023">
+<string-name name-style="western">
+<surname>Ho</surname>, <given-names>J.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>C.‐Y.</given-names>
+<surname>Hong</surname>
+</string-name>. <year>2011</year>. “<article-title>Salvianolic Acids: Small Compounds With Multiple Mechanisms for Cardiovascular Protection</article-title>.” <source>Journal of Biomedical Science</source>
+<volume>18</volume>: <fpage>30</fpage>.<pub-id pub-id-type="pmid">21569331</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/1423-0127-18-30</pub-id><pub-id pub-id-type="pmcid">PMC3113734</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0024"><mixed-citation publication-type="journal" id="fsn371755-cit-0024">
+<string-name name-style="western">
+<surname>Hossain</surname>, <given-names>M. S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. A.</given-names>
+<surname>Wazed</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Asha</surname>
+</string-name>, et al. <year>2025</year>. “<article-title>Flavor and Well‐Being: A Comprehensive Review of Food Choices, Nutrition, and Health Interactions</article-title>.” <source>Food Science &amp; Nutrition</source>
+<volume>13</volume>: <elocation-id>e70276</elocation-id>.<pub-id pub-id-type="pmid">40384991</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/fsn3.70276</pub-id><pub-id pub-id-type="pmcid">PMC12082435</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0025"><mixed-citation publication-type="journal" id="fsn371755-cit-0025">
+<string-name name-style="western">
+<surname>Ji</surname>, <given-names>Q. Q.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y. J.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. H.</given-names>
+<surname>Wang</surname>
+</string-name>, et al. <year>2020</year>. “<article-title>Salvianolic Acid B Improves Postresuscitation Myocardial and Cerebral Outcomes in a Murine Model of Cardiac Arrest: Involvement of Nrf2 Signaling Pathway</article-title>.” <source>Oxidative Medicine and Cellular Longevity</source>
+<volume>2020</volume>: <elocation-id>1605456</elocation-id>.<pub-id pub-id-type="pmid">32714485</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2020/1605456</pub-id><pub-id pub-id-type="pmcid">PMC7352143</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0026"><mixed-citation publication-type="journal" id="fsn371755-cit-0026">
+<string-name name-style="western">
+<surname>Jia</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Zhang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.‐W.</given-names>
+<surname>Leung</surname>
+</string-name>. <year>2011</year>. “<article-title>Is Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>) Dripping Pill More Effective Than Isosorbide Dinitrate in Treating Angina Pectoris? A Systematic Review of Randomized Controlled Trials</article-title>.” <source>International Journal of Cardiology</source>
+<volume>157</volume>: <fpage>330</fpage>–<lpage>340</lpage>.<pub-id pub-id-type="pmid">21251721</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ijcard.2010.12.073</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0027"><mixed-citation publication-type="journal" id="fsn371755-cit-0027">
+<string-name name-style="western">
+<surname>Jin</surname>, <given-names>Y. C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C. W.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y. M.</given-names>
+<surname>Kim</surname>
+</string-name>, et al. <year>2009</year>. “<article-title>Cryptotanshinone, a Lipophilic Compound of Salvia Miltiorrriza Root, Inhibits TNF‐Alpha‐Induced Expression of Adhesion Molecules in HUVEC and Attenuates Rat Myocardial Ischemia/Reperfusion Injury In Vivo</article-title>.” <source>European Journal of Pharmacology</source>
+<volume>614</volume>: <fpage>91</fpage>–<lpage>97</lpage>.<pub-id pub-id-type="pmid">19401198</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ejphar.2009.04.038</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0028"><mixed-citation publication-type="journal" id="fsn371755-cit-0028">
+<string-name name-style="western">
+<surname>Jung</surname>, <given-names>I.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Moon</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Lee</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Kim</surname>
+</string-name>. <year>2020</year>. “<article-title>Overview of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> as a Potential Therapeutic Agent for Various Diseases: An Update on Efficacy and Mechanisms of Action</article-title>.” <source>Antioxidants (Basel)</source>
+<volume>9</volume>, no. <issue>9</issue>: <fpage>857</fpage>. <pub-id pub-id-type="doi">10.3390/antiox9090857</pub-id>.<pub-id pub-id-type="pmid">32933217</pub-id>
+<pub-id pub-id-type="pmcid">PMC7555792</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0029"><mixed-citation publication-type="journal" id="fsn371755-cit-0029">
+<string-name name-style="western">
+<surname>Kaiser</surname>, <given-names>N.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Douches</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Dhingra</surname>
+</string-name>, et al. <year>2020</year>. “<article-title>The Role of Conventional Plant Breeding in Ensuring Safe Levels of Naturally Occurring Toxins in Food Crops</article-title>.” <source>Trends in Food Science &amp; Technology</source>
+<volume>100</volume>: <fpage>51</fpage>–<lpage>66</lpage>.</mixed-citation></ref><ref id="fsn371755-bib-0030"><mixed-citation publication-type="journal" id="fsn371755-cit-0030">
+<string-name name-style="western">
+<surname>Kim</surname>, <given-names>H.‐K.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>E.‐R.</given-names>
+<surname>Woo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐W.</given-names>
+<surname>Lee</surname>
+</string-name>, et al. <year>2008</year>. “<article-title>The Correlation of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Extract–Induced Regulation of Osteoclastogenesis With the Amount of Components Tanshinone I, Tanshinone IIA, Cryptotanshinone, and Dihydrotanshinone</article-title>.” <source>Immunopharmacology and Immunotoxicology</source>
+<volume>30</volume>: <fpage>347</fpage>–<lpage>364</lpage>.<pub-id pub-id-type="pmid">18569089</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1080/08923970801949133</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0031"><mixed-citation publication-type="journal" id="fsn371755-cit-0031">
+<string-name name-style="western">
+<surname>Kubatka</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Mazurakova</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Koklesova</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>Antithrombotic and Antiplatelet Effects of Plant‐Derived Compounds: A Great Utility Potential for Primary, Secondary, and Tertiary Care in the Framework of 3P Medicine</article-title>.” <source>EPMA Journal</source>
+<volume>13</volume>: <fpage>407</fpage>–<lpage>431</lpage>.<pub-id pub-id-type="pmid">35990779</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s13167-022-00293-2</pub-id><pub-id pub-id-type="pmcid">PMC9376584</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0032"><mixed-citation publication-type="journal" id="fsn371755-cit-0032">
+<string-name name-style="western">
+<surname>Li</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.‐J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Hao</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>C.‐N.</given-names>
+<surname>Zheng</surname>
+</string-name>. <year>2006</year>. “<article-title>Characterization of Metabolites of Tanshinone IIA in Rats by Liquid Chromatography/Tandem Mass Spectrometry</article-title>.” <source>Journal of Mass Spectrometry</source>
+<volume>41</volume>: <fpage>670</fpage>–<lpage>684</lpage>.<pub-id pub-id-type="pmid">16598708</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/jms.1027</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0033"><mixed-citation publication-type="journal" id="fsn371755-cit-0033">
+<string-name name-style="western">
+<surname>Li</surname>, <given-names>W.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Tao</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Application of Mixture Design for Optimum Cardio Protection Efficacy of Mixtures of Salvianolic Acid A, Salvianolic Acid B and Danshensu From <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</article-title>.” <source>Industrial Crops and Products</source>
+<volume>192</volume>: <elocation-id>116095</elocation-id>.</mixed-citation></ref><ref id="fsn371755-bib-0034"><mixed-citation publication-type="journal" id="fsn371755-cit-0034">
+<string-name name-style="western">
+<surname>Li</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Zou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Cao</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Ma</surname>
+</string-name>. <year>2020</year>. “<article-title>Pharmacological Basis of Tanshinone and New Insights Into Tanshinone as a Multitarget Natural Product for Multifaceted Diseases</article-title>.” <source>Biomedicine &amp; Pharmacotherapy</source>
+<volume>130</volume>: <elocation-id>110599</elocation-id>.<pub-id pub-id-type="pmid">33236719</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biopha.2020.110599</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0035"><mixed-citation publication-type="journal" id="fsn371755-cit-0035">
+<string-name name-style="western">
+<surname>Li</surname>, <given-names>Z.‐M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐W.</given-names>
+<surname>Xu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>P.‐Q.</given-names>
+<surname>Liu</surname>
+</string-name>. <year>2018</year>. “<article-title>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Burge (Danshen): A Golden Herbal Medicine in Cardiovascular Therapeutics</article-title>.” <source>Acta Pharmacologica Sinica</source>
+<volume>39</volume>: <fpage>802</fpage>–<lpage>824</lpage>.<pub-id pub-id-type="pmid">29698387</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/aps.2017.193</pub-id><pub-id pub-id-type="pmcid">PMC5943903</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0036"><mixed-citation publication-type="journal" id="fsn371755-cit-0036">
+<string-name name-style="western">
+<surname>Lin</surname>, <given-names>T.‐H.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>C.‐L.</given-names>
+<surname>Hsieh</surname>
+</string-name>. <year>2010</year>. “<article-title>Pharmacological Effects of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> (Danshen) on Cerebral Infarction</article-title>.” <source>Chinese Medicine</source>
+<volume>5</volume>: <fpage>22</fpage>.<pub-id pub-id-type="pmid">20565944</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/1749-8546-5-22</pub-id><pub-id pub-id-type="pmcid">PMC2910010</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0037"><mixed-citation publication-type="book" id="fsn371755-cit-0037">
+<string-name name-style="western">
+<surname>Linton</surname>, <given-names>M. F.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>P. G.</given-names>
+<surname>Yancey</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. S.</given-names>
+<surname>Davies</surname>
+</string-name>, et al. <year>2019</year>. <source>The Role of Lipids and Lipoproteins in Atherosclerosis</source>. <publisher-name>MDText.com, Inc</publisher-name>.</mixed-citation></ref><ref id="fsn371755-bib-0038"><mixed-citation publication-type="journal" id="fsn371755-cit-0038">
+<string-name name-style="western">
+<surname>Liu</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Cong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Jia</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Yang</surname>
+</string-name>. <year>2016</year>. “<article-title>Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>) Compounds Improve the Biochemical Indices of the Patients With Coronary Heart Disease</article-title>.” <source>Evidence‐Based Complementary and Alternative Medicine: eCAM</source>
+<volume>2016</volume>: <elocation-id>9781715</elocation-id>.<pub-id pub-id-type="pmid">27366196</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2016/9781715</pub-id><pub-id pub-id-type="pmcid">PMC4913020</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0039"><mixed-citation publication-type="journal" id="fsn371755-cit-0039">
+<string-name name-style="western">
+<surname>Liu</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Yuan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Luo</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>Network Pharmacology Analysis and Experimental Verification Strategies Reveal the Action Mechanism of Danshen Decoction in Treating Ischemic Cardiomyopathy</article-title>.” <source>Evidence‐Based Complementary and Alternative Medicine: eCAM</source>
+<volume>2022</volume>: <elocation-id>7578055</elocation-id>.<pub-id pub-id-type="pmid">35722148</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2022/7578055</pub-id><pub-id pub-id-type="pmcid">PMC9205745</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0040"><mixed-citation publication-type="journal" id="fsn371755-cit-0040">
+<string-name name-style="western">
+<surname>Lyu</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Xue</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Li</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Clinical Effectiveness and Safety of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">salvia miltiorrhiza</italic>
+</styled-content> Depside Salt Combined With Aspirin in Patients With Stable Angina Pectoris: A Multicenter, Pragmatic, Randomized Controlled Trial</article-title>.” <source>Phytomedicine</source>
+<volume>81</volume>: <elocation-id>153419</elocation-id>.<pub-id pub-id-type="pmid">33360345</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.phymed.2020.153419</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0041"><mixed-citation publication-type="journal" id="fsn371755-cit-0041">
+<string-name name-style="western">
+<surname>Ma</surname>, <given-names>X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Gao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Jia</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Li</surname>
+</string-name>. <year>2023</year>. “<article-title>Salvia Miltiorrhiza and Tanshinone IIA Reduce Endothelial Inflammation and Atherosclerotic Plaque Formation Through Inhibiting COX‐2</article-title>.” <source>Biomedicine &amp; Pharmacotherapy</source>
+<volume>167</volume>: <elocation-id>115501</elocation-id>.<pub-id pub-id-type="pmid">37713995</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biopha.2023.115501</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0042"><mixed-citation publication-type="journal" id="fsn371755-cit-0042">
+<string-name name-style="western">
+<surname>Mahalakshmi</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C.‐Y.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.‐D.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Maurya</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Kiefer</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>B. K.</given-names>
+<surname>Velmurugan</surname>
+</string-name>. <year>2021</year>. “<article-title>Review of Danshen: From Its Metabolism to Possible Mechanisms of Its Biological Activities</article-title>.” <source>Journal of Functional Foods</source>
+<volume>85</volume>: <elocation-id>104613</elocation-id>.</mixed-citation></ref><ref id="fsn371755-bib-0043"><mixed-citation publication-type="journal" id="fsn371755-cit-0043">
+<string-name name-style="western">
+<surname>Mu</surname>, <given-names>X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Li</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Metabolomics Analysis Reveals the Effects of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Bunge Extract on Ameliorating Acute Myocardial Ischemia in Rats Induced by Isoproterenol</article-title>.” <source>Heliyon</source>
+<volume>10</volume>: <elocation-id>e30488</elocation-id>.<pub-id pub-id-type="pmid">38737264</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.heliyon.2024.e30488</pub-id><pub-id pub-id-type="pmcid">PMC11088323</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0044"><mixed-citation publication-type="journal" id="fsn371755-cit-0044">
+<string-name name-style="western">
+<surname>Netala</surname>, <given-names>V. R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S. K.</given-names>
+<surname>Teertam</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Li</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Zhang</surname>
+</string-name>. <year>2024</year>. “<article-title>A Comprehensive Review of Cardiovascular Disease Management: Cardiac Biomarkers, Imaging Modalities, Pharmacotherapy, Surgical Interventions, and Herbal Remedies</article-title>.” <source>Cells</source>
+<volume>13</volume>: <elocation-id>1471</elocation-id>.<pub-id pub-id-type="pmid">39273041</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/cells13171471</pub-id><pub-id pub-id-type="pmcid">PMC11394358</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0045"><mixed-citation publication-type="journal" id="fsn371755-cit-0045">
+<string-name name-style="western">
+<surname>Neves</surname>, <given-names>M. A. D.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>T. T.</given-names>
+<surname>Ni</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. T.</given-names>
+<surname>Mackeigan</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Salvianolic Acid B Inhibits Thrombosis and Directly Blocks the Thrombin Catalytic Site</article-title>.” <source>Research and Practice in Thrombosis and Haemostasis</source>
+<volume>8</volume>: <elocation-id>102443</elocation-id>.<pub-id pub-id-type="pmid">38993621</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.rpth.2024.102443</pub-id><pub-id pub-id-type="pmcid">PMC11238050</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0046"><mixed-citation publication-type="journal" id="fsn371755-cit-0046">
+<string-name name-style="western">
+<surname>Nguyen</surname>, <given-names>T. T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>V. A.</given-names>
+<surname>Duong</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>H. J.</given-names>
+<surname>Maeng</surname>
+</string-name>. <year>2021</year>. “<article-title>Pharmaceutical Formulations With P‐Glycoprotein Inhibitory Effect as Promising Approaches for Enhancing Oral Drug Absorption and Bioavailability</article-title>.” <source>Pharmaceutics</source>
+<volume>13</volume>: <elocation-id>1103</elocation-id>.<pub-id pub-id-type="pmid">34371794</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/pharmaceutics13071103</pub-id><pub-id pub-id-type="pmcid">PMC8309061</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0047"><mixed-citation publication-type="journal" id="fsn371755-cit-0047">
+<string-name name-style="western">
+<surname>Pan</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Zhang</surname>
+</string-name>, et al. <year>2025</year>. “<article-title>Mitochondrial Quality Control: A Promising Target of Traditional Chinese Medicine in the Treatment of Cardiovascular Disease</article-title>.” <source>Pharmacological Research</source>
+<volume>215</volume>: <elocation-id>107712</elocation-id>.<pub-id pub-id-type="pmid">40154932</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.phrs.2025.107712</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0048"><mixed-citation publication-type="journal" id="fsn371755-cit-0048">
+<string-name name-style="western">
+<surname>Pan</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H. C.</given-names>
+<surname>Bi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. P.</given-names>
+<surname>Zhong</surname>
+</string-name>, et al. <year>2008</year>. “<article-title>Pharmacokinetic Characterization of Hydroxylpropyl‐β‐Cyclodextrin‐Included Complex of Cryptotanshinone, an Investigational Cardiovascular Drug Purified From Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>)</article-title>.” <source>Xenobiotica</source>
+<volume>38</volume>: <fpage>382</fpage>–<lpage>398</lpage>.<pub-id pub-id-type="pmid">18340563</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1080/00498250701827685</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0049"><mixed-citation publication-type="journal" id="fsn371755-cit-0049">
+<string-name name-style="western">
+<surname>Qin</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Zhou</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Tanshinone IIA Promotes Vascular Normalization and Boosts Sorafenib's Anti‐Hepatoma Activity via Modulating the PI3K‐AKT Pathway</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>14</volume>: <elocation-id>1189532</elocation-id>.<pub-id pub-id-type="pmid">37324455</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2023.1189532</pub-id><pub-id pub-id-type="pmcid">PMC10267387</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0050"><mixed-citation publication-type="journal" id="fsn371755-cit-0050">
+<string-name name-style="western">
+<surname>Qiu</surname>, <given-names>F.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Jiang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Ma</surname>
+</string-name>. <year>2010</year>. “<article-title>Effect of Danshen Extract on the Activity of CYP3A4 in Healthy Volunteers</article-title>.” <source>British Journal of Clinical Pharmacology</source>
+<volume>69</volume>: <fpage>656</fpage>–<lpage>662</lpage>.<pub-id pub-id-type="pmid">20565457</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1365-2125.2010.03624.x</pub-id><pub-id pub-id-type="pmcid">PMC2883758</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0051"><mixed-citation publication-type="journal" id="fsn371755-cit-0051">
+<string-name name-style="western">
+<surname>Ray</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>CH. Maharana</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Meenakshi</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Singh</surname>
+</string-name>. <year>2023</year>. “<article-title>Endothelial Dysfunction and Its Relation in Different Disorders: Recent Update</article-title>.” <source>Health Sciences Review</source>
+<volume>7</volume>: <elocation-id>100084</elocation-id>.</mixed-citation></ref><ref id="fsn371755-bib-0052"><mixed-citation publication-type="journal" id="fsn371755-cit-0052">
+<string-name name-style="western">
+<surname>Ren</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y. X.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H. X.</given-names>
+<surname>Zhou</surname>
+</string-name>, et al. <year>2015</year>. “<article-title>Tanshinone IIA Prevents the Loss of Nigrostriatal Dopaminergic Neurons by Inhibiting NADPH Oxidase and iNOS in the MPTP Model of Parkinson's Disease</article-title>.” <source>Journal of the Neurological Sciences</source>
+<volume>348</volume>: <fpage>142</fpage>–<lpage>152</lpage>.<pub-id pub-id-type="pmid">25491263</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jns.2014.11.026</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0053"><mixed-citation publication-type="journal" id="fsn371755-cit-0053">
+<string-name name-style="western">
+<surname>Salawi</surname>, <given-names>A.</given-names>
+</string-name>
+<year>2022</year>. “<article-title>Self‐Emulsifying Drug Delivery Systems: A Novel Approach to Deliver Drugs</article-title>.” <source>Drug Delivery</source>
+<volume>29</volume>: <fpage>1811</fpage>–<lpage>1823</lpage>.<pub-id pub-id-type="pmid">35666090</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1080/10717544.2022.2083724</pub-id><pub-id pub-id-type="pmcid">PMC9176699</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0054"><mixed-citation publication-type="journal" id="fsn371755-cit-0054">
+<string-name name-style="western">
+<surname>Shen</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Pang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Zhong</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>A Comprehensive Review of Ultrasonic Assisted Extraction (UAE) for Bioactive Components: Principles, Advantages, Equipment, and Combined Technologies</article-title>.” <source>Ultrasonics Sonochemistry</source>
+<volume>101</volume>: <elocation-id>106646</elocation-id>.<pub-id pub-id-type="pmid">37862945</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ultsonch.2023.106646</pub-id><pub-id pub-id-type="pmcid">PMC10594638</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0055"><mixed-citation publication-type="journal" id="fsn371755-cit-0055">
+<string-name name-style="western">
+<surname>Shi</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Lai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Lin</surname>
+</string-name>, et al. <year>2020</year>. “<article-title>Tanshinone IIA Down‐Regulated p‐Smad3 Signaling to Inhibit TGF‐β1‐Mediated Fibroblast Proliferation via lncRNA‐HSRL/SNX9</article-title>.” <source>International Journal of Biochemistry &amp; Cell Biology</source>
+<volume>129</volume>: <elocation-id>105863</elocation-id>.<pub-id pub-id-type="pmid">33049375</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biocel.2020.105863</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0056"><mixed-citation publication-type="journal" id="fsn371755-cit-0056">
+<string-name name-style="western">
+<surname>Soltani</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Boozari</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. F. G.</given-names>
+<surname>Cicero</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Jamialahmadi</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Sahebkar</surname>
+</string-name>. <year>2021</year>. “<article-title>Effects of Phytochemicals on Macrophage Cholesterol Efflux Capacity: Impact on Atherosclerosis</article-title>.” <source>Phytotherapy Research</source>
+<volume>35</volume>: <fpage>2854</fpage>–<lpage>2878</lpage>.<pub-id pub-id-type="pmid">33464676</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/ptr.6991</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0057"><mixed-citation publication-type="journal" id="fsn371755-cit-0057">
+<string-name name-style="western">
+<surname>Son</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>N. V.</given-names>
+<surname>Phong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.‐R.</given-names>
+<surname>Cha</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Oh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Song</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S. Y.</given-names>
+<surname>Yang</surname>
+</string-name>. <year>2024</year>. “<article-title>AMPK‐Mediated Hypolipidemic Effects of a Salvia Miltiorrhiza and <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Paeonia lactiflora</italic>
+</styled-content> Mixed Extract on High‐Fat Diet‐Induced Liver Triglyceride Accumulation: An In Vivo and In Vitro Study</article-title>.” <source>Nutrients [Online]</source>
+<volume>16</volume>: <elocation-id>3189</elocation-id>.<pub-id pub-id-type="pmid">39339790</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/nu16183189</pub-id><pub-id pub-id-type="pmcid">PMC11434907</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0058"><mixed-citation publication-type="journal" id="fsn371755-cit-0058">
+<string-name name-style="western">
+<surname>Su</surname>, <given-names>C.‐Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Q.‐L.</given-names>
+<surname>Ming</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Rahman</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Han</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>L.‐P.</given-names>
+<surname>Qin</surname>
+</string-name>. <year>2015</year>. “<article-title>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>: Traditional Medicinal Uses, Chemistry, and Pharmacology</article-title>.” <source>Chinese Journal of Natural Medicines</source>
+<volume>13</volume>: <fpage>163</fpage>–<lpage>182</lpage>.<pub-id pub-id-type="pmid">25835361</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S1875-5364(15)30002-9</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0059"><mixed-citation publication-type="journal" id="fsn371755-cit-0059">
+<string-name name-style="western">
+<surname>Sun</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Zhu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Bi</surname>
+</string-name>. <year>2009</year>. “<article-title>Isolation and Purification of Salvianolic Acid A and Salvianolic Acid B From <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> by High‐Speed Counter‐Current Chromatography and Comparison of Their Antioxidant Activity</article-title>.” <source>Journal of Chromatography. B, Analytical Technologies in the Biomedical and Life Sciences</source>
+<volume>877</volume>: <fpage>733</fpage>–<lpage>737</lpage>.<pub-id pub-id-type="pmid">19237321</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jchromb.2009.02.013</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0060"><mixed-citation publication-type="journal" id="fsn371755-cit-0060">
+<string-name name-style="western">
+<surname>Teng</surname>, <given-names>F.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Cui</surname>
+</string-name>, et al. <year>2016</year>. “<article-title>Salvianolic Acid A Inhibits Endothelial Dysfunction and Vascular Remodeling in Spontaneously Hypertensive Rats</article-title>.” <source>Life Sciences</source>
+<volume>144</volume>: <fpage>86</fpage>–<lpage>93</lpage>.<pub-id pub-id-type="pmid">26135625</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.lfs.2015.06.010</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0061"><mixed-citation publication-type="journal" id="fsn371755-cit-0061">
+<string-name name-style="western">
+<surname>Tran</surname>, <given-names>N.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Garcia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Aniqa</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Ali</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Ally</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S. M.</given-names>
+<surname>Nauli</surname>
+</string-name>. <year>2022</year>. “<article-title>Endothelial Nitric Oxide Synthase (eNOS) and the Cardiovascular System: In Physiology and in Disease States</article-title>.” <source>American Journal of Biomedical Science &amp; Research</source>
+<volume>15</volume>: <fpage>153</fpage>–<lpage>177</lpage>.<pub-id pub-id-type="pmid">35072089</pub-id>
+<pub-id pub-id-type="pmcid">PMC8774925</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0062"><mixed-citation publication-type="journal" id="fsn371755-cit-0062">
+<string-name name-style="western">
+<surname>Ullah</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Kumar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Sayyar</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Revolutionizing Cardiac Care: A Comprehensive Narrative Review of Cardiac Rehabilitation and the Evolution of Cardiovascular Medicine</article-title>.” <source>Cureus</source>
+<volume>15</volume>: <elocation-id>e46469</elocation-id>.<pub-id pub-id-type="pmid">37927717</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.7759/cureus.46469</pub-id><pub-id pub-id-type="pmcid">PMC10624210</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0063"><mixed-citation publication-type="journal" id="fsn371755-cit-0063">
+<string-name name-style="western">
+<surname>Vanitha Madhuri</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. K.</given-names>
+<surname>Pandreka</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Geetha Gayathri</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Advances in High‐Performance Liquid Chromatography (HPLC) and Ultra‐Performance Liquid Chromatography (UPLC): Review Article</article-title>.” <source>Journal of Pharma Insights and Research</source>
+<volume>2</volume>: <fpage>039</fpage>–<lpage>046</lpage>. <pub-id pub-id-type="doi">10.69613/t4nhz921</pub-id>.</mixed-citation></ref><ref id="fsn371755-bib-0064"><mixed-citation publication-type="journal" id="fsn371755-cit-0064">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Yang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Wang</surname>
+</string-name>. <year>2023</year>. “<article-title>Advancing Herbal Medicine: Enhancing Product Quality and Safety Through Robust Quality Control Practices</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>14</volume>: <elocation-id>1265178</elocation-id>.<pub-id pub-id-type="pmid">37818188</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2023.1265178</pub-id><pub-id pub-id-type="pmcid">PMC10561302</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0065"><mixed-citation publication-type="journal" id="fsn371755-cit-0065">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Ma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Liu</surname>
+</string-name>, et al. <year>2017</year>. “<article-title>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>: A Potential Red Light to the Development of Cardiovascular Diseases</article-title>.” <source>Current Pharmaceutical Design</source>
+<volume>23</volume>: <fpage>1077</fpage>–<lpage>1097</lpage>.<pub-id pub-id-type="pmid">27748194</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.2174/1381612822666161010105242</pub-id><pub-id pub-id-type="pmcid">PMC5421141</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0066"><mixed-citation publication-type="journal" id="fsn371755-cit-0066">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. A.</given-names>
+<surname>Fordjour</surname>
+</string-name>, et al. <year>2017</year>. “<article-title>Danshen Injection Prevents Heart Failure by Attenuating Post‐Infarct Remodeling</article-title>.” <source>Journal of Ethnopharmacology</source>
+<volume>205</volume>: <fpage>22</fpage>–<lpage>32</lpage>.<pub-id pub-id-type="pmid">28465251</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jep.2017.04.027</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0067"><mixed-citation publication-type="journal" id="fsn371755-cit-0067">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>R.‐N.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐C.</given-names>
+<surname>Zhao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐Y.</given-names>
+<surname>Huang</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Challenges and Strategies in Progress of Drug Delivery System for Traditional Chinese Medicine <italic toggle="yes">Salviae Miltiorrhizae Radix</italic> et <italic toggle="yes">Rhizoma</italic> (Danshen)</article-title>.” <source>Chinese Herbal Medicines</source>
+<volume>13</volume>: <fpage>78</fpage>–<lpage>89</lpage>.<pub-id pub-id-type="pmid">36117766</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.chmed.2020.08.001</pub-id><pub-id pub-id-type="pmcid">PMC9476708</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0068"><mixed-citation publication-type="journal" id="fsn371755-cit-0068">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Fang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Huang</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Acupuncture in Traditional Chinese Medicine: A Complementary Approach for Cardiovascular Health</article-title>.” <source>Journal of Multidisciplinary Healthcare</source>
+<volume>17</volume>: <fpage>3459</fpage>–<lpage>3473</lpage>.<pub-id pub-id-type="pmid">39050695</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.2147/JMDH.S476319</pub-id><pub-id pub-id-type="pmcid">PMC11268752</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0069"><mixed-citation publication-type="journal" id="fsn371755-cit-0069">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Guo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Li</surname>
+</string-name>, et al. <year>2020</year>. “<article-title>Danshen (<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>) Restricts MD2/TLR4‐MyD88 Complex Formation and Signalling in Acute Myocardial Infarction‐Induced Heart Failure</article-title>.” <source>Journal of Cellular and Molecular Medicine</source>
+<volume>24</volume>: <fpage>10677</fpage>–<lpage>10692</lpage>.<pub-id pub-id-type="pmid">32757377</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/jcmm.15688</pub-id><pub-id pub-id-type="pmcid">PMC7521313</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0070"><mixed-citation publication-type="journal" id="fsn371755-cit-0070">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Gao</surname>
+</string-name>. <year>2020</year>. “<article-title>Pharmacological Properties of Tanshinones, the Natural Products From <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</article-title>.” <source>Advances in Pharmacology</source>
+<volume>87</volume>: <fpage>43</fpage>–<lpage>70</lpage>.<pub-id pub-id-type="pmid">32089238</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/bs.apha.2019.10.001</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0071"><mixed-citation publication-type="journal" id="fsn371755-cit-0071">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Shen</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Tanshinone IIA Protects Ischemia/Reperfusion‐Induced Cardiomyocyte Injury by Inhibiting the HAS2/FGF9 Axis</article-title>.” <source>Cardiology Research and Practice</source>
+<volume>2024</volume>: <elocation-id>2581638</elocation-id>.<pub-id pub-id-type="pmid">39568660</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2024/2581638</pub-id><pub-id pub-id-type="pmcid">PMC11578662</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0072"><mixed-citation publication-type="journal" id="fsn371755-cit-0072">
+<string-name name-style="western">
+<surname>Wang</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Su</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Zhang</surname>
+</string-name>, et al. <year>2018</year>. “<article-title>25‐Hydroxyl‐Protopanaxatriol Protects Against H<sub>2</sub>O<sub>2</sub>‐Induced H9c2 Cardiomyocytes Injury via PI3K/Akt Pathway and Apoptotic Protein Down‐Regulation</article-title>.” <source>Biomedicine &amp; Pharmacotherapy</source>
+<volume>99</volume>: <fpage>33</fpage>–<lpage>42</lpage>.<pub-id pub-id-type="pmid">29324310</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.biopha.2018.01.039</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0073"><mixed-citation publication-type="journal" id="fsn371755-cit-0073">
+<string-name name-style="western">
+<surname>Wei</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wan</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Bioactive Components and Molecular Mechanisms of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Bunge in Promoting Blood Circulation to Remove Blood Stasis</article-title>.” <source>Journal of Ethnopharmacology</source>
+<volume>317</volume>: <elocation-id>116697</elocation-id>.<pub-id pub-id-type="pmid">37295577</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jep.2023.116697</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0074"><mixed-citation publication-type="journal" id="fsn371755-cit-0074">
+<string-name name-style="western">
+<surname>Wu</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Xu</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Aqueous Extract of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Bunge Reduces Blood Pressure Through Inhibiting Oxidative Stress, Inflammation and Fibrosis of Adventitia in Primary Hypertension</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>14</volume>: <elocation-id>1093669</elocation-id>. <pub-id pub-id-type="doi">10.3389/fphar.2023.1093669</pub-id>.<pub-id pub-id-type="pmid">36925635</pub-id>
+<pub-id pub-id-type="pmcid">PMC10011461</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0075"><mixed-citation publication-type="journal" id="fsn371755-cit-0075">
+<string-name name-style="western">
+<surname>Wu</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Xu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X. Y.</given-names>
+<surname>Tian</surname>
+</string-name>. <year>2020</year>. “<article-title>The Effect of Salvianolic Acid on Vascular Protection and Possible Mechanisms</article-title>.” <source>Oxidative Medicine and Cellular Longevity</source>
+<volume>2020</volume>: <elocation-id>5472096</elocation-id>.<pub-id pub-id-type="pmid">33062143</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1155/2020/5472096</pub-id><pub-id pub-id-type="pmcid">PMC7533016</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0076"><mixed-citation publication-type="journal" id="fsn371755-cit-0076">
+<string-name name-style="western">
+<surname>Xia</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Gu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. M.</given-names>
+<surname>Ansley</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Xia</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Yu</surname>
+</string-name>. <year>2003</year>. “<article-title>Antioxidant Therapy With <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Decreases Plasma Endothelin‐1 and Thromboxane B2 After Cardiopulmonary Bypass in Patients With Congenital Heart Disease</article-title>.” <source>Journal of Thoracic and Cardiovascular Surgery</source>
+<volume>126</volume>: <fpage>1404</fpage>–<lpage>1410</lpage>.<pub-id pub-id-type="pmid">14666012</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0022-5223(03)00970-x</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0077"><mixed-citation publication-type="journal" id="fsn371755-cit-0077">
+<string-name name-style="western">
+<surname>Xie</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Song</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Xiang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Gao</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Zhao</surname>
+</string-name>. <year>2023</year>. “<article-title>Salvianolic Acid A Alleviates Atherosclerosis by Inhibiting Inflammation Through Trc8‐Mediated 3‐Hydroxy‐3‐Methylglutaryl‐Coenzyme A Reductase Degradation</article-title>.” <source>Phytomedicine</source>
+<volume>112</volume>: <elocation-id>154694</elocation-id>.<pub-id pub-id-type="pmid">36804757</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.phymed.2023.154694</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0078"><mixed-citation publication-type="journal" id="fsn371755-cit-0078">
+<string-name name-style="western">
+<surname>Xing</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Z. R.</given-names>
+<surname>Tan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.‐L.</given-names>
+<surname>Cheng</surname>
+</string-name>, et al. <year>2017</year>. “<article-title>Bioavailability and Pharmacokinetic Comparison of Tanshinones Between Two Formulations of <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> in Healthy Volunteers</article-title>.” <source>Scientific Reports</source>
+<volume>7</volume>: <elocation-id>4709</elocation-id>.<pub-id pub-id-type="pmid">28680091</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41598-017-02747-4</pub-id><pub-id pub-id-type="pmcid">PMC5498502</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0079"><mixed-citation publication-type="journal" id="fsn371755-cit-0079">
+<string-name name-style="western">
+<surname>Xing</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Bi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Zhang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>P. R.</given-names>
+<surname>Knight</surname>
+</string-name>. <year>2024</year>. “<article-title>Effect of Harvest Time on Growth and Bioactive Compounds in <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content>
+</article-title>.” <source>Plants</source>
+<volume>13</volume>, no. <issue>13</issue>: <elocation-id>1788</elocation-id>. <pub-id pub-id-type="doi">10.3390/plants13131788</pub-id>.<pub-id pub-id-type="pmid">38999628</pub-id>
+<pub-id pub-id-type="pmcid">PMC11243644</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0080"><mixed-citation publication-type="journal" id="fsn371755-cit-0080">
+<string-name name-style="western">
+<surname>Xu</surname>, <given-names>Q.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Zhang</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Danshen‐Shanzha Formula for the Treatment of Atherosclerosis: Ethnopharmacological Relevance, Preparation Methods, Chemical Constituents, Pharmacokinetic Properties, and Pharmacological Effects</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>15</volume>: <elocation-id>1380977</elocation-id>.<pub-id pub-id-type="pmid">38910885</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2024.1380977</pub-id><pub-id pub-id-type="pmcid">PMC11190183</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0081"><mixed-citation publication-type="journal" id="fsn371755-cit-0081">
+<string-name name-style="western">
+<surname>Yan</surname>, <given-names>Q.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Sun</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Targeting Oxidative Stress as a Preventive and Therapeutic Approach for Cardiovascular Disease</article-title>.” <source>Journal of Translational Medicine</source>
+<volume>21</volume>: <elocation-id>519</elocation-id>.<pub-id pub-id-type="pmid">37533007</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12967-023-04361-7</pub-id><pub-id pub-id-type="pmcid">PMC10394930</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0082"><mixed-citation publication-type="journal" id="fsn371755-cit-0082">
+<string-name name-style="western">
+<surname>Yang</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Mu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Li</surname>
+</string-name>. <year>2023</year>. “<article-title>Tanshinone IIA: A Chinese Herbal Ingredient for the Treatment of Atherosclerosis</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>14</volume>: <elocation-id>1321880</elocation-id>.<pub-id pub-id-type="pmid">38108067</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2023.1321880</pub-id><pub-id pub-id-type="pmcid">PMC10722201</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0083"><mixed-citation publication-type="journal" id="fsn371755-cit-0083">
+<string-name name-style="western">
+<surname>Yang</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Peng</surname>
+</string-name>, et al. <year>2018</year>. “<article-title>Tanshindiol C Inhibits Oxidized Low‐Density Lipoprotein Induced Macrophage Foam Cell Formation via a Peroxiredoxin 1 Dependent Pathway</article-title>.” <source>Biochimica et Biophysica Acta (BBA) ‐ Molecular Basis of Disease</source>
+<volume>1864</volume>: <fpage>882</fpage>–<lpage>890</lpage>.<pub-id pub-id-type="pmid">29287777</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.bbadis.2017.12.033</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0084"><mixed-citation publication-type="journal" id="fsn371755-cit-0084">
+<string-name name-style="western">
+<surname>Yuan</surname>, <given-names>M.‐H.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>W.‐X.</given-names>
+<surname>Zhong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐L.</given-names>
+<surname>Wang</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>Therapeutic Effects and Molecular Mechanisms of Natural Products in Thrombosis</article-title>.” <source>Phytotherapy Research</source>
+<volume>38</volume>: <fpage>2128</fpage>–<lpage>2153</lpage>.<pub-id pub-id-type="pmid">38400575</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/ptr.8151</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0085"><mixed-citation publication-type="journal" id="fsn371755-cit-0085">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Shi</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Diterpenoids Inhibit Ox‐LDL‐Induced Foam Cell Formation in RAW264.7 Cells by Promoting ABCA1 Mediated Cholesterol Efflux</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>14</volume>: <elocation-id>1066758</elocation-id>.<pub-id pub-id-type="pmid">36713845</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2023.1066758</pub-id><pub-id pub-id-type="pmcid">PMC9877220</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0086"><mixed-citation publication-type="journal" id="fsn371755-cit-0086">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Zhao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Dai</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Li</surname>
+</string-name>. <year>2023</year>. “<article-title>Extraction and Analysis of Chemical Compositions of Natural Products and Plants</article-title>.” <source>Separations</source>
+<volume>10</volume>, no. <issue>12</issue>: <fpage>598</fpage>. <pub-id pub-id-type="doi">10.3390/separations10120598</pub-id>.</mixed-citation></ref><ref id="fsn371755-bib-0087"><mixed-citation publication-type="journal" id="fsn371755-cit-0087">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>R. X.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Dong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Miao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Lu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>X. Y.</given-names>
+<surname>Wu</surname>
+</string-name>. <year>2021</year>. “<article-title>Nanoparticulate Drug Delivery Strategies to Address Intestinal Cytochrome P450 CYP3A4 Metabolism Towards Personalized Medicine</article-title>.” <source>Pharmaceutics</source>
+<volume>13</volume>: <elocation-id>1261</elocation-id>.<pub-id pub-id-type="pmid">34452222</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/pharmaceutics13081261</pub-id><pub-id pub-id-type="pmcid">PMC8399842</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0088"><mixed-citation publication-type="journal" id="fsn371755-cit-0088">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Luo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Sun</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>
+<styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> Bge. (Danshen) for Inflammatory Bowel Disease: Clinical Evidence and Network Pharmacology‐Based Strategy for Developing Supplementary Medical Application</article-title>.” <source>Frontiers in Pharmacology</source>
+<volume>12</volume>: <elocation-id>741871</elocation-id>.<pub-id pub-id-type="pmid">35126100</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fphar.2021.741871</pub-id><pub-id pub-id-type="pmcid">PMC8807566</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0089"><mixed-citation publication-type="journal" id="fsn371755-cit-0089">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐M.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐Y.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.‐C.</given-names>
+<surname>Yang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Duan</surname>
+</string-name>. <year>2021</year>. “<article-title>The Synergistic Effects of <italic toggle="yes">Astragalus mongholicus</italic> and <styled-content style="fixed-case" toggle="no">
+<italic toggle="no">Salvia miltiorrhiza</italic>
+</styled-content> on Coronary Heart Disease Identified by Network Pharmacology and Experiment</article-title>.” <source>Drug Design, Development and Therapy</source>
+<volume>15</volume>: <fpage>4053</fpage>–<lpage>4069</lpage>.<pub-id pub-id-type="pmid">34611395</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.2147/DDDT.S326024</pub-id><pub-id pub-id-type="pmcid">PMC8486279</pub-id><related-article xmlns:xlink="http://www.w3.org/1999/xlink" related-article-type="retraction-forward" ext-link-type="pmc" xlink:href="PMC12504767"/></mixed-citation></ref><ref id="fsn371755-bib-0090"><mixed-citation publication-type="journal" id="fsn371755-cit-0090">
+<string-name name-style="western">
+<surname>Zhao</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Shao</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Zhou</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Salvianolic Acid B Inhibits Atherosclerosis and TNF‐α‐Induced Inflammation by Regulating NF‐κB/NLRP3 Signaling Pathway</article-title>.” <source>Phytomedicine</source>
+<volume>119</volume>: <elocation-id>155002</elocation-id>.<pub-id pub-id-type="pmid">37572566</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.phymed.2023.155002</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0091"><mixed-citation publication-type="journal" id="fsn371755-cit-0091">
+<string-name name-style="western">
+<surname>Zhou</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Zuo</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>M. S.</given-names>
+<surname>Chow</surname>
+</string-name>. <year>2005</year>. “<article-title>Danshen: An Overview of Its Chemistry, Pharmacology, Pharmacokinetics, and Clinical Use</article-title>.” <source>Journal of Clinical Pharmacology</source>
+<volume>45</volume>: <fpage>1345</fpage>–<lpage>1359</lpage>.<pub-id pub-id-type="pmid">16291709</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/0091270005282630</pub-id></mixed-citation></ref><ref id="fsn371755-bib-0092"><mixed-citation publication-type="journal" id="fsn371755-cit-0092">
+<string-name name-style="western">
+<surname>Zhou</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S. Q.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>A. D.</given-names>
+<surname>Miao</surname>
+</string-name>. <year>2006</year>. “<article-title>Cryptotanshinone Inhibits Endothelin‐1 Expression and Stimulates Nitric Oxide Production in Human Vascular Endothelial Cells</article-title>.” <source>Biochimica et Biophysica Acta</source>
+<volume>1760</volume>: <fpage>1</fpage>–<lpage>9</lpage>.<pub-id pub-id-type="pmid">16289876</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.bbagen.2005.09.009</pub-id></mixed-citation></ref></ref-list></back></article>

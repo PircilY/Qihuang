@@ -1,0 +1,169 @@
+INTRODUCTION
+
+Heart failure represents a growing chronic medical condition with major implications on patient morbidity, mortality and cost to health care systems. 1 Treatment for heart failure depends on its cause, symptoms, and ejection fraction, a measure of the heart's squeezing function. 2 Moreover, heart failure is a complication of oncological treatments that may have dramatic clinical impact. 3 Cardiotoxicity is a major side effect of the chemotherapeutic drug doxorubicin or sunitinib or trastuzumab. 4 Hence, development of new available nutraceuticals to manage chemotherapy‐induced cardiotoxicity is receiving attention. 5 The onset of heart failure is typically preceded by cardiac hypertrophy, a response of the heart to increased workload, a cardiac insult such as a heart attack or genetic mutation. Cardiac hypertrophy is usually characterized by an increase in cardiomyocyte size and thickening of ventricular walls. Initially, such growth is an adaptive response to maintain cardiac function; however, in settings of sustained stress and as time progresses, these changes become maladaptive and the heart ultimately fails. 6 Heart failure frequently is the unfavourable outcome of pathological heart hypertrophy. 7 Nevertheless, because of the unknown potential molecular mechanisms, the lack of effective approaches for preventing cardiac hypertrophy or heart failure remains a plague to patients and clinicians.
+
+Traditional chinese medicine (TCM), a verified alternative therapeutic regimen, has been used to treat heart failure, which is less expensive and has fewer adverse effects. In TCM clinical practice, combining illness with syndrome is a key therapy principle. The primary six syndromes in heart failure patients are deficiency of Yang, Qi, blood stasis, fluid retention, Yin deficiency and phlegm turbidity. 8 , 9 The major syndrome ingredient of cardiac disorders is discovered to be blood stasis, followed by Qi deficiency. 10 The primary malfunction in heart failure is a long‐term heart‐Qi and heart‐Yang deficiency, leading to blood circulation stasis. 11 As a result, it refers to the therapeutic principles of benefiting heart‐Qi and warming heart‐Yang collectively, especially through increasing blood circulation to dispel blood stagnation and remove oedema. Astragalus membranaceus (Radix astragali, Huangqi, HQ) is a regularly recommended TCM herb for treating various heart failure symptoms. 12 For instance, Feng et al. demonstrated that Astragaloside IV, a principle active constituent of HQ, alleviates heart failure by modulating Nrf‐2. 13 Ma et al. reported that Astragalus polysaccharide, a key active ingredient isolated from HQ, prevents heart failure‐induced cachexia by alleviating excessive adipose expenditure in white and brown adipose tissue. 14 HQ injection, which is a formulation of an extract of HQ, is a most commonly used type of proprietary Chinese medicine for the clinical operation of treating chronic heart failure. There were 62 randomized controlled trials (RCTs) and quasi‐RCTs evaluated. 15 However, the trial procedures were of poor quality, and the existing research were insufficient to demonstrate the effectiveness and safety of HQ injection. Identifying the primary active constituents, particular activities of these active compounds, and underlying molecular mechanisms may help to expand HQ's application in treating cardiomyocyte hypertrophy and heart failure.
+
+In consideration of the complicated function process and mechanism of TCM herbs, in this study, major active ingredients of HQ were focused and Isorhamnetin, Quercetin, Calycosin, Formononetin and Kaempferol were investigated. Isorhamnetin widely exists in several TCM herbs, such as HQ, Hippophae rhamnoides L., 16 Ginkgo biloba L. 17 and Semen Lepidii. 18 Isorhamnetin has been widely recognized for its anti‐inflammatory, antioxidative, antiadipogenic, antiproliferative and antitumor properties; moreover, Isorhamnetin protects against cardiac hypertrophy, 16 cardiomyopathy, 17 and Ang II‐induced fibrosis and hypertrophy in the myocardium of mice. 19 Quercetin is a flavonoid that is abundant in nature. According to pharmacological research, quercetin can postpone vascular endothelial functional deterioration and cardiac terminal damage. 20 Quercetin can also modulate islet function and have a regulatory role in the prevention of cardiac fibrosis. 21 Calycosin, as one of the quality markers of Qiliqiangxin capsule, participates in Qiliqiangxin capsule treatment of chronic heart failure. 22 , 23 Formononetin is another quality marker of Qiliqiangxin capsule. 22 , 24 Furthermore, Formononetin exerts a cardioprotective effect in doxorubicin‐induced chronic heart failure model rats. 25 Kaempferol also has a wide range of pharmacological activities, such as anti‐oxidant, anti‐inflammatory, anti‐microbial, anti‐diabetic, and anti‐tumour properties. 26 , 27 For example, Kaempferol protects against Ang II‐induced cardiac remodelling by relieving inflammation and oxidative stress induced by Ang II. 28
+
+TCM's pharmacodynamic foundation and mechanism are challenging to understand due to its multi‐compound, multi‐pathway, and multitarget properties. Hopkins, a British pharmacologist, suggested network pharmacology for the first time in 2007 29 to understand the biological mechanism of pharmacological intervention in illness. The network pharmacology mechanism of TCM research is consistent with TCM's overall function, and the network pharmacology approach is reliable and dependable. 29 The present study retrieved active compounds of HQ, compared drug‐ and disease‐target genes, employed network pharmacology to build an ingredient‐signalling‐target network, and investigated the specific effects and molecular mechanism of the main active ingredients on Ang II‐induced cardiomyocyte hypertrophy, laying the groundwork for future research on HQ's mechanism of action in the treatment of cardiac hypertrophy and heart failure.
+
+MATERIALS AND METHODS
+
+Active compounds of HQ retrieved from Traditional Chinese Medicine System Pharmacology Database (TCMSP)
+
+The active compounds of HQ were obtained from TCMSP (http://lsp.nwu.edu.cn/tcmsp.php). 30 Using pharmacokinetic information retrieval filters, active ingredients' information was retrieved based on ADME (absorption, distribution, metabolism and excretion). The screening conditions have criteria of OB ≥40% and DL ≥0.2.
+
+Information of HQ active compounds
+
+The molecular structure, biological activity and related targets of HQ active compounds obtained from the last step were obtained from NPASS website (http://bidd.group/NPASS/). 31 The drug targets of the active ingredients in HQ were collected from the PubChem database (https://pubchem.ncbi.nlm.nih.gov/).
+
+Disease target retrieval through differentially expressed genes analysis
+
+GSE25765 contains differentially expressed genes (DEGs) between 6 failing heart tissues and 6 control heart tissues. RNA extraction and hybridization were performed on Affymetrix microarrays. Individual p‐values were computed, and the false discovery rate (FDR) for numerous testing correction was computed using the Benjamini and Hochberg method. DEGs were considered using the threshold of |logFC| > 1, p < 0.05. Drug targets and DEGs were compared and 391 overlapped genes were selected for following analyses.
+
+Kyoto Encyclopaedia of Genes and Genomes (KEGG) signalling pathway enrichment annotation
+
+KEGG Mapper (https://www.genome.jp/kegg/mapper/) 32 was exploited to perform signalling pathway enrichment annotation.
+
+Construction and analysis of networks
+
+Cytoscape_v3.8.0 was used to construct the compound‐target‐pathway networks. 33 Nodes represented the ingredients, proteins, or pathways within these graphical networks, while edges represented the ingredient‐target or target‐pathway interaction. Based on the online tool STRING database, drug genes were analysed, and a protein interaction network was constructed with the thresholds of the interaction score <0.9 were screened.
+
+Prediction of the binding between HQ active ingredients and target genes by AutoDock
+
+The AutoDock program has been widely used to predict the docking of small molecule ligands with large molecule receptors, 34 and is characterized by multiple advantages such as high accuracy, fast speed, and no charge. The binding between ligand and receptor molecules was primarily evaluated via the evaluation of the binding energy in AutoDock. Specifically, the lower binding energy between the protein receptor and small molecule ligand suggested a better binding between the two, thus indicating a greater possibility of interaction. The protein structure of ESR1 (PDBID: 7jkw) was download based on PDB database (https://www.rcsb.org/). The 3D crystal structures of celastrol, Formononetin, Isorhamnetin, Kaempferol, Quercetin were download from PubChem database. Molecular docking was applied through AutoDockTools‐1.5.6 to verify the correlation between the key targets and the active compounds.
+
+Cell lineage and cell culture, treatment
+
+Rat cardiomytocyte cell line H9c2 was procured from ATCC (CRL‐1446, Manassas, VA, USA) and cultivated in Dulbecco's Modified Eagle's Medium (DMEM, 30–2002, ATCC) added with 10% Fetal Bovine Serum (FBS, 30–2020, ATCC). Cells were cultured at 37°C in a humidified atmosphere containing 5% CO2. The H92c cells were co‐treated with 1 μM recombinant Ang II and 5 active compounds for 24 h respectively according to previous researches (20 μM Quercetin, 35 50 μM Isorhamnetin, 16 20 μM Calycosin, 36 20 μM Kaempferol 37 and 20 μM Formononetin 38 ). All the compounds were purchased from Sigma‐Aldrich.
+
+Immunofluorescent (IF) staining
+
+Cells were rinsed thrice in PBS before being fixed in 4% paraformaldehyde for 15 minutes, washed in PBS, and incubated for 20 min at ambient temperature in 0.5% Triton X‐100 before being rinsed in PBS. Dropwise injections of bovine serum albumin (5%) were used to the petri dishes, followed by incubation for 30 min at ambient temperature. Next, the cells were incubated in anti‐α‐actinin at 4°C overnight (#3134, Cell Signalling, Danvers, MA, USA), washed, incubated for 30 min at 37°C in the buffer of FITC‐conjugated goat anti‐rabbit IgG away from the light, rinsed with PBS, stained in 6‐diamidino‐2‐phenylindole (DAPI) and examined under (Olympus, Tokyo, Japan).
+
+qRT‐PCR
+
+RNA was extracted from H9C2 cells using RNeasy Mini Kit (Qiagen). Next, cDNA was synthesized and subjected to quantitative PCR using SYBR Premix Ex TaqTM (Takara, Tokyo, Japan) and certain primers to examine the expression levels of TNF‐α, IL‐1β, IL‐18, IL‐6, ANP, BNP, β‐MHC and CTGF.
+
+Western blot assay
+
+Total protein of H9C2 cells were extracted applying RIPA lysate (Beyotime, Shanghai, China). After quantitative analysis using the bicinchoninic acid method, 80 μg total proteins were segregated using SDS‐polyacrylamide gel electrophoresis and transported onto polyvinylidene difluoride (PVDF) membranes. TBS‐T buffer supplementing 5% nonfat milk was served to block membranes for 1 h. Then the membranes experienced dispose with primary antibodies including anti‐ESR1 antibody (AF6058, 1/1000, Affinity Biosciences, Changzhou, China) and anti‐ Phospho‐ESR1 antibody (AF3058, 1/1000, Affinity Biosciences) at 4°C overnight. After rinsed employing TBST thrice, the membranes were following blended with the horseradish peroxidase (HRP)‐linked secondary antibody goat anti‐rabbit IgG H&L (ab6721, 1/2000, Abcam, Cambridge, MA, USA) at 25°C for 1.5 h. Signal detection was implemented with an ECL system (Life technologies corporation, Gaithersburg, MD, USA).
+
+Enzyme‐linked immunosorbent assay (ELISA)
+
+ELISA kits of TNF‐α (CSB‐E11987r, CUSABIO, Wuhan, China), IL‐1β (E‐EL‐R0012c, Elabscience, Wuhan, China), IL‐18 (E‐EL‐R0567c, Elabscience), IL‐6 (CSB‐E04640r, CUSABIO) and ESR1 (CSB‐E06848r, CUSABIO) were employed to detect TNF‐α, IL‐1β, IL‐18 and IL‐6 levels in the medium of H92c cells and ESR1 levels in H92c cells according the manufacture's instructions.
+
+Statistical analyses
+
+The cell experiments were performed in triplicate biological replicates. GraphPad Prism software 8 (GraphPad Software, Inc. La Jolla, CA, USA) was employed to analyse data. Comparisons between groups were assessed using a Student's t‐test. Comparisons among groups were assessed using one‐way analysis of variance (ANOVA) followed by Tukey's post‐test. The results are expressed as the means ± standard error of the mean (SEM). The significance level was set at p < 0.05.
+
+Results the molecular structure, biological activity, and target types of HQ active compounds
+
+A total of 15 active ingredients of HQ were obtained based on TCMSP (Table S1); among them, Isorhamnetin, Quercetin, Calycosin, Formononetin, and Kaempferol were found to be linked to heart failure (HF_related). The molecular structures, biological activity types, and target types of these five active compounds were shown in Figure S1: Isorhamnetin (Figure S1A), Quercetin (Figure S1B), Calycosin (Figure S1C), Formononetin (Figure S1D) and Kaempferol (Figure S1E). A total of 4010 drug targets of the active ingredients in HQ were obtained (Table S2).
+
+KEGG signalling pathway enrichment annotation analysis on differentially expressed genes
+
+For identifying overlapped drug and disease targets, disease targets were retrieved by analysing differentially expressed genes. Among 4010 drug targets, a total of 391 genes were significant difference (348 up‐regulated and 43 down‐regulated) according to GSE25765 (Figure 1A,B). Up‐ and down‐regulated genes were applied for KEGG signalling pathway enrichment annotation respectively. Up‐regulated genes in failing hearts saw a significant enrichment in organic hydroxyl compounds and others' metabolic processes, cell apoptosis, adhesion ability, inflammatory response (Figure 1C). Down‐regulated genes in failing hearts saw a significant enrichment in secondary metabolism, the regulation of vascular diameter, steroid hormone response, cell growth and senescence (Figure 1D). The mechanism of differential genes in biological activities related to cardiovascular disease was shown in Figure S2, where the upregulated genes are represented by green blocks and the downregulated genes are represented by red blocks. Next, the compound‐signalling‐target networks between five active compounds, KEGG signalling pathway and differentially expressed genes were constructed (Figure 2, Table S3).
+
+Kyoto Encyclopaedia of Genes and Genomes (KEGG) signalling pathway enrichment annotation analysis on differentially expressed genes. (A, B) Differentially expressed genes in heart tissue from failing hearts relative to healthy heart tissue, according to GSE25765. (C, D) Kyoto Encyclopaedia of Genes and Genomes (KEGG) signalling pathway enrichment annotation was performed on up‐ and down‐regulated genes obtained from the last step.
+
+The compound‐signalling‐target networks generated using Cytoscape_v3.8.0. The compounds, pathways, or targeted proteins were represented by nodes in these graphical networks, whereas the interactions between compounds, pathways, or targeted proteins were represented by edges.
+
+Effects of five active compounds on Ang II‐induced cardiomyocyte hypertrophy
+
+For investigating the specific effects of these five active compounds on cardiomyocyte hypertrophy, cardiomyocytes were treated with 1 μM Ang II for 24 h with or without Quercetin, Isorhamnetin, Calycosin, Kaempferol, or Formononetin. As the marker of cardiomyocyte hypertrophy, α‐actinin saw a significant increase in cardiomyocytes stimulated by Ang II alone; Ang II‐induced increase in α‐actinin was partially eliminated by Quercetin, Isorhamnetin, Calycosin, Kaempferol, or Formononetin (Figure 3A). Cell surface areas were calculated accordingly; consistent with the morphological appearance, Ang II significantly enlarged the cell surface area, which could be partially reduced by Quercetin, Isorhamnetin, Calycosin, Kaempferol, or Formononetin (Figure 3B). Finally, Ang II significantly upregulated ANP, BNP, β‐MHC mRNA expression, and CTGF, whereas Quercetin, Isorhamnetin, Calycosin, Kaempferol, or Formononetin treatment partially downregulated the expression levels of ANP, BNP, β‐MHC and CTGF (Figure 3C).
+
+Effects of five active compounds on Ang II‐induced cardiomyocyte hypertrophy Cardiomyocytes were treated with Ang II (1 μM) for 24 h in the presence or absence of Quercetin (20 μM), Isorhamnetin (50 μM), Calycosin (20 μM), Kaempferol (20 μM), or Formononetin (20 μM) and examined for the content and distribution of α‐actinin by Immunofluorescent (IF) staining (A); cell surface area (B); the relative mRNA expression levels of ANP, BNP, β‐MHC, and CTGF by qRT‐PCR assay (C). N = 3 (biological replicates). **p < 0.01 compared to control group; # p < 0.05 compared to Ang II group.
+
+Five active compounds of Astragalus membranaceus attenuated Ang II‐induced inflammation in cardiomyocytes
+
+Unresolved inflammation is a key mediator of advanced heart failure. Accordingly, the effects of these five active compounds on Ang II‐induced proinflammatory cytokine release in cardiomyocytes were investigated. qRT‐PCR (Figure 4A) and ELISA (Figure 4B) assays results showed Ang II increased the levels of proinflammatory cytokines including TNF‐α, IL‐1β, IL‐18 and IL‐6 in cardiomyocytes and the medium of cardiomyocytes, respectively. While Ang II‐induced increase in TNF‐α, IL‐1β, IL‐18 and IL‐6 was partially eliminated by Quercetin, Isorhamnetin, Calycosin, Kaempferol or Formononetin treatment (Figure 4A,B).
+
+Effects of five active compounds of Astragalus membranaceus on Ang II‐induced proinflammatory cytokine release in cardiomyocytes. Cardiomyocytes were treated with Ang II (1 μM) for 24 h in the presence or absence of Quercetin (20 μM), Isorhamnetin (50 μM), Calycosin (20 μM), Kaempferol (20 μM), or Formononetin (20 μM) and then examined for the mRNA levels of TNF‐α, IL‐1β, IL‐18 and IL‐6 in cardiomyocytes by qRT‐PCR assay (A); the levels of TNF‐α, IL‐1β, IL‐18 and IL‐6 in cardiomyocytes medium by ELISA assay (B). N = 3 (biological replicates). ***p < 0.001 compared to control group; # p < 0.05, ## p < 0.01, ### p < 0.001 compared to Ang II group.
+
+Prediction of the binding between HQ active ingredients and target genes by Molecular docking
+
+A total of 391 drug genes were analysed and constructed into the protein interaction networks. Finally, 10 hub genes were screened (Figure 5A). Next, significant differences of 10 hub genes between failing heart tissues and control heart tissues were analysed based on GSE25765 database. As indicated by the results, there was 1 differentially downregulated drug target gene (APOE), and 9 differentially upregulated drug target genes (TNF, BCL2, MYC, MMP9, TLR4, ESR1, HIF1A, VCAM1 and CDH1) in heart failure (Figure 5B).
+
+Screening and expression analysis of hub genes. (A) 391 drug genes were analysed, and a protein interaction network was constructed based on the online tool STRING database, with the thresholds of the interaction score greater than 0.9. Finally, 10 hub genes were screened. (B) Significant differences of 10 hub genes between failing heart tissues and control heart tissues were analysed based on GSE25765 database.
+
+Then, the network diagram of 10 hub genes and 5 HQ active ingredients was constructed (Figure 6A). Among then, ESR1 is the common target gene of the five active ingredients. Previous studies have shown ESR1 might serve as a prognostic, diagnostic biomarker and therapeutic target for HF. 39 Moreover, molecular docking was applied to verify the correlation between ESR1 and 5 HQ active ingredients (Figure 6B). The binding energy between ESR1 and Isorhamnetin, Quercetin, Calycosin, Formononetin or Kaempferol were −6.53, −7.53, −7.48, −8.26 or −6.92 kcal/mol, respectively. Together, five active ingredients (Quercetin, Isorhamnetin, Calycosin, Kaempferol and Formononetin) of HQ could bind well with a core target of HF (ESR1), all of which might play key roles in the treatment of HF.
+
+The docking model of isorhamnetin, quercetin, calycosin, formononetin, and kaempferol with ESR1. (A) The network diagram of 10 hub genes and 5 HQ active ingredients was constructed. (B) Molecular docking map of 5 HQ active ingredients and ESR1.
+
+Effects of five active compounds on ESR1 level in Ang II‐induced cardiomyocytes
+
+Finally, the effects of these five active compounds on ESR1 expression in Ang II‐induced cardiomyocytes were investigated. As the results of qRT‐PCR (Figure 7A) and ELISA (Figure 7B) assays shown, the ESR1 and phosphorylated ESR1 expression levels were significantly increased in cardiomyocytes stimulated by Ang II, and Quercetin, Calycosin, Kaempferol or Formononetin treatment further promoted the expression levels of ESR1 and phosphorylated ESR1; however, Isorhamnetin treatment had no effect on ESR1 and phosphorylated ESR1 expression levels (Figure 7A,B). These outcomes concluded that Quercetin, Calycosin, Kaempferol and Formononetin could inhibit Ang II‐induced cardiomyocyte hypertrophy by promoting ESR1 expression.
+
+Effects of five active compounds on ESR1 level in Ang II‐induced cardiomyocytes. Cardiomyocytes were treated with Ang II (1 μM) for 24 h in the presence or absence of Quercetin (20 μM), Isorhamnetin (50 μM), Calycosin (20 μM), Kaempferol (20 μM), or Formononetin (20 μM) and then examined for the ESR1 level in cardiomyocytes by ELISA assay (A); the protein levels of ESR1 and phosphorylated‐ESR1 in cardiomyocytes by western blot assay (B). N = 3 (biological replicates). ***p < 0.001 compared to control group; # p < 0.05, ## p < 0.01, ### p < 0.001 compared to Ang II group.
+
+DISCUSSION
+
+The primary six syndromes in heart failure patients are deficiency of Yang, Qi, blood stasis, fluid retention, Yin deficiency, and phlegm turbidity. 40 , 41 Deficiency of Qi and blood will cause tissue energy, urine, and bodily fluid to stagnate. 42 HQ, a tonic herb having ‘Gan flavour’ and ‘Wen nature’, is often used for benefiting ‘Qi’ and nourishing ‘blood’. 42 HQ is capable of improving cardiovascular function, protecting myocardial cells, increasing coronary blood flow, enhancing cardiac contractility, and exerting positive inotropic action upon the heart. 43 , 44 The effect of HQ in the treatment of heart failure has been verified in a variety of animal models with the protective effects involve improving myocardial contraction, protecting myocardial cells, regulating the neuroendocrine system and inhibiting left ventricular remodelling. 15 , 45 In this study, a total of 15 active ingredients of HQ were obtained; among them, Isorhamnetin, Quercetin, Calycosin, Formononetin, and Kaempferol were found to be linked to heart failure (HF_related). Among 4010 drug targets, a total of 391 genes were with significant difference (348 up‐regulated and 43 down‐regulated). Up‐regulated genes saw a significant enrichment in cell apoptosis, adhesion ability, and inflammatory response. Down‐regulated genes saw a significant enrichment in secondary metabolism, the regulation of vascular diameter, steroid hormone response, and cell growth and senescence.
+
+Considering previous findings of the therapeutic effects of Quercetin, Isorhamnetin, Calycosin, Kaempferol, and Formononetin of HQ on cardiovascular diseases and integrative bioinformatics analysis results, these five active compounds might dominate the cardioprotective effects of HQ. Then, for investigating the specific effects of the five main active compounds, Ang II‐induced cardiomyocyte hypertrophy model was exploited. Ang II induces an inflammatory phenotype in cardiomyocytes, 46 and leads to cellular hypertrophy 47 and increased deposition of matrix proteins. 48 Furthermore, inhibiting Ang II has been shown to prevent cardiac hypertrophy and fibrosis. 49 In this study, Ang II stimulation alone caused significant increase in cell size. In the meantime, the mRNA expression levels of cardiac function markers, such as ANP, BNP, β‐MHC and CTGF were significantly up‐regulated by Ang II treatment. ANP and BNP are expressed in the heart and are secreted in response to atrial and ventricular volume expansion, respectively. 50 , 51 Up‐regulated ANP, BNP, β‐MHC, and α‐skeletal actin could be observed in pathological cardiac hypertrophy. 52 CTGF, a downstream mediator of the profibrotic functions of TGF‐β pathway, is a secreted matricellular protein acting in concert with TGF‐β1 to cause fibrogenesis. 53 Therefore, Ang II stimulation induced cardiomyocyte hypertrophy and fibrogenesis. Notably, when treated with Isorhamnetin, Quercetin, Calycosin, Formononetin or Kaempferol, Ang II‐induced increases in cell size and ANP, BNP, β‐MHC and CTGF expression levels were partially decreased, suggesting that these five main active compounds could reverse Ang II‐induced cardiomyocyte hypertrophy and fibrogenesis.
+
+Moreover, molecular docking revealed five active ingredients (Quercetin, Isorhamnetin, Calycosin, Kaempferol and Formononetin) of HQ may could bind well with a core target (ESR1) of HF. Oestrogen receptors are involved in the development of cardiovascular disease. 54 Oestrogen receptor 1 (ESR1) encodes an oestrogen receptor and ligand‐activated transcription factor. The ESR1 genetic variant is related to the susceptibility of coronary heart disease. 55 The increase of total ESR1 expression contributes to the stability of cardiac intercalated discs. 56 ESR1 transcriptional pathway is essential to couple cellular energy metabolism with energy consumption processes in order to maintain normal cardiac function. 57 Moreover, the congestive heart failure is associated with a significant decrease of myocardial ESR1. 58 ESR1 might serve as a prognostic, diagnostic biomarker and therapeutic target for HF. 39 Here, we found the ESR1 and phosphorylated ESR1 expression levels were significantly increased in cardiomyocytes stimulated by Ang II, and Quercetin, Calycosin, Kaempferol, or Formononetin treatment further promoted the expression levels of ESR1 and phosphorylated ESR1; however, Isorhamnetin treatment had no effect on ESR1 and phosphorylated ESR1 expression levels. Previously, García‐Gutiérrez et al. demonstrated that Quercetin significantly increased the expression of ESR1 in HT‐29 colon cancer cells. 59 Calycosin promoted the expression of ER‐α36, which is the main oestrogen receptor of ESR1, in macrophages. 60 Kaempferol notably promoted ESR1 expression in the ovaries tissue of rats with premature ovarian failure. 61 In HUVECs, MCF‐7 and BT474 cells, Formononetin markedly up‐regulated ESR1 expression. 62 All these outcomes uncovered that four active ingredients (Quercetin, Calycosin, Kaempferol and Formononetin) of HQ could bind well with a core target (ESR1) of HF, all of which play key roles through regulating ESR1 expression in the treatment of HF.
+
+In conclusion, Isorhamnetin, Quercetin, Calycosin, Formononetin, and Kaempferol might be the primary active ingredients of HQ, dominating its cardioprotective effects against heart failure probably through regulating ESR1 expression, which provided a potential mechanism for the clinical application of HQ to regulate cardiac hypertrophy and heart failure.
+
+AUTHOR CONTRIBUTIONS
+
+Qiuxiang Chen: Conceptualization (equal); writing – original draft (equal). Juan Wang: Data curation (equal); resources (equal); software (equal). Lihua Sun: Validation (equal); visualization (equal). Bayinsilema Ba: Formal analysis (equal); methodology (equal). Difei Shen: Project administration (lead); writing – review and editing (lead).
+
+FUNDING INFORMATION
+
+This study was supported by National Natural Science Foundation of China (No. 81960052 and 81660039) and Xinjiang Medical University scientific research innovation team project (XYD2024C11).
+
+CONFLICT OF INTEREST STATEMENT
+
+The authors confirm that there are no conflicts of interest.
+
+CONSENT FOR PUBLICATION
+
+Not applicable.
+
+Supporting information
+
+Figure S1. The molecular structure, biological activity, and target types of Astragalus membranaceus (Huangqi, HQ) active compounds, Isorhamnetin (A), Quercetin (B), Calycosin (C), Formononetin (D), and Kaempferol (E).
+
+Figure S2. Enriched signalling pathways.
+
+Table S1. The main active ingredient of Astragalus membranaceus in TCMSP datebase (OB≥40%, DL≥0.2).
+
+Table S2. The function and drug target gene of these 5 active components.
+
+Table S3. Compound‐signalling‐target networks of the five active ingredients of HQ.
+
+ACKNOWLEDGEMENTS
+
+None.
+
+Chen Q, Wang J, Sun L, Ba B, Shen D. Mechanism of Astragalus membranaceus (Huangqi, HQ) for treatment of heart failure based on network pharmacology and molecular docking. J Cell Mol Med. 2024;28:e18331. doi: 10.1111/jcmm.18331
+
+Qiuxiang Chen and Juan Wang contribute equally to this study.
+
+DATA AVAILABILITY STATEMENT
+
+Please contact the authors for data requests.
+
+REFERENCES
+
+Associated Data
+
+Supplementary Materials
+
+Figure S1. The molecular structure, biological activity, and target types of Astragalus membranaceus (Huangqi, HQ) active compounds, Isorhamnetin (A), Quercetin (B), Calycosin (C), Formononetin (D), and Kaempferol (E).
+
+Figure S2. Enriched signalling pathways.
+
+Table S1. The main active ingredient of Astragalus membranaceus in TCMSP datebase (OB≥40%, DL≥0.2).
+
+Table S2. The function and drug target gene of these 5 active components.
+
+Table S3. Compound‐signalling‐target networks of the five active ingredients of HQ.
+
+Data Availability Statement
+
+Please contact the authors for data requests.

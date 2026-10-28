@@ -1,0 +1,3427 @@
+{
+  "beforeCommit": "c2da130",
+  "oldRecords": 100,
+  "currentRecords": 148,
+  "addedRecords": 48,
+  "addedRoles": {
+    "core": 42,
+    "excluded": 4,
+    "background": 2
+  },
+  "addedLanguages": {
+    "en": 48
+  },
+  "addedLicenses": {
+    "permissive-verified": 48
+  },
+  "indexedRecords": 141,
+  "records": [
+    {
+      "documentId": "EN-PMC12772080",
+      "pmcid": "PMC12772080",
+      "doi": "10.1186/s12959-025-00823-8",
+      "title": "Qiliqiangxin capsule attenuates platelet activation and thrombosis by suppressing Ca2+ influx and PKC signaling.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12772080/",
+      "sourceChecksum": "5099847e1de9faac8fcdbf8bb45487569dc15c139bb58a3b96bb69e9faca547f",
+      "accessedAt": "2026-10-28T06:30:49.797582Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "myocardial",
+          "thrombosis"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "thrombosis"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin",
+          "astragaloside",
+          "ginsenoside",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "ventricular",
+          "thrombosis",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin capsule (QLQX), a traditional Chinese medicine (TCM) formulation approved by the China Food and Drug Administration for the treatment of heart failure (HF) in 2004, has been widely used in China [6].",
+          "Arterial thrombotic diseases, including myocardial infarction and ischemic stroke, remain major causes of morbidity and mortality worldwide [1]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12845194",
+      "pmcid": "PMC12845194",
+      "doi": "10.3390/ph19010183",
+      "title": "Neutrophil Extracellular Traps: Potential Therapeutic Targets of Traditional Chinese Medicine and Natural Products for Cardiovascular Diseases.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12845194/",
+      "sourceChecksum": "fce2c38c74bd853241cb1b48021699526283c7d37c6b0ff45372bd3c86193709",
+      "accessedAt": "2026-10-28T06:31:00.751494Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "hypertension",
+          "myocardial",
+          "atherosclerosis"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "cardiovascular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "huangqi",
+          "tanshinone",
+          "blood stasis",
+          "decoction",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "atherosclerosis",
+          "cardiomyopathy",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "thrombosis",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "In recent years, traditional medicine, especially Chinese herbal medicine and natural products, has shown distinct value in preventing and treating CVDs.",
+          "Cardiovascular disease (CVD) refers to a wide range of diseases affecting the heart and vascular system."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12883366",
+      "pmcid": "PMC12883366",
+      "doi": "10.3389/fpubh.2026.1723708",
+      "title": "Traditional Chinese medicine constitution and cardiometabolic multimorbidity: a nationwide cross-sectional study in older adults.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12883366/",
+      "sourceChecksum": "2985721bc7356176e6b8b26ef4c67d19f211f4d742efe49c61a445d85771ba78",
+      "accessedAt": "2026-10-28T06:31:05.308123Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "blood stasis",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "hypertension",
+          "cardiometabolic"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "cardiometabolic"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "myocardial",
+          "angina",
+          "atherosclerosis",
+          "cardiometabolic",
+          "hypertensive"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine (TCM) identifies patients’ symptoms and constitutions to develop personalized interventions, demonstrating unique advantages in the prevention and treatment of chronic diseases such as diabetes with coronary heart disease (9, 10).",
+          "Among these, cardiometabolic multimorbidity (CMM), defined as the coexistence of two or more cardiometabolic diseases (CMDs), represents one of the most prevalent and clinically concerning patterns (2)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12908498",
+      "pmcid": "PMC12908498",
+      "doi": "10.1002/fsn3.71543",
+      "title": "Multi-Omics Evidence Linking Gualou Xiebai Banxia Decoction Intervention to Atherosclerosis Mitigation and Gut Microbiota-Bile Acid Signatures in ApoE-/- Mice.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12908498/",
+      "sourceChecksum": "0de586ff05f196cc59a2f0f2dcf1d31b34039046e3fe5dc9d1d74a883eedfd9c",
+      "accessedAt": "2026-10-28T06:31:16.949877Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "chinese herbal",
+          "decoction",
+          "gualou",
+          "xiebai"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "atherosclerosis",
+          "cardiometabolic"
+        ],
+        "titleTcmTerms": [
+          "decoction",
+          "gualou",
+          "xiebai"
+        ],
+        "titleCardioTerms": [
+          "atherosclerosis"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "decoction",
+          "gualou",
+          "xiebai",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "myocardial",
+          "atherosclerosis"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese Medicine (TCM) offers a rich repository of multi‐component therapeutic formulas with established efficacy against complex diseases such as AS.",
+          "Atherosclerosis (AS) remains the principal cause of cardiovascular disease and global morbidity, posing a significant public health burden (Schumski et al."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12930105",
+      "pmcid": "PMC12930105",
+      "doi": "10.1155/jnme/5563248",
+      "title": "Chinese Herbal Medicines for Diabetic Cardio-Cerebrovascular Diseases: Key Bioactive Metabolites and Action Mechanisms.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12930105/",
+      "sourceChecksum": "271d5ec1e7d5c25bd8a27f1a847678c9e3b5a8991bc0fe1aea8e960433b07621",
+      "accessedAt": "2026-10-28T06:31:30.828982Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article under the terms of the https://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "antihypertensive",
+          "hypertensive",
+          "cardio-cerebrovascular"
+        ],
+        "titleTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "titleCardioTerms": [
+          "cardio-cerebrovascular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "huangqi",
+          "qishen",
+          "shensong",
+          "tanshinone",
+          "astragaloside",
+          "ginsenoside",
+          "decoction",
+          "shengmai",
+          "chinese patent medicine"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "atherosclerosis",
+          "cardiomyopathy",
+          "cardiometabolic",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "cardiomyocyte",
+          "hypotensive"
+        ],
+        "bodyEvidence": [
+          "The clinical applications of Chinese herbal medicine (CHM) are substantiated by the pharmacological activities of its bioactive metabolites, which exert therapeutic effects through multitarget interactions with cellular signaling pathways and biological networks [14].",
+          "Macrovascular lesions may contribute to cardiovascular, cerebrovascular, and peripheral vascular diseases."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12932606",
+      "pmcid": "PMC12932606",
+      "doi": "10.3389/fmed.2026.1715011",
+      "title": "Association between the C-reactive protein to albumin ratio and unplanned readmission in ulcerative colitis: insights from a cohort study.",
+      "language": "en",
+      "corpusRole": "excluded",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12932606/",
+      "sourceChecksum": "05a954be8e564d7fc47cdaade63eaff6b08aa3c23afa2f37a4ac17d521da0837",
+      "accessedAt": "2026-10-28T06:31:36.235780Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [],
+        "titleCardioTerms": [],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "hypertensive"
+        ],
+        "bodyEvidence": [
+          "This retrospective cohort study utilized data from patients hospitalized for UC at the Affiliated Hospital of Shandong University of TCM between June 2017 and June 2024.",
+          "comorbidities included hypertension, diabetes, and cardiovascular disease."
+        ],
+        "reason": "outside-project-scope"
+      }
+    },
+    {
+      "documentId": "EN-PMC12935602",
+      "pmcid": "PMC12935602",
+      "doi": "10.3389/fendo.2026.1758234",
+      "title": "Development and validation of a nomogram model integrating noninvasive detection of radial pulse wave for predicting diabetic foot risk in type 2 diabetes mellitus.",
+      "language": "en",
+      "corpusRole": "excluded",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12935602/",
+      "sourceChecksum": "abaf046190a6356751d43cf680e24362e0984f7449792f7e8734154ebee4e615",
+      "accessedAt": "2026-10-28T06:31:38.795022Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [],
+        "titleCardioTerms": [],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "atherosclerosis",
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "bodyEvidence": [
+          "Pulse taking is an important skill for diagnosing diseases in TCM.",
+          "Collected variables included: (1)demographic and clinical characteristics: gender, age, body mass index(BMI), history of smoking and drinking; (2) blood pressure value: systolic blood pressure (SBP), and diastolic blood pressure (DBP), hypertension (HTN); (3)serological markers (preoperative laboratory testing): triglycerides (TG), total cholesterol (TC), low-density lipoprotein (LDL), high-density lipoprotein (HDL), serum creatinine (Cr), blood urea nitrogen (BUN), uric acid (UA), FBG, homocysteine (Hcy), and D-dimer levels."
+        ],
+        "reason": "outside-project-scope"
+      }
+    },
+    {
+      "documentId": "EN-PMC12951050",
+      "pmcid": "PMC12951050",
+      "doi": "10.2174/011573403x363285250519064030",
+      "title": "The Dilemma in the Management of Patients with Heart Failure with Reduced Ejection Fraction, Sinus Rhythm and Left Ventricular Spontaneous Echo Contrast: A Narrative Review.",
+      "language": "en",
+      "corpusRole": "background",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12951050/",
+      "sourceChecksum": "c14f99f9dfe13e00e04578a60108787a3a3e94a4babc373f573a70d553fe02b5",
+      "accessedAt": "2026-10-28T06:31:44.328010Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article published under CC BY 4.0 https://creativecommons.org/licenses/by/4.0/legalcode"
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "blood stasis"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "ventricular"
+        ],
+        "titleTcmTerms": [],
+        "titleCardioTerms": [
+          "heart failure",
+          "ventricular"
+        ],
+        "bodyTcmTerms": [
+          "blood stasis"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyopathy",
+          "hypertensive",
+          "ventricular",
+          "thrombosis"
+        ],
+        "bodyEvidence": [
+          "A complication of HF is spontaneous echo contrast (SEC), a smoke-like density on echocardiograms indicating blood stasis in the heart chambers (Fig.",
+          "Heart failure (HF) is a complex clinical syndrome characterized by structural or functional impairment of ventricular filling or ejection, manifesting in symptoms such as fatigue, dyspnea, and fluid retention [1]."
+        ],
+        "reason": "single-topic-background"
+      }
+    },
+    {
+      "documentId": "EN-PMC12958187",
+      "pmcid": "PMC12958187",
+      "doi": "10.3389/fmed.2026.1669642",
+      "title": "Application of pedicle bone quality scoring and Hounsfield unit in predicting the risk of cage subsidence after single-segment lumbar fusion surgery.",
+      "language": "en",
+      "corpusRole": "excluded",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12958187/",
+      "sourceChecksum": "2118dde0b11744f5e58e46d2f04ef57830f79ed119b67e7484ab4759b500d95e",
+      "accessedAt": "2026-10-28T06:31:57.825836Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [],
+        "titleCardioTerms": [],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "bodyCardioTerms": [
+          "hypertension"
+        ],
+        "bodyEvidence": [
+          "This retrospective study analyzed the clinical data of 160 patients who were hospitalized in the Department of Orthopedics at Panyu District Traditional Chinese Medicine Hospital from January 2017 to May 2023.",
+          "Demographic data collected included age, sex, history of hypertension, diabetes, smoking, steroid use, surgical segment, BMI, length of hospital stay, duration of surgery, and intraoperative blood loss."
+        ],
+        "reason": "outside-project-scope"
+      }
+    },
+    {
+      "documentId": "EN-PMC12962764",
+      "pmcid": "PMC12962764",
+      "doi": "10.37796/2211-8039.1699",
+      "title": "Chinese herbal medicine treatment and the association with long-term major adverse cardiac events in patients with chronic kidney disease: A propensity-score matched cohort study.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12962764/",
+      "sourceChecksum": "675fffdd7992bbcef718bc1d7e680db950b69e7969570a3103a6aa368d88a72f",
+      "accessedAt": "2026-10-28T06:32:02.719424Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/)."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "titleCardioTerms": [
+          "cardiac"
+        ],
+        "bodyTcmTerms": [
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "danshen",
+          "huangqi",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Furthermore, traditional herbal medicines are often used to prevent or treat CVDs in Asian countries.",
+          "Cardiovascular diseases (CVDs) have become a leading cause of death and disability globally in recent years [1]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12964781",
+      "pmcid": "PMC12964781",
+      "doi": "10.1186/s13020-026-01364-6",
+      "title": "Optimized New Shengmai Powder suppresses ferroptosis in ischemic cardiomyocytes via cGMP-PKG signalling.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12964781/",
+      "sourceChecksum": "45adfdf4de7d914a3b940521f8c0e361afca8a24f85e840222f5545ea37d2b15",
+      "accessedAt": "2026-10-28T06:32:12.945261Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "blood stasis",
+          "shengmai"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "titleTcmTerms": [
+          "shengmai"
+        ],
+        "titleCardioTerms": [
+          "cardiomyocyte"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "huangqi",
+          "tanshinone",
+          "qi deficiency",
+          "blood stasis",
+          "decoction",
+          "shengmai",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "atherosclerosis",
+          "ventricular",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "TCM has become an important component of mainstream clinical practice in China for the management of ischemic heart failure, owing to its favorable efficacy–toxicity profile and an increasingly solid evidence base [21].",
+          "Heart failure is a complex clinical syndrome arising from structural and/or functional cardiac abnormalities and represents the terminal stage of many cardiovascular diseases [1]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12982435",
+      "pmcid": "PMC12982435",
+      "doi": "10.3389/fpubh.2026.1773974",
+      "title": "Study protocol for a randomized controlled trial to evaluate the effectiveness of an artificial intelligence-based health education accurately linking system based on traditional Chinese medicine body constitution in patients with chronic disease multimorbidity.",
+      "language": "en",
+      "corpusRole": "excluded",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12982435/",
+      "sourceChecksum": "2b07d4a9494e4595bc5a3a570e08de14ac2ee5f55ed5805d3f68be85d6878808",
+      "accessedAt": "2026-10-28T06:32:21.476734Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "hypertensive"
+        ],
+        "bodyEvidence": [
+          "In this context, Traditional Chinese Medicine (TCM) constitution theory provides a time-tested framework for understanding individual differences.",
+          "Approximately one quarter of Chinese adults are affected by chronic disease multimorbidity, with hypertension combined with dyslipidemia or diabetes representing the most common patterns of coexistence (1)."
+        ],
+        "reason": "single-topic-background",
+        "sourceReviewDecision": {
+          "corpusRole": "excluded",
+          "reason": "Generic AI health-education multimorbidity protocol; cardiovascular-focused TCM intervention is not established."
+        }
+      }
+    },
+    {
+      "documentId": "EN-PMC12999810",
+      "pmcid": "PMC12999810",
+      "doi": "10.3389/fphar.2026.1723499",
+      "title": "Uncaria rhynchophylla: an ethnopharmacological review integrating traditional Chinese medicine uses with phytochemical and pharmacological evidence.",
+      "language": "en",
+      "corpusRole": "background",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12999810/",
+      "sourceChecksum": "bf19c10bec9f4d7b7ccd753f9da04b75b1e5d84bd7a8458cceb9800cfd301e93",
+      "accessedAt": "2026-10-28T06:32:26.874282Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [],
+        "bodyTcmTerms": [
+          "chinese herbal",
+          "herbal medicine",
+          "huangqi",
+          "decoction",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "cardiac",
+          "atherosclerosis",
+          "antihypertensive",
+          "hypertensive",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "UR, known among pracvtitioners as Gouteng in TCM, is considered one of the most important medicinal plants in East Asian medicinal systems (Chen et al., 2024; Yang et al., 2020).",
+          "With a rich ethnomedicinal history spanning neurological, cardiovascular, and inflammatory conditions, UR holds significant relevance for modern drug discovery, offering multi-target compounds that could address complex diseases like neurodegeneration where single-target therapies often fail."
+        ],
+        "reason": "single-topic-background"
+      }
+    },
+    {
+      "documentId": "EN-PMC13013410",
+      "pmcid": "PMC13013410",
+      "doi": "10.3389/fcvm.2026.1707525",
+      "title": "Comparison of the therapeutic effects of traditional Chinese medicine exercise therapies on blood pressure, lipids, and sleep quality among older patients suffering from hypertension: a systematic review and network meta-analysis.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13013410/",
+      "sourceChecksum": "cd80510951fba935bd2748d271cfc8a7cdfbf1b7c84387c2e2e89d1b4704f10e",
+      "accessedAt": "2026-10-28T06:32:30.299764Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "hypertension"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "atherosclerosis",
+          "cardiometabolic",
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine exercise therapies—comprising Tai Chi, Baduanjin, Qigong, and Wuqinxi—integrate body adjustment, breath control, and mind regulation, embodying a holistic approach that harmonizes body, breath, and mind.",
+          "Hypertension is a major global health concern and the primary contributor to worldwide mortality and morbidity, particularly in China."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13073489",
+      "pmcid": "PMC13073489",
+      "doi": "10.3390/ijms27073194",
+      "title": "The Role of Long Non-Coding RNA in Atherosclerosis: Mechanism and Intervention of Traditional Chinese Medicine.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13073489/",
+      "sourceChecksum": "9a14b37dd4bed958712917f8040749871fdcd62862c8d3f9e2636126e415511e",
+      "accessedAt": "2026-10-28T06:32:38.232784Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "atherosclerosis"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "atherosclerosis"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "salvia miltiorrhiza",
+          "danshen",
+          "tongxinluo",
+          "qi deficiency",
+          "blood stasis",
+          "astragaloside",
+          "decoction",
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "myocardial",
+          "atherosclerosis",
+          "thrombosis",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "With its unique advantages of a multi-target, multi-pathway action and low side effects, Traditional Chinese Medicine (TCM) has been increasingly applied in the prevention and treatment of AS [12].",
+          "Atherosclerosis (AS) is a chronic inflammatory disease that affects large and medium-sized arteries."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13079042",
+      "pmcid": "PMC13079042",
+      "doi": "10.3389/fneur.2026.1717706",
+      "title": "Effect of acupuncture on ischemic stroke patients with hypertension: a randomized clinical trail.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13079042/",
+      "sourceChecksum": "1d7516ae8f7d48e93063c1893107484732acf3aced5c67dd4680c7bf818d13e6",
+      "accessedAt": "2026-10-28T06:32:42.497805Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture"
+        ],
+        "metadataCardioTerms": [
+          "hypertension",
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "titleTcmTerms": [
+          "acupuncture"
+        ],
+        "titleCardioTerms": [
+          "hypertension"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "hypertension",
+          "cardiac",
+          "arrhythmia",
+          "atherosclerosis",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Acupuncture therapy, with a long history in China, has good compliance with fewer side effects (11).",
+          "Hypertension, a leading cause of premature death, affects 1.39 billion people worldwide (1)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13110372",
+      "pmcid": "PMC13110372",
+      "doi": "10.1155/cdr/3078311",
+      "title": "Integrating Traditional Wisdom With Modern Science: Ginsenosides as Antiheart Failure Agents.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13110372/",
+      "sourceChecksum": "f0144d77ee28ddecdc4bb43d7ecb681847e4ab4e4e1c774c7e7650cc00f81635",
+      "accessedAt": "2026-10-28T06:32:45.421146Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article under the terms of the https://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin",
+          "ginsenoside"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyocyte"
+        ],
+        "titleTcmTerms": [
+          "ginsenoside"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "qiliqiangxin",
+          "qishen",
+          "qi deficiency",
+          "ginsenoside",
+          "decoction",
+          "shengmai",
+          "sheng mai",
+          "tcm",
+          "shenfu"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "cardiomyopathy",
+          "cardiometabolic",
+          "hypertensive",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Meyer (Araliaceae), a cornerstone of traditional Chinese medicine (TCM), has been used for millennia to treat “Qi deficiency” syndromes—a TCM pattern encompassing fatigue and palpitations, aligning with HF symptoms [5, 6].",
+          "Heart failure (HF) represents a complex clinical syndrome characterized by structural and/or functional cardiac abnormalities, leading to impaired ventricular systolic and/or diastolic function."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13111444",
+      "pmcid": "PMC13111444",
+      "doi": "10.3389/fnins.2026.1776680",
+      "title": "From peripheral initiation to central integration: a narrative review of the antihypertensive mechanisms of acupuncture in regulating autonomic nervous system homeostasis.",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13111444/",
+      "sourceChecksum": "d69d68865de36b6aa1e445ad8026637f2f9a468d629449566edc92a0e15d093d",
+      "accessedAt": "2026-10-28T06:33:06.001389Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "hypertension",
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "titleTcmTerms": [
+          "acupuncture"
+        ],
+        "titleCardioTerms": [
+          "antihypertensive",
+          "hypertensive"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "hypertension",
+          "cardiac",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "hypotensive"
+        ],
+        "bodyEvidence": [
+          "Acupuncture, a core practice in traditional Chinese medicine, has shown distinct benefits for hypertension treatment in recent studies, offering broad regulatory effects with few unwanted reactions.",
+          "Essential hypertension (EH) represents one of the leading chronic cardiovascular disorders and poses a substantial worldwide public health concern."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC10251330",
+      "pmcid": "PMC10251330",
+      "doi": "10.1186/s13020-023-00757-1",
+      "title": "Validation of evidence-based questionnaire for TCM syndrome differentiation of heart failure and evaluation of expert consensus",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10251330/",
+      "sourceChecksum": "6df1dde5ccdcebbc1a16e04170ef436c4adb707542a401cd6ff7f94ad142714b",
+      "accessedAt": "2026-10-28T06:38:09.751487Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qi deficiency",
+          "blood stasis",
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "metadataCardioTerms": [
+          "heart failure"
+        ],
+        "titleTcmTerms": [
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin",
+          "qi deficiency",
+          "blood stasis",
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "cardiomyopathy",
+          "hypertensive",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese Medicine (TCM) has a long history of dealing with clinical situations similar to HF.",
+          "Heart Failure (HF) is the most common cardiovascular disease and the leading cause of death globally."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC10022008",
+      "pmcid": "PMC10022008",
+      "doi": "10.1186/s13020-023-00732-w",
+      "title": "Potential traditional Chinese medicines with anti-inflammation in the prevention of heart failure following myocardial infarction",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022008/",
+      "sourceChecksum": "b14adc07f8712707f4343b009d43e34d231e545fd4b63514994c95c3e8f8161e",
+      "accessedAt": "2026-10-28T06:38:17.876634Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "Open AccessThis article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "astragalus-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "decoction",
+          "gualou",
+          "xiebai",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "qiliqiangxin",
+          "qishen",
+          "tanshinone",
+          "blood stasis",
+          "astragaloside",
+          "decoction",
+          "gualou",
+          "xiebai",
+          "tcm",
+          "shenfu"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "atherosclerosis",
+          "ventricular",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine with anti-inflammation activity in MI or HF might act as potential treatments for HF following MI",
+          "Myocardial infarction (MI) is the most common cause of heart failure (HF)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11114218",
+      "pmcid": "PMC11114218",
+      "doi": "10.1111/jcmm.18331",
+      "title": "Mechanism of Astragalus membranaceus (Huangqi, HQ) for treatment of heart failure based on network pharmacology and molecular docking",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11114218/",
+      "sourceChecksum": "6efcd9d9e1cce541b0def562a07cef627a95e3eaebce89e01b6220d533e8fcb8",
+      "accessedAt": "2026-10-28T06:39:05.327489Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "astragalus-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "huangqi"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "cardiomyocyte"
+        ],
+        "titleTcmTerms": [
+          "astragalus",
+          "huangqi"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "huangqi",
+          "qiliqiangxin",
+          "qi deficiency",
+          "blood stasis",
+          "astragaloside",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyopathy",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Traditional chinese medicine (TCM), a verified alternative therapeutic regimen, has been used to treat heart failure, which is less expensive and has fewer adverse effects.",
+          "Heart failure represents a growing chronic medical condition with major implications on patient morbidity, mortality and cost to health care systems."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC10900662",
+      "pmcid": "PMC10900662",
+      "doi": "10.1186/s13020-024-00908-y",
+      "title": "The combination of Tanshinone IIA and Astragaloside IV attenuates myocardial ischemia–reperfusion injury by inhibiting the STING pathway",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10900662/",
+      "sourceChecksum": "18fb113eaf01278fbc9c2b2e1fefb634d90de8ca8919b3b885f7329fe57be8d7",
+      "accessedAt": "2026-10-28T06:39:09.439485Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "astragalus",
+          "salvia miltiorrhiza",
+          "tanshinone",
+          "astragaloside"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "myocardial",
+          "ventricular"
+        ],
+        "titleTcmTerms": [
+          "tanshinone",
+          "astragaloside"
+        ],
+        "titleCardioTerms": [
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "huangqi",
+          "tanshinone",
+          "astragaloside",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "cardiac",
+          "myocardial",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine (TCM) has accumulated extensive experiences in the treatment of cardiovascular diseases, commonly using the principle of \"Replenishing Qi and activating blood\" in TCM [17].",
+          "Acute myocardial infarction (AMI) is a prevalent and severe form of heart disease, and vascular recanalization therapy is widely employed as a primary treatment for AMI [1]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11278938",
+      "pmcid": "PMC11278938",
+      "doi": "10.3390/medicina60071101",
+      "title": "Systematic Review of Preclinical Studies on the Efficacy and Mechanisms of Herbal Medicines in Post-Myocardial Infarction Heart Failure with Reduced Ejection Fraction",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11278938/",
+      "sourceChecksum": "7be504560b1f620c4734d16e23091e7446d0d3553ac48e6ead2f211250cb849b",
+      "accessedAt": "2026-10-28T06:39:14.867248Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/)."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "astragalus-heart-failure",
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza"
+        ],
+        "metadataCardioTerms": [
+          "coronary",
+          "heart failure",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "herbal medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "chinese medicine",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "huangqi",
+          "qiliqiangxin",
+          "qishen",
+          "qi deficiency",
+          "blood stasis",
+          "ginsenoside",
+          "shengmai",
+          "shenfu",
+          "syndrome differentiation"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "atherosclerosis",
+          "cardiomyopathy",
+          "ventricular",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Recently, results from a large-scale randomized clinical trial on Qiliqiangxin for HFrEF were presented at the European Society of Cardiology congress.",
+          "Heart failure (HF) is a clinical syndrome resulting from structural or functional disorders affecting ventricular contractility."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12069317",
+      "pmcid": "PMC12069317",
+      "doi": "10.3389/fcvm.2025.1514181",
+      "title": "A multi-center, randomized, double-blind, placebo-controlled trial to evaluate the efficacy and safety of Fuzheng Yangxin Granule in treating heart failure with preserved ejection fraction (Qi-Yin deficiency and blood stasis syndrome): study protocol",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12069317/",
+      "sourceChecksum": "d344b119b6aab3ff0ea44e42efbde41e102d096d4561179cfadeaa99b849790a",
+      "accessedAt": "2026-10-28T06:39:24.063840Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "blood stasis",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "heart failure"
+        ],
+        "titleTcmTerms": [
+          "blood stasis"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qishen",
+          "qi deficiency",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "As the understanding of HFpEF in traditional Chinese medicine (TCM) grows, numerous scholars have conducted extensive studies on TCM treatment protocols and clinical efficacy evaluations for HFpEF.",
+          "Heart failure with preserved ejection fraction (HFpEF) is not merely a single pathological diagnosis but a complex clinical syndrome characterized by a left ventricular ejection fraction (LVEF) ≥ 50%, along with symptoms such as dyspnea and weakness (1)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11333324",
+      "pmcid": "PMC11333324",
+      "doi": "10.3389/fcvm.2024.1374114",
+      "title": "Effect of astragalus injection on left ventricular remodeling in HFmrEF: a systematic review and meta-analysis",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11333324/",
+      "sourceChecksum": "3ac7e91fc963eb81f6f32f4bdbeccfa4b4340cbcf45a16e222ee6aefd5f338f2",
+      "accessedAt": "2026-10-28T06:39:28.784786Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "astragalus-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "astragalus"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "ventricular"
+        ],
+        "titleTcmTerms": [
+          "astragalus"
+        ],
+        "titleCardioTerms": [
+          "ventricular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "astragaloside"
+        ],
+        "bodyCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Astragalus membranaceus, a dried root of traditional Chinese medicine, has a long history of medicinal use for its various healing properties.",
+          "Heart failure (HF) is a global epidemic with increasing prevalence, affecting approximately 20 million patients worldwide (1)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12091609",
+      "pmcid": "PMC12091609",
+      "doi": "10.1097/md.0000000000042389",
+      "title": "Complementary therapy in Chinese medicine for dilated cardiomyopathy with congestive heart failure: A three-year follow-up case report",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12091609/",
+      "sourceChecksum": "5d24dd92022530050e40e322e4fa1fa96e75fc2e4e4ebab31b1da1b08e48691c",
+      "accessedAt": "2026-10-28T06:39:38.707402Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article distributed under the Creative Commons Attribution License 4.0 (CCBY), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "blood stasis",
+          "decoction",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "cardiomyopathy",
+          "ventricular"
+        ],
+        "titleTcmTerms": [
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "cardiomyopathy"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "qi deficiency",
+          "blood stasis",
+          "astragaloside",
+          "decoction",
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "cardiomyopathy",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "TCM is known for being low-cost and having minimal harmful effects.",
+          "Systolic insufficiency and dilation of the left or both ventricles are the hallmarks of dilated cardiomyopathy (DCM), which ultimately results in heart failure (HF)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC12269143",
+      "pmcid": "PMC12269143",
+      "doi": "10.1186/s13020-025-01151-9",
+      "title": "Integrating multi-omics and machine learning strategies to explore the “gene-protein-metabolite” network in ischemic heart failure with Qi deficiency and blood stasis syndrome",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12269143/",
+      "sourceChecksum": "98974fa26bbe38c8ab96f3eefcdd037598e2a6b18b20d0138185afc0f82b3cb0",
+      "accessedAt": "2026-10-28T06:39:47.169238Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qi deficiency",
+          "blood stasis",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "ischemic heart"
+        ],
+        "titleTcmTerms": [
+          "qi deficiency",
+          "blood stasis"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "ischemic heart"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qi deficiency",
+          "blood stasis",
+          "tcm",
+          "syndrome differentiation"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "ventricular",
+          "thrombosis",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese Medicine (TCM) has been widely utilized in the management of IHF, with the concept of “Qi deficiency and blood stasis syndrome” (QXXY syndrome) being particularly relevant [4–6].",
+          "Heart failure (HF) remains a leading global cause of morbidity and mortality, with its burden escalating due to an aging population."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13383748",
+      "pmcid": "PMC13383748",
+      "doi": "10.1111/jcmm.71238",
+      "title": "Qiliqiangxin Improves Cardiac Glucose Metabolism After Myocardial Infarction Through a HIF‐1α/MIF/AMPK Axis",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13383748/",
+      "sourceChecksum": "447825a5b2f6d9b2010f4ad8f3f4121249e37da309a008897ab2702652f4fdac",
+      "accessedAt": "2026-10-28T06:39:49.931498Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "cardiac",
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "ventricular",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin (QL), a traditional Chinese medicine compound derived from 11 herbs, has demonstrated efficacy and safety in treating chronic heart failure secondary to ischemic injury or pressure overload [4, 5].",
+          "Myocardial infarction (MI) remains a leading cause of global morbidity and mortality."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13111759",
+      "pmcid": "PMC13111759",
+      "doi": "10.1002/fsn3.71755",
+      "title": "Cardiovascular Benefits of Salvia miltiorrhiza (Danshen) Supplementation: Bioactive Constituents, Mechanisms, Clinical Evidence and Implications for Nutritional Care",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13111759/",
+      "sourceChecksum": "a720fc06cb9feac181f56b8f95acdee2ffdcffe1394a35040e02773d00fe467a",
+      "accessedAt": "2026-10-28T06:39:53.876383Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "salvia miltiorrhiza",
+          "danshen",
+          "tanshinone"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "salvia miltiorrhiza",
+          "danshen"
+        ],
+        "titleCardioTerms": [
+          "cardiovascular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "tanshinone",
+          "decoction",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "atherosclerosis",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "thrombosis",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Salvia miltiorrhiza",
+          "coronary heart disease"
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13506899",
+      "pmcid": "PMC13506899",
+      "doi": "10.3389/fcvm.2026.1881321",
+      "title": "Adjunctive qiliqiangxin capsule for heart failure in predominantly middle-aged and older adults: a systematic review and meta-analysis of randomized controlled trials",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13506899/",
+      "sourceChecksum": "a8c7f611899272fa45e1447cfa15f275e44f9a7776a06e0f196abb8c9ffa21c0",
+      "accessedAt": "2026-10-28T06:40:10.710955Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "qiliqiangxin",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiometabolic",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine (TCM) has a clinical application history of more than 2,000 years.",
+          "Heart failure (HF) is a complex clinical syndrome associated with high morbidity, high mortality, and frequent hospital readmissions."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13585588",
+      "pmcid": "PMC13585588",
+      "doi": "10.3389/fphar.2026.1898253",
+      "title": "Long-term efficacy of the Astragalus-Salvia miltiorrhiza botanical drug pair in stable coronary artery disease and a nomogram for predicting frequent hospitalization: a real-world retrospective cohort study",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13585588/",
+      "sourceChecksum": "a7811fe889f62fc3959849b9a5c84c8a71b1b5489a4be916f302ffd09d483229",
+      "accessedAt": "2026-10-28T06:40:18.762292Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "astragalus",
+          "salvia miltiorrhiza",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "coronary"
+        ],
+        "titleTcmTerms": [
+          "astragalus",
+          "salvia miltiorrhiza"
+        ],
+        "titleCardioTerms": [
+          "coronary"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "tanshinone",
+          "qi deficiency",
+          "blood stasis",
+          "astragaloside",
+          "decoction",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "atherosclerosis"
+        ],
+        "bodyEvidence": [
+          "In Traditional Chinese Medicine (TCM), SCAD pathogenesis is characterized by “Qi deficiency and blood stasis” (Xin and Li, 2025).",
+          "Stable coronary artery disease (SCAD) is a leading cause of global mortality (GBD 2019 Diseases and Injuries Collaborators, 2020)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC3775405",
+      "pmcid": "PMC3775405",
+      "doi": "10.1155/2013/378298",
+      "title": "Protective Effect of Qiliqiangxin Capsule on Energy Metabolism and Myocardial Mitochondria in Pressure Overload Heart Failure Rats",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3775405/",
+      "sourceChecksum": "37524ec4d6232de9fdc0f38965bcb75583b67b2833bdd2cafedf9e3bc8537e96",
+      "accessedAt": "2026-10-28T06:40:28.465140Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/3.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/3.0/This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "qiliqiangxin",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "qiliqiangxin",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin capsule (QL) was developed under the guidance of TCM theory of collateral disease [3].",
+          "Hypertension is one of the most common cardiovascular diseases and a major cause of heart failure."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC10800938",
+      "pmcid": "PMC10800938",
+      "doi": "10.3389/fcvm.2023.1290240",
+      "title": "Chinese herbal medicine Shenqi compound for early intervention in patients at high cardiovascular risk of type 2 diabetes mellitus: the protocol of a multicenter, randomized, double-blind, placebo-controlled trial",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10800938/",
+      "sourceChecksum": "ce991cac0c9e5e275822659c62c1921e48d5480fd763249ccadecc0534e1f903",
+      "accessedAt": "2026-10-28T06:40:33.232603Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "herbal-cardiovascular"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular"
+        ],
+        "titleTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "titleCardioTerms": [
+          "cardiovascular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "acupuncture",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "atherosclerosis"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine (TCM) has a wealth of experience in treating diabetes and macrovascular complications, with a variety of treatment methods including herbal compounds, acupuncture, and Tai Chi.",
+          "Global diabetes prevention and control strategies have gradually shifted the focus from glycemic control to improving cardiac and renal outcomes (1)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC3807038",
+      "pmcid": "PMC3807038",
+      "doi": "10.3389/fgene.2013.00221",
+      "title": "Future prospects of Qiliqiangxin on heart failure: epigenetic regulation of regeneration",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3807038/",
+      "sourceChecksum": "ccc415f76fc44ceb93889bfaa64151625ac546178d69871440291671d7d8e569",
+      "accessedAt": "2026-10-28T06:40:44.362567Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/3.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/3.0/This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) or licensor are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/3.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "huangqi",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin (QL), a traditional Chinese medicine, was approved by China Food and Drug Administration for the treatment of heart failure in 2004 (Li et al., 2013)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC4420613",
+      "pmcid": "PMC4420613",
+      "doi": "10.1111/jcmm.12512",
+      "title": "Qiliqiangxin inhibits angiotensin II-induced transdifferentiation of rat cardiac fibroblasts through suppressing interleukin-6",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4420613/",
+      "sourceChecksum": "63856c3348ec78efe814315ff1b347fe3c2576f14d4b6c5ee7d9e7cbf2a79cc1",
+      "accessedAt": "2026-10-28T06:40:57.411769Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "cardiac"
+        ],
+        "bodyTcmTerms": [
+          "salvia miltiorrhiza",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyopathy",
+          "hypertensive",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin (QL) is a traditional Chinese herb medicine, including mainly Radix Astragali, Radix Ginseng, Salvia Miltiorrhiza, etc.",
+          "Myocardial fibrosis is a multi-factorial process which includes the progressively increased transdifferentiation of cardiac fibroblasts (CFs) into myofibroblasts."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC10843552",
+      "pmcid": "PMC10843552",
+      "doi": "10.1097/md.0000000000037104",
+      "title": "Prospect of research on anti-atherosclerosis effect of main components of traditional Chinese medicine Yiqi Huoxue Huatan recipe through gut microbiota: A review",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10843552/",
+      "sourceChecksum": "3782b593ac45cc4f305e5f26360a8693f7ab6596630904a4a1592cd132e7bde7",
+      "accessedAt": "2026-10-28T06:41:01.410645Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article distributed under the Creative Commons Attribution License 4.0 (CCBY), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "herbal-cardiovascular"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "atherosclerosis"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "atherosclerosis"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "tanshinone"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "myocardial",
+          "atherosclerosis",
+          "thrombosis"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine has been proven to regulate GM and improve symptoms related to atherosclerosis.",
+          "Atherosclerosis (AS) is a chronic progressive vascular disease that involves several mechanisms."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC4648480",
+      "pmcid": "PMC4648480",
+      "doi": "10.1038/srep08374",
+      "title": "Traditional Chinese Medication Qiliqiangxin attenuates cardiac remodeling after acute myocardial infarction in mice",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4648480/",
+      "sourceChecksum": "85c3309f1d0771febcc6e9fa779a0b9cd3821f6289db0e03fa5d89fe915071ff",
+      "accessedAt": "2026-10-28T06:41:15.727085Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This work is licensed under a Creative Commons Attribution 4.0 International License. The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in the credit line; if the material is not included under the Creative Commons license, users will need to obtain permission from the license holder in order to reproduce the material. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "cardiac",
+          "myocardial"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "salvia miltiorrhiza",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "hypertensive",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin (QLQX) is a specific traditional Chinese medicine extracted from 11 distinct herbs, including ginseng radix et rhizoma, astragali radix, aconiti lateralis radix preparata, semen descurainiae lepidii, salvia miltiorrhiza radix et rhizoma, alismatis rhizoma, cinnamomi ramulus, polygonati odorati rhizoma, periploca cortex, carthami flos, and citri reticulatae pericarpium101112.",
+          "Acute myocardial infarction (AMI) remains a leading cause of morbidity and mortality in most industrialized countries worldwide1."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11520704",
+      "pmcid": "PMC11520704",
+      "doi": "10.1186/s13020-024-01022-9",
+      "title": "The role of Chinese herbal medicine in the regulation of oxidative stress in treating hypertension: from therapeutics to mechanisms",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11520704/",
+      "sourceChecksum": "757d0931f1a6c760332265742de1debfabde22fec56ee1c736ac0fff419a690d",
+      "accessedAt": "2026-10-28T06:41:47.073018Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "tcm-hypertension"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [
+          "chinese herbal",
+          "herbal medicine"
+        ],
+        "titleCardioTerms": [
+          "hypertension"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "danshen",
+          "huangqi",
+          "tongxinluo",
+          "tanshinone",
+          "blood stasis",
+          "astragaloside",
+          "ginsenoside",
+          "decoction",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "cardiomyopathy",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "thrombosis",
+          "cardiomyocyte",
+          "hypotensive"
+        ],
+        "bodyEvidence": [
+          "In traditional Chinese medicine (TCM), extensive experience and theory in the diagnosis and treatment of hypertension has been accumulated.",
+          "In recent years, the incidence rate of hypertension has increased year by year, often accompanied by damage to heart, brain, kidney, eyes and other important target organs [1], which has become a major global public health problem."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC4913020",
+      "pmcid": "PMC4913020",
+      "doi": "10.1155/2016/9781715",
+      "title": "Danshen (Salvia miltiorrhiza) Compounds Improve the Biochemical Indices of the Patients with Coronary Heart Disease",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4913020/",
+      "sourceChecksum": "13b8699b5d93c441b60b0d955a9420bb9f6c28a85cfc5a8a38d1a3feff277337",
+      "accessedAt": "2026-10-28T06:42:05.909520Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/This is an open access article distributed under the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "salvia miltiorrhiza",
+          "danshen"
+        ],
+        "metadataCardioTerms": [
+          "coronary"
+        ],
+        "titleTcmTerms": [
+          "salvia miltiorrhiza",
+          "danshen"
+        ],
+        "titleCardioTerms": [
+          "coronary"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "salvia miltiorrhiza",
+          "danshen",
+          "tanshinone",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "atherosclerosis",
+          "ventricular",
+          "thrombosis"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese medicine (TCM) has a profound history and has been practiced in many diseases.",
+          "Coronary heart disease (CHD) is the leading cause of death in the world [1, 2]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC5829193",
+      "pmcid": "PMC5829193",
+      "doi": "10.1038/s41598-018-22074-6",
+      "title": "A metabolomics study of Qiliqiangxin in a rat model of heart failure: a reverse pharmacology approach",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5829193/",
+      "sourceChecksum": "6cbfa4287d9733a7afcf593cabf28c216bae849bbc8a0f7d8d0ed3e2aeaf0e34",
+      "accessedAt": "2026-10-28T06:42:08.902945Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "herbal medicine",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "atherosclerosis",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "In contrast to the reductionist, molecular target approach of Western medicine, Chinese medicine uses a holistic and personalized approach to both diagnosis and intervention of disease, as well as supporting health, with fewer side effects and lower costs compared to Western medicine4.",
+          "Heart failure is a complicated clinical syndrome that can result from any functional and/or structural cardiac disorder that impairs the ventricle’s ability to fill with or eject blood1."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC4227006",
+      "pmcid": "PMC4227006",
+      "doi": "10.1186/1472-6882-14-232",
+      "title": "Plasma metabonomics study on Chinese medicine syndrome evolution of heart failure rats caused by LAD ligation",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4227006/",
+      "sourceChecksum": "7facbc6ccd4ee9a96f3536bdce0a68d73776f040fd475e12ee362d13ec770052",
+      "accessedAt": "2026-10-28T06:42:16.660973Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/2.0"
+          ],
+          "statement": "This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly credited."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/2.0",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "chinese medicine",
+          "qi deficiency",
+          "blood stasis"
+        ],
+        "metadataCardioTerms": [
+          "coronary",
+          "heart failure",
+          "myocardial",
+          "ischemic heart"
+        ],
+        "titleTcmTerms": [
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "chinese medicine",
+          "acupuncture",
+          "qiliqiangxin",
+          "qi deficiency",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "atherosclerosis",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "TCM is a complicated system, and the characteristics of the diagnoses and treatments are based on evaluating TCM syndromes, which are becoming more common in clinical practice and have a history of more than one thousand years.",
+          "The analysis of plasma metabonomics was applied in mini-swines with qi deficiency and blood stasis syndrome from chronic myocardial ischemia [7] and in research on the evaluation of the fever syndrome model in rats [8]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11649660",
+      "pmcid": "PMC11649660",
+      "doi": "10.3389/fcvm.2024.1419169",
+      "title": "Traditional Chinese medicine for cardiovascular disease: efficacy and safety",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11649660/",
+      "sourceChecksum": "2e233c297d434062b04795a4d7470d5c3f6d27eaae33a8204e5b5ad645a165b2",
+      "accessedAt": "2026-10-28T06:42:35.390952Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "tcm-hypertension"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "cardiovascular"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "acupuncture",
+          "danshen",
+          "tongxinluo",
+          "qiliqiangxin",
+          "qishen",
+          "shensong",
+          "blood stasis",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "antihypertensive",
+          "hypertensive",
+          "ventricular",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "Traditional Chinese Medicine (TCM) has been developed and used continuously for more than 2,000 years and has become increasingly popular in Asia and Western countries over the past few decades, especially acupuncture (7).",
+          "Cardiovascular disease (CVD) is a leading cause of death and disability, accounting for approximately one-third of all deaths globally with 19.05 million fatalities in 2020 (1)."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC5010704",
+      "pmcid": "PMC5010704",
+      "doi": "10.1186/s12906-016-1306-7",
+      "title": "Validation of a new simple scale to measure symptoms in heart failure from traditional Chinese medicine view: a cross-sectional questionnaire study",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5010704/",
+      "sourceChecksum": "b51d0dd37369f8ec55b1d4a0815bdcedf91a4114b5f1a865e62b9d48dce38ca1",
+      "accessedAt": "2026-10-28T06:42:38.974353Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/",
+            "http://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/ Open AccessThis article is distributed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "syndrome-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "blood stasis",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "heart failure"
+        ],
+        "titleTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "coronary",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "Physicians who practice traditional Chinese medicine (TCM) use four diagnostic approaches, i.e., inspection, auscultation and olfaction, interrogation, and palpation to record patients’ information in relation to specific patterns [3, 4].",
+          "Heart failure (HF) is common and its impact on a patient’s quality of life (QoL) depends on its severity [1]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC7076750",
+      "pmcid": "PMC7076750",
+      "doi": "10.1186/s12906-020-2821-0",
+      "title": "Study protocol for a randomized controlled trial: Qiliqiangxin in heart failUre: assESsment of reduction in morTality (QUEST)",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7076750/",
+      "sourceChecksum": "6110bd2066c2f7ec0ec4382ff83df8b0996e3ee5a12fc6c258e73bc68e4106fe",
+      "accessedAt": "2026-10-28T06:42:48.229813Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/",
+            "http://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "https://creativecommons.org/licenses/by/4.0/Open AccessThis article is distributed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin",
+          "tcm"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "astragalus",
+          "danshen",
+          "tongxinluo",
+          "qiliqiangxin",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "arrhythmia",
+          "angina",
+          "ventricular",
+          "cardiomyocyte",
+          "ischemic heart"
+        ],
+        "bodyEvidence": [
+          "The hemodynamic changes caused by early neuroendocrine activation and ventricular remodeling is the basic mechanism in the progressive development of heart failure [7], which is similar from the perspective of traditional Chinese medicine (TCM) [8].",
+          "In the past decade, Cardiovascular disease is one of the major causes of death globally, seriously threatening human life and health [1, 2]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC11657759",
+      "pmcid": "PMC11657759",
+      "doi": "10.1186/s13020-024-01039-0",
+      "title": "Zhishi Xiebai Guizhi Decoction modulates hypoxia and lipid toxicity to alleviate pulmonary vascular remodeling of pulmonary hypertension in rats",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11657759/",
+      "sourceChecksum": "3c8cdc4488158dff95b34d06289859624c34347e0745107f4292695866d86ddb",
+      "accessedAt": "2026-10-28T06:42:53.252088Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://creativecommons.org/publicdomain/zero/1.0/"
+          ],
+          "statement": "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "tcm-hypertension"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "decoction",
+          "xiebai"
+        ],
+        "metadataCardioTerms": [
+          "hypertension"
+        ],
+        "titleTcmTerms": [
+          "decoction",
+          "xiebai"
+        ],
+        "titleCardioTerms": [
+          "hypertension"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "decoction",
+          "gualou",
+          "xiebai",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "heart failure",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "angina",
+          "cardiomyopathy",
+          "ventricular",
+          "hypotensive"
+        ],
+        "bodyEvidence": [
+          "One potential therapeutic option for clinical treatment of PH is the use of classical TCM formula with multiple ingredients and multiple targets [10–13].",
+          "Pulmonary hypertension (PH) is a lethal cardio-pulmonary vascular disease characterized by elevation of pulmonary arterial pressure, finally resulting in right heart failure or death [1, 2]."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC7301709",
+      "pmcid": "PMC7301709",
+      "doi": "10.1080/13880209.2020.1761403",
+      "title": "Qiliqiangxin improves cardiac function and attenuates cardiac remodelling in doxorubicin-induced heart failure rats",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7301709/",
+      "sourceChecksum": "db96315c28fd23d7e807c4a0d4f92aac41290de3407e301b1906682e2b97059e",
+      "accessedAt": "2026-10-28T06:42:58.200610Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "formula-heart-failure"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "qiliqiangxin"
+        ],
+        "metadataCardioTerms": [
+          "heart failure",
+          "cardiac",
+          "myocardial"
+        ],
+        "titleTcmTerms": [
+          "qiliqiangxin"
+        ],
+        "titleCardioTerms": [
+          "heart failure",
+          "cardiac"
+        ],
+        "bodyTcmTerms": [
+          "chinese medicine",
+          "chinese herbal",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "qiliqiangxin"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "cardiomyopathy",
+          "ventricular",
+          "cardiomyocyte"
+        ],
+        "bodyEvidence": [
+          "Qiliqiangxin (QL) is a standardised traditional Chinese herbal remedy that has been shown to have good therapeutic efficacy against CHF as it improves cardiac function, attenuates myocardial remodelling, alleviates cardiac fibrosis, inhibits apoptosis, induces myocardial regeneration, and enhances angiogenesis (Zou et al.",
+          "However, its clinical application is restricted as it may be cardiotoxic and cause heart failure (Mazevet et al."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC13225519",
+      "pmcid": "PMC13225519",
+      "doi": "10.1097/md.0000000000049013",
+      "title": "The clinical efficacy of Astragalus-containing Chinese patent medicines in the effective treatment of heart failure: A systematic review and network meta-analysis",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13225519/",
+      "sourceChecksum": "a9f8091f21ba7f5b521ad1028d422c06f088b6318a65b871d19faa9fa9192d81",
+      "accessedAt": "2026-10-28T06:43:24.606070Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "https://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "This is an open access article distributed under the Creative Commons Attribution License 4.0 (CCBY), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited."
+        }
+      ],
+      "redistributionLicenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "astragalus-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "decoction",
+          "chinese patent medicine"
+        ],
+        "metadataCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "ventricular"
+        ],
+        "titleTcmTerms": [
+          "astragalus",
+          "chinese patent medicine"
+        ],
+        "titleCardioTerms": [
+          "heart failure"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "chinese herbal",
+          "herbal medicine",
+          "astragalus",
+          "salvia miltiorrhiza",
+          "qi deficiency",
+          "blood stasis",
+          "astragaloside",
+          "ginsenoside",
+          "decoction",
+          "tcm",
+          "chinese patent medicine"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "heart failure",
+          "cardiac",
+          "myocardial",
+          "ventricular"
+        ],
+        "bodyEvidence": [
+          "For instance, in the United States, it is estimated that the prevalence of HF will increase by 46% from 2012 to 2030, while concurrently medical costs will rise by 127%.[3,4] The prevalence of HF has increased over time and is projected to continue rising over the next decade, from 2.4% of the total population in 2012 to 3.0% by 2030.[5] Although modern Western medicine (WM) treatments (such as beta-blockers, angiotensin converting enzyme inhibitors/angiotensin receptor blockers, angiotensin receptor neprilysin inhibitors, and sodium-dependent glucose transporter 2 inhibitors) have significantly improved patient survival rates, some patients still experience poor symptom control, repeated ho",
+          "Heart failure (HF) is a complex clinical syndrome characterized by symptoms and signs resulting from any structural or functional abnormalities in cardiac diastolic and systolic function."
+        ],
+        "reason": "dual-topic-title"
+      }
+    },
+    {
+      "documentId": "EN-PMC5486119",
+      "pmcid": "PMC5486119",
+      "doi": "10.3390/ijms18061298",
+      "title": "Using Coexpression Protein Interaction Network Analysis to Identify Mechanisms of Danshensu Affecting Patients with Coronary Heart Disease",
+      "language": "en",
+      "corpusRole": "core",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5486119/",
+      "sourceChecksum": "9b3eee8ab5a99fb0488a65a168421fdb04e5e6c3b5cf3a31a52977490c64ded2",
+      "accessedAt": "2026-10-28T06:43:28.567077Z",
+      "licenseEvidence": [
+        {
+          "urls": [
+            "http://creativecommons.org/licenses/by/4.0/"
+          ],
+          "statement": "Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (http://creativecommons.org/licenses/by/4.0/)."
+        }
+      ],
+      "redistributionLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributionStatus": "permissive-verified",
+      "collectionTopics": [
+        "danshen-coronary"
+      ],
+      "topicReview": {
+        "method": "source-title-dual-topic-and-body-screen-v2",
+        "status": "automatic-screened-not-clinical-review",
+        "metadataTcmTerms": [
+          "salvia miltiorrhiza",
+          "danshen"
+        ],
+        "metadataCardioTerms": [
+          "coronary"
+        ],
+        "titleTcmTerms": [
+          "danshen"
+        ],
+        "titleCardioTerms": [
+          "coronary"
+        ],
+        "bodyTcmTerms": [
+          "traditional chinese medicine",
+          "chinese medicine",
+          "salvia miltiorrhiza",
+          "danshen",
+          "blood stasis",
+          "tcm"
+        ],
+        "bodyCardioTerms": [
+          "cardiovascular",
+          "coronary",
+          "hypertension",
+          "cardiac",
+          "myocardial",
+          "atherosclerosis",
+          "thrombosis"
+        ],
+        "bodyEvidence": [
+          "Salvia miltiorrhiza, an established traditional Chinese medicine (TCM) with 1000 years of clinical application, can promote blood circulation and eliminate blood stasis [2,3].",
+          "Coronary heart disease (CHD) is a leading cause of morbidity and mortality globally."
+        ],
+        "reason": "dual-topic-title"
+      }
+    }
+  ],
+  "isolation": [
+    {
+      "documentId": "ZH-PMC13425199",
+      "title": "中药降解寡糖制备和结构表征的研究进展 Research advances in the preparation and structural characterization of depolymerized oligosaccharides from traditional Chinese medicine",
+      "corpusRole": "excluded",
+      "redistributionStatus": "restricted-review-required",
+      "reason": "single-topic-background",
+      "sourceReviewDecision": {
+        "corpusRole": "excluded",
+        "reason": "Oligosaccharide preparation and characterization, without a cardiovascular study objective; retained outside default retrieval."
+      }
+    },
+    {
+      "documentId": "EN-PMC3521464",
+      "title": "Prescription of chinese herbal medicine and selection of acupoints in pattern-based traditional chinese medicine treatment for insomnia: a systematic review.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "single-topic-background",
+      "sourceReviewDecision": {
+        "corpusRole": "excluded",
+        "reason": "Insomnia prescribing patterns, not cardiovascular syndromes; full text retained for audit."
+      }
+    },
+    {
+      "documentId": "EN-PMC4477207",
+      "title": "Prescription of Chinese Herbal Medicine in Pattern-Based Traditional Chinese Medicine Treatment for Depression: A Systematic Review.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "single-topic-background",
+      "sourceReviewDecision": {
+        "corpusRole": "excluded",
+        "reason": "Depression prescribing patterns, not cardiovascular syndromes; full text retained for audit."
+      }
+    },
+    {
+      "documentId": "EN-PMC12932606",
+      "title": "Association between the C-reactive protein to albumin ratio and unplanned readmission in ulcerative colitis: insights from a cohort study.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "outside-project-scope",
+      "sourceReviewDecision": null
+    },
+    {
+      "documentId": "EN-PMC12935602",
+      "title": "Development and validation of a nomogram model integrating noninvasive detection of radial pulse wave for predicting diabetic foot risk in type 2 diabetes mellitus.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "outside-project-scope",
+      "sourceReviewDecision": null
+    },
+    {
+      "documentId": "EN-PMC12958187",
+      "title": "Application of pedicle bone quality scoring and Hounsfield unit in predicting the risk of cage subsidence after single-segment lumbar fusion surgery.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "outside-project-scope",
+      "sourceReviewDecision": null
+    },
+    {
+      "documentId": "EN-PMC12982435",
+      "title": "Study protocol for a randomized controlled trial to evaluate the effectiveness of an artificial intelligence-based health education accurately linking system based on traditional Chinese medicine body constitution in patients with chronic disease multimorbidity.",
+      "corpusRole": "excluded",
+      "redistributionStatus": "permissive-verified",
+      "reason": "single-topic-background",
+      "sourceReviewDecision": {
+        "corpusRole": "excluded",
+        "reason": "Generic AI health-education multimorbidity protocol; cardiovascular-focused TCM intervention is not established."
+      }
+    }
+  ],
+  "redistributionIsolationIds": [
+    "ZH-PMC11914018",
+    "ZH-PMC13425199",
+    "ZH-PMC13534605",
+    "ZH-PMC12439645",
+    "ZH-PMC11026880",
+    "ZH-PMC11839350",
+    "ZH-PMC6000010",
+    "ZH-PMC12878569",
+    "ZH-PMC12207030",
+    "ZH-PMC12207025",
+    "ZH-PMC13305673",
+    "ZH-PMC13305824",
+    "ZH-PMC12972876",
+    "ZH-PMC12337220",
+    "ZH-PMC11839373",
+    "ZH-PMC10988564",
+    "ZH-PMC7342940",
+    "ZH-PMC7354164",
+    "ZH-PMC10442630",
+    "ZH-PMC12176534",
+    "ZH-PMC11914008",
+    "ZH-PMC12796900",
+    "ZH-PMC11839351",
+    "ZH-PMC11839362",
+    "ZH-PMC11211796",
+    "ZH-PMC11026888",
+    "ZH-PMC10440626",
+    "ZH-PMC7357948",
+    "ZH-PMC7357907",
+    "ZH-PMC7364932",
+    "ZH-PMC7342521",
+    "ZH-PMC13407286",
+    "ZH-PMC13306136",
+    "ZH-PMC13305674",
+    "ZH-PMC13303226",
+    "ZH-PMC13071585",
+    "ZH-PMC13071599",
+    "ZH-PMC13095808",
+    "ZH-PMC12980518",
+    "ZH-PMC12980115",
+    "ZH-PMC12796903",
+    "ZH-PMC12709063",
+    "ZH-PMC12709100",
+    "ZH-PMC12554875",
+    "ZH-PMC12439660",
+    "ZH-PMC12439656",
+    "ZH-PMC12207043",
+    "ZH-PMC12062932",
+    "ZH-PMC12062947",
+    "ZH-PMC12062946",
+    "ZH-PMC12062936",
+    "ZH-PMC11914016",
+    "ZH-PMC13523879",
+    "ZH-PMC13523897",
+    "ZH-PMC11839341",
+    "ZH-PMC11839342",
+    "ZH-PMC11536260",
+    "ZH-PMC7007396",
+    "ZH-PMC7364973",
+    "ZH-PMC12382321",
+    "ZH-PMC11839347",
+    "ZH-PMC11334291",
+    "ZH-PMC13589773",
+    "EN-PMC3703711",
+    "EN-PMC3904907",
+    "EN-PMC6340156",
+    "EN-PMC10213818",
+    "EN-PMC6246622",
+    "EN-PMC6418033",
+    "EN-PMC5932161",
+    "EN-PMC7261879",
+    "EN-PMC10060819"
+  ],
+  "limits": [
+    "Source-assisted topic screening, not expert clinical or legal certification.",
+    "All 48 additions are original English full texts; no fabricated Chinese translations.",
+    "Background documents remain searchable; excluded documents and originals remain in the ledger.",
+    "Legacy nonpermissive texts stay in the existing workspace but not in the delivery archive."
+  ]
+}

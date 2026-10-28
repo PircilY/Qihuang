@@ -1,0 +1,167 @@
+Introduction
+
+Ulcerative colitis (UC) is a chronic, recurrent inflammatory bowel disease (1, 2). Global epidemiological data from 2023 indicates approximately 5 million people worldwide suffer from UC, with incidence rates continuing to rise globally (1). Current clinical treatments for UC, such as anti-inflammatory drugs, immunosuppressants, and biologics, can effectively alleviate clinical symptoms. However, due to the chronic, protracted, and recurrent nature of the disease, patients still face a significant long-term disease burden and reduced quality of life (3, 4).
+
+The annual readmission rate for UC patients reaches as high as 46% (5, 6). Unplanned readmission serves as a critical indicator for assessing disease control quality, typically suggesting inadequate disease management or suboptimal care following initial discharge. This not only exacerbates the health burden on patients but is also significantly associated with increased mortality risk, prolonged hospitalization duration, and higher healthcare costs (6, 7). Consequently, there is an urgent need to identify clinical indicators with strong predictive value for unplanned readmission in UC patients.
+
+C-reactive protein (CRP) is closely associated with mucosal inflammation severity and disease activity, serving as a vital biomarker for UC disease monitoring and management (8–10). Albumin (ALB) is a commonly used laboratory indicator for assessing nutritional status and chronic inflammation severity (11). Low albumin levels are strongly correlated with the risk of colectomy (12), disease recurrence (13), and mortality (14). The C-reactive protein to albumin ratio (CAR) simultaneously reflects inflammation, nutritional status, and immune function, and is considered a more stable and sensitive prognostic assessment tool than either single indicator alone (15, 16). Recent studies indicate that CAR has been used to evaluate UC disease severity (17) and predict treatment response (18), demonstrating promising clinical application potential.
+
+Current research on the relationship between CAR and readmission risk in UC patients remains limited. Therefore, this study, based on a large single-center cohort with a 7-year follow-up, aims to investigate the association between CAR and unplanned readmission in UC patients and evaluate its predictive value.
+
+Materials and methods
+
+Study participants
+
+This retrospective cohort study utilized data from patients hospitalized for UC at the Affiliated Hospital of Shandong University of TCM between June 2017 and June 2024. All participants were followed up for 1 year through telephone interviews, outpatient visits, and inpatient medical records.
+
+The inclusion criteria were as follows: (1) age ≥ 18 years; (2) diagnosis in accordance with the American College of Gastroenterology guidelines (19); and (3) availability of CRP and ALB measurements. The exclusion criteria were as follows: (1) age < 18 years; (2) comorbid severe cardiopulmonary disease, hepatic insufficiency, or renal dysfunction; (3) current malignancy; (4) concomitant non-IBD immune disorders; and (5) prior colectomy.
+
+Of the 527 participants initially screened, 115 were excluded based on the above criteria, yielding a final analytical cohort of 412 individuals, as detailed in Figure 1.
+
+Participant selection process flowchart.
+
+The study was conducted in accordance with the principles of the Declaration of Helsinki and was approved by the ethics committee of the Affiliated Hospital of Shandong University of TCM (Approval No. 2024-152-ky). Written informed consent was obtained from all participants or their legal guardians at the time of initial hospitalization.
+
+Definition of CAR and unplanned readmission
+
+CAR was defined as the ratio of serum CRP (mg/L) to serum albumin (g/L).
+
+Unplanned readmission referred to any unscheduled hospitalization at our institution caused by acute exacerbation of UC or inadequate clinical management (20). Planned admissions for follow-up surveillance, enteral nutrition, or scheduled medication infusion were excluded. Each case of suspected unplanned readmission was independently assessed by two senior physicians, each with over 10 years of clinical experience. Any discrepancies in evaluation were resolved through discussion until a consensus was reached.
+
+Covariates
+
+Several clinical characteristics were assessed in this study, including demographics, comorbidities, medication use, and laboratory tests. Demographic data consisted of sex, age, smoking history, and alcohol use. comorbidities included hypertension, diabetes, and cardiovascular disease. Medication use encompassed 5-aminosalicylic acid (5-ASA), immunosuppressants, probiotics, and glucocorticoids (GCS). Laboratory tests involved hemoglobin, platelet count (PLT), white blood cell count (WBC), alanine aminotransferase (ALT), aspartate aminotransferase (AST), total bilirubin, CRP, and ALB. Clinical data were independently collected and cross-verified by two trained administrators.
+
+Statistical analysis
+
+All statistical analyses were conducted using R 4.3.2 and DecisionLine 1.0. Continuous variables were expressed as mean ± standard deviation if normally distributed, or as median (IQR) if not. Categorical variables were summarized as frequencies and percentages (%). Group comparisons were carried out using Student’s t-test for normally distributed continuous variables and the Mann-Whitney U test for non-normally distributed variables. For categorical variables, either Pearson’s chi-square test or Fisher’s exact test was applied, depending on expected frequencies.
+
+Cox proportional hazards models were employed to evaluate the associations among CAR, CRP, and ALB levels and unplanned readmission in UC patients. Differences in readmission rates across quartiles of each variable were evaluated using Kaplan-Meier survival curves and compared with the log-rank test. Restricted Cubic Splines (RCS) was used to explore potential dose-response relationships between these three variables and unplanned readmission. The likelihood ratio test was applied to assess non-linearity and identify potential threshold effects. For subgroup analyses, patients were stratified by sex, age, smoking history, alcohol use, comorbidities, and medication use, and interaction effects were assessed. The predictive performance of CAR, CRP, and ALB for unplanned readmission was evaluated using receiver operating characteristic (ROC) curves and the area under the curve (AUC). A two-tailed P < 0.05 was considered statistically significant.
+
+Results
+
+Baseline characteristics
+
+This study included 412 participants with a mean age of 46.59 ± 13.78 years, comprising 247 men and 165 women. The median CRP level was 6.00 (15.85) mg/L, and the mean albumin level was 38.67 ± 5.46 g/L. Compared with patients without unplanned readmission, those with unplanned readmission tended to have higher CRP and lower ALB (Supplementary Figure 1). There were no significant intergroup differences in the history of 5-ASA, biologics, or immunosuppressants. The use of probiotics gradually decreased with increasing CAR quartile. The use of GCS gradually increased with increasing CAR quartile. During the 1-year follow-up period, 113 unplanned readmission events occurred, corresponding to a rate of 27.43%. Among patients with UC who experienced unplanned readmission, worsening disease severity was the primary cause, accounting for 105 (92.92%) cases. No mortality was observed during the follow-up period.
+
+As shown in Table 1, participants were stratified into four groups according to quartiles of the CAR: Q1: < 0.063; Q2: 0.063–0.157; Q3: 0.157–0.459; Q4: > 0.459. A statistically significant trend toward increased unplanned readmission rates was observed with ascending CAR quartiles (P < 0.05). Patients with high CAR levels may exhibit a higher prevalence of hypertension, a greater proportion of disease activity, and increased bowel movement frequency, particularly in the severe bowel movement frequency group, where the proportion significantly increases. Concurrently, they may present with elevated PLT, WBC, and AST levels, along with reduced hemoglobin and albumin levels. Furthermore, patients with a high CAR may exhibit elevated CRP and total bilirubin levels.
+
+Baseline characteristics.
+
+5-ASA, 5-aminosalicylic acid; GCS, glucocorticoids.
+
+Supplementary Table 1 presents the characteristics of UC patients grouped by unplanned readmission status within 1 year of follow-up. Compared to those without unplanned readmission, UC patients who experienced unplanned readmission had significantly higher WBC counts, PLT counts, AST levels, CRP levels, and CAR values, as well as lower albumin levels (P < 0.05). In addition, they exhibited a higher rate of GCS use.
+
+Association between the CAR and unplanned readmission in UC patients
+
+As shown in Table 2, a significant association was observed between the CAR and unplanned readmission in UC patients across all three models (P < 0.001). In the fully adjusted Model 3, each unit increase in the CAR was associated with a 126.9% increase in the risk of unplanned readmission. When participants were categorized by CAR quartiles, those in the Q3 and Q4 groups showed significantly higher risks of unplanned readmission compared to the Q1 group, with a statistically significant trend across quartiles (P < 0.001).
+
+The association between CAR and unplanned readmission.
+
+Model 1: no covariates were adjusted. Model 2: age and sex were adjusted. Model 3: age, sex, smoking, drinking, hypertension, diabetes, heart disease, 5-aminosalicylic acid drug, glucocorticoid agents, immunosuppressive agents, probiotics drug, platelet, hemoglobin, white cell count, ALT, AST, total bilirubin, blood urea nitrogen, and creatinine were adjusted.
+
+Table 3 presents the associations of CRP and ALB with unplanned readmission in UC patients. CRP was significantly associated with unplanned readmission across all models (P < 0.001). In the fully adjusted Model 3, each 1 mg/L increase in CRP was associated with a 2.7% increase in readmission risk. Similarly, ALB was also significantly associated with unplanned readmission across all models (P < 0.05). In Model 3, each 1 g/L increase in ALB was associated with a 6.1% decrease in readmission risk. When analyzed by quartiles, both CRP and ALB exhibited significant trends for readmission risk (P < 0.05). Supplementary Table 2 presents the final Cox proportional hazards model for the association between CAR and unplanned readmission in UC patients.
+
+Threshold effect analysis of CAR.
+
+HR, hazard ratio; CI, 95% confidence interval, and P-value.
+
+Kaplan-Meier survival curves demonstrated significant differences in unplanned readmission rates among groups stratified by CAR, CRP, and ALB quartiles over follow-up time (Log-rank test, P < 0.001). Specifically, higher readmission rates were observed in the high CAR group (Figure 2), high CRP group (Supplementary Figure 2A), and low ALB group (Supplementary Figure 2B).
+
+Kaplan Meier survival curve analysis of unplanned readmission rate in patients with UC based on CAR quartiles. CAR, C-reactive protein to albumin ratio. Kaplan-Meier curves stratified by CAR quartiles showed a clear gradient, with higher CAR associated with lower readmission-free survival over 1 year.
+
+RCS regression and threshold effect analysis
+
+The RCS curve revealed a positive correlation between the CAR and unplanned readmission in UC patients (P for overall < 0.001), with a significant non-linear relationship (P for non-linear < 0.001) (Figure 3).
+
+Triple spline analysis of CAR and unplanned readmission risk within 1 year after discharge in patients with ulcerative colitis. CAR, C-reactive protein to albumin ratio. Spline analysis demonstrated a significant, non-linear dose-response relationship between CAR and the 1-year risk of unplanned readmission. The risk changed more steeply at lower CAR levels and continued to vary at higher values (P for overall < 0.001; P for non-linear < 0.001).
+
+Threshold effect analysis identified an inflection point at 0.654 in the regression model for unplanned readmission in UC. Using a piecewise Cox regression model, effect sizes were calculated on either side of the inflection point. To the left of the inflection point, each unit increase in CAR was associated with a marked increase in the risk of unplanned readmission (HR = 46.66, 95% CI: 17.57-123.95, P < 0.001). In contrast, beyond the inflection point, the effect of CAR on readmission risk was attenuated (HR = 1.41, 95% CI: 1.08–1.83, P = 0.011) (Table 3).
+
+Supplementary Figures 3A, B present the RCS curves illustrating the associations of CRP and ALB with unplanned readmission in UC patients. CRP exhibited a non-linear positive correlation with readmission, while ALB showed a linear negative correlation.
+
+Subgroup analysis and model evaluation
+
+As shown in Table 4, subgroup analysis suggested a potential interactive effect between hypertension and CAR on unplanned readmission in UC patients (P for interaction = 0.011). Specifically, hypertensive individuals exhibited a significantly higher risk of unplanned readmission, where each unit increase in CAR conferred an 8.14-fold increase in the risk (HR = 8.14, 95% CI: 2.81–23.62, P < 0.001). In other subgroups, the association between CAR and unplanned readmission remained generally consistent.
+
+Subgroup analysis of CAR on unplanned readmission in UC.
+
+5-ASA, 5-aminosalicylic acid; GCS, glucocorticoids.
+
+The AUC for predicting unplanned readmission using CAR was 0.813 at 1 month, 0.779 at 3 months, 0.778 at 6 months, and 0.799 at 1 year, indicating a robust predictive performance (Figure 4). In addition, we further evaluated the predictive performance of CRP alone and ALB alone for unplanned readmission in patients with UC. The AUCs of CRP at 1, 3, 6 months, and 1 year were 0.798, 0.771, 0.774, and 0.798, respectively (Supplementary Figure 4A), whereas the corresponding AUCs of ALB were 0.745, 0.706, 0.642, and 0.603, respectively (Supplementary Figure 4B).
+
+ROC curves for unplanned readmission of UC at 1, 3, 6 months, and 1 year. AUC, area under the curve. CAR showed consistently good discrimination across follow-up time points, with AUCs ranging from 0.778 to 0.813.
+
+Discussion
+
+UC is a chronic inflammatory bowel disease characterized by symptoms such as diarrhea, abdominal pain, and hematochezia. UC typically presents with a fluctuating course, with patients frequently alternating between periods of remission and acute flare-ups. In the management of UC, unplanned readmission is a crucial indicator for assessing disease activity and treatment efficacy. This study is the first to establish a significant association between CAR and unplanned readmission in patients with UC. In the fully adjusted model, each unit increase in CAR was associated with a 126.9% increase in the risk of unplanned readmission. Compared to the lowest quartile (Q1), the highest quartile (Q4) of CAR was associated with an 11.38-fold increase in the risk of unplanned readmission (P < 0.001) (Table 2). This study also confirmed a non-linear relationship between CAR and unplanned readmission, revealing a pronounced dose-response effect that suggests that CAR serves as a reliable biomarker for predicting unplanned readmission.
+
+Multiple studies have confirmed that CAR is closely associated with disease activity, endoscopic severity, acute severe status, and prognosis of biological therapy and surgery in UC. Ailing Liu et al. (21) found that CAR positively correlates with UC disease activity and endoscopic severity, demonstrating superior overall diagnostic performance compared to traditional serological markers such as CRP and ESR (AUC up to 0.918, optimal threshold approximately 0.06). In a large endoscopic grading cohort, CAR was significantly correlated with the Mayo Endoscopic Score (MES) and independently predicted moderate-to-severe endoscopic activity in multivariate models, particularly in patients with extensive colitis. However, its predictive value for mucosal healing and clinical remission is limited, suggesting that its primary utility lies in identifying and stratifying severe disease activity (17, 18). Header et al. (16) demonstrated that dynamic changes in CAR in Egyptian patients with acute severe ulcerative colitis (ASUC) have significant translational implications, with CAR ≥ 0.60 accurately identifying severe disease states (AUC ≈ 0.985). Con et al. (22) demonstrated that CAR measured on day 3 after infliximab (IFX) rescue therapy effectively stratified the 1-year risk of colectomy, outperforming traditional clinical scores (Mayo score, Travis score, Ho index) in multiple comparisons. Insufficient CAR decline indicates poor response to IFX and an increased risk of future surgical intervention.
+
+Elevated CAR levels are closely associated with an increased risk of unplanned readmission in patients with UC, with potential biological mechanisms explained through three pathways: individual inflammatory responses, malnutrition, and compromised immunity. CRP, a non-specific inflammatory marker synthesized by the liver, reflects persistent systemic inflammation when elevated (23), indicating incomplete repair of the intestinal mucosal barrier (24). Decreased albumin levels result not only from chronic inflammation suppressing hepatic synthesis (25) but also correlate closely with intestinal protein loss and malnutrition (26, 27). Hypoalbuminemia weakens epithelial repair and immune defense functions, making patients more susceptible to infection and recurrent inflammation (28). Furthermore, the synergistic effects of inflammatory activation and reduced albumin levels may lead to immune dysfunction, such as impaired lymphocyte function and diminished antioxidant capacity.
+
+Analysis using Kaplan-Meier survival curves demonstrated significant differences in unplanned readmission rates among UC patients grouped by quartiles of CAR, CRP, and ALB (log-rank test, P < 0.001). Further RCS regression analysis revealed a non-linear relationship between CAR and unplanned readmission. The study demonstrated a clear dose-response relationship between increasing CAR and unplanned readmission risk, with the risk increasing after CAR reached a certain threshold (0.654). Prior to the CAR inflection point (0.654), even a slight elevation significantly increased the risk of unplanned readmission, suggesting that imbalances in the inflammation-nutrition-immunity pathway may amplify adverse outcomes in patients with UC. Post-inflection, the risk increase flattened, potentially reflecting patients’ acute critical condition. Previous studies (21) reported CAR≈0.6 as a stratification threshold for severe illness. This demonstrates that the CAR effectively distinguishes risk groups, particularly exhibiting a high risk-identification capability within the moderate-to-severe range. For patients with extremely high CAR values, greater emphasis should be placed on post-discharge prognostic management and close follow-up rather than relying solely on sustained CAR elevation to assess risk gradients.
+
+Subgroup analysis revealed that CAR significantly influenced unplanned readmissions in patients with hypertension (P = 0.011). Extensive research indicates hypertension correlates with inflammation and immune responses (29–32). This finding underscores the necessity of considering hypertension when evaluating the prognostic significance of CAR in patients with UC. Finally, ROC curve analysis revealed CAR’s strong predictive performance for unplanned readmission. The CAR demonstrated AUC values of 0.813, 0.779, 0.778, and 0.799 at the 1-month, 3-month, 6-month, and 1-year follow-up periods, respectively, indicating good-to-excellent predictive performance. In addition, we separately evaluated the independent predictive performance of CRP and ALB, and found that CRP showed relatively stable discriminative ability across follow-up time points, whereas the predictive performance of ALB gradually declined over time. Overall, CAR demonstrated the best predictive performance, with a more pronounced advantage for early readmission prediction (1–3 months). With longer follow-up, however, the incremental gain of CAR over CRP became smaller, possibly because CRP more consistently reflects inflammatory burden, whereas ALB is more susceptible to nutritional status, intestinal protein loss, and hemodilution due to intravenous fluid administration, thereby diminishing its contribution to longer-term readmission prediction (33–35).
+
+This study is the first to establish a significant association between CAR and unplanned readmissions in UC patients. The efficacy of CAR as a predictive tool was comprehensively validated through Cox proportional hazards models, Kaplan-Meier survival curves, and RCS regression analysis. RCS analysis revealed a non-linear dose-response relationship between CAR and the risk of unplanned readmission, with a marked deceleration in risk increase when CAR reached 0.654, underscoring the importance of managing and monitoring high-risk patients with UC. Using ROC curve analysis, this study found that CAR demonstrated good predictive capability for unplanned readmission in both short-term (1 and 3 months) and long-term (6 months and 1 year) periods, with AUC values of 0.813, 0.779, 0.778, and 0.799, respectively. Additionally, subgroup analysis revealed a stronger association between CAR and unplanned readmission risk in patients with hypertension, further exploring the applicability of CAR in predicting unplanned readmission for UC across different populations.
+
+Limitations
+
+However, this study had certain limitations. First, as a retrospective study, it carries potential retrospective and selection biases. Future validation through prospective multicenter studies is needed to further confirm the efficacy of the CAR in predicting unplanned readmissions among patients with UC. Second, although this study considered multiple relevant variables affecting CAR’s predictive power for readmissions, some potential confounding factors may still exist. Therefore, future studies should design more comprehensive questionnaires and conduct prospective investigations to explore the relationship between the CAR and other relevant variables in greater depth. Finally, while this study confirmed that 95% of unplanned readmissions were due to UC reactivation, some patients were readmitted for other reasons. Consequently, future research should explore additional prognostic indicators to comprehensively evaluate the association between CAR and other potential factors.
+
+Conclusion
+
+The results of this study indicate that CAR exhibits a significant non-linear association and dose-response relationship with unplanned readmissions in patients with UC. After multivariate adjustment, CAR levels remained positively correlated with UC readmission rates in a non-linear manner. Furthermore, CAR demonstrated a strong predictive value for unplanned readmissions at 1 month, 3 month, 6 months, and 1 year. In summary, CAR serves as a novel biomarker for predicting unplanned readmissions in patients with UC, holding significant value for post-hospitalization management of these individuals.
+
+Funding Statement
+
+The author(s) declared that financial support was received for this work and/or its publication. This research was funded by the National Natural Science Foundation of China (grant no. 82174177), Shandong Province Natural Science Foundation Joint Fund Project (grant no. ZR2022LZY012), Qilu Health and Health Outstanding Youth Talent Program, and Open Project of the Key Laboratory of Traditional Chinese Medicine Classic Theory of the Ministry of Education (grant no. School Experiment Letter (2023) No. 15).
+
+Footnotes
+
+Edited by: Hua-Guo Xu, Nanjing Medical University, China
+
+Reviewed by: Duolong Zhu, Baylor College of Medicine, United States
+
+Chong He, Sichuan Academy of Medical Sciences and Sichuan Provincial People’s Hospital, China
+
+Data availability statement
+
+The original contributions presented in this study are included in this article/Supplementary material, further inquiries can be directed to the corresponding authors.
+
+Ethics statement
+
+The studies involving humans were approved by the ethics committee of the Affiliated Hospital of Shandong University of TCM. The studies were conducted in accordance with the local legislation and institutional requirements. The participants provided their written informed consent to participate in this study. Written informed consent was obtained from the individual(s) for the publication of any potentially identifiable images or data included in this article.
+
+Author contributions
+
+JZ: Conceptualization, Formal analysis, Methodology, Software, Writing – original draft. TW: Conceptualization, Formal analysis, Methodology, Writing – original draft. XZ: Data curation, Methodology, Writing – original draft. JiZ: Data curation, Methodology, Writing – original draft. SJ: Data curation, Methodology, Writing – original draft. YZ: Methodology, Supervision, Validation, Writing – review & editing. DW: Formal analysis, Funding acquisition, Supervision, Validation, Writing – review & editing.
+
+Conflict of interest
+
+The author(s) declared that this work was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+Generative AI statement
+
+The author(s) declared that generative AI was not used in the creation of this manuscript.
+
+Any alternative text (alt text) provided alongside figures in this article has been generated by Frontiers with the support of artificial intelligence and reasonable efforts have been made to ensure accuracy, including review by the authors wherever possible. If you identify any issues, please contact us.
+
+Publisher’s note
+
+All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article, or claim that may be made by its manufacturer, is not guaranteed or endorsed by the publisher.
+
+Supplementary material
+
+The Supplementary Material for this article can be found online at: https://www.frontiersin.org/articles/10.3389/fmed.2026.1715011/full#supplementary-material
+
+References
+
+Associated Data
+
+Supplementary Materials
+
+Data Availability Statement
+
+The original contributions presented in this study are included in this article/Supplementary material, further inquiries can be directed to the corresponding authors.

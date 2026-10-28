@@ -1,0 +1,4340 @@
+{
+  "batchId": "2026-10-28T06:38:02.659431Z",
+  "updatedAt": "2026-10-28T06:28:34.602575Z",
+  "queries": {
+    "astragalus-heart-failure/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 1,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"黄芪\" OR astragalus) AND TITLE_ABS:\"heart failure\" AND LANG:chi"
+    },
+    "astragalus-heart-failure/en": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 44,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:astragalus AND TITLE_ABS:\"heart failure\""
+    },
+    "danshen-coronary/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 0,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"丹参\" OR \"salvia miltiorrhiza\") AND TITLE_ABS:coronary AND LANG:chi"
+    },
+    "danshen-coronary/en": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 44,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:\"salvia miltiorrhiza\" AND TITLE_ABS:coronary"
+    },
+    "tcm-hypertension/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 0,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"中医药\" OR \"traditional chinese medicine\") AND TITLE_ABS:hypertension AND LANG:chi"
+    },
+    "tcm-hypertension/en": {
+      "cursor": "AoIIP+5cLig1MjA4MDQ0Nw==",
+      "complete": false,
+      "hitCount": 386,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:\"traditional chinese medicine\" AND TITLE_ABS:hypertension"
+    },
+    "syndrome-heart-failure/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 1,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"气虚血瘀\" OR \"blood stasis\") AND TITLE_ABS:\"heart failure\" AND LANG:chi"
+    },
+    "syndrome-heart-failure/en": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 32,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:\"blood stasis\" AND TITLE_ABS:\"heart failure\""
+    },
+    "formula-heart-failure/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 0,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"方剂\" OR qiliqiangxin) AND TITLE_ABS:\"heart failure\" AND LANG:chi"
+    },
+    "formula-heart-failure/en": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 28,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:qiliqiangxin AND TITLE_ABS:\"heart failure\""
+    },
+    "herbal-cardiovascular/zh": {
+      "cursor": "*",
+      "complete": true,
+      "hitCount": 0,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:(\"中药\" OR \"Chinese herbal\") AND TITLE_ABS:cardiovascular AND LANG:chi"
+    },
+    "herbal-cardiovascular/en": {
+      "cursor": "AoIIP4xWBig0Mjg2MjAxNA==",
+      "complete": false,
+      "hitCount": 216,
+      "query": "OPEN_ACCESS:Y AND TITLE_ABS:\"Chinese herbal\" AND TITLE_ABS:cardiovascular"
+    }
+  },
+  "count": 337,
+  "statuses": {
+    "rejected": 98,
+    "included": 46,
+    "candidate": 191,
+    "failed": 2
+  },
+  "failureNote": "Failed attempts remain recorded even if a ledger write recovered later; ledgerDocumentId is authoritative.",
+  "candidates": [
+    {
+      "pmcid": "PMC11914018",
+      "title": "[Effects and Efficacy of Wenyang Huayin Yangxin Prescription on the Traditional Chinese Medicine Syndromes of Patients With Chronic Heart Failure Combined With Diuretic Resistance].",
+      "topics": [
+        "astragalus-heart-failure",
+        "syndrome-heart-failure"
+      ],
+      "language": "zh",
+      "status": "rejected",
+      "reason": "already-in-ledger",
+      "discoveredAt": "2026-10-28T06:27:51.650078Z",
+      "ledgerDocumentId": "ZH-PMC11914018",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13225519",
+      "title": "The clinical efficacy of Astragalus-containing Chinese patent medicines in the effective treatment of heart failure: A systematic review and network meta-analysis",
+      "topics": [
+        "astragalus-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:27:54.681462Z",
+      "ledgerDocumentId": "EN-PMC13225519",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13417984",
+      "title": "Correction: Effect and safety of Neiguan acupoint injection with astragalus injection for chronic heart failure with qi-deficiency and blood-stasis syndrome: a randomized controlled trial.",
+      "topics": [
+        "astragalus-heart-failure",
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681514Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13671154",
+      "title": "Astragalus Polysaccharide Enhances Mitochondrial Biogenesis and Function in Cardiomyocytes Through AMPK Activation.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681571Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13253424",
+      "title": "Effect and safety of Neiguan acupoint injection with astragalus injection for chronic heart failure with qi-deficiency and blood-stasis syndrome: a randomized controlled trial.",
+      "topics": [
+        "astragalus-heart-failure",
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681628Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13677130",
+      "title": "Compound Astragalus Oral Liquid Attenuates Ventricular Remodeling in Heart Failure After Myocardial Infarction via the AMPK/TGF-β/Smad Signaling Pathway.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681672Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12626924",
+      "title": "Effects of plant extracts on patients with heart failure: a network meta-analysis of randomized controlled trials.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.681726Z",
+      "attemptedAt": "2026-10-28T06:42:09.024911Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13610723",
+      "title": "Cycloastragenol Attenuates Angiotensin II-Induced Cardiac Remodeling in Association with Enhanced EGFR Lysosomal Turnover and Changes in MAPK Signaling and Autophagy.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681756Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12723416",
+      "title": "Astragaloside IV inhibits MAPK pathway and promotes mitochondrial autophagy in rats with heart failure.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.681788Z",
+      "attemptedAt": "2026-10-28T06:30:46.566186Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12422554",
+      "title": "Role and Mechanism of Astragalus Monomer Quercetin in Modulating Akt/Bcl-2 Pathway to Improve Ventricular Remodeling in Chronic Heart Failure",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.681818Z",
+      "attemptedAt": "2026-10-28T06:41:34.734350Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12663414",
+      "title": "Astragalus membranaceus injection activates mitophagy and protects mitochondrial function in chronic heart failure via inhibiting AKT/mTOR pathway",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.681849Z",
+      "attemptedAt": "2026-10-28T06:42:28.542964Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12451291",
+      "title": "Adaptive bioactivable nanosystems for synergistic myocardial infarction therapy using traditional pharmaceutics.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.681900Z",
+      "attemptedAt": "2026-10-28T06:41:42.204240Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12807897",
+      "title": "Jaranol: a compound with therapeutic activity against pathological cardiac remodelling via multi-target inhibition of the Snai3/TLR2 and NF-κB signaling pathways.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.681940Z",
+      "attemptedAt": "2026-10-28T06:42:58.321338Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13519301",
+      "title": "Cardiovascular Diseases: Exploring Epidemiology, Pathophysiology, Risk Factors, and Medicinal Plant-Based Therapies: A Narrative Review.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.681986Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11114218",
+      "title": "Mechanism of Astragalus membranaceus (Huangqi, HQ) for treatment of heart failure based on network pharmacology and molecular docking",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:27:54.682004Z",
+      "ledgerDocumentId": "EN-PMC11114218",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12125887",
+      "title": "Astragalus polysaccharide protects against cardiac injury in a tnnt2a mutant zebrafish model of dilated cardiomyopathy",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682054Z",
+      "attemptedAt": "2026-10-28T06:40:50.895941Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11856579",
+      "title": "Astragalus polyphenols attenuates doxorubicin-induced cardiotoxicity by activating the PI3K/AKT/NRF2 pathway.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.682083Z",
+      "attemptedAt": "2026-10-28T06:40:33.297546Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11408759",
+      "title": "Astragaloside IV ameliorates pressure overload-induced heart failure by enhancing angiogenesis through HSF1/VEGF pathway",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682103Z",
+      "attemptedAt": "2026-10-28T06:39:42.779066Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11589554",
+      "title": "Calycosin alleviates ferroptosis and attenuates doxorubicin-induced myocardial injury via the Nrf2/SLC7A11/GPX4 signaling pathway.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.682144Z",
+      "attemptedAt": "2026-10-28T06:39:50.035252Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11620105",
+      "title": "Network pharmacology and experimental study of Angelica sinensis and Astragalus membranaceus capsules in treating heart failure",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682179Z",
+      "attemptedAt": "2026-10-28T06:40:14.419081Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11683366",
+      "title": "Combination decoction of Astragalus mongholicus and Salvia miltiorrhiza mitigates pressure-overload cardiac dysfunction by inhibiting multiple ferroptosis pathways",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682288Z",
+      "attemptedAt": "2026-10-28T06:40:24.294234Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12528026",
+      "title": "Potential preventive effects of selected traditional Chinese medicine as adjuvant therapy on hypertensive heart disease progression by replenishing qi and activating blood circulation: a systematic review and meta-analysis of clinical trials",
+      "topics": [
+        "astragalus-heart-failure",
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682396Z",
+      "attemptedAt": "2026-10-28T06:42:02.928652Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12374124",
+      "title": "Biotechnological Elucidation of Xinyin Tablet's Mechanism: SIRT1 Activation Attenuates Cardiac Fibrosis Via Suppressing Endothelial-to-Mesenchymal Transition.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:27:54.682535Z",
+      "attemptedAt": "2026-10-28T06:41:01.496261Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11278938",
+      "title": "Systematic Review of Preclinical Studies on the Efficacy and Mechanisms of Herbal Medicines in Post-Myocardial Infarction Heart Failure with Reduced Ejection Fraction",
+      "topics": [
+        "astragalus-heart-failure",
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "failed",
+      "reason": "[WinError 5] 拒绝访问。: 'D:\\\\Codex\\\\毕业设计RAG大模型\\\\data\\\\expanded-sources.json.part' -> 'D:\\\\Codex\\\\毕业设计RAG大模型\\\\data\\\\expanded-sources.json'",
+      "discoveredAt": "2026-10-28T06:27:54.682653Z",
+      "attemptedAt": "2026-10-28T06:39:14.915340Z",
+      "ledgerDocumentId": "EN-PMC11278938",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC9585168",
+      "title": "Screening of anti-heart failure active compounds from fangjihuangqi decoction in verapamil-induced zebrafish model by anti-heart failure index approach.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.682712Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9863193",
+      "title": "Astragalus polysaccharide prevents heart failure-induced cachexia by alleviating excessive adipose expenditure in white and brown adipose tissue.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.682757Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11333324",
+      "title": "Effect of astragalus injection on left ventricular remodeling in HFmrEF: a systematic review and meta-analysis",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:27:54.682808Z",
+      "ledgerDocumentId": "EN-PMC11333324",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC10022008",
+      "title": "Potential traditional Chinese medicines with anti-inflammation in the prevention of heart failure following myocardial infarction",
+      "topics": [
+        "astragalus-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:27:54.682828Z",
+      "ledgerDocumentId": "EN-PMC10022008",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC10579795",
+      "title": "Effect of Astragaloside IV on improving cardiac function in rats with heart failure: a preclinical systematic review and meta-analysis",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.682866Z",
+      "attemptedAt": "2026-10-28T06:38:43.597325Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9868545",
+      "title": "Astragalus propinquus schischkin and Salvia miltiorrhiza bunge promote angiogenesis to treat myocardial ischemia via Ang-1/Tie-2/FAK pathway.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.682907Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10811102",
+      "title": "Effect of Astragalus membranaceus on left ventricular remodeling in HFrEF: a systematic review and meta-analysis",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:27:54.683018Z",
+      "attemptedAt": "2026-10-28T06:38:54.403553Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7710263",
+      "title": "Clinical characteristics and treatment effects of astragalus injection in non-pediatric patients with acute fulminant myocarditis.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683053Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9403516",
+      "title": "Astragaloside IV promotes pharmacological effect of Descurainia sophia seeds on isoproterenol-induced cardiomyopathy in rats by synergistically modulating the myosin motor.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683085Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9737126",
+      "title": "Antitumor Effect of Cycloastragenol in Colon Cancer Cells via p53 Activation.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683103Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8899514",
+      "title": "Calycosin as a Novel PI3K Activator Reduces Inflammation and Fibrosis in Heart Failure Through AKT-IKK/STAT3 Axis.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683168Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7038034",
+      "title": "A Systematic Review and Meta-Analysis on a Disease in TCM: Astragalus Injection for Gathering Qi Depression.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683203Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8669995",
+      "title": "Efficacy and Safety of Traditional Chinese Medicine Injections for Heart Failure With Reduced Ejection Fraction: A Bayesian Network Meta-Analysis of Randomized Controlled Trials.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683241Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5569633",
+      "title": "Astragalus Granule Prevents Ca2+ Current Remodeling in Heart Failure by the Downregulation of CaMKII.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683313Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5341749",
+      "title": "Astragalus polysaccharide restores autophagic flux and improves cardiomyocyte function in doxorubicin-induced cardiotoxicity.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683335Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6494254",
+      "title": "The clinical efficacy and safety of the Chinese herbal medicine Astragalus (Huangqi) preparation for the treatment of acute myocardial infarction: A systematic review of randomized controlled trials.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683375Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7277070",
+      "title": "Luhong Formula Has a Cardioprotective Effect on Left Ventricular Remodeling in Pressure-Overloaded Rats.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683437Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4216718",
+      "title": "Astragalus polysaccharide suppresses doxorubicin-induced cardiotoxicity by regulating the PI3k/Akt and p38MAPK pathways.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683468Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5471476",
+      "title": "EFFECT OF ASTRAGALOSIDE ON VITAMIN D-RECEPTOR EXPRESSION AFTER ENDOTHELIN-1-INDUCED CARDIOMYOCYTE INJURY.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683514Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5774542",
+      "title": "Astragaloside protects myocardial cells from apoptosis through suppression of the TLR4/NF-κB signaling pathway.",
+      "topics": [
+        "astragalus-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:27:54.683545Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13585588",
+      "title": "Long-term efficacy of the Astragalus-Salvia miltiorrhiza botanical drug pair in stable coronary artery disease and a nomogram for predicting frequent hospitalization: a real-world retrospective cohort study",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:00.227903Z",
+      "ledgerDocumentId": "EN-PMC13585588",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12504767",
+      "title": "The Synergistic Effects of Astragalus Mongholicus and Salvia Miltiorrhiza on Coronary Heart Disease Identified by Network Pharmacology and Experiment [Retraction].",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.227956Z",
+      "attemptedAt": "2026-10-28T06:39:42.815000Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13111759",
+      "title": "Cardiovascular Benefits of Salvia miltiorrhiza (Danshen) Supplementation: Bioactive Constituents, Mechanisms, Clinical Evidence and Implications for Nutritional Care",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:00.228007Z",
+      "ledgerDocumentId": "EN-PMC13111759",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13614339",
+      "title": "Causal Relationship Between Psoriatic Arthritis and Coronary Heart Disease: A Mendelian Randomization and Bioinformatics Analysis.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228057Z",
+      "attemptedAt": "2026-10-28T06:40:24.471686Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10583427",
+      "title": "Case report: acute isolated cilioretinal artery occlusion secondary to percutaneous coronary intervention.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228078Z",
+      "attemptedAt": "2026-10-28T06:38:43.650964Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10838462",
+      "title": "Identification and expression analysis of expansin gene family in Salvia miltiorrhiza.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228100Z",
+      "attemptedAt": "2026-10-28T06:38:54.447536Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9925269",
+      "title": "A Pharmacological Review of Tanshinones, Naturally Occurring Monomers from Salvia miltiorrhiza for the Treatment of Cardiovascular Diseases.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228124Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12122709",
+      "title": "Uncovering the molecular mechanisms of tonifying kidney and activating blood Decoction against myocardial fibrosis using network Pharmacology and experimental validation",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.228161Z",
+      "attemptedAt": "2026-10-28T06:39:32.104710Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11669530",
+      "title": "Efficacy and safety of danshen class injections in the treatment of coronary heart disease: a network meta-analysis",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.228192Z",
+      "attemptedAt": "2026-10-28T06:39:19.490046Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8486279",
+      "title": "The Synergistic Effects of Astragalus mongholicus and Salvia miltiorrhiza on Coronary Heart Disease Identified by Network Pharmacology and Experiment.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228245Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9935824",
+      "title": "Preparation and optimization of surface stabilized cryptotanshinone nanocrystals with enhanced bioavailability.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228282Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8099511",
+      "title": "Salvia miltiorrhiza and the Volatile of Dalbergia odorifera Attenuate Chronic Myocardial Ischemia Injury in a Pig Model: A Metabonomic Approach for the Mechanism Study.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228314Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10313272",
+      "title": "Mechanism of Yiqi Huoxue Huatan recipe in the treatment of coronary atherosclerotic disease through network pharmacology and experiments.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228341Z",
+      "attemptedAt": "2026-10-28T06:38:02.705454Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10900662",
+      "title": "The combination of Tanshinone IIA and Astragaloside IV attenuates myocardial ischemia–reperfusion injury by inhibiting the STING pathway",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:00.228384Z",
+      "ledgerDocumentId": "EN-PMC10900662",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC7076985",
+      "title": "Effects of Astragalus injection and Salvia Miltiorrhiza injection on serum inflammatory markers in patients with stable coronary heart disease: a randomized controlled trial protocol.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228413Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6920415",
+      "title": "A network pharmacology approach to reveal the protective mechanism of Salvia miltiorrhiza-Dalbergia odorifera coupled-herbs on coronary heart disease.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228446Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9672460",
+      "title": "First-in-human study to investigate the safety and pharmacokinetics of salvianolic acid A and pharmacokinetic simulation using a physiologically based pharmacokinetic model.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228481Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5404360",
+      "title": "Identification of a Novel (-)-5-Epieremophilene Synthase from Salvia miltiorrhiza via Transcriptome Mining.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228500Z",
+      "attemptedAt": "2026-10-28T06:42:58.360923Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6192790",
+      "title": "Cardioprotective effects and underlying mechanism of Radix Salvia miltiorrhiza and Lignum Dalbergia odorifera in a pig chronic myocardial ischemia model.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228515Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10520722",
+      "title": "Tanshinone IIA inhibits cardiomyocyte pyroptosis through TLR4/NF-κB p65 pathway after acute myocardial infarction",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.228549Z",
+      "attemptedAt": "2026-10-28T06:38:28.359883Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6286650",
+      "title": "Salvianolic acid A targeting the transgelin-actin complex to enhance vasoconstriction.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228572Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5078662",
+      "title": "Oxidative Stress and Salvia miltiorrhiza in Aging-Associated Cardiovascular Diseases",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.228591Z",
+      "attemptedAt": "2026-10-28T06:42:12.679087Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7785359",
+      "title": "Pharmacological Network Reveals the Active Mechanism of Qi-Replenishing, Spleen-Strengthening, Phlegm-Dispelling, and Blood-Nourishing Fufang on Coronary Heart Disease.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228615Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9205745",
+      "title": "Network Pharmacology Analysis and Experimental Verification Strategies Reveal the Action Mechanism of Danshen Decoction in Treating Ischemic Cardiomyopathy.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228654Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6761625",
+      "title": "Traditional Chinese Medicine Use in the Treatment of Acute Heart Failure in Western Medicine Hospitals in China: Analysis From the China PEACE Retrospective Heart Failure Study.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228687Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7076864",
+      "title": "Mechanism of tanshinones and phenolic acids from Danshen in the treatment of coronary heart disease based on co-expression network.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228719Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6930479",
+      "title": "Sal B Alleviates Myocardial Ischemic Injury by Inhibiting TLR4 and the Priming Phase of NLRP3 Inflammasome.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228739Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6399523",
+      "title": "A Review of Danshen Combined with Clopidogrel in the Treatment of Coronary Heart Disease.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228780Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7841298",
+      "title": "Synergistic Effects of Cryptotanshinone and Senkyunolide I in Guanxinning Tablet Against Endogenous Thrombus Formation in Zebrafish.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228824Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8672209",
+      "title": "Vasodilatory Effect of Guanxinning Tablet on Rabbit Thoracic Aorta is Modulated by Both Endothelium-Dependent and -Independent Mechanism.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228877Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC3759372",
+      "title": "Effects of abscisic acid, gibberellin, ethylene and their interactions on production of phenolic acids in salvia miltiorrhiza bunge hairy roots.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.228901Z",
+      "attemptedAt": "2026-10-28T06:41:01.532066Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6653321",
+      "title": "Danqi soft capsule prevents infarct border zone remodelling and reduces susceptibility to ventricular arrhythmias in post-myocardial infarction rats.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228919Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5101990",
+      "title": "Effect of Salvia miltiorrhiza and ligustrazine injection on myocardial ischemia/reperfusion and hypoxia/reoxygenation injury",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.228932Z",
+      "attemptedAt": "2026-10-28T06:42:31.464897Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5684234",
+      "title": "Network pharmacology exploration reveals endothelial inflammation as a common mechanism for stroke and coronary artery disease treatment of Danhong injection.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228947Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5738837",
+      "title": "Effects of Salvia miltiorrhiza extract with supplemental liquefied calcium on osteoporosis in calcium-deficient ovariectomized mice.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.228979Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4913020",
+      "title": "Danshen (Salvia miltiorrhiza) Compounds Improve the Biochemical Indices of the Patients with Coronary Heart Disease",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:00.228997Z",
+      "ledgerDocumentId": "EN-PMC4913020",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC5486119",
+      "title": "Using Coexpression Protein Interaction Network Analysis to Identify Mechanisms of Danshensu Affecting Patients with Coronary Heart Disease",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:00.229016Z",
+      "ledgerDocumentId": "EN-PMC5486119",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC4216665",
+      "title": "Compound Danshen Dripping Pill Pretreatment to Prevent Contrast-Induced Nephropathy in Patients with Acute Coronary Syndrome Undergoing Percutaneous Coronary Intervention",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:00.229032Z",
+      "attemptedAt": "2026-10-28T06:41:37.196296Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC3510226",
+      "title": "Different roles of the mevalonate and methylerythritol phosphate pathways in cell growth and tanshinone production of Salvia miltiorrhiza hairy roots.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.229045Z",
+      "attemptedAt": "2026-10-28T06:40:50.927949Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6154683",
+      "title": "High-Throughput Determination of Sodium Danshensu in Beagle Dogs by the LCMS/MS Method, Employing Liquid-Liquid Extraction Based on 96-Well Format Plates.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:00.229071Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC3268763",
+      "title": "Metabolic profiles and cDNA-AFLP analysis of Salvia miltiorrhiza and Salvia castanea Diel f. tomentosa Stib.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.229084Z",
+      "attemptedAt": "2026-10-28T06:40:33.339421Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5192872",
+      "title": "Naoxintong attenuates Ischaemia/reperfusion Injury through inhibiting NLRP3 inflammasome activation.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.229103Z",
+      "attemptedAt": "2026-10-28T06:42:48.357496Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4355010",
+      "title": "Danqi Pill regulates lipid metabolism disorder induced by myocardial ischemia through FATP-CPTI pathway.",
+      "topics": [
+        "danshen-coronary"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:00.229150Z",
+      "attemptedAt": "2026-10-28T06:41:42.246575Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13583673",
+      "title": "Effect of traditional Chinese medicine on sleep and blood pressure in patients with comorbid hypertension-insomnia: a systematic review and meta-analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.165870Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13013410",
+      "title": "Comparison of the therapeutic effects of traditional Chinese medicine exercise therapies on blood pressure, lipids, and sleep quality among older patients suffering from hypertension: a systematic review and network meta-analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.165914Z",
+      "ledgerDocumentId": "EN-PMC13013410",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13462034",
+      "title": "Application of nanotherapy in cardiovascular diseases featuring novel pharmacological mechanisms and drug delivery strategies.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.165926Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12928945",
+      "title": "Longdan Xiegan formula as adjuvant therapy for hypertension: A systematic review and meta-analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:06.165950Z",
+      "attemptedAt": "2026-10-28T06:31:24.799299Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13121052",
+      "title": "Multidimensional Mechanisms of Hypertension and Advances in Diagnosis and Integrated TCM-Based Treatment: A Review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.165967Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12999810",
+      "title": "Uncaria rhynchophylla: an ethnopharmacological review integrating traditional Chinese medicine uses with phytochemical and pharmacological evidence.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.165986Z",
+      "ledgerDocumentId": "EN-PMC12999810",
+      "finalRole": "background"
+    },
+    {
+      "pmcid": "PMC12709170",
+      "title": "Comparative serum metabolomic profiling of hypertension in different traditional Chinese medicine syndromes.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166016Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12845194",
+      "title": "Neutrophil Extracellular Traps: Potential Therapeutic Targets of Traditional Chinese Medicine and Natural Products for Cardiovascular Diseases.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.166032Z",
+      "ledgerDocumentId": "EN-PMC12845194",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13177022",
+      "title": "Therapeutic Effects of Active Compounds from Poria Cocos on Pulmonary Hypertension.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166060Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12796880",
+      "title": "Cardio-Cerebral Protective Effect of Moxibustion on Phlegm-Dampness Type Hypertension: Protocol for a Randomized Controlled Trial.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166108Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13111444",
+      "title": "From peripheral initiation to central integration: a narrative review of the antihypertensive mechanisms of acupuncture in regulating autonomic nervous system homeostasis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.166126Z",
+      "ledgerDocumentId": "EN-PMC13111444",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12500708",
+      "title": "Regulation of aquaporin-2 using traditional Chinese medicine in water balance disorders: a literature review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166141Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11664361",
+      "title": "Research progress of traditional Chinese medicine regulating intestinal flora in the treatment of hypertension.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166155Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13153154",
+      "title": "Acute hemodynamic effects of TPN171H in pulmonary arterial hypertension: a randomized, controlled, phase 2a trial.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166282Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13318567",
+      "title": "Traditional Chinese medicine syndrome patterns and associated factors in adults with type 2 diabetes and metabolic syndrome: a data-driven analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166386Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13079042",
+      "title": "Effect of acupuncture on ischemic stroke patients with hypertension: a randomized clinical trail.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.166490Z",
+      "ledgerDocumentId": "EN-PMC13079042",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13357533",
+      "title": "New perspective of diagnosis and treatment of hypertension: fusion analysis of TCM syndrome and SPECT kidney dynamic imaging technology.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166542Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12301388",
+      "title": "The role of Nrf2 signaling pathway in diabetic cardiomyopathy: from pathogenesis to traditional Chinese medicine interventions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166560Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13199290",
+      "title": "Effect and safety of Yiqi-Shengjin granules in hypertension management among patients with abnormal glucose metabolism: a study protocol for a randomized, double-blind, placebo-controlled clinical trial.",
+      "topics": [
+        "tcm-hypertension",
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166598Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12150975",
+      "title": "Efficacy and safety of a traditional Chinese herbal formula Xuefu Zhuyu prescription for hypertension: A meta-analysis of randomized controlled trials.",
+      "topics": [
+        "tcm-hypertension",
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166635Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13193884",
+      "title": "Curative outcomes with metal-containing TCM in diabetic foot ulcers unresponsive to standard therapy: a case series.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166666Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12074109",
+      "title": "Analysis of the distribution of traditional Chinese medicine syndrome types and related factors in insomnia patients.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166687Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11786837",
+      "title": "Exploring the effects of Tianma Gouteng granules on L-NAME-induced hypertensive rats based on 16S rDNA gene sequencing and metabolomics.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166734Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13557172",
+      "title": "Integrated Metabolomic and Transcriptomic Analysis Suggests Potential Therapeutic Mechanism of Shengxian Decoction in Hypobaric Hypoxia-Induced Pulmonary Hypertension in SD Rats.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166776Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13473280",
+      "title": "Gut microbiota and gut-kidney axis in kidney diseases: therapeutic potential and perspectives of natural products.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166815Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12883366",
+      "title": "Traditional Chinese medicine constitution and cardiometabolic multimorbidity: a nationwide cross-sectional study in older adults.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.166866Z",
+      "ledgerDocumentId": "EN-PMC12883366",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12329897",
+      "title": "The effects of Songling Xuemaikang capsule on vascular remodeling of stage 1 hypertension: a multicenter, randomized placebo-controlled trial protocol.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166905Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12009076",
+      "title": "A systematical review on traditional Chinese medicine treating chronic diseases via regulating ferroptosis from the perspective of experimental evidence and clinical application.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.166932Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12982435",
+      "title": "Study protocol for a randomized controlled trial to evaluate the effectiveness of an artificial intelligence-based health education accurately linking system based on traditional Chinese medicine body constitution in patients with chronic disease multimorbidity.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.166978Z",
+      "ledgerDocumentId": "EN-PMC12982435",
+      "finalRole": "excluded"
+    },
+    {
+      "pmcid": "PMC12133820",
+      "title": "Risk factors and traditional Chinese medicine syndromes of mild cognitive impairment in community-dwelling hypertensive older adults.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167017Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12645498",
+      "title": "1DCNN-BiLSTM-transformer hypertension risk prediction model based on APW.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167050Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13020082",
+      "title": "Ultrasound-assisted extraction optimization of Fructus Tribuli polysaccharides: How stir-frying processing alters structures and enhances antihypertensive efficacy.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:06.167071Z",
+      "attemptedAt": "2026-10-28T06:32:33.575228Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12447973",
+      "title": "Chinese Herbal Medicine in Hypoxic Pulmonary Hypertension Treatment: Mechanisms, Progress, and Future Directions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167093Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12215698",
+      "title": "Modified Zexie decoction improves phlegm-dampness type stage I hypertension by regulating the gut-immune-kidney axis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167131Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13469596",
+      "title": "The effect of a family-centered empowerment model with traditional Chinese medicine health education on self-management in community-dwelling older adult hypertensive patients with a chance health locus of control.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167197Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12567505",
+      "title": "Bioactive Constituents and Antihypertensive Mechanisms of Zhengan Xifeng Decoction: Insights from Plasma UPLC-MS, Network Pharmacology and Molecular Dynamics Simulations.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167235Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12634510",
+      "title": "From molecules to medicine: a systematic review of Gastrodia elata's bioactive metabolites and therapeutic potential.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167264Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12620465",
+      "title": "Systematic review of Chinese medicine for the treatment of atherosclerosis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167298Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13627053",
+      "title": "Association of monocyte to high-density lipoprotein cholesterol ratio with non-calcified plaques in subclinical coronary atherosclerosis: a cross-sectional study in hypertensive patients.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167351Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11084283",
+      "title": "Influencing factors of hospitalization cost of hypertension patients in traditional Chinese medicine hospitals",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:06.167385Z",
+      "attemptedAt": "2026-10-28T06:39:35.117084Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11300221",
+      "title": "Hepatic microcirculatory disturbance in liver diseases: intervention with traditional Chinese medicine.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:06.167412Z",
+      "attemptedAt": "2026-10-28T06:40:19.028320Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13372770",
+      "title": "Evidence map of Tai Chi interventions for older adults.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167436Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12587016",
+      "title": "The Effect of Electroacupuncture on Microcirculation in Patients With Hypertension and Cognitive Impairment: Protocol for a Multicenter Randomized Controlled Trial.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167488Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11649660",
+      "title": "Traditional Chinese medicine for cardiovascular disease: efficacy and safety",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:06.167509Z",
+      "ledgerDocumentId": "EN-PMC11649660",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11992472",
+      "title": "Correlational Analysis of Resistant Hypertension with Diabetes Mellitus, Chronic Kidney Disease, and the Interplay of Sodium, Calcium, Magnesium, and Phosphorus.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167558Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11496844",
+      "title": "The efficacy of Salvia-ligustrazine and Ligustrazine in treating gestational hypertension: A systematic review and meta-analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:06.167594Z",
+      "attemptedAt": "2026-10-28T06:41:37.242046Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11939598",
+      "title": "Development and Validation of a Hypertension Risk Prediction Model Based on Particle Swarm Optimization-Support Vector Machine.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167625Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12808482",
+      "title": "Efficacy and safety of Chinese herbal medicine for metabolic conditions: a systematic review and meta-analysis of randomised controlled trials.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167673Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12461095",
+      "title": "Taohong Siwu Decoction alleviates high salt-induced calcium overload and ferroptosis in vascular endothelial cells in hypertension by regulating ATF4.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:06.167731Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11104380",
+      "title": "Research Progress on the Correlation Between Hypertension and Gut Microbiota.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.490265Z",
+      "attemptedAt": "2026-10-28T06:39:42.858238Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10264781",
+      "title": "Targeting intestinal microecology: potential intervention strategies of traditional Chinese medicine for managing hypertension",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:09.490320Z",
+      "attemptedAt": "2026-10-28T06:38:31.425444Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12695915",
+      "title": "Clinical characteristics and treatment patterns of systemic sclerosis patients in China: a single-center retrospective study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490345Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12678432",
+      "title": "The risk factors of osteoporotic vertebral compression fracture accompanied with thoracolumbar fascial injury: a single-center retrospective study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490375Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11608539",
+      "title": "Advances in Understanding Diabetic Kidney Disease Progression and the Mechanisms of Acupuncture Intervention.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.490393Z",
+      "attemptedAt": "2026-10-28T06:42:13.113369Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12358374",
+      "title": "Estimated pulse wave velocity as a potential predictor of albuminuria in hypertension.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490446Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12540364",
+      "title": "Efficacy of Quanduzhong capsules in regulating blood pressure circadian rhythm in essential hypertension: a multicenter, randomized, add-on controlled clinical trial.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490497Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10955118",
+      "title": "Hyperuricemia research progress in model construction and traditional Chinese medicine interventions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.490517Z",
+      "attemptedAt": "2026-10-28T06:39:09.546795Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12125420",
+      "title": "Yinling Qushi Granule as a therapeutic agent for metabolic syndrome: pharmacological, molecular targets, and pharmacokinetic insights.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490538Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11658301",
+      "title": "Recent advancements in traditional Chinese medicine for COVID-19 with comorbidities across various systems: a scoping review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.490575Z",
+      "attemptedAt": "2026-10-28T06:42:58.398517Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11681483",
+      "title": "Association of the Triglyceride-Glucose Index With Resistant Hypertension and a Nomogram Model Construction.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490611Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12063946",
+      "title": "Prevalence and Risk Factors of Functional Hearing Loss in Chinese Adults: A Cross-sectional Study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490649Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12464274",
+      "title": "Characterization of the effects of oxymatrine on myocardial hypertrophy in spontaneously hypertensive rats through transcriptomics and metabolomics.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490669Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11883632",
+      "title": "Traditional Chinese medicine as a protective strategy against chemotherapy-induced cardiotoxicity: An overview of the literature.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490693Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11460875",
+      "title": "Combined traditional Chinese medicine and anti-hypertensive treatments for renal hypertension: A network meta-analysis and systematic review",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:09.490730Z",
+      "attemptedAt": "2026-10-28T06:41:05.855502Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13315624",
+      "title": "Anlotinib plus whole-brain radiotherapy for NSCLC brain metastases: a prospective, non-randomized, single-center cohort study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490797Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11429662",
+      "title": "Objective Analysis of Traditional Chinese Medicine Syndrome Differentiation of Patients With Diabetes and Prediabetes: Protocol for a Nonrandomized, Exploratory, Observational Case-Control Study Using Digitalized Traditional Chinese Medicine Diagnostic Tools.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.490858Z",
+      "attemptedAt": "2026-10-28T06:40:33.375648Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11996930",
+      "title": "Ligusticum chuanxiong: a chemical, pharmacological and clinical review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490907Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13450123",
+      "title": "Early Integration of Chinese Medicine Rehabilitation Improves Functional Outcomes in Stroke Patients: A Prospective Pragmatic Study and Nested Case-Control Analysis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490947Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12076013",
+      "title": "Prescribing characteristics and guideline concordance of antihypertensive western and Chinese patent medicine in Internet hospitals in China: a cross-sectional study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.490985Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12263929",
+      "title": "Bridging tradition and innovation: a constitution-guided framework for personalized blood pressure management in acute ischemic stroke.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491026Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11550124",
+      "title": "Exploring synergistic effects of Achyranthes bidentata Blume and Paeonia lactiflora Pall. on hypertension with liver yang hyperactivity using the multidisciplinary integrative strategy.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.491062Z",
+      "attemptedAt": "2026-10-28T06:42:05.987628Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10958864",
+      "title": "Recent advances in the potential effects of natural products from traditional Chinese medicine against respiratory diseases targeting ferroptosis.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.491083Z",
+      "attemptedAt": "2026-10-28T06:39:19.654997Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11695289",
+      "title": "Case report: Cilioretinal artery occlusion combined with central retinal vein occlusion as the initial presentation of pulmonary arterial hypertension.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491112Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12756128",
+      "title": "Molecular mechanisms and multi-target therapeutic strategies of diabetic nephropathy: from pathogenesis to precision interventions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491135Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12958187",
+      "title": "Application of pedicle bone quality scoring and Hounsfield unit in predicting the risk of cage subsidence after single-segment lumbar fusion surgery.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:09.491180Z",
+      "ledgerDocumentId": "EN-PMC12958187",
+      "finalRole": "excluded"
+    },
+    {
+      "pmcid": "PMC12935602",
+      "title": "Development and validation of a nomogram model integrating noninvasive detection of radial pulse wave for predicting diabetic foot risk in type 2 diabetes mellitus.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:09.491238Z",
+      "ledgerDocumentId": "EN-PMC12935602",
+      "finalRole": "excluded"
+    },
+    {
+      "pmcid": "PMC12932606",
+      "title": "Association between the C-reactive protein to albumin ratio and unplanned readmission in ulcerative colitis: insights from a cohort study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:09.491280Z",
+      "ledgerDocumentId": "EN-PMC12932606",
+      "finalRole": "excluded"
+    },
+    {
+      "pmcid": "PMC12952147",
+      "title": "The adjunctive effect of a qigong (Baduanjin) intervention program on maternal and child health outcomes: a multicenter randomized controlled trial protocol.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:09.491327Z",
+      "attemptedAt": "2026-10-28T06:31:52.198149Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11520704",
+      "title": "The role of Chinese herbal medicine in the regulation of oxidative stress in treating hypertension: from therapeutics to mechanisms",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:09.491364Z",
+      "ledgerDocumentId": "EN-PMC11520704",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC10623334",
+      "title": "Chemical composition, biological activities, and quality standards of hawthorn leaves used in traditional Chinese medicine: a comprehensive review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.491383Z",
+      "attemptedAt": "2026-10-28T06:38:54.495590Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10147991",
+      "title": "Traditional Chinese medicine monomers: Targeting pulmonary artery smooth muscle cells proliferation to treat pulmonary hypertension",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:09.491403Z",
+      "attemptedAt": "2026-10-28T06:38:06.913521Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12514953",
+      "title": "Ultrasound-Guided Selective Thoracic Nerve Root Block Combined with Continuous Erector Spinae Plane Block for Postherpetic Neuralgia: A Case Report.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491435Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13152755",
+      "title": "Comparative characteristics of homocysteine and uric acid in patients with Parkinson's disease-related cognitive impairment and post-stroke cognitive impairment.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491502Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11789912",
+      "title": "Traditional Chinese medicine for premature ventricular contraction caused by obstructive sleep apnea: A case report and literature review.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491541Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12781695",
+      "title": "Gas chromatography-mass spectrometry-based plasma metabolomics analysis in hypertensive patients with Yin deficiency and Yang hyperactivity syndrome.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491586Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11989756",
+      "title": "2,3,5,4'-Tetrahydroxystilbene-2-O-β-D-glucoside (TSG) from Polygonum multiflorum Thunb.: A Systematic Review on Anti-Aging.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491620Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11986431",
+      "title": "﻿Two new species of Colletotrichum (Glomerellales, Glomerellaceae) causing anthracnose on Epimediumsagittatum.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491677Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10287528",
+      "title": "Association between the Triglyceride Glucose Index and Hyperuricemia in Patients with Primary Hypertension: A Cross-Sectional Study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.491720Z",
+      "attemptedAt": "2026-10-28T06:38:43.704895Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12533612",
+      "title": "Novel and Highly Potent Therapeutic Agent, Trametes Robiniophila Murr (Huaier), Mitigates Pulmonary Vascular Remodeling in Rodents.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491761Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12373904",
+      "title": "The current situation and factors influencing the use of traditional Chinese medicine therapies among patients with chronic disease in china: a cross-sectional study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491815Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12824004",
+      "title": "A retrospective study of the clinical diagnosis and treatment of 158 cases of COVID-19.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491862Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12582797",
+      "title": "Development and validation of a nomogram clinical prediction model for osteoporosis in elderly malnourished patients: A diagnostic accuracy study.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491885Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11406049",
+      "title": "Liver cirrhosis: molecular mechanisms and therapeutic interventions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.491904Z",
+      "attemptedAt": "2026-10-28T06:40:24.525329Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12370670",
+      "title": "Diabetic kidney disease: from pathogenesis to multimodal therapy-current evidence and future directions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491925Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11886395",
+      "title": "Advances in the diagnosis and management of post-percutaneous coronary intervention coronary microvascular dysfunction: Insights into pathophysiology and metabolic risk interactions.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491946Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9644233",
+      "title": "Bibliometric analysis of traditional Chinese medicine for smoking cessation.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:09.491982Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11286405",
+      "title": "Liver cirrhosis: current status and treatment options using western or traditional Chinese medicine.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.492003Z",
+      "attemptedAt": "2026-10-28T06:39:53.964585Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11434704",
+      "title": "Gastrodin Alleviates Angiotensin II-Induced Hypertension and Myocardial Apoptosis via Inhibition of the PRDX2/p53 Pathway In Vivo and In Vitro.",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:09.492031Z",
+      "attemptedAt": "2026-10-28T06:40:50.966304Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11657759",
+      "title": "Zhishi Xiebai Guizhi Decoction modulates hypoxia and lipid toxicity to alleviate pulmonary vascular remodeling of pulmonary hypertension in rats",
+      "topics": [
+        "tcm-hypertension"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:09.492069Z",
+      "ledgerDocumentId": "EN-PMC11657759",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13188069",
+      "title": "Correction: A multi-center, randomized, double-blind, placebo-controlled trial to evaluate the efficacy and safety of Fuzheng Yangxin Granule in treating heart failure with preserved ejection fraction (Qi-Yin deficiency and blood stasis syndrome): study protocol.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577062Z",
+      "attemptedAt": "2026-10-28T06:42:06.021813Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13143752",
+      "title": "Heart-brain axis pathophysiological understanding and clinical impact.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577116Z",
+      "attemptedAt": "2026-10-28T06:41:47.170778Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12951050",
+      "title": "The Dilemma in the Management of Patients with Heart Failure with Reduced Ejection Fraction, Sinus Rhythm and Left Ventricular Spontaneous Echo Contrast: A Narrative Review.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577131Z",
+      "ledgerDocumentId": "EN-PMC12951050",
+      "finalRole": "background"
+    },
+    {
+      "pmcid": "PMC12069317",
+      "title": "A multi-center, randomized, double-blind, placebo-controlled trial to evaluate the efficacy and safety of Fuzheng Yangxin Granule in treating heart failure with preserved ejection fraction (Qi-Yin deficiency and blood stasis syndrome): study protocol",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577181Z",
+      "ledgerDocumentId": "EN-PMC12069317",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12269143",
+      "title": "Integrating multi-omics and machine learning strategies to explore the “gene-protein-metabolite” network in ischemic heart failure with Qi deficiency and blood stasis syndrome",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577225Z",
+      "ledgerDocumentId": "EN-PMC12269143",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12456088",
+      "title": "Severe Left Ventricular Thrombus in the Context of Heart Failure and COVID-19: A Case Report.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577246Z",
+      "attemptedAt": "2026-10-28T06:40:24.560480Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12964781",
+      "title": "Optimized New Shengmai Powder suppresses ferroptosis in ischemic cardiomyocytes via cGMP-PKG signalling.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577282Z",
+      "ledgerDocumentId": "EN-PMC12964781",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12554561",
+      "title": "Exploring molecular characteristics and interactions of blood stasis syndrome in ischemic heart failure by integrated multi-omics",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:14.577317Z",
+      "attemptedAt": "2026-10-28T06:40:38.121072Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12337011",
+      "title": "Exploring the biological basis for the identification of different syndromes in ischemic heart failure based on joint multi-omics analysis",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:14.577350Z",
+      "attemptedAt": "2026-10-28T06:39:57.749743Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11415831",
+      "title": "Thromboembolic trapping and anticoagulation dilemma in a patient with heart failure and reduced ejection fraction in sinus rhythm: A case report.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577482Z",
+      "attemptedAt": "2026-10-28T06:39:09.593108Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12738884",
+      "title": "Xin-Fu-Kang oral liquid improves cardiac function and attenuates miR-223-associated NF-κB/NLRP3 pyroptotic signaling in chronic heart failure.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577577Z",
+      "attemptedAt": "2026-10-28T06:40:51.004738Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12091609",
+      "title": "Complementary therapy in Chinese medicine for dilated cardiomyopathy with congestive heart failure: A three-year follow-up case report",
+      "topics": [
+        "syndrome-heart-failure",
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577625Z",
+      "ledgerDocumentId": "EN-PMC12091609",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12394492",
+      "title": "A new integrated machine learning model: application to improve the accuracy of predicting left atrial appendage thrombus in patients with non-valvular atrial fibrillation.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577675Z",
+      "attemptedAt": "2026-10-28T06:40:19.086823Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10251330",
+      "title": "Validation of evidence-based questionnaire for TCM syndrome differentiation of heart failure and evaluation of expert consensus",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.577718Z",
+      "ledgerDocumentId": "EN-PMC10251330",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC10758342",
+      "title": "Efficacy and Safety of QiShen YiQi Dripping Pills in the Treatment of Coronary Heart Disease Complicating Chronic Heart Failure (Syndrome of Qi Deficiency with Blood Stasis): Study Protocol for a Randomized, Placebo-Controlled, Double-Blind and Multi-Centre Phase II Clinical Trial",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:14.577757Z",
+      "attemptedAt": "2026-10-28T06:38:58.276064Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9510640",
+      "title": "Mechanism of tonifying-kidney Chinese herbal medicine in the treatment of chronic heart failure.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.577780Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10604902",
+      "title": "NADPH Oxidases and Oxidative Stress in the Pathogenesis of Atrial Fibrillation.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577804Z",
+      "attemptedAt": "2026-10-28T06:38:43.755969Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10518421",
+      "title": "Zebrafish as model system for the biological characterization of CK1 inhibitors.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.577848Z",
+      "attemptedAt": "2026-10-28T06:38:31.472758Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9797989",
+      "title": "Patient-specific fluid simulation of transcatheter mitral valve replacement in mitral annulus calcification.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.577879Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8469377",
+      "title": "Establishment of a Drug Screening Model for Cardiac Complications of Acute Renal Failure.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.577908Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6378041",
+      "title": "Study on the Differences between Traditional Chinese Medicine Syndromes in NYHA I-IV Classification of Chronic Heart Failure.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.577933Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5702651",
+      "title": "Mechanism of Chinese Medicine Herbs Effects on Chronic Heart Failure Based on Metabolic Profiling",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:14.577961Z",
+      "attemptedAt": "2026-10-28T06:43:03.058528Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6499934",
+      "title": "Left atrial spontaneous echo contrast: relationship with clinical and echocardiographic parameters.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.577979Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6709174",
+      "title": "Effectiveness and safety of Danshen injection on heart failure: Protocol for a systematic review and meta-analysis.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.578015Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6165930",
+      "title": "Left atrial volume and cardiovascular outcomes in systolic heart failure: effect of antithrombotic treatment.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:14.578062Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4227006",
+      "title": "Plasma metabonomics study on Chinese medicine syndrome evolution of heart failure rats caused by LAD ligation",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.578093Z",
+      "ledgerDocumentId": "EN-PMC4227006",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC5067446",
+      "title": "A rare malady with a rarer complication.",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:14.578110Z",
+      "attemptedAt": "2026-10-28T06:42:53.335929Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5010704",
+      "title": "Validation of a new simple scale to measure symptoms in heart failure from traditional Chinese medicine view: a cross-sectional questionnaire study",
+      "topics": [
+        "syndrome-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:14.578140Z",
+      "ledgerDocumentId": "EN-PMC5010704",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13383748",
+      "title": "Qiliqiangxin Improves Cardiac Glucose Metabolism After Myocardial Infarction Through a HIF‐1α/MIF/AMPK Axis",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540343Z",
+      "ledgerDocumentId": "EN-PMC13383748",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12772080",
+      "title": "Qiliqiangxin capsule attenuates platelet activation and thrombosis by suppressing Ca2+ influx and PKC signaling.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540384Z",
+      "ledgerDocumentId": "EN-PMC12772080",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13506899",
+      "title": "Adjunctive qiliqiangxin capsule for heart failure in predominantly middle-aged and older adults: a systematic review and meta-analysis of randomized controlled trials",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540426Z",
+      "ledgerDocumentId": "EN-PMC13506899",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12690828",
+      "title": "Cost-effectiveness of Qiliqiangxin in HFrEF: adjunctive therapy vs. standard care from a Chinese healthcare perspective.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:19.540447Z",
+      "attemptedAt": "2026-10-28T06:39:09.642210Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12573670",
+      "title": "Quercetin reverses β1-adrenoceptor autoantibody-induced heart failure by promoting MDM2-mediated ubiquitination and degradation of p53 in cardiomyocytes.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:19.540502Z",
+      "attemptedAt": "2026-10-28T06:38:58.326147Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12545069",
+      "title": "The crosstalk between mitochondrial dysfunction and fatty acid metabolism in heart failure: mechanisms and therapeutic strategies.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:19.540515Z",
+      "attemptedAt": "2026-10-28T06:38:43.805629Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13110372",
+      "title": "Integrating Traditional Wisdom With Modern Science: Ginsenosides as Antiheart Failure Agents.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540527Z",
+      "ledgerDocumentId": "EN-PMC13110372",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11333273",
+      "title": "The traditional Chinese medicine Qiliqiangxin in heart failure with reduced ejection fraction: a randomized, double-blind, placebo-controlled trial.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "already-in-ledger",
+      "discoveredAt": "2026-10-28T06:28:19.540561Z",
+      "ledgerDocumentId": "EN-PMC11333273",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11686870",
+      "title": "Research on the mechanism of the anti-myocardial infarction effect of the Qiliqiangxin capsule on heart failure rats via nontargeted metabolomics and lipidomics",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:19.540587Z",
+      "attemptedAt": "2026-10-28T06:38:40.426781Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9201726",
+      "title": "Qiliqiangxin Modulates the Gut Microbiota and NLRP3 Inflammasome to Protect Against Ventricular Remodeling in Heart Failure.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540609Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9918363",
+      "title": "The Efficacy and Safety of a Qiliqiangxin Capsule Combined with Sacubitril/Valsartan in the Treatment of Chronic Heart Failure: A Systematic Review and Meta-Analysis.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540638Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7301709",
+      "title": "Qiliqiangxin improves cardiac function and attenuates cardiac remodelling in doxorubicin-induced heart failure rats",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540667Z",
+      "ledgerDocumentId": "EN-PMC7301709",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC9448542",
+      "title": "Qiliqiangxin Capsule Modulates Calcium Transients and Calcium Sparks in Human Induced Pluripotent Stem Cell-Derived Cardiomyocytes.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540693Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8520188",
+      "title": "Study protocol: Traditional Chinese Medicine (TCM) syndrome differentiation for heart failure patients and its implication for long-term therapeutic outcomes of the Qiliqiangxin capsules.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540715Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7306086",
+      "title": "Qiliqiangxin Improves Cardiac Function through Regulating Energy Metabolism via HIF-1α-Dependent and Independent Mechanisms in Heart Failure Rats after Acute Myocardial Infarction",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:19.540742Z",
+      "attemptedAt": "2026-10-28T06:43:21.589567Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7076750",
+      "title": "Study protocol for a randomized controlled trial: Qiliqiangxin in heart failUre: assESsment of reduction in morTality (QUEST)",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540762Z",
+      "ledgerDocumentId": "EN-PMC7076750",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC8322738",
+      "title": "Traditional Chinese Medication Qiliqiangxin Attenuates Diabetic Cardiomyopathy via Activating PPARγ.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540792Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7396640",
+      "title": "Qiliqiangxin Capsules Optimize Cardiac Metabolism Flexibility in Rats With Heart Failure After Myocardial Infarction.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540811Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5829193",
+      "title": "A metabolomics study of Qiliqiangxin in a rat model of heart failure: a reverse pharmacology approach",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540824Z",
+      "ledgerDocumentId": "EN-PMC5829193",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC6759796",
+      "title": "Integrating Pharmacokinetics Study, Network Analysis, and Experimental Validation to Uncover the Mechanism of Qiliqiangxin Capsule Against Chronic Heart Failure",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:19.540858Z",
+      "attemptedAt": "2026-10-28T06:42:21.567207Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7723657",
+      "title": "Citri Reticulatae Pericarpium protects against isoproterenol-induced chronic heart failure via activation of PPARγ.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:19.540884Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC3807038",
+      "title": "Future prospects of Qiliqiangxin on heart failure: epigenetic regulation of regeneration",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540923Z",
+      "ledgerDocumentId": "EN-PMC3807038",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC3775405",
+      "title": "Protective Effect of Qiliqiangxin Capsule on Energy Metabolism and Myocardial Mitochondria in Pressure Overload Heart Failure Rats",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.540943Z",
+      "ledgerDocumentId": "EN-PMC3775405",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC5494577",
+      "title": "Qiliqiangxin Enhances Cardiac Glucose Metabolism and Improves Diastolic Function in Spontaneously Hypertensive Rats",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:19.540976Z",
+      "attemptedAt": "2026-10-28T06:41:59.118577Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC5441043",
+      "title": "Traditional Chinese Medication Qiliqiangxin Protects Against Cardiac Remodeling and Dysfunction in Spontaneously Hypertensive Rats",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:19.540990Z",
+      "attemptedAt": "2026-10-28T06:41:39.793901Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4648480",
+      "title": "Traditional Chinese Medication Qiliqiangxin attenuates cardiac remodeling after acute myocardial infarction in mice",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.541004Z",
+      "ledgerDocumentId": "EN-PMC4648480",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC3320132",
+      "title": "Qiliqiangxin affects L type ca(2+) current in the normal and hypertrophied rat heart.",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:19.541016Z",
+      "attemptedAt": "2026-10-28T06:40:19.299653Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC4420613",
+      "title": "Qiliqiangxin inhibits angiotensin II-induced transdifferentiation of rat cardiac fibroblasts through suppressing interleukin-6",
+      "topics": [
+        "formula-heart-failure"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:19.541031Z",
+      "ledgerDocumentId": "EN-PMC4420613",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13110736",
+      "title": "Bioengineering Applications of Chinese Herbal Medicine-Derived Exosomes in Cardiovascular Diseases: Mechanisms and Translational Prospects.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:28.476841Z",
+      "attemptedAt": "2026-10-28T06:33:02.619141Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13121073",
+      "title": "Cellular and Molecular Mechanisms of Hyperglycemia-Induced Atherosclerosis and Intervention Strategies of Chinese Herbal Medicine.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.476884Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12962764",
+      "title": "Chinese herbal medicine treatment and the association with long-term major adverse cardiac events in patients with chronic kidney disease: A propensity-score matched cohort study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "failed",
+      "reason": "[WinError 5] 拒绝访问。: 'D:\\\\Codex\\\\毕业设计RAG大模型\\\\data\\\\expanded-sources.json.part' -> 'D:\\\\Codex\\\\毕业设计RAG大模型\\\\data\\\\expanded-sources.json'",
+      "discoveredAt": "2026-10-28T06:28:28.476913Z",
+      "attemptedAt": "2026-10-28T06:32:02.748646Z",
+      "ledgerDocumentId": "EN-PMC12962764",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11693728",
+      "title": "Oxylipins as therapeutic indicators of herbal medicines in cardiovascular diseases: a review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.476928Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12930105",
+      "title": "Chinese Herbal Medicines for Diabetic Cardio-Cerebrovascular Diseases: Key Bioactive Metabolites and Action Mechanisms.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:28.476942Z",
+      "ledgerDocumentId": "EN-PMC12930105",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC13534990",
+      "title": "Multitarget mechanisms and clinical integration of traditional Chinese medicine in cardiac rehabilitation: a narrative review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.476954Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12675451",
+      "title": "Cardioprotective Chinese herbs and antiretroviral drug metabolism: a systematic review of in vitro evidence.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.476977Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13073489",
+      "title": "The Role of Long Non-Coding RNA in Atherosclerosis: Mechanism and Intervention of Traditional Chinese Medicine.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:28.476990Z",
+      "ledgerDocumentId": "EN-PMC13073489",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11725069",
+      "title": "Corrigendum to \"Chinese herbal medicine may reduce major adverse cardiovascular events in patients with dialysis hypotension: A Taiwan nationwide cohort study\" [J Tradit Complementary Med 14, Issue 5 (September 2024), 550-557].",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477001Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12506179",
+      "title": "Adjunctive Chinese herbal medicine versus acupuncture post-PCI: comparative effectiveness and safety - protocol for systematic review and network meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477032Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12396530",
+      "title": "Characteristics and Related Factors of Chinese Herbal Medicine Use in Middle-Aged and Older Patients with Cardiovascular Disease in China: A Cross-Sectional Study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477051Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13202484",
+      "title": "A review of Rhododendron molle: traditional uses, clinical applications, phytochemistry, pharmacology, toxicology, pharmacokinetics and quality control.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477077Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12575325",
+      "title": "The clinical efficacy of herbal medicines containing leeches in the treatment of coronary heart disease: a systematic review and meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477107Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10928947",
+      "title": "Non-coding RNAs: targets for Chinese herbal medicine in treating myocardial fibrosis",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:28.477120Z",
+      "attemptedAt": "2026-10-28T06:42:24.763285Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11922957",
+      "title": "Potential therapeutic mechanisms of Draconis Resina in cardiovascular diseases-a narrative review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477135Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13217855",
+      "title": "Unveiling the 'Eating Poison' of Polygala tenuifolia xylem: Mood changes and myocardial injury.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477157Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11434432",
+      "title": "Quantitative Changes and Transformation Mechanisms of Saponin Components in Chinese Herbal Medicines during Storage and Processing: A Review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477178Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11891183",
+      "title": "Ferroptosis, pathogenesis and therapy in AS co-depression disease.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477191Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC13316520",
+      "title": "Gancao Nourishing-Yin decoction ameliorates endothelial inflammaging induced by serum from rheumatoid arthritis patients.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477216Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12032006",
+      "title": "Dehydrocorydaline maintains the vascular smooth muscle cell contractile phenotype by upregulating Spta1.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477238Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12718856",
+      "title": "Increased risk of major adverse cardiovascular events in young and middle-aged adults with obesity receiving Chinese herbal medicine: A nationwide cohort study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477256Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12416129",
+      "title": "Tetramethylpyrazine alleviates acute kidney injury by activating the Wnt/β-catenin pathway independent of DKK1.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477272Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11921369",
+      "title": "Advances in Chinese herbal medicine in modulating mitochondria to treat myocardial ischemia-reperfusion injury: a narrative review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477295Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10860942",
+      "title": "Visualizing research trends and identifying hotspots of herbal components for treating cardiovascular diseases: A bibliometric analysis from 2000 to 2023.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:28.477317Z",
+      "attemptedAt": "2026-10-28T06:41:59.167843Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12908498",
+      "title": "Multi-Omics Evidence Linking Gualou Xiebai Banxia Decoction Intervention to Atherosclerosis Mitigation and Gut Microbiota-Bile Acid Signatures in ApoE-/- Mice.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:28.477350Z",
+      "ledgerDocumentId": "EN-PMC12908498",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12682750",
+      "title": "Investigation of Sheng Mai Yin in the treatment of anthracycline-induced frequent premature ventricular contractions in cancer patients: study protocol for a multicenter, randomized, double-blind, placebo-controlled clinical trial.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477371Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11573571",
+      "title": "Exploring the therapeutic mechanisms of heart failure with Chinese herbal medicine: a focus on miRNA-mediated regulation.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477385Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12567328",
+      "title": "Beyond Traditional Use: The Scientific Evidence for the Role of Astragali radix in Organ Protection via Modulating Oxidative Stress, Cell Death, and Immune Responses.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477409Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12344418",
+      "title": "Efficacy and safety of Shenxiong-Xinmaikang Decoction in patients with stable angina pectoris: a real-world prospective observational study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477439Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11945149",
+      "title": "From Traditional Efficacy to Drug Design: A Review of Astragali Radix.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477463Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12204538",
+      "title": "Integrating network pharmacology and experimental verification to explore the protective effects of Evodia rutaecarpa in ischemic stroke.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477493Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10843552",
+      "title": "Prospect of research on anti-atherosclerosis effect of main components of traditional Chinese medicine Yiqi Huoxue Huatan recipe through gut microbiota: A review",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:28.477506Z",
+      "ledgerDocumentId": "EN-PMC10843552",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC12292218",
+      "title": "Viscum coloratum (Komar.) Nakai: A Review of Botany, Phytochemistry, Pharmacology, Pharmacokinetics and Toxicology.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477527Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12271196",
+      "title": "Biosynthesis-based metabolomics analysis reveals chemical diversity between two Salvia species.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477555Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12819830",
+      "title": "Efficacy and safety of Traditional Chinese Medicine injections for no-reflow or slow flow in patients with acute coronary syndrome after percutaneous coronary intervention: a systematic review and network meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477575Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9669587",
+      "title": "Therapeutic mechanism and clinical application of Chinese herbal medicine against diabetic kidney disease.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477593Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11374620",
+      "title": "Sixteen prescribed Chinese herbal medicines provide time-dependent cardiorenal and survival benefits in patients with overall and advanced diabetic kidney disease: a real-world study in Taiwan.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477628Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11384079",
+      "title": "Chinese herbal medicine may reduce major adverse cardiovascular events in patients with dialysis hypotension: A taiwan nationwide cohort study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477656Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10759625",
+      "title": "Pharmacological properties of Polygonatum and its active ingredients for the prevention and treatment of cardiovascular diseases.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:28.477674Z",
+      "attemptedAt": "2026-10-28T06:40:10.966617Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11253544",
+      "title": "Research progress of Ganoderma lucidum polysaccharide in prevention and treatment of Atherosclerosis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477692Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12694305",
+      "title": "Ferritin Mitochondrial (FTMT)-Driven Mitochondrial Ferroptosis in Vascular Smooth Muscle Cells: A Role of NCOA4 in Atherosclerosis Pathogenesis and Modulation by Gualou-Xiebai.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477725Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12141307",
+      "title": "Ophiopogonin D mitigates doxorubicin-induced cardiomyocyte ferroptosis through the β-catenin/GPX4 pathway.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477766Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10539976",
+      "title": "Research progress in the quality evaluation of Salvia miltiorrhiza based on the association of 'morphological features - functional substances - pharmacological action - clinical efficacy'.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:28.477805Z",
+      "attemptedAt": "2026-10-28T06:39:24.706423Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10534649",
+      "title": "Research Progress of Flavonoids Regulating Endothelial Function.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:28.477823Z",
+      "attemptedAt": "2026-10-28T06:39:09.855049Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8718242",
+      "title": "Efficacy and safety of acupuncture combined with Chinese herbal medicine in the treatment of angina pectoris of coronary heart disease (CHD): A protocol for systematic review and meta analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:28.477851Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10887337",
+      "title": "A prospective review of the health-promoting potential of Jing Si Herbal Tea.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:28.477869Z",
+      "attemptedAt": "2026-10-28T06:42:08.975657Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10290455",
+      "title": "Successful Treatment of Psoriasis Combined with Bullous Pemphigoid with Dupilumab: A Case Report.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.600892Z",
+      "attemptedAt": "2026-10-28T06:38:40.467766Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11663452",
+      "title": "The isoflavone puerarin promotes generation of human iPSC-derived pre-oligodendrocytes and enhances endogenous remyelination in rodent models.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.600956Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8670943",
+      "title": "Chinese Herbal Medicine Alleviates Myocardial Ischemia/Reperfusion Injury by Regulating Endoplasmic Reticulum Stress.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.600980Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11466214",
+      "title": "Advancements in the investigation of chemical components and pharmacological properties of Codonopsis: A review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601002Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10800938",
+      "title": "Chinese herbal medicine Shenqi compound for early intervention in patients at high cardiovascular risk of type 2 diabetes mellitus: the protocol of a multicenter, randomized, double-blind, placebo-controlled trial",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "included",
+      "discoveredAt": "2026-10-28T06:28:34.601042Z",
+      "ledgerDocumentId": "EN-PMC10800938",
+      "finalRole": "core"
+    },
+    {
+      "pmcid": "PMC11269158",
+      "title": "Traditional Chinese medicine lowering lipid levels and cardiovascular events across baseline lipid levels among coronary heart disease: a meta-analysis of randomized controlled trials.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601112Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11439242",
+      "title": "Keys to the switch of fat burning: stimuli that trigger the uncoupling protein 1 (UCP1) activation in adipose tissue.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601132Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11304693",
+      "title": "Puerarin inhibits HDAC1-induced oxidative stress disorder by activating JNK pathway and alleviates acrolein-induced atherosclerosis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601168Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC12169005",
+      "title": "Integrating Network Pharmacology and in vivo Validation to Explore the Mechanisms of Buyang Huanwu Decoction in Myocardial Ischemia-Reperfusion Injury.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601216Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8645359",
+      "title": "Traditional Chinese Herbal Medicine Plays a Role in the Liver, Kidney, and Intestine to Ameliorate Hyperuricemia according to Experimental Studies.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601237Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11169621",
+      "title": "Polygalae Radix: review of metabolites, pharmacological activities and toxicology.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601277Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10745425",
+      "title": "A Review on the Morphology, Cultivation, Identification, Phytochemistry, and Pharmacology of Kitagawia praeruptora (Dunn) Pimenov.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601307Z",
+      "attemptedAt": "2026-10-28T06:39:50.000135Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8143881",
+      "title": "A Systematic Review of Antiaging Effects of 23 Traditional Chinese Medicines.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601340Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10601115",
+      "title": "Anti-atherosclerotic effects of naringenin and quercetin from Folium Artemisiae argyi by attenuating Interleukin-1 beta (IL-1β)/ matrix metalloproteinase 9 (MMP9): network pharmacology-based analysis and validation.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601364Z",
+      "attemptedAt": "2026-10-28T06:39:38.927722Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11184160",
+      "title": "Efficacy and safety of the Chinese herbal medicine Bu-Shen-Huo-Xue granule for the treatment of coronary heart disease: study protocol for a multicenter, randomized, double-blinded, placebo-controlled clinical trial.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601399Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9755740",
+      "title": "Banxia baizhu tianma decoction, a Chinese herbal formula, for hypertension: Integrating meta-analysis and network pharmacology.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601425Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10844384",
+      "title": "Armeniacae semen amarum: a review on its botany, phytochemistry, pharmacology, clinical application, toxicology and pharmacokinetics.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601456Z",
+      "attemptedAt": "2026-10-28T06:41:16.185331Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10806165",
+      "title": "Constructing a competitive endogenous RNA network of EndMT-related atherosclerosis through weighted gene co-expression network analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601478Z",
+      "attemptedAt": "2026-10-28T06:40:45.112477Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10791791",
+      "title": "Renal and survival benefits of seventeen prescribed Chinese herbal medicines against oxidative-inflammatory stress in systemic lupus erythematosus patients with chronic kidney disease: a real-world longitudinal study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601527Z",
+      "attemptedAt": "2026-10-28T06:40:19.508613Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10964018",
+      "title": "Potential pharmacological mechanisms of tanshinone IIA in the treatment of human neuroblastoma based on network pharmacological and molecular docking Technology.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601549Z",
+      "attemptedAt": "2026-10-28T06:42:48.321888Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8249120",
+      "title": "DNA Methylation in Atherosclerosis: A New Perspective.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601569Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7348053",
+      "title": "Modulatory Effects of Chinese Herbal Medicines on Energy Metabolism in Ischemic Heart Diseases.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601595Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10494935",
+      "title": "Pharmacological action of Hedysarum polysaccharides: a review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601632Z",
+      "attemptedAt": "2026-10-28T06:38:43.855066Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9569207",
+      "title": "The Therapeutic Roles of Cinnamaldehyde against Cardiovascular Diseases.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601655Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8955743",
+      "title": "Wen Dan Tang: A Potential Jing Fang Decoction for Headache Disorders?",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601685Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9425052",
+      "title": "Effects and safety of Chinese herbal medicine on inflammatory biomarkers in cardiovascular diseases: A systematic review and meta-analysis of randomized controlled trials.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601744Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11251585",
+      "title": "Chinese herbal compound preparation Qing-Xin-Jie-Yu granules for intermediate coronary lesions in patients with stable coronary artery disease: Study protocol for a multicenter, randomized, double-blind, placebo-controlled trial.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601778Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11112794",
+      "title": "Transcriptome sequencing and metabolome analysis reveal the molecular mechanism of Salvia miltiorrhiza in response to drought stress.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601801Z",
+      "attemptedAt": "2026-10-28T06:43:21.648801Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11081559",
+      "title": "Uncovering the molecular mechanism of Mume Fructus in treatment of Sjögren's syndrome.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601853Z",
+      "attemptedAt": "2026-10-28T06:42:58.281957Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC11379579",
+      "title": "Clinical comparative efficacy and therapeutic strategies for the Hashimoto's thyroiditis: A systematic review and network meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601891Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9527293",
+      "title": "Progress on the efficacy and mechanism of action of panax ginseng monomer saponins treat toxicity.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601914Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10117688",
+      "title": "A review of the botany, ethnopharmacology, phytochemistry, analysis method and quality control, processing methods, pharmacological effects, pharmacokinetics and toxicity of codonopsis radix.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.601937Z",
+      "attemptedAt": "2026-10-28T06:38:09.884946Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9195623",
+      "title": "Effect of Chinese Herbal Medicine Therapy on Risks of Overall, Diabetes-Related, and Cardiovascular Diseases-Related Mortalities in Taiwanese Patients With Hereditary Hemolytic Anemias.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.601982Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9313033",
+      "title": "Chinese Herbal Medicine Reduces the Risk of Heart Failure in Hypertensive Patients: A Nationwide, Retrospective, Cohort Study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602014Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9724161",
+      "title": "Pyroptosis is a drug target for prevention of adverse cardiac remodeling: The crosstalk between pyroptosis, apoptosis, and autophagy.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602038Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7883640",
+      "title": "Saponins in Chinese Herbal Medicine Exerts Protection in Myocardial Ischemia-Reperfusion Injury: Possible Mechanism and Target Analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602080Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9252638",
+      "title": "Pharmacological Activities of Safflower Yellow and Its Clinical Applications.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602112Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8238346",
+      "title": "Effectiveness and safety of Chinese herbal formula combined with western medicine for ankylosing spondylitis: A protocol for systematic review and meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602205Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10857883",
+      "title": "Da-Chuan-Xiong Decoction Ameliorates Sodium Sensitivity and Plasma Norepinephrine via Attenuation of Brain Oxidative Stress in the DOCA-Salt Hypertensive Rats",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "no permissive license verified in full-text XML",
+      "discoveredAt": "2026-10-28T06:28:34.602247Z",
+      "attemptedAt": "2026-10-28T06:41:42.160119Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7886448",
+      "title": "Chinese herbal medicine for hypertension complicated with hyperlipidemia: A protocol for a systematic review and meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602279Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9273382",
+      "title": "Chinese Herbal Medicine as an Adjunctive Therapy Improves the Survival Rate of Patients with Ischemic Heart Disease: A Nationwide Population-Based Cohort Study.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602314Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7667240",
+      "title": "Regulatory Mechanisms of Baicalin in Cardiovascular Diseases: A Review.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602341Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC8590352",
+      "title": "Efficacy and safety of Chinese herbal medicine Wen Xin granules for the treatment of unstable angina pectoris with Yang deficiency and blood stasis syndrome: study protocol for a randomized controlled trial.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602372Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9685990",
+      "title": "East Wind, West Wind: Toward the modernization of traditional Chinese medicine.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602398Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC10522400",
+      "title": "Human adipose-derived stem cells preconditioned with a novel herbal formulation Jing Shi attenuate doxorubicin-induced cardiac damage.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "rejected",
+      "reason": "title does not establish both TCM and cardiovascular topics",
+      "discoveredAt": "2026-10-28T06:28:34.602433Z",
+      "attemptedAt": "2026-10-28T06:38:58.375524Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC9117622",
+      "title": "Evidence of Chinese Herbal Medicine Use From an Economic Perspective: A Systematic Review of Pharmacoeconomics Studies Over Two Decades.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602468Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7882174",
+      "title": "Leonurine, a potential drug for the treatment of cardiovascular system and central nervous system diseases.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602488Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC6221744",
+      "title": "Chinese herbal medicine for dyslipidemia: protocol for a systematic review and meta-analysis.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602522Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    },
+    {
+      "pmcid": "PMC7687523",
+      "title": "Complete plastid genome sequence of Erigeron breviscapus (Asteraceae), an endemic traditional Chinese herbal medicine.",
+      "topics": [
+        "herbal-cardiovascular"
+      ],
+      "language": "en",
+      "status": "candidate",
+      "discoveredAt": "2026-10-28T06:28:34.602558Z",
+      "ledgerDocumentId": null,
+      "finalRole": null
+    }
+  ]
+}

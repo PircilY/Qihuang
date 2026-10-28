@@ -1,0 +1,169 @@
+Introduction
+
+Hypertension, a leading cause of premature death, affects 1.39 billion people worldwide (1). It is a leading risk factor for stroke incidence and recurrence (2, 3). Systolic blood pressure (SBP) and diastolic blood pressure (DBP) were positively correlated with stroke incidence (4). Maximum SBP was associated with a 15-fold increased risk for stroke (5).
+
+Increasing awareness and treatment adherence to hypertension has become the main goal for the prevention of stroke incidence (2). The primary suggestions for controlling hypertension are pharmacological treatment and lifestyle modification (6, 7). However, the control and compliance rates of hypertension treatment are unsatisfactory (1). The World Health Organization estimated that 50–70% of hypertension patients did not take antihypertensive drugs as prescribed (8). Fear of medication side effects is a major driver of non-adherence (9). Adverse effects led 9% of mild hypertension patients to discontinue drug therapy (10).
+
+Acupuncture therapy, with a long history in China, has good compliance with fewer side effects (11). The effect of acupuncture on reducing blood pressure (BP) has been revealed with many potential mechanisms, including the central nervous system, renin-angiotensin-aldosterone system, vascular endothelium, and oxidative stress (12, 13). Beyond blood pressure control, acupuncture may offer additional neuroprotective benefits in stroke management. Recent evidence has shown improvements in cognitive function and modulation of autophagy-inflammatory pathways, supporting its potential as a comprehensive adjunctive therapy (14–16). Although increasing evidence has shown that acupuncture has a short-term antihypertensive effect, high-quality randomized controlled trials (RCT) are still lacking (17–20). Meanwhile, only a few clinical studies have explored the continuous antihypertensive effect of acupuncture after treatment and reached inconsistent conclusions (21, 22). A meta-analysis in the Cochrane Library found no evidence for the sustained BP-lowering effect of acupuncture required for managing hypertension. Further RCTs with at least 7 days, and preferably longer, follow-up periods are needed (23). In addition, there has been a lack of research that focused on the effect of acupuncture on reducing the recurrence rate of hypertensive stroke patients.
+
+We conducted this multicenter, long follow-up RCT to evaluate the efficacy and safety of acupuncture as adjunctive therapy for ischemic stroke patients with hypertension. The efficacy of acupuncture in reducing BP was evaluated during the 12-week intervention and the 48-week follow-up period, and stroke recurrence was evaluated in one year.
+
+Materials and methods
+
+Study design
+
+This RCT was conducted in clinics and wards of 18 centers from September 2015 to January 2020. The number of centers was increased from 5 to 18 due to the difficulty of participant enrollment. Eventually, 480 patients with first-ever stroke and hypertension who met the screening criteria were randomized into either adjunctive acupuncture or basic treatment group by a 1:1 ratio to complete the 12-week treatment and the following 48-week follow-up.
+
+Participants
+
+Inclusion criteria
+
+(1) First-ever ischemic stroke patients with stroke duration of 2 to 6 weeks;
+
+(2) Aged 35 to 70 years;
+
+(3) SBP/DBP below 160/100 mmHg using single antihypertensive medication, except for the fixed-dose combinations, for at least 2 weeks;
+
+(4) Voluntary informed consent signed.
+
+Exclusion criteria
+
+(1) Secondary hypertension;
+
+(2) Antihypertensive medication general used other than BP control;
+
+(3) SBP/DBP below 140/90 mmHg when taking single antihypertensive drug;
+
+(4) Other coexisting nervous system diseases, including epilepsy and peripheral nerve injuries;
+
+(5) Severe hematopoietic system conditions, coagulation dysfunction, and cancers;
+
+(6) Diabetic nephropathy, severe liver and renal function impairment, severe heart or lung dysfunction, and arrhythmia;
+
+(7) Local infection around the acupoint;
+
+(8) Pregnant or lactating women;
+
+(9) Recruitment into other clinical trials within 1 month.
+
+Randomization, concealment, and blinding
+
+Eligible participants were randomized into adjunctive acupuncture group or basic treatment group in a 1:1 ratio. Randomization sequence was generated centrally at each center using the minimization procedure with a minimization methods (24, 25). The allocation concealment was described in the trial protocol (26). Treatment allocation was masked from center investigators, participants, and outcome assessors, with the exception of the acupuncturists.
+
+Interventions
+
+Basic treatment group
+
+Participants in the basic treatment group received a pharmaceutical treatment (single antihypertensive medication), conventional treatment of ischemic stroke, and “XingNao KaiQiao” (XNKQ) acupuncture for 12 weeks. The acupoint selection and needle manipulation details were described in our trial protocol (26).
+
+The acupoints in XNKQ therapy were bilateral Neiguan (PC6), Shuigou (DU26), hemiplegic side Sanyinjiao (SP6), Jiquan (HT1), Chize (LU5), and Weizhong (BL40). After needle penetration, acupuncture manipulations were performed until participants got a Deqi response (Supplementary Table 1), and then the needles were retained for 30 min. The acupuncture intervention lasts for 12 weeks. In the first 6 weeks, the treatment was conducted five times a week (once a day), and then, in the following 6 weeks, the treatment was performed three times a week (once a day).
+
+Adjunctive acupuncture group
+
+Participants in the adjunctive acupuncture group received “HuoXue SanFeng” (HXSF) acupuncture plus the basic treatment for 12 weeks. The acupoint selections of HXSF acupuncture were bilateral Renying (ST9), Hegu (LI4), Quchi (LI11), Taichong (LR3), and Zusanli (ST36). The treatment sessions of adjunctive acupuncture group were consistent with basic treatment group. The needling operation detail and acupuncture manipulation are listed in Supplementary Table 1.
+
+Main outcomes and measures
+
+The primary outcome was the recurrence rate of stroke in 1 year. The secondary outcomes included 24-h ambulatory BP was assessed at baseline, 6 and 12 weeks; home BP monitoring at 1,12,24,36,48 weeks; the Traditional Chinese Medicine (TCM), syndrome score, the Short Form 36-item Health Survey (SF-36), the National Institute of Health Stroke Scale (NIHSS), the Barthel Index (BI) scale, cardiac ultrasound, carotid artery ultrasound, transcranial doppler, and lower extremity ultrasound was evaluated at baseline, 12 weeks; serum tests at baseline, 6 and 48 weeks; The safety of acupuncture was also be assessed.
+
+Sample size calculation and statistical analysis
+
+Based on China’s Ministry of Health data, the recurrence rate of stroke was 16%. In the early clinical pretest, the recurrence rate was 7%, and the difference between groups of recurrence rate was 4.5% (26). Considering a two-sided 5% significance level and 80% power (α = 0.05, β = 0.2), with a projected dropout rate of 15%, we aimed to recruit 480 patients for 240 in each group in this study.
+
+Statistical analysis
+
+Statistical analysis was conducted by professional statisticians using SAS 9.4 statistical software. The primary outcome and 24-h ambulatory blood pressure were analyzed using the modified intention-to-treat method, which included all participates who underwent randomization, had complete baseline data, and provided at least one treatment-related outcome measurement. We used the last observation carried forward method to supplement missing values. The per-protocol analysis were retained as a sensitivity analysis. Normally distributed measurement data was described as mean value ± standard deviation, and a t test was used for the between-group comparison. The continuous data with repeated measurements were analyzed using a mixed-effects model. The non-normal distributed measurement data was described as median value (first quartile, third quartile), non-parametric rank sum test was used to compare groups. The categorical variables and ordinal variables were described by frequency and composition ratio. The χ2 test, the Fisher exact probability method and the rank sum test were used for statistical analysis. The non-normal distributed measurement data, the categorical variables and ordinal variables with repeated measurement data was analyzed using the generalized estimating equations. All p values were from 2-sided tests with a significance level of < 0.05. Safety analysis was performed based on the safety analysis set.
+
+Ethical considerations
+
+Ethical approval was granted by the Ethics Committee of First Teaching Hospital of Tianjin University of Traditional Chinese Medicine (Ethics Reference No: TYLL2016[K]NO.007). All the participants will be given and signed written consent form before being recruited into our study. The study was conducted in accordance with the Declaration of Helsinki and applicable data protection legislation.
+
+Results
+
+Participants and baseline characteristics
+
+480 eligible patients were included, and 109 patients dropped out, with reasons illustrated in Figure 1. Eventually, 371 patients, including 182 in the adjunctive acupuncture group and 189 in the basic treatment group, completed the trial (Figure 1). The demographic characteristics of the 371 completed participants are presented in Table 1. The baseline information has no statistical differences (p > 0.05).
+
+CONSORT 2010 flow diagram.
+
+Baseline demographic and clinical characteristics of the included participants.*
+
+*EG, experimental group; CG, control group.
+
+Primary outcome
+
+The modified intention-to-treat analysis showed stroke recurrence in 5 of 212 participants (2.4, 95% CI [0.80–5.40]) in the adjunctive acupuncture group versus 7 of 224 participants (3.1, 95% CI [1.30–6.30]) in the basic treatment group (p = 0.63), with no statistically significant difference (Table 2). Similar results were observed in the sensitivity analyses (Supplementary Table 2).
+
+Recurrence rate of stroke.
+
+Secondary outcomes
+
+24-h ambulatory blood pressure
+
+After 6-week treatment and 12-week treatment, the participants in both groups had a reduction of the BP value in 24 h SBP and DBP, daytime SBP and DBP, as well as nighttime SBP and DBP (p < 0.001, for all comparisons), while there were no statistical differences between groups (p > 0.05, for all comparisons) (Table 3). Similar results were observed in the sensitivity analyses (Supplementary Table 3).
+
+Comparison of the 24-h ambulatory blood pressure between 2 groups and baseline.*
+
+*Pgroup, the p-value for between-group comparisons; Ptime, the p-value for the time effect.
+
+The bold values mean p < 0.05.
+
+After 6 and 12-week treatment, the BP load in daytime and nighttime was significantly lower in both two groups (p < 0.001, for all comparisons) while there were no statistical differences between groups (p > 0.05, for all comparisons). No statistical differences between groups were found in the morning BP surge variety follow treatment time (p > 0.05). For the BP circadian rhythm, there is a higher participant proportion of dipper DBP pattern in the adjunctive acupuncture group compared with the basic treatment group (p = 0.01), while no statistical differences were observed in participant ratio of the dipper SBP (p > 0.05).
+
+Home blood pressure monitoring
+
+The results showed that the SBP, DBP, and pulse pressure differences were reduced in BP value over time (p < 0.001, for all comparisons). No significant difference was found in BP value between groups (Table 4; Supplementary Figure 1).
+
+Comparison of the home blood pressure monitoring (mmHg) between 2 groups.*
+
+*Pgroup, the p-value for between-group comparisons; Ptime, the p-value for the time effect.
+
+The bold values mean p < 0.05.
+
+Clinical scales
+
+Clinical scale assessments were performed after 6-week and 12-week treatment, using TCM syndrome Scale, SF-36, NIHSS, and the BI (Supplementary Table 4). There were no statistical differences between groups in TCM syndrome scores, NIHSS, and BI between groups. Compared with the baseline, the score of each sub-item in SF-36 in each group increased after 12-week treatment, with statistical differences between baseline in physical functioning, role-physical, pain, general health, vitality, social functioning, role-emotional, and mental health (p < 0.001). There were no statistical differences between groups in pain, general health, vitality, role-emotional, and mental health, and control group showed higher scores in physical functioning (p = 0.01), role-physical (p = 0.01), and social functioning (p = 0.01).
+
+Ultrasound examination
+
+Ultrasound examinations were conducted after 12-week treatment (Supplementary Table 4). For the outcome of cardiac ultrasound, no statistical differences were found in left ventricular ejection fraction, Left atrial diameter, and the percentage of participants with mitral valve E/A ≤ 1 between groups (p > 0.05).
+
+For the outcome of carotid artery ultrasound, no statistical differences were found in the between-group comparisons of the internal diameter of carotid artery vessel, peak carotid vascular velocity, and carotid artery vascular resistance indices in bilateral common carotid artery, left internal carotid artery, and right internal carotid artery (RICA) (p > 0.05 for all comparisons), except for the carotid artery vascular resistance of RICA, of which the adjunctive acupuncture group decreased with statistical difference compared with basic treatment group (p = 0.03 < 0.05). There was no statistical difference between groups in both sides intima-media thickness (left side: p = 0.76 > 0.05; right side: p = 0.75 > 0.05).
+
+As for the transcranial doppler examination after 12-week treatment, the blood flow velocity of left vertebral artery was lower than basic treatment group with statistical difference (p = 0.02), the blood flow velocity of the bilateral middle cerebral artery, bilateral anterior cerebral artery, bilateral posterior cerebral artery, right vertebral artery, basilar artery did not show significant statistical difference.
+
+Serum test
+
+There were no significant changes between groups in the serum level of Copeptin, endothelin-1, soluble CD40, and nitric oxide. (Copeptin, p = 0.32; endothelin-1, p = 0.65; CD40, p = 0.78; nitric oxide, p = 0.29) (Supplementary Table 5).
+
+Antihypertensive medication
+
+For the antihypertensive medication adjustment, compared with experimental group (10.4, 14.8, 18.1%), the control group (2.6, 2.6, 5.8%) showed a lower withdrawal in antihypertensive medication during the first 6 weeks, week 7 to week 12, and after 12 weeks of treatment (Supplementary Table 6).
+
+Adverse events
+
+There were no statistical difference between groups (p = 0.35). After 12-week treatment and 36-week follow-up, 4 participants (1.66%) had adverse events in the basic treatment group, and 7 (2.93%) occurred in the adjunctive acupuncture group (Supplementary Tables 7, 8).
+
+Discussion
+
+To our knowledge, our study was the largest multicenter RCT to evaluate the long-term efficacy and safety of adjunctive acupuncture for ischemic stroke patients with hypertension. Compared to the basic treatment containing XNKQ acupuncture, adjunctive acupuncture therapy did not have a superior effect on reducing stroke recurrence in the 1-year follow-up. No group differences in reducing BP were seen. However, more participants in the adjunctive acupuncture group decreased the antihypertensive medication use during the first 6 weeks, week 7 to week 12, and after 12 weeks of treatment. In addition, adjunctive acupuncture therapy was more effective in increasing the dipper DBP proportion and improving RICA, and SF-36 for ischemic stroke patients.
+
+Regarding the primary outcome, the modified intention-to-treat analysis showed stroke recurrence in 5 of 212 participants (2.4, 95% CI [0.80–5.40]) in the adjunctive acupuncture group versus 7 of 224 participants (3.1, 95% CI [1.30–6.30]) in the basic treatment group (p = 0.63), with no statistically significant difference. The relatively low event rate limited our statistical power despite the large sample size. This highlights the challenge of evaluating stroke recurrence in a stable post-stroke population receiving comprehensive medical management, particularly when both groups received active acupuncture interventions. Several factors may have contributed to this null finding. First, the one-year follow-up period, whilst adequate for assessing short- to medium-term outcomes, may have been insufficient to capture the full impact of acupuncture on stroke recurrence. Cerebrovascular events often manifest over longer time horizons. Second, our sample size was adequately powered for the anticipated effect size based on previous literature. However, the unexpectedly low event rate in both groups suggests that the trial may have been underpowered to detect clinically meaningful differences in stroke recurrence. Third, all participants received comprehensive medical management, including optimal antihypertensive therapy and secondary prevention strategies. This likely contributed to the overall low recurrence rate, potentially masking any incremental benefit of adjunctive acupuncture. This study carried out the longest follow-up on the efficacy of acupuncture in lowering BP. Previous clinical studies have suggested the short-term anti-hypertension effect of acupuncture (21, 22, 27–29). In this study, systolic and diastolic BP in the morning, 24 h, daytime, and night time were reduced after treatment in both groups. Moreover, the effects of the BP reduction persisted in both groups through the 36-week follow-up period after acupuncture intervention. It might be related to the potential antihypertension effect of the XNKQ acupuncture therapy, which is included in the basic treatment. The acupoints in XNKQ acupuncture therapy, such as SP6, were also found in the previous antihypertensive acupuncture therapy (30). Different from our results, a previous study (21) showed that the antihypertensive effect would disappear after cessation of acupuncture treatment, and BP would return to the pre-acupuncture level. The inconsistency might be related to the higher frequency of acupuncture and the longer duration of treatment in our study. Our previous study (31) also suggested that manipulation parameters and acupoint selection could affect the antihypertensive effect of acupuncture.
+
+BP circadian rhythm is highly associated with cardiovascular and renal homeostasis, the disruption of which could contribute to adverse cardiovascular events (32). The dipper pattern of BP circadian rhythm refers to the fact that nighttime BP values are lower than daytime BP values by 10–20%, and the absence of a dipper pattern, non-dipper, is considered abnormal (33–35). The dipper pattern can independently predict mortality and cardiovascular events in hypertensive patients (36). Non-dipper is a common pattern of hypertension and is associated with increased cardiovascular disease risk (37–39). In our study, adjunctive acupuncture therapy increased the proportion of the participants with dipper DBP, thereby improving the BP circadian rhythm. Yancui Sun et al. also suggested that arterial stiffness and endothelial dysfunction were correlated with the abnormal circadian rhythm of BP (40). In our study, the proportion of participants with dipper DBP pattern increased from 28.4 to 45.6% in the adjunctive acupuncture group versus 28.7 to 31.8% in the basic treatment group at 48 weeks (p = 0.01). This represents clinically meaningful improvement, as restoration of normal circadian rhythm has been associated with reduced cardiovascular event risk in hypertensive populations (41). The conversion from non-dipper to dipper pattern may contribute to cardiovascular protection independent of absolute blood pressure reduction.
+
+In addition, this study also suggested that adjunctive acupuncture group had superior benefits in reducing the resistance index of RICA than basic treatment group, indicating that HXSF acupuncture can help improve carotid blood flow. The resistive index of ICA is a predictor of cardiovascular mortality and morbidity (42). Stroke patients appeared to have larger common carotid artery diameters, lower carotid flow velocities and volume, and higher resistance index than non-stroke patients independently of extracranial carotid atherosclerosis (43). Adjunctive acupuncture might improve vascular dysfunction and protect the target organs by regulating the BP rhythm. The observed reduction in RICA resistance index (p = 0.03), whilst modest, may have clinical significance. Altered carotid hemodynamics have been associated with adverse cerebrovascular outcomes (44), suggesting that the improvement we observed may reflect enhanced cerebral perfusion.
+
+Moreover, adjunctive acupuncture is more effective in improving the quality of life of ischemic stroke patients with hypertension. It had superior benefits in improving the score of SF-36, the most widely used generic instrument for measuring the quality of life (45) in the domains of physical functioning, role-physical, pain, general health, vitality, social functioning, role-emotional, and mental health. The apparent discrepancy between improved SF-36 scores and unchanged NIHSS/BI scores warrants clarification. NIHSS and BI primarily assess acute stroke severity and basic activities of daily living, which may lack sensitivity for detecting subtle improvements in chronic stroke recovery. In contrast, SF-36 captures broader health-related quality of life dimensions. Our findings suggest that whilst adjunctive acupuncture may not alter gross neurological function, it may enhance patients’ perceived physical capacity and reduce activity limitations. However, we acknowledge that we did not assess whether the observed SF-36 changes reached the minimum clinically important difference, which has been estimated at 1.8–3.0 points for the Physical Component Summary in stroke patients (46, 47).
+
+Hypertension is one of the most prevalent risk factors for stroke (2, 48). A previous randomized trial of 6,105 individuals with previous stroke or transient ischaemic attack showed annual stroke recurrence rates of 2.7% with perindopril plus indapamide treatment versus 3.8% with placebo (49). Although it may be caused by the difference in the population or basic treatment between these two studies, the first-year stroke recurrence rate in both groups in our study is lower than that of the previous study. Ming-Cheng Huang et al. also suggested that acupuncture might have a beneficial effect on reducing the risk of stroke in patients with fibromyalgia (50). The effect of reducing stroke recurrence might be related to the decreased BP in both groups, and the basic treatment containing XNKQ acupuncture’s effect on improving the level of neurotransmitters and cerebral blood flow perfusion and stroke rehabilitation (51–53). Although adjunctive acupuncture may have potential benefits in improving circadian rhythm, carotid blood flow, quality of life, and lowering the use of antihypertension medication, it did not present a superior effect on reducing stroke recurrence in the 1-year follow-up. Further clinical studies with extended follow-up periods and a control group without acupuncture intervention or sham acupuncture are recommended to further explore the efficacy of acupuncture in reducing stroke recurrence.
+
+ST9 is the key acupoint for HXSF acupuncture, located at the pulsation of the carotid artery, the deep part of which is the carotid sinus. The stimulation of carotid sinus stimulators may engage baroreflex afferent activity to govern efferent sympathetic and parasympathetic activity, thereby controlling the BP (54). This mechanistic hypothesis provides a potential explanation for our observed improvements in BP circadian rhythm (increased dipper DBP pattern) and reduced carotid artery resistance index, as baroreceptor-mediated autonomic modulation could theoretically restore physiological BP variation and improve vascular function. A previous study suggested that acupuncture at ST9 could significantly lower the BP of spontaneously hypertensive rats and affect their hypothalamic gene expression profile (55). More participants in the adjunctive acupuncture group decreased the antihypertensive medication use during the first 6 weeks, week 7 to week 12, and after 12 weeks of treatment. It indicates that compared with basic treatment, adjunctive acupuncture therapy may have superior effects on reducing BP, which is consistent with our previous, small-sample, single-center studies on HXSF acupuncture (56, 57). However, as this clinical trial measured patient outcomes rather than direct mechanistic endpoints, we cannot definitively establish causal pathways. The associations between ST9 acupuncture and physiological improvements remain hypothesis-generating, and dedicated mechanistic studies with direct measures of autonomic function, neurohormoral markers, and vascular reactivity are needed to elucidate the biological mechanisms underlying these clinical observations.
+
+Limitations
+
+This study has several limitations. First, although the sample size of this study is relatively large, the dropout rate is still high. Due to the impact of Corona Virus Disease 2019, some patients could not go to the hospital to complete the intervention and follow-up. There are 109 patients who withdrew from the study, which may influence the stability of the study results. The 22.7% attrition rate (109 of 480 participants), partly due to COVID-19-related restrictions, may affect the generalizability of our findings. Although modified intention-to-treat analysis was employed to minimize attrition bias, the higher-than-anticipated loss to follow-up could potentially introduce selection bias and limit the external validity of our results, particularly for the long-term stroke recurrence outcome. Second, the basic treatment of our study includes a basic acupuncture therapy for stroke rehabilitation, XNKQ acupuncture. As XNKQ acupuncture is a common and basic treatment for stroke complications in China, it’s hard to exclude it from the basic treatment of stroke. However, this active control design reduces the ability to detect treatment differences, as both groups received interventions that may independently contribute to stroke prevention. This limitation is particularly relevant for interpreting the negative primary outcome, as we evaluated the incremental effect of HXSF over XNKQ rather than the overall efficacy of acupuncture versus no treatment. Further clinical studies with blank or placebo control are still needed to explore acupuncture efficacy in reducing stroke recurrence. Since the multiple analyzed secondary outcomes (e.g., blood pressure parameters, SF-36 subscales) were pre-specified and non-confirmatory, a unified adjustment for multiple comparisons was not performed. Thus, the results of these analyses should be interpreted with caution. Finally, although the follow-up period of this study is fairly long compared to other clinical studies of acupuncture therapy for hypertension, a further extended follow-up period is recommended to evaluate stroke recurrence.
+
+Conclusion
+
+Compared to basic treatment containing XNKQ acupuncture, adjunctive HXSF acupuncture did not demonstrate a superior effect on reducing stroke recurrence at 1-year follow-up. Whilst adjunctive acupuncture was associated with improvements in several secondary outcomes, including dipper diastolic blood pressure pattern, RICA resistance index, quality of life measures, and reduced antihypertensive medication use, these findings should be interpreted cautiously given the negative primary outcome and the modest magnitude of some observed effects. Further research is needed to establish the clinical significance of these secondary findings.

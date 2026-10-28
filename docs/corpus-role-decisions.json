@@ -1,0 +1,18 @@
+{
+  "ZH-PMC13425199": {
+    "corpusRole": "excluded",
+    "reason": "Oligosaccharide preparation and characterization, without a cardiovascular study objective; retained outside default retrieval."
+  },
+  "EN-PMC3521464": {
+    "corpusRole": "excluded",
+    "reason": "Insomnia prescribing patterns, not cardiovascular syndromes; full text retained for audit."
+  },
+  "EN-PMC4477207": {
+    "corpusRole": "excluded",
+    "reason": "Depression prescribing patterns, not cardiovascular syndromes; full text retained for audit."
+  },
+  "EN-PMC12982435": {
+    "corpusRole": "excluded",
+    "reason": "Generic AI health-education multimorbidity protocol; cardiovascular-focused TCM intervention is not established."
+  }
+}

@@ -1,0 +1,197 @@
+Introduction
+
+Cardiovascular diseases (CVDs) have become a leading cause of death and disability globally in recent years [1]. CVDs are associated with damage to the heart and blood vessels. According to the World Health Organization, 85 % of the associated deaths were attributed to heart attacks and strokes in 2022. Individuals with chronic kidney disease (CKD) have an increased risk of developing CVD relative to the general population due to electrolyte imbalances, anemia, proteinuria, and hemodynamic factors [2].
+
+Irreversible reductions in the estimated glomerular filtration rate (eGFR) and higher proteinuria substantially increase the risks of major adverse cardiac events (MACEs) and death, especially in patients with an eGFR below 60 mL/min/1.73 m2 [3]. Stage 5 CKD (eGFR: under 15 mL/min/1.73 m2) is associated with an up to three times higher risk of MACEs than stage 3a CKD (eGFR: 45–59 mL/min/1.73 m2) [4].
+
+The prevention of CVDs through exercise, lifestyle changes, and dietary modification is crucial. Furthermore, traditional herbal medicines are often used to prevent or treat CVDs in Asian countries. In Taiwan, 45.3 % of CKD patients use Chinese herbal medicine (CHM) covered by the National Health Insurance (NHI) program [5]. Some studies suggest that non-aristolochic acid-containing CHM usage can delay the progression of CKD and decrease the risk of mortality [5–8]. However, CHMs are generally high in potassium and phosphorus ions [9]. However, evidence regarding the effect of CHM on cardiovascular risk in CKD patients remains limited.
+
+The purpose of this study was to use the Taiwan NHI Research Database (NHIRD) to evaluate whether CHM reduces MACEs that involve hospitalization, here defined as the hospitalization rates of MI, HF, IS, and cardiovascular death in patients with CKD. In addition to the cardiovascular death, the risk of all-cause mortality was also evaluated.
+
+Methods
+
+2.1. Data source
+
+This study was conducted using data collected from the Taiwan NHIRD, which covers over 99 % of the Taiwanese population. Data were obtained from the Longitudinal Generation Tracking Database 2000 (LGTD 2000), which is a subset of the NHIRD. LGTD 2000 randomly selected two million individuals from NHIRD and is considered to be a representative sample as it exhibits similar demographics and healthcare usage distribution as NHIRD. This study was approved by the Institutional Review Board of the China Medical University Hospital, Taiwan (IRB No: CHUH112-REC2-005). Since de-identified data were used, the requirement for informed consent was waived. This study followed the Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) reporting guidelines.
+
+2.2. Study cohort
+
+We included patients with CKD aged over 20 years between January 1, 2000 and December 31, 2016 in our study. CKD was diagnosed according to the International Classification of Diseases-9th Revision (ICD-9) codes 582, 583, 584, 585, 586, and 587.
+
+Patients were categorized into CHM or non-CHM groups according to their utilization of CHM. A procedure involving 1:1 propensity score matching of participants was conducted according to participant age, sex, monthly income, comorbidities, and medication. All patients were followed up until Dec 31, 2017, deaths, or withdrawals from the NHI program.
+
+During the follow-up period, participants were divided into three groups according to the average number of days of CHM usage per year (less than 30 days, 31–90 days, and more than 90 days) to investigate whether CHM is associated with a duration-dependent effect.
+
+The exclusion criteria were as follows: patients with major illness or injury records on the Taiwan Registry for Catastrophic Illness who were admitted for dialysis; patients younger than 20 years on the index date; CHM prescription before the index date; diagnosis of malignancy during the baseline observation and follow-up periods; and the presence of a previously diagnosed MI, HF, and IS or cardiovascular events within one year from the initial diagnosis date of CKD. The study participants were tracked for cardiovascular outcomes until December 31, 2017.
+
+2.3. Covariates and end points
+
+The occurrence of a MACE during the follow-up period was the primary outcome of this study. MACEs included cardiovascular mortality and cardiovascular events, which were defined as the rate of hospitalization due to HF, MI, and IS. We adopted the in hospital healthcare database to ensure inpatients had a discharge diagnosis of ICD-9-CM codes 410.X (acute MI), 428 (congestive heart failure), and 433.xx, 434.xx (IS). Cardiovascular mortality was defined according to ICD-10 codes: I01–I99. The inpatient records of the NHIRD were used to confirm that CVD was the cause of death during their hospitalization. All-cause mortality was defined as the patient being withdrawn from the NHI program.
+
+Additionally, CKD diagnosis had to be made initially by a physician since CKD stage and laboratory data could not be obtained from the database. We used diagnostic codes and drug types used by patients to distinguish disease severity. Comorbidities including diseases of the circulatory system, endocrine and metabolic diseases, and other diseases were recorded. Medications included α-blockers, β-blockers, calcium channel blockers (CCBs), angiotensin-converting enzyme inhibitors (ACEIs) or angiotensin receptor blockers (ARBs), diuretics, digoxin, nitrates, anticoagulants, aspirin, statins, antihyperglycemic agents, insulin and erythropoiesis-stimulating agent (ESA).
+
+2.4. Statistical analysis
+
+We used the chi-square test for categorical variables, which are shown as frequencies (percentages). All continuous variables were tested using the nonparametric Wilcoxon rank-sum test, and the data are reported as the median (interquartile range). First, we adopted univariable logistic regression. The Cox proportional hazards model with adjustments for confounders was further conducted to analyze the association between MACEs and CHM. The confounding variables included age, sex, comorbidities, medications, monthly income, and urbanization level. Odds ratios (ORs) and 95 % CIs were estimated. The Kaplan–Meier method was used to estimate survival over time and cumulative incidence of hospitalization. All analyses were performed using SAS, version 9.4 (SAS Institute Inc), and R software, version 3.5.1 (R Foundation for Statistical Computing, Vienna, Austria). Two-tailed tests with P < 0.05 were considered statistically significant.
+
+Results
+
+From the 2 million individuals in the LGTD 2005, 117,694 were eligible based on a first-time physician diagnosis of CKD. A total of 75,165 patients were excluded due to the following: (1) being younger than 20 years of age; (2) MACEs occurring before the diagnosis of CKD; (3) a history of cancer; and (4) entering dialysis during the follow-up period. Furthermore, 5793 patients were excluded for the using CHM fewer than three times. Among the 36,736 remaining patients, 18,062 were treated only with Western medicine, and 18,674 patients used CHM and Western medicine concurrently. Fifty percent of CKD patients used CHM in this study. After 1:1 propensity score matching was conducted based on age, sex, comorbidities, and medication, a total of 6351 participants were included in each group for follow-up until Dec 31, 2017 (Fig. 1). The demographic characteristics of the patients in this study are presented in Supplementary Table 1 (https://www.biomedicinej.com/cgi/editor.cgi?window=additional_files&article=1699&context=biomedicine). We identified 36,736 patients for follow-up, including 17,099 females (46.5 %) and 19,637 males (53.5 %). The prevalence of CKD was observed to increase with age.
+
+Participant inclusion flowchart using the 2000 version of the Taiwan National Health Insurance Database. Patients with newly diagnosed chronic kidney disease were included, and their cardiovascular mortality rate and incidence of hospitalization for cardiovascular events were tracked until the end of 2017. Abbreviations: CKD: chronic kidney disease, LGTD 2000: Longitudinal Generation Tracking Database 2000, CHM: Chinese herbal medicine.
+
+Among CKD patients that used CHM, female, middle-aged (40–59 years) patients living in the city and classified as middle socioeconomic status had the highest ratio of CHM users. The 1:1 matching of participants was conducted according to the participant’s age, sex, comorbidities, income, and medication history. There were no significant differences between the two groups after matching (Table 1). During the follow-up period, the CHM group had a significantly lower crude hazard ratio (HR) of hospitalization for MI (0.35; 95 % CI: 0.27, 0.46; P < 0.001) than the non-CHM group. In addition, the CHM group had a significantly lower crude HR of hospitalization for IS (HR: 0.30; 95 % CI: 0.25, 0.36; P < 0.001) and hospitalization for HF (HR: 0.35; 95 % CI: 0.29, 0.41; P < 0.001) than the non-CHM group. Crucially, the HRs of cardiovascular death (HR: 0.37; 95 % CI: 0.31, 0.45; P < 0.001) and all-cause mortality (HR: 0.28; 95 % CI: 0.26, 0.30; P < 0.001) were significantly lower in the CHM group.
+
+Demographic characteristics of patients, including sex, age, financial status, urbanization level, comorbidities, and drug use after 1:1 matching.
+
+Abbreviations: CCB: calcium channel blocker, ACEI: angiotensin-converting enzyme inhibitor, ARB: angiotensin II receptor blocker, AGI: alpha-glucosidase inhibitor, DPP4: dipeptidyl peptidase 4 inhibitor, TZD: thiazolidinedione, SGLT2i: sodium-glucose co-transporter 2 inhibitor; GLP1RA: glucagon-like peptide-1 receptor agonist, ESA: erythropoiesis-stimulating agent.
+
+After adjusting for all covariates associated with MACEs, the fully adjusted HR of hospitalization for MI in the CHM group was 0.31 (95 % CI: 0.24, 0.41; P < 0.001). The adjusted HR of hospitalization for IS was 0.25 (95 % CI: 0.2, 0.3; P = 0.01). The adjusted HR of hospitalization for HF was 0.28 (95 % CI: 0.24, 0.33, P < 0.001). The adjusted HR of cardiovascular death was 0.29 (95 % CI: 0.24, 0.36; P < 0.001). The adjusted HR of all-cause mortality was 0.23 (95 % CI: 0.21, 0.25; P < 0.001) (Table 2).
+
+Comparison of the hazard ratios for MACE-related hospitalization and mortality rates between the non-CHM group and CHM group in patients with CKD.
+
+Abbreviations: CHM, Chinese herbal medicine; Crude HR, crude hazard ratio; 95 % CI, 95 % confidence interval.
+
+We also conducted an herbal accumulative dose analysis. With the increase in cumulative days of CHM use, the adjusted HR decreased slightly in MACE-related hospitalization and mortality rates in patients with CKD.
+
+The Chinese herbal products most frequently prescribed by TCM doctors for treating CKD patients at risk of MACEs are presented in Supplementary Table 2 (https://www.biomedicinej.com/cgi/editor.cgi?window=additional_files&article=1699&context=biomedicine) (single herbs) and Supplementary Table 3 (https://www.biomedicinej.com/cgi/editor.cgi?window=additional_files&article=1699&context=biomedicine) (Chinese herbal formulas). Ji-Sheng-Shen-Qi-Wan (JSSQW) was the most frequently prescribed Chinese herbal product, followed by Ma-Zi-Ren-Wan (MZRW), Tian-Wang-Bu-Xin Dan (TWBXD), Zhi-Gan-Cao-Tan (ZGCT) and Zhi-Bai-Di-Huang-Wan (ZBDHW). The most commonly used single-herb TCMs included Danshen (Salviae Miltiorrhizae), Dahuang (Rheum officinale, Rheum palmatum), Huangqi (Astragalus membranaceus), Cheqianzi (Plantago asiatica), and Heshouwu (Polygonum multiflorum Thunb.).
+
+Since Danshen and JSSQW were the most frequently prescribed single herb and Chinese herbal formula, we compared the HRs of MACEs between Danshen and JSSQW in patients with CKD. Danshen and JSSQW had significant effects on the risk of all-cause mortality. The adjusted HRs were 0.38 (95%CI: 0.23, 0.64; P < 0.001) and 0.39 (95 % CI: 0.25, 0.62; P < 0.001), respectively. JSSQW reduced the risk of hospitalization for HF in patients with CKD(HR: 0.34; 95 % CI: 0.14, 0.85; P < 0.001) (Table 3).
+
+Comparison of hazard ratios of MACE-related hospitalization and mortality rates between Danshen and Ji-Sheng-Shen-Qi-Wan in patients with chronic kidney disease.
+
+Abbreviations: CHM, Chinese herbal medicine; Crude HR, crude hazard ratio; 95 % CI, 95 % confidence interval.
+
+During follow-up, Kaplan–Meier analysis revealed that the CHM group had a significantly lower cumulative incidence of hospitalization for MI than the non-CHM group (log-rank test; P < 0.0001), as depicted in Fig. 2a. The results presented in Fig. 2b and c reveal that the integrated group had a significantly lower cumulative incidence of hospitalization for IS and HF than the non- CHM group (log-rank test; P < 0.0001). Fig. 2d and e reveal that CHM treatment was significantly associated with a lower risk of cardiovascular death and all-cause death in CKD patients (log-rank test; P < 0.0001). Theoretically, the incidence of non-CVD accidents should be independent of CHM treatment during the follow-up period. A sensitivity test was conducted to test the incidence of traffic accidents between two groups, and the results showed that there was no impact of CHM usage on traffic accidents in patients with CKD (data not shown). Overall, Chinese herbal medicine treatment is associated with a reduced risk of long-term major adverse cardiac events in patients with chronic kidney disease (Fig. 3).
+
+Kaplan–Meier plots showing the cumulative incidence of hospitalization and death due to the following major adverse cardiovascular events: (a) myocardial infarction, (b) ischemic stroke, (c) heart failure, (d) cardiovascular death, and (e) total death in patients with chronic kidney disease (solid line: patients only using Western medicine; dotted line: patients using Western medicine and Chinese herbal medicine concurrently.
+
+A graphical summary illustrating that Chinese herbal medicine treatment is association with a reduced risk of long-term major adverse cardiac events in patients with chronic kidney disease.
+
+Discussion
+
+This is the first large-scale, population-based, retrospective cohort study to investigate the association between CHM and MACEs in patients with CKD. This study indicates that in patients with moderate to severe renal disease, the integration of CHM into the treatment approach can reduce cardiovascular events. Furthermore, cardiovascular death decreased significantly as the cumulative number of days of CHM use increased.
+
+CKD is an important independent risk factor for CVDs, along with age, sex, and the co-occurrence of hypertension, diabetes, and/or hyperlipidemia [10]. Therefore, factors such as age, sex, comorbidities, and medication usage were adjusted to eliminate possible interference factors in this study. Additionally, we adjusted for the salary range and urbanization level to decrease the influence of socioeconomic status on MACEs [11].
+
+CKD patients are at a high risk of experiencing cardiovascular events, and the increase in the severity of CKD leads to an increase in cardiovascular events and hospitalization risk [3]. However, CKD stage and laboratory data could not be obtained from the NHI database, we tried to use other information as surrogate disease severity markers. Patients who were admitted for dialysis were excluded using injury records from the Taiwan Registry for Catastrophic Illness. We used diagnostic codes to ensure that included participants had an estimated glomerular filtration rate (eGFR) below 60 mL/min/1.73 m2 and had not received dialysis treatment.
+
+One of the key pieces of information is the type of prescribed medication, which could be used to distinguish the severity of CKD. For example, metformin has been contraindicated in patients with impaired kidney function due to the risk of lactic acidosis [12], and the ESA is prescribed for patients with a serum creatinine level of >6.0 mg/dL and hematocrit of <28 % under the NHI program in Taiwan. These parameters are approximately equivalent to stage 5 CKD [13,14].
+
+For individuals with CKD, the management of blood pressure, blood sugar, and cholesterol is important for reducing CVD risk. There are favorable or unfavorable cardiovascular effects associated with different medications. Renin-angiotensin system (RAS) inhibitor therapy and CCBs may offer similar cardiovascular protection in patients with advanced CKD [15]. There is a strong association between insulin treatment with the risk of MACEs in type 2 diabetes mellitus (T2DM) patients [16]. In contrast, sodium/glucose cotransporter 2 (SGLT2) inhibitors may ameliorate CVD risk in T2DM patients with an eGFR of 30 to <90 mL/min/1.73 m2 [17]. Therefore, we adjusted for the variables in the drug category to minimize heterogeneity in the two study groups.
+
+To better assess the potential long-term effects of CHM on MACE-related hospitalizations, we used average annual CHM exposure as the primary criterion, rather than simply relying on cumulative days of use. Including individuals with fewer than 30 days of CHM use per year may attenuate the observed treatment effect. However, our analysis stratified patients by cumulative annual exposure, which allowed us to explore a potential dose-response relationship. Among the 6351 patients in the CHM group, 38.9 % used CHM for fewer than 30 days per year, 27.8 % used it for 30–60 days annually, and 33.2 % used it for more than 90 days per year. This distribution supports the possibility of a dose-dependent association between CHM use and cardiovascular outcomes.
+
+From this study, we observed that the use of CHM significantly reduced the incidence of all cardiovascular events, including the hospitalization rates for MI, HF, and IS in CKD patients. Additionally, CHM use significantly reduced not only the total mortality rate but also cardiovascular death. Moreover, the escalation in cumulative days of CHM usage demonstrated a noteworthy impact in lowering the occurrence of MACEs.
+
+Previous studies have reported that middle-aged patients most frequently use CHM in Taiwan [18]. In our study, 45.5 % of CKD patients taking CHM were between 40 and 59 years of age. Due to several lifestyle factors such as a different social culture, work schedule, work stress, and excessively long working hours, the incidence of cardiovascular events is higher among Taiwanese workers aged 45–55 [19]. In other words, an age effect that associates middle-aged workers in Asia with an increased cardiovascular risk due to work stress is observed [20]. Therefore, the present study observed middle-aged patients with declining renal function and continued to track them for many years.
+
+In the population-based study, CHMs targeting CKD and MACEs included Danshen (Salviae Miltiorrhizae), Dahuang (Rheum officinale, Rheum palmatum), Huangqi (Astragalus membranaceus), Cheqianzi (Plantago asiatica), and Heshouwu (Polygonum multiflorum Thunb.). The most commonly used herbal medicines are JSSQW, MZRW, TWBXD, ZGCT, and ZBDHW.
+
+Danshen is widely used for cardiovascular and cerebrovascular diseases and to alleviate kidney and liver-related diseases [21]. The combination of Danshen and aspirin or clopidogrel and can influence metabolic pathways, including those involved in lipid metabolism, phospholipid metabolism, and hemorheology [22,23]. Danshen, when used as an add-on antihypertensive therapy, reduces systolic blood pressure in Taiwanese patients with uncontrolled hypertension [24].
+
+Huangqi has antioxidative, antihyperglycemic, and immune-regulating effects and is often used in remediating diabetic nephropathy with proteinuria. It has a two-way regulating effect on blood pressure [25], which can prevent myocardial ischemia and myocardial hypertrophy and delay the course of HF [26]. Huangqi combined with antihypertensive drugs is more effective in improving systolic blood pressure, microalbuminuria, and serum creatinine [27].
+
+Heshouwu has antihyperlipidemic, antiatherosclerotic, antioxidant, and anti-inflammatory effects [28]. The active ingredient of Heshouwu, tetrahydroxystilbene glucoside, can alleviate cerebral ischemic injuries and pressure overload-induced cardiac remodeling [29,30].
+
+Due to reduced erythropoietin production and iron deficiency, patients with moderate to severe CKD always suffer from anemia [31]. Anemia is associated with increased cardiovascular mortality in CKD patients [32]. Danshen and Huangqi are widely known CHMs in Asia. Both herbs are used for the associated protective effects against anemia-related mortalities [33].
+
+JSSQW and Danshen are used extensively in CKD, and they can improve the long-term survival rate of patients [8]. JSSQW has a diuretic and inotropic effect. TCM physicians often prescribe JSSQW for patients with HF and predialysis nephropathy [34]. Fuzi (Aconitum carmichaelii) in JSSQW can improve left ventricular ejection fraction (LVEF) and lower plasma N-terminal pro B type natriuretic peptide (NT-proBNP). In addition, it can improve overall quality of life and reduce the rate of HF–related readmission [35].
+
+ZGCT combined with antiarrhythmic drugs had a significant effect on improving premature ventricular contractions and bradycardia [36,37]. Moreover, ZGCT combined with Western medicine was shown to have a stronger therapeutic effect on LVEF and NT-proBNP in patients with chronic HF than Western medicine alone [38]. Previous studies indicate that ZGCT and Danshen are not only the most frequently used prescriptions for patients with HF in Taiwan but are also used by patients after being discharged from the hospital for acute MI [39,40].
+
+Although the use of CHM to prevent MACEs in patients with CKD remains controversial, this population-based study in Taiwan suggests that combining Western medicine with CHM may be associated with cardiovascular benefits to cardiovascular health in patients with CKD. Specifically, this combination can prevent hospitalization due to cardiovascular events and reduce cardiovascular mortality. The participants we included had a high prevalence of comorbid hypertension (52.6 %) and hyperlipidemia (43.3 %). The combined use of CHM may potentially improve the severity of blood pressure and lipid levels, leading to better outcomes. However, because of the multiple active components of CHM and the possible synergistic pharmacological effects of combining CHM and Western medicine, rigorous clinical trials are required to confirm the cardioprotective effects of CHM in patients with moderate to severe CKD.
+
+This study had some limitations. First, CKD stage, laboratory data, biopsy or ultrasound could not be obtained from the Taiwan health insurance database. We are unable to identify the stage of chronic kidney disease in patients or determine the exact cause of chronic kidney disease, such as glomerulonephritis, autoimmune disease, UTIs, PKD, etc. Due to the unknown actual cause of the disease and the unavailability of clinical parameters such as the severity of proteinuria, patient GFR, blood pressure, blood glucose, and blood lipid levels, disease severity among patients was distinguished based on diagnostic codes, major injury codes, and drug types. Therefore, the severity of chronic kidney disease between the two groups of patients is comparable. We carefully drew conclusions while acknowledging the study’s limitations. Moreover, these items were reviewed by the NHI Administration, thus increasing the rigor of this research. Second, because we did not have information on the patient lifestyle, we assigned lifestyle classifications based on salary range and urbanization level. Third, some studies suggest that CHM users exhibit increased health-seeking behaviors. In the current study, we could not determine whether the CHM group had a lower occurrence of risk factors for cardiovascular events, such as alcoholism, smoking, obesity, or higher levels of daily exercise. Fourth, we discussed that common comorbidities in chronic kidney disease patients, combined with the use of CHM, may affect the incidence of MACEs. However, mental health disorders, infections, or poor compliance may affect cardiovascular health. Selection bias may be present in the model. A more rigorous prospective cohort study needs to be conducted to confirm the effect of CHM intervention.
+
+Conclusions
+
+Combining conventional Western medicine with CHM for patients with CKD may reduce long-term MACEs, including the hospitalization rate for cardiovascular events such as CHF, MI, IS, cardiovascular death, and all-cause mortality. Further clinical trials based on these findings are warranted.
+
+Supplementary Information
+
+Acknowledgments
+
+During the preparation of this work, the author used ChatGPT (OpenAI) to improve grammar and sentence structure of the manuscript. All sentences generated from the AI tool have been reviewed by the author. After using this tool/service, the author reviewed and edited the content as needed and take full responsibility for the content of the publication. This work was financially supported by the Chinese Medicine Research Center at China Medical University through the Featured Areas Research Center Program of the Higher Education Sprout Project, Ministry of Education, Taiwan. This study was also supported in part by China Medical University Hospital (DMR-107-149, DMR-111-192, DMR-110-002 and DMR-109-193).
+
+Abbreviations
+
+angiotensin-converting enzyme inhibitors
+
+angiotensin receptor blockers
+
+calcium channel blockers
+
+Chinese herbal medicine
+
+confidence interval
+
+chronic kidney disease
+
+cardiovascular diseases
+
+estimated glomerular filtration rate
+
+erythropoiesis-stimulating agent
+
+heart failure
+
+International Classification of Diseases-9th Revision; IS, ischemic stroke
+
+Ji-Sheng-Shen-Qi-Wan
+
+Longitudinal Generation Tracking Database 2000
+
+left ventricular ejection fraction
+
+major adverse cardiac events
+
+myocardial infarction
+
+Ma-Zi-Ren-Wan
+
+crude hazard ratio
+
+National Health Insurance
+
+National Health Insurance Research Database
+
+N-terminal pro B type natriuretic peptide
+
+sodium/glucose cotransporter 2
+
+type 2 diabetes mellitus
+
+Tian-Wang-Bu-Xin Dan
+
+Zhi-Bai-Di-Huang-Wan
+
+Zhi-Gan-Cao-Tang
+
+Funding Statement
+
+This work was financially supported by the Chinese Medicine Research Center at China Medical University through the Featured Areas Research Center Program of the Higher Education Sprout Project, Ministry of Education, Taiwan. This study was also supported in part by China Medical University Hospital, Taiwan (DMR-107-149, DMR- 111-192, DMR-110-002 and DMR-109-193).
+
+Footnotes
+
+Author contributions: YCL and HRY conceptualized the study. CLL performed the statistical analysis. YCL, MYW, CTC, PM and HRY contributed to the interpretation of data. YCL drafted the manuscript and HRY finalized the manuscript.
+
+Ethical statement: This research was reviewed and approved by the institutional review board of China Medical University Hospital, Taiwan (registration number: CHUH112-REC2-005). Informed consent was waived from all participants.
+
+Funding: This work was financially supported by the Chinese Medicine Research Center at China Medical University through the Featured Areas Research Center Program of the Higher Education Sprout Project, Ministry of Education, Taiwan. This study was also supported in part by China Medical University Hospital, Taiwan (DMR-107-149, DMR- 111-192, DMR-110-002 and DMR-109-193).
+
+Conflict of interest: The authors declare that they have no competing interests.
+
+Data availability
+
+The data that support the findings of this study are available within the article and its supplementary material.
+
+References
+
+Associated Data
+
+Supplementary Materials
+
+Data Availability Statement
+
+The data that support the findings of this study are available within the article and its supplementary material.
