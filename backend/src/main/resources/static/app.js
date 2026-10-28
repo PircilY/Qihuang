@@ -301,8 +301,8 @@ async function loadKnowledgeData() {
             ));
             elements.knowledgeCorpus.value = state.activeCorpus;
             elements.workbenchCorpus.value = state.activeCorpus;
-            if (expanded && expanded.documentCount < 100) {
-                elements.knowledgeCorpus.title = `扩充语料当前仅核验 ${expanded.documentCount} 篇全文，未达到 100 篇目标`;
+            if (expanded) {
+                elements.knowledgeCorpus.title = `默认索引 ${expanded.documentCount} 篇全文 / ${expanded.chunkCount} 个片段`;
             }
         }
         const query = `?corpus=${encodeURIComponent(state.activeCorpus)}`;

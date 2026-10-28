@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import pytest
 
@@ -70,7 +71,9 @@ def test_corpora_use_independent_storage() -> None:
     repository.load()
 
     assert repository.chunk_count("BASELINE") == 11
-    assert repository.chunk_count("EXPANDED") == 4036
+    expected = json.loads(expanded.read_text(encoding="utf-8"))
+    assert repository.chunk_count("EXPANDED") == len(expected)
+    assert not {n.node_id for n in repository.nodes("BASELINE")} & {n.node_id for n in repository.nodes("EXPANDED")}
     assert repository.chunk_count("BASELINE") == 11
 
 

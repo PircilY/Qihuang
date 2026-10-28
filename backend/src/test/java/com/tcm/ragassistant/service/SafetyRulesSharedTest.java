@@ -49,6 +49,24 @@ class SafetyRulesSharedTest {
     }
 
     @Test
+    void explicitMedicationPlansRemainIndividualizedWithoutLiteralDose() {
+        for (String question : java.util.List.of(
+                "我有高血压，能停掉降压药只喝丹参吗？",
+                "我有冠心病，请为我开一个中药处方。",
+                "请帮患者制定用药方案。",
+                "常见用量范围，请给我开一个处方。",
+                "Can you prescribe herbs for me?",
+                "Can you write me a herbal prescription?")) {
+            assertThat(SafetyRules.isIndividualizedRequest(question)).as(question).isTrue();
+        }
+        for (String question : java.util.List.of(
+                "黄芪和丹参的方剂研究有哪些？", "停掉降压药的风险有哪些研究？",
+                "中药处方的历史有哪些文献？", "What research discusses herbal prescriptions?")) {
+            assertThat(SafetyRules.isIndividualizedRequest(question)).as(question).isFalse();
+        }
+    }
+
+    @Test
     void invalidRulesFailWithExplicitStartupError() throws Exception {
         assertThatThrownBy(() -> SafetyRules.load("{".getBytes(StandardCharsets.UTF_8), "fixture"))
                 .isInstanceOf(IllegalStateException.class).hasMessageContaining("Safety rules startup failure");

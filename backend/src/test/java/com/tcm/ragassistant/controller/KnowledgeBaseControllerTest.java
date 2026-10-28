@@ -32,6 +32,9 @@ class KnowledgeBaseControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
+    @Autowired
+    private com.tcm.ragassistant.repository.KnowledgeBaseRepository repository;
+
     @Test
     void invalidCorpusIsRejectedAsBadRequest() throws Exception {
         mockMvc.perform(get("/api/v1/knowledge/overview").param("corpus", "unknown"))
@@ -57,8 +60,10 @@ class KnowledgeBaseControllerTest {
                 .andExpect(jsonPath("$.data[0].chunkCount").value(11))
                 .andExpect(jsonPath("$.data[0].frozen").value(true))
                 .andExpect(jsonPath("$.data[1].id").value("EXPANDED"))
-                .andExpect(jsonPath("$.data[1].documentCount").value(100))
-                .andExpect(jsonPath("$.data[1].chunkCount").value(greaterThanOrEqualTo(1)))
+                .andExpect(jsonPath("$.data[1].documentCount").value(
+                        repository.findDocuments(com.tcm.ragassistant.domain.CorpusId.EXPANDED).size()))
+                .andExpect(jsonPath("$.data[1].chunkCount").value(
+                        repository.findAll(com.tcm.ragassistant.domain.CorpusId.EXPANDED).size()))
                 .andExpect(jsonPath("$.data[1].note").value(containsString("不属于 Experiment A")));
         mockMvc.perform(get("/api/v1/knowledge/overview"))
                 .andExpect(status().isOk())

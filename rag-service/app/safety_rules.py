@@ -187,7 +187,14 @@ def is_individualized_request(question: str) -> bool:
     has_person = bool(_matches_any(normalized, personalized["person_terms"]))
     has_action = bool(_matches_any(normalized, personalized["medication_action_terms"]))
     has_dose_or_adjustment = bool(_matches_any(normalized, personalized["dose_or_adjustment_terms"]))
-    return has_person and has_action and has_dose_or_adjustment
+    # Separated verb/object forms still request the same prohibited medication decision.
+    explicit_plan = bool(re.search(
+        r"停(?:掉|用|服|下)?[^药]{0,8}药"
+        r"|(?:给|为|帮)(?:我|本人|患者|家人).{0,8}(?:开|制定).{0,8}(?:处方|药方|用药方案)"
+        r"|(?:prescrib(?:e|ing)|(?:write|give).{0,8}(?:me|my)).{0,40}(?:prescription|medication|herb|formula)",
+        normalized,
+    ))
+    return has_person and ((has_action and has_dose_or_adjustment) or explicit_plan)
 
 
 def is_whitelisted_knowledge_question(question: str) -> bool:

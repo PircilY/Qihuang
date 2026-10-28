@@ -66,7 +66,7 @@ def report(before_path, after_path, grid_path, output):
                    "|语料|切片数|时期|中位数ms|p95ms|", "|---|---:|---|---:|---:|"]
     for label, data in [("改前", before), ("改后", after)]:
         for corpus, metrics in data["latency"].items():
-            count = 11 if corpus == "BASELINE" else 4036
+            count = metrics.get("chunkCount", "未记录")
             performance.append(f"|{corpus}|{count}|{label}|{metrics['medianMs']:.4f}|{metrics['p95Ms']:.4f}|")
     performance += ["", "收益来自变更时缓存分词、全库统计和哈希向量；查询仅分词问题、筛选预存特征、打分候选。"
                     "导入仍需发布新的统计快照；向量查询仍是线性扫描，规模更大时需ANN索引。", "",

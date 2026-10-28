@@ -22,6 +22,10 @@ import java.util.regex.Pattern;
 /** Loads and validates the shared repository-level safety rules. */
 public final class SafetyRules {
     private static final Rules RULES = loadDefault();
+    private static final Pattern EXPLICIT_MEDICATION_PLAN = Pattern.compile(
+            "停(?:掉|用|服|下)?[^药]{0,8}药"
+            + "|(?:给|为|帮)(?:我|本人|患者|家人).{0,8}(?:开|制定).{0,8}(?:处方|药方|用药方案)"
+            + "|(?:prescrib(?:e|ing)|(?:write|give).{0,8}(?:me|my)).{0,40}(?:prescription|medication|herb|formula)");
 
     private SafetyRules() {
     }
@@ -52,8 +56,9 @@ public final class SafetyRules {
     public static boolean isIndividualizedRequest(String question) {
         String normalized = normalize(question);
         return containsAny(normalized, RULES.personTerms())
-                && containsAny(normalized, RULES.medicationActions())
-                && containsAny(normalized, RULES.doseTerms());
+                && ((containsAny(normalized, RULES.medicationActions())
+                && containsAny(normalized, RULES.doseTerms()))
+                || EXPLICIT_MEDICATION_PLAN.matcher(normalized).find());
     }
 
     public static boolean isWhitelistedKnowledgeQuestion(String question) {

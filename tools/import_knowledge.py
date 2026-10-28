@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse
 from terminology_utils import extract_metadata
+from audit_terminology_metadata import render_markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ("title", "sourceType", "publisher", "publicationYear", "licenseNote", "sourceUrl", "content")
@@ -195,6 +196,7 @@ def audit_markdown(import_payload=None):
                 chunk_hits = sum(bool(chunk.get(field)) for chunk in chunks)
                 lines.append(f"- {field}：文档标题 {document_hits}/{len(documents)}（{document_hits/max(1,len(documents)):.2%}）；片段 {chunk_hits}/{len(chunks)}（{chunk_hits/max(1,len(chunks)):.2%}）。")
             lines += ["Disease 使用来源台账 topicTags 并追加标题/片段中词典命中名称。命中结果只表示共享词典名称出现；metadataSource 标示来源台账和/或词典匹配；不是人工标注，可能漏标或误标，不推断疗效、剂量、诊断或医学关系。", ""]
+            lines.append(render_markdown(chunks, documents))
     if import_payload:
         audit = import_payload["import-report.json"]
         counts = Counter(reason for row in audit["filtered"] for reason in row["reasons"])

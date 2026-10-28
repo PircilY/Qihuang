@@ -51,6 +51,28 @@ def test_personalized_refusal_precedes_whitelist_allowlist():
     assert classify_question(question) == "individualized_refusal"
 
 
+@pytest.mark.parametrize("question", [
+    "我有高血压，能停掉降压药只喝丹参吗？",
+    "我有冠心病，请为我开一个中药处方。",
+    "请帮患者制定用药方案。",
+    "常见用量范围，请给我开一个处方。",
+    "Can you prescribe herbs for me?",
+    "Can you write me a herbal prescription?",
+])
+def test_explicit_medication_decisions_without_literal_dose(question):
+    assert classify_question(question) == "individualized_refusal"
+
+
+@pytest.mark.parametrize("question", [
+    "黄芪和丹参的方剂研究有哪些？",
+    "停掉降压药的风险有哪些研究？",
+    "中药处方的历史有哪些文献？",
+    "What research discusses herbal prescriptions?",
+])
+def test_impersonal_research_is_not_prescription_intent(question):
+    assert not is_individualized_request(question)
+
+
 @pytest.mark.parametrize("payload, message", [
     (b"{", "invalid safety-rules.json"),
     (b'{"normalization":{"traditional_to_simplified":{"x":"x"}},"emergency":{},"personalized":{}}',

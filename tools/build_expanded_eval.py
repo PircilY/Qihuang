@@ -37,14 +37,15 @@ def build_samples() -> list[dict]:
             samples.append({"query": variant, "kind": "title", "language": "same-language", "targets": [doc_id], "rule": "title-variant-no-translation", "seed": SEED})
     for doc_id, doc in sorted(docs.items()):
         text = doc["title"] + " " + " ".join(doc["text"])
+        folded = text.casefold()
         hits = []
         for entry in ENTRIES:
             aliases = [entry["zh"], *entry.get("zhAliases", []), *entry.get("en", [])]
-            if any(a and a.casefold() in text.casefold() for a in aliases):
+            if any(a and a.casefold() in folded for a in aliases):
                 hits.append(entry)
         for entry in hits:
             q = entry["zh"]
-            chinese_hit = any(alias and alias.casefold() in text.casefold()
+            chinese_hit = any(alias and alias.casefold() in folded
                               for alias in [entry["zh"], *entry.get("zhAliases", [])])
             samples.append({"query": q, "kind": "term-dictionary",
                             "language": "same-language" if chinese_hit else "cross-language",
@@ -57,9 +58,9 @@ def build_samples() -> list[dict]:
         # Add up to three deterministic two-term combinations per document.
         for left_index, left in enumerate(hits):
             for right in hits[left_index + 1:]:
-                left_zh = any(alias and alias.casefold() in text.casefold()
+                left_zh = any(alias and alias.casefold() in folded
                               for alias in [left["zh"], *left.get("zhAliases", [])])
-                right_zh = any(alias and alias.casefold() in text.casefold()
+                right_zh = any(alias and alias.casefold() in folded
                                for alias in [right["zh"], *right.get("zhAliases", [])])
                 samples.append({"query": left["zh"] + " " + right["zh"], "kind": "term-dictionary",
                                 "language": "same-language" if left_zh and right_zh else "cross-language",

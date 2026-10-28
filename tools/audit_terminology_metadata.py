@@ -44,9 +44,8 @@ def audit(chunks: list[dict], documents: list[dict], seed: int = 42, sample_size
             "candidateChunks": len(candidates), "fields": totals, "sampleMetadata": updates}
 
 
-def main() -> None:
-    chunks = json.loads(CHUNKS.read_text("utf-8")); docs = json.loads(DOCS.read_text("utf-8"))
-    result = audit(chunks, docs)
+def render_markdown(chunks, documents):
+    result = audit(chunks, documents)
     lines = ["", "## 词典自动元数据低置信度抽样（固定种子42）", "",
              f"按固定种子从词典自动标记片段中抽取 {result['sampledChunks']} 条（请求200条；候选{result['candidateChunks']}条）。低置信规则：术语不在所属文档标题、摘要/描述或正文前500字符出现，且在所属片段标题+正文中恰好出现一次。此为自动规则代理，不等于人工误标率。",
              "", "|字段|标记数|低置信数|低置信比例|", "|---|---:|---:|---:|"]
@@ -54,10 +53,14 @@ def main() -> None:
         rate = "无样本" if data["lowRate"] is None else f"{data['lowRate']:.2%}"
         lines.append(f"|{field}|{data['observed']}|{data['low']}|{rate}|")
     lines += ["", "重建器把符合上述规则的名称列入各片段 `metadataConfidence` 对象；Java/Python guarded 元数据加分默认忽略这些 low 名称。过滤阶段也不以这些字段拒绝候选。非低置信自动匹配仍不是人工核对。", ""]
-    old = REPORT.read_text("utf-8") if REPORT.exists() else ""
-    marker = "## 词典自动元数据低置信度抽样（固定种子42）"
-    old = old.split(marker)[0].rstrip()
-    REPORT.write_text(old + "\n" + "\n".join(lines), encoding="utf-8")
+    return "\n".join(lines)
+
+
+def main() -> None:
+    chunks = json.loads(CHUNKS.read_text("utf-8")); docs = json.loads(DOCS.read_text("utf-8"))
+    result = audit(chunks, docs)
+    from import_knowledge import audit_markdown
+    REPORT.write_text(audit_markdown(), encoding="utf-8")
     print(json.dumps({"sampledChunks": result["sampledChunks"], "candidateChunks": result["candidateChunks"], "fields": result["fields"]}, ensure_ascii=False))
 
 
