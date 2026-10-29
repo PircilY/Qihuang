@@ -15,7 +15,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from corpus_governance import ROOT, parse_article, redistribution_license, save_json, source_path, topic_review
+from corpus_governance import (ROOT, noncommercial_license, parse_article,
+                              redistribution_license, save_json, source_path, topic_review)
 
 API = "https://www.ebi.ac.uk/europepmc/webservices/rest"
 TOPICS = {
@@ -25,6 +26,25 @@ TOPICS = {
     "syndrome-heart-failure": ('气虚血瘀', '"blood stasis"', '"heart failure"'),
     "formula-heart-failure": ('方剂', 'qiliqiangxin', '"heart failure"'),
     "herbal-cardiovascular": ('中药', '"Chinese herbal"', 'cardiovascular'),
+}
+CHINESE_QUERIES = {
+    "astragalus-heart-failure": '(astragalus OR astragaloside OR huangqi OR 黄芪) AND '
+                              '("heart failure" OR cardiac OR myocardial OR 心衰 OR 心肌)',
+    "danshen-coronary": '("salvia miltiorrhiza" OR danshen OR tanshinone OR 丹参 OR 三参通脉) AND '
+                       '(coronary OR myocardial OR atherosclerosis OR cardiovascular OR 心肌 OR 冠心病)',
+    "tcm-hypertension": '("Chinese medicine" OR acupuncture OR herbal OR decoction OR 中医 OR 中药) AND '
+                        '(hypertension OR hypertensive OR 高血压)',
+    "syndrome-heart-failure": '("Chinese medicine" OR syndrome OR prescription OR 血瘀 OR 证候) AND '
+                              '("heart failure" OR cardiovascular OR atherosclerosis OR 心衰)',
+    "formula-heart-failure": '(prescription OR powder OR decoction OR mixture OR formula OR 方剂 OR 活血) AND '
+                            '(cardiac OR myocardial OR "heart failure" OR atherosclerosis OR 心肌)',
+    "herbal-cardiovascular": '("Chinese medicine" OR herbal OR acupuncture OR decoction OR 中医 OR 中药) AND '
+                            '(cardiovascular OR myocardial OR coronary OR hypertension OR 心血管)',
+    "tcm-syndromes": '("Chinese medicine" OR 中医) AND (syndrome OR 证候 OR 证型 OR 辨证)',
+    "tcm-materials": '("Chinese medicine" OR "Chinese herbal" OR herbalome OR "herbal material" OR 中药) AND '
+                    '(quality OR components OR constituents OR chromatography OR 质量 OR 成分 OR 研究方法)',
+    "tcm-formulas": '(decoction OR "Chinese medicine" OR "Chinese herbal" OR acupuncture OR moxibustion '
+                    'OR tanshinone OR astragalus OR 方剂 OR 中药)',
 }
 
 
@@ -106,18 +126,24 @@ class Client:
         raise RuntimeError("request retries exhausted")
 
 
-def discover(client: Client, state: dict, pages: int, state_path: Path):
+def discover(client: Client, state: dict, pages: int, state_path: Path,
+             languages=("zh", "en"), topics=None):
     known = {item["pmcid"]: item for item in state.setdefault("candidates", [])}
     progress = state.setdefault("queries", {})
-    for topic, (zh, en, disease) in TOPICS.items():
-        for language in ("zh", "en"):
-            term = f'("{zh}" OR {en})' if language == "zh" else en
-            query = f"OPEN_ACCESS:Y AND TITLE_ABS:{term} AND TITLE_ABS:{disease}"
+    for topic in topics or TOPICS:
+        for language in languages:
             if language == "zh":
-                query += " AND LANG:chi"
+                query = f"OPEN_ACCESS:Y AND LANG:chi AND TITLE_ABS:({CHINESE_QUERIES[topic]})"
+            else:
+                zh, en, disease = TOPICS[topic]
+                query = f"OPEN_ACCESS:Y AND TITLE_ABS:{en} AND TITLE_ABS:{disease}"
             key = f"{topic}/{language}"
-            cursor = progress.get(key, {}).get("cursor", "*")
-            if progress.get(key, {}).get("complete"):
+            previous = progress.get(key, {})
+            # A changed search must not reuse the old query's cursor/completion.
+            if previous.get("query") != query:
+                previous = {}
+            cursor = previous.get("cursor", "*")
+            if previous.get("complete"):
                 continue
             for _ in range(pages):
                 url = API + "/search?" + urllib.parse.urlencode({
@@ -148,7 +174,8 @@ def discover(client: Client, state: dict, pages: int, state_path: Path):
                         "authors": [a.get("fullName") or " ".join(filter(None, (a.get("firstName"), a.get("lastName"))))
                                     for a in item.get("authorList", {}).get("author", [])],
                         "journal": item.get("journalTitle", ""),
-                        "language": language, "apiLicense": item.get("license", ""),
+                        "language": language, "sourceLanguage": item.get("language", ""),
+                        "apiLicense": item.get("license", ""),
                         "documentType": "research article", "topics": [topic],
                         "status": "candidate", "discoveredAt": now(),
                     }
@@ -165,18 +192,19 @@ def discover(client: Client, state: dict, pages: int, state_path: Path):
                 cursor = next_cursor
 
 
-def ingest(client: Client, state: dict, state_path: Path, limit: int):
+def ingest(client: Client, state: dict, state_path: Path, limit: int,
+           allow_noncommercial=False, include_background=False, languages=None):
     ledger_path = ROOT / "data/expanded-sources.json"
     ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
     records = ledger["records"]
     counts = Counter()
     included = sum(c.get("status") == "included" and any(
-        r["documentId"] == c.get("documentId") and r.get("corpusRole") == "core"
+        r["documentId"] == c.get("documentId") and (include_background or r.get("corpusRole") == "core")
         for r in records) for c in state["candidates"])
     candidates = sorted(state["candidates"], key=lambda item: (
         item["language"] != "zh", item["pmcid"]))
     # Round-robin discovery themes so one broad search cannot consume the budget.
-    buckets = {topic: [] for topic in TOPICS}
+    buckets = {topic: [] for topic in CHINESE_QUERIES}
     for candidate in candidates:
         candidate["title"] = plain(candidate["title"])
         candidate["abstractOrDescription"] = plain(candidate.get("abstractOrDescription", ""))
@@ -191,11 +219,13 @@ def ingest(client: Client, state: dict, state_path: Path, limit: int):
             break
         if candidate.get("status") in {"included", "rejected", "near-duplicate"}:
             continue
+        if languages and candidate["language"] not in languages:
+            continue
         if duplicates(candidate, records):
             match = next((r for r in records if r.get("pmcid") == candidate["pmcid"]), None)
             if match and match.get("collectionBatch") == state.get("batchId"):
                 candidate.update(status="included", documentId=match["documentId"])
-                included += int(match.get("corpusRole") == "core")
+                included += int(include_background or match.get("corpusRole") == "core")
                 save_json(state_path, state)
                 continue
             candidate.update(status="rejected", reason="already-in-ledger")
@@ -203,24 +233,38 @@ def ingest(client: Client, state: dict, state_path: Path, limit: int):
             save_json(state_path, state)
             continue
         try:
-            if topic_review(candidate, "")["corpusRole"] != "core":
+            preliminary = topic_review(candidate, "")
+            if preliminary["corpusRole"] != "core" and candidate["language"] != "zh":
                 raise ValueError("title does not establish both TCM and cardiovascular topics")
             xml = client.get(f"{API}/{candidate['pmcid']}/fullTextXML").decode("utf-8")
             article = parse_article(xml)
+            source_title = candidate["title"]
             candidate["title"] = article["title"] or candidate["title"]
+            candidate["sourceTranslatedTitles"] = article["translatedTitles"]
             license_url = redistribution_license(article["licenses"])
-            if not license_url:
+            nc_url = noncommercial_license(article["licenses"]) if allow_noncommercial else None
+            if not (license_url or nc_url):
                 raise ValueError("no permissive license verified in full-text XML")
+            han = len(re.findall(r"[\u3400-\u9fff]", article["text"])) / len(article["text"])
+            language = "zh" if han >= .1 else "en"
+            if languages and language not in languages:
+                raise ValueError("full-text language outside requested scope")
+            if article["language"] in {"zh", "en"} and article["language"] != language:
+                raise ValueError("body language conflicts with XML language")
+            abstracts = article["abstracts"]
+            if language == "zh":
+                chinese = [text for text in abstracts if len(re.findall(r"[\u3400-\u9fff]", text)) >= 20]
+                if chinese:
+                    candidate["abstractOrDescription"] = chinese[0]
             review = topic_review(candidate, article["text"])
-            if review["corpusRole"] != "core":
+            background_ok = (include_background and review["corpusRole"] == "background"
+                             and review["topicReview"]["titleTcmTerms"]
+                             and review["topicReview"]["bodyTcmTerms"])
+            if review["corpusRole"] != "core" and not background_ok:
                 raise ValueError("metadata does not establish both TCM and cardiovascular topics")
             digest = sha(article["text"])
             if duplicates({"sourceChecksum": digest}, records):
                 raise ValueError("duplicate full-text checksum")
-            han = len(re.findall(r"[\u3400-\u9fff]", article["text"])) / len(article["text"])
-            language = "zh" if han >= .1 else "en"
-            if language != candidate["language"]:
-                raise ValueError("body language does not match the search language")
             title = candidate["title"]
             near = [r["documentId"] for r in records
                     if difflib.SequenceMatcher(None, title.casefold(), r["title"].casefold()).ratio() >= .94]
@@ -240,15 +284,22 @@ def ingest(client: Client, state: dict, state_path: Path, limit: int):
                 "sourceUrl": f"https://pmc.ncbi.nlm.nih.gov/articles/{candidate['pmcid']}/",
                 "fullTextPath": text_path, "rawSourcePath": raw_path,
                 "sourceChecksum": digest, "rawSourceChecksum": sha(xml), "accessedAt": now(),
-                "license": "cc0" if "publicdomain/zero" in license_url else "public domain"
+                "license": "cc by-nc" if not license_url else "cc0" if "publicdomain/zero" in license_url else "public domain"
                 if license_url == "public-domain-us-government" else "cc by",
                 "licenseStatus": "verified", "verificationStatus": "verified-full-text",
                 "licenseEvidence": article["licenses"], "redistributionLicenseUrl": license_url,
-                "redistributionStatus": "permissive-verified",
+                "redistributionStatus": "permissive-verified" if license_url else "restricted-review-required",
+                "noncommercialLicenseUrl": nc_url if not license_url else None,
+                "usageScope": "noncommercial-research-only" if not license_url else "permissive-with-attribution",
+                "licenseEvidenceSource": f"{API}/{candidate['pmcid']}/fullTextXML",
+                "licenseEvidenceAccessedAt": now(),
                 "inclusionDecision": "include",
-                "inclusionReason": "dual-topic source metadata; structured full body; permissive XML license",
-                "topicTags": ["中医药", "心血管"] if language == "zh" else ["traditional Chinese medicine", "cardiovascular"],
+                "inclusionReason": "verified source title/body and XML license; noncommercial sources excluded from public delivery",
+                "topicTags": (["中医药", "心血管"] if review["corpusRole"] == "core" else ["中医药"])
+                if language == "zh" else ["traditional Chinese medicine", "cardiovascular"],
                 "textExtractionVersion": 2, **review,
+                "sourceSearchTitle": source_title, "sourceTranslatedTitles": article["translatedTitles"],
+                "documentType": article["documentType"] or record["documentType"],
                 "collectionBatch": state["batchId"], "collectionTopics": candidate.get("topics", []),
             })
             records.append(record)
@@ -264,7 +315,10 @@ def ingest(client: Client, state: dict, state_path: Path, limit: int):
         finally:
             state["updatedAt"] = now()
             save_json(state_path, state)
-    state["lastIngestion"] = {"at": now(), "counts": dict(counts), "coreIncludedTotal": included + counts["added"]}
+    batch_core = sum(r.get("collectionBatch") == state.get("batchId") and r.get("corpusRole") == "core"
+                     for r in records)
+    state["lastIngestion"] = {"at": now(), "counts": dict(counts), "includedTotal": included + counts["added"],
+                              "coreIncludedTotal": batch_core, "backgroundCountsTowardLimit": include_background}
     save_json(state_path, state)
     print(json.dumps(state["lastIngestion"], ensure_ascii=False), flush=True)
 
@@ -276,19 +330,40 @@ def main():
     parser.add_argument("--pages", type=int, default=2)
     parser.add_argument("--limit", type=int, default=40)
     parser.add_argument("--state", type=Path, default=ROOT / "runtime/corpus-collection/state.json")
+    parser.add_argument("--language", choices=("zh", "en", "all"), default="all")
+    parser.add_argument("--topics", nargs="+", choices=tuple(CHINESE_QUERIES))
+    parser.add_argument("--allow-noncommercial", action="store_true",
+                        help="Explicit BY-NC only, for noncommercial research; excluded from public delivery")
+    parser.add_argument("--include-background", action="store_true",
+                        help="Also admit title/body-supported TCM background; never unrelated sources")
+    parser.add_argument("--retry-topic-rejections", action="store_true",
+                        help="Recheck topic-only rejections after source-title parsing changes; retain prior attempts")
     args = parser.parse_args()
     if not (args.discover or args.ingest) or not 1 <= args.limit <= 50 or not 1 <= args.pages <= 10:
         parser.error("choose discover/ingest; limit 1..50 and pages 1..10")
     if not args.state.resolve().is_relative_to((ROOT / "runtime").resolve()):
         parser.error("candidate state must stay in runtime")
+    languages = ("zh", "en") if args.language == "all" else (args.language,)
+    if "en" in languages and any(topic not in TOPICS for topic in args.topics or []):
+        parser.error("TCM background discovery topics require --language zh")
     state = json.loads(args.state.read_text(encoding="utf-8")) if args.state.exists() else {"schemaVersion": 1, "candidates": []}
     state.setdefault("batchId", now())
+    state["requestedLanguages"] = list(languages)
+    state["noncommercialOptIn"] = args.allow_noncommercial
+    state["includeBackground"] = args.include_background
+    if args.retry_topic_rejections:
+        for candidate in state["candidates"]:
+            if candidate.get("status") == "rejected" and candidate.get("reason") == "metadata does not establish both TCM and cardiovascular topics":
+                candidate.setdefault("previousAttempts", []).append({
+                    key: candidate[key] for key in ("status", "reason", "attemptedAt") if key in candidate
+                })
+                candidate["status"] = "candidate"
     client = Client()
     if args.discover:
-        discover(client, state, args.pages, args.state)
+        discover(client, state, args.pages, args.state, languages, args.topics)
         print(json.dumps({"candidates": len(state["candidates"])}), flush=True)
     if args.ingest:
-        ingest(client, state, args.state, args.limit)
+        ingest(client, state, args.state, args.limit, args.allow_noncommercial, args.include_background, languages)
 
 
 if __name__ == "__main__":

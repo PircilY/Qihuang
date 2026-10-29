@@ -18,9 +18,13 @@ TCM_TERMS = (
     "astragaloside", "ginsenoside", "decoction", "shengmai", "sheng mai",
     "gualou", "xiebai", "tcm", "chinese patent medicine",
     "shenge", "shenfu", "syndrome differentiation",
+    "证候", "证型", "化痰", "活血", "益气", "参葛", "三参通脉",
+    "sanshentongmai", "qi-regulating", "blood-activating", "herbal material", "参蛤散",
+    "herbalome", "中草药", "moxibustion",
 )
 CARDIO_TERMS = (
     "心血管", "冠心病", "心力衰竭", "心衰", "高血压", "心脏", "心肌", "心律",
+    "动脉粥样硬化", "心绞痛", "房颤",
     "cardiovascular", "coronary", "heart failure", "hypertension",
     "cardiac", "myocardial", "arrhythmia", "angina", "atherosclerosis",
     "cardiomyopathy", "cardiometabolic", "antihypertensive", "hypertensive",
@@ -28,6 +32,12 @@ CARDIO_TERMS = (
     "cardiomyocyte", "cardio-cerebrovascular", "ischemic heart", "hypotensive",
 )
 ROLES = {"core", "background", "excluded"}
+
+
+def term_present(term: str, text: str) -> bool:
+    if term == "ventricular":
+        return bool(re.search(r"\bventricular\b", text, re.I))
+    return term.casefold() in text.casefold()
 
 
 def source_path(value: str, root: Path = ROOT) -> Path:
@@ -73,9 +83,47 @@ def parse_article(xml: str) -> dict:
                     if key.endswith("href"))
         statement = re.sub(r"\s+", " ", "".join(element.itertext())).strip()
         licenses.append({"urls": list(dict.fromkeys(urls)), "statement": statement})
-    title = root.find(".//article-title")
+    title = root.find("./front/article-meta/title-group/article-title")
+    if title is None:
+        title = root.find(".//article-title")
+    def element_text(element):
+        return re.sub(r"\s+", " ", "".join(element.itertext())).strip()
+
+    translated_titles = [
+        {"language": element.get("{http://www.w3.org/XML/1998/namespace}lang", ""),
+         "text": element_text(element)}
+        for element in root.findall("./front/article-meta/title-group/trans-title-group/trans-title")
+    ]
+    abstracts = [element_text(element) for element in root.findall("./front/article-meta/abstract")]
     return {"text": text, "sections": sections, "licenses": licenses,
-            "title": re.sub(r"\s+", " ", "".join(title.itertext())).strip() if title is not None else ""}
+            "title": element_text(title) if title is not None else "",
+            "translatedTitles": translated_titles, "abstracts": abstracts,
+            "language": root.get("{http://www.w3.org/XML/1998/namespace}lang", ""),
+            "documentType": root.get("article-type", "").replace("-", " ")}
+
+
+def noncommercial_license(licenses: list[dict]) -> str | None:
+    """Recognize explicit BY-NC grants, never ND/SA or unspecified open access."""
+    for record in licenses:
+        statement = record["statement"].casefold()
+        if any(term in statement for term in ("noderivatives", "no derivatives", "by-nc-nd",
+                                              "by-nc-sa", "sharealike", "禁止演绎", "禁止修改")):
+            continue
+        if not ("cc by-nc" in statement or "noncommercial" in statement
+                or "non-commercial" in statement or "非商业" in statement):
+            continue
+        for url in record["urls"]:
+            parsed = urlsplit(url)
+            try:
+                safe = (parsed.scheme in {"http", "https"} and not parsed.username
+                        and not parsed.password and parsed.port in {None, 80, 443}
+                        and not parsed.query and not parsed.fragment)
+            except ValueError:
+                safe = False
+            if (safe and parsed.hostname in {"creativecommons.org", "www.creativecommons.org"}
+                    and re.fullmatch(r"/licenses/by-nc/(?:[1-4]\.0)/?", parsed.path)):
+                return url
+    return None
 
 
 def redistribution_license(licenses: list[dict]) -> str | None:
@@ -102,15 +150,18 @@ def redistribution_license(licenses: list[dict]) -> str | None:
 
 
 def topic_review(record: dict, text: str) -> dict:
-    title = re.sub(r"<[^>]+>", "", html.unescape(record.get("title", "")))
+    source_titles = [record.get("title", ""), *[
+        title.get("text", "") for title in record.get("sourceTranslatedTitles", [])
+    ]]
+    title = re.sub(r"<[^>]+>", "", html.unescape(" ".join(source_titles)))
     metadata = title + " " + re.sub(r"<[^>]+>", "", html.unescape(record.get("abstractOrDescription", "")))
     folded = metadata.casefold()
-    tcm = [term for term in TCM_TERMS if term.casefold() in folded]
-    cardio = [term for term in CARDIO_TERMS if term.casefold() in folded]
-    title_tcm = [term for term in TCM_TERMS if term.casefold() in title.casefold()]
-    title_cardio = [term for term in CARDIO_TERMS if term.casefold() in title.casefold()]
-    body_tcm = [term for term in TCM_TERMS if term.casefold() in text.casefold()]
-    body_cardio = [term for term in CARDIO_TERMS if term.casefold() in text.casefold()]
+    tcm = [term for term in TCM_TERMS if term_present(term, folded)]
+    cardio = [term for term in CARDIO_TERMS if term_present(term, folded)]
+    title_tcm = [term for term in TCM_TERMS if term_present(term, title)]
+    title_cardio = [term for term in CARDIO_TERMS if term_present(term, title)]
+    body_tcm = [term for term in TCM_TERMS if term_present(term, text)]
+    body_cardio = [term for term in CARDIO_TERMS if term_present(term, text)]
     notice = bool(re.search(r"\b(retraction|retracted|correction|corrigendum)\b", title, re.I))
     role = ("excluded" if notice else "core" if title_tcm and title_cardio
             else "background" if title_tcm or title_cardio else "excluded")
@@ -121,11 +172,11 @@ def topic_review(record: dict, text: str) -> dict:
     paragraphs = re.split(r"\n\s*\n|(?<=[。.!?])\s+", text)
     for terms in (body_tcm, body_cardio):
         paragraph = next((p for p in paragraphs
-                          if any(term.casefold() in p.casefold() for term in terms)), None)
+                          if any(term_present(term, p) for term in terms)), None)
         if paragraph and paragraph[:700] not in evidence:
             evidence.append(paragraph[:700])
     return {"corpusRole": role, "topicReview": {
-        "method": "source-title-dual-topic-and-body-screen-v2",
+        "method": "source-authored-bilingual-title-dual-topic-and-body-screen-v4",
         "status": "automatic-screened-not-clinical-review",
         "metadataTcmTerms": tcm, "metadataCardioTerms": cardio,
         "titleTcmTerms": title_tcm, "titleCardioTerms": title_cardio,

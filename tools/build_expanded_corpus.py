@@ -35,6 +35,16 @@ def chunks(text: str) -> list[str]:
     return [normalized[index:index + CHUNK_SIZE] for index in range(0, len(normalized), CHUNK_SIZE)]
 
 
+def license_note(record: dict) -> str:
+    parts = [record.get("license", ""), record["licenseStatus"]]
+    url = record.get("redistributionLicenseUrl") or record.get("noncommercialLicenseUrl")
+    if url:
+        parts.append(url)
+    if record.get("usageScope") == "noncommercial-research-only":
+        parts.append("仅限非商业研究")
+    return "; ".join(parts)
+
+
 def build() -> tuple[list[dict], list[dict]]:
     validation = validate()
     if validation["errors"]:
@@ -66,7 +76,7 @@ def build() -> tuple[list[dict], list[dict]]:
             "version": "expanded-v1",
             "status": "ACTIVE",
             "registeredAt": record.get("accessedAt", now),
-            "licenseNote": f"{record.get('license', '')}; {record['licenseStatus']}",
+            "licenseNote": license_note(record),
             "description": record.get("abstractOrDescription", ""),
             "sourceUrl": record["sourceUrl"],
             "accessedAt": record.get("accessedAt", now),

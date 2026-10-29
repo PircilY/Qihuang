@@ -6,7 +6,8 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from corpus_governance import indexed, ROLES, source_path, source_url, parse_article, redistribution_license
+from corpus_governance import (indexed, ROLES, source_path, source_url, parse_article,
+                              redistribution_license, noncommercial_license)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,7 +88,7 @@ def validate(ledger_path: Path = LEDGER, root: Path = ROOT) -> dict[str, object]
         has_cardio = any(term.casefold() in folded for term in CARDIO_TERMS)
         metadata_has_tcm = any(term.casefold() in metadata_folded for term in TCM_TERMS)
         metadata_has_cardio = any(term.casefold() in metadata_folded for term in CARDIO_TERMS)
-        if not has_tcm and not has_cardio:
+        if indexed(record) and not has_tcm and not has_cardio:
             errors.append(f"topic terms not found in full text: {document_id}")
         if metadata_has_tcm and metadata_has_cardio:
             topic_class = "tcm_and_cardiovascular"
@@ -113,10 +114,28 @@ def validate(ledger_path: Path = LEDGER, root: Path = ROOT) -> dict[str, object]
             xml_path = source_path(record["rawSourcePath"], root)
             xml = xml_path.read_text(encoding="utf-8")
             article = parse_article(xml)
+            if ("sourceTranslatedTitles" in record
+                    and record["sourceTranslatedTitles"] != article["translatedTitles"]):
+                errors.append(f"source-authored translated titles mismatch: {document_id}")
+            if record.get("metadataProvenance", {}).get("method") == "retained-JATS-source-authored-Chinese":
+                titles = [article["title"], *[t["text"] for t in article["translatedTitles"]]]
+                if record["title"] not in titles:
+                    errors.append(f"Chinese title not authored in retained source: {document_id}")
+                if record.get("metadataProvenance", {}).get("translatedByProject") is not False:
+                    errors.append(f"unexpected generated Chinese metadata: {document_id}")
+                abstract = record.get("abstractOrDescription", "")
+                if re.search(r"[\u3400-\u9fff]", abstract) and abstract not in article["abstracts"]:
+                    errors.append(f"Chinese abstract not authored in retained source: {document_id}")
             if record.get("rawSourceChecksum") and hashlib.sha256(xml.encode("utf-8")).hexdigest() != record["rawSourceChecksum"]:
                 errors.append(f"raw XML checksum mismatch: {document_id}")
             if record.get("redistributionStatus") == "permissive-verified" and not redistribution_license(article["licenses"]):
                 errors.append(f"redistribution license proof missing: {document_id}")
+            if record.get("usageScope") == "noncommercial-research-only":
+                grant = noncommercial_license(article["licenses"])
+                if not grant or record.get("noncommercialLicenseUrl") != grant:
+                    errors.append(f"noncommercial license proof missing: {document_id}")
+                if record.get("redistributionStatus") == "permissive-verified":
+                    errors.append(f"noncommercial source mislabeled as permissive: {document_id}")
         except (OSError, ValueError, KeyError) as error:
             errors.append(f"invalid raw source: {document_id}: {error}")
         for key in (("pmcid", str(record.get("pmcid", "")).strip().casefold()),
