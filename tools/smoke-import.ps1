@@ -38,6 +38,18 @@ try {
     Stop-Process -Id $service.backendPid
     Wait-Process -Id $service.backendPid -ErrorAction SilentlyContinue
     $service = $null
+    # Process exit can precede the OS releasing its listening socket.
+    $deadline = [datetime]::UtcNow.AddSeconds(15)
+    do {
+        $released = $false
+        $probe = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $Port)
+        try { $probe.Start(); $released = $true }
+        catch {
+            if ([datetime]::UtcNow -ge $deadline) { throw 'Owned service port was not released within 15 seconds' }
+            Start-Sleep -Milliseconds 100
+        }
+        finally { $probe.Stop() }
+    } while (-not $released)
     $service = (& "$PSScriptRoot/start-local.ps1" -Port $Port -StorePath $store) | ConvertFrom-Json
     $restored = Invoke-RestMethod -Uri "$($service.url)/api/v1/knowledge/documents/${documentId}?corpus=COMBINED" -NoProxy
     if ($restored.data.checksum -ne $response.data.document.checksum) { throw 'Restored checksum mismatch' }
