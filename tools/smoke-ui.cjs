@@ -15,10 +15,14 @@ async function main() {
     try {
         const page = await browser.newPage({viewport: {width: 1440, height: 1000}});
         await page.context().request.delete(`${baseURL}/api/v1/rag/model`);
+        const overview = (await (await page.context().request.get(
+            `${baseURL}/api/v1/knowledge/overview?corpus=COMBINED`)).json()).data;
         const errors = [];
         page.on("pageerror", error => errors.push(error.message));
         await page.goto(baseURL);
-        await page.waitForFunction(() => document.querySelector("#overviewDocumentCount").textContent === "4");
+        await page.waitForFunction(count =>
+            document.querySelector("#overviewDocumentCount").textContent === String(count), overview.documentCount);
+        assert.equal(await page.locator("#knowledgeCorpus, #workbenchCorpus").count(), 0);
         const views = ["overview", "knowledge", "workbench", "evaluation", "pipeline"];
         async function view(name) {
             await page.locator(`[data-view="${name}"]`).click();
@@ -33,7 +37,7 @@ async function main() {
             return body.data;
         }
         await view("knowledge");
-        assert.equal(await page.locator("#documentList [data-document-id]").count(), 4);
+        assert.equal(await page.locator("#documentList [data-document-id]").count(), overview.documentCount);
         await page.locator("#knowledgeSearch").fill("NoSuchTopic123456");
         await page.waitForFunction(() => document.querySelector("#chunkResultCount").textContent.includes("0"));
         await page.locator("#resetKnowledgeFilters").click();
@@ -46,14 +50,14 @@ async function main() {
         assert.equal(answer.refused, false);
         assert.ok(answer.citations.some(c => c.chunkId === "NCCIH-LICORICE-001"));
         assert.ok(answer.retrieval.notes.includes("engine=llama-index"));
-        assert.ok((await page.locator(".answer-summary").innerText()).includes("BASELINE"));
+        assert.ok((await page.locator(".answer-summary").innerText()).includes("COMBINED"));
         assert.ok((await page.locator(".answer-summary").innerText()).includes("hash"));
         await page.screenshot({path: path.join(output, "answer-desktop.png"), fullPage: true});
         await page.route("**/api/v1/rag/chat", route => route.fulfill({
             status: 200, contentType: "application/json",
             body: JSON.stringify({code: "OK", data: {...answer,
                 retrieval: {...answer.retrieval, engine: "java-local", notes: [
-                    "engine=java-local", "fallback=local", "已使用本地引擎", "corpus=BASELINE", "embedding-backend=hash"
+                    "engine=java-local", "fallback=local", "已使用本地引擎", "corpus=COMBINED", "embedding-backend=hash"
                 ]}}})
         }));
         await ask("高血压没有症状也需要检查血压吗？");
@@ -61,10 +65,8 @@ async function main() {
         assert.match(await page.locator(".answer-summary").innerText(), /java-local/);
         await page.screenshot({path: path.join(output, "local-fallback.png"), fullPage: true});
         await page.unroute("**/api/v1/rag/chat");
-        await page.locator("#workbenchCorpus").selectOption("EXPANDED");
-        const expanded = await ask("高血压没有症状也需要检查血压吗？");
-        assert.ok(expanded.retrieval.notes.includes("corpus=EXPANDED"));
-        await page.locator("#workbenchCorpus").selectOption("BASELINE");
+        const combined = await ask("高血压没有症状也需要检查血压吗？");
+        assert.ok(combined.retrieval.notes.includes("corpus=COMBINED"));
 
         const comparison = page.waitForResponse(r => r.url().endsWith("/api/v1/rag/compare"));
         await page.locator("#compareButton").click();
@@ -147,6 +149,7 @@ async function main() {
         const stored = (await (await page.context().request.get(
             `${baseURL}/api/v1/knowledge/documents/${importedData.document.id}`)).json()).data;
         assert.equal(stored.sourceUrl, record.sourceUrl);
+        assert.ok(await page.locator(`#registryList`).innerText().then(text => text.includes(record.title)));
         await fillImport();
         const duplicateResponse = page.waitForResponse(r => r.url().endsWith("/api/v1/knowledge/import"));
         await page.locator("#importButton").click();
@@ -159,7 +162,7 @@ async function main() {
         await fs.writeFile(path.join(output, "results.json"), JSON.stringify({
             baseURL, javascriptErrors: errors, overflow, evaluation: result.summaries,
             checks: ["five views", "filters", "source links", "remote chat", "comparison",
-                "emergency refusal", "local fallback notice", "expanded corpus", "request retry", "evaluation retry", "four viewport widths",
+                "emergency refusal", "local fallback notice", "combined corpus", "request retry", "evaluation retry", "four viewport widths",
                 "browser import", "duplicate import and retained form"]
         }, null, 2));
         console.log("PASS: browser workflows and responsive checks");

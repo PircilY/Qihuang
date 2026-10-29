@@ -17,9 +17,8 @@ const state = {
     knowledgeLoaded: false,
     knowledgeError: "",
     modelConfig: null,
-    modelBusy: false
-    ,corpora: []
-    ,activeCorpus: "BASELINE"
+    modelBusy: false,
+    activeCorpus: "COMBINED"
 };
 
 const elements = {
@@ -36,27 +35,23 @@ const elements = {
 
     overviewDocumentCount: document.getElementById("overviewDocumentCount"),
     overviewChunkCount: document.getElementById("overviewChunkCount"),
-    overviewDiseaseCount: document.getElementById("overviewDiseaseCount"),
-    overviewHighEvidenceCount: document.getElementById("overviewHighEvidenceCount"),
+    overviewPlatformCount: document.getElementById("overviewPlatformCount"),
+    overviewLinkedDocumentCount: document.getElementById("overviewLinkedDocumentCount"),
     overviewChunkLength: document.getElementById("overviewChunkLength"),
     overviewDataState: document.getElementById("overviewDataState"),
     diseaseDistribution: document.getElementById("diseaseDistribution"),
     overviewSourceDistribution: document.getElementById("overviewSourceDistribution"),
-    evidenceRing: document.getElementById("evidenceRing"),
-    evidenceARatio: document.getElementById("evidenceARatio"),
-    evidenceDistribution: document.getElementById("evidenceDistribution"),
-    overviewHighEvidenceRatio: document.getElementById("overviewHighEvidenceRatio"),
-    overviewSourceTypeCount: document.getElementById("overviewSourceTypeCount"),
-    overviewPendingChunkCount: document.getElementById("overviewPendingChunkCount"),
-    overviewStatusText: document.getElementById("overviewStatusText"),
+    overviewProvenanceText: document.getElementById("overviewProvenanceText"),
+    overviewRegistration: document.getElementById("overviewRegistration"),
+    overviewYearRange: document.getElementById("overviewYearRange"),
+    overviewMissingYearCount: document.getElementById("overviewMissingYearCount"),
+    overviewUnratedDocumentCount: document.getElementById("overviewUnratedDocumentCount"),
+    overviewLastAccessedAt: document.getElementById("overviewLastAccessedAt"),
 
     knowledgeSearch: document.getElementById("knowledgeSearch"),
     knowledgeDisease: document.getElementById("knowledgeDisease"),
     knowledgeSource: document.getElementById("knowledgeSource"),
     knowledgeEvidence: document.getElementById("knowledgeEvidence"),
-    knowledgeCorpus: document.getElementById("knowledgeCorpus"),
-    workbenchCorpus: document.getElementById("workbenchCorpus"),
-    workbenchCorpusNotice: document.getElementById("workbenchCorpusNotice"),
     resetKnowledgeFilters: document.getElementById("resetKnowledgeFilters"),
     documentSummary: document.getElementById("documentSummary"),
     documentList: document.getElementById("documentList"),
@@ -211,18 +206,6 @@ function bindEvents() {
     elements.closeCompareButton.addEventListener("click", () => elements.compareSection.classList.add("hidden"));
     elements.closeChunkDetail.addEventListener("click", closeChunkDetail);
     elements.resetKnowledgeFilters.addEventListener("click", resetKnowledgeFilters);
-    elements.knowledgeCorpus.addEventListener("change", () => {
-        state.activeCorpus = elements.knowledgeCorpus.value;
-        elements.workbenchCorpus.value = state.activeCorpus;
-        refreshKnowledgeData();
-        updateCorpusNotice();
-    });
-    elements.workbenchCorpus.addEventListener("change", () => {
-        state.activeCorpus = elements.workbenchCorpus.value;
-        elements.knowledgeCorpus.value = state.activeCorpus;
-        refreshKnowledgeData();
-        updateCorpusNotice();
-    });
 
     elements.questionInput.addEventListener("input", updateCharacterCount);
     elements.questionInput.addEventListener("keydown", event => {
@@ -288,23 +271,6 @@ async function loadVersions() {
 
 async function loadKnowledgeData() {
     try {
-        if (!state.corpora.length) {
-            state.corpora = await request("/api/v1/knowledge/corpora");
-            const expanded = state.corpora.find(item => item.id === "EXPANDED");
-            elements.knowledgeCorpus.replaceChildren();
-            state.corpora.forEach(item => elements.knowledgeCorpus.append(
-                node("option", "", `${item.name} · ${item.documentCount} 文档 / ${item.chunkCount} 切片`, {value: item.id})
-            ));
-            elements.workbenchCorpus.replaceChildren();
-            state.corpora.forEach(item => elements.workbenchCorpus.append(
-                node("option", "", `${item.name} · ${item.documentCount} 文档 / ${item.chunkCount} 切片`, {value: item.id})
-            ));
-            elements.knowledgeCorpus.value = state.activeCorpus;
-            elements.workbenchCorpus.value = state.activeCorpus;
-            if (expanded) {
-                elements.knowledgeCorpus.title = `默认索引 ${expanded.documentCount} 篇全文 / ${expanded.chunkCount} 个片段`;
-            }
-        }
         const query = `?corpus=${encodeURIComponent(state.activeCorpus)}`;
         const [overview, chunks, documents, pipeline] = await Promise.all([
             request(`/api/v1/knowledge/overview${query}`),
@@ -320,19 +286,10 @@ async function loadKnowledgeData() {
         state.knowledgeLoaded = true;
         state.knowledgeError = "";
         updateKnowledgeCounts();
-        updateCorpusNotice();
     } catch (error) {
         state.knowledgeError = error.message;
         showToast(error.message, true);
     }
-}
-
-function updateCorpusNotice() {
-    const item = state.corpora.find(value => value.id === state.activeCorpus);
-    if (!item || !elements.workbenchCorpusNotice) return;
-    elements.workbenchCorpusNotice.textContent = item.id === "BASELINE"
-        ? "当前使用标准语料；正式评测与历史结果使用此版本。"
-        : `当前使用扩充语料：${item.documentCount} 篇文档、${item.chunkCount} 个切片。主题相关性仍需人工复核；该结果不属于 Experiment A 历史评测。`;
 }
 
 async function refreshKnowledgeData() {
@@ -565,13 +522,14 @@ function renderOverview() {
     }
     elements.overviewDocumentCount.textContent = formatInteger(overview.documentCount);
     elements.overviewChunkCount.textContent = formatInteger(overview.chunkCount);
-    elements.overviewDiseaseCount.textContent = formatInteger(overview.diseaseCount);
-    elements.overviewHighEvidenceCount.textContent = formatInteger(overview.highEvidenceChunkCount);
+    const registration = summarizeRegistration(state.documents);
+    elements.overviewPlatformCount.textContent = formatInteger(registration.platforms.size);
+    elements.overviewLinkedDocumentCount.textContent = formatInteger(registration.linked);
     elements.overviewChunkLength.textContent = formatDecimal(overview.averageChunkLength, 0);
     elements.overviewDataState.textContent = `${formatInteger(overview.documentCount)} 份文档 / ${formatInteger(overview.chunkCount)} 个片段`;
     renderDistribution(elements.diseaseDistribution, overview.diseaseDistribution);
-    renderSourceDistribution(overview.sourceDistribution);
-    renderEvidence(overview);
+    renderPublicationYears(registration);
+    renderRegistration(registration);
     renderPipeline();
 }
 
@@ -584,6 +542,7 @@ function renderDistribution(container, items) {
     items.forEach(item => {
         const row = node("div", "distribution-row");
         const label = node("span", "distribution-label", item.label);
+        label.title = item.label;
         const track = node("div", "distribution-track");
         const fill = node("div", "distribution-fill");
         fill.style.width = `${clamp(item.ratio, 0, 1) * 100}%`;
@@ -594,19 +553,55 @@ function renderDistribution(container, items) {
     });
 }
 
-function renderSourceDistribution(items) {
+function summarizeRegistration(documents) {
+    const summary = {total: documents.length, linked: 0, checksummed: 0, dated: 0,
+        unrated: 0, missingYear: 0, years: new Map(), platforms: new Set(), lastAccessedAt: null};
+    documents.forEach(document => {
+        try {
+            const url = new URL(document.sourceUrl);
+            if (["http:", "https:"].includes(url.protocol) && !url.username && !url.password) {
+                summary.linked++;
+                summary.platforms.add(url.hostname.toLowerCase().replace(/^www\./, ""));
+            }
+        } catch { }
+        if (/^[a-f0-9]{64}$/i.test(document.checksum || "")) summary.checksummed++;
+        if (document.accessedAt && Number.isFinite(Date.parse(document.accessedAt))) {
+            summary.dated++;
+            if (!summary.lastAccessedAt || Date.parse(document.accessedAt) > Date.parse(summary.lastAccessedAt)) {
+                summary.lastAccessedAt = document.accessedAt;
+            }
+        }
+        if (!["A", "B", "C"].includes(String(document.evidenceLevel || "").toUpperCase())) summary.unrated++;
+        const year = Number(document.publicationYear);
+        if (Number.isInteger(year) && year > 0 && year <= 9999) {
+            summary.years.set(year, (summary.years.get(year) || 0) + 1);
+        } else {
+            summary.missingYear++;
+        }
+    });
+    return summary;
+}
+
+function renderPublicationYears(summary) {
     elements.overviewSourceDistribution.replaceChildren();
-    if (!items?.length) {
-        elements.overviewSourceDistribution.append(emptyCompact("暂无来源数据"));
+    if (!summary.total) {
+        elements.overviewSourceDistribution.append(emptyCompact("暂无文档"));
         return;
     }
-    const maxValue = Math.max(...items.map(item => Number(item.value || 0)), 1);
+    const years = [...summary.years.keys()].sort((a, b) => b - a);
+    const items = years.slice(0, 3).map(year => ({label: `${year} 年`, value: summary.years.get(year)}));
+    if (years.length > 3) {
+        items.push({label: `${years[3]} 年及以前`,
+            value: years.slice(3).reduce((sum, year) => sum + summary.years.get(year), 0)});
+    }
+    if (summary.missingYear) items.push({label: "年份未登记", value: summary.missingYear});
+    const maxValue = Math.max(...items.map(item => item.value), 1);
     items.slice(0, 6).forEach((item, index) => {
         const row = node("div", "source-row");
         const head = node("div", "source-row-head");
         head.append(
             node("span", "", item.label),
-            node("strong", "", `${item.value} 片 · ${formatPercent(item.ratio, 0)}`)
+            node("strong", "", `${formatInteger(item.value)} 篇`)
         );
         const track = node("div", "source-track");
         const fill = node("div", `source-fill tone-${index % 3}`);
@@ -617,28 +612,32 @@ function renderSourceDistribution(items) {
     });
 }
 
-function renderEvidence(overview) {
-    const ratio = overview.chunkCount
-        ? overview.highEvidenceChunkCount / overview.chunkCount
-        : 0;
-    elements.evidenceRing.style.setProperty("--value", `${ratio * 100}%`);
-    elements.evidenceARatio.textContent = formatPercent(ratio, 0);
-    elements.evidenceDistribution.replaceChildren();
-    overview.evidenceDistribution.forEach(item => {
-        const row = node("div", "compact-row");
+function renderRegistration(summary) {
+    const platformNames = {"pmc.ncbi.nlm.nih.gov": "PubMed Central (PMC)",
+        "who.int": "WHO", "nccih.nih.gov": "NCCIH"};
+    const platforms = [...summary.platforms].sort().map(host => platformNames[host] || host);
+    elements.overviewProvenanceText.textContent = platforms.length
+        ? `来源平台：${platforms.join(" / ")}` : "来源平台未登记";
+    elements.overviewRegistration.replaceChildren();
+    [
+        ["原文链接", summary.linked],
+        ["正文 SHA-256", summary.checksummed],
+        ["原文访问日期", summary.dated]
+    ].forEach(([label, count]) => {
+        const row = node("div", "registration-row");
         row.append(
-            node("span", "", evidenceLabel(item.label)),
-            node("strong", "", `${item.value} / ${formatPercent(item.ratio, 0)}`)
+            node("dt", "", label),
+            node("dd", "", summary.total ? `${formatInteger(count)} / ${formatInteger(summary.total)} 篇` : "暂无文档")
         );
-        elements.evidenceDistribution.append(row);
+        elements.overviewRegistration.append(row);
     });
-    elements.overviewHighEvidenceRatio.textContent = formatPercent(ratio, 0);
-    elements.overviewSourceTypeCount.textContent = `${overview.sourceTypeCount} 类`;
-    elements.overviewPendingChunkCount.textContent = `${overview.pendingChunkCount} 片`;
-    const active = overview.statusDistribution.find(item => item.label === "ACTIVE");
-    elements.overviewStatusText.textContent = active
-        ? `${active.value} 个片段可用于检索`
-        : "状态待检查";
+    const years = [...summary.years.keys()].sort((a, b) => a - b);
+    elements.overviewYearRange.textContent = years.length
+        ? years[0] === years.at(-1) ? `${years[0]}` : `${years[0]} - ${years.at(-1)}` : "未登记";
+    elements.overviewMissingYearCount.textContent = `${formatInteger(summary.missingYear)} 篇`;
+    elements.overviewUnratedDocumentCount.textContent = `${formatInteger(summary.unrated)} 篇`;
+    elements.overviewLastAccessedAt.textContent = summary.lastAccessedAt
+        ? formatDateTime(summary.lastAccessedAt) : "未登记";
 }
 
 function renderPipeline() {
@@ -788,7 +787,8 @@ async function openChunk(chunkId) {
     const cached = state.allChunks.find(chunk => chunk.id === chunkId)
         || state.filteredChunks.find(chunk => chunk.id === chunkId);
     try {
-        const chunk = cached || await request(`/api/v1/knowledge/chunks/${encodeURIComponent(chunkId)}`);
+        const chunk = cached || await request(
+            `/api/v1/knowledge/chunks/${encodeURIComponent(chunkId)}?corpus=${encodeURIComponent(state.activeCorpus)}`);
         state.selectedChunk = chunk;
         renderChunkDetail(chunk);
         renderChunks(state.filteredChunks);
@@ -1549,7 +1549,7 @@ function setBusy(busy) {
         }
     });
     [elements.questionInput, elements.workbenchDisease, elements.workbenchSource,
-        elements.workbenchEvidence, elements.workbenchCorpus, elements.knowledgeCorpus,
+        elements.workbenchEvidence,
         ...elements.versionRail.querySelectorAll("button"),
         ...document.querySelectorAll("[data-question]")].forEach(control => {
         control.disabled = busy;

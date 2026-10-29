@@ -4019,6 +4019,107 @@ textarea:hover {
     grid-column: 1 / -1;
 }
 
+.registration-list {
+    display: grid;
+    margin: 18px 0px 0px;
+}
+
+.registration-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0px;
+    padding: 12px 0px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+}
+
+.registration-row dt {
+    color: var(--muted-strong);
+}
+
+.registration-row dd {
+    margin: 0px;
+    color: var(--ink);
+    font-family: var(--font-data);
+    text-align: right;
+}
+
+.registration-foot {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+    gap: 16px;
+    padding-top: 18px;
+}
+
+.registration-foot > div {
+    display: grid;
+    gap: 6px;
+    min-width: 0px;
+    font-size: 12px;
+}
+
+.registration-foot span {
+    color: var(--muted-strong);
+}
+
+.registration-foot strong {
+    color: var(--ink);
+    font-family: var(--font-data);
+    overflow-wrap: anywhere;
+}
+
+.evidence-board .status-line {
+    align-items: flex-start;
+    background: transparent;
+    border: 0px;
+    border-top: 1px solid var(--line);
+    padding: 12px 0px 0px;
+}
+
+.evidence-board .status-line strong {
+    color: var(--muted-strong);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.corpus-layout {
+    min-height: 0px;
+    overflow: hidden;
+}
+
+.corpus-layout > div,
+.corpus-layout > .source-mix {
+    min-height: 0px;
+    overflow: hidden;
+}
+
+@media (min-width: 721px) {
+    .overview-grid > .corpus-board {
+        /* Let the evidence column determine the shared row height. */
+        display: flex;
+        flex-direction: column;
+        contain: size;
+    }
+
+    .corpus-board > .board-heading {
+        flex: 0 0 auto;
+    }
+
+    .corpus-board > .corpus-layout {
+        flex: 1 1 0px;
+    }
+}
+
+@media (max-width: 720px) {
+    .corpus-board .distribution-list,
+    .corpus-board .source-distribution {
+        max-height: 266px;
+        overflow: hidden;
+    }
+}
+
 @media (max-width: 1020px) {
     .app-frame {
         display: block;
@@ -4711,7 +4812,7 @@ textarea:hover {
 }
 
 .filter-bar {
-    grid-template-columns: minmax(0px, 1.4fr) minmax(0px, 2fr) repeat(3, minmax(0px, 1fr)) auto;
+    grid-template-columns: minmax(0px, 2fr) repeat(3, minmax(0px, 1fr)) auto;
     align-items: end;
     gap: 12px;
     padding: 16px 0px 24px;

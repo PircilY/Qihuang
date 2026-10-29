@@ -185,14 +185,14 @@
                         <small>条</small>
                     </article>
                     <article>
-                        <span>疾病与主题</span>
-                        <strong id="overviewDiseaseCount">--</strong>
-                        <small>类</small>
+                        <span>来源平台</span>
+                        <strong id="overviewPlatformCount">--</strong>
+                        <small>个</small>
                     </article>
                     <article>
-                        <span>A 级证据片段</span>
-                        <strong id="overviewHighEvidenceCount">--</strong>
-                        <small>条</small>
+                        <span>附原文链接</span>
+                        <strong id="overviewLinkedDocumentCount">--</strong>
+                        <small>篇</small>
                     </article>
                     <article>
                         <span>平均片段长度</span>
@@ -206,14 +206,14 @@
                         <header class="board-heading">
                             <div>
                                 <h2>语料构成</h2>
-                                <p>疾病与来源</p>
+                                <p>主题标签与出版年份</p>
                             </div>
                             <button class="text-button" type="button" data-go-view="knowledge">查看知识库</button>
                         </header>
                         <div class="corpus-layout">
                             <div>
                                 <div class="subsection-heading">
-                                    <span>疾病片段分布</span>
+                                    <span>主题标签分布</span>
                                     <small>片段数 / 全库占比</small>
                                 </div>
                                 <div class="distribution-list" id="diseaseDistribution">
@@ -224,8 +224,8 @@
                             </div>
                             <aside class="source-mix">
                                 <div class="subsection-heading">
-                                    <span>来源构成</span>
-                                    <small>按片段统计</small>
+                                    <span>出版年份</span>
+                                    <small>按文档统计</small>
                                 </div>
                                 <div class="source-distribution" id="overviewSourceDistribution"></div>
                             </aside>
@@ -235,36 +235,28 @@
                     <section class="board evidence-board">
                         <header class="board-heading">
                             <div>
-                                <h2>证据质量</h2>
-                                <p>等级结构、来源类型与复核状态</p>
+                                <h2>资料登记</h2>
+                                <p id="overviewProvenanceText">原文追溯与出版信息</p>
                             </div>
                         </header>
-                        <div class="evidence-layout">
-                            <div class="evidence-ring" id="evidenceRing">
-                                <div>
-                                    <strong id="evidenceARatio">--</strong>
-                                    <span>A 级占比</span>
-                                </div>
-                            </div>
-                            <div class="compact-distribution" id="evidenceDistribution"></div>
-                        </div>
-                        <div class="evidence-foot">
+                        <dl class="registration-list" id="overviewRegistration"></dl>
+                        <div class="registration-foot">
                             <div>
-                                <span>高等级证据占比</span>
-                                <strong id="overviewHighEvidenceRatio">--</strong>
+                                <span>出版年份范围</span>
+                                <strong id="overviewYearRange">--</strong>
                             </div>
                             <div>
-                                <span>来源类型</span>
-                                <strong id="overviewSourceTypeCount">--</strong>
+                                <span>年份未登记</span>
+                                <strong id="overviewMissingYearCount">--</strong>
                             </div>
                             <div>
-                                <span>待复核片段</span>
-                                <strong id="overviewPendingChunkCount">--</strong>
+                                <span>未评级文档</span>
+                                <strong id="overviewUnratedDocumentCount">--</strong>
                             </div>
                         </div>
                         <div class="status-line">
-                            <span>索引状态</span>
-                            <strong id="overviewStatusText">等待加载</strong>
+                            <span>最近原文访问</span>
+                            <strong id="overviewLastAccessedAt">等待加载</strong>
                         </div>
                     </section>
 
@@ -299,12 +291,6 @@
                 </div>
 
                 <section class="filter-bar">
-                    <label>
-                        <span>语料版本</span>
-                        <select id="knowledgeCorpus">
-                            <option value="BASELINE">标准语料</option>
-                        </select>
-                    </label>
                     <label class="search-field">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="11" cy="11" r="7"></circle>
@@ -388,7 +374,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="corpus-notice" id="workbenchCorpusNotice">当前使用标准语料；正式评测与历史结果使用此版本。</div>
 
                 <div class="version-rail" id="versionRail" aria-label="选择 RAG 迭代版本"></div>
 
@@ -439,12 +424,6 @@
                         </div>
 
                         <div class="query-filter-grid">
-                            <label>
-                                <span>语料版本</span>
-                                <select id="workbenchCorpus">
-                                    <option value="BASELINE">标准语料</option>
-                                </select>
-                            </label>
                             <label>
                                 <span>疾病范围</span>
                                 <select id="workbenchDisease">

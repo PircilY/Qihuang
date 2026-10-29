@@ -22,9 +22,13 @@ async function fixtureHandler(req, res, url) {
     for await (const chunk of req) body += chunk;
     const input = body ? JSON.parse(body) : {};
     const key = `${req.method} ${url.pathname}${url.search}`;
-    let envelope = clone(protocol[key]);
+    // Replay the small captured dataset under the unified UI scope; this is not a corpus merge test.
+    const fixtureKey = key.replace("?corpus=COMBINED", "?corpus=BASELINE");
+    let envelope = clone(protocol[fixtureKey]);
     if (req.method === "POST" && url.pathname === "/api/v1/rag/chat") {
         envelope.data.question = input.question;
+        envelope.data.retrieval.notes = envelope.data.retrieval.notes
+            .map(note => note.startsWith("corpus=") ? `corpus=${input.corpus}` : note);
         if (fixtureState.chat === "injection") envelope.data.answer = `${input.question}\n文本回显测试。[1]`;
         if (fixtureState.chat === "fallback") {
             envelope.data.retrieval.engine = "java-local";
