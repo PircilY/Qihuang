@@ -56,7 +56,10 @@ def test_warmup_health_remains_responsive_and_failure_is_explicit(tmp_path, monk
 
 
 def test_disk_cache_reuses_embeddings_and_invalidates_model(tmp_path, monkeypatch):
-    engine = LlamaIndexEngine(settings(tmp_path))
+    from app import engine as module
+    monkeypatch.setattr(module, "create_embedding", lambda settings: HashEmbedding())
+    engine = LlamaIndexEngine(replace(settings(tmp_path),
+        embedding_backend="sentence-transformers", embedding_model="fixture-model-one"))
     engine._ensure_embedding()
     node = TextNode(id_="FIXTURE", text="[FIXTURE] 占位正文 非医学事实")
     first = engine._cached_embedding("EXPANDED", node)
@@ -64,7 +67,6 @@ def test_disk_cache_reuses_embeddings_and_invalidates_model(tmp_path, monkeypatc
     with patch.object(HashEmbedding, "get_text_embedding", side_effect=AssertionError("cache miss")):
         assert engine._cached_embedding("EXPANDED", node) == first
     engine.settings = replace(engine.settings, embedding_backend="sentence-transformers", embedding_model="fixture-model")
-    from app import engine as module
     replacement = HashEmbedding()
     monkeypatch.setattr(module, "create_embedding", lambda settings: replacement)
     engine._ensure_embedding()

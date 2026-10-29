@@ -394,6 +394,9 @@ class LlamaIndexEngine:
 
     def _cached_embedding(self, corpus, node):
         text = searchable(node)
+        # Local hash vectors are cheaper to compute than thousands of disk-cache operations.
+        if self.settings.embedding_backend == "hash" and isinstance(self.embedding, HashEmbedding):
+            return self.embedding._get_text_embedding(text)
         identity = json.dumps(["shared-bigram-v1", self.settings.embedding_backend,
                                self.settings.embedding_model, text], ensure_ascii=False)
         key = hashlib.sha256(identity.encode("utf-8")).hexdigest()

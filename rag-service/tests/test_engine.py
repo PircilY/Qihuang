@@ -10,6 +10,20 @@ from app.engine import _is_related, _metadata_boost
 from llama_index.core.schema import NodeWithScore, TextNode
 
 
+def test_local_hash_vectors_match_public_embedding_without_disk_cache(tmp_path):
+    from app.embeddings import HashEmbedding
+    from app.lexical_index import searchable
+
+    settings = replace(Settings.from_env(), embedding_cache_path=tmp_path / "unused-cache")
+    instance = LlamaIndexEngine(settings)
+    instance.embedding = HashEmbedding()
+    node = TextNode(text="黄芪心力衰竭研究 Astragalus heart failure.", metadata={"title": "原文"})
+    expected = instance.embedding.get_text_embedding(searchable(node))
+    for corpus in ("BASELINE", "EXPANDED", "COMBINED"):
+        assert instance._cached_embedding(corpus, node) == expected
+    assert not settings.embedding_cache_path.exists()
+
+
 @pytest.fixture
 def engine():
     instance = LlamaIndexEngine(Settings.from_env())
