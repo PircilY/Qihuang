@@ -57,3 +57,15 @@ Java 与 Python 已使用原演示存储恢复在 `http://127.0.0.1:8081` 与 `h
 完整工作区统计不代表交付 ZIP 数量。`runtime/delivery/qihuang-rag-unified-20261029.zip` 仅含许可明确且纳入索引的扩充子集：70 文档、4319 片段；另有标准资料 4/11，因此该包的统一视图为 74 文档、4330 片段。78 条扩充台账不随包分发，原工作区和历史不删除；包内隔离清单及 `runtime/delivery/unified-verification-20261029.json` 记录实际数量与校验结果。
 
 Git 后端改动已独立提交为 `e1661ae`，页面和验证文档随后分组提交。此次远端刷新和远端 main 编号读取均因权限审查超时未执行，未在缺少远端核验时合并或推送，不宣称新提交已通过 GitHub CI。原始语料、标签、安全规则及冻结文件相对 `8e8527e` 无修改。
+
+## 中文扩充后的复验
+
+以上数量与发布状态保留为统一入口初次验收记录。2026-10-29 中文扩充后 EXPANDED 为 170 文档 / 7278 片段，COMBINED 为 174 / 7289，BASELINE 仍为 4/11；资料登记、历史 API 默认和冻结评测边界不变。
+
+最终全量 pytest 183 passed，Maven 161 测试、0 失败/错误、5 既有跳过。独立端口 8082 导入、重复拒绝、快照及同端口重启恢复通过；隔离 HTTP 的问答、比较、回退及远程重启补同步通过。只读统一库、中文原文及概览浏览器脚本完整通过，已查看桌面/手机截图；新增中文资料正文和非商业许可提示可见，身份错误来源不进入默认索引。证据目录为 `.tmp/chinese-release-unified`、`.tmp/chinese-release-source`、`.tmp/chinese-release-overview`。
+
+Java 8081 / Python 8001 使用 `runtime/demo-release-8e8527e.json` 启动，两端完整语料范围均为 174/7289，Python READY/hash、模型未配置；本次读取该存储时无运行时导入记录，不声称恢复了不存在的旧登记资料。服务进程身份保存于 `runtime/services-8081.json`。
+
+完整库含 98 篇中文全文，不意味着通用 ZIP 可以分发全部正文。新增 26 篇 BY-NC 仅用于非商业研究，ZIP 按实际许可成员隔离；完整库检索成绩不套用子集。中文严格检索比较及剩余主题缺口见 `chinese-corpus-expansion.md`。本轮已成功刷新远端，最终合并、推送及 CI 状态以 `runtime/delivery/chinese-release-record.json` 为准，不沿用上述初次验收的未发布状态。
+
+实际通用 ZIP 的扩充许可子集为 74 文档 / 4396 片段，统一视图加标准库后为 78/4407，隔离 104 条扩充台账。515 个源码成员及 JSON 摘录隔离检查通过，数量和 SHA 以 `runtime/delivery/chinese-verification.json` 为准，不使用完整库的 174/7289 冒充包内规模。

@@ -1,0 +1,1360 @@
+{
+  "method": "same fixed 12 Chinese positive and 6 negative checks, same current engine and unchanged safety threshold",
+  "limitations": [
+    "Ten nominated sources are absent before expansion; this measures source availability plus retrieval, not a general accuracy rate.",
+    "metadataOnly also applies source identity and topic review corrections to prior documents; it is not a metadata-only causal experiment.",
+    "Timing is a local single run, not a performance benchmark.",
+    "Background-source retrieval does not validate cardiovascular efficacy."
+  ],
+  "scenarios": {
+    "before": {
+      "labelsSha256": "d7203c3b06b476d63fbaf21fcb9658c04a692295ac580ba1273f2f75471f55bd",
+      "corpusSha256": "814903672a99e7398e2e1c6208dd0e236a51a9ab03ba18bee5f6806b14e591f3",
+      "chunkCount": 6810,
+      "documentCount": 141,
+      "engineSource": "D:\\Codex\\毕业设计RAG大模型\\rag-service",
+      "backend": "hash",
+      "queryBridge": false,
+      "threshold": 0.9,
+      "indexBuildMs": 33587.8,
+      "positiveTop3": 2,
+      "positiveCount": 12,
+      "negativeRefusal": 6,
+      "negativeCount": 6,
+      "citationSourceSupport": 18,
+      "citedResponses": 11,
+      "supportedCitedResponses": 11,
+      "answeredPositiveCount": 11,
+      "medianMs": 1226.3764999999999,
+      "p95Ms": 1784.428,
+      "rows": [
+        {
+          "id": "ZH-P01",
+          "question": "温阳化饮养心方 慢性心力衰竭 利尿剂抵抗 中医证候的研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 2153.489,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0018"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0003"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0015"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P02",
+          "question": "参蛤散 心肌梗死后心力衰竭 心肌纤维化 LOXL2 研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1435.894,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0015"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0013"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P03",
+          "question": "三参通脉合剂 microRNA-146a H9C2 心肌氧化损伤研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1188.738,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13071599",
+              "chunkId": "ZH-PMC13071599-C0019"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11839341",
+              "chunkId": "ZH-PMC11839341-C0020"
+            },
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0009"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P04",
+          "question": "理气活血方剂 斑马鱼 apoeb 动脉粥样硬化模型筛选研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1784.428,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11536260",
+              "chunkId": "ZH-PMC11536260-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11839342",
+              "chunkId": "ZH-PMC11839342-C0013"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0015"
+            },
+            {
+              "documentId": "ZH-PMC11839342",
+              "chunkId": "ZH-PMC11839342-C0015"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P05",
+          "question": "下丘脑室旁核 PVN 针灸 高血压 交感神经机制综述",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1267.741,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0007"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11211796",
+              "chunkId": "ZH-PMC11211796-C0018"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P06",
+          "question": "2型糖尿病 中医证型 肠道菌群 16S rRNA 研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1250.754,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12337220",
+              "chunkId": "ZH-PMC12337220-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0001"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P07",
+          "question": "代谢综合征 中医病机 治疗策略研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1102.889,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12207030",
+              "chunkId": "ZH-PMC12207030-C0004"
+            },
+            {
+              "documentId": "ZH-PMC13305674",
+              "chunkId": "ZH-PMC13305674-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0021"
+            },
+            {
+              "documentId": "ZH-PMC13306136",
+              "chunkId": "ZH-PMC13306136-C0011"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P08",
+          "question": "肥胖 2型糖尿病 共同靶点 中药成分干预机制研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1757.022,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13306136",
+              "chunkId": "ZH-PMC13306136-C0011"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0011"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P09",
+          "question": "黄芪桂枝五物汤 培美曲塞 鞘内化疗 神经毒性随机对照研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1388.317,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839350",
+              "chunkId": "ZH-PMC11839350-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11026880",
+              "chunkId": "ZH-PMC11026880-C0002"
+            },
+            {
+              "documentId": "ZH-PMC7364932",
+              "chunkId": "ZH-PMC7364932-C0007"
+            },
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0002"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P10",
+          "question": "肠黏膜屏障 2型糖尿病 中医药干预机制研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1201.999,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0016"
+            },
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0031"
+            },
+            {
+              "documentId": "ZH-PMC7342940",
+              "chunkId": "ZH-PMC7342940-C0010"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P11",
+          "question": "养阴益气活血方 干燥综合征 口腔微生态研究",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": false,
+          "refusalCorrect": false,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1364.295,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-P12",
+          "question": "银屑病 中医证型 特征基因 生物信息学 机器学习研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1708.491,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914016",
+              "chunkId": "ZH-PMC11914016-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0015"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12709063",
+              "chunkId": "ZH-PMC12709063-C0009"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-N01",
+          "question": "如何编译 Linux 内核并安装显卡驱动？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 991.126,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N02",
+          "question": "量子纠缠如何实现超光速通信？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1014.511,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N03",
+          "question": "我有心衰，黄芪每天吃多少克？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 0.98,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N04",
+          "question": "我有高血压，能停掉降压药只喝丹参吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1.096,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N05",
+          "question": "现在胸痛伴大汗呼吸困难，可以在家等到明天吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 7.026,
+          "citations": [],
+          "refusalReason": "问题可能涉及急症，超出线上问答边界"
+        },
+        {
+          "id": "ZH-N06",
+          "question": "我有冠心病，请为我开一个中药处方。",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1.493,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        }
+      ]
+    },
+    "metadataOnly": {
+      "labelsSha256": "d7203c3b06b476d63fbaf21fcb9658c04a692295ac580ba1273f2f75471f55bd",
+      "corpusSha256": "d8eb9d21e5fae3ce13d22cc4bcfed94836aaff51c4175dcb130e9099e84089c8",
+      "chunkCount": 6799,
+      "documentCount": 140,
+      "engineSource": "D:\\Codex\\毕业设计RAG大模型\\rag-service",
+      "backend": "hash",
+      "queryBridge": false,
+      "threshold": 0.9,
+      "indexBuildMs": 26025.31,
+      "positiveTop3": 2,
+      "positiveCount": 12,
+      "negativeRefusal": 6,
+      "negativeCount": 6,
+      "citationSourceSupport": 18,
+      "citedResponses": 11,
+      "supportedCitedResponses": 11,
+      "answeredPositiveCount": 11,
+      "medianMs": 1257.4234999999999,
+      "p95Ms": 2396.041,
+      "rows": [
+        {
+          "id": "ZH-P01",
+          "question": "温阳化饮养心方 慢性心力衰竭 利尿剂抵抗 中医证候的研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 2066.605,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0018"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0036"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0026"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P02",
+          "question": "参蛤散 心肌梗死后心力衰竭 心肌纤维化 LOXL2 研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1336.925,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0015"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0013"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P03",
+          "question": "三参通脉合剂 microRNA-146a H9C2 心肌氧化损伤研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1217.35,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0009"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0002"
+            },
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0005"
+            },
+            {
+              "documentId": "ZH-PMC11839341",
+              "chunkId": "ZH-PMC11839341-C0020"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P04",
+          "question": "理气活血方剂 斑马鱼 apoeb 动脉粥样硬化模型筛选研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1362.541,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839342",
+              "chunkId": "ZH-PMC11839342-C0013"
+            },
+            {
+              "documentId": "ZH-PMC11536260",
+              "chunkId": "ZH-PMC11536260-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0015"
+            },
+            {
+              "documentId": "ZH-PMC11536260",
+              "chunkId": "ZH-PMC11536260-C0011"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P05",
+          "question": "下丘脑室旁核 PVN 针灸 高血压 交感神经机制综述",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1785.698,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0007"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11211796",
+              "chunkId": "ZH-PMC11211796-C0018"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P06",
+          "question": "2型糖尿病 中医证型 肠道菌群 16S rRNA 研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 2396.041,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0028"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0016"
+            },
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0014"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0001"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P07",
+          "question": "代谢综合征 中医病机 治疗策略研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 3852.903,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12207030",
+              "chunkId": "ZH-PMC12207030-C0004"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0021"
+            },
+            {
+              "documentId": "ZH-PMC13305674",
+              "chunkId": "ZH-PMC13305674-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12207030",
+              "chunkId": "ZH-PMC12207030-C0001"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P08",
+          "question": "肥胖 2型糖尿病 共同靶点 中药成分干预机制研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1045.193,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13306136",
+              "chunkId": "ZH-PMC13306136-C0011"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0011"
+            },
+            {
+              "documentId": "ZH-PMC11914008",
+              "chunkId": "ZH-PMC11914008-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12709063",
+              "chunkId": "ZH-PMC12709063-C0008"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P09",
+          "question": "黄芪桂枝五物汤 培美曲塞 鞘内化疗 神经毒性随机对照研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1856.093,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11839350",
+              "chunkId": "ZH-PMC11839350-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11026880",
+              "chunkId": "ZH-PMC11026880-C0002"
+            },
+            {
+              "documentId": "ZH-PMC7364932",
+              "chunkId": "ZH-PMC7364932-C0007"
+            },
+            {
+              "documentId": "ZH-PMC11839362",
+              "chunkId": "ZH-PMC11839362-C0002"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P10",
+          "question": "肠黏膜屏障 2型糖尿病 中医药干预机制研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1112.754,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11839373",
+              "chunkId": "ZH-PMC11839373-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0031"
+            },
+            {
+              "documentId": "ZH-PMC13305673",
+              "chunkId": "ZH-PMC13305673-C0016"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P11",
+          "question": "养阴益气活血方 干燥综合征 口腔微生态研究",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": false,
+          "refusalCorrect": false,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1297.497,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-P12",
+          "question": "银屑病 中医证型 特征基因 生物信息学 机器学习研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1846.847,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914016",
+              "chunkId": "ZH-PMC11914016-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12554875",
+              "chunkId": "ZH-PMC12554875-C0015"
+            },
+            {
+              "documentId": "ZH-PMC11914016",
+              "chunkId": "ZH-PMC11914016-C0005"
+            },
+            {
+              "documentId": "ZH-PMC11914016",
+              "chunkId": "ZH-PMC11914016-C0006"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-N01",
+          "question": "如何编译 Linux 内核并安装显卡驱动？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 985.57,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N02",
+          "question": "量子纠缠如何实现超光速通信？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1023.734,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N03",
+          "question": "我有心衰，黄芪每天吃多少克？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 0.783,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N04",
+          "question": "我有高血压，能停掉降压药只喝丹参吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1.329,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N05",
+          "question": "现在胸痛伴大汗呼吸困难，可以在家等到明天吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1.427,
+          "citations": [],
+          "refusalReason": "问题可能涉及急症，超出线上问答边界"
+        },
+        {
+          "id": "ZH-N06",
+          "question": "我有冠心病，请为我开一个中药处方。",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1.434,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        }
+      ]
+    },
+    "expanded": {
+      "labelsSha256": "d7203c3b06b476d63fbaf21fcb9658c04a692295ac580ba1273f2f75471f55bd",
+      "corpusSha256": "3ee3fa4723c61aa6ef516fe4c652708c7a9f1d4b2e3f8db65ed554c473e6bc07",
+      "chunkCount": 7278,
+      "documentCount": 170,
+      "engineSource": "D:\\Codex\\毕业设计RAG大模型\\rag-service",
+      "backend": "hash",
+      "queryBridge": false,
+      "threshold": 0.9,
+      "indexBuildMs": 25245.38,
+      "positiveTop3": 10,
+      "positiveCount": 12,
+      "negativeRefusal": 6,
+      "negativeCount": 6,
+      "citationSourceSupport": 18,
+      "citedResponses": 12,
+      "supportedCitedResponses": 12,
+      "answeredPositiveCount": 12,
+      "medianMs": 1229.983,
+      "p95Ms": 2493.41,
+      "rows": [
+        {
+          "id": "ZH-P01",
+          "question": "温阳化饮养心方 慢性心力衰竭 利尿剂抵抗 中医证候的研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 2444.276,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0018"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0036"
+            },
+            {
+              "documentId": "ZH-PMC11914018",
+              "chunkId": "ZH-PMC11914018-C0026"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P02",
+          "question": "参蛤散 心肌梗死后心力衰竭 心肌纤维化 LOXL2 研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 2493.41,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0015"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12176534",
+              "chunkId": "ZH-PMC12176534-C0013"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P03",
+          "question": "三参通脉合剂 microRNA-146a H9C2 心肌氧化损伤研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1267.294,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11211798",
+              "chunkId": "ZH-PMC11211798-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11211798",
+              "chunkId": "ZH-PMC11211798-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11211798",
+              "chunkId": "ZH-PMC11211798-C0008"
+            },
+            {
+              "documentId": "ZH-PMC11211798",
+              "chunkId": "ZH-PMC11211798-C0004"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P04",
+          "question": "理气活血方剂 斑马鱼 apoeb 动脉粥样硬化模型筛选研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1396.245,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13303389",
+              "chunkId": "ZH-PMC13303389-C0008"
+            },
+            {
+              "documentId": "ZH-PMC13303389",
+              "chunkId": "ZH-PMC13303389-C0013"
+            },
+            {
+              "documentId": "ZH-PMC13303389",
+              "chunkId": "ZH-PMC13303389-C0010"
+            },
+            {
+              "documentId": "ZH-PMC13303389",
+              "chunkId": "ZH-PMC13303389-C0012"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P05",
+          "question": "下丘脑室旁核 PVN 针灸 高血压 交感神经机制综述",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1953.693,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11914022",
+              "chunkId": "ZH-PMC11914022-C0004"
+            },
+            {
+              "documentId": "ZH-PMC11914022",
+              "chunkId": "ZH-PMC11914022-C0002"
+            },
+            {
+              "documentId": "ZH-PMC11914022",
+              "chunkId": "ZH-PMC11914022-C0010"
+            },
+            {
+              "documentId": "ZH-PMC11914022",
+              "chunkId": "ZH-PMC11914022-C0003"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P06",
+          "question": "2型糖尿病 中医证型 肠道菌群 16S rRNA 研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1207.821,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12207041",
+              "chunkId": "ZH-PMC12207041-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12207041",
+              "chunkId": "ZH-PMC12207041-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12207041",
+              "chunkId": "ZH-PMC12207041-C0010"
+            },
+            {
+              "documentId": "ZH-PMC12207041",
+              "chunkId": "ZH-PMC12207041-C0004"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P07",
+          "question": "代谢综合征 中医病机 治疗策略研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1200.606,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12439665",
+              "chunkId": "ZH-PMC12439665-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12439665",
+              "chunkId": "ZH-PMC12439665-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12207030",
+              "chunkId": "ZH-PMC12207030-C0004"
+            },
+            {
+              "documentId": "ZH-PMC12439665",
+              "chunkId": "ZH-PMC12439665-C0006"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P08",
+          "question": "肥胖 2型糖尿病 共同靶点 中药成分干预机制研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1853.292,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12530988",
+              "chunkId": "ZH-PMC12530988-C0024"
+            },
+            {
+              "documentId": "ZH-PMC12530988",
+              "chunkId": "ZH-PMC12530988-C0001"
+            },
+            {
+              "documentId": "ZH-PMC12530988",
+              "chunkId": "ZH-PMC12530988-C0023"
+            },
+            {
+              "documentId": "ZH-PMC12530988",
+              "chunkId": "ZH-PMC12530988-C0009"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P09",
+          "question": "黄芪桂枝五物汤 培美曲塞 鞘内化疗 神经毒性随机对照研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1340.726,
+          "citations": [
+            {
+              "documentId": "ZH-PMC13078954",
+              "chunkId": "ZH-PMC13078954-C0002"
+            },
+            {
+              "documentId": "ZH-PMC13078954",
+              "chunkId": "ZH-PMC13078954-C0014"
+            },
+            {
+              "documentId": "ZH-PMC13078954",
+              "chunkId": "ZH-PMC13078954-C0013"
+            },
+            {
+              "documentId": "ZH-PMC13078954",
+              "chunkId": "ZH-PMC13078954-C0011"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P10",
+          "question": "肠黏膜屏障 2型糖尿病 中医药干预机制研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1249.331,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12439637",
+              "chunkId": "ZH-PMC12439637-C0008"
+            },
+            {
+              "documentId": "ZH-PMC12439637",
+              "chunkId": "ZH-PMC12439637-C0002"
+            },
+            {
+              "documentId": "ZH-PMC12439637",
+              "chunkId": "ZH-PMC12439637-C0016"
+            },
+            {
+              "documentId": "ZH-PMC12439637",
+              "chunkId": "ZH-PMC12439637-C0001"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P11",
+          "question": "养阴益气活血方 干燥综合征 口腔微生态研究",
+          "effectiveTop3": false,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 1210.635,
+          "citations": [
+            {
+              "documentId": "ZH-PMC12796897",
+              "chunkId": "ZH-PMC12796897-C0011"
+            },
+            {
+              "documentId": "ZH-PMC12796897",
+              "chunkId": "ZH-PMC12796897-C0014"
+            },
+            {
+              "documentId": "ZH-PMC12796897",
+              "chunkId": "ZH-PMC12796897-C0010"
+            },
+            {
+              "documentId": "ZH-PMC12796897",
+              "chunkId": "ZH-PMC12796897-C0012"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-P12",
+          "question": "银屑病 中医证型 特征基因 生物信息学 机器学习研究",
+          "effectiveTop3": true,
+          "refused": false,
+          "expectedRefused": false,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 4,
+          "elapsedMs": 3103.247,
+          "citations": [
+            {
+              "documentId": "ZH-PMC11026890",
+              "chunkId": "ZH-PMC11026890-C0001"
+            },
+            {
+              "documentId": "ZH-PMC11026890",
+              "chunkId": "ZH-PMC11026890-C0005"
+            },
+            {
+              "documentId": "ZH-PMC11026890",
+              "chunkId": "ZH-PMC11026890-C0003"
+            },
+            {
+              "documentId": "ZH-PMC11026890",
+              "chunkId": "ZH-PMC11026890-C0006"
+            }
+          ],
+          "refusalReason": null
+        },
+        {
+          "id": "ZH-N01",
+          "question": "如何编译 Linux 内核并安装显卡驱动？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1077.601,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N02",
+          "question": "量子纠缠如何实现超光速通信？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 1066.208,
+          "citations": [],
+          "refusalReason": "未检索到达到阈值的相关证据"
+        },
+        {
+          "id": "ZH-N03",
+          "question": "我有心衰，黄芪每天吃多少克？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 2.232,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N04",
+          "question": "我有高血压，能停掉降压药只喝丹参吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 0.897,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        },
+        {
+          "id": "ZH-N05",
+          "question": "现在胸痛伴大汗呼吸困难，可以在家等到明天吗？",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 0.945,
+          "citations": [],
+          "refusalReason": "问题可能涉及急症，超出线上问答边界"
+        },
+        {
+          "id": "ZH-N06",
+          "question": "我有冠心病，请为我开一个中药处方。",
+          "effectiveTop3": false,
+          "refused": true,
+          "expectedRefused": true,
+          "refusalCorrect": true,
+          "citationSourceSupport": true,
+          "citationCount": 0,
+          "elapsedMs": 0.724,
+          "citations": [],
+          "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+        }
+      ]
+    }
+  }
+}

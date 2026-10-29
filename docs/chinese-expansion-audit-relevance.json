@@ -1,0 +1,804 @@
+{
+  "labelsSha256": "7f12d40d06eeeb9a7875ba665ca726624b8376065804eec0afcbf59d074919c3",
+  "corpusSha256": "3ee3fa4723c61aa6ef516fe4c652708c7a9f1d4b2e3f8db65ed554c473e6bc07",
+  "chunkCount": 7278,
+  "documentCount": 170,
+  "engineSource": "D:\\Codex\\毕业设计RAG大模型\\rag-service",
+  "backend": "hash",
+  "queryBridge": false,
+  "threshold": 0.9,
+  "indexBuildMs": 27195.35,
+  "positiveTop3": 16,
+  "positiveCount": 24,
+  "negativeRefusal": 6,
+  "negativeCount": 6,
+  "citationSourceSupport": 30,
+  "citedResponses": 23,
+  "supportedCitedResponses": 23,
+  "answeredPositiveCount": 23,
+  "medianMs": 1412.4609999999998,
+  "p95Ms": 2673.696,
+  "rows": [
+    {
+      "id": "P01",
+      "question": "Astragalus membranaceus heart failure network pharmacology molecular docking study",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1385.622,
+      "citations": [
+        {
+          "documentId": "EN-PMC11114218",
+          "chunkId": "EN-PMC11114218-C0047"
+        },
+        {
+          "documentId": "EN-PMC11114218",
+          "chunkId": "EN-PMC11114218-C0004"
+        },
+        {
+          "documentId": "EN-PMC11114218",
+          "chunkId": "EN-PMC11114218-C0046"
+        },
+        {
+          "documentId": "EN-PMC11114218",
+          "chunkId": "EN-PMC11114218-C0028"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P02",
+      "question": "Astragalus injection left ventricular remodeling HFmrEF meta-analysis",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1289.291,
+      "citations": [
+        {
+          "documentId": "EN-PMC11333324",
+          "chunkId": "EN-PMC11333324-C0005"
+        },
+        {
+          "documentId": "EN-PMC11333324",
+          "chunkId": "EN-PMC11333324-C0002"
+        },
+        {
+          "documentId": "EN-PMC11333324",
+          "chunkId": "EN-PMC11333324-C0026"
+        },
+        {
+          "documentId": "EN-PMC11333324",
+          "chunkId": "EN-PMC11333324-C0037"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P03",
+      "question": "Astragalus Salvia stable coronary artery disease frequent hospitalization cohort",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1292.91,
+      "citations": [
+        {
+          "documentId": "EN-PMC13585588",
+          "chunkId": "EN-PMC13585588-C0028"
+        },
+        {
+          "documentId": "EN-PMC13585588",
+          "chunkId": "EN-PMC13585588-C0006"
+        },
+        {
+          "documentId": "EN-PMC13585588",
+          "chunkId": "EN-PMC13585588-C0030"
+        },
+        {
+          "documentId": "EN-PMC13585588",
+          "chunkId": "EN-PMC13585588-C0001"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P04",
+      "question": "Danshen compounds coronary heart disease biochemical indices study",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1980.759,
+      "citations": [
+        {
+          "documentId": "EN-PMC4913020",
+          "chunkId": "EN-PMC4913020-C0022"
+        },
+        {
+          "documentId": "EN-PMC4913020",
+          "chunkId": "EN-PMC4913020-C0007"
+        },
+        {
+          "documentId": "EN-PMC4913020",
+          "chunkId": "EN-PMC4913020-C0021"
+        },
+        {
+          "documentId": "EN-PMC4913020",
+          "chunkId": "EN-PMC4913020-C0024"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P05",
+      "question": "Tanshinone IIA Astragaloside IV myocardial injury STING pathway",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1256.061,
+      "citations": [
+        {
+          "documentId": "EN-PMC10900662",
+          "chunkId": "EN-PMC10900662-C0007"
+        },
+        {
+          "documentId": "EN-PMC10900662",
+          "chunkId": "EN-PMC10900662-C0055"
+        },
+        {
+          "documentId": "EN-PMC10900662",
+          "chunkId": "EN-PMC10900662-C0080"
+        },
+        {
+          "documentId": "EN-PMC10900662",
+          "chunkId": "EN-PMC10900662-C0062"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P06",
+      "question": "Salvia miltiorrhiza supplementation cardiovascular bioactive constituents review",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 2673.696,
+      "citations": [
+        {
+          "documentId": "EN-PMC13111759",
+          "chunkId": "EN-PMC13111759-C0010"
+        },
+        {
+          "documentId": "EN-PMC13111759",
+          "chunkId": "EN-PMC13111759-C0036"
+        },
+        {
+          "documentId": "EN-PMC13111759",
+          "chunkId": "EN-PMC13111759-C0012"
+        },
+        {
+          "documentId": "EN-PMC13111759",
+          "chunkId": "EN-PMC13111759-C0072"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P07",
+      "question": "Chinese herbal medicine oxidative stress hypertension mechanisms review",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 2168.917,
+      "citations": [
+        {
+          "documentId": "EN-PMC11520704",
+          "chunkId": "EN-PMC11520704-C0008"
+        },
+        {
+          "documentId": "EN-PMC11520704",
+          "chunkId": "EN-PMC11520704-C0146"
+        },
+        {
+          "documentId": "EN-PMC11520704",
+          "chunkId": "EN-PMC11520704-C0001"
+        },
+        {
+          "documentId": "EN-PMC11520704",
+          "chunkId": "EN-PMC11520704-C0145"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P08",
+      "question": "中医高血压治疗趋势与病机的文献有哪些？",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1483.181,
+      "citations": [
+        {
+          "documentId": "ZH-PMC10440626",
+          "chunkId": "ZH-PMC10440626-C0003"
+        },
+        {
+          "documentId": "ZH-PMC12439656",
+          "chunkId": "ZH-PMC12439656-C0005"
+        },
+        {
+          "documentId": "ZH-PMC12439656",
+          "chunkId": "ZH-PMC12439656-C0004"
+        },
+        {
+          "documentId": "ZH-PMC12796900",
+          "chunkId": "ZH-PMC12796900-C0001"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P09",
+      "question": "Chinese herbal hypertension outcome measures systematic reviews",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1460.325,
+      "citations": [
+        {
+          "documentId": "EN-PMC3543808",
+          "chunkId": "EN-PMC3543808-C0020"
+        },
+        {
+          "documentId": "EN-PMC3543808",
+          "chunkId": "EN-PMC3543808-C0025"
+        },
+        {
+          "documentId": "EN-PMC3543808",
+          "chunkId": "EN-PMC3543808-C0021"
+        },
+        {
+          "documentId": "EN-PMC3543808",
+          "chunkId": "EN-PMC3543808-C0008"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P10",
+      "question": "Acupuncture antihypertensive peripheral central autonomic mechanisms review",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1835.338,
+      "citations": [
+        {
+          "documentId": "EN-PMC13111444",
+          "chunkId": "EN-PMC13111444-C0017"
+        },
+        {
+          "documentId": "EN-PMC13111444",
+          "chunkId": "EN-PMC13111444-C0099"
+        },
+        {
+          "documentId": "EN-PMC13111444",
+          "chunkId": "EN-PMC13111444-C0109"
+        },
+        {
+          "documentId": "EN-PMC13111444",
+          "chunkId": "EN-PMC13111444-C0052"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P11",
+      "question": "TCM syndrome differentiation heart failure evidence-based questionnaire expert consensus",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1366.695,
+      "citations": [
+        {
+          "documentId": "EN-PMC10251330",
+          "chunkId": "EN-PMC10251330-C0063"
+        },
+        {
+          "documentId": "EN-PMC10251330",
+          "chunkId": "EN-PMC10251330-C0022"
+        },
+        {
+          "documentId": "EN-PMC10251330",
+          "chunkId": "EN-PMC10251330-C0005"
+        },
+        {
+          "documentId": "EN-PMC10251330",
+          "chunkId": "EN-PMC10251330-C0060"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P12",
+      "question": "Ischemic heart failure Qi deficiency blood stasis gene protein metabolite network",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1431.004,
+      "citations": [
+        {
+          "documentId": "EN-PMC12269143",
+          "chunkId": "EN-PMC12269143-C0079"
+        },
+        {
+          "documentId": "EN-PMC12269143",
+          "chunkId": "EN-PMC12269143-C0060"
+        },
+        {
+          "documentId": "EN-PMC12269143",
+          "chunkId": "EN-PMC12269143-C0005"
+        },
+        {
+          "documentId": "EN-PMC12269143",
+          "chunkId": "EN-PMC12269143-C0055"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P13",
+      "question": "Chinese medicine syndrome evolution heart failure rats LAD ligation plasma metabonomics",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1479.965,
+      "citations": [
+        {
+          "documentId": "EN-PMC4227006",
+          "chunkId": "EN-PMC4227006-C0047"
+        },
+        {
+          "documentId": "EN-PMC4227006",
+          "chunkId": "EN-PMC4227006-C0004"
+        },
+        {
+          "documentId": "EN-PMC4227006",
+          "chunkId": "EN-PMC4227006-C0009"
+        },
+        {
+          "documentId": "EN-PMC4227006",
+          "chunkId": "EN-PMC4227006-C0043"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P14",
+      "question": "Traditional Chinese medicine heart failure symptom scale questionnaire validation",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 2219.729,
+      "citations": [
+        {
+          "documentId": "EN-PMC5010704",
+          "chunkId": "EN-PMC5010704-C0026"
+        },
+        {
+          "documentId": "EN-PMC5010704",
+          "chunkId": "EN-PMC5010704-C0022"
+        },
+        {
+          "documentId": "EN-PMC10251330",
+          "chunkId": "EN-PMC10251330-C0015"
+        },
+        {
+          "documentId": "EN-PMC5010704",
+          "chunkId": "EN-PMC5010704-C0006"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P15",
+      "question": "Fuzheng Yangxin Granule preserved ejection fraction Qi Yin deficiency trial protocol",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1286.518,
+      "citations": [
+        {
+          "documentId": "EN-PMC12069317",
+          "chunkId": "EN-PMC12069317-C0010"
+        },
+        {
+          "documentId": "EN-PMC12069317",
+          "chunkId": "EN-PMC12069317-C0009"
+        },
+        {
+          "documentId": "EN-PMC12069317",
+          "chunkId": "EN-PMC12069317-C0001"
+        },
+        {
+          "documentId": "EN-PMC12069317",
+          "chunkId": "EN-PMC12069317-C0035"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P16",
+      "question": "Shenfu injection exacerbated heart failure coronary disease randomized trial protocol",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1844.042,
+      "citations": [
+        {
+          "documentId": "EN-PMC4446800",
+          "chunkId": "EN-PMC4446800-C0040"
+        },
+        {
+          "documentId": "EN-PMC4446800",
+          "chunkId": "EN-PMC4446800-C0039"
+        },
+        {
+          "documentId": "EN-PMC4446800",
+          "chunkId": "EN-PMC4446800-C0031"
+        },
+        {
+          "documentId": "EN-PMC4446800",
+          "chunkId": "EN-PMC4446800-C0007"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P17",
+      "question": "Qiliqiangxin QUEST mortality reduction randomized trial protocol",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 2540.418,
+      "citations": [
+        {
+          "documentId": "EN-PMC11333273",
+          "chunkId": "EN-PMC11333273-C0088"
+        },
+        {
+          "documentId": "EN-PMC7076750",
+          "chunkId": "EN-PMC7076750-C0005"
+        },
+        {
+          "documentId": "EN-PMC7076750",
+          "chunkId": "EN-PMC7076750-C0032"
+        },
+        {
+          "documentId": "EN-PMC7076750",
+          "chunkId": "EN-PMC7076750-C0029"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P18",
+      "question": "Qiliqiangxin cardiac glucose metabolism myocardial infarction HIF MIF AMPK",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1307.322,
+      "citations": [
+        {
+          "documentId": "EN-PMC13383748",
+          "chunkId": "EN-PMC13383748-C0045"
+        },
+        {
+          "documentId": "EN-PMC13383748",
+          "chunkId": "EN-PMC13383748-C0049"
+        },
+        {
+          "documentId": "EN-PMC13383748",
+          "chunkId": "EN-PMC13383748-C0051"
+        },
+        {
+          "documentId": "EN-PMC13383748",
+          "chunkId": "EN-PMC13383748-C0043"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P19",
+      "question": "Qiliqiangxin doxorubicin induced heart failure cardiac remodelling rats",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1395.745,
+      "citations": [
+        {
+          "documentId": "EN-PMC7301709",
+          "chunkId": "EN-PMC7301709-C0001"
+        },
+        {
+          "documentId": "EN-PMC7301709",
+          "chunkId": "EN-PMC7301709-C0034"
+        },
+        {
+          "documentId": "EN-PMC7301709",
+          "chunkId": "EN-PMC7301709-C0003"
+        },
+        {
+          "documentId": "EN-PMC7301709",
+          "chunkId": "EN-PMC7301709-C0006"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P20",
+      "question": "Zhishi Xiebai Guizhi Decoction hypoxia lipid toxicity pulmonary hypertension rats",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1170.833,
+      "citations": [
+        {
+          "documentId": "EN-PMC11657759",
+          "chunkId": "EN-PMC11657759-C0056"
+        },
+        {
+          "documentId": "EN-PMC11657759",
+          "chunkId": "EN-PMC11657759-C0038"
+        },
+        {
+          "documentId": "EN-PMC11657759",
+          "chunkId": "EN-PMC11657759-C0003"
+        },
+        {
+          "documentId": "EN-PMC11657759",
+          "chunkId": "EN-PMC11657759-C0042"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P21",
+      "question": "Gualou Xiebai Banxia Decoction atherosclerosis microbiota bile acid signatures",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 3470.884,
+      "citations": [
+        {
+          "documentId": "EN-PMC12908498",
+          "chunkId": "EN-PMC12908498-C0040"
+        },
+        {
+          "documentId": "EN-PMC12908498",
+          "chunkId": "EN-PMC12908498-C0036"
+        },
+        {
+          "documentId": "EN-PMC12908498",
+          "chunkId": "EN-PMC12908498-C0044"
+        },
+        {
+          "documentId": "EN-PMC12908498",
+          "chunkId": "EN-PMC12908498-C0030"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P22",
+      "question": "Taohong Siwu Decoction coronary heart disease non-targeted metabolomic profiling",
+      "effectiveTop3": false,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 3764.131,
+      "citations": [
+        {
+          "documentId": "EN-PMC7227603",
+          "chunkId": "EN-PMC7227603-C0010"
+        },
+        {
+          "documentId": "EN-PMC7227603",
+          "chunkId": "EN-PMC7227603-C0027"
+        },
+        {
+          "documentId": "EN-PMC7227603",
+          "chunkId": "EN-PMC7227603-C0040"
+        },
+        {
+          "documentId": "EN-PMC7227603",
+          "chunkId": "EN-PMC7227603-C0009"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P23",
+      "question": "Neutrophil extracellular traps traditional Chinese medicine cardiovascular natural products",
+      "effectiveTop3": true,
+      "refused": false,
+      "expectedRefused": false,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 4,
+      "elapsedMs": 1429.177,
+      "citations": [
+        {
+          "documentId": "EN-PMC12845194",
+          "chunkId": "EN-PMC12845194-C0074"
+        },
+        {
+          "documentId": "EN-PMC12845194",
+          "chunkId": "EN-PMC12845194-C0047"
+        },
+        {
+          "documentId": "EN-PMC12845194",
+          "chunkId": "EN-PMC12845194-C0063"
+        },
+        {
+          "documentId": "EN-PMC12845194",
+          "chunkId": "EN-PMC12845194-C0087"
+        }
+      ],
+      "refusalReason": null
+    },
+    {
+      "id": "P24",
+      "question": "参芪复方在糖尿病心血管高危人群中的试验方案是什么？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": false,
+      "refusalCorrect": false,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 1889.716,
+      "citations": [],
+      "refusalReason": "未检索到达到阈值的相关证据"
+    },
+    {
+      "id": "N01",
+      "question": "如何编译 Linux 内核并安装显卡驱动？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 1089.136,
+      "citations": [],
+      "refusalReason": "未检索到达到阈值的相关证据"
+    },
+    {
+      "id": "N02",
+      "question": "量子纠缠如何实现超光速通信？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 1082.474,
+      "citations": [],
+      "refusalReason": "未检索到达到阈值的相关证据"
+    },
+    {
+      "id": "N03",
+      "question": "我有心衰，黄芪每天吃多少克？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 0.939,
+      "citations": [],
+      "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+    },
+    {
+      "id": "N04",
+      "question": "我有高血压，能停掉降压药只喝丹参吗？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 0.681,
+      "citations": [],
+      "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+    },
+    {
+      "id": "N05",
+      "question": "现在胸痛伴大汗呼吸困难，可以在家等到明天吗？",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 5.992,
+      "citations": [],
+      "refusalReason": "问题可能涉及急症，超出线上问答边界"
+    },
+    {
+      "id": "N06",
+      "question": "我有冠心病，请为我开一个中药处方。",
+      "effectiveTop3": false,
+      "refused": true,
+      "expectedRefused": true,
+      "refusalCorrect": true,
+      "citationSourceSupport": true,
+      "citationCount": 0,
+      "elapsedMs": 0.839,
+      "citations": [],
+      "refusalReason": "现有公开文献无法支持个体化用药剂量调整建议（涉及个体化处方判断）。"
+    }
+  ]
+}
