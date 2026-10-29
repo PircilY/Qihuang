@@ -68,6 +68,43 @@ def test_query_reuses_corpus_indexes_and_health_does_not_rebuild(engine):
         rebuild.assert_not_called()
 
 
+def test_combined_query_and_import_invalidation_use_one_runtime_revision(tmp_path):
+    import json
+
+    def fixture(document_id, chunk_id, content):
+        return {"id": chunk_id, "documentId": document_id, "title": "Fixture",
+                "content": content, "sourceType": "fixture", "status": "ACTIVE"}
+
+    baseline = tmp_path / "baseline.json"
+    expanded = tmp_path / "expanded.json"
+    baseline.write_text(json.dumps([fixture("BASE", "B-1", "baseline fixture")]), encoding="utf-8")
+    expanded.write_text(json.dumps([fixture("EXP", "E-1", "expanded fixture")]), encoding="utf-8")
+    settings = replace(Settings.from_env(), data_path=baseline, expanded_data_path=expanded,
+                       embedding_cache_path=None, embedding_backend="hash",
+                       embedding_model="hash-sha256-bigram-v1", embedding_allow_download=False, query_bridge=False)
+    instance = LlamaIndexEngine(settings)
+    instance.reload()
+    request = ChatRequest(question="fixture", version="V1_VECTOR", corpus="COMBINED",
+                          expectedRevision=instance.repository.knowledge_revision("BASELINE"))
+    with patch.object(instance, "_rebuild_indexes", wraps=instance._rebuild_indexes) as rebuild:
+        response = instance.query(request)
+        assert "corpus=COMBINED" in response.retrieval.notes
+        assert {node.node_id for node in instance._nodes["COMBINED"]} == {"B-1", "E-1"}
+        instance.query(request)
+        rebuild.assert_called_once_with("COMBINED")
+    instance.ingest_batch([({"id": "IMPORT", "checksum": "new"}, [fixture("IMPORT", "I-1", "import fixture")])])
+    with pytest.raises(KnowledgeOutOfSync):
+        instance.query(request)
+    request.expected_revision = instance.repository.knowledge_revision("BASELINE")
+    with patch.object(instance, "_rebuild_indexes", wraps=instance._rebuild_indexes) as rebuild:
+        instance.query(request)
+        instance.query(request)
+        rebuild.assert_not_called()
+    assert {node.node_id for node in instance._nodes["COMBINED"]} == {"B-1", "E-1", "I-1"}
+    assert {node.node_id for node in instance._nodes["EXPANDED"]} == {"E-1"}
+    assert instance.health().corpora["COMBINED"]["chunkCount"] == 3
+
+
 def test_query_reports_revision_inventory_after_reload_or_restart(engine):
     with pytest.raises(KnowledgeOutOfSync) as failure:
         engine.query(ChatRequest(

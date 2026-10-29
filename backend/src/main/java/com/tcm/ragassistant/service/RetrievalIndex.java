@@ -21,7 +21,7 @@ public class RetrievalIndex {
         repository.onChange(this::refresh);
     }
     @jakarta.annotation.PostConstruct
-    public void initialize() { for (CorpusId corpus : CorpusId.values()) refresh(corpus); }
+    public void initialize() { for (CorpusId corpus : List.of(CorpusId.BASELINE, CorpusId.EXPANDED)) refresh(corpus); }
     public Snapshot snapshot(CorpusId corpus) {
         long revision = repository.importRevisionNumber(corpus);
         if (!snapshots.containsKey(corpus) || !Objects.equals(revisions.get(corpus), revision)) refresh(corpus);
@@ -98,7 +98,7 @@ public class RetrievalIndex {
     public boolean related(String question, Set<String> query, Entry entry) {
         String normalized = tokenizer.normalize(question);
         Snapshot owner = snapshots.values().stream()
-                .filter(snapshot -> snapshot.entries().containsKey(entry.chunk().id()))
+                .filter(snapshot -> snapshot.entries().get(entry.chunk().id()) == entry)
                 .findFirst().orElse(null);
         if (entry.topics().stream().filter(topic -> !isGeneric(topic)).anyMatch(topic -> normalized.contains(topic)
                 && (!queryBridge || owner == null

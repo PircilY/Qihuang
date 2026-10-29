@@ -56,14 +56,22 @@ class KnowledgeRepository:
 
     def _normalize_corpus(self, corpus: str | None) -> str:
         normalized = (corpus or "BASELINE").strip().upper()
-        if normalized not in self._data_paths:
+        if normalized != "COMBINED" and normalized not in self._data_paths:
             raise ValueError(f"unsupported corpus: {corpus}")
         return normalized
 
     def _nodes(self, corpus: str) -> dict[str, TextNode]:
+        if corpus == "COMBINED":
+            joined = dict(self._nodes_by_corpus.get("BASELINE", {}))
+            for node_id, node in self._nodes_by_corpus.get("EXPANDED", {}).items():
+                joined.setdefault(node_id, node)
+            return joined
         return self._nodes_by_corpus.setdefault(corpus, {})
 
     def _document_ids(self, corpus: str) -> set[str]:
+        if corpus == "COMBINED":
+            return (self._document_ids_by_corpus.get("BASELINE", set())
+                    | self._document_ids_by_corpus.get("EXPANDED", set()))
         return self._document_ids_by_corpus.setdefault(corpus, set())
 
     def upsert(self, document: dict, chunks: Iterable[dict]) -> bool:
@@ -88,7 +96,11 @@ class KnowledgeRepository:
             nodes.append((chunk_id, self._to_node(chunk)))
 
         with self._lock:
+            if document_id in self._document_ids_by_corpus.get("EXPANDED", set()):
+                raise ValueError("expanded documents are read-only")
             for chunk_id, node in nodes:
+                if chunk_id in self._nodes_by_corpus.get("EXPANDED", {}):
+                    raise ValueError(f"chunk id already belongs to expanded corpus: {chunk_id}")
                 existing = self._nodes("BASELINE").get(chunk_id)
                 existing_document = existing.metadata.get("document_id") if existing else None
                 if existing_document and existing_document != document_id:
@@ -149,7 +161,7 @@ class KnowledgeRepository:
         if normalized == "EXPANDED":
             return ""
         with self._lock:
-            entries = self._documents_by_corpus.setdefault(normalized, {})
+            entries = self._documents_by_corpus.setdefault("BASELINE", {})
             canonical = "\n".join(
                 f"{document_id}\t{checksum}"
                 for document_id, checksum in sorted(entries.items(), key=lambda item: (item[0], item[1]))
@@ -161,6 +173,8 @@ class KnowledgeRepository:
 
     def document_inventory(self, corpus: str | None = None) -> list[dict[str, str]]:
         normalized = self._normalize_corpus(corpus)
+        if normalized == "COMBINED":
+            normalized = "BASELINE"
         with self._lock:
             return [
                 {"documentId": document_id, "checksum": checksum}

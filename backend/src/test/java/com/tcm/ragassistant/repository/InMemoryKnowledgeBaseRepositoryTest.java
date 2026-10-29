@@ -154,6 +154,49 @@ class InMemoryKnowledgeBaseRepositoryTest {
     }
 
     @Test
+    void combinedViewIncludesBothCorporaAndRestoredImportsWithoutChangingSeeds() {
+        Path snapshot = tempDir.resolve("combined.json");
+        var isolated = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());
+        var baseline = isolated.findAll(CorpusId.BASELINE);
+        var expanded = isolated.findAll(CorpusId.EXPANDED);
+        int documentCount = isolated.findDocuments(CorpusId.BASELINE).size()
+                + isolated.findDocuments(CorpusId.EXPANDED).size();
+        assertThat(isolated.findAll(CorpusId.COMBINED)).hasSize(baseline.size() + expanded.size())
+                .containsAll(baseline).containsAll(expanded);
+        assertThat(isolated.findDocuments(CorpusId.COMBINED)).hasSize(documentCount);
+        assertThat(isolated.findById(expanded.get(0).id(), CorpusId.COMBINED)).contains(expanded.get(0));
+        assertThat(isolated.findById(baseline.get(0).id(), CorpusId.COMBINED)).contains(baseline.get(0));
+        assertThat(isolated.findDocumentById(expanded.get(0).documentId(), CorpusId.COMBINED)).isPresent();
+        assertThat(isolated.search(expanded.get(0).id(), null, null, null, CorpusId.COMBINED))
+                .contains(expanded.get(0));
+        long before = isolated.importRevisionNumber(CorpusId.COMBINED);
+        isolated.registerDocument(document("COMBINED-IMPORT", "combined-hash"),
+                List.of(chunk("COMBINED-IMPORT", "COMBINED-C1")), CorpusId.COMBINED);
+        assertThat(isolated.importRevisionNumber(CorpusId.COMBINED)).isNotEqualTo(before)
+                .isEqualTo(isolated.importRevisionNumber(CorpusId.BASELINE));
+        assertThat(isolated.knowledgeRevision(CorpusId.COMBINED)).isEqualTo(isolated.knowledgeRevision(CorpusId.BASELINE));
+        var restored = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());
+        assertThat(restored.findAll(CorpusId.COMBINED)).hasSize(baseline.size() + expanded.size() + 1);
+        assertThat(restored.findDocuments(CorpusId.COMBINED)).hasSize(documentCount + 1);
+        assertThat(restored.findById("COMBINED-C1", CorpusId.COMBINED)).isPresent();
+        assertThat(restored.findAll(CorpusId.EXPANDED)).isEqualTo(expanded);
+        assertThat(restored.findAll(CorpusId.BASELINE)).containsAll(baseline).hasSize(12);
+        assertThat(restored.knowledgeRevision(CorpusId.COMBINED)).isEqualTo(isolated.knowledgeRevision(CorpusId.COMBINED));
+    }
+
+    @Test
+    void runtimeImportsCannotShadowExpandedIdentitiesInCombinedView() {
+        var isolated = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), "");
+        var expanded = isolated.findAll(CorpusId.EXPANDED).get(0);
+        assertThatThrownBy(() -> isolated.registerDocument(document(expanded.documentId(), "shadow-doc"),
+                List.of(chunk(expanded.documentId(), "SHADOW-C1")))).isInstanceOf(BusinessException.class);
+        assertThatThrownBy(() -> isolated.registerDocument(document("SHADOW-DOC", "shadow-chunk"),
+                List.of(chunk("SHADOW-DOC", expanded.id())))).isInstanceOf(BusinessException.class);
+        assertThat(isolated.findImportedDocuments()).isEmpty();
+        assertThat(isolated.findById(expanded.id(), CorpusId.COMBINED)).contains(expanded);
+    }
+
+    @Test
     void journalReplaysBetweenCheckpointsAndDiscardsIncompleteTail() throws Exception {
         Path snapshot = tempDir.resolve("journal.json");
         var first = new InMemoryKnowledgeBaseRepository(objectMapper, new DefaultResourceLoader(), snapshot.toString());

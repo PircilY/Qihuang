@@ -111,7 +111,7 @@ public class RagOrchestrationService {
                     throw new IllegalStateException("Empty RAG response");
                 }
                 remoteRetryAfter.set(0);
-                if (corpus == CorpusId.BASELINE) remoteSyncState.markInSync(expectedRevision);
+                if (corpus != CorpusId.EXPANDED) remoteSyncState.markInSync(expectedRevision);
                 return response;
             } catch (KnowledgeOutOfSyncException outOfSync) {
                 try {
@@ -123,7 +123,7 @@ public class RagOrchestrationService {
                         throw new IllegalStateException("Empty RAG response");
                     }
                     remoteRetryAfter.set(0);
-                    if (corpus == CorpusId.BASELINE) remoteSyncState.markInSync(retriedRevision);
+                    if (corpus != CorpusId.EXPANDED) remoteSyncState.markInSync(retriedRevision);
                     return response;
                 } catch (KnowledgeOutOfSyncException | ResourceAccessException |
                          RestClientResponseException | com.tcm.ragassistant.service.remote.IndexUnavailableException | IllegalStateException retryFailure) {

@@ -77,6 +77,41 @@ def test_corpora_use_independent_storage() -> None:
     assert repository.chunk_count("BASELINE") == 11
 
 
+def test_combined_view_includes_seeds_expanded_and_imports(tmp_path: Path) -> None:
+    baseline = tmp_path / "baseline.json"
+    expanded = tmp_path / "expanded.json"
+    baseline.write_text(json.dumps([_chunk("BASE", "B-1")]), encoding="utf-8")
+    expanded.write_text(json.dumps([_chunk("EXP", "E-1")]), encoding="utf-8")
+    repository = KnowledgeRepository(baseline, expanded)
+    repository.load()
+
+    assert [node.node_id for node in repository.nodes("COMBINED")] == ["B-1", "E-1"]
+    assert repository.chunk_count("COMBINED") == repository.document_count("COMBINED") == 2
+    before = repository.knowledge_revision("COMBINED")
+    repository.upsert({"id": "IMPORT", "checksum": "import-hash"}, [_chunk("IMPORT", "I-1")])
+    assert [node.node_id for node in repository.nodes("COMBINED")] == ["B-1", "I-1", "E-1"]
+    assert repository.document_count("COMBINED") == 3
+    assert repository.knowledge_revision("COMBINED") != before
+    assert repository.knowledge_revision("COMBINED") == repository.knowledge_revision("BASELINE")
+    assert repository.document_inventory("COMBINED") == repository.document_inventory("BASELINE")
+    assert repository.document_inventory("COMBINED") == [{"documentId": "IMPORT", "checksum": "import-hash"}]
+    assert repository.chunk_count("BASELINE") == 2
+    assert repository.chunk_count("EXPANDED") == 1
+    with pytest.raises(ValueError, match="expanded documents"):
+        repository.upsert({"id": "EXP"}, [_chunk("EXP", "NEW")])
+    with pytest.raises(ValueError, match="expanded corpus"):
+        repository.upsert_batch([({"id": "SHADOW"}, [_chunk("SHADOW", "E-1")])], 10, 1000)
+    assert repository.chunk_count("COMBINED") == 3
+
+
+def test_combined_view_works_without_an_expanded_dataset() -> None:
+    repository = KnowledgeRepository(Path("unused.json"))
+    repository.upsert({"id": "DOC-1"}, [_chunk("DOC-1", "C-1")])
+    assert repository.chunk_count("COMBINED") == 1
+    assert repository.document_count("COMBINED") == 1
+    assert repository.nodes("COMBINED") == repository.nodes("BASELINE")
+
+
 def test_revision_uses_the_cross_language_canonical_vector() -> None:
     repository = KnowledgeRepository(Path("unused.json"))
     repository.upsert({"id": "DOC-B", "checksum": "def"}, [_chunk("DOC-B", "C-B")])

@@ -72,7 +72,7 @@ class LlamaIndexEngine:
         self._lexical_indexes: dict[str, LexicalIndex] = {}
         self._bm25_retrievers: dict[str, BM25Retriever | None] = {}
         self._lock = threading.RLock()
-        self._index_dirty: set[str] = {"BASELINE", "EXPANDED"}
+        self._index_dirty: set[str] = {"BASELINE", "EXPANDED", "COMBINED"}
 
     def start_warmup(self):
         if self._warmup_thread and self._warmup_thread.is_alive():
@@ -93,10 +93,10 @@ class LlamaIndexEngine:
         with self._lock:
             self._ensure_embedding()
             self.repository.load()
-            self._index_dirty = {"BASELINE", "EXPANDED"}
+            self._index_dirty = {"BASELINE", "EXPANDED", "COMBINED"}
             for corpus in ("BASELINE", "EXPANDED"):
                 self._rebuild_indexes(corpus)
-            self._index_dirty.clear()
+                self._index_dirty.discard(corpus)
             self.index_error = None
             self.index_state = "READY"
 
@@ -108,10 +108,11 @@ class LlamaIndexEngine:
             if document.get("id") not in self.repository._seed_ids:
                 document, chunks = self._enrich_import_metadata(document, chunks)
             changed = self.repository.upsert_batch([(document, chunks)], self.settings.max_import_documents, self.settings.max_import_characters)
-            if changed and rebuild:
-                self._index_dirty.add("BASELINE")
-                self._rebuild_indexes("BASELINE")
-                self._index_dirty.discard("BASELINE")
+            if changed:
+                self._index_dirty.update({"BASELINE", "COMBINED"})
+                if rebuild:
+                    self._rebuild_indexes("BASELINE")
+                    self._index_dirty.discard("BASELINE")
             return KnowledgeImportResponse(
                 document_id=document["id"],
                 imported_chunk_count=len(chunks),
@@ -135,7 +136,7 @@ class LlamaIndexEngine:
             changed = self.repository.upsert_batch(items, self.settings.max_import_documents,
                                                    self.settings.max_import_characters)
             if changed:
-                self._index_dirty.add("BASELINE")
+                self._index_dirty.update({"BASELINE", "COMBINED"})
                 self._rebuild_indexes("BASELINE")
                 self._index_dirty.discard("BASELINE")
             return KnowledgeImportResponse(document_id=items[-1][0]["id"],
@@ -184,7 +185,7 @@ class LlamaIndexEngine:
     def health(self) -> HealthResponse:
         # Health must remain responsive while the warmup worker builds indexes.
         counts: dict[str, dict[str, int | bool]] = {}
-        for corpus in ("BASELINE", "EXPANDED"):
+        for corpus in ("BASELINE", "EXPANDED", "COMBINED"):
             chunk_count = self.repository.chunk_count(corpus)
             counts[corpus] = {"documentCount": self.repository.document_count(corpus), "chunkCount": chunk_count, "available": chunk_count > 0}
         return HealthResponse(
@@ -238,7 +239,7 @@ class LlamaIndexEngine:
     def _query(self, request: ChatRequest) -> ChatResponse:
         started_at = time.perf_counter()
         corpus = (request.corpus or "BASELINE").strip().upper()
-        if corpus not in {"BASELINE", "EXPANDED"}:
+        if corpus not in {"BASELINE", "EXPANDED", "COMBINED"}:
             raise ValueError(f"unsupported corpus: {request.corpus}")
         if request.expected_revision is not None:
             actual_revision = self.repository.knowledge_revision(corpus)
@@ -389,14 +390,14 @@ class LlamaIndexEngine:
                 raise
             self.embedding = replacement
             self._embedding_key = key
-            self._index_dirty = {"BASELINE", "EXPANDED"}
+            self._index_dirty = {"BASELINE", "EXPANDED", "COMBINED"}
 
     def _cached_embedding(self, corpus, node):
         text = searchable(node)
         identity = json.dumps(["shared-bigram-v1", self.settings.embedding_backend,
                                self.settings.embedding_model, text], ensure_ascii=False)
         key = hashlib.sha256(identity.encode("utf-8")).hexdigest()
-        cache = self.settings.embedding_cache_path if corpus == "EXPANDED" else None
+        cache = self.settings.embedding_cache_path if corpus in {"EXPANDED", "COMBINED"} else None
         path = cache / (key + ".json") if cache else None
         if path and path.exists():
             try:

@@ -14,6 +14,23 @@ import static org.mockito.Mockito.*;
 
 class RetrievalIndexTest {
     @Test
+    void combinedSnapshotRefreshesOnImportAndLeavesHistoricalSnapshotsIndependent() {
+        var repository = new InMemoryKnowledgeBaseRepository(new ObjectMapper().findAndRegisterModules(),
+                new DefaultResourceLoader(), "");
+        var index = new RetrievalIndex(repository, new TextTokenizer());
+        index.initialize();
+        var before = index.snapshot(CorpusId.COMBINED);
+        var expanded = index.snapshot(CorpusId.EXPANDED);
+        assertThat(before.entries()).hasSize(11 + expanded.entries().size());
+        repository.registerDocument(document(), List.of(chunk()));
+        var after = index.snapshot(CorpusId.COMBINED);
+        assertThat(after.entries()).hasSize(before.entries().size() + 1).containsKey("FIXTURE-C1");
+        before.entries().forEach((id, entry) -> assertThat(after.entries().get(id)).isSameAs(entry));
+        assertThat(index.snapshot(CorpusId.BASELINE).entries()).hasSize(12);
+        assertThat(index.snapshot(CorpusId.EXPANDED)).isSameAs(expanded);
+    }
+
+    @Test
     void queriesReuseTermFrequenciesAndImportsUpdateOnlyNewDocument() {
         var mapper = new ObjectMapper().findAndRegisterModules();
         var repository = new InMemoryKnowledgeBaseRepository(mapper, new DefaultResourceLoader(), "");
@@ -74,6 +91,7 @@ class RetrievalIndexTest {
         index.initialize();
         org.springframework.test.util.ReflectionTestUtils.setField(index, "queryBridge", true);
         var entry = index.snapshot(CorpusId.BASELINE).entries().get("TOPIC-1");
+        index.snapshot(CorpusId.COMBINED);
 
         assertThat(index.snapshot(CorpusId.BASELINE).topicFrequency().get("心血管")).isGreaterThan(0.2);
         assertThat(index.related("心血管", java.util.Set.of("心血", "血管"), entry)).isFalse();

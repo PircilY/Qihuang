@@ -53,7 +53,12 @@ public class KnowledgeBaseService {
                             baselineDocuments, true, "正式评测与历史结果使用此语料"),
                     new CorpusInfoResponse(CorpusId.EXPANDED, "扩充语料", expandedDocuments, expandedChunks,
                             expandedDocuments, false,
-                            "许可和全文已核验；主题相关性仍需人工复核；不属于 Experiment A")
+                            "许可和全文已核验；主题相关性仍需人工复核；不属于 Experiment A"),
+                    new CorpusInfoResponse(CorpusId.COMBINED, "知识库",
+                            repository.findDocuments(CorpusId.COMBINED).size(),
+                            repository.findAll(CorpusId.COMBINED).size(),
+                            repository.findDocuments(CorpusId.COMBINED).size(), false,
+                            "标准、扩充及用户登记资料的合并视图；历史评测仍使用标准语料")
             );
     }
 

@@ -6,7 +6,8 @@ import java.util.Locale;
 
 public enum CorpusId {
     BASELINE,
-    EXPANDED;
+    EXPANDED,
+    COMBINED;
 
     public static CorpusId from(String value) {
         if (value == null || value.isBlank()) {

@@ -160,19 +160,29 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
     }
 
     private List<KnowledgeChunk> chunks(CorpusId corpus) {
+        if (corpus == CorpusId.COMBINED) return List.copyOf(chunkById(corpus).values());
         return corpus == CorpusId.EXPANDED ? expandedChunks : chunks;
     }
 
     private Map<String, KnowledgeChunk> chunkById(CorpusId corpus) {
+        if (corpus == CorpusId.COMBINED) return combined(chunkById, expandedChunkById);
         return corpus == CorpusId.EXPANDED ? expandedChunkById : chunkById;
     }
 
     private List<KnowledgeDocument> documents(CorpusId corpus) {
+        if (corpus == CorpusId.COMBINED) return List.copyOf(documentById(corpus).values());
         return corpus == CorpusId.EXPANDED ? expandedDocuments : documents;
     }
 
     private Map<String, KnowledgeDocument> documentById(CorpusId corpus) {
+        if (corpus == CorpusId.COMBINED) return combined(documentById, expandedDocumentById);
         return corpus == CorpusId.EXPANDED ? expandedDocumentById : documentById;
+    }
+
+    private static <T> Map<String, T> combined(Map<String, T> baseline, Map<String, T> expanded) {
+        Map<String, T> joined = new LinkedHashMap<>(baseline);
+        expanded.forEach(joined::putIfAbsent);
+        return joined;
     }
 
     @Override
@@ -228,7 +238,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
 
     @Override
     public synchronized String knowledgeRevision(CorpusId corpus) {
-        if (corpus == CorpusId.BASELINE && baselineRevision != null) {
+        if (corpus != CorpusId.EXPANDED && baselineRevision != null) {
             return baselineRevision;
         }
         return ""; // EXPANDED is a read-only build artifact, outside runtime revision protocol
@@ -236,7 +246,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
 
     @Override
     public synchronized long importRevisionNumber(CorpusId corpus) {
-        return corpus == CorpusId.BASELINE
+        return corpus != CorpusId.EXPANDED
                 ? baselineImportRevision.get()
                 : 0L;
     }
@@ -272,7 +282,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
         if (newChunks == null || newChunks.isEmpty()) {
             throw new BusinessException("INVALID_CHUNKS", "至少需要登记一个知识片段");
         }
-        if (documentById.containsKey(document.id())) {
+        if (documentById.containsKey(document.id()) || expandedDocumentById.containsKey(document.id())) {
             throw new BusinessException("DOCUMENT_ALREADY_EXISTS", "文档编号已存在：" + document.id());
         }
         if (!document.checksum().isBlank() && documents.stream()
@@ -291,7 +301,7 @@ public class InMemoryKnowledgeBaseRepository implements KnowledgeBaseRepository 
             if (!incomingIds.add(chunk.id())) {
                 throw new BusinessException("CHUNK_ALREADY_EXISTS", "导入请求中存在重复片段编号：" + chunk.id());
             }
-            if (chunkById.containsKey(chunk.id())) {
+            if (chunkById.containsKey(chunk.id()) || expandedChunkById.containsKey(chunk.id())) {
                 throw new BusinessException("CHUNK_ALREADY_EXISTS", "知识片段编号已存在：" + chunk.id());
             }
         }

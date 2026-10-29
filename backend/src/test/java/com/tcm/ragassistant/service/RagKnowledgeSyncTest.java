@@ -26,6 +26,31 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RagKnowledgeSyncTest {
     @Test
+    void combinedRequestsRecoverRuntimeImportsAfterRemoteRestart() {
+        var remote = mock(LlamaIndexRagClient.class);
+        var repository = mock(KnowledgeBaseRepository.class);
+        when(repository.knowledgeRevision(CorpusId.BASELINE)).thenReturn("local");
+        when(repository.knowledgeRevision(CorpusId.COMBINED)).thenReturn("local");
+        when(repository.findImportedDocuments()).thenReturn(List.of(document()));
+        when(repository.findAll(CorpusId.COMBINED)).thenReturn(List.of(chunk(document().id())));
+        when(remote.health()).thenReturn(java.util.Map.of("knowledgeRevision", "local"));
+        var answer = new ChatResponse("id", "fixture", IterationVersion.V2_HYBRID, "fixture", false,
+                null, 0.5, 1, List.of(), new RetrievalTrace("remote", 0, 0, 0, 0, false, List.of()), Instant.EPOCH);
+        when(remote.chat(anyString(), any(), any(), eq(CorpusId.COMBINED), eq("local")))
+                .thenThrow(new KnowledgeOutOfSyncException("remote", List.of(), null)).thenReturn(answer);
+        var state = new RemoteSyncState();
+        state.markPending();
+        var service = new RagOrchestrationService(
+                new RagEngineProperties("auto", null, null, null, true, Duration.ofSeconds(1)),
+                remote, mock(RetrievalStrategyRegistry.class), new AnswerGenerationService(), repository, state);
+        assertThat(service.ask("fixture", IterationVersion.V2_HYBRID, RetrievalFilter.none(), CorpusId.COMBINED))
+                .isEqualTo(answer);
+        assertThat(service.remoteSyncState()).isEqualTo("IN_SYNC");
+        verify(remote).importKnowledgeBatch(argThat(items -> items.size() == 1
+                && items.get(0).chunks().get(0).id().equals(chunk(document().id()).id())));
+    }
+
+    @Test
     void emergencyBypassesRemoteAndRetrievalForEveryVersion() {
         LlamaIndexRagClient remote = mock(LlamaIndexRagClient.class);
         RetrievalStrategyRegistry strategies = mock(RetrievalStrategyRegistry.class);

@@ -64,10 +64,31 @@ class KnowledgeBaseControllerTest {
                         repository.findDocuments(com.tcm.ragassistant.domain.CorpusId.EXPANDED).size()))
                 .andExpect(jsonPath("$.data[1].chunkCount").value(
                         repository.findAll(com.tcm.ragassistant.domain.CorpusId.EXPANDED).size()))
-                .andExpect(jsonPath("$.data[1].note").value(containsString("不属于 Experiment A")));
+                .andExpect(jsonPath("$.data[1].note").value(containsString("不属于 Experiment A")))
+                .andExpect(jsonPath("$.data[2].id").value("COMBINED"))
+                .andExpect(jsonPath("$.data[2].documentCount").value(
+                        repository.findDocuments(com.tcm.ragassistant.domain.CorpusId.COMBINED).size()));
         mockMvc.perform(get("/api/v1/knowledge/overview"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.remoteSyncState").value("IN_SYNC"));
+    }
+
+    @Test
+    void combinedEndpointsExposeStandardAndExpandedDataWithScopedLookups() throws Exception {
+        var corpus = com.tcm.ragassistant.domain.CorpusId.COMBINED;
+        mockMvc.perform(get("/api/v1/knowledge/overview").param("corpus", corpus.name()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.documentCount").value(repository.findDocuments(corpus).size()))
+                .andExpect(jsonPath("$.data.chunkCount").value(repository.findAll(corpus).size()));
+        var expanded = repository.findAll(com.tcm.ragassistant.domain.CorpusId.EXPANDED).get(0);
+        mockMvc.perform(get("/api/v1/knowledge/chunks/" + expanded.id()).param("corpus", corpus.name()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.id").value(expanded.id()));
+        mockMvc.perform(get("/api/v1/knowledge/chunks/" + expanded.id()))
+                .andExpect(status().isNotFound());
+        mockMvc.perform(get("/api/v1/knowledge/documents/" + expanded.documentId()).param("corpus", corpus.name()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.id").value(expanded.documentId()));
     }
 
     @Test
@@ -142,6 +163,7 @@ class KnowledgeBaseControllerTest {
                 .andExpect(jsonPath("$.data.document.checksum").isNotEmpty());
 
         mockMvc.perform(get("/api/v1/knowledge/chunks")
+                        .param("corpus", "COMBINED")
                         .param("disease", disease)
                         .param("sourceType", "临床研究")
                         .param("evidenceLevel", "B"))
