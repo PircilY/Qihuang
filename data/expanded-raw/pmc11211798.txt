@@ -1,0 +1,93 @@
+慢性心力衰竭（chronic heart failure, CHF）是多种心血管疾病的重症及终末阶段，为多因素、多通路、多基因的复杂疾病，其发病机制涵盖多层次生物网络调控过程。其分子机制之一是由于相关微小RNA （microRNA, miRNA） 调控的信号转导通路与靶基因之间的平衡状态出现紊乱[1]。心肌细胞的氧化损伤及凋亡是CHF的基础，而氧化应激是心肌细胞损伤和凋亡的直接原因[2]。三参通脉合剂为北京市名老中医许心如研发的中药合剂，临床治疗CHF疗效确切，前期研究证实三参通脉合剂参与了免疫效应的诱导和调节，减少氧化应激，纠正患者免疫功能的紊乱，从而取得了良好的临床疗效[3]。microRNA是一类非编码小RNA分子，可以导致其靶基因的降解或阻碍其靶基因的翻译。microRNA的表达异常引起相应生物网络的紊乱即机体阴阳关系失衡，是疾病发生的重要原因之一。本团队前期研究已发现microRNA-146a是冠心病血瘀证的相关microRNA[4]，同时，动物实验已证实三参通脉合剂能有效改善CHF大鼠的心功能和心肌活性，其疗效与miRNA-146a表达正相关，推测其治疗CHF的机制与调控microRNA-146a-NF-κB/IRAF6细胞通路相关[5]。但三参通脉合剂是否可以通过调节microRNA-146a从而影响心肌细胞氧化损伤的作用仍然未知。本实验体外培养大鼠心肌细胞（H9C2），H2O2作为氧化剂作用于H9C2制作氧化应激模型。通过三参通脉干预，观察H2O2诱导的H9C2细胞氧化损伤的变化，从而以microRNA的视角探讨三参通脉合剂对心肌细胞的保护作用及其作用机制，希望能为CHF的治疗提供新的思路及靶点。
+
+材料与方法
+
+药物及试剂
+
+三参通脉合剂（Sanshentongmai mixture, SSTM）购自首都医科大学附属北京中医医院（规格200 mL，生药含量2.11 g/mL，批号：京药制字Z20053357）；大鼠心肌细胞（H9C2）购自Sciencell研究实验室；胎牛血清，胰蛋白酶，改良Eagle培养基DMEM（Invitrogen公司，批号分别为16000044、25200-056、12400-024）；细胞增殖检测试剂盒（CCK8，Dojindo公司，批号CK04）；大鼠氨基端前脑钠素（N-terminal pro-brain natriuretic peptide, NT-ProBNP）ELISA试剂盒（产品货号：TWp028489）；总一氧化氮（NO）检测试剂盒（产品批号：S0023）；大鼠超敏C反应蛋白（Hs-CRP）ELISA检测试剂盒（产品批号：TWp003217）；大鼠血管紧张素Ⅱ（ANG-Ⅱ）ELISA检测试剂盒（产品批号：TWp002823）；Annexin Ⅴ-FITC（BD公司，货号51-65874X）；hsa microRNA-146a和内参引物由上海生工生物工程有限公司合成：hsa microRNA-146a逆转录引物：5′-GTCGTATCCAGTGCAGGGTCCGAGGTATTCGCACTGGATACGACAACCCA-3′，内参引物：上游5′-CGGCGGTGAGAACTGAATTCCA-3′，下游5′-GTGCAGGGTCCGAGGT-3′。
+
+仪器
+
+Spectra Max Plus384型酶标仪（美国Molec-ular Devices公司），2000C型核酸浓度测量仪（美国Themo Nano-Drop公司），480型实时荧光定量 PCR仪（瑞士Roche Light Cycler 公司），3111型CO2培养箱（美国Thermo Forma公司），FACSAria 型流式细胞仪（美国BD公司） 。
+
+研究方法
+
+细胞培养、分组、细胞存活率检测
+
+将H9C2细胞培养于含15%胎牛血清的DMEM培养基中，在37 ℃、体积分数5%CO2的培养箱中培养，每日换液。选对数生长期的细胞进行实验研究。生长至90%左右融合度的H9C2，离心后细胞沉淀中加入含10% DMSO的DMEM培养基（4 ℃ 预冷）1.5 mL，吹打混匀后转移至2 mL细胞冻存管，置于－80 ℃冰箱保存。
+
+H2O2诱导剂量选择：取对数生长期的H9C2细胞，接种于96孔板，细胞密度约5000/孔，放入CO2培养箱中培养24 h。向H9C2细胞中加入不同浓度的H2O2（0、2、5、10、15、30、60 μmol/L），每组设3个重复孔，处理2 h（以此为时间零点），在0、24、48、72 h用CCK8检测细胞存活率，具体为一次性向每孔加入CCK8溶液10 μL，将培养板放置在 37 ℃培养箱内孵育1 h，用酶标仪测定在450 nm处的吸光度值（A450值）。5 μmol/L H2O2处理H9C2存活率依然较高，10 μmol/L及以上H2O2处理可以明显抑制H9C2细胞的增殖（细胞存活率为75.4%），15 μmol/L H2O2处理进一步抑制H9C2细胞的增殖（细胞存活率为58.2%），而30～60 μmol/L H2O2处理H9C2的存活率仅有14%～35.4%，因此最终选择15 μmol/L H2O2处理2 h进行后续诱导模型的建立。
+
+三参通脉合剂的剂量选择：H9C2细胞分为空白组、H2O2氧化损伤模型组（简称模型组）和H2O2模型+三参通脉药物组（简称模型加药组）。空白组：H9C2细胞加入含5%胎牛血清的DMEM培养基培养2 h；模型组：H9C2细胞加入含15 μmol/L H2O2的DMEM培养基培养2 h。模型加药组H9C2细胞加入含15 μmol/L H2O2的DMEM培养基培养2 h（以此为时间零点），然后分别加入100、200、500 和 1000 μg/mL三参通脉合剂处理72 h，在0、24、48、72 h用CCK8检测细胞存活率，每组设3个重复孔。以此选择最佳的三参通脉合剂干预剂量。最终选定500 μg/mL三参通脉合剂用于后续实验，即后续实验的模型加药组为H9C2细胞加入含15 μmol/L H2O2的DMEM培养基培养2 h后，再以500 μg/mL三参通脉合剂处理72 h。
+
+ELISA检测NT-proBNP、NO、Hs-CRP、angiotensin Ⅱ水平
+
+取空白组、模型组和模型加药组H9C2细胞，按试剂盒操作说明，以ELISA法检测其 NT-proBNP、NO、Hs-CRP和angiotensin Ⅱ质量浓度。
+
+实时荧光定量PCR（RT-PCR）检测microRNA-146a水平
+
+取空白组、模型组和模型加药组H9C2细胞，TRIzol 法提取总RNA逆转录为cDNA后进行PCR。PCR反应体系: cDNA（已稀释10倍）4 μL，SYBR Green 5 μL，前、后引物各0.2 μL（10 μmol/L），水0.6 μL，总计10 μL。PCR反应条件：95 ℃ 5 min；95 ℃ 10 s，60 ℃ 20 s，共50个循环；5 ℃ 10 s，60 ℃ 10 s，40 ℃ 30 s。采用荧光定量分析仪自动采集目的基因和内参基因的Ct值，以2－ΔΔCt法计算mRNA的相对表达量。
+
+统计学方法
+
+数据分析采用SPSS27.0统计软件，符合正态分布的计量资料用\begin{document}$ \bar x \pm s$\end{document}表示。两组组间比较时，行两个独立样本的t检验或t'检验；一般计数资料采用卡方检验；P<0. 05为差异有统计学意义。
+
+结果
+
+H9C2细胞培养及特征
+
+显微镜下观察可见原代培养的H9C2心肌细胞于接种初期呈清的圆形或短棒状。在接种后细胞开始贴壁生长，其胞体逐渐增大，12 h细胞基本贴壁，48 h细胞相互接触不断分裂并增殖成片层，第3天心肌细胞伸出伪足交织呈网状结构，形成大量呈放射状同心圆状形态的细胞藤。倒置显微镜（图1）下观察心肌细胞的主要形态为梭形细胞：胞体呈细长梭形，折光性强，胞核为卵圆形。模型组心肌细胞逐渐皱缩变圆，细胞连接受到破坏，细胞发生脱落程度逐渐增加。模型加药组中心肌细胞以正常梭形细胞为主，可见少量球形不规则凋亡细胞及瓶壁细胞脱落。
+
+Cellular morphology of H9C2 cells
+
+各组细胞形态
+
+A, Control group; B, model group; C, treatment group.
+
+三参通脉合剂对H9C2细胞存活率的影响
+
+100～1000 μg/mL三参通脉合剂处理H9C2细胞72 h，三参通脉合剂质量浓度在100 μg/mL时对细胞存活率无明显改善，200 μg/mL时即可改善细胞存活率，500 μg/mL时细胞存活率达到顶峰，而1000 μg/mL时，细胞存活率较500 μg/mL时略有下降。见图2。故后续实验选择三参通脉合剂质量浓度为500 μg/mL。
+
+Changes in the survival rate of H9C2 cells during the treatment of SSTM for 72 h (n=3)
+
+三参通脉干预72 h过程中H9C2细胞存活率的变化（n=3）
+
+The SSTM groups were cultured for 72 h by adding the corresponding dose of SSTM on the basis of the model group.
+
+三参通脉合剂对氧化损伤大鼠心肌细胞H9C2 NT-proBNP、NO、Hs-CRP、angiotensin Ⅱ水平的影响
+
+各组NT-proBNP、NO、Hs-CRP、angiotensin Ⅱ ELISA检测结果如表1。与空白组比较，模型组中NT-proBNP、Hs-CRP、angiotensin Ⅱ 表达上调（P<0.01），NO表达下调（P<0.01）；模型加药组与空白组比较，NT-proBNP、angiotensin Ⅱ表达上调（P<0.05），NO表达下调（P<0.05），而Hs-CRP表达差异无统计学意义。
+
+Changes in the concentration of Nt-proBNP, NO, Hs-CRP, and angiotensin Ⅱ in each group
+
+Changes in the concentration of Nt-proBNP, NO, Hs-CRP, and angiotensin Ⅱ in each group
+
+各组NT-proBNP、NO、Hs-CRP和angiotensin Ⅱ质量浓度的变化
+
+三参通脉合剂对氧化损伤大鼠心肌细胞H9C2 microRNA-146a表达的影响
+
+见表2。15 μmol/L H2O2处理可以降低microRNA-146a的表达（P<0.01），而模型加药组中microRNA-146a表达量升高，约模型组的两倍，且接近空白组水平（与空白组对比差异无统计学意义）。
+
+Expression levels of microRNA-146a in each group
+
+Expression levels of microRNA-146a in each group
+
+各组microRNA-146a表达水平
+
+讨论
+
+CHF是由于各种原因引起心输出量下降，从而无法满足人体脏器代谢及功能需要的复杂疾病。而心肌细胞的氧化应激损伤、坏死及凋亡是心力衰竭形成和进展的关键因素[6]。miRNA是一种长约19～25 nt，进化上保守的单链非编码的小RNA，可与靶基因mRNA的3'非编码区（3'UTR）结合，从而调控基因表达[7]。研究表明miRNA在心肌细胞氧化损伤中发挥着重要作用，其通过调节相关信号通路及靶基因表达成为心肌损伤的潜在治疗靶点[8]。本团队前期在冠心病血瘀证的研究中发现，microRNA-146b的下调可能导致促进炎症的CALR的上调[4]。同时也有研究表明microRNA-146b抑制剂可以显著降低急性冠脉综合征中肿瘤坏死因子-α （tumor necrosis factor-α, TNF-α）、单核细胞趋化蛋-1（monocyte chemotactic protein-1, MCP-1）和核转录因子-κB（nuclear factor κB, NF-κB） p65表达的关键炎性细胞因子[9]。而microRNA-146a的表达则与microRNA-146b呈现相反的特性，有研究表明microRNA-146a可通过抑制白细胞介素1受体相关激酶1（interleukin-1 receptor-associated kinase 1, IRAK1）和肿瘤坏死因子受体相关因子（TNF receptor-associated factor 6, TRAF6）的表达，抑制NF-κB 的活化，进而阻止其介导的免疫、炎症信号的产生，减少白细胞介素 6（interleukin-6, IL-6）、TNF-α等免疫炎症因子产生，发挥抗免疫、抗炎等多种作用[10-11]，同时，亦有研究表明，microRNA-146a与细胞凋亡也存在联系，有学者发现，microRNA-146a可通过降低Fas蛋白的表达，从而抑制间充质干细胞的凋亡[12-13] 。本团队通过前期动物实验也已证实miRNA-146a可以改善慢性心衰大鼠的心功能和心肌活性，其疗效与其表达呈正相关，推测其机制与调控microRNA-146a-NF-κB/IRAF6细胞通路相关[5]。
+
+三参通脉合剂为北京中医医院院内协定处方制剂，临床治疗心力衰竭疗效确切，处方以太子参、丹参和党参为君药，以益气活血和行气利水为主要治疗原则，有学者临床研究发现益气活血法在提高心肌收缩能力、改善心脏射血功能、改善血液流变学指标和降低心脏前负荷方面均有确切疗效。药理学研究提示，人参、太子参、党参等作为常用于治疗CHF的益气类药物在扩张冠状动脉、减轻前后负荷和改善心肌细胞的能量代谢方面疗效确切；而丹参、红花等活血中药能扩冠降压，减轻阻力，调节左室压力，丹参更可以减轻自由基的脂质过氧化损伤，清除自由基，防止缺血再灌注期的细胞超载，保护细胞膜，对缺血再灌注损伤有良好的改善作用[14] 。
+
+因此，本实验以H2O2作用于H9C2制作氧化应激模型，通过三参通脉干预，观察H2O2诱导的H9C2大鼠心肌细胞氧化损伤及凋亡的变化，从而以microRNA的视角探讨三参通脉合剂对心肌细胞的保护作用及其作用机制，从研究结果可以看出，通过CCK8法检测细胞存活率，发现200～500 μg/mL三参通脉能显著对抗细胞氧化损伤，而更高或更低浓度的三参通脉处理并无明显改善作用，因此考虑在药物质量浓度为500 μg/L时，细胞增殖改善达到顶峰，故选用此浓度为干预浓度。ELISA检测心衰相关指标NT-proBNP、NO、Hs-CRP和angiotensin Ⅱ水平也可看出模型组中NT-proBNP、Hs-CRP、angiotensin Ⅱ表达较正空白组上调（P<0.01），NO表达下调（P<0.01）；而模型加药物组与空白组比较，NT-proBNP、angiotensin Ⅱ表达上调（P<0.05），NO表达下调（P<0.05），Hs-CRP更与空白组比较表达差异无统计学意义。说明三参通脉可以有效改善大鼠心肌细胞H9C2氧化损伤。最后，RT-PCR法检测microRNA-146a在各组的表达可以看出，15 μmol/L H2O2 处理可以明显降低microRNA-146a表达，而模型加药组中microRNA-146a表达较模型组升高将近一倍，与空白组对比差异无统计学意义。因此，本研究结果提示，三参通脉可以明显抵抗H2O2诱导的大鼠心肌细胞H9C2氧化损伤，可能是通过上调micro-146a从而发挥心肌保护作用。
+
+* * *
+
+作者贡献声明 李然负责论文构思、数据审编和审读与编辑写作，王振裕负责调查研究和研究项目管理，王燕丽负责数据审编，滕菲负责论文构思、正式分析、研究方法、软件、可视化、初稿写作和审读与编辑写作。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LI Ran is responsible for conceptualization, data curation, and writing--review and editing. WANG Zhenyu is responsible for investigation and project administration. WANG Yanli is responsible for data curation. TENG Fei is responsible for conceptualization, formal analysis, methodology, software, visualization, writing--original draft, and writing--review and editing. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.

@@ -1,0 +1,157 @@
+子宫内膜异位症（endometriosis, EMs）是一种慢性妇科疾病，其特征是子宫内膜出现在子宫腔外，并伴有慢性炎症[1]。育龄妇女发病率高达10%～15%，近年来发病率呈上升趋势，被称为“现代病”[2]。在患有严重月经失调和慢性盆腔疼痛的女性中EMs的患病率为40%～60%，在近一半的不孕妇女中可以检测到无症状的EMs[3]。目前，药物治疗是治疗EMs的首选方法。然而，对于药物治疗无效和有手术指征的卵巢型EMs仍需手术治疗，但术后5年复发率为50%，且逐年增加[4], 已成为EMs长期管理的瓶颈。
+
+关于EMs术后复发机制的研究很少。炎症被认为是诱发EMs的机制之一，而巨噬细胞在此过程中起着关键作用[5]。在健康女性中，由于细胞凋亡机制，逆流的经血进入腹腔后会被免疫监视系统清除。有研究表明，EMs患者的细胞免疫和体液免疫发生了变化[6-7]。在EMs患者中，腹腔内子宫内膜碎片募集了免疫系统的哨兵如巨噬细胞、中性粒细胞等，升高促炎和趋化细胞因子诱发腹腔炎症，而腹腔液中巨噬细胞比例增加又是促炎和趋化细胞因子升高的主要原因[8]。异位子宫内膜周期性出血和增生，反复损伤周围组织，刺激炎症反应。通过释放细胞因子，促进异位组织中子宫内膜细胞的增殖和新生血管的形成，诱导上皮-间质转化，最终导致术后复发。
+
+EMs术后复发预防仍以降雌激素或拮抗雌激素为目标，常用的西医药物有促性腺激素释放激素激动剂（GnRH-a）、地诺孕素、口服避孕药等，但这些药物存在不能长期使用、用药期间有点滴出血等缺点，且停药后易复发。中药作为EMs的有效治疗药物，已写入2021年版《子宫内膜异位症诊治指南（第三版）》[9]。虽然目前指南中未将中药用于预防术后复发，但现有的临床研究已证实中药降低EMs术后复发效果尤为显著[10-11]。
+
+内异停（Neiyiting, NYT）方是江苏省中医院院内制剂（批准文号：宁卫1997，366号），课题组的前期临床研究表明，内异停方能减少EMs术后复发，提高妊娠率，降低血清炎症因子水平[12]。EMs的腹腔液和病灶中含有丰富的巨噬细胞，巨噬细胞有助于免疫微环境的平衡调节，可杀死子宫内膜异位细胞或促进病灶生长[13]。活化的Toll样受体4（Toll-like receptor4, TLR4）可通过核因子κB（nuclear factor kappa B, NF-κB）信号通路释放多种促炎细胞因子，促进异位子宫内膜病灶的形成[14]。髓样细胞表达的触发受体-1（triggering receptor expressed on myeloid cells 1, TREM1）是一种表达于单核细胞/巨噬细胞的先天免疫受体，在各种疾病模型中增强炎症反应，子宫内膜炎中激活的TREM1可通过进一步激活TLR2/4介导的NF-κB通路促进炎症反应[15]。有研究报道EMs患者腹腔液和血液中TREM1均高于正常对照组[16]，但TREM1在EMs术后复发中的意义不明。基于此，本研究通过体内和体外实验探讨内异停方预防EMs术后复发的机制。
+
+材料与方法
+
+内异停方制备
+
+内异停方（当归15 g、肉桂3 g、鬼箭羽15 g、血竭3 g、皂角刺10 g、地鳖虫10 g、党参20 g、黄芪15 g、茯苓15 g、生山楂6 g）购于苏州市中医医院，按1∶10药水比将药物于蒸馏水中浸泡2 h，常法煎煮2次，每次30 min，滤出药液加热浓缩至1 g/mL，高温灭菌冷却后置于−20 ℃冰箱保存备用，使用时稀释至所需浓度。
+
+动物实验
+
+健康、性成熟、未孕雌性大鼠，SPF级，体质量（200±20） g，购自昭衍（苏州）新药研究中心有限公司〔SCXK（苏）2023-0004〕，在南京中医药大学中心实验室洁净级动物房饲养、建模和观察〔许可证号：SYXK（苏）2018-0049〕。饲养条件：室温（25±1） ℃，相对湿度（55±10）%，昼夜交替光暗时间为12 h/12 h，动物自由饮水。所有大鼠均适应环境1周，实验操作严格按照动物伦理相关规定进行，并经苏州市中医院伦理委员会批准（2022伦动批012号）。
+
+首先采用自体移植法建立大鼠EMs模型[14]，造模大鼠腹腔内注射苯甲酸雌二醇注射液（批准文号：兽药字163232511）1 mL/（kg·d），连续注射3 d，注射完毕后禁食水，第4天造模大鼠麻醉后，仰卧位保持固定，腹部备皮消毒后进腹，切除子宫游离端约1 cm，在生理盐水中分离子宫内膜后，将2块4 mm × 4 mm子宫内膜的内膜面缝于双侧卵巢部位的腹壁上，查无活动性出血后逐层关腹。术后第1天起腹腔注射苯甲酸雌二醇1 mL/（kg·d），隔日1次，4周后开腹观察腹壁内异位病灶生长情况并切除约50%的异位病灶，在切除手术中故意保留残留病灶，建立病灶切除不彻底导致复发的大鼠模型[17]。随机选取6只SD大鼠作为对照组，仅进行开腹手术，术后予蒸馏水2 mL/d灌胃，每天1次，连续3周。选择造模成功的大鼠，分为4组，每组6只，在腹部切除部分病灶后开始给药。具体分组及给药方法：①模型组：蒸馏水2 mL/d灌胃，每天1次，连续3周。②孕三烯酮（Gestrione）组： 孕三烯酮（华润紫竹药业有限公司，批号：531510011） 0.325 mg/kg灌胃，每周2次，连续3周（目前临床GnRH-a给药方式为皮下注射或肌肉注射，尚无口服药物，为了保持给药方式的一致性故选择孕三烯酮作为阳性药物）。③内异停方组：中药低剂量（NYT-L）组和高剂量（NYT-H）组分别给予内异停方5.04 g/（kg·d）和10.08 g/（kg·d），每日1次，连续灌胃3周。采用体表面积换算法计算孕三烯酮和内异停方的大鼠用药剂量。
+
+最后一次灌胃后的第2天早晨对大鼠进行麻醉（2.5%三溴乙醇以12 mL/kg腹腔注射）并取材，取材后颈椎脱臼处死大鼠。从对照组大鼠身上剪取正常的子宫组织，其余大鼠从植入病灶根部的腹膜上切除并送检，如未见复发病灶突出，则切除残留病灶的腹膜，用多聚甲醛固定，其余组织分装于无菌、无酶的EP 管中，置于－80 ℃冰箱中保存。排除标准：①EMs造模后未见明显内异病灶的大鼠；②实验动物存在严重的健康问题；③实验动物在实验前的观察期内出现死亡或濒临死亡；④实验动物在实验前的观察期内的行为表现异常。
+
+含药血清制备
+
+10只6～8周龄健康成熟未交配过雌性SD大鼠称重后分为2组，每组5只，即内异停方组和生理盐水组，灌胃给药剂量如下：内异停方煎剂10.08 g/（kg·d）和生理盐水10 mL/（kg·d），每天2次，早晚各1次，连续给药3 d。各组大鼠分别饲养在不同的笼子里，喂食标准的普通饲料。最后一次灌胃前大鼠禁食12 h，灌胃2 h后腹腔麻醉大鼠（2.5%三溴乙醇以12 mL/kg腹腔注射），从腹主动脉采血，离心分离血清，灭活，经无菌滤器过滤除菌，然后装入1.5 mL冷冻管中，−80 ℃保存备用。取材后颈椎脱臼处死大鼠。
+
+细胞实验
+
+RAW 264.7细胞系（CL-0190）购自武汉普诺赛生命科技有限公司，hEM15A细胞系（FH1234）购自上海富衡生物科技有限公司，细胞复苏培养3代后用于实验。采用CCK8法检测半数抑制浓度（half maximal inhibitory concentration, IC50），结果显示NYT含药血清干预巨噬细胞理想浓度为20%。选择转染后生长状态良好、密度达80%～90%的RAW 246.7细胞，消化并计数，然后加入DMEM完全培养基中，浓度为 5×105 cells/mL。将培养室置于6孔板中，上层加入hEM15A，下层加入RAW 264.7细胞，两种细胞均匀分布在每层中，在含体积分数5%CO2的37 ℃恒温恒湿细胞培养箱中培养48 h，然后收集细胞和培养液用于后续实验。
+
+细胞转染
+
+将细胞分为7组：对照组、空载体组、TREM1过表达质粒组、空白血清+空载体组、TREM1过表达质粒+NYT组、siRNA-NC组、siRNA-TREM1组。根据实验分组和转染试剂说明，后6组分别使用空白质粒、TREM1过表达质粒、siRNA-NC、siRNA-TREM1〔通用生物（安徽）有限公司〕转染RAW 264.7细胞，转染6 h后更换完全培养基，继续培养18 h后进行后续实验。
+
+异位病灶体积测量和组织病理学评价
+
+用直尺测量异位病灶的长、宽、高，根据公式计算体积：异位病灶体积（mm3）=0.52×长×宽×高[18]。子宫和异位病灶用体积分数4%多聚甲醛固定，石蜡包埋，HE染色后光镜观察。
+
+免疫组织化学染色
+
+取石蜡切片，常规去石蜡，水洗，冲洗，抗原修复，分别与抗大鼠CD86（NBP2-25208, novus，美国）、TREM1（YT5133, ImmunoWay，美国）、TLR4（19811-1-AP, Proteintech，美国）、NF-κB P65（8242T, CST，美国）37 ℃下孵育1 h，然后用标记的二抗孵育，经层析、复染、脱水后封片，在光镜下观察各抗体的表达情况。Image J对免疫组化进行半定量分析。
+
+流式细胞术
+
+用PMA和离子霉素孵育细胞4 h，评估M1巨噬细胞和M2巨噬细胞。在Perm/Wash缓冲溶液中透化20 min后，细胞在4 ℃黑暗中与PE抗小鼠CD86（1 μg/test, 105007, BioLegend）、APC抗小鼠CD206（0. 5 μg/test, 141707, BioLegend）、PerCP-Cy5.5抗小鼠CD11b（0.25 μg/test, 101227, BioLegend）、AF488抗小鼠F4/80（1 μg/test, 123119, BioLegend）孵育30 min，并使用Flowjo（10.0.7）分析软件进行分析。
+
+Western blot
+
+各组细胞用含1×蛋白水解酶抑制剂的RIPA缓冲液冰上裂解30 min，12000 r/min 离心10 min，收集上清。用BCA法对总蛋白进行定量。按照试剂盒说明制备聚丙烯酰胺凝胶。优化条件如下：聚偏二氟乙烯（PVDF）膜，280 mA 70 min，5%脱脂奶室温孵育2 h，加入TREM1、TLR4、P65、p-P65、Ki-67抗体，4 ℃孵育过夜，二抗室温孵育1 h，以β-actin为标准对照测定相对蛋白丰度。用 Image J分析蛋白质丰度，并用化学发光显色。
+
+qRT-PCR
+
+使用TRIzol试剂提取总RNA并反转录为cDNA，使用 OD260/OD280在1.8和2.0之间的总RNA，引物由Primer Premier软件设计，如表1所示。使用SYBR Green Ⅰ核酸凝胶染色法进行qRT-PCR，以GAPDH作为内参和2－ΔΔCt 值计算核心靶基因的相对表达水平。
+
+Primer sequences
+
+引物序列
+
+酶联免疫吸附试验（ELISA）
+
+严格按照产品说明书离心培养液，用酶标仪检测每孔450 mm处的OD值，根据标准曲线计算每孔中的样品含量。检测RAW 264.7培养液中IL-1β（abs520001, Absin，中国）、TNF-α（abs520010, Absin，中国）的含量。
+
+统计学方法
+
+用Image J软件统计分析图像表达。所有统计分析及图表制作均采用GraphPad Prism 9.4 （La Jolla, CA, USA）进行，计量资料以表示，3组及以上组间比较采用单因素方差分析（one-way ANOVA），然后采用Dunnett法进行两两比较，P<0.05为差异有统计学意义。
+
+结果
+
+内异停方预防EMs术后复发
+
+取样时，模型大鼠腹部植入部位可见透明囊性肿块，囊壁和周围腹壁可见新生血管，病变直径较大。孕三烯酮组和NYT-H组病灶周围未见新生血管，病灶直径和病灶内囊液较模型组明显减少（图1A）。测量并比较各组异位病灶的体积，结果显示孕三烯酮组和NYT-H组异位病灶的体积小于模型组，差异有统计学意义（P<0.01），孕三烯酮组和NYT-H组间比较，差异无统计学意义（图1B）。
+
+Prevention of postoperative recurrence of endometriosis by Neiyiting decoction
+
+内异停方预防子宫内膜异位症术后复发
+
+A, Representation of postoperative recurrent lesions. B, NYT restrained the volume of postoperative recurrent lesions (n = 6). C, HE staining of postoperative recurrent lesion (original magnification × 400). **** P < 0.0001.
+
+子宫组织取自对照组，HE染色显示单层柱状上皮，固有层有大量子宫腺体，少量淋巴细胞浸润。模型组大鼠复发性异位病变可见与对照组子宫相似的单层柱状上皮和间质，结构明显异常；各组大鼠复发性异位病变病理结果显示，治疗后病变损害改善，其中孕三烯酮组和NYT-H组改善最为显著（图1C）。
+
+内异停方抑制巨噬细胞M1型极化
+
+M1巨噬细胞被称为促炎巨噬细胞，能分泌大量促炎因子，如诱导型一氧化氮合酶（inducible nitric oxide synthase, iNOS）、肿瘤坏死因子α（tumor necrosis factor-alpha, TNF-α）、白细胞介素1β（interleukin 1β, IL-1β）等。动物实验的免疫组化和qRT-PCR结果显示，模型组复发病灶组织中M1巨噬细胞标志物CD86的蛋白和mRNA表达量高于对照组，差异有统计学意义（P<0.01）。与模型组相比，孕三烯酮组和NYT-H组CD86的蛋白和mRNA表达下降，差异有统计学意义（P<0.01）（图2A～2C）。
+
+Inhibition of macrophage M1 polarisation by Neiyiting decoction
+
+内异停方抑制巨噬细胞M1型极化
+
+A and B, The expressions of CD86 examined by immunohistochemical staining in EMs recurrent lesion (n = 6) (original magnification × 400). C, The relative expression of CD86 mRNA examined by qRT-PCR in EMs recurrent lesion (n = 6). D-F, The effects of overexpression and silencing of TREM1 on TREM1, IL-1β, and iNOS mRNA expression in macrophages (n = 3). G, CD86+ expressing macrophage assessed by flow cytometry in RAW 264.7 cells (n = 3). H and I, The relative expression of IL-1β and iNOS mRNA examined by qRT-PCR in RAW 264.7 cells (n = 3). J and K, TNF-α and IL-1β levels in RAW 264.7 culture medium examined by ELISA (n = 3). * P < 0.05, ** P < 0.01, *** P < 0.001, **** P < 0.0001.
+
+体外实验首先验证了过表达和沉默TREM1对巨噬细胞TREM1、IL-1β和iNOS mRNA表达的影响。qRT-PCR 结果显示：与空载体组相比，TREM1过表达质粒组TREM1、IL-1β、iNOS mRNA表达升高（P<0.01），与siRNA阴性对照组相比，siRNA TREM1组TREM1、IL-1β、iNOS mRNA表达下降（P<0.05）（图2D～2F）。然后进一步验证了内异停方对TREM1介导的巨噬细胞极化的影响。结果显示，TREM1过表达质粒组的CD86阳性巨噬细胞数量增加，而NYT可减少CD86阳性巨噬细胞的数量（P<0.01） （图2G）。在RAW 264.7细胞中，过表达TREM1质粒可上调IL-1β和iNOS mRNA的表达，而NYT可降低 IL-1β和iNOS mRNA的表达（P<0.01）（图2H～2I）。ELISA结果表明，TREM1过表达质粒组促进了RAW 264.7细胞中TNF-α和IL-1β的分泌，而NYT能显著抑制RAW 264.7细胞中TNF-α和IL-1β的分泌（图2J～2K）。
+
+内异停方抑制巨噬细胞M1型极化诱导下的hEM15A细胞增殖
+
+过表达TREM1质粒组可上调hEM15A细胞中Ki-67蛋白的表达，NYT可下调hEM15A细胞中Ki-67蛋白的表达，差异有统计学意义（P<0.01）（图3）。
+
+Assessment of Ki-67 expression in hEM15A cells by Western blot
+
+Western blot法检测hEM15A细胞Ki-67表达情况
+
+n = 3. **** P < 0.0001.
+
+内异停方抑制TREM1/TLR4/NF-κB信号通路
+
+本研究采用qRT-PCR和免疫组化方法检测大鼠复发性EMs病变组织中TREM1、TLR4和NF-κB的表达。结果表明，模型组TREM1、TLR4和NF-κB的mRNA表达水平高于对照组，差异有统计学意义（P<0.01）（图4A～4C），TREM1、TLR4和NF-κB的蛋白表达与上述结果一致（图4E～4G）。与模型组相比，孕三烯酮组和NYT-H组下调TREM1、TLR4和NF-κB的mRNA和蛋白表达，差异有统计学意义（P<0.01）。
+
+TREM1, TLR4, and NF-κB in vivo expression levels examined by qRT-PCR (A-C) and immunohistochemical staining (D-G) (original magnification × 400)
+
+TREM1、TLR4和NF-κB的qRT-PCR（A～C）和免疫组化（D～G）（×400）检测结果
+
+n = 6. *** P < 0.001, **** P < 0.0001.
+
+为了进一步验证内异停方对TREM1/TLR4/NF-κB信号通路靶点的作用，本研究进行了RAW 264.7细胞和hEM15A细胞的共培养实验。过表达TREM1质粒组可上调 RAW 264.7细胞中TREM1、TLR4和p-P65蛋白的表达，而加入内异停方含药血清后TREM1、TLR4和p-P65蛋白的表达均降低，差异有统计学意义（P<0.01）（图5）。
+
+The levels of TREM1, TLR4, and p-P65 proteins analyzed by Western blot in vitro
+
+TREM1、TLR4和p-P65蛋白的Western blot检测结果
+
+n = 3. **** P < 0.0001.
+
+综上，在EMs术后复发大鼠模型和RAW 264.7细胞中，TREM1促进TLR4和NF-κB的激活，TREM1可能是内异停方发挥作用的靶点。
+
+讨论
+
+在临床上，由于对EMs术后复发的机制了解甚少，目前尚无预防EMs术后复发的标准化治疗方案，现有的预防术后复发的方案多以抗雌激素为目标，但因其不良反应往往难以实现长期管理。中药具有多靶点作用，既往临床研究表明，内异停方预防EMs术后复发方面有效且安全，但其作用机制尚不清楚。
+
+炎症是诱发EMs的机制之一，涉及细胞增殖和浸润，炎症性质和免疫细胞在EMs的发生发展中至关重要[5]。巨噬细胞是一种具有高度可塑性的细胞，可通过极化转变形成具有不同功能表型的促炎性M1巨噬细胞和抗炎性M2巨噬细胞来适应组织微环境[19]。 M1极化的巨噬细胞通过产生TNF-α和IL-1β等促炎细胞因子加剧肝损伤和炎症反应。课题组认为，手术创伤应激有可能加重EMs术后腹腔炎症微环境，通过巨噬细胞M1型极化促进EMs术后复发。本研究建立了大鼠EMs术后复发模型、子宫内膜间质细胞（hEM15A）和巨噬细胞（RAW 264.7）共培养实验模型，体内外实验结果表明内异停方抑制巨噬细胞M1极化，从而预防EMs术后复发。
+
+过多的促炎细胞因子IL-1β、TNF-α和IL-6是EMS发病的关键因素，炎症反应会促进人子宫内膜基质细胞的增殖[20]。IL-1β通过产生血管内皮生长因子和IL-6在EMs病变周围组织的新生血管形成过程中发挥重要作用。TNF-α 通过促进子宫内膜细胞黏附到腹膜，参与EMs的进展[21]。本研究结果表明，内异停方可降低IL-1β和TNF-α水平，抑制巨噬细胞M1极化。
+
+TLR4与配体结合后，可通过各种桥接分子将信号传递到细胞内，激活NF-κB，介导下游信号转导，并诱导免疫相关基因的表达。一项关于缺血性中风的体内和体外研究表明，TLR4/NF-κB信号通路的激活会促进M1小胶质细胞/巨噬细胞表达的增加[22]。TREM1作为免疫球蛋白超家族中的一种激活受体，在增强天然免疫和诱导获得性免疫中的炎症反应方面发挥作用[23]。TREM1是一种炎症调节因子，在多种感染性和非感染性炎症疾病的发病过程中发挥着重要作用。TREM1可增强由TLR4启动的炎症反应，而TLR4的主要作用是放大炎症反应，从而引发EMs的过度炎症反应。研究表明，在EMs模型大鼠中，TLR4和NF-κB的表达也会上调[24]；另一项研究表明，抑制TREM1的表达可使TLR4/MyD88/NF-κB信号通路失活[25]。因此，本研究检测了与TREM1/TLR4/NF-κB 信号通路相关的指标，体内外实验结果表明，内异停方降低TREM1/TLR4/NF-κB信号通路蛋白和mRNA表达，提示TREM1是EMs术后复发的关键靶点，而内异停方通过抑制TREM1/TLR4/NF-κB信号通路发挥抑制炎症效应。既往研究也揭示了可以通过抑制TLR4/MyD88/NF-κB信号通路减轻EMs大鼠炎症反应[26]。
+
+本研究存在一定局限性。以往的研究表明，M1巨噬细胞在在位子宫内膜中富集，异位子宫内膜的巨噬细胞向M2型极化[27]。而巨噬细胞的表型依赖于局部微环境[13]，本课题组认为EMs术后特殊的腹腔炎性微环境可能是预防术后复发需要考虑的重要因素。本研究尚未对巨噬细胞M2型相关指标进行检测，在后期的研究中将进行进一步探索。本研究中涉及大量指标的比较，数据统计中未采用多重检验校正法控制检验水准，本研究结果仅作为探索性分析。
+
+综上，本研究表明，内异停方通过抑制TREM1/TLR4/NF-κB信号通路，抑制巨噬细胞M1极化，降低炎症因子水平，从而发挥预防EMs术后复发的效应。研究为预防EMs术后复发提供了有效的候选方剂，有助于实现EMs术后的长期管理策略。
+
+* * *
+
+作者贡献声明 陆黎娟负责论文构思、数据编审、正式分析、经费获取、调查研究、研究方法和初稿写作，曾薇薇负责调查研究、软件和经费获取，王靖雯负责调查研究和研究方法，张露蓉负责研究方法、提供资源、软件、监督指导和审读与编辑写作，刘迎负责调查研究、研究项目管理和提供资源，孙薛亮负责研究方法、验证、可视化和审读与编辑写作，徐雯和方晓慧负责调查研究、软件和验证，严毅超负责调查研究和软件，夏亲华负责论文构思、研究方法、提供资源、监督指导和审读与编辑写作。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LU Lijuan is responsible for conceptualization, data curation, formal analysis, funding acquisition, investigation, methodology, and writing--original draft. ZENG Weiwei is responsible for investigation, software, and funding acquisition. WANG Jingwen is responsible for investigation and methodology. ZHANG Lurong is responsible for methodology, resources, software, supervisions, and writing--review and editing. LIU Ying is responsible for investigation, project administration, and resources. SUN Xueliang is responsible for methodology, validation, visualization, and writing--review and editing. XU Wen and FANG Xiaohui are responsible for investigation, software, and validation. YAN Yichao is responsible for investigation and software. XIA Qinhua is responsible for conceptualization, methodology, resources, supervisions, and writing--review and editing. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.
+
+Funding Statement
+
+国家自然科学基金（No. 82004398），苏州市科技发展计划（医疗卫生科技创新）项目（No. SKY2022205、No. SKYXD2022058、No. SKY2023213）和苏州市卫生青年骨干人才“全国导师制”培训项目（苏卫健科教〔2020〕7号）资助
+
+Contributor Information
+
+黎娟 陆 (Lijuan LU), Email: lulijuanmary@163.com.
+
+亲华 夏 (Qinhua XIA), Email: xa-qh@163.com.
+
+References

@@ -1,0 +1,99 @@
+大肠癌（colorectal cancer, CRC）是消化系统中常见的恶性肿瘤之一，具有较高的发病率和死亡率[1-2]。AURKA（Aurora kinase A）是一种蛋白激酶，在细胞分裂过程中发挥重要的调控作用。AURKA作为癌基因，其表达在恶性肿瘤中普遍升高，能够促进肿瘤增殖、侵袭和转移等生物过程，且参与肿瘤耐药[3-5]。近年来，研究发现AURKA可调控肿瘤免疫微环境。AURKA通过抑制T细胞转化、活化和浸润等促进肿瘤进展[6-7]。TANG等[8]研究报道，大肠癌中AURKA的表达上调，且与患者较高的转移率和较差的预后相关，然而，AURKA对大肠癌肿瘤微环境的调控作用尚不明确。
+
+中药具有调控肿瘤免疫微环境的作用，中药成分通过调节肿瘤微环境中不同的细胞或细胞因子，抑制肿瘤细胞的活性，如中药成分能够调控肿瘤相关成纤维细胞、肿瘤相关巨噬细胞、树突状细胞和髓源性抑制细胞（myeloid-derived suppressor cells, MDSCs）等细胞类型，而这些细胞对肿瘤的发生、浸润和转移有着重要作用[9-11]。中药成分对肿瘤微环境的调节作用复杂多向，对肿瘤免疫及基质微环境的改善，可成为未来中药治疗肿瘤的突破点[12-13]。靶向AURKA具有切实有效的抗肿瘤效应，而目前尚缺乏对调控AURKA的中药成分的研究。因此，探索中药成分对AURKA的调节作用，可为改善肿瘤微环境、提高治疗效果提供新的策略。本研究旨在阐释AURKA对大肠癌肿瘤微环境的影响，筛选可调控AURKA的中药成分，为阐明AURKA促进大肠癌发生发展的机制提供依据，为靶向AURKA的治疗提供潜在的中药有效成分。
+
+资料与方法
+
+大肠癌组织转录组学数据
+
+51例大肠癌癌旁组织及380例癌组织的转录组学数据及其临床信息下载于UCSC Xena（http://xena.ucsc.edu）数据库[14]。采用DESeq2 R包（v1.45.3）分析癌组织与癌旁组织、AURKA高表达与AURKA低表达大肠癌癌组织的差异基因，|log2 (Fold Change)|>1且较正P值小于0.05，视为组间差异基因。采用GeneMANIA（http://genemania.org）分析基因之间相互作用，并用Cytoscape软件（v3.9.1）构建网络。Clusterprofiler R包（v4.14.0）和Gene Set Enrichment Analysis (GSEA)软件（v4.3.2）进行通路富集分析。采用survival R包（v3.7.0）和survminer R包（v0.5.0）进行生存分析。
+
+肿瘤微环境免疫细胞浸润分析
+
+采用xCell方法分析大肠癌组织中不同细胞的浸润程度，以及计算其免疫评分、基质评分和微环境评分[15]。采用TIDE（tide.dfci.harvard.edu）工具分析肿瘤组织中T细胞功能异常（T cell Dysfunction）及T细胞排斥（T cell Exclusion）[16-17]。采用corrplot R包（v0.95）分析免疫细胞浸润程度与基因表达的相关性。
+
+靶向AURKA的中药及其成分筛选
+
+通过SymMap v2（http://www.symmap.or）筛选可靶向AURKA的中药及其成分，采用Cytoscape 软件构建网络[18]。
+
+分子对接
+
+从PDB数据库（https://www.rcsb.org）筛选下载AURKA蛋白结构，采用Dockey软件（v1.0.3）进行分子对接，并使用Pymol 软件（v2.5.7）可视化对接结果[19]。
+
+统计学方法
+
+计量资料如果服从正态分布和方差齐性，两组比较采用t检验，3组及以上比较采用ANOVA检验，否则采用非参数检验。采用Cox回归模型进行生存分析。双变量正态分布资料采用Pearson相关系数，否则采用Spearman相关系数。P<0.05为差异有统计学意义。
+
+结果
+
+AURKA表达与大肠癌临床特征的相关性
+
+431例大肠癌样本（51例癌旁组织及380例癌组织）分析结果显示，与癌旁组织相比，AURKA在大肠癌组织中表达上调（P<0.0001）（图1A）；肿瘤组织类型分析结果显示与腺癌相比，AURKA在黏液性腺癌中的表达较低（P<0.0001）（图1B）；与微卫星稳定型（microsatellite stable, MSS）相比较，微卫星高度不稳定型（microsatellite instability-high, MSI-H）大肠癌组织中AURKA的表达降低（P<0.001）（图1C）；进一步分析发现右半结肠的癌组织中AURKA的表达高于左半结肠癌组织（P<0.0001）（图1D）；生存分析结果显示，与AURKA低表达组相比，AURKA高表达组大肠癌患者总生存率降低（P<0.05）（图1E）。以上分析结果表明AURKA在大肠癌组织中表达上调，AURKA的高表达提示其临床预后不佳，且可能与免疫治疗反应相关。
+
+Correlation between AURKA expression and clinical characteristics of CRC
+
+AURKA表达与大肠癌临床特征的相关性
+
+A, AURKA expression in colorectal cancer (CRC) (n = 380) and paracancerous tissues (n = 51); B, AURKA expression in adenocarcinoma (n = 329) and mucinous adenocarcinoma (n = 42); C, AURKA expression in microsatellite stable (MSS) ((n = 220), microsatellite instability-low (MSI-L) (n = 52), and microsatellite instability-high (MSI-H) (n = 46) subtypes of CRC; D, AURKA expression in intestinal CRC tissues from different sites (left side, n = 153; right side, n = 186); E, correlation between AURKA expression and overall survival rate. *** P < 0.001, **** P < 0.0001.
+
+AURKA促进大肠癌抑制性免疫微环境的形成
+
+为研究AURKA对大肠癌免疫微环境的影响，本研究分析了AURKA高表达组和低表达组大肠癌组织中不同免疫细胞和基质细胞的丰度差异。结果发现，免疫评分和基质评分在AURKA高表达组均较低（P<0.01），表明大肠癌组织中免疫细胞和基质细胞的比例低于AURKA低表达组，提示其免疫检查点抑制剂的反应率可能较低（图2A）。进一步分析发现，AURKA高表达组巨噬细胞、单核细胞、肥大细胞、激活的树突状细胞、效应记忆CD4+ T细胞和效应记忆CD8+ T细胞等免疫杀伤性细胞的丰度下调（P<0.05），提示AURKA高表达促进大肠癌抑制性免疫微环境的形成。此外，Th1和Th2型CD4+ T细胞、记忆CD4+ T细胞、初始CD8+ T细胞、gamma delta T（γδ T）细胞和共同淋巴系祖细胞（common lymphoid progenitor）的丰度在AURKA高表达组上调（P<0.05），且内皮细胞、肿瘤相关成纤维细胞丰度降低（P<0.01）（图2B～2D）。
+
+Regulation of the CRC tumor microenvironment by AURKA
+
+AURKA对大肠癌肿瘤微环境的影响
+
+A, Differences in immunity scores, stromal scores, and microenvironmental scores between CRC patients with low- or high-AURKA expressions; B, differences in intrinsic immune cell abundance; C, differences in acquired immune cell abundance; D, differences in endothelial cell and tumor-associated fibroblast abundance.* P < 0.05, ** P < 0.01, *** P < 0.001, **** P < 0.0001. Data were shown in mean ± SEM. Low-AURKA expression group: n = 190; High-AURKA expression: n = 190.
+
+AURKA影响T细胞功能
+
+T细胞是抗肿瘤免疫应答的关键细胞，具有识别杀伤肿瘤细胞的作用，同时T细胞也具有抑制肿瘤细胞转移的重要作用，因此进一步研究了AURKA对T细胞的影响。结果发现，与AURKA低表达组比较，AURKA高表达组T细胞毒性作用降低（P<0.01）（图3A），且AURKA表达水平与CD8+ T细胞丰度及其效应分子颗粒酶A（granzyme A, GZMA）和穿孔素1（perforin 1, PRF1）的表达水平呈负相关（P<0.05）（图3D～3F）。AURKA高表达组与低表达组间T细胞功能异常值差异有统计学意义（P<0.01），但T细胞排斥情况差异无统计学意义（图3B、3C），提示AURKA主要影响T细胞功能，而非T细胞募集等。MDSCs通过产生免疫抑制因子、诱导调节性T细胞以及直接抑制T细胞等作用对T细胞功能产生抑制作用，因此进一步对MDSCs进行分析，结果发现，大肠癌组织中AURKA表达水平与MDSCs丰度及其趋化因子表达呈正相关（P<0.0001）（图3G～3I），提示AURKA能通过MDSCs的募集引起T细胞功能异常。
+
+AURKA is associated with MDSCs recruitment and T cell dysfunction
+
+AURKA与MDSCs募集及T细胞功能异常相关
+
+A, Cytotoxic activity of T cells between CRC patients with high and low AURKA expression; B, T cell dysfunction difference; C, T cell exclusion difference; D and F, correlation between AURKA expression and CD8+ T cell abundance, granzyme A (GZMA) expressions, and perforin 1 (PRF1) expressions; G-I, correlation between AURKA expression and the abundance of myeloid-derived suppressor cells (MDSCs) , C-X-C motif chemokine ligand 2 (CXCL2) expression, and C-X-C motif chemokine ligand 5 (CXCL5) expression. ** P < 0.05. Low-AURKA expression group: n = 190; High-AURKA expression: n = 190.
+
+AURKA高表达促进大肠癌进展的差异基因分析
+
+为探讨AURKA促进大肠癌进展的分子调控机制，本研究分析了AURKA高表达组与低表达组大肠癌组织中的差异基因，发现963个基因在AURKA高表达组中上调，73个基因在AURKA高表达组中下调（|log2(Fold Change)|>1且校正P<0.05）。以上差异基因主要富集于淋巴细胞和单核细胞的迁移（positive regulation of lymphocyte migration），趋化因子相关生物过程（cellular response to chemokines）（图4A）。Hallmarks富集分析显示，AURKA显著上调细胞增殖生物过程，如MYC_TARGETS_V1、E2F_TARGETS，下调炎性反应、KRAS信号通路等（图4B）。大肠癌组织与癌旁组织共有2473个差异基因，其中213个基因同时在AURKA高表达组与低表达组间有差异（图4C）。其中与AURKA表达相关系数最大的20个基因包括CPN1、MYBL2、CREG2等（图4D），提示AURKA可能通过调控以上基因促进大肠癌发生发展。
+
+Differential gene analysis between AURKA high- and low-expressing CRC patients
+
+大肠癌AURKA表达差异基因分析
+
+A, Enriched biological processes mediated by differently expressed genes (DEGs) between AURKA high- and low-expressing CRC patients; B, enriched hallmarks mediated by these DEGs; C, Venn diagram of DEGs between CRC vs. normal and high vs. low AURKA expression; D, protein-protein interactions of AURKA and the top 20 DEGs with greatest correlation coefficient.
+
+可调控AURKA的中药有效成分挖掘
+
+本研究从SymMap v2数据库找到可靶向AURKA的中药成分：橙皮苷（Hesperidin）、腺嘌呤核苷（Adeninenucleoside）、伊沃丹（Evoden）、马兜铃酸A Ⅱa（Aristololactam A Ⅱa）、D-甘露糖（D-Mannose）、脱落酸〔Abcisic acid，又名 (2Z,4E)-5-[(1S)-1-hydroxy-2,6,6-trimethyl-4-oxocyclohex-2-en-1-yl]-3-methylpenta-2,4-dienoic acid〕、阿魏酸（Anacardic acid）、香豆雌酚（Coumestrol）、苏氨酸（Threonine）、17β-雌二醇（17β-estradiol），分别有62、32、3、1、35、2、2、8、21和3个中药含有以上有效成分，包括清热解毒药如半边莲、马齿苋等含橙皮苷成分，祛风湿散寒药海风藤含马兜铃酸A成分，开窍药安息香、活血祛瘀药斑蝥、驱虫药槟榔等含D-甘露糖成分，拔毒化腐生肌药布渣叶、补气药山药含脱落酸成分，止咳平喘药白果、银杏叶含阿魏酸成分，理气药川楝子、补气药大枣等含香豆雌酚成分，开窍药安息香、止咳平喘药百部等含苏氨酸成分，止咳平喘药苦杏仁、补虚药鹿茸等含17β-雌二醇成分。详见网络资源附件附表1。
+
+进一步，下载可结合小分子的AURKA蛋白活性区域，通过晶体来源（物种为人）、分辨率〔refinement resolution (Å)<2.5〕、pH值（6.0～8.0），且蛋白晶体中有配体结合以上条件进行筛选，共纳入8个蛋白晶体区域（3E5A[20]，3UP2[21]，3K5U[22]，3UOL[21]，4JBP[23]，3UO4[21]，4DEA[24]和4JBO[23]）进行小分子对接。对接结果显示：橙皮苷、腺嘌呤核苷、伊沃丹、马兜铃酸A Ⅱa、D-甘露糖、脱落酸、阿魏酸、香豆雌酚、苏氨酸、17β-雌二醇与AURKA蛋白晶体的结合能均小于－1.2 kcal/mol，表明结合具有一定的稳定性（图5A）。其中17β-雌二醇与AURKA-3UOL的结合能为－9.76 kcal/mol（图5B），橙皮苷与AURKA-3UOL的结合能为－8.68 kcal/mol（图5C），香豆雌酚与AURKA-4JBO的结合能为－8.07 kcal/mol，表示这些天然小分子化合物与AURKA蛋白晶体的结合稳定性较好（图5D）。
+
+Molecular docking analysis of AURKA with active compounds from Chinese herbs
+
+与AURKA蛋白晶体稳定结合的中药天然产物
+
+A, Binding energy thermograms of active compounds from Chinese herbs with AURKA protein crystals; B, 17β-estradiol binding to AURKA-3UOL; C, hesperidin binding to AURKA-3UOL; D, coumestrol binding to AURKA-3UOL.
+
+讨论
+
+大肠癌作为全球范围内最常见的恶性肿瘤之一，其晚期患者的5年生存率远低于早期患者，大多数大肠癌患者在确诊时已发展到晚期，形成肿瘤远端转移，错过了治疗的最佳时机，使患者面临着更为复杂的治疗难题，导致患者预后不佳。随着近年来大肠癌诊疗技术的不断进步，患者的预后有所改善，但手术后复发率高、转移率高和生存质量差的问题仍然存在[25-26]。
+
+AURKA是一种丝氨酸/苏氨酸激酶，在细胞周期的调控中起着重要的作用，AURKA的异常高表达常见于恶性肿瘤，其高表达与肿瘤细胞增殖、侵袭和转移等密切相关，AURKA不仅在肿瘤细胞的生物学过程中发挥重要作用，也是癌症治疗和免疫治疗的潜在靶点[27-29]。研究表明AURKA抑制剂，如MLN8237[30]、Danusertib[31]和ENMD-2076[32]，具有一定的抗肿瘤效果，但效果不佳，且具毒副作用。中草药在抗肿瘤方面具有一定的潜力，能够有效提升大肠癌的治疗效果，改善患者的生存质量[33-34]。此外中草药含有多种有效成分，可能通过多种机制发挥作用，包括调节细胞周期、抑制肿瘤细胞增殖、诱导细胞凋亡以及调节免疫微环境[33, 35-37]。中药成分的抗肿瘤作用为大肠癌等癌症的治疗提供了新的思路和方法。
+
+本研究通过对大肠癌转录组学数据进行分析，研究AURKA基因高表达对大肠癌免疫微环境的影响，并预测靶向AURKA的中药成分。结果提示，在肿瘤微环境中，AURKA高表达抑制初始CD4+ T细胞、效应记忆CD4+ T细胞等抗肿瘤细胞的免疫浸润，且AURKA高表达降低了CD8+ T细胞的丰度而MDSCs的丰度增加，结果提示AURKA的高表达促进大肠癌抑制性免疫微环境的形成，通过促进MDSCs的募集以及对T细胞功能的抑制，促进肿瘤的转移。进一步差异基因分析结果表明，AURKA高表达的大肠癌涉及淋巴细胞和单核细胞的迁移、趋化因子相关生物过程等的改变，此外AURKA显著上调细胞增殖生物过程，如MYC_TARGETS_V1、E2F_TARGETS，下调了炎性反应、KRAS信号通路等。最后，基于靶向AURKA蛋白结构域，预测并筛选发现香豆雌酚与AURKA-4JBO的结合稳定性较好，17β-雌二醇、橙皮苷与AURKA-3UOL的结合稳定性较好，其中17β-雌二醇与AURKA-3UOL的结合稳定性最好。表明这些天然小分子化合物可能具有潜在调控AURKA的作用。
+
+综上所述，AURKA在大肠癌组织中表达上调，AURKA高表达提示大肠癌预后不佳，且AURKA的高表达促进大肠癌抑制性免疫微环境的形成，因此抑制AURKA是切实可行的抗肿瘤策略。中药成分具有靶向AURKA的作用，本研究通过AURKA蛋白结构预测并筛选调控AURKA的中药天然产物，发现17β-雌二醇可能是AURKA的潜在作用药物，为中医药调控AURKA改善肿瘤微环境提供了理论依据。下一步拟进一步研究AURKA调控T细胞、MDSCs等免疫细胞和基质细胞，以及细胞间相互作用的机制；此外，中药成分与AURKA的结合，以及通过AURKA对大肠癌肿瘤微环境调控亦需深入研究。
+
+* * *
+
+作者贡献声明 李梦瑶负责数据审编、正式分析、初稿写作和审读与编辑写作，花东明负责数据审编、正式分析、调查研究和审读与编辑写作，王志燕负责提供资源和可视化，刘芝亦负责监督指导和验证，龚航军负责研究方法和研究项目管理，孙云川负责软件和监督指导，呼雪庆负责论文构思、数据审编、正式分析和审读与编辑写作，王炎负责经费获取、调查研究和研究项目管理。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LI Mengyao is responsible for data curation, formal analysis, writing--original draft, and writing--review and editing. HUA Dongming is responsible for data curation, formal analysis, investigation, and writing--review and editing. WANG Zhiyan is responsible for resources and visualization. LIU Zhiyi is responsible for supervision and validation. GONG Hangjun is responsible for methodology and project administration. SUN Yunchuan is responsible for software and supervision. HU Xueqing is responsible for conceptualization, data curation, formal analysis, and writing--review and editing. WANG Yan is responsible for funding acquisition, investigation, and project administration. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.

@@ -1,12 +1,12 @@
 # 术语词典自动一致性检查
 
-仅使用语料中同时含中文和英文的文档标题。只有标题中文部分出现词典中文名、且同一标题英文部分出现英文/拉丁名才计为已验证；出现中文名但没有对应英文名计为冲突。无证据表示没有可用的双语标题。此规则是自动字符串检查，不等于人工核对；不自动改写词典。
+仅使用来源自带的中英文标题对（保留 JATS trans-title）或旧格式双语标题，不把中文标题里的 CMR、MAPK 等缩写当成英文标题。只有中文标题出现词典中文名、且同一文档英文标题出现英文/拉丁名才计为已验证；出现中文名但没有对应英文名计为冲突。无证据表示没有可用的双语标题。此规则是自动字符串检查，不等于人工核对；不自动改写词典或生成译文。
 
 |状态|条目数|
 |---|---:|
-|已验证|1|
-|无证据|652|
-|冲突|1|
+|已验证|14|
+|无证据|634|
+|冲突|6|
 
 |ID|中文名|英文/拉丁名|状态|双语标题中文命中数|同标题英文命中数|
 |---|---|---|---|---:|---:|
@@ -327,7 +327,7 @@
 |herb-0315|草豆蔻|Semen Alpiniae Katsumadai|无证据|0|0|
 |herb-0316|草果|Fructus Tsaoko|无证据|0|0|
 |herb-0317|草乌叶|Folium Aconiti Kusnezoffii|无证据|0|0|
-|herb-0318|桂枝|Ramulus Cinnamomi|无证据|0|0|
+|herb-0318|桂枝|Ramulus Cinnamomi|冲突|1|0|
 |herb-0319|荆芥|Herba Schizonepetae|无证据|0|0|
 |herb-0320|海金沙|Spora Lygodii|无证据|0|0|
 |herb-0321|海风藤|Caulis Piperis Kadsurae|无证据|0|0|
@@ -357,7 +357,7 @@
 |herb-0345|通草|Medulla Tetrapanacis|无证据|0|0|
 |herb-0346|莪术|Rhizoma Curcumae|无证据|0|0|
 |herb-0347|救必应|Cortex Ilicis Rotundae|无证据|0|0|
-|herb-0348|麦冬|Radix Ophiopogonis|无证据|0|0|
+|herb-0348|麦冬|Radix Ophiopogonis|冲突|1|0|
 |herb-0349|羚羊角|Cornu Saigae Tataricae|无证据|0|0|
 |herb-0350|淡竹叶|Herba Lophatheri|无证据|0|0|
 |herb-0351|淫羊藿|Herba Epimedii|无证据|0|0|
@@ -400,14 +400,14 @@
 |herb-0388|黄毛耳草|Herba Hedyotidis Chrysotrichae|无证据|0|0|
 |herb-0389|黄花母|Herba Sidae Rhombifoliae|无证据|0|0|
 |herb-0390|黄花棉|Herba Malvastri Coromandeliani|无证据|0|0|
-|herb-0391|黄芩|Radix Scutellariae, Scutellaria baicalensis|无证据|0|0|
+|herb-0391|黄芩|Radix Scutellariae, Scutellaria baicalensis|冲突|1|0|
 |herb-0392|黄柏|Cortex Phellodendri|无证据|0|0|
 |herb-0393|黄荆子|Fructus Viticis Negundo|无证据|0|0|
 |herb-0394|黄连|Rhizoma Coptidis, Coptis chinensis|无证据|0|0|
 |herb-0395|黄精|Rhizoma Polygonati|无证据|0|0|
 |herb-0396|黄藤|Caulis Fibraureae|无证据|0|0|
 |herb-0397|黄药子|Rhizoma Dioscoreae Bulbiferae|无证据|0|0|
-|herb-0398|黄芪|Radix Astragali, Astragalus, Astragalus membranaceus, Huangqi, Huang Qi|无证据|0|0|
+|herb-0398|黄芪|Radix Astragali, Astragalus, Astragalus membranaceus, Huangqi, Huang Qi|已验证|1|1|
 |herb-0399|湖北贝母|Bulbus Fritillariae Hupehensis|无证据|0|0|
 |herb-0400|紫石英|Fluoritum|无证据|0|0|
 |herb-0401|紫贝齿|Concha Mauritiae Arabicae|无证据|0|0|
@@ -584,24 +584,24 @@
 |herb-0572|萝芙木|Radix Rauvolfiae|无证据|0|0|
 |herb-0573|鹰不泊|Radix Zanthoxyli Avicennae|无证据|0|0|
 |herb-0574|郁金|Radix Curcumae|无证据|0|0|
-|disease-001|高血压|hypertension|已验证|1|1|
-|disease-002|冠心病|coronary heart disease, coronary artery disease|无证据|0|0|
+|disease-001|高血压|hypertension|已验证|11|11|
+|disease-002|冠心病|coronary heart disease, coronary artery disease|已验证|4|3|
 |disease-003|心绞痛|angina pectoris, angina|无证据|0|0|
-|disease-004|心肌梗死|myocardial infarction|无证据|0|0|
-|disease-005|心力衰竭|heart failure|无证据|0|0|
-|disease-006|慢性心力衰竭|chronic heart failure|无证据|0|0|
+|disease-004|心肌梗死|myocardial infarction|已验证|2|2|
+|disease-005|心力衰竭|heart failure|已验证|5|5|
+|disease-006|慢性心力衰竭|chronic heart failure|已验证|2|2|
 |disease-007|充血性心力衰竭|congestive heart failure|无证据|0|0|
 |disease-008|心房颤动|atrial fibrillation|无证据|0|0|
-|disease-009|心律失常|arrhythmia|无证据|0|0|
-|disease-010|动脉粥样硬化|atherosclerosis|无证据|0|0|
-|disease-011|心肌病|cardiomyopathy|无证据|0|0|
+|disease-009|心律失常|arrhythmia|已验证|2|2|
+|disease-010|动脉粥样硬化|atherosclerosis|已验证|1|1|
+|disease-011|心肌病|cardiomyopathy|已验证|2|2|
 |disease-012|心肌炎|myocarditis|无证据|0|0|
 |disease-013|心包炎|pericarditis|无证据|0|0|
-|disease-014|肺动脉高压|pulmonary hypertension|无证据|0|0|
+|disease-014|肺动脉高压|pulmonary hypertension|已验证|2|1|
 |disease-015|缺血性心脏病|ischemic heart disease, ischaemic heart disease|无证据|0|0|
-|disease-016|脑卒中|stroke|无证据|0|0|
+|disease-016|脑卒中|stroke|已验证|1|1|
 |disease-017|缺血性脑卒中|ischemic stroke, ischaemic stroke|无证据|0|0|
-|disease-018|糖尿病|diabetes mellitus, diabetes|无证据|0|0|
+|disease-018|糖尿病|diabetes mellitus, diabetes|已验证|4|4|
 |disease-019|高脂血症|hyperlipidemia, hyperlipidaemia|无证据|0|0|
 |disease-020|血脂异常|dyslipidemia, dyslipidaemia|无证据|0|0|
 |disease-021|血栓形成|thrombosis|无证据|0|0|
@@ -642,21 +642,21 @@
 |examination-002|超声心动图|echocardiogram, echocardiography|无证据|0|0|
 |examination-003|冠状动脉造影|coronary angiography|无证据|0|0|
 |examination-004|动态心电图|Holter monitoring, ambulatory electrocardiography|无证据|0|0|
-|examination-005|血压|blood pressure|冲突|1|0|
+|examination-005|血压|blood pressure|已验证|12|1|
 |examination-006|收缩压|systolic blood pressure|无证据|0|0|
 |examination-007|舒张压|diastolic blood pressure|无证据|0|0|
 |examination-008|心率|heart rate|无证据|0|0|
-|examination-009|左心室射血分数|left ventricular ejection fraction, LVEF|无证据|0|0|
+|examination-009|左心室射血分数|left ventricular ejection fraction, LVEF|已验证|1|1|
 |examination-010|肌钙蛋白|troponin|无证据|0|0|
 |examination-011|脑钠肽|brain natriuretic peptide, B-type natriuretic peptide, BNP|无证据|0|0|
 |examination-012|六分钟步行试验|six-minute walk test, six minute walk test|无证据|0|0|
-|examination-013|血脂|blood lipids|无证据|0|0|
+|examination-013|血脂|blood lipids|冲突|1|0|
 |examination-014|低密度脂蛋白胆固醇|low-density lipoprotein cholesterol, LDL cholesterol|无证据|0|0|
 |drug_class-001|血管紧张素转换酶抑制剂|angiotensin-converting enzyme inhibitors, ACE inhibitors|无证据|0|0|
 |drug_class-002|血管紧张素受体阻滞剂|angiotensin receptor blockers, ARBs|无证据|0|0|
-|drug_class-003|β受体阻滞剂|beta blockers, beta-blockers|无证据|0|0|
+|drug_class-003|β受体阻滞剂|beta blockers, beta-blockers|冲突|1|0|
 |drug_class-004|钙通道阻滞剂|calcium channel blockers|无证据|0|0|
-|drug_class-005|利尿剂|diuretics|无证据|0|0|
+|drug_class-005|利尿剂|diuretics|冲突|1|0|
 |drug_class-006|他汀类|statins|无证据|0|0|
 |drug_class-007|抗血小板药|antiplatelet agents, antiplatelet drugs|无证据|0|0|
 |drug_class-008|抗凝药|anticoagulants|无证据|0|0|
@@ -667,4 +667,9 @@
 
 ## 冲突标题
 
-- examination-005 血压: 经典型骨髓增殖性肿瘤伴高血压的临床研究进展 Clinical research progress on classic myeloproliferative neoplasms with hypertension
+- herb-0318 桂枝: 黄芪桂枝五物汤治疗非小细胞肺癌软脑膜转移患者培美曲塞鞘内化疗神经毒性的随机对照研究 Huangqi Guizhi Wuwu Decoction in the Treatment of Pemetrexed Intrathecal Chemotherapy-induced Neurotoxicity in NSCLC Patients with Leptomeningeal Metastases: A Randomized Controlled Trial
+- herb-0348 麦冬: 沙参麦冬汤通过抑制cGAS-STING-NF-κB介导的炎性衰老改善老年COPD小鼠肺功能 Shashen Maidong Decoction Improves Pulmonary Function in Aged Mice With Chronic Obstructive Pulmonary Disease by Inhibiting cGAS-STING-NF-κB-Mediated Inflammaging
+- herb-0391 黄芩: 汉黄芩苷通过调控MAPK信号通路减轻高血压所致肾脏损伤的机制研究 Wogonoside Attenuates Hypertension-Induced Renal Injury Through Modulation of the MAPK Signaling Pathway: A Mechanism Study
+- examination-013 血脂: 血清髓过氧化物酶和血脂水平与急性冠脉综合征患者冠状动脉病变程度及心血管不良事件的关系 Association of Serum Myeloperoxidase and Lipid Levels With Coronary Artery Lesion Severity and Major Adverse Cardiovascular Events in Patients With Acute Coronary Syndrome
+- drug_class-003 β受体阻滞剂: β受体阻滞剂对老年高血压合并血管性痴呆的疗效分析 Efficacy of β-Blockers in Older Adults With Hypertension Combined With Vascular Dementia
+- drug_class-005 利尿剂: 温阳化饮养心方对慢性心力衰竭合并利尿剂抵抗患者中医证候的影响及疗效观察 Effects and Efficacy of Wenyang Huayin Yangxin Prescription on the Traditional Chinese Medicine Syndromes of Patients With Chronic Heart Failure Combined With Diuretic Resistance

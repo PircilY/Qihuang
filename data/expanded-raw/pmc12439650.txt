@@ -1,0 +1,177 @@
+结直肠癌（colorectal cancer, CRC）作为世界第三大常见恶性肿瘤，是癌症相关死亡的第二大原因[1]。2020年CRC新发病例近200万，死亡病例94万，预计到2040年CRC新发病例将超过300万例，而中国新增CRC病例将增加至90余万例[2]。CRC早期症状隐匿，超50%患者确诊时已是晚期。尽管手术、放化疗、靶向治疗及免疫治疗等可延长生存期，但大多数患者仍存在药物选择有限、耐药率高等问题[3]，超过半数的患者还可能存在术后复发的风险[4]。
+
+近年来，中医药在肿瘤治疗中展现出独特优势，大量临床前研究和临床研究证据表明，中药复方可通过多靶点调控，提高癌细胞对抗肿瘤药物的敏感性，发挥其独特的“增效减毒”作用[5-6]。铁死亡是一种铁依赖性的调节性细胞死亡方式，与肿瘤的发生和发展密切相关。研究表明，中药活性成分可以通过调节铁死亡相关基因（ferroptosis-related gene, FRG）诱导肿瘤细胞铁死亡，从而发挥抗肿瘤作用[7]。
+
+复方肠泰方（Fufang Changtai Decoction, FFCT）是江苏省名中医霍介格教授基于国医名师徐荷芬教授60余年临床经验创建的CRC验方。该方以人参、黄芪（君药）益气健脾、扶正培本，藤梨根、八月札（臣药）行气活血、消积化瘀，佐以薏苡仁健脾化湿，苦参清热解毒，体现“扶正祛邪”的配伍思想。前期临床研究证实，FFCT能够延长CRC患者中位生存期，其机制可能涉及诱导自噬、抗血管生成和调节肠道菌群等多种途径作用[8-11]。然而，FFCT通过铁死亡途径发挥抗肿瘤作用机制尚未阐明，本研究拟采用网络药理学联合体外细胞实验验证，系统地揭示FFCT抗CRC的铁死亡途径和靶点。
+
+材料与方法
+
+FFCT的活性成分和靶点筛选
+
+在TCMSP数据库（http://tcmspw.com/tcmsp.php）中，以黄芪、人参、薏苡仁、八月札（预知子）、苦参和藤梨根（猕猴桃根）为关键词检索，筛选FFCT的有效化合物及潜在治疗靶点。筛选条件为口服生物利用度（oral bioavailability，OB）≥30%，药物相似性（drug-likeness, DL）≥0.18。将获取的有效活性成分靶点信息输入Uniprot数据库（https://www.uniprot.org/）以“human sapiens”种属获取候选靶点的标准化命名。之后，将FFCT中的有效化合物通过PubChem数据库检索以获取其SMILE格式，并上传至Swiss Target Prediction平台（http://www.swisstargetprediction.ch/），预测FFCT中有效化合物的潜在靶点。
+
+疾病基因和铁死亡相关靶点的筛选
+
+利用Gene Cards数据库（https://www.genecards.org/）筛选与CRC有关的疾病基因。以“colorectal cancer”为关键词，筛选相关性得分大于2的疾病基因，共获得9101个CRC疾病基因。在FerrDb数据库（http://www.zhounan.org/ferrdb/current/）中下载所有FRGs，包括驱动基因、抑制基因、标志基因和未归类基因，共获得564个FRGs。
+
+FFCT诱导铁死亡的靶点筛选和可视化
+
+为进一步证明FFCT是否通过铁死亡途径发挥抗CRC作用，绘制FFCT、CRC疾病基因和FRGs的维恩图，得到FFCT通过铁死亡途径干预CRC的潜在治疗靶点。利用Cytoscape软件绘制“FFCT-有效化合物-治疗靶点”网络图。此外，将治疗靶点导入STRING数据库构建蛋白质-蛋白质相互作用（protein-protein interaction, PPI）网络并利用Cytoscape进行可视化。根据介数中心性（betweenness centrality, BC）筛选网络中的核心靶点。
+
+潜在治疗靶点的GO和KEGG分析
+
+将FFCT诱导CRC铁死亡的潜在靶标导入DAVID数据库（https://david.ncifcrf.gov/）进行基因本体（Gene Ontology, GO）和京都基因与基因组百科全书（Kyoto Encyclopedia of Genes and Genomes, KEGG）分析。使用气泡图对基因富集的前20个条目进行可视化。
+
+实验验证
+
+试剂与药物
+
+L-15基础培养基（中桥新舟，ZQ-1100HG）；DEME高糖培养基（中桥新舟，ZQ-100）；胎牛血清（VivaCell，C04001-500）；CCK-8试剂盒（YEASEN，40203ES76）；ROS试剂盒（碧云天，S0033M）；NQO1抗体（Abcam，ab80588）；Liproxstatin-1（Lip-1，Selleck，S7699）。
+
+人参、黄芪、生薏仁、藤梨根、八月札、苦参购自南京中医药大学附属中西医结合医院，FFCT水煎液的制备方法参考团队前期研究方法[12]：所有药材置于容器内，加10倍体积蒸馏水浸泡1h后大火煮开再小火煮2 h，取滤液；再加8倍体积蒸馏水继续煮1.5 h，取滤液；两次滤液混合均匀后浓缩至生药量2 g/mL的药液，－80 ℃储存备用。
+
+含药血清制备
+
+复方含药血清的制备参考团队前期研究方法[13]：取16只清洁级日本大耳雌性白家兔（购自上海斯莱克实验动物有限责任公司），体质量（2.15±0.26）kg，许可证号：SCXK（沪）2017-0005。将实验家兔随机分为4组（空白组，FFCT低、中、高剂量组），每组4只。空白组，给予等体积生理盐水灌胃。FFCT给药剂量依据“人和动物之间按体表面积折算的等效剂量比值表”，低剂量组给药剂量1.75 g/kg；中剂量组给药剂量3.50 g/kg（人临床等效量）；高剂量组给药剂量7.00 g/kg，每组连续给药3 d，末次给药前12 h禁食不禁水，末次给药2 h后，予利多卡因麻醉、颈动脉分离取血，血液于室温中静置2 h后，离心取血清，56 ℃水浴30 min灭活，超净台中过滤、分装后，置于−80 ℃超低温冰箱保存备用。
+
+细胞实验分组
+
+体外实验共设6组：Control组，给予1.5.2中空白组家兔所取的血清；FFCT-L组，给予1.5.2中FFCT低剂量组含药血清；FFCT-M组，给予1.5.2中FFCT中剂量组含药血清；FFCT-H组，给予1.5.2中FFCT高剂量组含药血清；Lip-1 组，铁死亡抑制剂组，给予100 nmol/L终浓度的铁死亡抑制剂Lip-1；FFCT-M+Lip-1组，同时给予1.5.2中FFCT中剂量组含药血清和100 nmol/L终浓度的Lip-1。
+
+细胞培养
+
+人结肠癌SW480和HCT116细胞购自上海中乔新舟生物科技有限公司，经短串联重复序列细胞鉴定。细胞孵育采用含10%胎牛血清（fetal bovine serum, FBS）和1% 青霉素-链霉素混合液（Penicillin-Streptomycin Solution, P/S）的L15培养基和DMEM高糖培养基，于37 ℃恒温培养箱中培养。
+
+细胞活性检测
+
+采用CCK-8试剂盒检测各组细胞活性。以5×103 /孔的密度将对数生长期细胞接种在于96孔板中，于培养箱内继续培养12～24 h待细胞贴壁后，加入各组含药血清和/或铁死亡抑制剂处理48 h，再将细胞与CCK-8试剂（10%，100 μl/孔）在37 °C下孵育1 h。之后，用酶标仪检测450 nm波长处的OD值，计算细胞存活率。
+
+细胞增殖能力检测
+
+采用平板克隆集落形成实验检测细胞增殖能力。取对数生长期细胞以200个/孔的密度接种于6孔板中，于培养箱内继续培养12～24 h待细胞贴壁后加入各组含药血清和/或药物，置于细胞培养箱中培养10～14 d，待培养皿中出现肉眼可见的克隆时，终止培养。4%多聚甲醛固定，结晶紫染色，清洗后空气干燥，肉眼或显微镜下计数克隆数（单个克隆>10个细胞）。
+
+透射电子显微镜
+
+运用透射电子显微镜（transmission electron microscope, TEM）观察细胞超微结构。各组干预结束后，收集细胞，离心，加入电镜固定液4 ℃固定2 h，离心，用琼脂糖包裹，1%锇酸室温固定2 h，脱水，包埋，切片，染色干燥后于TEM下观察各组细胞线粒体变化。
+
+活性氧水平检测
+
+运用活性氧（reactive oxygen species, ROS）检测试剂盒检测各组细胞内ROS水平。取对数生长期细胞接种于6孔板内，各组含药血清干预后，收集细胞，用含10 μmol/L的DCFH-DA无血清培养液中，37 ℃细胞培养箱内避光孵育20～30 min，每3～5 min颠倒混匀一次，孵育结束后用无血清培养液洗涤细胞3次，使用流式细胞仪进行检测分析。
+
+Western blot法检测细胞内蛋白表达水平
+
+各组细胞干预结束后，加入裂解液，提取蛋白，高温变性后置于−80 ℃待测。配制凝胶，上样跑胶，转膜，封闭，4 ℃孵育目的蛋白一抗过夜，洗膜，室温孵育对应二抗1 h，洗膜，显影，并用Image J软件分析条带灰度值。
+
+铁死亡PCR Array筛选差异表达基因
+
+空白血清和FFCT-M含药血清干预SW480细胞48 h后，加入Trizol裂解提取各组细胞RNA样品，置于－80 ℃待测。运用RNA凝胶电泳和超微量紫外分光光度仪对样品进行质检，对合格的RNA进行反转录合成cDNA模板，按说明书比例混合cDNA和qPCR预混液，加入铁死亡PCR Array反应板各孔内，按说明书推荐程序对样品进行实时荧光定量PCR测定。对获得的数据进行分析，以筛选差异表达的基因。采用2－ΔCt法计算倍数变化值（fold change, FC），以上调或下调倍数变化值|log FC|≥2且P<0.05筛选差异基因。
+
+人结直肠癌组织芯片和TSA多重免疫荧光
+
+人CRC组织芯片（芯片号：AF-CocSur2021）购自湖南艾方生物科技有限公司，包含80个癌组织和80个邻近正常组织，并获得伦理批准（Csyayj20231103）。组织芯片中癌组织均经病理诊断为结肠癌，并附有患者完整的临床信息，包含性别、年龄、日期、原发肿瘤部位、大小、浸润深度、病理类型、免疫组化、TNM分期及分级、治疗方案、随访时间、生存状态。组织芯片制作石蜡切片，经过烤片、二甲苯脱蜡、梯度乙醇水化等预处理，高温抗原修复、封闭后，4 ℃孵育NQO1一抗过夜，清洗后，二抗孵育30 min，DAPI复染细胞核，洗涤后用抗荧光淬灭封片剂封片，多通道荧光扫描仪采集图像，利用Imag-pro plus 6.0进行分析，计算NQO1阳性细胞比例。
+
+统计学方法
+
+运用GraphPad Prism 8.0软件进行实验数据绘图与数据分析，结果以\begin{document}$\bar x\pm s $\end{document}表示。采用单因素方差分析方法分析组间差异，用Tukey多重比较法进行两两比较分析，P<0.05为差异有统计学意义。
+
+结果
+
+FFCT的有效成分和靶点
+
+利用TCMSP数据库筛选103种FFCT有效成分，其中黄芪26种，苦参45种，藤梨根6种，人参22种，薏苡仁9种，八月札6种。附表1（见网络资源附件）展示了按OB值排序的前20种有效成分。利用TCMSP和Swiss Target Prediction平台筛选并739个FFCT潜在治疗靶点，其中黄芪442个，苦参524个，藤梨根252个，人参444个，薏苡仁30个，八月札36个。
+
+FFCT诱导铁死亡的靶点筛选和网络构建
+
+通过绘制中药复方、结直肠癌疾病基因和FRGs的维恩图，共获得81个交集靶点，这些靶点可能是FFCT治疗结直肠癌的铁死亡调节因子（附图1，见网络资源附件）。利用Cytoscape构建了FFCT-治疗靶点的网络图（附图2，见网络资源附件），图中菱形代表中药，六边形代表有效成分，圆形代表铁死亡调节因子，其中槲皮素，异鼠李素、豆甾醇、人参二醇、苦参苏在FFCT诱导结直肠癌铁死亡中发挥关键作用。此外，我们构建了FFCT治疗靶点的PPI网络，并根据BC值筛选枢纽靶标。结果显示，NQO1、TP53、PTGS2、PPARG、EGFR在PPI网络中的具有更高的BC值，说明这些靶标在FFCT调控网络中发挥关键作用（附图3，见网络资源附件）。
+
+GO和KEGG富集分析
+
+对FFCT中的潜在治疗靶点进行了GO和KEGG富集分析，结果显示，GO生物学功能（biological process, BP）主要涉及细胞缺氧反应、凋亡过程负调控、RNA聚合酶Ⅱ启动子转录的正调控、活性氧代谢过程的正向调节等；细胞成分（cellular component, CC）主要包括细胞溶质、细胞质、细胞核、线粒体等；分子功能（molecular function, MF）主要涉及酶结合、RNA聚合酶Ⅱ序列特异性DNA结合转录因子结合、蛋白丝氨酸/苏氨酸/酪氨酸激酶活性、泛素蛋白连接酶结合等。KEGG分析显示，这些靶点主要富集在癌症通路、化学致癌作用-活性氧以及IL-17、FoxO信号通路上（附图4，见网络资源附件）。
+
+实验验证结果
+
+FFCT对SW480和HCT116细胞线粒体超微结构的影响
+
+如图1所示，空白组细胞内线粒体结构较好，质均匀，嵴大多排列整齐，少量变短；而FFCT-M含药血清干预组细胞线粒体固缩，膜增厚，嵴减少、扩张，部分体积明显变小（黑箭头），提示FFCT含药血清干预后的SW480和HCT116细胞发生铁死亡改变。
+
+Effect of FFCT on mitochondrial morphology in SW480 and HCT116 cells
+
+FFCT对SW480和HCT116细胞线粒体形态的影响
+
+FFCT对SW480和HCT116细胞内ROS水平的影响
+
+如图2所示，经FFCT含药血清干预后细胞内ROS水平较对照组细胞升高，差异有统计学意义（P<0.05），并且FFCT对细胞内ROS水平的促进作用呈一定剂量依赖性，这种相关性在SW480细胞中更加显著（P<0.001）。如图3所示，Lip-1与FFCT含药血清联合干预则降低了FFCT对细胞内ROS的上调作用。
+
+Effect of FFCT on ROS levels in SW480(A) and HCT116(B) cells
+
+FFCT对SW480（A）和HCT116（B）细胞内ROS水平的影响
+
+n = 3.*P < 0.05, ***P < 0.001, vs. control group.
+
+Effect of FFCT combined with Lip-1 on intracellular ROS levels in SW480 (A) and HCT116 (B) cells
+
+FFCT联合Lip-1对SW480（A）和HCT116（B）细胞内ROS水平的影响
+
+n = 3.**P < 0.01, ***P < 0.001, vs. control group; ###P < 0.001.
+
+FFCT对SW480和HCT116细胞活性的影响
+
+如图4所示，FFCT-L、FFCT-M和FFCT-H含药血清干预SW480细胞48 h后，细胞活性降为74.40%、51.24%和33.41%，HCT116细胞活性分别降为72.49%、55.90%和37.96%，较空白组差异均有统计学意义（P<0.01）。此外，FFCT联合Lip-1同时干预SW480和HCT116较FFCT单独作用，细胞活性升高，提示铁死亡抑制剂Lip-1抑制了FFCT对肿瘤细胞的活性抑制作用。
+
+Effect of FFCT and Lip-1 on the viability of SW480 (A) and HCT116 (B) cells
+
+FFCT和Lip-1对SW480（A）和HCT116（B）细胞活性的影响
+
+n = 3. **P < 0.01, ***P < 0.001, vs. control group. ##P < 0.01, ###P < 0.001.
+
+FFCT对SW480细胞增殖的影响
+
+细胞克隆实验如图5所示，与对照组相比，FFCT-M组在SW480和HCT116细胞中的克隆集落形成数明显降低；但与FFCT-M组相比，FFCT-M联合Lip-1同时干预时，SW480和HCT116细胞的克隆集落形成数明显增多，差异有统计学意义（P<0.001），提示FFCT能够抑制CRC细胞增殖，且该作用被铁死亡抑制剂Lip-1明显降低。
+
+Effect of FFCT combined with Lip-1 on the proliferative capacity of SW480(A) and HCT116(B) cells
+
+FFCT联合Lip-1对SW480（A）和HCT116（B）细胞增殖能力的影响
+
+B, n = 3; ***P < 0.001, vs. control group; ###P < 0.001.
+
+铁死亡PCR Array筛选FFCT的调控靶点
+
+如图6A火山图所示，本次检测的89个铁死亡相关基因中，筛选出4个差异表达的基因，其中下调的NQO1基因为差异基因，与网络药理学筛选结果一致。如图6B所示，FFCT-M含药血清干预后SW480细胞中NQO1基因表达水平较空白血清干预组明显降低，差异具有统计学意义（P<0.001）。Western blot结果也证实FFCT含药血清较空白血清干预组的NQO1蛋白表达水平下调明显（图7）。
+
+PCR Array analysis of the expression of ferroptosis-related genes
+
+PCR Array分析铁死亡基因表达
+
+A, volcano map; B, the expression level of the NQO1 gene in SW480 cells after intervention with FFCT-M drug-containing serum, n = 3.
+
+Western blot analysis of protein expression levels of NQO1
+
+Western blot分析NQO1蛋白表达水平
+
+n = 3. *P < 0.05, ***P < 0.001, vs. control group.
+
+临床肠癌芯片组织NQO1的表达情况
+
+采用双重免疫荧光法检测结肠癌组织芯片中肿瘤组织及癌旁组织的NQO1蛋白表达水平，结果如图8所示，结肠癌组织中NQO1的阳性细胞率明显高于癌旁组织，且差异有统计学意义（P<0.001）。
+
+Immunofluorescence analysis of NQO1 expression in human CRC tissue microarrays (n = 80)
+
+免疫荧光分析人结直肠癌组织芯片中NQO1表达水平（n=80）
+
+讨论
+
+目前西医治疗CRC的方法存在疗效有限、副作用大、易复发等风险，中医复方是CRC的重要补充和替代疗法，具有增效减毒，提高患者生活质量的作用 [6]。本课题组前期已通过多中心临床研究证实FFCT抗CRC的疗效 [8-9]，基础实验也发现FFCT能够通过多途径发挥抗肿瘤作用 [10-11]，但其与铁死亡相关的作用及机制尚不明确。铁死亡是一种铁依赖性的细胞程序性死亡方式，其区别于细胞凋亡、坏死或自噬，主要依靠多不饱和脂肪酸氧化和纸质过氧化物积累从而诱发细胞死亡[14-15]。研究已发现铁死亡参与CRC的发生发展和治疗，XU等[16]的研究发现靶向SLC7A11可以通过诱导铁死亡抑制CRC的进展和化疗耐药性。QI等[17]发现利用FRGs构建了CRC患者的预后风险模型，经验证后该模型可作为CRC患者的独立预后因素。此外，FRGs被认为是CRC的潜在治疗靶点。利用铁死亡途径，相关药物或小分子化合物已经被发现在抑制CRC生长和改善患者预后方面发挥巨大潜力[18-19]。考虑到铁死亡在抑制CRC进展中的关键作用，本研究利用网络药理学、体外实验和人结直肠癌组织芯片探讨了FFCT抗结直肠癌的作用机制。
+
+通过网络药理学研究，我们得到103种FFCT的有效活性成分，包括山柰酚、槲皮素、芒柄花黄素、异鼠李素等。已有研究探讨了黄芪、人参等药物的抗肿瘤活性，如刘海朝等[20]发现黄芪多糖联合PD-L1阻断剂可抑制肺腺癌小鼠皮下移植瘤的生长，改善肿瘤免疫微环境，增强免疫细胞浸润，发挥增敏PD-L1阻断剂抗肺腺癌的作用。藤梨根中检测出三萜类、黄酮类等多种抗肿瘤活性成分，对肺癌、胃癌和CRC等均有一定治疗作用[21]。薏苡仁提取物联合化疗可显著抑制结肠癌HT-29细胞株增殖，诱导凋亡，且与药物浓度呈正相关[22]。八月札则可通过调节结肠组织中免疫相关因子的表达以改善肠道微环境，修复结肠组织结构[23]。然而，FFCT整体的抗肿瘤作用机制尚需进一步阐明。因此，联合FerrDb数据库，我们进一步挖掘了FFCT靶向的FRGs，构建FFCT的关键调控网络，其中NQO1、TP53、PTGS2、PPARG、EGFR等在网络中的比重更高，这些靶点可能是FFCT诱导结直肠癌铁死亡的关键靶标。NQO1是一种胞质还原酶，其抗氧化特性可以通过脂质过氧化抑制铁死亡发生。研究发现，NQO1通过清除细胞内ROS以降低脂质过氧化的发生，从而增强肿瘤活性和治疗耐药[24]。NQO1调节的NAD+/NADH平衡可能与铁代谢酶的活性密切相关，而这些酶在脂质过氧化和铁死亡通路中扮演重要角色[25]。NQO1相关通路，如Nrf2-NQO1轴的过度激活也会抑制细胞铁死亡过程的发生[26]。研究显示，NQO1高表达的CRC患者具有更差的预后，其可能通过促进HIF-1α表达而促进肿瘤发生和进展[27]。在肿瘤治疗中，柴胡皂苷D通过扰乱NQO1介导的氧化还原平衡发挥抗耐药乳腺癌作用[28]。小檗碱则可通过抑制恶性黑色素瘤中NQO1的表达增强肿瘤对免疫检查点抑制剂的敏感性[29]。鉴于NQO1在肿瘤发生发展和治疗中的重要作用以及网络药理学结果，我们认为NQO1可能是FFCT通过铁死亡途径发挥抗肿瘤作用的关键靶标。为了验证这一猜想，我们通过透射电子显微镜、ROS试剂盒分析，从形态学特征和生化特征上均发现FFCT能够诱导CRC细胞发生铁死亡；通过CCK-8实验和克隆集落形成实验证实FFCT能够抑制CRC，结合铁死亡化学抑制剂Lip-1，发现FFCT诱导的铁死亡促进其抗CRC作用；PCR Array芯片筛选结果提示，FFCT下调了CRC细胞内NQO1基因表达水平，western blot结果也证明FFCT能够抑制NQO1蛋白的表达；我们进一步采用人CRC组织芯片发现肿瘤组织内NQO1蛋白表达水平高于癌旁组织，再次证明NQO1对CRC发生和发展的关键作用。因此，靶向NQO1的中医复方机制研究具有重要意义。此外，我们对FFCT的干预靶点进行了GO和KEGG通路富集分析，结果显示FFCT涉及通路有癌症通路、化学致癌作用-活性氧以及IL-17、FoxO信号通路上，IL-17信号通路是炎症和免疫系统的重要组成部分，已经被证明在多种肿瘤的发生、进展和治疗中发挥重要作用[30]。FoxO信号通路广泛参与细胞的各种生物学行为，并在CRC中表现出抑制肿瘤细胞生长，促进凋亡的抗肿瘤效应[31]。
+
+综上所述，FFCT能够通过铁死亡途径发挥抑制CRC发生和进展的作用，其机制可能是通过靶向NQO1信号从而诱导结直肠癌细胞铁死亡，进而发挥抗肿瘤的作用。本研究为FFCT抗结直肠癌作用机制提供了参考，为后续研究奠定了基础，为FFCT的临床应用提供科学依据。
+
+* * *
+
+作者贡献声明 顾佳麟负责数据审编、调查研究和初稿写作，李灵常负责正式分析、调查研究和审读与编辑写作，刘明负责调查研究、研究方法和提供资源，邓珊负责调查研究和验证，余佳霖负责软件、可视化，霍介格负责经费获取、监督指导和审读与编辑写作，季漪负责论文构思、经费获取、研究项目管理和审读与编辑写作。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution GU Jialin is responsible for data curation, investigation, and writing--original draft. LI Lingchang is responsible for formal analysis, investigation, and writing--review and editing. LIU Ming is responsible for investigation, methodology, and resources. DENG Shan is responsible for investigation and validation. YU Jialin is responsible for software and visualization. HUO Jiege is responsible for funding acquisition, supervision, and writing--review and editing. JI Yi is responsible for conceptualization, funding acquisition, project administration, and writing--review and editing. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.

@@ -1,6 +1,11 @@
 {
   "schemaVersion": 1,
   "conflictingEntryIds": [
-    "examination-005"
+    "herb-0318",
+    "herb-0348",
+    "herb-0391",
+    "examination-013",
+    "drug_class-003",
+    "drug_class-005"
   ]
 }

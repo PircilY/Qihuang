@@ -1,0 +1,121 @@
+银屑病属于临床中常见的慢性炎症性皮肤病，可分为寻常型、关节型、脓疱型、红皮型等，其中寻常型银屑病（psoriasis vulgaris, PV）占总发病人数的90%以上[1]。中医又将PV分为血热证（blood-heat syndrome, BHS）、血瘀证（blood stasis syndrome, BSS）及血燥证（blood-dryness syndrome, BDS），并且通过中医中药辨证治疗效果良好，获得临床广泛应用[2]。目前，虽然有不少研究人员对PV不同中医证型的相关分子和机制进行了研究[3-5]，但其机制并不完全清楚。因此，挖掘BHS、BSS、BDS的潜在标志物对于PV的临床诊断、治疗以及病理机制的研究至关重要。
+
+近年来，生物信息学和机器学习在进行寻找疾病的关键基因，筛选生物标记物方面展现出巨大的潜力，也成为PV生物标志物、治疗靶点预测的重要手段[6-9]。本研究拟利用生物信息学方法从基因表达数据库（Gene Expression Omnibus, GEO）获取PV患者相关基因矩阵，并用机器学习算法对BHS、BSS、BDS的重要特征基因进行筛选，初步探索其潜在的生物标记物，以期为银屑病临床辨证诊疗提供新的参考。
+
+材料及方法
+
+数据来源与预处理
+
+通过GEO数据库（http://www.ncbi. nlm.nih.gov/geo/）下载GSE192867数据集。该数据集中有10例来自健康人群，有62例PV患者（其中BHS患者16例、BSS患者23例、BDS患者23例）。在数据集中，用Affymetrix Human Clariom D Assay检测健康人群和PV患者外周血单核细胞转录组的表达。提取数据集中的健康人群和PV患者的数据保存为“PV.txt”文件；然后，分别提取BHS、BSS和BDS的数据，再与健康人群的数据逐一合并，分别保存为“BHS.txt”文件、“BSS.txt”文件和“BDS.txt”文件。利用Perl脚本根据数据集的平台文件（GPL23126）将其探针矩阵转化为基因矩阵，基因对应多个探针者则利用avereps函数对其取均值，并用normalizeBetweenArrays函数进行矫正。
+
+筛选差异表达基因
+
+利用limma包分别对“PV.txt”、“BHS.txt”、“BSS.txt”和“BDS.txt”文件进行差异分析[10]。以|log2(fold change, FC)|>3，P<0.05为标准筛选差异表达基因（differentially expressed genes, DEGs），并绘制火山图。
+
+功能富集分析
+
+利用org.Hs.eg.db、clusterProfiler、enrichplot等R语言包对筛选的DEGs进行KEGG（Kyoto Encyclopedia of Genes and Genomes）通路富集分析，并绘制气泡图。
+
+不同中医证型重要特征基因的筛选
+
+将“PV.txt”、“BHS.txt”、“BSS.txt”和“BDS.txt”文件数据筛选的DEGs分别取交集，并绘制维恩图。去除其中任意一种证型DEGs与其余证型DEGs重合部分，剩余基因与PV的DEGs取交集后所得基因定义为该种证型的特征基因。如BHS的特征基因是在BHS的DEGs与PV的DEGs的交集基因中，这些基因既不属于BSS，也不属于BDS的交集基因。
+
+机器学习算法识别不同中医证型的重要特征基因
+
+筛选出GSE192867数据集中不同中医证型特征基因的相关表达数据，分别构建支持向量机（support vector machine, SVM）和随机森林（random forest, RF）模型，并利用“dalx”包对2种模型进行分析评价，绘制残差分布，残差最小者即最佳模型，将最佳模型筛选出来的重要性排序前5的基因作为该中医证型的重要特征基因。
+
+不同中医证型重要特征基因的评价
+
+提取不同中医证型重要特征基因在各样本中的表达量，绘制柱形图并对其组间差异情况进行可视化；然后，通过pROC包对关键基因受试者工作特征（receiver operating characteristic curve, ROC）进行曲线绘制，计算曲线下面积（area under the curve, AUC）值，对重要特征基因的诊断效能进行评价。
+
+结果
+
+DEGs的筛选
+
+差异分析结果显示，“PV.txt”共筛选出7699个与PV相关的DEGs（图1A）；“BHS.txt”共筛选出7291个与BHS相关的DEGs（图1B）；“BSS.txt”共筛选出7654个与BSS相关的DEGs（图1C）；“BDS.txt”共筛选出6578个与BDS相关的DEGs（图1D）。
+
+The volcano map of DEGs
+
+DEGs火山图
+
+A, "PV.txt" file; B, "BHS.txt" file; C: "BSS.txt" file ; D, "BDS.txt" file. Each dot represents a gene, with the green dots representing down-regulated DEGs, the gray dots representing genes not differentially expressed, and the red dots representing up-regulated DEGs.
+
+DEGs的KEGG富集分析
+
+KEGG分析结果显示，依据P值<0.05为显著通路筛选的标准，PV相关DEGs有88条信号通路，涉及环磷酸腺苷（cyclic adenosine monophosphate, cAMP）信号通路、自噬等（图2A）；BHS相关DEGs有95条信号通路，包括核糖体、吞噬体等（图2B）；BSS相关DEGs有93条信号通路，涉及cAMP信号通路、线粒体自噬等（图2C）；BDS相关DEGs有102条信号通路，包括cAMP信号通路、剪切体等（图2D）。所有富集出的通路取交集后，共有83条共同通路（图2E、2F）。
+
+DEGs functional enrichment analysis results
+
+DEGs功能富集分析
+
+A, Bubble map of KEGG enrichment analysis of PV-related DEGs; B, bubble map of KEGG enrichment analysis of BHS-related DEGs; C, bubble map of KEGG enrichment analysis of BSS related DEGs; D, bubble diagram of KEGG enrichment analysis of BDS-related DEGs; E, Venn diagram of KEGG pathways for all DEGs; F, the intersection KEGG pathway of all DEGs.
+
+生物信息学筛选不同中医证型重要特征基因
+
+BHS共获得29个特征基因；BSS共获得360个特征基因；BDS共获得3个特征基因。本研究筛选出的中医证型特征基因仅为本中医证型特有的基因，鉴于BDS的特征基因较少，故将BDS筛选出的3个上调的特征基因认定为BDS的重要特征基因（图3）。
+
+Venn diagram of characteristic genes of different TCM syndrome types
+
+不同中医证型特征基因的维恩图
+
+A, The "PV.txt", "BHS.txt", "BSS.txt", and "BDS.txt"; B, the "PV.txt", "BHS.txt", "BSS.txt", and "BDS.txt" files are used to lower the Venn diagram of DEGs.
+
+机器学习算法识别不同中医证型重要特征基因
+
+依据RF模型的筛选结果，在29个BHS特征基因中，凝集素（malectin, MLEC）、TUB样蛋白3（TUB like protein 3, TULP3）、含SET域9（SET domain containing 9, SETD9）、核膜整合膜蛋白2（nuclear envelope integral membrane protein 2, NEMP2）、BTG抗增殖因子3（BTG anti-proliferation factor 3, BTG3）为重要特征基因（图4A、4B）。依据SVM模型的筛选结果，在360个BSS特征基因中，双特异性磷酸酶15（dual specificity phosphatase 15, DUSP15）、C1q与肿瘤坏死因子相关蛋白7（C1q and tumor necrosis factor related protein 7, C1QTNF7）、溶质载体家族12成员5（solute carrier family 12 member 5, SLC12A5）、含三联基元63（tripartite motif containing 63, TRIM63）、泛素相关蛋白样因子1（ubiquitin associated protein 1 like, UBAP1L）为重要特征基因（图4C、4D）。
+
+The key characteristic genes of different TCM syndrome types were screened by machine learning algorithm
+
+机器学习算法筛选不同中医证型的重要特征基因
+
+A, Box plot of BHS sample residuals, with the red dots representing the root mean square of residuals; B, importance ranking of BHS characteristic genes in the two models; C, box plot of BSS sample residuals, with the red dots representing the root mean square of residuals; D, the importance ranking of BSS characteristic genes in the two models.
+
+不同中医证型重要特征基因的评价
+
+图5A为重要特征基因的染色体位置。不同中医证型重要特征基因的AUC值均大于0.7，并且多数均大于0.9，表明具有良好的诊断准确性（图5B、5C）。其中BHS和BSS的AUC值均大于0.9（图5D、5E），BDS的AUC值均大于0.8（图5F），表现出良好诊断效能。此外，所有重要特征基因在自身证型数据中的表达趋势与“PV.txt”文件数据中呈现的表达趋势基本一致（图6A～6D）。
+
+Evaluation of the diagnostic efficacy of key characteristic genes of different TCM syndrome types
+
+不同中医证型重要特征基因诊断效能的评价
+
+A, Chromosomal location of key characteristic genes; B-C, ROC curve of key characteristic genes in the "PV.txt" file; D, ROC curve of key BHS characteristic genes in "BHS. txt" file; E, ROC curve of key BSS characteristic genes in the "BSS.txt" file; F, ROC curve of BDS key characteristic genes in "BDS.txt" file.
+
+Expression trends of key characteristic genes
+
+重要特征基因的表达趋势
+
+A, Box diagram of the expression of key characteristic genes of different TCM syndrome types in the "PV.txt" file; B, box diagram of the expression of BHS key characteristic genes in the "Bhs.txt" file; C, box diagram of the expression of BSS key characteristic genes in the "BSS.txt" file; D, box diagram of the expression of BDS key characteristic genes in the file "BDS.txt". * P<0.05, *** P<0.001.
+
+讨论
+
+PV发病机制复杂，其病因尚未完全阐明。尽管遗传、感染、代谢、外伤、季节、药物、压力、吸烟和饮酒等因素都是PV的发病诱因[11]，但识别其高危分子标志物及发病机制仍是一个难题。因此，探索PV分子发病机制和诊断标志物具有重要意义。
+
+辨证论治是中医学基本原则，中医学家司外揣内，审时度势，四诊合参，将PV分为BHS、BSS、BDS三证，治疗准确，优势显著[2, 12-13]。但传统辨证受个体差异、思维方式等因素的影响呈现出复杂性、模糊性，通过筛选各证型重要特征基因可提升辨证准确性与适用度，更好地指导临床辨证施治。
+
+本研究通过对GSE192867数据集进行差异分析，筛选出7699个与PV相关的DEGs、7291个BHS相关的DEGs、7654个BSS相关的DEGs，以及6578个BDS相关的DEGs，其KEGG富集分析取交集后，有Janus激酶（Janus kinase, JAK）/信号转导与转录激活因子（signal transducer and activator of transcription, STAT）、丝裂原活化蛋白激酶（mitogen-activated protein kinase, MAPK）、cAMP、细胞凋亡、胰岛素抵抗（insulin resistance, IR）、辅助性T细胞17（T helper cell 17, Th17）细胞分化等83条共同通路。JAK/STAT通路是细胞因子激活受体介导信号转导的核心，通过调控白细胞介素（interleukin, IL）-23、IL-22、IL-6等多种PV关键细胞因子表达诱导发病[14-15]。MAPK信号通路可以引发炎症反应，促进表皮过度增殖，加剧PV严重程度[16-17]。Th17细胞分化产生的IL-17、IL-22能促进角质形成细胞促炎趋化因子分泌、细胞增殖和角化过度，诱导PV发病[18-19]。IR能够直接促进角质形成细胞和成纤维细胞增殖，且IR指数与PV严重程度呈正相关[20]。以上相关研究结论与预测结果一致，表明本研究对PV生物信息学分析的结果具有科学性。
+
+为进一步探索PV不同中医证型的核心靶点，本研究将其各证型DEGs之间及PV的DEGs取交集获得重要特征基因。结果显示，MLEC、TULP3、SETD9、NEMP2、BTG3为BHS的重要特征基因，DUSP15、C1QTNF7、SLC12A5、TRIM63、UBAP1L为BSS的重要特征基因，重组小鼠蛋白（recombinant mouse protein, RRNAD1）、GTP酶激活蛋白ASAP3蛋白（ASAP3 protein, ASAP3 ）、人肌间蛋白2（human myomesin 2, MYOM2）为BDS的重要特征基因。TULP3基因沉默处理后磷酸酯酶与张力蛋白同源物（phosphatase and tensin homolog, PTEN）磷酸化水平明显上调，并能负向调节磷脂酰肌醇3-激酶（phosphatidylinositol3-kinase, PI3K）/蛋白激酶B （protein kinase B, PKB，又称AKT）信号轴控制BHS发展[21-22]。BTG3作为抗增殖BTG基因家族的成员，可以调节STAT水平参与BHS发病[23-24]。SLC12A5影响转化生长因子-β（transforming growth factor-β, TGF-β）、肿瘤坏死因子-α（tumor necrosis factor-α, TNF-α）、IL-17及γ干扰素（interferon-γ, IFN-γ）的分泌，其中IFN-γ、TNF-α、IL-17在BSS患者中显著升高[25-26]。C1QTNF7属于C1q/肿瘤坏死因子相关蛋白家族成员，可以调节葡萄糖代谢紊乱、胰岛素抵抗等病理过程。研究显示，伴有代谢紊乱的PV患者中BSS的发生率最高[27-28]。此外，细胞凋亡造成的表皮异常与BDS密切相关，RRNAD1、ASAP3能够通过控制蛋白质合成、细胞增殖及凋亡等过程，调节表皮细胞分化与增殖，干预BDS的发生[29-30]。目前未见MLEC、SETD9、NEMP2、DUSP15、TRIM63、UBAP1L、ASAP3、MYOM2参与PV及不同中医证型的报道，其相关机制仍有待进一步研究。综上，本研究筛选出的部分重要特征基因与相关研究结果基本一致，且研究结果显示，本次预测基因与PV病理机制存在一定联系，进一步证明了预测结果的可靠性。
+
+本研究的局限性在于：①GEO数据库中纳入的PV中医证型的数据较少且数据集单一；②PV常合并代谢及心血管系统疾病等危险因素，在GSE192867数据集中相关信息欠缺，无法开展相关性研究；③本研究未对重要特征基因的诊断效能进行外部数据的验证及体、内外实验验证。今后课题组将在本研究基础上开展体内、外实验，进一步验证分析结果，深入研究各中医证型信号通路差异性，阐述不同证型的病理机制，继续研究不同证型基因间的内在联系以及在PV各个阶段的诊断价值及意义，为不同中医证型PV的临床诊疗提供科学依据。
+
+* * *
+
+作者贡献声明 刘学伟负责论文构思、提供资源、监督指导、初稿写作和审读与编辑写作，贾皇超和王丽云负责数据审编、正式分析和初稿写作，王子雯和许孟月负责研究方法和软件，李云飞和王茸慧负责调查研究和可视化。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LIU Xuewei is responsible for conceptualization, resources, supervision, writing--original draft, and writing--review and editing. JIA Huangchao and WANG Liyun are responsible for data curation, formal analysis, and writing--original draft. WANG Ziwen and XU Mengyue are responsible for methodology and software. LI Yunfei and WANG Ronghui are responsible for investigation and visualization. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.
+
+Funding Statement
+
+河南省中医药拔尖人才培养项目（豫卫中医函〔2021〕15号）和河南省中医药科学研究专项课题（No. 2022ZYBJ04）资助
+
+Contributor Information
+
+学伟 刘 (Xuewei LIU), Email: 13939012767@163.com.
+
+丽云 王 (Liyun WANG), Email: wangliyun0721@163.com.
+
+References

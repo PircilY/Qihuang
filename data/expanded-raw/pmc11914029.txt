@@ -1,0 +1,133 @@
+骨质疏松症（osteoporosis, OP）是以骨量减少、骨微结构破坏、骨脆性增加，易于骨折为病理特征的常见骨骼衰老性疾病。随着全球老龄化进程的加快，OP患者数量急剧攀升。最新流行病学调查显示全球OP患病率为19.7%[1]。我国OP患者估计已超过1.4亿，且患病率随年龄逐渐增加[2]，绝经后女性OP患病率甚至高达32.1%[3]。
+
+绝经后骨质疏松（postmenopausal osteoporosis, PMOP）是由雌激素缺乏引起的最常见骨质疏松类型，严重威胁妇女身心健康[4-5]。PMOP在中医学上被归为“骨枯”“骨痿”等疾病范畴，既往临床研究表明，艾灸治疗可缓解骨质疏松患者疼痛症状并提高患者生活质量[6]；基础研究提示，艾灸治疗可促进PMOP模型小鼠骨髓间充质干细胞（bone marrow mesenchymal stem cells, BMSCs）成骨分化，抑制骨量流失[7-8]，但机制尚不明确。最近的研究表明，肠道菌群（gut microbiota, GM）与PMOP关系密切[9]，而GM代谢的衍生物质是其发挥远端骨代谢生物调节效应的重要基础[10]，而具有强大生物活性作用的氨基酸代谢物〔尤其是色氨酸的GM代谢产物，吲哚衍生物、犬尿氨酸、5-羟色胺（5-hydroxytryptamine, 5-HT）〕[11-15]更是参与骨代谢调控过程的多个环节。同时，艾灸对GM具有显著的调控作用，可通过调整有益菌和致病菌的比例、抑制炎症因子表达而有效治疗疾病[16-18]。
+
+本研究以肠道菌群为切入点，采用抗生素清除干扰及色氨酸靶向代谢组学方法探究艾灸抑制绝经后骨丢失的作用及机制。
+
+材料与方法
+
+动物模型
+
+12 周龄雌性 C57BL/6J 小鼠购自江苏集萃药康生物科技股份有限公司，饲养于四川大学华西科技园动物实验中心 SPF级动物室。小鼠适应性喂养1周，按照实验需求随机分为两部分，即：卵巢切除术组（ovariectomized group, OVX）和假手术组（sham operation group, SHAM），OVX组小鼠经背侧行卵巢切除术，SHAM组仅切除卵巢周围相应大小脂肪组织而不切除卵巢，手术4周后取材检测相应指标。本研究已获得四川大学华西医院实验动物伦理委员会的批准(批准号：20231020002）。实验共使用了25只小鼠，随机分为5组，每组5只。即：假手术对照SHAM组，卵巢切除术OVX组，卵巢切除术合并广谱抗生素干预组（ovariectomy and antibiotics group, OVX-A），卵巢切除术后艾灸干预组（ovariectomy and moxibustion group, OVX-M）及卵巢切除术后广谱抗生素干预同时艾灸组（ovariectomy, antibiotics, and moxibustion group, OVX-A-M）。具体干预见表1。
+
+Intervention methods for each group of mice
+
+各组小鼠干预方法
+
+Intervention started 4 weeks post sham operation. The mice were given normal sterile drinking water for 4 weeks. The mice were fixed in a restrainer for 20 min every other day for 4 weeks.
+
+Intervention started 4 weeks post ovariectomy. The mice were given normal sterile drinking water for 4 weeks. The mice were fixed in a restrainer for 20 min once every other day for 4 weeks.
+
+Intervention started 4 weeks post ovariectomy. The mice were given sterile drinking water and broad-spectrum antibiotics (1 g/L ampicillin and 0.5 g/L neomycin). The water was changed daily. The mice were fixed in a restrainer for 20 min every other day for 4 weeks.
+
+Intervention started 4 weeks post ovariectomy. Normal sterile drinking water was given for 4 weeks. The mice were fixed in a restrainer and moxibustion was performed with smokeless moxa sticks (0.7 cm diameter) on Shenshu and Pishu acupoints for 20 min once every other day for 4 weeks
+
+Intervention started 4 weeks post-ovariectomy. The mice were given sterile drinking water with broad-spectrum antibiotics (1 g/L ampicillin and 0.5 g/L neomycin). The water was changed daily. The mice were fixed in a restrainer and moxibustion was performed with smokeless moxa sticks (0.7 cm diameter) on Shenshu and Pishu acupoints for 20 min once every other day for 4 weeks.
+
+主要药品及试剂
+
+RNA提取试剂盒（TaKaRa，日本），逆转录试剂盒（TaKaRa，日本），Trizol（Invitrogen，美国），异丙醇（上海生工，中国），DEPC水（碧云天生物科技公司），体积分数为4%多聚甲醛（Biosharp，中国），胎牛血清（Gibco，美国），碱性磷酸酶（ALP）染色试剂盒（Sigma，美国），αMEM基础培养基（Gibco，美国），β-磷酸甘油（北京索莱宝科技公司，中国），抗坏血酸（北京索莱宝科技公司，中国）。
+
+Micro-CT检测
+
+采用高分辨Micro-CT（NMC-200; 平生医疗科技有限公司）对小鼠右侧股骨进行扫描，扫描参数：管电压60 KV，管电流0.13 mA，横向FOV 100 mm。采用Recon（1.6.9.3）和Avatar（1.6.9.3）对骨微结构进行分析与重建。选取松质骨与皮质骨感兴趣区域（region of interest, ROI）进行分析与重建。松质骨分析参数主要包括骨体积分数（bone volume/tissue volume, BV/TV）、骨小梁数目（trabecular number, Tb.N）、骨小梁厚度（trabecular thickness, Tb.Th）、骨小梁分离度（trabecular separation, Tb.Sp）。皮质骨分析参数主要包括 BV/TV、皮质骨厚度（cortical thickness, Ct.Th）。
+
+色氨酸靶向代谢组检测
+
+准确称取色氨酸标准品，用50%甲醇配制单标母液，量取各母液适量混合标准品母液，然后用10%甲醇逐一稀释至合适浓度。各储备液及工作标准溶液均保存于－20 ℃。LC-MS检测使用ExionLC液相色谱仪与AB6500+质谱仪（AB Sciex, USA）。色谱条件：采用ACQUITY UPLC® HSS T3 色谱柱（2.1 mm×150 mm, 1.8 μm,Waters, USA），进样量5 μL，柱温40 ℃，流动相A：0.1%甲酸水，B：0.1%甲酸甲醇。梯度洗脱条件为0～0.5 min，10% B；0.5～2 min，10%～30% B；2～3 min，60% B；3～6 min，60%～98% B；6～7.5 min，98% B； 7.5～7.51 min，98%～10% B；7.51～9 min，10% B。流速 0.25 mL/min；质谱条件：采用正离子电离电喷雾电离（ESI）源模式。离子源工作温度设置为450 ℃，工作电压为4500 V，碰撞气压力为10 psi，气帘气压力为30 psi，同时雾化气和辅助气压力均为50 psi。实验中使用多重反应监测（MRM）进行信号扫描。
+
+骨髓间充质干细胞成骨分化诱导及血清素干预
+
+原代BMSCs分离培养：颈部脱臼法处死小鼠；将小鼠浸泡于 75%乙醇5 min，同时浸泡剪刀和镊子，分离双侧股骨与胫骨，放置于含PBS的15 mL离心管；转移至超净台，用剪刀和镊子剔除骨头附着的肌肉，反复用PBS漂洗至少3次；从中间剪断骨头，用2 mL注射器注满PBS后冲出骨髓，反复吹打混匀后转移至15 mL离心管中，1500 r/min，离心5 min；弃上清液，加入PBS 6 mL，反复吹打混匀，1500 r/min，离心5 min；弃上清液，加入含15% FBS的α-MEM完全培养基6 mL，反复吹打混匀，将细胞接种到10 cm的细胞培养皿中；48 h后首次换液，换液时用PBS缓冲液洗涤两次，尽量去除残余杂质和死细胞；细胞密度达80%左右时进行传代，第三代BMSCs用于成骨分化诱导，加入含15%FBS的α-MEM完全培养基，添加50 µg/mL抗坏血酸及10 mmol/L β-磷酸甘油，每2～3 d更换培养基一次，在分化培养基中分别按0、0.01、0.1、1、10 μmol/L浓度加入血清素溶液。诱导7 d结束后，采用ALP染色试剂盒对细胞进行染色，此外，提取细胞RNA进行qPCR检测。
+
+统计学方法
+
+使用SPSS 26.0软件进行统计分析。数据以表示。组间比较采用单因素方差分析（ANOVA），若差异有统计学意义，进一步进行LSD-t检验。对于不符合正态分布的数据，采用非参数检验。P<0.05为差异有统计学意义。微生物分析在软件QIIME2 （2019.4）与R（v.3.6.3）中完成。
+
+结果
+
+艾灸抑制OVX小鼠骨丢失
+
+经小鼠股骨远端Micro-CT分析发现（图1），与SHAM组相比，OVX组小鼠骨髓腔内骨小梁稀疏，数量减少，连续性较差（图1A），BV/TV从（10.57 ±2.82）%降低至（4.20±0.96）%（P<0.01）（图1B），Tb.Th显示降低趋势，但差异无统计学意义（P>0.05）（图1C），Tb.N从3.16±0.11减少到2.25±0.15（P<0.01）（图1D），Tb.Sp从0.31±0.01增加到0.45±0.03（P<0.01）（图1E）；而艾灸干预后，OVX-M组小鼠骨微结构改善（图1A），BV/TV增加到（7.51±1.42）%（P<0.05）（图1B），提示艾灸干预抑制OVX小鼠骨丢失。
+
+Moxibustion improves the microstructure and bone mass of cancellous bone of distal femurs in OVX mice
+
+艾灸改善OVX小鼠股骨远端松质骨微结构及骨量
+
+The abbreviations were explained in the note to Table 1. A, Three-dimensional imaging of the cancellous bone structure of the distal femur in each group; B-E, quantitative analysis of BV/TV, Tb.Th, Tb.N, and Tb.Sp of the distal femur cancellous bone in each group (n = 5). * P < 0.05, ** P < 0.01.
+
+艾灸提高OVX小鼠血清素含量及骨髓血清素受体Htr2a基因水平
+
+为探究艾灸对OVX小鼠血清氨基酸代谢产物的影响，本研究采用靶向代谢组学对主要氨基酸代谢物进行检测。结果发现，3组小鼠血清氨基酸代谢物水平具有明显差异（图2A），其中血清素（serotonin, SER）在3组小鼠的变化较为显著。与SHAM组相比，OVX组小鼠血清SER水平降低，而艾灸干预的OVX-M组小鼠血清SER水平回升（图2B）。接下来，本研究检测了小鼠骨髓中SER两种主要受体Htr2a和Htr2b基因表达水平，结果发现，与SHAM组相比，OVX组小鼠Htr2a mRNA有下降趋势，但差异无统计学意义（P>0.05），艾灸干预后Htr2a mRNA显著回升（P<0.05）（图2C）；而3组小鼠Htr2b mRNA差异无统计学意义（P>0.05）（图2D）。
+
+Moxibustion increases serum serotonin levels and the receptor Htr2a gene expression in the bone marrow of OVX mice
+
+艾灸提高OVX小鼠血清素含量及骨髓血清素受体Htr2a基因水平
+
+The abbreviations were explained in the note to Table 1. A, Serum amino acid metabolomics OPLS-DA plot (n = 3); B, serum amino acid metabolites Z-score plot (n = 3); C and D, gene expression levels of serotonin receptors Htr2a and Htr2b in the bone marrow of each group of mice (n = 5). * P < 0.05.
+
+肠道菌群清除削弱艾灸挽救OVX小鼠骨丢失的作用
+
+接下来，本研究采用广谱抗生素灌胃的方式尽可能清除小鼠肠道菌群，以观察肠道菌群清除是否对艾灸抑制OVX小鼠骨丢失的效应产生影响。由图3可见，与OVX组小鼠相比，OVX后给予抗生素干预的OVX-A组小鼠骨微结构及骨量无明显变化（P>0.05）。然而，OVX小鼠在接受艾灸干预的同时接受抗生素灌胃（OVX-A-M组），其骨量较单纯接受艾灸干预的OVX小鼠（OVX-M组）降低（P<0.05）。以上结果提示肠道菌群在艾灸抑制OVX小鼠骨丢失过程中具有重要作用。
+
+The removal of gut microbiota weakens the effect of moxibustion on inhibiting bone loss in OVX mice
+
+肠道菌群清除削弱艾灸挽救OVX小鼠骨丢失的作用
+
+The abbreviations were explained in the note to Table 1. A, Three-dimensional imaging of the cancellous and cortical bone structure of the distal femur in each group; B-E, quantitative analysis of BV/TV, Tb.Th, Tb.N, and Tb.Sp of the distal femur cancellous bone in each group (n = 6); F and G, quantitative analysis of Ct.Th and Ct.ar/Tt.ar of the distal femur cortical bone in each group (n = 6). * P < 0.05, ** P < 0.01, **** P < 0.0001.
+
+肠道菌群清除降低艾灸OVX小鼠血清素水平
+
+此外，本研究再次采用LC-MS检测对肠道菌群清除小鼠的血清SER水平进行定量，结果发现，与SHAM组相比，OVX组小鼠血清SER水平降低（P<0.05），接受艾灸干预的OVX-M组小鼠血清SER水平回升（P<0.05），而抗生素干预OVX-A-M组小鼠血清SER水平降低（P<0.001）（图4）。可见，血清SER代谢与肠道菌群密切相关，并且可能是艾灸抑制OVX骨丢失的重要肠道菌群相关代谢物。
+
+The removal of gut microbiota decreases the serum SER elevated by moxibustion in OVX mice
+
+肠道菌群清除降低艾灸OVX小鼠SER水平
+
+The abbreviations are explained in the note to Table 1. n = 3, * P < 0.05, *** P < 0.001.
+
+SER可促进BMSCs成骨分化，提高血清素受体Htr2b mRNA水平
+
+为进一步验证血清素SER对成骨分化的影响，本研究通过体外细胞实验，采用不同浓度梯度的SER对小鼠原代骨髓间充质干细胞BMSCs进行干预，并诱导其成骨分化，结果发现，SER可促进BMSCs成骨分化，其中0.1 μmol/L浓度SER干预的BMSCs成骨分化最为明显（图5A、5B），成骨分化相关基因Colla1 mRNA表达水平高于无SER干预组（P<0.05）（图5C），且SER受体Htr2a基因表达水平升高（P<0.05），而Htr2b差异无统计学意义（P>0.05）（图5D）。由此可见，SER可能激活Htr2a受体，促进BMSCs成骨分化。
+
+SER promotes osteogenic differentiation of BMSCs and increases Htr2b mRNA
+
+SER可促进BMSCs成骨分化，提高血清素受体Htr2b mRNA水平
+
+A, BMSCs were cultured in osteogenic induction medium with SER (0, 0.01, 1, 10, and 100 μmol/L) for 7 days, followed by ALP staining (original magnification × 10); B, relative mRNA expression levels of the osteogenic marker gene Colla1 in each group (n=3); C and D, relative mRNA expression levels of serotonin receptors Htr2a and Htr2b in each group (n=3). * P < 0.05.
+
+讨论
+
+“艾灸辛苦……纯阳之性，能回垂绝之阳，通十二经……以之灸火，能透诸经而除百病”（《本草从新》）。作为中医传统特色外治疗法之一，艾灸已被证明可缓解骨质疏松患者腰背疼痛，提高其生活质量[19-20]，抑制骨吸收，促进骨形成[21]；动物实验也证实了艾灸可能通过Wnt/β-catenin信号通路增强去势雌性大鼠BMSCs成骨分化，提高OPG水平，从而提升骨量[7]。近年来，随着“肠-骨轴”认识的深入，肠道菌群及其重要代谢产物对PMOP发生或进展的影响受到越来越多的关注[22]。本研究发现艾灸脾、肾背俞穴可抑制OVX小鼠骨丢失，其效应的产生与肠道菌群介导的SER代谢密切相关。
+
+近年来艾灸调控肠道菌群成为中医药研究热点，研究发现，艾灸可能通过调节肠道菌群的结构与组成，调节骨代谢，从而改善骨的病理情况[23-24]。因此，本研究采用广谱抗生素干预OVX小鼠，尽可能清除其肠道菌群，并对其进行艾灸治疗，结果发现艾灸无法抑制肠道菌群消耗的OVX小鼠骨丢失。因此笔者推测，肠道菌群可能是艾灸抑制绝经后骨丢失的关键。既往研究发现，肠道菌群衍生的色氨酸在维持骨稳态中具有重要作用[25]。色氨酸代谢途径包括犬尿氨酸途径、5-HT途径（也称SER）和吲哚类途径[26]。SER是色氨酸的代谢产物，在中枢神经系统和周围的胃肠道和血小板中产生，并通过血脑屏障[27-28]。在中枢，SER调节情绪、感知、攻击性、注意力和记忆力等[28]。在外周，SER主要调节代谢功能，包括葡萄糖稳态和脂质代谢[29]。人体胃肠道是SER生物合成的重要部位，肠道菌群与血液中SER水平具有相关性[30]。常规饲养小鼠血清SER水平和结肠色氨酸羟化酶1水平高于无菌小鼠，一些特定菌种（如Turicibacter）丰度与SER及其受体密切相关[31]，可促进肠道嗜铬细胞合成SER[32-33]。在本研究中发现OVX组小鼠血清SER含量下降，艾灸干预升高SER水平，而在清除肠道菌群后，艾灸干预无法提升OVX小鼠SER水平，提示血清SER可能来源于肠道菌群衍生。
+
+SER受体有7种类型，5-HT1至5-HT7，有研究表明，SER激活的5-HT2A受体可以增加OPG水平，抑制RANKL水平，从而通过抑制破骨细胞分化，促进成骨细胞分化，对骨形成起着保护作用[34]。5-HT2B−/−的小鼠表现出骨质疏松表型，并随着衰老而发展，5-HT2B影响衰老小鼠成骨细胞招募和增殖[35]。在本研究中对Htr2a和Htr2b mRNA水平进行分析，SHAM组和OVX组5-HT2A受体Htr2a mRNA基因水平下降，与之前的研究一致[36]，但5-HT2B受体Htr2b虽有上升趋势，但差异无统计学意义，提示艾灸升高的SER可能是通过激活5-HT2A受体延缓绝经后骨质流失。体外研究也发现SER促进BMSCs成骨分化，提高成骨基因Col1a1及受体5-HT2A表达水平，进一步证明艾灸干预提高的肠道菌群衍生SER可能通过激活5-HT2A受体，促进BMSCs成骨细胞分化，进而抑制绝经后骨丢失。
+
+本研究存在一定局限性。本研究中缺少SER直接来源于肠道菌群的相关验证，同时缺乏SER调节骨代谢作用的在体探究，因此，未来应进一步完善肠道菌群来源的SER调控骨代谢的机制通路研究。
+
+本研究证实了中医艾灸疗法可抑制绝经后骨丢失，其作用可能通过调控肠道菌群衍生SER水平，激活5-HT2A受体，促进BMSCs成骨分化来实现。本研究揭示了艾灸治疗PMOP的潜在机制，为PMOP中医外治方案的制定提供了基础。
+
+* * *
+
+作者贡献声明 黄显皓负责调查研究、研究方法和初稿写作，Camilo Alberto Pinzon Galvis负责初稿写作和审读与编辑写作，胥惠民负责数据编审与正式分析，鲁凌云负责论文构思与经费获取，杨晗负责验证和可视化，李宁和文谦负责研究项目管理和提供资源。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution HUANG Xianhao is responsible for investigation, methodology, and writing--original draft. Camilo Alberto Pinzon Galvis is responsible for writing--original draft and writing--review and editing. XU Huimin is responsible for data curation and formal analysis. LU Lingyun is responsible for conceptualization and funding acquisition. YANG Han is responsible for validation and visualization. LI Ning and WEN Qian are responsible for project administration and resources. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.
+
+Funding Statement
+
+国家自然科学基金（No. 82204847）和四川省科技厅重点研发项目（No. 2023YFS0332）资助
+
+Contributor Information
+
+显皓 黄 (Xianhao HUANG), Email: huangxianhao2020@163.com.
+
+Pinzon Galvis Camilo Alberto (Pinzon Galvis Camilo Alberto), Email: kamiloelgenial@hotmail.com.
+
+谦 文 (Qian WEN), Email: wenqian@wchscu.cn.
+
+References

@@ -1,0 +1,151 @@
+2型糖尿病（type 2 diabetes mellitus, T2DM）是由于胰岛素分泌和（或）利用缺陷引起的代谢性疾病，随着病情的发展，逐渐导致心、脑、肾、眼等组织器官病变，临床上具有发病率高、知晓率低的特点[1-2]。
+
+在糖尿病的诊断和治疗中，中医作为一种具有良好疗效的补充和替代医学，发挥着重要作用，但其作为治疗基石的证候分型受主观因素影响较大，仍需进一步探讨证候分型形成的内在机制和物质基础[3-4]。
+
+随着疾病研究的深入，可利用的手段越来越多，其中肠道菌群作为肠道微生态的重要组成部分，在与宿主形成共生关系的过程中可调节宿主的多种生理或病理活动，是包括T2DM在内的多种类型疾病的重要参与者[5-8]。有研究指出，在不同证型下，肠道菌群会发生变化，同时会受到中药的调控，因此研究肠道微生物群的变化对辅助辨证分型和探索治疗机制具有重要意义[9-11]。
+
+因此，本研究将选择两种常见的T2DM中医证型患者作为研究对象，同时以健康人群作为对照组，通过16S rRNA测序技术分析肠道菌群在不同人群中的分布和功能，从而探讨肠道菌群的改变对不同证型的诊断效果，并为后续T2DM的机制研究提供依据。
+
+资料与方法
+
+研究对象
+
+本研究方案经湖南省中西医结合医院伦理委员会批准（编号：202246），所有参与者均于2023年招募。所有患者均出具了知情同意书。本研究通过配额抽样方法共招募了45名受试者（A组，T2DM气阴两虚兼瘀证，15例；B组，T2DM气阴两虚证，15例；C组，无T2DM，15 例）。
+
+本研究根据以下标准招募T2DM患者： ① 符合《糖尿病的分类与诊断》[12]；②符合证候分型，参照《2型糖尿病中医证候要素诊断量表》[13]对患者进行分证（气虚证≥11分、阴虚证≥9分、血瘀证≥10分者为气阴两虚兼瘀证，气虚证≥11分、阴虚证≥9分者为气阴两虚证）（具体症候评分见网络资源附件附表1）； ③获得患者知情同意；④近一个月内无糖尿病急症；⑤无严重器官衰竭；⑥无明确报道会影响肠道菌群的服药或疾病史；⑦年龄在18～80岁之间，性别和病程不限。C组招募标准：①不符合T2DM诊断标准；②获得患者知情同意；③无严重器官衰竭；④无明确报道会影响肠道菌群的服药或疾病史；⑤年龄在18～80岁之间，性别和病程不限。
+
+由两名中医类别主任医师对量表评分内容是否合格进行判断，结论不一致时由另一名中医类别主任医师进行判定。
+
+T2DM的诊断
+
+T2DM的诊断：具有典型症状（包括多饮、多食、多尿和体质量下降），同时有以下任意一项症状：空腹血糖≥7.0 mmol/L，口服葡萄糖耐量试验（OGTT）的餐后2 h血糖≥11.1 mmol/L；有高血糖症状，随机血糖≥11.1 mmol/L；糖化血红蛋白(HbA1c)≥6.5%。
+
+DNA 提取、PCR 扩增和测序
+
+用无菌管采集研究对象的新鲜粪便样本，并在−80 ℃下保存。使用FastPure粪便DNA分离试剂盒（MJYH，中国上海）从粪便样本中提取总微生物基因组DNA。用1.0%琼脂糖凝胶电泳和NanoDrop® ND-2000分光光度计（Thermo Scientific Inc.USA）测定DNA的质量和浓度。
+
+使用特异性引物338F（5'-ACTCCTACGGGAGGCAGCAG-3'）和806R（5'-GGACTACHVGGTWTCTAAT-3'）扩增细菌 16S rRNA基因的超变区V3-V4，并从凝胶中提取和纯化产物。PCR反应混合物包括4 μL 5×FastPfu缓冲液、2 μL 2.5 mmol/L dNTPs、0.8 μL引物（5 μmmol/L）、0.4 μL FastPfu聚合酶、10 ng模板DNA和ddH2O，最终体积为20 μL。PCR扩增循环条件如下：95 ℃初始变性3 min，95 ℃变性30 s，55 ℃退火30 s，72 ℃延伸45 s，72 ℃单次延伸10 min，10 ℃结束，共27个循环。从 2%琼脂糖凝胶中提取PCR产物，纯化后使用Synergy HTX（Biotek，美国）进行定量。
+
+纯化的扩增子汇集并按照Majorbio Bio-Pharm Technology Co. Ltd.（中国上海）的标准方案在Illumina PE250（中国上海）上进行成对测序。原始测序读数已存入NCBI数据库（PRJNA1135443）。
+
+生物信息学分析
+
+使用内部perl脚本对测序后的原始FASTQ文件进行去多路复用处理，然后使用fastp v0.19.6[14]进行质量过滤，并使用FLASH v1.2.11[15]进行合并。然后使用USEARCH v11[16-17]将优化后的序列聚类为操作分类单元（operational taxonomic units, OTU），序列相似度为97%。为尽量减少测序深度对α和β多样性测量的影响，每个样本的16S rRNA基因序列数均按最小样本序列数稀释。利用RDP分类器v2.13[18]对Silva 16S rRNA基因数据库进行分类分析，置信阈值为0.7。
+
+统计学方法
+
+应用SPSS v26.0分析受试者的基本信息，包括年龄、性别和病程。连续变量以\begin{document}$\bar x \pm s $\end{document}表示，两组间采用t检验或t'检验，三组间采用单因素方差分析或Kruskal-Wallis H检验和多重比较，分类则变量采用卡方检验。P<0.05为差异有统计学意义。
+
+利用Majorbio云平台（https://cloud.majorbio.com）对肠道菌群进行了生物信息分析，并对肠道菌群进行了α多样性和β多样性分析。α多样性分析主要通过多样性指数来评估样本中群落的丰富度、多样性和均匀度等，通常使用Sobs、Chao、Shannon、ACE、Simpson和Coverage指数，还可通过指数相关的稀释曲线来评估测序数据量的合理性。β多样性分析侧重于样本间菌群组成和分布的差异，以进一步探讨组成与疾病之间的关系，通常采用PCoA等分析方法确定不同样本中菌群的相似度，并结合ANOSIM/Adonis分析样本组间菌群差异是否显著。用Mothur v1.30.2[19]计算稀疏曲线和α多样性，并使用Kruskal-Wallis H检验和Dunn检验分析α多样性的组间差异。利用Vegan v2.4.3软件包，据bray-curtis距离算法进行PCoA分析。通过分类学水平分析菌群组成，并通过Kruskal-Wallis H检验和Dunn检验分析组间差异。采用线性判别分析（Linear discriminant analysis Effect Size, LEfSe）[20]来确定不同组间显著丰富的细菌类群（从门到属）（LDA>2，P<0.05）。使用基于十字交叉验证方法的随机森林（Random Forest）分析和基于average合并方法的受试者操作特征（receiver operating characteristic, ROC）曲线分析寻找并验证分组菌群标志物。最后使用PICRUSt2[21]软件进行16S功能预测分析。
+
+结果
+
+受试者临床特征
+
+T2DM患者和对照组的年龄、性别差异无统计学意义（P>0.05），A组和B组T2DM患者病程差异无统计学意义（P>0.05）（表1），因此本组受试者临床特征不会影响统计学分析结果。
+
+Clinical characteristics
+
+临床特征
+
+肠道菌群多样性改变
+
+OTUs
+
+45份样本共得到了1564个OTUs，其中224个OTUs为A组独有，127个OTUs为B组独有，351个OTUs为C组独有（图1A）。3组的OTU丰度并不一致。
+
+Changes in the diversity of gut microbiota
+
+肠道菌群多样性的改变
+
+A, Venn diagram of OTUs. B, PCoA analysis plots, with each point representing a sample. The points of the same color are samples from the same group. Regarding the distance between two points, the closer two points are to each other, the smaller the difference in community composition between them. C, Anosim/Adonis test. D, Rarefaction curve, with the horizontal coordinates representing the amount of randomly selected sequencing data and the vertical coordinates representing the number of species observed (e.g., Sobs) or diversity indices (e.g., Shannon's index).
+
+α多样性
+
+分析结果（表2）表明，A组和B组之间所有指数以及 B组和C组之间的Sobs、Chao和ACE指数的差异均有统计学意义（P<0.05），且稀释曲线（图1D）在快速上升后趋于平缓。Sobs指数、Chao指数、ACE指数和Shannon指数整体上均按照A组>C组>B组的顺序排列，提示在菌群丰富度和多样性方面，A组总体上大于B组，C组介于两组之间。3组的Simpson指数随着其多样性的降低而增加，从而也支持了上述观点。3组的Coverage指数均接近1，说明3组样本能代表真实情况，测序深度足够。虽然A-C组间α多样性指数差异没有统计学意义，并不表明组间没有差异，这需要结合β多样性等内容进一步分析。
+
+Alpha diversity index (\begin{document}$ \bar x\pm s $\end{document})
+
+α多样性指数（\begin{document}$ \bar x\pm s $\end{document}）
+
+β多样性
+
+PCoA 分析显示3组的肠道菌群组成存在一定重合，但3组样本的ANOSIM分析结果（R=0.161，P=0.002）表明了组间差异略大于组内差异，而两两组间的ANOSIM分析和Adonis分析结果则进一步证明组间差异均具有统计学意义（P<0.01）（图1B、1C）。
+
+肠道菌群组成差异
+
+各组优势菌群的组成在不同的分类学水平上存在差异。如在门一级，厚壁菌门（p_Firmicutes）、放线菌门（p_Actinobacteriota）、拟杆菌门（p_Bacteroidota）均为3组人群的肠道优势菌群，其综合比例达85%以上，这3种菌群在不同组内的比值具有不同程度的差异，其中拟杆菌门差异有统计学意义（P_fdr<0.05）。具体见网络资源附件附表2和附图1。
+
+此外，非优势菌群在3组间也存在差异（见图2和网络资源附件附表3）。如副拟杆菌属（g_Parabacteroides）、罗氏菌属（g_Roseburia）等非优势菌群虽占比较小，但组间差异经过FDR检验后仍有统计学意义（P_fdr<0.05）。
+
+Differences in the composition of gut microbiota
+
+肠道菌群的组成差异
+
+同时，Dunn检验结果也提示了肠道菌群的组间差异（见网络资源附件附表2和附表3）。如拟杆菌门在A组和B组间存在差异（P<0.01），拟杆菌科（f_Bacteroidaceae）在A组和B组、A组和C组间存在差异（P<0.05）。进一步揭示了肠道菌群差异干预疾病的可能基础。
+
+显著差异菌群分析
+
+LEfSe分析结果显示，LEfSe分析共鉴定出92个有显著差异的特征物种（LDA>2，P<0.05）（图3A）。两两分组分析则鉴定出A组和B组、B组和C组、A组和C组间有显著差异的特征物种数目分别为18、28、9个（LDA≥4，P<0.05）（图3B~3D）。
+
+Analysis of significantly different flora
+
+显著差异菌群分析
+
+A, LEfSe analysis of the composition of the gut microbiota from the phylum to the genus level (LDA > 2, P < 0.05). B-D, LDA discriminant bar graphs for two-by-two subgroups (LDA score ≥ 4, P < 0.05)
+
+其中，在A组和B组的比较中，A 组显著富集梭菌纲（c_Clostridia）、拟杆菌纲（c_Bacteroidia）、颤藻目（o_Oscillospirales）、拟杆菌属（g_Bacteroides）等，B 组显著富集的是乳杆菌目（o_Lactobacillales）、乳杆菌属（g_Lactobacillus）等。与C组相比，B 组显著富集的是放线菌纲（c_Actinobacteria）、埃斯谷菌纲（c_Negativicutes）、韦荣氏球菌-月形单胞菌目（o_Veillonellales-Selenomonadales）、韦荣氏球菌科（f_Veillonellaceae）等；A组显著富集的是等拟杆菌属、拟杆菌科、埃斯谷菌纲等。这些菌群可能是2型糖尿病气阴两虚证或夹瘀证发生发展的生物学基础。
+
+菌群标志物
+
+为进一步评估显著差异菌群（菌群标志物）用于评估诊断试验的效能，通常结合Random Forest分析寻找分组菌群标志物构建疾病诊断模型，ROC曲线分析来验证模型的准确性。
+
+通过将属一级的Random Forest分析结果与菌群组成差异分析结果、LEfSe分析结果相结合，研究得出结论：副拟杆菌属、拟杆菌属、某一未命名乳酸菌属（g_unclassified_f_Lachnospiraceae）、罗氏菌属、黄曲霉属（Flavonifractor）可作为A组和B组间菌群标志物；Erysipelotrichaceae_UCG-003属、瘤胃球菌属（Paludicola）可作为B组和C组间菌群标志物；副拟杆菌属、厌氧菌属（Anaerotruncus）、颤杆菌克属（Oscillibacter）可作为A组和C组间菌群标志物。
+
+ROC曲线分析（图4）表明，A组和B组、B组和C组、A组和C组间的ROC曲线线下面积（area under the curve, AUC）分别为0.91〔95%置信区间（confidence interval, CI）：0.80～1.00〕、0.84（95%CI：0.69～0.99）和0.87（95%CI：0.75～0.99），这提示肠道菌群标志物在一定程度上具备诊断T2DM或鉴别证型的潜力，尤其在证型区分上可能效果较好。
+
+Assessment of the predictive power of gut microbiota biomarkers between two groups
+
+两组间菌群标志物预测能力评估
+
+A: Group A vs. Group B; B: Group B vs. Group C; C: Group C vs. Group A. * The data outside the parentheses are the optimal critical values of the microbiota marker diagnostic test between the two groups, and the values inside the parentheses are the specificity and sensitivity of these values, respectively.
+
+肠道菌群功能预测
+
+京都基因与基因组百科全书（Kyoto Encyclopedia of Genes and Genomes, KEGG）功能丰度分析（图5）显示，Metabolic pathways、 Biosynthesis of secondary metabolites、 Microbial metabolism in diverse environments、Biosynthesis of amino acids、ABC transporters、Carbon metabolism、Ribosome、Purine metabolism等功能途通路占比例较大。
+
+KEGG functional abundance analysis at level 3
+
+Level 3下的KEGG功能丰度分析
+
+而在筛选功能组间差异上（图6），三组的秩和检验提示共有116条代谢通路存在组间差异（P<0.05），两两分组的T检验则提示A组和B组、B组和C组、A组和C组间分别有68、65、41条代谢通路存在组间差异（P<0.05）。
+
+Test of pathway differences at level 3
+
+Level 3下的通路差异检验
+
+* P < 0.05, ** P < 0.01, *** P < 0.001.
+
+其中，A组和B组间显著差异通路为Quorum sensing、Alanine, aspartate and glutamate metabolism、Oxidative phosphorylation、Phosphotransferase system (PTS)、Histidine metabolism等，B组和C组间显著差异通路为Ribosome、Pyrimidine metabolism、Aminoacyl-tRNA biosynthesis、Oxidative phosphorylation、Homologous recombination、DNA replication、Protein export、Terpenoid backbone biosynthesis、Nucleotide excision repair等，A组和C组间显著差异通路为ABC transporters等。
+
+讨论
+
+本研究共获得1564个OTUs，通过进一步分析不同组间菌群的组成和丰度，发现不同组间菌群的变化与以往文献大致相同，这与T2DM患者肠道菌群组成和功能的变化趋势一致。研究发现拟杆菌门丰度B组高于C组，拟杆菌科/属丰度A组高于B组，这与拟杆菌中构成细胞壁的脂多糖（LPS）引发慢性炎症反应损伤胰岛β细胞、损害视网膜毛细血管等因素有关，与血糖水平呈正相关[22-24]。梭状芽孢杆菌纲（c_Clostridia）丰度A、C组均高于B组，其是已知的人类肠道定植者和丁酸盐生产者，与空腹血糖、胰岛素等呈负相关，相关机制与短链脂肪酸代谢相关，此外A组相关丰度与正常菌群相似可能与较长病程下菌群恢复相关[25-26]。颤藻目（o_Oscillospirales）丰度A组高于B组，部分研究指出其与糖尿病肾病等并发症相关，同时与其相联系的瘤胃球菌科家族与血糖水平呈正相关[27]。经黏液真杆菌科（g_Blautia）及某一未命名属丰度C组高于A或B组，其可影响法尼素X受体和胆汁酸膜受体TGR5相关的脂糖代谢，与糖尿病视网膜病变风呈负相关[28-29]。乳酸菌科（f_Lactobacillaceae）丰度B组高于C组，某一未命名乳酸菌属丰度A组高于B组，其与空腹血糖、糖化血红蛋白等成正比，同时有助于发挥免疫调节、抗氧化和抗慢性炎症等作用[25, 30]。
+
+组间肠道菌群通过α和β多样性分析提示存在结构性差异。而在此基础上研究进一步结合菌群组成差异分析结果、LEfSe分析和Random Forest分析筛选出菌群标志物，结果提示在属一级，副拟杆菌属、拟杆菌属、某一未命名乳酸菌属、罗氏菌属、黄曲霉属可作为A-B组间菌群标志物；Erysipelotrichaceae_UCG-003属、瘤胃球菌属可作为B-C组间菌群标志物；副拟杆菌属、厌氧菌属、颤杆菌克属可作为A-C组间菌群标志物。通过ROC分析对组间菌群标志物进行检验，提示其在区分组别方面具有一定的准确性。进一步表明，肠道菌群在疾病发展过程中会发生显著变化，这种变化能更好地为疾病诊断、中医辨证提供客观参考。此外，菌群标志物也可能反映了证型演变机制，但仍需进一步研究。如，Erysipelotrichaceae_UCG-003属归于丹毒丝菌科，部分研究指出其与胃肠道疾病和代谢相关疾病有关，可能通过炎症相关机制上影响糖尿病病程[31-32]。
+
+肠道菌群的改变可能是疾病的原因，也可能是疾病的产物，而生物信息学分析能够进一步指明疾病机制和辨证分型的后续研究方向。既往研究指出，肠道菌群主要通过调节炎症、肠道通透性、糖代谢、脂肪酸氧化、合成和能量消耗等途径来影响T2DM及其并发症的发生发展[33-34]。本研究通过PICRUSt2进行功能预测，结果指示三组间存在显著功能差异。例如，Quorum sensing（QS），既群体感应，是微生物间的自诱导机制，相关研究指出某一益生菌的使用可以有效改善菌群多样性和糖耐量异常，这一作用与其增加Autoinducer-2这一QS通用信号分子在肠道的富集相关[35]；Oxidative phosphorylation（OXPHOS），即氧化磷酸化，相关研究指出胰岛素抵抗或T2DM患者可表现出线粒体氧化磷酸化能力的获得性或遗传性降低，同时其关键产物ATP可以进一步调节胰岛β细胞功能和肝糖脂代谢等[36-37]。
+
+总之，本研究发现三组间肠道菌群组成及分布具备一定差异，这些差异反映了T2DM发病及证型演变的物质基础，后续进行的差异生物标志物筛选和功能丰度统计则指示肠道菌群在T2DM方面具有辅助诊断、辨证分型、引导研究的潜力。
+
+不过需要指出的是，本研究虽初步讨论了T2DM发病及特定分型在肠道菌群方面的差异，但仍存在研究样本量较少、缺乏外部验证等不足，未来可进一步通过增加证候类型、进行患者前后对比和长期观察、结合实验验证和代谢组学等方法进一步扩大研究范围。
+
+* * *
+
+作者贡献声明 刘泓负责论文构思、数据审编、正式分析、调查研究、验证、可视化和初稿写作，梁晓辉负责正式分析、调查研究、提供资源、监督指导和审读与编辑写作，温小凤、张晓白和卜献春负责调查研究和提供资源，吴刚强负责论文构思、数据审编、正式分析、经费获取、研究方法、研究项目管理、提供资源、初稿写作和审读与编辑写作。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LIU Hong is responsible for conceptualization, data curation, formal analysis, investigation, validation, visualization, and writing--original draft. LIANG Xiaohui is responsible for formal analysis, investigation, resources, supervision, and writing--review and editing. WEN Xiaofeng, ZHANG Xiaobai and BU Xianchun are responsible for investigation and resources. WU Gangqiang is responsible for conceptualization, data curation, formal analysis, funding acquisition, methodology, project administration, resources, writing--original draft, and writing--review and editing. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.

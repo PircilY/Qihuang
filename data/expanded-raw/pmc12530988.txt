@@ -1,0 +1,169 @@
+肥胖与2型糖尿病（type 2 diabetes mellitus, T2DM）具有密切的流行病学关联和共同的病理生理基础[1]，慢性低度炎症和免疫代谢紊乱是其关键连接机制[1-2]。在肥胖状态下，脂肪组织功能障碍释放大量促炎因子，导致胰岛素信号通路受损，进而促进T2DM的发生发展[3]。这一过程涉及免疫细胞浸润、黏附分子激活及炎症信号异常，形成复杂的“代谢-炎症-免疫”交互网络。约80%的T2DM患者伴有肥胖，肥胖人群的糖尿病发病率是正常体质量人群的7倍以上[4]，提示两者存在共同的分子驱动机制。然而，肥胖与T2DM共有的核心靶点及其调控机制仍不清楚。近年提出的“共同靶点分析”策略为揭示这一机制提供了新思路[5]。例如，SOLINAS等[6]发现脂肪组织中的JNK1/IKKε等激酶在肥胖早期即被激活，并持续促进炎症和胰岛素抵抗。
+
+随着生物信息学技术的发展，通过生物信息学技术挖掘疾病关键靶点已成为研究代谢性疾病的新范式[7]。本研究基于GEO数据库中肥胖数据集和T2DM疾病靶点，通过差异基因分析、蛋白质-蛋白质相互作用（PPI）网络构建及通路富集分析，系统筛选肥胖和T2DM的共同核心靶点并进行验证。结合分子对接和分子动力学模拟技术，评估临床治疗T2DM的经典中药方剂（半夏泻心汤[8]、葛根芩连汤[9]）中活性成分与核心靶点的相互作用，为开发靶向干预策略提供理论依据。
+
+材料与方法
+
+生物信息学分析
+
+肥胖差异基因及T2DM疾病靶点的获取
+
+通过GEO数据库（https://www.ncbi.nlm.nih.gov/geo/），获得GSE151839、GSE162653、GSE205668和GSE29231数据集。从GSE151839数据集获得10名肥胖〔体质量指数（body mass index, BMI）35～50 kg/m2〕和10名健康正常体质量（BMI 18.5～26.9 kg/m2）女性（按年龄和种族配对）脂肪中的基因表达情况。从GSE162653数据集获得年龄18～65岁的10名健康正常体质量个体（BMI 18.5～25 kg/m2）和10名肥胖个体（BMI 30～40 kg/m2）的脂肪组织基因表达情况。GSE151839和GSE162653数据集采用ComBat校正进行批次效应处理后进行GEO2R分析，设定FDR<0.05、P<0.05且log2|fold change|≥1筛选差异表达基因，将两数据库的差异表达基因进行交集分析得到与肥胖密切相关的疾病表达基因。
+
+通过GeneCards数据库（https://www.genecards.org/）获得T2DM的疾病靶点，将GEO数据库获得的差异基因与T2DM的疾病靶点进行交集分析，最终确定的交集靶点即为肥胖和T2DM的共同潜在靶点。
+
+PPI网络构建及核心靶点分析[10]
+
+将交集靶点导入STRING数据库（https://cn.string-db.org/），构建PPI网络图。为进一步分析PPI网络的拓扑属性，将结果导入Cytoscape软件，删除游离节点后共计得到63个节点和268条边，运用“Network Analyzer”功能分析节点拓扑参数，利用Centiscape 2.2插件进行中介度（Betweenness）、紧密度（Closeness）、中心度值（Degree）的计算，通过中位数来进行筛选。其中中介度>22.060384060384，紧密度>0.0074074074074074，中心度值>21。按照中心度值选取前10作为关键靶点进行展示。
+
+基因本体（GO）富集分析和京都基因与基因组百科全书（KEGG）富集分析
+
+利用仙桃学术平台（https://www.xiantaozi.com/）对共同潜在靶点进行GO和KEGG富集分析。根据P值大小筛选排名前10的富集条目进行气泡图结果展示。
+
+肥胖和T2DM人群的核心靶点验证
+
+从GEO数据库中下载GSE205668和GSE29231数据集。从GSE205668数据集中获得26名健康个体和26名肥胖个体的脂肪组织的基因表达，并验证样本中核心靶点的表达情况。从GSE29231数据集获得12名非糖尿病个体和12名糖尿病个体的脂肪组织的基因表达，并验证样本中核心靶点的表达情况，将数据导入Graphprim 7软件分析其统计学意义。
+
+分子对接[11]
+
+为分析中药活性成分小檗碱和葛根素与核心靶点PTPRC、MMP9、ITGB2的结合，在Pubchem数据库中查询关键成分的3D结构文件，通过Chem3D、AutoDockTools-1.5.7软件对其进行能量最小化等预处理；在PDB数据库中获取核心靶点蛋白质的结构，应用Pymol软件、AutoDockTools-1.5.7软件对其进行去除水分子、添加氢原子等预处理；基于AutoDock Vina对药物分子与核心靶点进行分子对接并借助Pymol软件将结果进行可视化。
+
+分子动力学模拟[11]
+
+为验证分子对接结果，利用GROMACS 2022.4软件对每组分子对接的蛋白-配体复合物进行全原子分子动力学模拟分析。蛋白质部分采用了Amber14SB力场进行参数化，而小分子部分的拓扑文件则是通过ACPYPE与Antechamber程序生成。为了精确模拟人体内的生理环境，选择了立方体溶剂化盒，并将系统边缘至复合物的最短距离设定为1 nm，选用TIP3P水模型并添加适量的钠离子与氯离子以平衡系统的整体电荷。进一步系统使用最陡下降法进行能量最小化处理，并通过NVT系综对温度进行调控，以及NPT系综对压力进行控制，以确保整个系统的温度稳定在300 K，压力维持在101.325 kPa。针对每一个平衡后的系统，在300 K的条件下进行了100 ns的分子动力学模拟，获得了共计10000帧的模拟轨迹。利用模拟所得的轨迹文件，对均方根偏差（RMSD）、回转半径（Rg）进行深入分析。其中RMSD是评估一个复杂系统是否达到平衡的关键度量；Rg用来衡量蛋白质的紧密程度，反映结构的密度及稳定性。
+
+实验试剂
+
+SteadyPure快速RNA提取试剂盒（货号：AG21023）、Evo M-MLV反转录预混型试剂盒（货号：AG11728）和SYBR Green Pro Taq HS预混型qPCR试剂盒（货号：AG11718）购自艾科瑞生物公司。链脲佐菌素（STZ）（货号：S1312）购自Selleck。PTPRC抗体（货号：YP-Ab-13904）和ITGB2抗体（货号：YP-Ab-17032）购自优品生物。ITGAX抗体（货号：A1508）、CCR2抗体（货号：A2385）和CXCL1抗体（货号：A5802）购自爱博泰克。MMP9抗体（货号：AF5228）购自Affinity生物公司。
+
+STZ：将STZ溶解在0.1 mmol/L柠檬酸钠缓冲液中，配制成1%溶液（4 ℃，pH4.5）。
+
+实验饲料
+
+普通饲料和高糖高脂饲料（普通饲料、熟猪油、蔗糖、奶粉、鸡蛋之比为 58∶15∶20∶5∶2）均由成都达硕实验动物有限公司制作加工。
+
+实验动物
+
+8周龄体质量约180～200 g的SPF级雄性健康的SD大鼠12只，购自成都达硕实验动物有限公司并饲养于成都中医药大学动物实验中心，光照/黑暗12 h交替饲养，饲养温度18～26 ℃，相对湿度保持40%～60%，动物可自由饮水和进食。实验前适应性饲养1周，观察动物的一般健康状况以确定所有动物状态良好。本研究根据实验动物伦理委员会要求，遵循实验动物3R原则，在保证动物够用的前提下，尽量减少实验动物的数量，故每组采用6只。实验采用单盲设计，实验操作人员不知晓分组信息。实验过程中的所有动物模型数据均被纳入研究分析，未采用选择性排除策略。本研究获成都中医药大学实验动物福利伦理委员会批准（伦理批号：2025037）。
+
+动物造模与分组
+
+SD大鼠通过计算机生成随机序列分配到对照组（Ctrl）和模型组（T2DM），每组6只，确保各组间年龄、体质量等基线特征差异无统计学意义。对照组大鼠普通饲料喂养，模型组大鼠高糖高脂饲料喂养6周。禁食12 h后模型组腹腔注射STZ（35 mg/kg），对照组则注射柠檬酸钠缓冲液。注射STZ后72 h，测定大鼠空腹血糖水平，将血糖≥16.7 mmol/L的大鼠确定为T2DM模型大鼠。各组大鼠以原喂养方式继续饲养2周。
+
+口服葡萄糖耐量实验（OGTT）
+
+大鼠禁食不禁水12 h后进行OGTT实验。采取尾静脉取血法测定禁食后空腹血糖水平（即作为 0 min血糖），随后将50%浓度的葡萄糖溶液，以2 g/kg的剂量对大鼠进行灌胃处理，在灌胃结束后30 min、60 min、90 min、120 min检测血糖水平，计算OGTT实验血糖曲线下面积（AUC）。
+
+样本采集
+
+实验结束，称量大鼠体质量，以大剂量戊巴比妥钠45 mg/kg腹腔注射进行安乐死，分离附睾周围的白色脂肪组织，经生理盐水冲洗，用吸水纸干燥后，迅速将脂肪组织快速冷冻于液氮中，－80 ℃保存，用于qRT-PCR（每组取6只）和Western blot分析（每组取3只）。
+
+qRT-PCR分析脂肪组织中核心靶点的mRNA表达
+
+称取50 mg脂肪组织，使用SteadyPure快速RNA提取试剂盒提取总RNA。测定RNA的浓度和纯度，确保A260/A280比值在1.8～2.0之间。使用Evo M-MLV反转录预混型试剂盒将RNA逆转为cDNA。使用SYBR Green Pro Taq HS预混型qPCR试剂盒进行qRT-PCR检测。反应体系为SybrGreen qPCR Master Mix 10 μL，dH2O 5 μL，cDNA 4 μL，上、下游引物各0.5 μL。反应条件为95 ℃预变性3 min；95 ℃ 5 s，60 ℃ 30 s，循环40次扩增。所有用于PCR扩增的引物均采用NCBI引物设计，购自北京擎科生物科技股份有限公司。引物序列见表1。GAPDH为内参，采用2－ΔΔCt法测定目的基因的相对表达量。
+
+Primer sequences
+
+引物序列
+
+Western blot法分析脂肪组织中核心靶点的蛋白表达
+
+收集脂肪组织，加入RIPA裂解液（含蛋白酶/磷酸酶抑制剂）冰上匀浆裂解，4 ℃ 12000×g离心15 min取上清，BCA法测定蛋白浓度。按每孔35 μg蛋白量加入上样缓冲液，95 ℃变性5 min后上样。配制7.5%和12.5%的SDS-PAGE凝胶，上样蛋白经电泳分离，随后湿转法将蛋白转移至PVDF膜。5%脱脂牛奶室温封闭1 h，加入一抗（1∶1000稀释），4 ℃孵育过夜，TBST洗膜3次后加入对应HRP标记二抗（室温孵育1 h），再次洗涤后ECL化学发光显影，Image J软件分析条带灰度值，以GAPDH为内参计算目标蛋白相对表达量。
+
+统计学方法
+
+实验统计分析使用GraphPad Prism 7.0。变量首先通过F检验评估方差齐性，正态分布数据以\begin{document}$\bar x\pm s $\end{document}表示，两组数据采用非配对t检验（two-tailed）进行组间比较，P<0.05为差异有统计学意义。
+
+结果
+
+肥胖人群的差异基因表达情况
+
+本研究选取GEO数据库中的GSE151839和GSE162653数据集作为肥胖数据来源。在GSE151839数据集中选定健康对照组10例，肥胖组10例，设定P<0.05且log2|fold change|≥1，获得差异基因460个，其中上调304个，下调156个（附图1A～1C）。在GSE162653数据集中选定健康对照组和肥胖组各10例，相同筛选条件下获得差异基因796个，其中上调566个，下调230个（附图1D～1F）。附图1见网络资源附件。
+
+肥胖差异基因与T2DM疾病靶点分析及PPI网络构建
+
+将GSE151839和GSE162653数据集的差异基因取交集，得到两数据集的相同差异基因148个（附图2A）。从GeneCards数据库中获得T2DM的疾病靶点13544个，将肥胖数据集的共表达基因与T2DM疾病靶点进行交集分析，共获得109个共同靶点，为肥胖和T2DM疾病共同的潜在关键靶点（附图2B）。将交集靶点导入STING数据库，以构建PPI网络（附图2C）。将结果导入Cytoscape 3.7.2，该PPI网络包含63个节点和268条边。运用“Network Analyzer”功能分析节点拓扑参数，筛选中介度、紧密度和中心度值均大于中位数的节点作为该药物成分治疗疾病的关键靶点。根据度值排名前10的关键靶点依次为PTPRC、MMP9、ITGB2、CD86、CCR5、CCR2、ITGAX、CCR1、CXCL1、CCL19（附图2D）。附图2见网络资源附件。
+
+GO富集分析和KEGG富集分析
+
+将肥胖和T2DM疾病共同的潜在关键靶点进行GO和KEGG生物信息学分析。GO分析结果显示，共获得441项生物过程，排名前10的生物过程是：白细胞迁移（leukocyte migration）、 白细胞趋化性（leukocyte chemotaxis）、细胞趋化性（cell chemotaxis）、髓系白细胞迁移（myeloid leukocyte migration）、免疫效应过程的正调控（positive regulation of immune effector process）、基于免疫球蛋白超家族结构域免疫受体体细胞重组的适应性免疫应答（adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains）、体液免疫应答（humoral immune response）、趋化因子介导的信号通路（chemokine-mediated signaling pathway）、白细胞介导的免疫（leukocyte mediated immunity）、细胞因子生成的正调控（positive regulation of cytokine production）（附图3A）。在细胞成分方面共获得21项相关条目，主要包括质膜外侧面（external side of plasma membrane）、特异颗粒（specific granule）、特异颗粒腔（specific granule lumen）、囊泡腔（vesicle lumen）、富含ficolin-1颗粒（ficolin-1-rich granule）、含胶原的细胞外基质（collagen-containing extracellular matrix）、细胞皮层（cell cortex）、低密度脂蛋白颗粒（low-density lipoprotein particle）、分泌颗粒腔（secretory granule lumen）、胞质囊泡腔（cytoplasmic vesicle lumen）（附图3B）。分子功能分析共获得49项相关条目，主要包括：糖胺聚糖结合（glycosaminoglycan binding）、细胞因子结合（cytokine binding）、蛋白聚糖结合（proteoglycan binding）、免疫受体活性（immune receptor activity）、磷脂结合（phospholipid binding）、修饰氨基酸结合（modified amino acid binding）、硫化合物结合（sulfur compound binding）、磷脂酰丝氨酸结合（phosphatidylserine binding）、整合素结合（integrin binding）以及肝素结合（heparin binding）（附图3C）。
+
+KEGG通路富集分析（附图3D）显示，排名前10的通路为：病毒蛋白与细胞因子及细胞因子受体的相互作用（viral protein interaction with cytokine and cytokine receptor）、细胞因子-细胞因子受体相互作用（cytokine-cytokine receptor interaction）、趋化因子信号通路（chemokine signaling pathway）、疟疾（malaria）、类风湿性关节炎（rheumatoid arthritis）、癌症中的转录调控异常（transcriptional misregulation in cancer）、吞噬体（phagosome）、NF-κB信号通路（NF-kappa B signaling pathway）、细胞黏附分子（cell adhesion molecules）、结核病（tuberculosis）。这提示肥胖和T2DM共同的潜在通路与炎症、免疫、细胞黏附密切相关。附图3见网络资源附件。
+
+肥胖和T2DM人群的共同核心靶点验证
+
+分析GSE205668数据集中正常人群和肥胖人群的脂肪组织中核心靶点的表达水平，验证肥胖对炎症、免疫和细胞黏附的调节作用。如图1所示，GSE205668数据集中肥胖组相比正常组，炎症相关靶点MMP9（P=0.0052）、CCR5（P=0.0008）、CCR2（P=0.0313）均表达增加；免疫相关靶点PTPRC（P<0.0001）、CD86（P<0.0001）、ITGAX（P=0.0023）的表达水平上调。值得注意的是ITGAX 同时涉及免疫和细胞黏附（如白细胞黏附及迁移）。CCR2、CCR5 既是炎症相关趋化因子受体，也参与免疫细胞招募。
+
+Expression of core targets in adipose tissue samples of obesity dataset GSE205668 (n = 26)
+
+肥胖数据集GSE205668脂肪组织样本中核心靶点的表达（n=26）
+
+分析GSE29231数据集中糖尿病人群和非糖尿病人群的脂肪组织中核心靶点的表达水平，验证T2DM对炎症、免疫和细胞黏附的调节作用。如图2所示，GSE29231数据集中T2DM组相比正常组，炎症相关靶点MMP9表达上调（P<0.0001）；免疫相关靶点PTPRC（P=0.0041）和ITGB2（P=0.0045）表达增加；炎症和免疫共同靶点 CCR1（P<0.0001）、CCR2（P=0.0001）均上调；免疫和细胞黏附相关靶点ITGAX表达亦增加（P=0.0003）。
+
+Expression of core targets in adipose tissue samples of obesity dataset GSE29231 (n = 12)
+
+T2DM数据集GSE29231脂肪组织样本中核心靶点的表达（n=12）
+
+T2DM疾病的共同核心靶点验证
+
+构建T2DM模型大鼠，通过检测空腹血糖水平和OGTT实验评价模型是否成功。如图3所示，相比对照组大鼠空腹血糖〔（5.08±0.4091） mmol/L〕，T2DM组大鼠的空腹血糖〔（17.74±1.067） mmol/L〕增加2.49倍（P<0.0001）。OGTT实验表明对照组空腹血糖和糖负荷后血糖处于较低水平，血糖峰值在30 min出现，血糖AUC较低；与对照组大鼠相比，T2DM组大鼠空腹血糖及糖负荷后的血糖均升高（P<0.001），血糖峰值延迟至60 min出现，血糖AUC增加1.49倍（P<0.0001）。以上结果表明成功构建T2DM大鼠模型。
+
+Increase core target mRNA expression in the adipose tissue of T2DM rats
+
+T2DM大鼠脂肪组织中核心靶点的mRNA表达增加
+
+n = 6, * P < 0.05, ** P < 0.01, **** P < 0.0001; *** P < 0.001, vs. Ctrl group at the same time.
+
+收集脂肪组织检测核心靶点基因的mRNA表达，结果显示，相比对照组，T2DM组大鼠脂肪组织中炎症相关靶点MMP9（P<0.01）、CXCL1（P<0.01）、CCR2（P<0.05）的mRNA表达均增加；免疫相关靶点PTPRC（P<0.01）、ITGAX（P<0.01）、ITGB2（P<0.0001）的mRNA表达均上调。
+
+收集脂肪组织检测核心靶点的蛋白表达，如图4所示，相比对照组，T2DM组大鼠脂肪组织中炎症和免疫相关靶点PTPRC（P<0.05）、ITGAX（P<0.01）、MMP9（P<0.01）、ITGB2（P<0.05）、CCR2（P<0.05）和CXCL1（P<0.05）蛋白表达均上调。
+
+Increased core target protein expression in the adipose tissue of T2DM rats
+
+T2DM大鼠脂肪组织中核心靶点的蛋白表达增加
+
+A, The protein expression of core targets (PTPRC, ITGAX, MMP9, ITGB2, CCR2, and CXCL1) in adipose tissue; B, statistical results of protein expression of core targets (PTPRC, ITGAX, MMP9, ITGB2, CCR2, and CXCL1). n = 3, * P < 0.05, ** P < 0.01.
+
+中药活性成分与核心靶点的结合作用
+
+采用分子对接分析小檗碱、葛根素对肥胖-T2DM共同核心靶点的结合情况。结合能小于－5.0 kcal·mol－1表明结合能力较好，结合能越低结合越强。如图5所示，分子对接结果预测小檗碱和PTPRC（－5.4594 kcal·mol－1）、MMP9（－6.6439 kcal·mol－1）、ITGB2（－6.3007 kcal·mol－1）均有较好的结合；葛根素和PTPRC（－7.1087 kcal·mol－1）、MMP9（－7.4403 kcal·mol－1）、ITGB2（－6.2006 kcal·mol－1）结合良好。
+
+Molecular docking analysis of the binding of berberine and puerarin with core targets
+
+分子对接分析小檗碱、葛根素与核心靶点的结合作用
+
+A, The binding of Berberine to PTPRC; B, the binding of Berberine to MMP9; C, the binding of Berberine with ITGB2; D, the binding of Puerarin with PTPRC; E, the binding of Puerarin to MMP9; F, the binding of Puerarin with ITGB2.
+
+为进一步验证分子对接的结果，分子动力学模拟进行验证。采用100 ns的全原子分子动力学模拟，通过GROMACS软件计算小檗碱、葛根素与核心靶点结合的稳定性。如图6A～6C，分子动力学模拟结果显示，在100 ns的模拟过程中，RMSD曲线和Rg曲线波动较小，表明小檗碱与核心靶点（PTPRC、ITGB2和MMP9）结合保持稳定，展现出持续紧密的结构稳定性和较强的分子内相互作用。如图6D～6F，葛根素与核心靶点（PTPRC、ITGB2和MMP9）的结合在100 ns的模拟过程中，RMSD曲线和Rg曲线波动也较小，表现出良好的动力学特性。
+
+Validation of binding capacity of berberine and puerarin with core targets through molecular dynamics simulation
+
+分子动力学模拟验证小檗碱、葛根素与核心靶点的结合能力
+
+RMSD: root mean square deviation; Rg: radius of gyration. A, RMSD and Rg variation curves of the berberine-PTPRC complex; B, RMSD and Rg variation curves of the berberine-MMP9 complex; C, RMSD and Rg variation curves of the berberine-ITGB2 complex; D, RMSD and Rg variation curves of the puerarin-PTPRC complex; E, RMSD and Rg variation curves of the puerarin-MMP9 complex; F, RMSD and Rg variation curves of the puerarin-ITGB2 complex.
+
+讨论
+
+在当今社会，肥胖和T2DM已成为全球范围内的重大公共健康问题[2]。肥胖的流行不仅对个体健康造成了潜在威胁，还增加了心血管疾病、代谢综合征等多种慢性疾病的风险[12-13]。根据世界卫生组织的数据，肥胖的发生率逐年上升，尤其是在儿童和青少年中，这一趋势尤为明显[14]。T2DM是一种与肥胖密切相关的代谢性疾病，其特征是胰岛素抵抗和胰岛素分泌不足。因此，研究肥胖与T2DM的共同核心靶点与疾病进展的相关性不仅具有重要的科学意义，还可能为临床治疗提供新的思路和靶标。
+
+本研究通过生物信息学分析探讨肥胖与T2DM之间的关联。GO分析显示，肥胖-T2DM共同靶点显著富集于免疫效应过程的正调控和趋化因子信号通路，表明先天性与适应性免疫系统的异常激活在疾病进程中发挥重要作用。肥胖引起T/B细胞活化打破免疫耐受平衡，驱动Th1/Th17型炎症反应，促进自身免疫性胰岛β细胞损伤和脂肪组织胰岛素抵抗[15-16]。KEGG通路分析揭示了整合素结合和趋化性调控的重要性。MIR等[17]发现肥胖个体上调了趋化因子活性和细胞因子活性。肥胖引起的免疫细胞浸润会与成纤维细胞相互作用，同时破坏细胞外基质稳态，形成“炎症-纤维化-代谢功能障碍”的恶性循环[18]。此外，肥胖与T2DM的共同靶点显著富集于 NF-κB信号通路和细胞因子-细胞因子受体相互作用，提示慢性低度炎症是两者共有的核心病理特征。在肥胖状态下，脂肪组织过度扩张导致缺氧应激和脂肪细胞凋亡，进而激活巨噬细胞浸润和M1极化，加剧炎症介质释放[19]。这些炎症介质通过抑制胰岛素受体底物磷酸化，直接干扰胰岛素信号传导，促进T2DM的发生[20]。脂肪组织炎症微环境可加速脂肪纤维化和系统性胰岛素抵抗[21]。这些研究表明肥胖与T2DM之间可能通过炎症、免疫反应相互影响，为临床干预提供了新的思路。
+
+肥胖和T2DM共同靶点的PPI网络分析得到前6的核心靶点PTPRC、MMP9、ITGB2、CD86、CCR5、CCR2。这些靶点构成了一个完整的“炎症-免疫-黏附”调控网络，系统性推动肥胖到T2DM的病理进程。PTPRC是免疫细胞激活的关键调控分子，通过调节 T细胞受体和B细胞受体信号影响免疫反应。研究表明，在肥胖状态下，内脏脂肪组织中PTPRC表达升高，且与炎症标志物CCL2和CD68呈正相关[22]。MMP9作为基质金属蛋白酶家族成员，参与细胞外基质降解和炎症细胞浸润，其过度表达与脂肪组织纤维化和T2DM血管并发症密切相关[23]。ITGB2是白细胞黏附的关键分子，介导免疫细胞迁移至炎症部位，在肥胖相关脂肪组织巨噬细胞浸润中起重要作用[24]。可见MMP9和ITGB2在介导炎症细胞浸润和组织重构过程中表现出显著的协同效应。这一协同效应促进巨噬细胞释放TGF-β，推动脂肪组织纤维化的发生发展，为胰岛素抵抗提供了基础。CD86、CCR5和CCR2共同构成了一个完整的免疫激活-趋化调控轴。CD86作为 T细胞共刺激分子，在抗原呈递细胞表面高表达，通过CD28信号促进Th1细胞的活化和增殖[25]。CCR5和CCR2均属于趋化因子受体家族，协同调控单核/巨噬细胞趋化。具体而言，CCR2主要介导Ly6C+炎性单核细胞的浸润，而CCR5促进巨噬细胞向M1型极化，维持脂肪组织的慢性炎症状态[26-28]。通过数据库验证了这些核心靶点在肥胖和T2DM人群脂肪组织中表达上调，同时构建的动物模型亦证实了此点，表明核心靶点表达特征从肥胖延续到T2DM疾病过程，反映了从代谢异常到免疫失调的渐进性转变过程。由于当前研究在信号通路上下游交互作用方面的局限，后续研究中将通过条件性基因敲除模型进一步验证。
+
+中医学认为，肥胖与T2DM的核心病机可归纳为“脾虚痰湿、瘀热互结”，其病理演变涉及“痰、瘀、热”等病理因素[29]。《黄帝内经》提出“肥贵人则膏粱之疾也”，指出过食肥甘厚味可导致脾胃运化失常，进而痰湿内蕴，久则化热伤阴，形成“消渴”（糖尿病）的病理基础。现代研究表明，中医所述的 “痰湿”与慢性低度炎症密切相关，而“瘀热”则涉及免疫细胞浸润和胰岛素抵抗[30]。本研究发现PTPRC、MMP9、ITGB2等核心靶点在脂肪组织炎症和免疫失调中起关键作用。这些靶点的异常激活与中医“痰瘀热结”的病机高度吻合，提示调控炎症、免疫、细胞黏附可能是防治肥胖和T2DM的关键。
+
+半夏泻心汤[8]和葛根芩连汤[9]是临床治疗T2DM的常用中药方剂，其活性成分有小檗碱和葛根素，具有显著的抗炎和代谢调节作用。研究表明，小檗碱通过下调lncRNA Gomafu部分抑制内质网应激并促进巨噬细胞M2极化来改善肥胖引起的慢性炎症[31]，还可促进PPARγ-FGF21-GLUT2调节胰岛素敏感性和葡萄糖/脂质稳态发挥保护T2DM效应[32]。临床研究显示，T2DM患者服用小檗碱后，胰岛素抵抗指数降低[33]。葛根素则主要通过调控JNK和IKKβ/NF-κB通路改善胰岛素抵抗并抑制炎症[34]，其代谢调节作用主要体现在激活AMPK通路改善葡萄糖和脂质代谢稳态[35]。本研究的分子对接和分子动力学模拟结果表明小檗碱和葛根素与PTPRC、MMP9和ITGB2有较好的结合，已知PTPRC、MMP9和ITGB2作为调控炎症反应、免疫应答和细胞黏附的关键分子，在肥胖及T2DM的发病过程中发挥重要作用。这提示小檗碱和葛根素可能通过多靶点调控发挥抗炎、免疫调节作用。除药物治疗外，药食同源成分如葛根中的活性物质葛根素可通过日常膳食干预PTPRC、MMP9、ITGB2等靶点，适用于肥胖-T2DM的早期防治。结合中医“治未病”理念，未来可开发基于靶点的个性化健康管理方案，如“抗炎膳食+运动干预”，从源头阻断肥胖-T2DM的炎症免疫恶性循环[36]。
+
+本研究存在如下局限性：①生物信息学方面，尽管本研究采用ComBat校正对GEO数据集进行了批次效应处理，但不同平台间的技术异质性和样本选择偏差仍可能影响结果解读，未来将通过多中心数据整合/湿实验验证加以完善。②动物模型方面，本研究所用高脂饮食/STZ诱导大鼠T2DM模型是目前广泛用于模拟人类T2DM病理进程的主要动物模型，能模拟其核心特征（如胰岛素抵抗、高血糖），但仍存在重要差异：疾病进程被显著压缩（人类需数年而动物模型仅需数周），可能放大代谢紊乱的急性效应；模型主要通过β细胞毒性诱导，而人类T2DM早期以胰岛素抵抗为主；人类典型的微血管并发症（如视网膜病变）在大鼠中难以完全重现。这些提示动物实验和临床病例的差异性，未来研究将结合类器官模型或临床样本验证关键发现。
+
+综上所述，本研究采用GEO数据库挖掘和生物信息学分析方法，系统鉴定了肥胖与T2DM的共同核心靶点及其相互作用网络。通过分子对接、分子动力学模拟和实验验证，发现PTPRC、MMP9、ITGB2等靶点通过调控炎症-免疫-黏附网络，在从肥胖向糖尿病转化过程中发挥关键作用。研究证实，半夏泻心汤和葛根芩连汤中的活性成分小檗碱、葛根素等可能特异性结合这些核心靶点，发挥抑制慢性炎症、免疫和胰岛素抵抗作用。本研究不仅为中西医结合防治代谢性疾病提供了新的靶点依据，也为开发基于“药食同源”成分的个性化健康管理方案奠定了理论基础，对肥胖及相关代谢性疾病的早期干预具有重要临床意义。
+
+* * *
+
+作者贡献声明 李如利负责论文构思、数据审编、正式分析、经费获取、调查研究、研究方法、验证、可视化和初稿写作，王蓉蓉和李连新负责数据审编、正式分析、调查研究和验证，王楚楚和廖天兰负责正式分析、调查研究和验证，张博荀负责正式分析、经费获取、调查研究和验证，岳仁宋负责经费获取、研究项目管理、监督指导和审读与编辑写作。所有作者已经同意将文章提交给本刊，且对将要发表的版本进行最终定稿，并同意对工作的所有方面负责。
+
+Author Contribution LI Ruli is responsible for conceptualization, data curation, formal analysis, funding acquisition, investigation, methodology, validation, visualization, and writing--original draft. WANG Rongrong and LI Lianxin are responsible for data curation, formal analysis, investigation, and validation. WANG Chuchu and LIAO Tianlan are responsible for formal analysis, investigation, and validation. ZHANG Boxun is responsible for formal analysis, funding acquisition, investigation, and validation. YUE Rensong is responsible for funding acquisition, project administration, supervision, and writing--review and editing. All authors consented to the submission of the article to the Journal. All authors approved the final version to be published and agreed to take responsibility for all aspects of the work.
+
+利益冲突 所有作者均声明不存在利益冲突
+
+Declaration of Conflicting Interests All authors declare no competing interests.

@@ -1,0 +1,763 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article xml:lang="zh" article-type="review-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Zhongguo Fei Ai Za Zhi</journal-id><journal-id journal-id-type="iso-abbrev">Zhongguo Fei Ai Za Zhi</journal-id><journal-id journal-id-type="pmc-domain-id">3417</journal-id><journal-id journal-id-type="pmc-domain">cjlc</journal-id><journal-id journal-id-type="nlm-id">101126433</journal-id><journal-title-group><journal-title>Chinese Journal of Lung Cancer</journal-title></journal-title-group><issn pub-type="ppub">1009-3419</issn><issn pub-type="epub">1999-6187</issn><?publisher_abbrev eocjlc?><publisher><publisher-name>Editorial office of Chinese Journal of Lung Cancer</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11331253</article-id><article-id pub-id-type="pmcid-ver">PMC11331253.1</article-id><article-id pub-id-type="pmcaid">11331253</article-id><article-id pub-id-type="pmcaiid">11331253</article-id><article-id pub-id-type="pmid">39147709</article-id><article-id pub-id-type="doi">10.3779/j.issn.1009-3419.2024.106.14</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Review</subject></subj-group></article-categories><title-group><article-title>中医药调控肿瘤相关巨噬细胞防治肺癌转移的基础研究进展</article-title><trans-title-group><trans-title xml:lang="en">Advances of Fundamental Research on Traditional Chinese Medicine in Regulation of Tumor-associated Macrophages for the Prevention and Treatment of Lung Cancer Metastasis</trans-title></trans-title-group></title-group><contrib-group><contrib contrib-type="author"><name xml:lang="en" name-style="western"><surname>LIU</surname><given-names initials="S">Shihui</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name xml:lang="en" name-style="western"><surname>LI</surname><given-names initials="J">Jiaxuan</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name xml:lang="en" name-style="western"><surname>QUE</surname><given-names initials="Z">Zujun</given-names></name><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name xml:lang="en" name-style="western"><surname>YU</surname><given-names initials="P">Pan</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name xml:lang="en" name-style="western"><surname>TIAN</surname><given-names initials="J">Jianhui</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="cor1" ref-type="corresp"/><email>tjhhawk@shutcm.edu.cn</email></contrib><aff-alternatives id="aff1"><aff>
+<addr-line><sup>1</sup>200071 上海，上海中医药大学附属市中医医院肿瘤临床医学中心</addr-line>
+</aff><aff xml:lang="en">
+<addr-line><sup>1</sup>Clinical Oncology Center, Shanghai Municipal Hospital of Traditional Chinese Medicine, Shanghai University of Traditional Chinese Medicine, Shanghai 200071, China</addr-line>
+</aff></aff-alternatives><aff-alternatives id="aff2"><aff>
+<addr-line><sup>2</sup>200071 上海，上海中医药大学附属市中医医院肿瘤研究所</addr-line>
+</aff><aff xml:lang="en">
+<addr-line><sup>2</sup>Institute of Oncology, Shanghai Municipal Hospital of Traditional Chinese Medicine, Shanghai University of Traditional Chinese Medicine, Shanghai 200071, China</addr-line>
+</aff></aff-alternatives></contrib-group><author-notes><corresp id="cor1">田建辉，E-mail: <email>tjhhawk@shutcm.edu.cn</email></corresp><corresp id="cor2" xml:lang="en">Jianhui TIAN, E-mail: <email>tjhhawk@shutcm.edu.cn</email></corresp></author-notes><pub-date pub-type="ppub"><day>20</day><month>7</month><year>2024</year></pub-date><volume>27</volume><issue>7</issue><issue-id pub-id-type="pmc-issue-id">469016</issue-id><fpage>541</fpage><lpage>549</lpage><history><date date-type="received"><day>15</day><month>4</month><year>2024</year></date></history><pub-history><event event-type="pmc-release"><date><day>20</day><month>07</month><year>2024</year></date></event><event event-type="pmc-live"><date><day>20</day><month>08</month><year>2024</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2024-08-28 23:25:35.897"><day>28</day><month>08</month><year>2024</year></date></event></pub-history><permissions><copyright-statement>版权所有 © 2024《中国肺癌杂志》编辑部</copyright-statement><copyright-statement>Copyright © 2024, Chinese Journal of Lung Cancer.</copyright-statement><copyright-year>2024</copyright-year><copyright-holder>Chinese Journal of Lung Cancer</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/3.0/</ali:license_ref><license-p>This is an open access article distributed in accordance with the terms of the Creative Commons Attribution (CC BY 3.0) License. See: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/3.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/3.0/</ext-link>.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="zgfazz-27-7-541.pdf"><?pdf-name zgfazz-27-7-541.pdf?><?pdf-size 1775212?><?pdf-md5 85fd01d78bbd7e1d37933bf18839b8ad?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:b3a5/11331253/85fd01d78bbd/zgfazz-27-7-541.pdf?></self-uri><abstract><p id="p00000">肺癌是全球死亡率最高的癌种，而转移则是导致肺癌患者死亡的主要原因，且防控效率不高。近年来研究发现，免疫疗法或许是突破转移瓶颈的方向。巨噬细胞作为固有免疫的重要组成部分，参与肿瘤发生发展的全过程。肿瘤相关巨噬细胞（tumor-associated macrophages, TAMs）是肿瘤微环境（tumor microenvironment, TME）中最丰富的免疫群体，具有抗肿瘤的M1型和促肿瘤的M2型，后者通过促进肿瘤侵袭和转移、血管和淋巴管生成、免疫抑制和介导播散肿瘤细胞（disseminated tumor cells, DTCs）休眠重激活等途径促进肿瘤转移。近年来，中医药抑制肿瘤转移疗效显著并得到诸多验证，它能通过减少TAMs的募集、抑制M2型极化和调节TME中的细胞因子和蛋白发挥抗肿瘤作用。本文综述了TAMs与肺癌转移之间的关系，梳理了中医药调控TAMs防治肺癌转移的靶点与机制，以期为肺癌防治提供思路。</p></abstract><trans-abstract xml:lang="en"><p id="p00005">Lung cancer is the leading cause of cancer-related deaths worldwide, with metastasis being the primary cause of mortality in lung cancer patients, and its prevention and control efficacy remain limited. In recent years, immunotherapy has emerged as a promising direction for overcoming the bottleneck of metastasis. Macrophages, as essential components of innate immunity, participate in the entire process of tumor initiation and progression. Tumor-associated macrophages (TAMs) represent the most abundant immune population in the tumor microenvironment (TME), displaying both anti-tumor M1-like and pro-tumor M2-like phenotypes. The latter promotes tumor invasion and metastasis, angiogenesis, lymphangiogenesis, immune suppression, and reactivation of dormant disseminated tumor cells (DTCs), thereby facilitating tumor metastasis. In recent years, traditional Chinese medicine (TCM) has shown significant efficacy in inhibiting tumor metastasis and has been extensively validated. It exerts anti-tumor effects by reducing the recruitment of TAMs, inhibiting M2-like polarization, and modulating cytokines and proteins in the TME. This paper reviews the relationship between TAMs and lung cancer metastasis, elucidates the targets and mechanisms of TCM in regulating TAMs to prevent and treat lung cancer metastasis, aiming to provide insights into lung cancer prevention and treatment.</p></trans-abstract><kwd-group kwd-group-type="author"><kwd>肿瘤相关巨噬细胞</kwd><kwd>极化</kwd><kwd>肺肿瘤</kwd><kwd>转移</kwd><kwd>中医药</kwd></kwd-group><kwd-group kwd-group-type="author" xml:lang="en"><kwd>Tumor-associated macrophages</kwd><kwd>Polarization</kwd><kwd>Lung neoplasms</kwd><kwd>Metastasis</kwd><kwd>Traditional Chinese medicine</kwd></kwd-group><funding-group><award-group id="fund1"><funding-source>国家自然科学基金面上项目</funding-source><funding-source xml:lang="en">National Natural Science Foundation of China</funding-source><award-id>82174245</award-id><principal-award-recipient>Jianhui TIAN</principal-award-recipient></award-group><award-group id="fund2"><funding-source>上海市炎癌转化病证生物学前沿研究基地项目</funding-source><funding-source xml:lang="en">Shanghai Frontier Research Base of Disease and Syndrome Biology of Inflammatory Cancer Transformation</funding-source><award-id>2021KJ03-12</award-id><principal-award-recipient>Jianhui TIAN</principal-award-recipient></award-group><award-group id="fund3"><funding-source>上海市卫生健康领军人才项目</funding-source><funding-source xml:lang="en">Shanghai Municipal Health Leading Talents Program</funding-source><award-id>2022LJ014</award-id><principal-award-recipient>Jianhui TIAN</principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta></custom-meta-group></article-meta></front><body><p id="p00010">最新流行病学数据显示，肺癌成为恶性肿瘤中发病率和死亡率均位居首位的癌种，占恶性肿瘤死亡总数的28.5%<sup>[<xref rid="b1" ref-type="bibr">1</xref>]</sup>，而超过90%的死亡是由转移引起<sup>[<xref rid="b2" ref-type="bibr">2</xref>]</sup>。如何有效控制肺癌转移，是临床中亟待解决的难题。免疫检查点抑制剂的使用让肺癌晚期患者生存获益，使得免疫疗法成为当前的研究热点。然而，目前肺癌免疫治疗主要针对适应性免疫的T淋巴细胞，由于靶点蛋白表达的限制、自发性和获得性耐药以及不良反应等因素，导致其临床响应率较低<sup>[<xref rid="b3" ref-type="bibr">3</xref>]</sup>，并且针对先天性免疫检查点的相关研究仍无突破性进展，促使研究者们把目光逐渐转向固有免疫<sup>[<xref rid="b4" ref-type="bibr">4</xref>]</sup>。巨噬细胞是固有免疫的重要组成部分，广泛分布于人体各组织当中，具有丰富的表型和高度的可塑性，参与肿瘤发生发展的全过程。从巨噬细胞招募、增殖、极化、血管生成到免疫抑制，均可作为治疗肺癌转移的潜在靶点<sup>[<xref rid="b5" ref-type="bibr">5</xref>]</sup>。因此，靶向巨噬细胞防治肺癌转移，具有较大的研究前景与价值。</p><p id="p00015">中医药疗法来源于中华民族几千年人用经验的积累，是除放化疗外的一种辅助治疗方式，在肿瘤的治疗过程中可以起到协同抑瘤、优势互补、减毒增效的作用，许多抗肿瘤的天然药物也来源于中药<sup>[<xref rid="b6" ref-type="bibr">6</xref>]</sup>。随着现代医学的发展，中医药在肿瘤治疗领域的作用得到越来越多的证实和认可。中医药可以通过多靶点调控免疫功能，激活免疫细胞，增强抗肿瘤药物的疗效，并且减少放化疗造成的不良反应。除了直接对肿瘤细胞发挥细胞毒性作用，中药及其有效成分还在肿瘤微环境（tumor microenvironment, TME）中发挥各种免疫调节作用，包括减少肿瘤相关巨噬细胞（tumor-associated macrophages, TAMs）的招募、抑制TAMs向M2型极化、调节TME中的细胞因子和蛋白等<sup>[<xref rid="b7" ref-type="bibr">7</xref>]</sup>。因此，本综述聚焦于TAMs与肺癌转移之间的关系，梳理国内外研究进展，探讨中医药调控TAMs防治肺癌转移的相关靶点与机制，以期为肺癌防治提供思路。</p><sec id="s1"><title>1 TAMs简介</title><p id="p00020">巨噬细胞包括组织驻留巨噬细胞（tissue-resident macrophages, TRMs）和来源于骨髓造血干细胞的单核巨噬细胞。巨噬细胞可极化为两种状态，一种是经典激活的M1型巨噬细胞，另一种是替代激活的M2型巨噬细胞。M1型巨噬细胞主要通过分泌白细胞介素6（interleukin-6, IL-6）、肿瘤坏死因子α（tumor necrosis factor-α, TNF-α）和诱导型一氧化氮合酶（inducible nitric oxide synthase, iNOS）等促炎性细胞因子，以及产生一氧化氮（nitric oxide, NO）和活性氧（reactive oxygen species, ROS）<sup>[<xref rid="b8" ref-type="bibr">8</xref>]</sup>，参与促炎症反应；并且可通过吞噬作用和分泌细胞因子，直接或间接地杀伤肿瘤细胞。M2型巨噬细胞则通过分泌IL-10、转化生长因子-β（transforming growth factor-β, TGF-β）和TNF-α等细胞因子，促进肿瘤血管生成，推动肿瘤的发生发展。</p><p id="p00025">TAMs是浸润于肿瘤组织中的巨噬细胞，由肿瘤所在组织自身存在的TRMs和从外周血招募到肿瘤组织中的骨髓衍生单核细胞组成<sup>[<xref rid="b9" ref-type="bibr">9</xref>]</sup>。TAMs是TME中的重要组成部分，也是TME中最丰富的免疫群体，具有从抗肿瘤到促肿瘤的异质性<sup>[<xref rid="b10" ref-type="bibr">10</xref>]</sup>。当它被适当激活时，抗肿瘤的M1型TAMs保留了抗原呈递细胞的特性，包括高表达主要组织相容性复合体II类（major histocompatibility complex II, MHC II），分泌促炎细胞因子，促进体内非己成分的清除，支持和激活适应性免疫细胞等<sup>[<xref rid="b11" ref-type="bibr">11</xref>]</sup>，对预防肿瘤的发生起重要作用。相反，促肿瘤的M2型TAMs具有免疫抑制作用，低表达MHC II，表达抑制分子如程序性死亡受体1（programmed cell death 1, PD-1）、免疫抑制程序性细胞死亡配体1（programmed cell death ligand 1, PD-L1）、T细胞活化V域免疫球蛋白抑制因子（V-domain immunoglobulin suppressor of T cell activation, VISTA）、免疫调节蛋白B7-H4和T细胞免疫球蛋白黏蛋白-3（T cell immunoglobulin and mucin domain 3, TIM-3）<sup>[<xref rid="b12" ref-type="bibr">12</xref><xref rid="b13" ref-type="bibr">⇓</xref><xref rid="b14" ref-type="bibr">⇓</xref><xref rid="b15" ref-type="bibr">⇓</xref><xref rid="b16" ref-type="bibr">⇓</xref>-<xref rid="b17" ref-type="bibr">17</xref>]</sup>，在血管生成、细胞外基质（extracellular matrix, ECM）重塑、肿瘤细胞增殖、转移和免疫抑制，以及对化疗和免疫治疗的耐药性等方面发挥着重要作用<sup>[<xref rid="b18" ref-type="bibr">18</xref>]</sup>。TAMs的双向调节作用使它逐渐被研究者们所关注。</p></sec><sec id="s2"><title>2 TAMs极化的机制</title><p id="p00030">TAMs群体处于M1型和M2型两种状态之间不断过渡的状态，而极化为不同表型是由TME中不同的刺激信号所决定的<sup>[<xref rid="b19" ref-type="bibr">19</xref>]</sup>。在肺癌早期，基质细胞分泌集落刺激因子1（colony stimulating factor 1, CSF-1）募集巨噬细胞，TME中主要以发挥抗肿瘤作用的M1型巨噬细胞为主；在肺癌晚期，肿瘤细胞分泌CC趋化因子配体2（chemokine C-C motif ligand 2, CCL2）和表皮生长因子（epidermal growth factor, EGF）诱导巨噬细胞向M2型极化，发挥促肿瘤作用<sup>[<xref rid="b20" ref-type="bibr">20</xref>]</sup>。TME中产生的细胞因子和趋化因子还包括IL-1β、CXCL12、血管内皮生长因子（vascular endothelial growth factor, VEGF）等，通过受体介导途径激活整合素α4β1，促进骨髓细胞募集并转化为TAMs<sup>[<xref rid="b21" ref-type="bibr">21</xref>]</sup>。缺氧状态下，肿瘤细胞产生的抑瘤素、IL-6、TGF-β等细胞因子可将巨噬细胞极化为M2型<sup>[<xref rid="b22" ref-type="bibr">22</xref>]</sup>。Chen等<sup>[<xref rid="b23" ref-type="bibr">23</xref>]</sup>还发现肺腺癌细胞分泌的外泌体可将miR-19b-3p递送至TAMs中，靶向抑制蛋白酪氨酸磷酸酶受体PTPRD介导的信号转导因子和转录活化因子3（signal transducer and activator of transcription 3, STAT3）去磷酸化，导致STAT3激活，诱导巨噬细胞向M2型极化。Zhou等<sup>[<xref rid="b24" ref-type="bibr">24</xref>]</sup>发现富含miR-184-3p的肿瘤细胞来源的外泌体可被巨噬细胞吞噬，通过靶向早期生长应答因子（early growth response 1, EGR1）抑制c-Jun氨基末端激酶（c-Jun N-terminal kinase, JNK）信号通路，从而诱导巨噬细胞向M2型极化，协同促进肿瘤进展。</p></sec><sec id="s3"><title>3 TAMs促进肿瘤转移的机制</title><p id="p00035">现有研究<sup>[<xref rid="b25" ref-type="bibr">25</xref>]</sup>结果表明，TAMs能够促进肿瘤细胞增殖、刺激肿瘤血管生成、诱导肿瘤免疫耐受、增强肿瘤细胞的侵袭及转移能力等。因此，深入研究和理解TAMs在肿瘤发生发展中的作用机制，对于制定更有效的肿瘤治疗策略具有重要意义。</p><sec id="s3.1"><title>3.1 TAMs促进肿瘤侵袭和转移</title><p id="p00040">TAMs的促肿瘤功能是多种多样的，并在肿瘤发展的不同阶段中都起作用。在起始阶段，TAMs释放NO和活性氧中间体（reactive oxygen intermediates, ROI），引起DNA损伤和遗传不稳定。TAMs产生EGF和多种介质，如IL-6、人类生长因子（human growth factor, HGF）和糖蛋白非转移性黑色素瘤蛋白B（glycoprotein nonmetastatic melanoma protein B, GPNMB），支持肿瘤干细胞扩增；在后期，TAMs通过释放IL-1和TGF-β促进转移扩散<sup>[<xref rid="b26" ref-type="bibr">26</xref>]</sup>。在肿瘤基质中，TAMs产生基质金属蛋白酶（matrix metalloproteinases, MMPs）和尿激酶纤溶酶，促进ECM的降解和重塑，并通过分解黏附分子诱导上皮间充质转化（epithelial-mesenchymal transition, EMT），削弱肿瘤细胞的紧密连接<sup>[<xref rid="b27" ref-type="bibr">27</xref>]</sup>，从而促进肿瘤细胞的侵袭和转移。肺癌细胞发生EMT后，将会分泌更多的CCL2以招募并极化TAMs，使其浸润到TME中<sup>[<xref rid="b28" ref-type="bibr">28</xref>]</sup>。</p></sec><sec id="s3.2"><title>3.2 TAMs促进血管和淋巴管生成</title><p id="p00045">肿瘤细胞的主要特征之一是诱导血管和淋巴管生成，这也是肿瘤向远处转移扩散的标志。TAMs通过两种方法调节肿瘤血管和淋巴管生成，分别是旁分泌模式和细胞自主模式<sup>[<xref rid="b29" ref-type="bibr">29</xref>]</sup>。随着肿瘤的增殖，TME中氧气供应不足，巨噬细胞被募集到肿瘤和间质细胞之间血管化较差的区域，在缺氧诱导因子的刺激下，TAMs释放一组血管生成因子，如VEGF-α、TGF-β、CXCL12、血小板源性生长因子（platelet-derived growth factor, PDGF）和MMPs，促进肿瘤血管生成<sup>[<xref rid="b30" ref-type="bibr">30</xref>]</sup>。同时，巨噬细胞在缺氧条件下传递更多的血管内皮生长因子受体（vascular endothelial growth factor receptor, VEGFR），与TME中的VEGF结合，从而影响下游通路并促进TAMs向M2型转化<sup>[<xref rid="b31" ref-type="bibr">31</xref>]</sup>。此外，在炎症因子的刺激下，巨噬细胞来源的淋巴管内皮细胞祖细胞可以分化为淋巴内皮细胞，促进已有的淋巴管生长和新的淋巴细胞生成<sup>[<xref rid="b32" ref-type="bibr">32</xref>]</sup>。</p></sec><sec id="s3.3"><title>3.3 TAMs促进免疫抑制</title><p id="p00050">TAMs还是TME中免疫抑制的驱动因素。研究<sup>[<xref rid="b33" ref-type="bibr">33</xref>]</sup>发现，TAMs通过释放TGF-β、IL-10和精氨酸酶1（arginase-1, Arg-1）等免疫抑制分子，抑制T细胞特异性反应。TAMs可以分泌IL-10诱导T细胞表达抑制性受体，如PD-1和细胞毒性T淋巴细胞抗原4（cytotoxic T lymphocyte-associated antigen-4, CTLA4），这些表面受体与其相应配体PD-L1和CD80/CD86结合导致T细胞免疫应答的负调控，包括细胞凋亡和衰竭<sup>[<xref rid="b34" ref-type="bibr">34</xref>]</sup>。TAMs还可以产生CCL17、CCL22和CCL24等细胞因子，抑制CD4<sup>+ </sup>T和CD8<sup>+ </sup>T细胞效应器功能，并将调节性T细胞（regulatory T cells, Tregs）募集到TME<sup>[<xref rid="b35" ref-type="bibr">35</xref><xref rid="b36" ref-type="bibr">⇓</xref>-<xref rid="b37" ref-type="bibr">37</xref>]</sup>，降低免疫应答。</p></sec><sec id="s3.4"><title>3.4 TAMs介导DTCs休眠重激活</title><p id="p00055">靶器官中播散肿瘤细胞（disseminated tumor cells, DTCs）休眠重激活是转移发生的决定性环节。靶器官中的DTCs由于受到微环境、免疫监视、缺氧、血管生成等因素的影响而进入休眠状态<sup>[<xref rid="b38" ref-type="bibr">38</xref>]</sup>，潜伏在患者体内，只有当休眠的DTCs被激活后增殖形成肿瘤病灶并被影像学手段检出时，患者方可被诊断为临床转移。其中DTCs的休眠主要涉及磷脂酰肌醇3-激酶（phosphoinositide 3-kinase, PI3K）/丝氨酸/苏氨酸激酶（serine/threonine kinase, Akt）、Notch、Wnt、BMP和细胞外调节蛋白激酶/丝裂原活化蛋白激酶p38（extracellular regulated kinase/p38 mitogen-activated kinase, ERK/p38 MAPK）等信号通路的调控<sup>[<xref rid="b39" ref-type="bibr">39</xref>]</sup>。M2型巨噬细胞通过分泌细胞因子激活休眠的DTCs增殖，其中IL-6、IL-10、CCL2、CX3CL1、IL-8与肺癌转移密切相关<sup>[<xref rid="b40" ref-type="bibr">40</xref>]</sup>。</p></sec></sec><sec id="s4"><title>4 中医药调控TAMs抑制肺癌转移</title><p id="p00060">中医认为疾病的发生是正邪相争的过程，以扶正与祛邪辨证论治为治疗原则。在肺癌发生的初期，人体正气尚存，邪气初生，此时宜利用正气祛邪外出，故常使用清热解毒、散结消肿、活血化瘀、利水渗湿之类的中药。研究<sup>[<xref rid="b41" ref-type="bibr">41</xref>]</sup>表明，这些具有“祛邪”作用的中药可以抑制巨噬细胞向肿瘤细胞募集或抑制巨噬细胞极化。在肺癌进程的后期，人体正气亏虚，无力抗邪，此时治则应当以扶正为主，多使用补益正气、健脾益气、温阳补肾、养血安神之类的中药。研究<sup>[<xref rid="b41" ref-type="bibr">41</xref>]</sup>表明，这些具有“扶正”作用的中药可以通过调节TAMs相关的细胞因子和蛋白，改善免疫抑制微环境。</p><sec id="s4.1"><title>4.1 减少TAMs的募集</title><p id="p00065">肺癌原发灶的肿瘤细胞可以通过分泌外泌体、整合素和趋化因子等，招募外周血中的巨噬细胞浸润至TME成为TAMs<sup>[<xref rid="b42" ref-type="bibr">42</xref>]</sup>。参与TAMs募集的分子包括TGF-β、CSF-1、CCL2、IL-4和IL-1、免疫球蛋白G受体识别的免疫复合物和补体等。TAMs的募集主要涉及CCL2-CCR2轴、CXCL12-CXCR4轴和CSF1-CSF1R轴等通路<sup>[<xref rid="b7" ref-type="bibr">7</xref>]</sup>。Wu等<sup>[<xref rid="b43" ref-type="bibr">43</xref>]</sup>研究发现，丹参中的丹参酮I通过抑制CCL2/STAT3轴阻止肺癌细胞招募巨噬细胞，减少靶器官中TAMs的数量，降低CCL2的分泌，从而发挥抗癌作用。Xu等<sup>[<xref rid="b44" ref-type="bibr">44</xref>]</sup>发现中药复方清热活血方可能通过阻断CXCL12/CXCR4/JNK2/STAT3信号通路减少TAMs的募集，降低Arg-1表达水平，升高iNOS水平，抑制VEGF和CD31蛋白的表达，减少肺癌的血管生成。这些中药可以通过减少TAMs被募集至转移靶器官，从源头上减少TAMs的数量，降低转移发生的可能性。</p></sec><sec id="s4.2"><title>4.2 抑制M2型极化</title><p id="p00070">M2型TAMs能促进肿瘤的发生发展，所以调控巨噬细胞极化对于抑制肺癌转移具有重要意义。Xu等<sup>[<xref rid="b45" ref-type="bibr">45</xref>]</sup>发现黄芪甲苷IV能够通过抑制巨噬细胞中AMPK信号通路的激活，抑制AMPKα的表达，从而抑制M2型巨噬细胞的极化，减少小鼠体内转移灶数目，降低M2型巨噬细胞浸润瘤体。青蒿素衍生物双氢青蒿素可以通过Akt/哺乳动物雷帕霉素靶蛋白（mammalian target of rapamycin, mTOR）信号通路减少Lewis肺癌细胞（Lewis lung cancer, LLC）小鼠肺脏中TAMs的浸润，显著增加TAMs中M1/M2的比例，此外还能增强M1型巨噬细胞的吞噬能力<sup>[<xref rid="b46" ref-type="bibr">46</xref>]</sup>。Zhao等<sup>[<xref rid="b47" ref-type="bibr">47</xref>]</sup>发现苦参碱可以抑制RAW264.7细胞中PI3K/Akt/mTOR，抑制巨噬细胞M2型极化，降低IL-4、Arg-1和IL-10的水平；上调LLC细胞中E-钙黏蛋白（E-cadherin）的表达，下调波形蛋白和N-cadherin的表达，抑制LLC细胞的转移以及EMT。Wang等<sup>[<xref rid="b48" ref-type="bibr">48</xref>]</sup>证明玉屏风散通过促进STAT1的磷酸化诱导M1型巨噬细胞极化，激活CD4<sup>+</sup> T细胞并增强其细胞毒性，抑制原位LLC生长。高莉萍等<sup>[<xref rid="b49" ref-type="bibr">49</xref>]</sup>发现经中药复方活血化湿汤处理巨噬细胞后，IL-1β水平升高、CCL18浓度降低，提示活血化湿汤可以抑制巨噬细胞M2型极化。刘怡辰等<sup>[<xref rid="b50" ref-type="bibr">50</xref>]</sup>研究证明，益气扶正方可能通过调控CCL2/AMPK/mTOR信号通路中蛋白表达，从而抑制巨噬细胞向M2型转化。还有类似的诸多中药都可以通过调节M1/M2的比例，使巨噬细胞不向具有促肿瘤特性的M2型转化，减少肿瘤复发转移的风险<sup>[<xref rid="b51" ref-type="bibr">51</xref>,<xref rid="b52" ref-type="bibr">52</xref>]</sup>。</p></sec><sec id="s4.3"><title>4.3 调节TME中的细胞因子和蛋白</title><p id="p00075">在TME中TAMs的活化和功能受到一系列相关细胞因子和蛋白的调控，中药可以通过调节这些细胞因子和蛋白的表达水平调控巨噬细胞从而抑制肺癌转移。中药补骨脂的有效成分补骨脂查尔酮可以通过调节肺癌细胞转移相关蛋白E-cadherin、VEGF-C、MMP-3、MMP-9和N-cadherin的分泌，降低肺癌细胞的迁移和侵袭能力<sup>[<xref rid="b53" ref-type="bibr">53</xref>]</sup>。生姜中的6-姜辣素具有改善TME免疫抑制状态的作用，其主要通过上调肺癌组织中M1/M2巨噬细胞的比例，增加干扰素-γ（interferon-γ, IFN-γ）和IL-12的表达，并降低IL-10和TGF-β1的表达水平<sup>[<xref rid="b54" ref-type="bibr">54</xref>]</sup>。人参皂苷可以降低小鼠肺癌组织中M2巨噬细胞标志物CD206和VEGF-C的表达水平，并且有可能在TME中将M2型TAMs转化为M1表型，从而降低MMP和VEGF的水平并阻止非小细胞肺癌（non-small cell lung cancer, NSCLC）细胞转移<sup>[<xref rid="b55" ref-type="bibr">55</xref>]</sup>。重楼有效成分重楼皂苷VII能激活干扰素基因刺激蛋白（stimulator of interferon genes, STING）/TANK结合激酶1（TANK-binding kinase 1, TBK1）/磷酸化干扰素调节因子3（interferon regulatory factor 3, IRF3）信号通路，促进M1型巨噬细胞分泌促炎细胞因子，从而抑制由IL-10驱动的肿瘤细胞中STAT3的激活及TGF-β的分泌，以旁分泌的方式抑制肿瘤细胞的增殖和侵袭<sup>[<xref rid="b56" ref-type="bibr">56</xref>]</sup>。中医经典方剂补肺汤可以通过抑制IL-10和PD-L1的表达，减弱TAMs诱导的NSCLC增殖、迁移、侵袭和免疫抑制<sup>[<xref rid="b57" ref-type="bibr">57</xref>]</sup>。通过影响细胞因子和蛋白的表达水平，中药可以多靶点、多途径地干预肺癌转移过程，抑制肿瘤发生发展（<xref rid="T1" ref-type="table">表1</xref>）。</p><table-wrap position="float" id="T1" orientation="portrait"><label>表1</label><caption><p id="p00080">中药复方及单体调控TAMs抑制肺癌转移的基础研究</p></caption><abstract abstract-type="table_caption"><p id="p00085">Fundamental research on the regulation of tumor-associated macrophages to inhibit lung cancer metastasis by traditional Chinese medicine compounds and monomers</p></abstract><alt-text content-type="label" xml:lang="en">Tab 1</alt-text><table frame="hsides" rules="groups"><thead><tr><th valign="middle" align="left" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Chinese medicine compounds/monomers</th><th valign="middle" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Method</th><th valign="middle" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Mechanism</th><th valign="middle" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Ref.</th></tr></thead><tbody><tr><td valign="middle" align="left" style="border-top:1px solid #000;" rowspan="1" colspan="1">Dihydroisotanshinone I</td><td valign="middle" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Reduced recruitment of TAMs</td><td valign="middle" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Inhibited the CCL2/STAT3 axis, reduced the secretion of CCL2</td><td valign="middle" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b43" ref-type="bibr">43</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Qing-Re-Huo-Xue formulae</td><td valign="middle" align="center" rowspan="1" colspan="1">Reduced recruitment of TAMs</td><td valign="middle" align="center" rowspan="1" colspan="1">Blocked the CXCL12/CXCR4/JNK2/STAT3 signaling pathway</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b44" ref-type="bibr">44</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Astragaloside IV</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited M2 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited activation of the AMPK signaling pathway resulted in suppressed expression of AMPKα</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b45" ref-type="bibr">45</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Dihydroartemisinin</td><td valign="middle" align="center" rowspan="1" colspan="1">Enhanced M1 polarization，Inhibited M2 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Enhanced M1 phagocytic capacity was achieved through augmentation of the M1/M2 ratio via activation of the Akt/mTOR signaling pathway</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b46" ref-type="bibr">46</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Matrine</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited M2 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited PI3K/Akt/mTOR, reduced levels of IL-4, Arg-1 and IL-10; upregulated the expression of E-cadherin, and downregulated the expression of Vimentin and N-cadherin</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b47" ref-type="bibr">47</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Yu-Ping-Feng decoction</td><td valign="middle" align="center" rowspan="1" colspan="1">Enhanced M1 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Enhanced the phosphorylation level of STAT1</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b48" ref-type="bibr">48</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Huoxue Huashi decoction</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited M2 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Raised IL-1β concentration while decreased CCL18 concentration</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b49" ref-type="bibr">49</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Yiqi Fuzheng prescription</td><td valign="middle" align="center" rowspan="1" colspan="1">Inhibited M2 polarization</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated the protein expression in the CCL2/AMPK/mTOR signaling pathway</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b50" ref-type="bibr">50</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Bavachalcone</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated cytokines and proteins in the TME</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated the secretion of E-cadherin, VEGF-C, MMP-3, MMP-9 and N-cadherin</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b53" ref-type="bibr">53</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">6-Gingerol</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated cytokines and proteins in the TME</td><td valign="middle" align="center" rowspan="1" colspan="1">Increased the expressions of IFN-γ and IL-12, reduced the levels of IL-10 and TGF-β1</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b54" ref-type="bibr">54</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Ginsenoside Rh2</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated cytokines and proteins in the TME</td><td valign="middle" align="center" rowspan="1" colspan="1">Reduced the expression levels of CD206 and VEGF-C; reduced the levels of MMP and VEGF</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b55" ref-type="bibr">55</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" rowspan="1" colspan="1">Polyphyllin VII</td><td valign="middle" align="center" rowspan="1" colspan="1">Regulated cytokines and proteins in the TME</td><td valign="middle" align="center" rowspan="1" colspan="1">Activated the STING/TBK1/IRF3 signaling pathway, promoted the secretion of pro-inflammatory cytokines, inhibited the activation of STAT3, and suppressed the secretion of TGF-β</td><td valign="middle" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b56" ref-type="bibr">56</xref>]</sup>
+</td></tr><tr><td valign="middle" align="left" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Bu-Fei decoction</td><td valign="middle" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Regulated cytokines and proteins in the TME</td><td valign="middle" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Reduced the expression of IL-10 and PD-L1</td><td valign="middle" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b57" ref-type="bibr">57</xref>]</sup>
+</td></tr></tbody></table><table-wrap-foot><fn id="nt1" xml:lang="en"><p id="p00090">TAMs: tumor-associated macrophages; TME: tumor microenvironment; CCL2: chemokine C-C motif ligand 2; STAT3: signal transducer and activator of transcription 3; mTOR: mammalian target of rapamycin; PI3K: phosphoinositide 3-kinase; IL-4: interleukin 4; Arg-1: arginase-1; VEGF-C: vascular endothelial growth factor C; MMP: matrix metalloproteinase; IFN-γ: interferon-γ; TGF-β: transforming growth factor β; STING: stimulator of interferon genes; TBK1: TANK-binding kinase 1; IRF3: interferon regulatory factor 3; PD-L1: programmed cell death ligand 1.</p></fn></table-wrap-foot></table-wrap></sec></sec><sec id="s5"><title>5 总结与展望</title><p id="p00095">现代肿瘤学以肿瘤细胞为中心，围绕肿瘤细胞从原发灶脱落进入外周血成为循环肿瘤细胞，发生血管外渗进入靶器官定植成为播散肿瘤细胞的一系列过程制定诊疗方案，实施精准治疗。近年来免疫疗法的兴起，使得肺癌的治疗思路逐步从“以瘤为主”向“人瘤并重”再到“以人为本”发生转变。免疫功能失调在肿瘤发生发展过程中的重要作用已经得到普遍认可，而很早就有中医学者提出免疫功能与中医“正气”的概念具有高度一致性<sup>[<xref rid="b58" ref-type="bibr">58</xref>]</sup>。在中医肿瘤学中，以免疫紊乱为基础的“正虚”致癌已经成为共识。国医大师刘嘉湘先生认为恶性肿瘤的形成主要是由于机体正气不足不能抗邪，气滞、血瘀、痰湿、毒聚等外邪内毒淤积于体内，久之形成局部肿块，实际是一种全身性疾病的局部表现<sup>[<xref rid="b59" ref-type="bibr">59</xref>]</sup>。田建辉教授在传承刘嘉湘先生“扶正治癌”学术思想的基础上，创新性地提出了肺癌转移的“正虚伏毒”学说<sup>[<xref rid="b60" ref-type="bibr">60</xref>]</sup>，“正虚”主要指免疫衰老、免疫监视功能下降、免疫逃逸等免疫功能紊乱；“伏毒”指潜伏于体内的癌细胞（例如循环肿瘤细胞、DTCs、休眠肿瘤细胞等），具有“正盛则伏而不作，正虚则出而为病”的特征，藏于血道脏腑，流窜全身，伺机为病。故而按照中医学“扶正祛邪”的辩证思路治疗肺癌转移具有科学性和理论支撑。</p><p id="p00100">巨噬细胞的双向调节作用与中医阴阳理论中阴阳的对立制约、互根互用、相互转化和消长平衡等特点并行不悖。在肺癌初期，人体正气尚存，正气可以自主抗邪，这时TAMs中具有抗肿瘤作用的M1型巨噬细胞占主导地位，通过释放多种炎性介质促进肿瘤细胞的清除，与中医理论中“阴主杀”的特性相符合；肺癌进展到中晚期，邪盛正虚，正气无力抗邪，M1型TAMs逐渐向M2型转化，促进肿瘤进展，与中医理论中“阳主生”的特性相一致，这时需使用扶正祛邪的中药来调动和激活免疫系统，调节免疫功能，改善免疫抑制，与中医学的“扶正治癌”原则不谋而合。因此，可以基于中医阴阳理论通过平衡M1与M2的消长关系，控制肺癌的进程。</p><p id="p00105">随着现代医学技术的发展，传统中医药对于靶向巨噬细胞防治肺癌的研究也在逐渐深入。中医药对巨噬细胞的调控方式多种多样，一些中药可以直接减少TAMs的募集、抑制巨噬细胞M2型极化，另一些可以通过调节TME中的细胞因子和蛋白间接地抑制肿瘤的生长、侵袭和转移；特别是在免疫抑制的TME中，中医药依然可以通过调节免疫系统，激活抗肿瘤表型M1，抑制促肿瘤表型M2，改善免疫抑制，重塑免疫平衡，发挥其独特优势（<xref rid="F1" ref-type="fig">图1</xref>）。具有调节巨噬细胞作用的常见中药成分有苷类、生物碱类和多糖类等，它们可以通过一种或多种受体激活MAPKs、核因子κB（nuclear factor kappa-B, NF-κB）、STAT、STING等信号通路，或调控相关细胞因子和蛋白进行肿瘤免疫调节<sup>[<xref rid="b61" ref-type="bibr">61</xref>]</sup>。</p><fig position="float" id="F1" orientation="portrait"><label>图1</label><caption><title>中医药调控TAMs防治肺癌转移的机制图</title></caption><abstract abstract-type="fig_caption"><title>The mechanism of traditional Chinese medicine in regulating tumor-associated macrophages for the prevention and treatment of lung cancer metastasis. IL-10: interleukin 10; TNF-α: tumor necrosis factor-α; CSF-1: colony stimulating factor 1; EGF: epidermal growth factor; iNOS: inducible nitric oxide synthase; DTCs: disseminated tumor cells.</title></abstract><alt-text content-type="label" xml:lang="en">Fig 1</alt-text><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="img_1.jpg"><?image-name img_1.jpg?><?image-size 41026?><?image-md5 6ca1c3ac04dd06a2c63c29f29acb7f50?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 518?><?image-original-width 1268?><?image-scaled-height 259?><?image-scaled-width 634?><?image-cloudpmc-urn urn:cdn:blobs/b3a5/11331253/6ca1c3ac04dd/img_1.jpg?><?thumb-name img_1.gif?><?thumb-size 6641?><?thumb-md5 1e69e904b8c1ebf25cbab5cdc736d9bc?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 195?><?thumb-cloudpmc-urn urn:cdn:blobs/b3a5/11331253/1e69e904b8c1/img_1.gif?></graphic></fig><p id="p00110">虽然中医药在靶向巨噬细胞抗肿瘤免疫治疗方面已经取得一些进展，但仍存在许多问题尚未解决，例如许多中药复方调控巨噬细胞的通路较为复杂难以研究、靶向巨噬细胞治疗的临床验证较少且缺乏远期疗效证据、巨噬细胞的极化与主要临床指标肿瘤分期之间是否具有相关性尚不明确等。肺部复杂的微环境支持原发性肺癌和肺外肿瘤转移的发生，但也为治疗提供了许多尚未开发的靶点资源。为了最大程度地提升患者的治疗效果，可以将西医的放化疗、靶向治疗、免疫治疗与传统的中医药治疗方法相结合，联合疗法将是未来重要的研发方向。中医药从整体观念入手，具有多靶点、多机制的治疗优势，也将在未来进行更多的深入研究和探索，以期突破肿瘤转移的瓶颈。</p></sec></body><back><fn-group><fn fn-type="COI-statement"><p><bold>Competing interests:</bold> The authors declare that they have no competing interests.</p></fn></fn-group><ref-list><title>参 考 文 献</title><ref id="b1"><label>1</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation1" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zheng</surname><given-names>RS</given-names></name>,
+<name name-style="western"><surname>Chen</surname><given-names>R</given-names></name>,
+<name name-style="western"><surname>Han</surname><given-names>BF</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Cancer incidence and mortality in China, 2022</article-title>.
+<source>Zhonghua Zhongliu Zazhi</source>,
+<year>2024</year>,
+<volume>46</volume>(<issue>3</issue>): <fpage>221</fpage>-<lpage>231</lpage>.
+<pub-id pub-id-type="pmid">38468501</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3760/cma.j.cn112152-20240119-00035</pub-id></mixed-citation><mixed-citation publication-type="journal" id="mixed-citation2"><person-group person-group-type="author">
+[<string-name name-style="western">郑荣寿</string-name>,
+<string-name name-style="western">陈茹</string-name>,
+<string-name name-style="western">韩冰峰</string-name></person-group>,
+<etal>等</etal>.
+<article-title>2022年中国恶性肿瘤流行情况分析</article-title>.
+<source>中华肿瘤杂志</source>,
+<year>2024</year>,
+<volume>46</volume>(<issue>3</issue>): <fpage>221</fpage>-<lpage>231</lpage>.] doi: <pub-id pub-id-type="doi">10.3760/cma.j.cn112152-20240119-00035</pub-id>
+<pub-id pub-id-type="pmid">38468501</pub-id></mixed-citation></citation-alternatives></ref><ref id="b2"><label>2</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Castaneda</surname><given-names>M</given-names></name>,
+<name name-style="western"><surname>den</surname><given-names>Hollander P</given-names></name>,
+<name name-style="western"><surname>Kuburich</surname><given-names>NA</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Mechanisms of cancer metastasis</article-title>.
+<source>Semin Cancer Biol</source>,
+<year>2022</year>,
+<volume>87</volume>: <fpage>17</fpage>-<lpage>31</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.semcancer.2022.10.006</pub-id>
+<pub-id pub-id-type="pmid">36354098</pub-id>
+</mixed-citation></ref><ref id="b3"><label>3</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Kim</surname><given-names>TK</given-names></name>,
+<name name-style="western"><surname>Vandsemb</surname><given-names>EN</given-names></name>,
+<name name-style="western"><surname>Herbst</surname><given-names>RS</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Adaptive immune resistance at the tumour site: mechanisms and therapeutic opportunities</article-title>.
+<source>Nat Rev Drug Discov</source>,
+<year>2022</year>,
+<volume>21</volume>(<issue>7</issue>): <fpage>529</fpage>-<lpage>540</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41573-022-00493-5</pub-id>
+<pub-id pub-id-type="pmid">35701637</pub-id>
+</mixed-citation></ref><ref id="b4"><label>4</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation5" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yu</surname><given-names>P</given-names></name>,
+<name name-style="western"><surname>Jiang</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Que</surname><given-names>ZJ</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Research progress of regulating innate immunity in prevention and treatment of lung cancer metastasis</article-title>.
+<source>Zhongguo Zhongliu Linchuang</source>,
+<year>2021</year>,
+<volume>48</volume>(<issue>7</issue>): <fpage>356</fpage>-<lpage>360</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation6"><person-group person-group-type="author">
+[<string-name name-style="western">于盼</string-name>,
+<string-name name-style="western">姜怡</string-name>,
+<string-name name-style="western">阙祖俊</string-name></person-group>,
+<etal>等</etal>.
+<article-title>调控固有免疫防治肺癌转移的研究进展</article-title>.
+<source>中国肿瘤临床</source>,
+<year>2021</year>,
+<volume>48</volume>(<issue>7</issue>): <fpage>356</fpage>-<lpage>360</lpage>.] doi: <pub-id pub-id-type="doi">10.3969/j.issn.1000-8179.2021.07.602</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b5"><label>5</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation7" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yu</surname><given-names>P</given-names></name>,
+<name name-style="western"><surname>Zhou</surname><given-names>YY</given-names></name>,
+<name name-style="western"><surname>Luo</surname><given-names>B</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The role of macrophages in metastasis of lung cancer</article-title>.
+<source>Zhongguo Zhongliu Linchuang</source>,
+<year>2022</year>,
+<volume>49</volume>(<issue>6</issue>): <fpage>299</fpage>-<lpage>303</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation8"><person-group person-group-type="author">
+[<string-name name-style="western">于盼</string-name>,
+<string-name name-style="western">周奕阳</string-name>,
+<string-name name-style="western">罗斌</string-name></person-group>,
+<etal>等</etal>.
+<article-title>巨噬细胞在肺癌转移中的作用</article-title>.
+<source>中国肿瘤临床</source>,
+<year>2022</year>,
+<volume>49</volume>(<issue>6</issue>): <fpage>299</fpage>-<lpage>303</lpage>.] doi: <pub-id pub-id-type="doi">10.12354/j.issn.1000-8179.2022.20211014</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b6"><label>6</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>FS</given-names></name>,
+<name name-style="western"><surname>Weng</surname><given-names>JK</given-names></name></person-group>.
+<article-title>Demystifying traditional herbal medicine with modern approach</article-title>.
+<source>Nat Plants</source>,
+<year>2017</year>,
+<volume>3</volume>: <fpage>17109</fpage>. doi: <pub-id pub-id-type="doi">10.1038/nplants.2017.109</pub-id>
+<pub-id pub-id-type="pmid">28758992</pub-id>
+</mixed-citation></ref><ref id="b7"><label>7</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation10" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Lian</surname><given-names>YF</given-names></name>,
+<name name-style="western"><surname>Yang</surname><given-names>HT</given-names></name>,
+<name name-style="western"><surname>Sun</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Prevention and treatment of lung cancer by regulating tumor-associated macrophages with traditional Chinese medicine</article-title>.
+<source>Zhongguo Zhangyao Zazhi</source>,
+<year>2023</year>,
+<volume>48</volume>(<issue>8</issue>): <fpage>2000</fpage>-<lpage>2009</lpage>.
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.19540/j.cnki.cjcmm.20221212.601</pub-id><pub-id pub-id-type="pmid">37282890</pub-id></mixed-citation><mixed-citation publication-type="journal" id="mixed-citation11"><person-group person-group-type="author">
+[<string-name name-style="western">连云峰</string-name>,
+<string-name name-style="western">杨慧彤</string-name>,
+<string-name name-style="western">孙颖</string-name></person-group>,
+<etal>等</etal>.
+<article-title>中医药调控肿瘤相关巨噬细胞抗肺癌研究进展</article-title>.
+<source>中国中药杂志</source>,
+<year>2023</year>,
+<volume>48</volume>(<issue>8</issue>): <fpage>2000</fpage>-<lpage>2009</lpage>.] doi: <pub-id pub-id-type="doi">10.19540/j.cnki.cjcmm.20221212.601</pub-id>
+<pub-id pub-id-type="pmid">37282890</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b8"><label>8</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Boutilier</surname><given-names>AJ</given-names></name>,
+<name name-style="western"><surname>Elsawa</surname><given-names>SF</given-names></name></person-group>.
+<article-title>Macrophage polarization states in the tumor microenvironment</article-title>.
+<source>Int J Mol Sci</source>,
+<year>2021</year>,
+<volume>22</volume>(<issue>13</issue>): 6995. doi: <pub-id pub-id-type="doi">10.3390/ijms22136995</pub-id>
+<pub-id pub-id-type="pmcid">PMC8268869</pub-id><pub-id pub-id-type="pmid">34209703</pub-id></mixed-citation></ref><ref id="b9"><label>9</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Christofides</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Strauss</surname><given-names>L</given-names></name>,
+<name name-style="western"><surname>Yeo</surname><given-names>A</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The complex role of tumor-infiltrating macrophages</article-title>.
+<source>Nat Immunol</source>,
+<year>2022</year>,
+<volume>23</volume>(<issue>8</issue>): <fpage>1148</fpage>-<lpage>1156</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41590-022-01267-2</pub-id>
+<pub-id pub-id-type="pmid">35879449</pub-id>
+<pub-id pub-id-type="pmcid">PMC10754321</pub-id></mixed-citation></ref><ref id="b10"><label>10</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Robinson</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Han</surname><given-names>CZ</given-names></name>,
+<name name-style="western"><surname>Glass</surname><given-names>CK</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Monocyte regulation in homeostasis and malignancy</article-title>.
+<source>Trends Immunol</source>,
+<year>2021</year>,
+<volume>42</volume>(<issue>2</issue>): <fpage>104</fpage>-<lpage>119</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.it.2020.12.001</pub-id>
+<pub-id pub-id-type="pmid">33446416</pub-id>
+<pub-id pub-id-type="pmcid">PMC7877795</pub-id></mixed-citation></ref><ref id="b11"><label>11</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Mantovani</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Marchesi</surname><given-names>F</given-names></name>,
+<name name-style="western"><surname>Jaillon</surname><given-names>S</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Tumor-associated myeloid cells: diversity and therapeutic targeting</article-title>.
+<source>Cell Mol Immunol</source>,
+<year>2021</year>,
+<volume>18</volume>(<issue>3</issue>): <fpage>566</fpage>-<lpage>578</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41423-020-00613-4</pub-id>
+<pub-id pub-id-type="pmid">33473192</pub-id>
+<pub-id pub-id-type="pmcid">PMC8027665</pub-id></mixed-citation></ref><ref id="b12"><label>12</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Strauss</surname><given-names>L</given-names></name>,
+<name name-style="western"><surname>Mahmoud</surname><given-names>MAA</given-names></name>,
+<name name-style="western"><surname>Weaver</surname><given-names>JD</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Targeted deletion of PD-1 in myeloid cells induces antitumor immunity</article-title>.
+<source>Sci Immunol</source>,
+<year>2020</year>,
+<volume>5</volume>(<issue>43</issue>): eaay1863. doi: <pub-id pub-id-type="doi">10.1126/sciimmunol.aay1863</pub-id>
+<pub-id pub-id-type="pmcid">PMC7183328</pub-id><pub-id pub-id-type="pmid">31901074</pub-id></mixed-citation></ref><ref id="b13"><label>13</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Qorraj</surname><given-names>M</given-names></name>,
+<name name-style="western"><surname>Bruns</surname><given-names>H</given-names></name>,
+<name name-style="western"><surname>Böttcher</surname><given-names>M</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The PD-1/PD-L 1 axis contributes to immune metabolic dysfunctions of monocytes in chronic lymphocytic leukemia</article-title>.
+<source>Leukemia</source>,
+<year>2017</year>,
+<volume>31</volume>(<issue>2</issue>): <fpage>470</fpage>-<lpage>478</lpage>. doi: <pub-id pub-id-type="doi">10.1038/leu.2016.214</pub-id>
+<pub-id pub-id-type="pmid">27479178</pub-id>
+</mixed-citation></ref><ref id="b14"><label>14</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Dixon</surname><given-names>KO</given-names></name>,
+<name name-style="western"><surname>Tabaka</surname><given-names>M</given-names></name>,
+<name name-style="western"><surname>Schramm</surname><given-names>MA</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>TIM-3 restrains anti-tumour immunity by regulating inflammasome activation</article-title>.
+<source>Nature</source>,
+<year>2021</year>,
+<volume>595</volume>(<issue>7865</issue>): <fpage>101</fpage>-<lpage>106</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41586-021-03626-9</pub-id>
+<pub-id pub-id-type="pmid">34108686</pub-id>
+<pub-id pub-id-type="pmcid">PMC8627694</pub-id></mixed-citation></ref><ref id="b15"><label>15</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Seo</surname><given-names>WI</given-names></name>,
+<name name-style="western"><surname>Lee</surname><given-names>CH</given-names></name>,
+<name name-style="western"><surname>Jung</surname><given-names>SJ</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Expression of VISTA on tumor-infiltrating immune cells correlated with short intravesical recurrence in non-muscle-invasive bladder cancer</article-title>.
+<source>Cancer Immunol Immunother</source>,
+<year>2021</year>,
+<volume>70</volume>(<issue>11</issue>): <fpage>3113</fpage>-<lpage>3122</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00262-021-02906-7</pub-id>
+<pub-id pub-id-type="pmid">33770210</pub-id>
+<pub-id pub-id-type="pmcid">PMC10992450</pub-id></mixed-citation></ref><ref id="b16"><label>16</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Lin</surname><given-names>H</given-names></name>,
+<name name-style="western"><surname>Wei</surname><given-names>S</given-names></name>,
+<name name-style="western"><surname>Hurt</surname><given-names>EM</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Host expression of PD-L1 determines efficacy of PD-L1 pathway blockade-mediated tumor regression</article-title>.
+<source>J Clin Invest</source>,
+<year>2018</year>,
+<volume>128</volume>(<issue>4</issue>): 1708. doi: <pub-id pub-id-type="doi">10.1172/JCI120803</pub-id>
+<pub-id pub-id-type="pmcid">PMC5873851</pub-id><pub-id pub-id-type="pmid">29608143</pub-id></mixed-citation></ref><ref id="b17"><label>17</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Dangaj</surname><given-names>D</given-names></name>,
+<name name-style="western"><surname>Lanitis</surname><given-names>E</given-names></name>,
+<name name-style="western"><surname>Zhao</surname><given-names>A</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Novel recombinant human b7-h 4 antibodies overcome tumoral immune escape to potentiate T-cell antitumor responses</article-title>.
+<source>Cancer Res</source>,
+<year>2013</year>,
+<volume>73</volume>(<issue>15</issue>): <fpage>4820</fpage>-<lpage>4829</lpage>. doi: <pub-id pub-id-type="doi">10.1158/0008-5472.CAN-12-3457</pub-id>
+<pub-id pub-id-type="pmid">23722540</pub-id>
+<pub-id pub-id-type="pmcid">PMC3732560</pub-id></mixed-citation></ref><ref id="b18"><label>18</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Mantovani</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Allavena</surname><given-names>P</given-names></name>,
+<name name-style="western"><surname>Marchesi</surname><given-names>F</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Macrophages as tools and targets in cancer therapy</article-title>.
+<source>Nat Rev Drug Discov</source>,
+<year>2022</year>,
+<volume>21</volume>(<issue>11</issue>): <fpage>799</fpage>-<lpage>820</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41573-022-00520-5</pub-id>
+<pub-id pub-id-type="pmid">35974096</pub-id>
+<pub-id pub-id-type="pmcid">PMC9380983</pub-id></mixed-citation></ref><ref id="b19"><label>19</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Pan</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Yu</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Wang</surname><given-names>X</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Tumor-associated macrophages in tumor immunity</article-title>.
+<source>Front Immunol</source>,
+<year>2020</year>,
+<volume>11</volume>: <fpage>583084</fpage>. doi: <pub-id pub-id-type="doi">10.3389/fimmu.2020.583084</pub-id>
+<pub-id pub-id-type="pmid">33365025</pub-id>
+<pub-id pub-id-type="pmcid">PMC7751482</pub-id></mixed-citation></ref><ref id="b20"><label>20</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Qian</surname><given-names>BZ</given-names></name>,
+<name name-style="western"><surname>Pollard</surname><given-names>JW</given-names></name></person-group>.
+<article-title>Macrophage diversity enhances tumor progression and metastasis</article-title>.
+<source>Cell</source>,
+<year>2010</year>,
+<volume>141</volume>(<issue>1</issue>): <fpage>39</fpage>-<lpage>51</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.cell.2010.03.014</pub-id>
+<pub-id pub-id-type="pmid">20371344</pub-id>
+<pub-id pub-id-type="pmcid">PMC4994190</pub-id></mixed-citation></ref><ref id="b21"><label>21</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Schmid</surname><given-names>MC</given-names></name>,
+<name name-style="western"><surname>Avraamides</surname><given-names>CJ</given-names></name>,
+<name name-style="western"><surname>Dippold</surname><given-names>HC</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Receptor tyrosine kinases and TLR/IL1Rs unexpectedly activate myeloid cell PI3kγ, a single convergent point promoting tumor inflammation and progression</article-title>.
+<source>Cancer Cell</source>,
+<year>2011</year>,
+<volume>19</volume>(<issue>6</issue>): <fpage>715</fpage>-<lpage>727</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.ccr.2011.04.016</pub-id>
+<pub-id pub-id-type="pmid">21665146</pub-id>
+<pub-id pub-id-type="pmcid">PMC3144144</pub-id></mixed-citation></ref><ref id="b22"><label>22</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Dehne</surname><given-names>N</given-names></name>,
+<name name-style="western"><surname>Mora</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Namgaladze</surname><given-names>D</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Cancer cell and macrophage cross-talk in the tumor microenvironment</article-title>.
+<source>Curr Opin Pharmacol</source>,
+<year>2017</year>,
+<volume>35</volume>: <fpage>12</fpage>-<lpage>19</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.coph.2017.04.007</pub-id>
+<pub-id pub-id-type="pmid">28538141</pub-id>
+</mixed-citation></ref><ref id="b23"><label>23</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Chen</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Zhang</surname><given-names>K</given-names></name>,
+<name name-style="western"><surname>Zhi</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Tumor-derived exosomal miR-19b-3p facilitates M2 macrophage polarization and exosomal LINC 00273 secretion to promote lung adenocarcinoma metastasis via Hippo pathway</article-title>.
+<source>Clin Transl Med</source>,
+<year>2021</year>,
+<volume>11</volume>(<issue>9</issue>): e478. doi: <pub-id pub-id-type="doi">10.1002/ctm2.478</pub-id>
+<pub-id pub-id-type="pmcid">PMC8435259</pub-id><pub-id pub-id-type="pmid">34586722</pub-id></mixed-citation></ref><ref id="b24"><label>24</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhou</surname><given-names>X</given-names></name>,
+<name name-style="western"><surname>Hong</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Liu</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Intervening in hnRNPA2B1-mediated exosomal transfer of tumor-suppressive miR-184-3p for tumor microenvironment regulation and cancer therapy</article-title>.
+<source>J Nanobiotechnol</source>,
+<year>2023</year>,
+<volume>21</volume>(<issue>1</issue>): 422. doi: <pub-id pub-id-type="doi">10.1186/s12951-023-02190-w</pub-id>
+<pub-id pub-id-type="pmcid">PMC10644646</pub-id><pub-id pub-id-type="pmid">37957722</pub-id></mixed-citation></ref><ref id="b25"><label>25</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Lin</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Xu</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Lan</surname><given-names>H</given-names></name></person-group>.
+<article-title>Tumor-associated macrophages in tumor metastasis: biological roles and clinical therapeutic applications</article-title>.
+<source>J Hematol Oncol</source>,
+<year>2019</year>,
+<volume>12</volume>(<issue>1</issue>): 76. doi: <pub-id pub-id-type="doi">10.1186/s13045-019-0760-3</pub-id>
+<pub-id pub-id-type="pmcid">PMC6626377</pub-id><pub-id pub-id-type="pmid">31300030</pub-id></mixed-citation></ref><ref id="b26"><label>26</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Sternlicht</surname><given-names>MD</given-names></name>,
+<name name-style="western"><surname>Werb</surname><given-names>Z</given-names></name></person-group>.
+<article-title>How matrix metalloproteinases regulate cell behavior</article-title>.
+<source>Annu Rev Cell Dev Biol</source>,
+<year>2001</year>,
+<volume>17</volume>: <fpage>463</fpage>-<lpage>516</lpage>. doi: <pub-id pub-id-type="doi">10.1146/annurev.cellbio.17.1.463</pub-id>
+<pub-id pub-id-type="pmid">11687497</pub-id>
+<pub-id pub-id-type="pmcid">PMC2792593</pub-id></mixed-citation></ref><ref id="b27"><label>27</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Nie</surname><given-names>W</given-names></name>,
+<name name-style="western"><surname>Yu</surname><given-names>T</given-names></name>,
+<name name-style="western"><surname>Sang</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Tumor-promoting effect of IL-23 in mammary cancer mediated by infiltration of M2 macrophages and neutrophils in tumor microenvironment</article-title>.
+<source>Biochem Biophys Res Commun</source>,
+<year>2017</year>,
+<volume>482</volume>(<issue>4</issue>): <fpage>1400</fpage>-<lpage>1406</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.bbrc.2016.12.048</pub-id>
+<pub-id pub-id-type="pmid">27956175</pub-id>
+</mixed-citation></ref><ref id="b28"><label>28</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wang</surname><given-names>Z</given-names></name>,
+<name name-style="western"><surname>Zhao</surname><given-names>Y</given-names></name>,
+<name name-style="western"><surname>Xu</surname><given-names>H</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>CtBP1 promotes tumour-associated macrophage infiltration and progression in non-small cell lung cancer</article-title>.
+<source>J Cell Mol Med</source>,
+<year>2020</year>,
+<volume>24</volume>(<issue>19</issue>): <fpage>11445</fpage>-<lpage>11456</lpage>. doi: <pub-id pub-id-type="doi">10.1111/jcmm.15751</pub-id>
+<pub-id pub-id-type="pmid">32910558</pub-id>
+<pub-id pub-id-type="pmcid">PMC7576280</pub-id></mixed-citation></ref><ref id="b29"><label>29</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ran</surname><given-names>S</given-names></name>,
+<name name-style="western"><surname>Montgomery</surname><given-names>KE</given-names></name></person-group>.
+<article-title>Macrophage-mediated lymphangiogenesis: the emerging role of macrophages as lymphatic endothelial progenitors</article-title>.
+<source>Cancers (Basel)</source>,
+<year>2012</year>,
+<volume>4</volume>(<issue>3</issue>): <fpage>618</fpage>-<lpage>657</lpage>. doi: <pub-id pub-id-type="doi">10.3390/cancers4030618</pub-id>
+<pub-id pub-id-type="pmid">22946011</pub-id>
+<pub-id pub-id-type="pmcid">PMC3430523</pub-id></mixed-citation></ref><ref id="b30"><label>30</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Orlichenko</surname><given-names>LS</given-names></name>,
+<name name-style="western"><surname>Radisky</surname><given-names>DC</given-names></name></person-group>.
+<article-title>Matrix metalloproteinases stimulate epithelial-mesenchymal transition during tumor development</article-title>.
+<source>Clin Exp Metastasis</source>,
+<year>2008</year>,
+<volume>25</volume>(<issue>6</issue>): <fpage>593</fpage>-<lpage>600</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s10585-008-9143-9</pub-id>
+<pub-id pub-id-type="pmid">18286378</pub-id>
+</mixed-citation></ref><ref id="b31"><label>31</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Thiery</surname><given-names>JP</given-names></name></person-group>.
+<article-title>Epithelial-mesenchymal transitions in tumour progression</article-title>.
+<source>Nat Rev Cancer</source>,
+<year>2002</year>,
+<volume>2</volume>(<issue>6</issue>): <fpage>442</fpage>-<lpage>454</lpage>. doi: <pub-id pub-id-type="doi">10.1038/nrc822</pub-id>
+<pub-id pub-id-type="pmid">12189386</pub-id>
+</mixed-citation></ref><ref id="b32"><label>32</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yang</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Weinberg</surname><given-names>RA</given-names></name></person-group>.
+<article-title>Epithelial-mesenchymal transition: at the crossroads of development and tumor metastasis</article-title>.
+<source>Dev Cell</source>,
+<year>2008</year>,
+<volume>14</volume>(<issue>6</issue>): <fpage>818</fpage>-<lpage>829</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.devcel.2008.05.009</pub-id>
+<pub-id pub-id-type="pmid">18539112</pub-id>
+</mixed-citation></ref><ref id="b33"><label>33</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>He</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Yin</surname><given-names>P</given-names></name>,
+<name name-style="western"><surname>Xu</surname><given-names>K</given-names></name></person-group>.
+<article-title>Effect and molecular mechanisms of traditional Chinese medicine on tumor targeting tumor-associated macrophages</article-title>.
+<source>Drug Des Devel Ther</source>,
+<year>2020</year>,
+<volume>14</volume>: <fpage>907</fpage>-<lpage>919</lpage>. doi: <pub-id pub-id-type="doi">10.2147/DDDT.S223646</pub-id>
+<pub-id pub-id-type="pmcid">PMC7053810</pub-id><pub-id pub-id-type="pmid">32184560</pub-id></mixed-citation></ref><ref id="b34"><label>34</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Anderson</surname><given-names>NR</given-names></name>,
+<name name-style="western"><surname>Minutolo</surname><given-names>NG</given-names></name>,
+<name name-style="western"><surname>Gill</surname><given-names>S</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Macrophage-based approaches for cancer immunotherapy</article-title>.
+<source>Cancer Res</source>,
+<year>2021</year>,
+<volume>81</volume>(<issue>5</issue>): <fpage>1201</fpage>-<lpage>1208</lpage>. doi: <pub-id pub-id-type="doi">10.1158/0008-5472.CAN-20-2990</pub-id>
+<pub-id pub-id-type="pmid">33203697</pub-id>
+</mixed-citation></ref><ref id="b35"><label>35</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zheng</surname><given-names>X</given-names></name>,
+<name name-style="western"><surname>Turkowski</surname><given-names>K</given-names></name>,
+<name name-style="western"><surname>Mora</surname><given-names>J</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Redirecting tumor-associated macrophages to become tumoricidal effectors as a novel strategy for cancer therapy</article-title>.
+<source>Oncotarget</source>,
+<year>2017</year>,
+<volume>8</volume>(<issue>29</issue>): <fpage>48436</fpage>-<lpage>48452</lpage>. doi: <pub-id pub-id-type="doi">10.18632/oncotarget.17061</pub-id>
+<pub-id pub-id-type="pmid">28467800</pub-id>
+<pub-id pub-id-type="pmcid">PMC5564660</pub-id></mixed-citation></ref><ref id="b36"><label>36</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Mantovani</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Sica</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Sozzani</surname><given-names>S</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The chemokine system in diverse forms of macrophage activation and polarization</article-title>.
+<source>Trends Immunol</source>,
+<year>2004</year>,
+<volume>25</volume>(<issue>12</issue>): <fpage>677</fpage>-<lpage>686</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.it.2004.09.015</pub-id>
+<pub-id pub-id-type="pmid">15530839</pub-id>
+</mixed-citation></ref><ref id="b37"><label>37</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Franklin</surname><given-names>RA</given-names></name>,
+<name name-style="western"><surname>Liao</surname><given-names>W</given-names></name>,
+<name name-style="western"><surname>Sarkar</surname><given-names>A</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The cellular and molecular origin of tumor-associated macrophages</article-title>.
+<source>Science</source>,
+<year>2014</year>,
+<volume>344</volume>(<issue>6186</issue>): <fpage>921</fpage>-<lpage>925</lpage>. doi: <pub-id pub-id-type="doi">10.1126/science.1252510</pub-id>
+<pub-id pub-id-type="pmid">24812208</pub-id>
+<pub-id pub-id-type="pmcid">PMC4204732</pub-id></mixed-citation></ref><ref id="b38"><label>38</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Crist</surname><given-names>SB</given-names></name>,
+<name name-style="western"><surname>Ghajar</surname><given-names>CM</given-names></name></person-group>.
+<article-title>When a house is not a home: a survey of antimetastatic niches and potential mechanisms of disseminated tumor cell suppression</article-title>.
+<source>Annu Rev Pathol</source>,
+<year>2021</year>,
+<volume>16</volume>: <fpage>409</fpage>-<lpage>432</lpage>. doi: <pub-id pub-id-type="doi">10.1146/annurev-pathmechdis-012419-032647</pub-id>
+<pub-id pub-id-type="pmid">33276706</pub-id>
+</mixed-citation></ref><ref id="b39"><label>39</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ma</surname><given-names>B</given-names></name>,
+<name name-style="western"><surname>Wells</surname><given-names>A</given-names></name>,
+<name name-style="western"><surname>Clark</surname><given-names>AM</given-names></name></person-group>.
+<article-title>The pan-therapeutic resistance of disseminated tumor cells: Role of phenotypic plasticity and the metastatic microenvironment</article-title>.
+<source>Semin Cancer Biol</source>,
+<year>2020</year>,
+<volume>60</volume>: <fpage>138</fpage>-<lpage>147</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.semcancer.2019.07.021</pub-id>
+<pub-id pub-id-type="pmid">31376430</pub-id>
+<pub-id pub-id-type="pmcid">PMC6992520</pub-id></mixed-citation></ref><ref id="b40"><label>40</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Sarode</surname><given-names>P</given-names></name>,
+<name name-style="western"><surname>Schaefer</surname><given-names>MB</given-names></name>,
+<name name-style="western"><surname>Grimminger</surname><given-names>F</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Macrophage and tumor cell cross-talk is fundamental for lung tumor progression: We need to talk</article-title>.
+<source>Front Oncol</source>,
+<year>2020</year>,
+<volume>10</volume>: <fpage>324</fpage>. doi: <pub-id pub-id-type="doi">10.3389/fonc.2020.00324</pub-id>
+<pub-id pub-id-type="pmid">32219066</pub-id>
+<pub-id pub-id-type="pmcid">PMC7078651</pub-id></mixed-citation></ref><ref id="b41"><label>41</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation45" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>JX</given-names></name>,
+<name name-style="western"><surname>Wang</surname><given-names>B</given-names></name>,
+<name name-style="western"><surname>Yu</surname><given-names>M</given-names></name></person-group>.
+<article-title>Research progress on antitumor mechanism of traditional Chinese medicine based on theory of “Fuzheng Quxie”</article-title>.
+<source>Zhongcaoyao</source>,
+<year>2021</year>,
+<volume>52</volume>(<issue>18</issue>): <fpage>5751</fpage>-<lpage>5757</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation46"><person-group person-group-type="author">
+[<string-name name-style="western">李佳鑫</string-name>,
+<string-name name-style="western">王冰</string-name>,
+<string-name name-style="western">于淼</string-name></person-group>.
+<article-title>基于“扶正祛邪”治则的中药抗肿瘤作用机制的研究进展</article-title>.
+<source>中草药</source>,
+<year>2021</year>,
+<volume>52</volume>(<issue>18</issue>): <fpage>5751</fpage>-<lpage>5757</lpage>.] doi: <pub-id pub-id-type="doi">10.7501/j.issn.0253-2670.2021.18.030</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b42"><label>42</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Cassetta</surname><given-names>L</given-names></name>,
+<name name-style="western"><surname>Fragkogianni</surname><given-names>S</given-names></name>,
+<name name-style="western"><surname>Sims</surname><given-names>AH</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Human tumor-associated macrophage and monocyte transcriptional landscapes reveal cancer-specific reprogramming, biomarkers, and therapeutic targets</article-title>.
+<source>Cancer Cell</source>,
+<year>2019</year>,
+<volume>35</volume>(<issue>4</issue>): <fpage>588</fpage>-<lpage>602</lpage>.e10. doi: <pub-id pub-id-type="doi">10.1016/j.ccell.2019.02.009</pub-id>
+<pub-id pub-id-type="pmid">30930117</pub-id>
+<pub-id pub-id-type="pmcid">PMC6472943</pub-id></mixed-citation></ref><ref id="b43"><label>43</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wu</surname><given-names>CY</given-names></name>,
+<name name-style="western"><surname>Cherng</surname><given-names>JY</given-names></name>,
+<name name-style="western"><surname>Yang</surname><given-names>YH</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Danshen improves survival of patients with advanced lung cancer and targeting the relationship between macrophages and lung cancer cells</article-title>.
+<source>Oncotarget</source>,
+<year>2017</year>,
+<volume>8</volume>(<issue>53</issue>): <fpage>90925</fpage>-<lpage>90947</lpage>. doi: <pub-id pub-id-type="doi">10.18632/oncotarget.18767</pub-id>
+<pub-id pub-id-type="pmid">29207614</pub-id>
+<pub-id pub-id-type="pmcid">PMC5710895</pub-id></mixed-citation></ref><ref id="b44"><label>44</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Xu</surname><given-names>F</given-names></name>,
+<name name-style="western"><surname>Cui</surname><given-names>W</given-names></name>,
+<name name-style="western"><surname>Zhao</surname><given-names>Z</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Targeting tumor microenvironment: effects of Chinese herbal formulae on macrophage-mediated lung cancer in mice</article-title>.
+<source>Evid Based Complement Alternat Med</source>,
+<year>2017</year>,
+<volume>2017</volume>: <fpage>7187168</fpage>. doi: <pub-id pub-id-type="doi">10.1155/2017/7187168</pub-id>
+<pub-id pub-id-type="pmid">28630636</pub-id>
+<pub-id pub-id-type="pmcid">PMC5467330</pub-id></mixed-citation></ref><ref id="b45"><label>45</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Xu</surname><given-names>F</given-names></name>,
+<name name-style="western"><surname>Cui</surname><given-names>WQ</given-names></name>,
+<name name-style="western"><surname>Wei</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Astragaloside IV inhibits lung cancer progression and metastasis by modulating macrophage polarization through AMPK signaling</article-title>.
+<source>J Exp Clin Cancer Res</source>,
+<year>2018</year>,
+<volume>37</volume>(<issue>1</issue>): 207. doi: <pub-id pub-id-type="doi">10.1186/s13046-018-0878-0</pub-id>
+<pub-id pub-id-type="pmcid">PMC6116548</pub-id><pub-id pub-id-type="pmid">30157903</pub-id></mixed-citation></ref><ref id="b46"><label>46</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation51" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Xiao</surname><given-names>XQ</given-names></name></person-group>.
+<article-title>Dihydroartemisinin inhibits Lewis lung carcinoma progression by inducing macrophages M1 polarization via AKT/mTOR pathway</article-title>.
+<source>Chengdu Zhongyiyao Daxue</source>,
+<year>2022</year>.
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.intimp.2021.108427</pub-id><pub-id pub-id-type="pmid">34922249</pub-id></mixed-citation><mixed-citation publication-type="journal" id="mixed-citation52"><person-group person-group-type="author">
+[<string-name name-style="western">肖晓倩</string-name></person-group>.
+<article-title>双氢青蒿素经AKT/mTOR信号通路促进巨噬细胞M1极化进而抑制Lewis肺癌生长的分子机制</article-title>.
+<source>成都中医药大学</source>,
+<year>2022</year>.] doi: <pub-id pub-id-type="doi">10.26988/d.cnki.gcdzu.2022.000665</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b47"><label>47</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhao</surname><given-names>B</given-names></name>,
+<name name-style="western"><surname>Hui</surname><given-names>X</given-names></name>,
+<name name-style="western"><surname>Wang</surname><given-names>J</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Matrine suppresses lung cancer metastasis via targeting M2-like tumour-associated-macrophages polarization</article-title>.
+<source>Am J Cancer Res</source>,
+<year>2021</year>,
+<volume>11</volume>(<issue>9</issue>): <fpage>4308</fpage>-<lpage>4328</lpage>.
+<pub-id pub-id-type="pmid">34659889</pub-id>
+<pub-id pub-id-type="pmcid">PMC8493404</pub-id></mixed-citation></ref><ref id="b48"><label>48</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wang</surname><given-names>L</given-names></name>,
+<name name-style="western"><surname>Wu</surname><given-names>W</given-names></name>,
+<name name-style="western"><surname>Zhu</surname><given-names>X</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>The ancient Chinese decoction Yu-Ping-Feng suppresses orthotopic Lewis lung cancer tumor growth through increasing M1 macrophage polarization and CD4<sup>+</sup> T cell cytotoxicity</article-title>.
+<source>Front Pharmacol</source>,
+<year>2019</year>,
+<volume>10</volume>: <fpage>1333</fpage>. doi: <pub-id pub-id-type="doi">10.3389/fphar.2019.01333</pub-id>
+<pub-id pub-id-type="pmid">31780946</pub-id>
+<pub-id pub-id-type="pmcid">PMC6857089</pub-id></mixed-citation></ref><ref id="b49"><label>49</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation55" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Gao</surname><given-names>LP</given-names></name>,
+<name name-style="western"><surname>Zhao</surname><given-names>LT</given-names></name>,
+<name name-style="western"><surname>Feng</surname><given-names>Q</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Huoxue Huashi decoction inhibits M2 macrophage polarization and non-small cell lung cancer cell invasion by targeting TP53</article-title>.
+<source>Zhongguo Mianyixue Zazhi</source>,
+<year>2023</year>,
+<volume>39</volume>(<issue>10</issue>): <fpage>2049</fpage>-<lpage>2054</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation56"><person-group person-group-type="author">
+[<string-name name-style="western">高莉萍</string-name>,
+<string-name name-style="western">赵兰婷</string-name>,
+<string-name name-style="western">冯倩</string-name></person-group>,
+<etal>等</etal>.
+<article-title>活血化湿汤通过靶向TP53抑制M2巨噬细胞极化与非小细胞肺癌细胞的侵袭</article-title>.
+<source>中国免疫学杂志</source>,
+<year>2023</year>,
+<volume>39</volume>(<issue>10</issue>): <fpage>2049</fpage>-<lpage>2054</lpage>.] doi: <pub-id pub-id-type="doi">10.3969/j.issn.1000-484X.2023.10.006</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b50"><label>50</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation57" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Liu</surname><given-names>YC</given-names></name>,
+<name name-style="western"><surname>Zhu</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Zhang</surname><given-names>GL</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Experiment study on Yiqi Fuzheng Prescription in anti-lung cancer metastasis by regulating the polarization of tumor associated macrophages</article-title>.
+<source>Shanghai Zhongyiyao Zazhi</source>,
+<year>2022</year>,
+<volume>56</volume>(<issue>2</issue>): <fpage>67</fpage>-<lpage>74</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation58"><person-group person-group-type="author">
+[<string-name name-style="western">刘怡辰</string-name>,
+<string-name name-style="western">诸君</string-name>,
+<string-name name-style="western">张国磊</string-name></person-group>,
+<etal>等</etal>.
+<article-title>益气扶正方通过调控肿瘤相关巨噬细胞极化抗肺癌转移的实验研究</article-title>.
+<source>上海中医药杂志</source>,
+<year>2022</year>,
+<volume>56</volume>(<issue>2</issue>): 67-74.] doi: <pub-id pub-id-type="doi">10.16305/j.1007-1334.2022.2104044</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b51"><label>51</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhang</surname><given-names>K</given-names></name>,
+<name name-style="western"><surname>Peng</surname><given-names>YL</given-names></name>,
+<name name-style="western"><surname>Wang</surname><given-names>Q</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Crosstalk between lung cancer cells and macrophages contributes to traditional Chinese medicine Feiyanning-induced anti-tumor activities by suppressing M2 macrophage polarization</article-title>.
+<source>Acta Biochim Biophys Sin (Shanghai)</source>,
+<year>2023</year>,
+<volume>55</volume>(<issue>10</issue>): <fpage>1681</fpage>-<lpage>1684</lpage>. doi: <pub-id pub-id-type="doi">10.3724/abbs.2023221</pub-id>
+<pub-id pub-id-type="pmid">37667564</pub-id>
+<pub-id pub-id-type="pmcid">PMC10577448</pub-id></mixed-citation></ref><ref id="b52"><label>52</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ma</surname><given-names>WP</given-names></name>,
+<name name-style="western"><surname>Hu</surname><given-names>SM</given-names></name>,
+<name name-style="western"><surname>Xu</surname><given-names>YL</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Haimufang decoction, a Chinese medicine formula for lung cancer, arrests cell cycle, stimulates apoptosis in NCI-H1975 cells, and induces M1 polarization in RAW 264.7 macrophage cells</article-title>.
+<source>BMC Complement Med Ther</source>,
+<year>2020</year>,
+<volume>20</volume>(<issue>1</issue>): 243. doi: <pub-id pub-id-type="doi">10.1186/s12906-020-03031-1</pub-id>
+<pub-id pub-id-type="pmcid">PMC7404932</pub-id><pub-id pub-id-type="pmid">32758223</pub-id></mixed-citation></ref><ref id="b53"><label>53</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation61" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>SZ</given-names></name></person-group>.
+<article-title>Bavachalcone inhibits the proliferation and metastasis of lung cancer cells through tumor microenvironment</article-title>.
+<source>Changchun Zhongyiyao Daxue</source>,
+<year>2024</year>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation62"><person-group person-group-type="author">
+[<string-name name-style="western">李善智</string-name></person-group>.
+<article-title>补骨脂查尔酮通过肿瘤微环境抑制肺癌细胞增殖和转移的研究</article-title>.
+<source>长春中医药大学</source>,
+<year>2024</year>.] doi: <pub-id pub-id-type="doi">10.26980/d.cnki.gcczc.2023.000036</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b54"><label>54</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation63" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yao</surname><given-names>JJ</given-names></name></person-group>.
+<article-title>Prevention and treatment mechanisms of 6-gingerol regulating macrophages on lung cancer</article-title>.
+<source>Henan Daxue</source>,
+<year>2019</year>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation64"><person-group person-group-type="author">
+[<string-name name-style="western">姚静静</string-name></person-group>.
+<article-title>6-姜辣素调控巨噬细胞防治肺癌的作用机制研究</article-title>.
+<source>河南大学</source>,
+<year>2019</year>.]</mixed-citation></citation-alternatives></ref><ref id="b55"><label>55</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>H</given-names></name>,
+<name name-style="western"><surname>Huang</surname><given-names>N</given-names></name>,
+<name name-style="western"><surname>Zhu</surname><given-names>W</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Modulation the crosstalk between tumor-associated macrophages and non-small cell lung cancer to inhibit tumor migration and invasion by ginsenoside Rh2</article-title>.
+<source>BMC Cancer</source>,
+<year>2018</year>,
+<volume>18</volume>(<issue>1</issue>): 579. doi: <pub-id pub-id-type="doi">10.1186/s12885-018-4299-4</pub-id>
+<pub-id pub-id-type="pmcid">PMC5963019</pub-id><pub-id pub-id-type="pmid">29783929</pub-id></mixed-citation></ref><ref id="b56"><label>56</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yu</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Deng</surname><given-names>H</given-names></name>,
+<name name-style="western"><surname>Xu</surname><given-names>Z</given-names></name></person-group>.
+<article-title>Targeting macrophage priming by polyphyllin VII triggers anti-tumor immunity via STING-governed cytotoxic T-cell infiltration in lung cancer</article-title>.
+<source>Sci Rep</source>,
+<year>2020</year>,
+<volume>10</volume>(<issue>1</issue>): 21360. doi: <pub-id pub-id-type="doi">10.1038/s41598-020-77800-w</pub-id>
+<pub-id pub-id-type="pmcid">PMC7721813</pub-id><pub-id pub-id-type="pmid">33288772</pub-id></mixed-citation></ref><ref id="b57"><label>57</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Pang</surname><given-names>L</given-names></name>,
+<name name-style="western"><surname>Han</surname><given-names>S</given-names></name>,
+<name name-style="western"><surname>Jiao</surname><given-names>Y</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Bu Fei Decoction attenuates the tumor associated macrophage stimulated proliferation, migration, invasion and immunosuppression of non-small cell lung cancer, partially via IL-10 and PD-L1 regulation</article-title>.
+<source>Int J Oncol</source>,
+<year>2017</year>,
+<volume>51</volume>(<issue>1</issue>): <fpage>25</fpage>-<lpage>38</lpage>. doi: <pub-id pub-id-type="doi">10.3892/ijo.2017.4014</pub-id>
+<pub-id pub-id-type="pmid">28534943</pub-id>
+<pub-id pub-id-type="pmcid">PMC5467788</pub-id></mixed-citation></ref><ref id="b58"><label>58</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation68" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhao</surname><given-names>YS</given-names></name></person-group>.
+<article-title>The "Zhengqi" of traditional Chinese medicine and modern immunology</article-title>.
+<source>Gansu Zhongyi</source>,
+<year>1993</year>(<issue>2</issue>): <fpage>5</fpage>-<lpage>7</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation69"><person-group person-group-type="author">
+[<string-name name-style="western">赵炎声</string-name></person-group>.
+<article-title>中医学的“正气”与现代免疫学</article-title>.
+<source>甘肃中医</source>,
+<year>1993</year>(<issue>2</issue>): <fpage>5</fpage>-<lpage>7</lpage>.]</mixed-citation></citation-alternatives></ref><ref id="b59"><label>59</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation70" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Tian</surname><given-names>JH</given-names></name>,
+<name name-style="western"><surname>Liu</surname><given-names>LS</given-names></name>,
+<name name-style="western"><surname>Li</surname><given-names>HG</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Academic thought introduction of Liu Jiaxiang’s “Fuzhengfa” treating cancer</article-title>.
+<source>Zhongyi Zazhi</source>,
+<year>2006</year>,
+<volume>47</volume>(<issue>11</issue>): <fpage>814</fpage>-<lpage>816</lpage>.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation71"><person-group person-group-type="author">
+[<string-name name-style="western">田建辉</string-name>,
+<string-name name-style="western">刘苓霜</string-name>,
+<string-name name-style="western">李和根</string-name></person-group>,
+<etal>等</etal>.
+<article-title>刘嘉湘扶正法治癌学术思想介绍</article-title>.
+<source>中医杂志</source>,
+<year>2006</year>,
+<volume>47</volume>(<issue>11</issue>): 814-816.] doi: <pub-id pub-id-type="doi">10.3321/j.issn:1001-1668.2006.11.010</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b60"><label>60</label><citation-alternatives><mixed-citation publication-type="journal" id="mixed-citation72" xml:lang="en">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Tian</surname><given-names>JH</given-names></name>,
+<name name-style="western"><surname>Luo</surname><given-names>B</given-names></name>,
+<name name-style="western"><surname>Que</surname><given-names>ZJ</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Theory of “hidden toxicity due to vital gi deficiency” as core pathogenesis for subclinical stage of cancer metastasis</article-title>.
+<source>Shanghai Zhongyiyao Zazhi</source>,
+<year>2021</year>,
+<volume>55</volume>(<issue>10</issue>): <fpage>1</fpage>-<lpage>3</lpage>, 13.
+</mixed-citation><mixed-citation publication-type="journal" id="mixed-citation73"><person-group person-group-type="author">
+[<string-name name-style="western">田建辉</string-name>,
+<string-name name-style="western">罗斌</string-name>,
+<string-name name-style="western">阙祖俊</string-name></person-group>,
+<etal>等</etal>.
+<article-title>癌症转移亚临床阶段核心病机“正虚伏毒”学说</article-title>.
+<source>上海中医药杂志</source>,
+<year>2021</year>,
+<volume>55</volume>(<issue>10</issue>): 1-3, 13.] doi: <pub-id pub-id-type="doi">10.16305/j.1007-1334.2021.2105080</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="b61"><label>61</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhang</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Gao</surname><given-names>J</given-names></name>,
+<name name-style="western"><surname>Cui</surname><given-names>J</given-names></name></person-group>,
+<etal>et al</etal>.
+<article-title>Tumor-associated macrophages in tumor progression and the role of traditional Chinese medicine in regulating TAMs to enhance antitumor effects</article-title>.
+<source>Front Immunol</source>,
+<year>2022</year>,
+<volume>13</volume>: <fpage>1026898</fpage>. doi: <pub-id pub-id-type="doi">10.3389/fimmu.2022.1026898</pub-id>
+<pub-id pub-id-type="pmid">36311793</pub-id>
+<pub-id pub-id-type="pmcid">PMC9611775</pub-id></mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="zh" article-type="review-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">3417</journal-id><journal-id journal-id-type="pmc-domain">cjlc</journal-id><journal-title-group><journal-title>Chinese Journal of Lung Cancer</journal-title><abbrev-journal-title>Zhongguo Fei Ai Za Zhi</abbrev-journal-title></journal-title-group><publisher><publisher-name>Editorial office of Chinese Journal of Lung Cancer</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11002191</article-id><article-id pub-id-type="pmcaid">11002191</article-id><article-id pub-id-type="pmcaiid">11002191</article-id><article-id pub-id-type="pmid">38590196</article-id><article-id pub-id-type="doi">10.3779/j.issn.1009-3419.2024.101.06</article-id><title-group><article-title>铁死亡在非小细胞肺癌中的作用及中药干预进展</article-title><trans-title-group xml:lang="en"><trans-title xml:lang="en">Role of Ferroptosis in Non-small Cell Lung Cancer and Progress of Traditional Chinese Medicine Intervention</trans-title></trans-title-group></title-group><contrib-group content-type="author"><contrib><name name-style="western" xml:lang="en"><surname>GUO</surname><given-names initials="X">Xiaoqi</given-names></name><xref ref-type="aff" rid="aff1">1</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>WANG</surname><given-names initials="T">Tianqi</given-names></name><xref ref-type="aff" rid="aff1">1</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>XIA</surname><given-names initials="J">Jinchan</given-names></name><xref ref-type="aff" rid="aff1">1</xref><xref rid="cor1" ref-type="author-notes">✉</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>ZENG</surname><given-names initials="H">Huahui</given-names></name><xref ref-type="aff" rid="aff2">2</xref></contrib><contrib><name name-style="western" xml:lang="en"><surname>SHI</surname><given-names initials="W">Wenbo</given-names></name><xref ref-type="aff" rid="aff1">1</xref></contrib></contrib-group><aff id="aff1" xml:lang="en"><sup>1</sup>Medical College, Henan University of Traditional Chinese Medicine, Zhengzhou 450046, China</aff><aff id="aff2" xml:lang="en"><sup>2</sup>Academy of Chinese Medicine, Henan University of Traditional Chinese Medicine, Zhengzhou 450046, China</aff><author-notes><fn id="cor1"><label>✉</label><p>夏金婵，E-mail: <email>epsalon@163.com</email></p></fn><fn id="cor2" xml:lang="en"><label>✉</label><p>Jinchan XIA, E-mail: <email>epsalon@163.com</email></p></fn></author-notes><pub-date><day>20</day><month>3</month><year>2024</year></pub-date><volume>27</volume><issue>3</issue><fpage>216</fpage><page-range>216–230</page-range><pub-history><event event-type="pmc-release"><date><day>10</day><month>4</month><year>2024</year></date></event></pub-history><permissions><copyright-statement>版权所有 © 2024《中国肺癌杂志》编辑部</copyright-statement><copyright-statement>Copyright © 2024, Chinese Journal of Lung Cancer.</copyright-statement><license><license-p>This is an open access article distributed in accordance with the terms of the Creative Commons Attribution (CC BY 3.0) License. See: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/3.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/3.0/</ext-link>.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="zgfazz-27-3-216.pdf" content-type="pmc-pdf"><?cloudpmc-path 5469/11002191/861a7bc85a71/zgfazz-27-3-216.pdf?><?cloudpmc-bucket app?><?size 1396126?></self-uri><abstract id="abstract1"><title>Abstract</title><p id="p00005">非小细胞肺癌（non-small cell lung cancer, NSCLC）是全球发病率和死亡率较高的恶性肿瘤之一。铁死亡是铁依赖性活性氧（reactive oxygen species, ROS）异常堆积导致脂质过氧化而引起的新型细胞程序性死亡方式，涉及铁代谢、脂质代谢、氧自由基反应与脂质过氧化之间的平衡。近年来研究发现铁死亡与NSCLC发生发展密切相关。由于NSCLC治疗过程中化疗耐药及放疗抵抗等的出现，迫切需要开发新的有效药物和治疗策略，中药具有靶点多、副作用小等特点，在防治NSCLC方面有独特的优势。本文综述了铁死亡在NSCLC中的作用机制，探讨中药活性成分、单味药及中药复方通过铁死亡干预NSCLC的研究现状，以期为铁死亡通路研究及中药靶向铁死亡防治NSCLC提供新的理论依据。</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> 肺肿瘤, 铁死亡, 中药</p></sec></abstract><trans-abstract id="trans-abstract1" xml:lang="en"><title>Abstract</title><p id="p00010">Non-small cell lung cancer (NSCLC) is one of the malignant tumors with high morbidity and mortality worldwide. Ferroptosis is a new type of programmed cell death caused by abnormal accumulation of iron-dependent reactive oxygen species (ROS) leading to lipid peroxidation. It involves the balance between iron metabolism, lipid metabolism, oxygen free radical reaction and lipid peroxidation. Recent studies have found that ferroptosis is closely related to the occurrence and development of NSCLC. Due to the emergence of chemotherapy resistance and radiotherapy resistance in the treatment of NSCLC, there is an urgent need to develop new effective drugs and treatment strategies. Traditional Chinese medicine has unique advantages in the prevention and treatment of NSCLC due to its multi-targets and minimal side effects. In this review, we summarize the mechanism of ferroptosis in NSCLC, and discuss the research status of active ingredients of traditional Chinese medicine, single-herb traditional Chinese medicine and Chinese herbal compounds in the intervention of NSCLC through ferroptosis, in order to provide a new theoretical basis for the research of ferroptosis pathway and the prevention and treatment of NSCLC by targeted ferroptosis of traditional Chinese medicine.</p><sec id="kwd-group2" xml:lang="en" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> Lung neoplasms, Ferroptosis, Traditional Chinese medicine</p></sec></trans-abstract><custom-meta-group><custom-meta><meta-name>language</meta-name><meta-value>Chinese</meta-value></custom-meta><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2023 Nov 29.</p></sec></notes></front><body><p id="p00015">肺癌是全球高发病率和高死亡率的恶性肿瘤之一，在我国每年超过70万人确诊为肺癌，约占所有新发癌症病例的16.7%，死亡率占所有癌症死亡人数的24.4%，严重危害人类健康<sup>[<xref rid="b1" ref-type="bibr">1</xref>]</sup>。其中非小细胞肺癌（non-small cell lung cancer, NSCLC）是肺癌的主要亚型，约占所有肺癌病例的85%。目前NSCLC的治疗选择包括手术和辅助治疗（如放疗、化疗、靶向治疗和免疫疗法）。其中手术治疗只适用于肺癌早期，同时随着肺癌细胞对辅助治疗产生不同程度的抵抗性和耐药性，导致肺癌的治疗往往不尽如人意<sup>[<xref rid="b2" ref-type="bibr">2</xref>]</sup>，因此探索NSCLC新的干预靶点及治疗药物迫在眉睫。</p><p id="p00020">铁死亡是一种铁依赖性活性氧（reactive oxygen species, ROS）异常堆积导致膜质过氧化而引起的一种新型细胞程序性死亡（programmed cell death, PCD）方式<sup>[<xref rid="b3" ref-type="bibr">3</xref>]</sup>。与其他PCD不同的是，铁死亡主要特征包括铁离子异常累积、脂质过氧化作用增加、ROS增加、线粒体电位下降或消失、线粒体嵴减少、染色质浓缩以及一些特征性基因（TfR1、SLC7A11、GPX4等）表达改变<sup>[<xref rid="b4" ref-type="bibr">4</xref>]</sup>（<xref rid="T1" ref-type="table">表1</xref>）。铁是细胞生长必需元素，与正常细胞相比，癌细胞快速增殖的特点使其对铁有更强的依赖性<sup>[<xref rid="b5" ref-type="bibr">5</xref>]</sup>，而铁代谢失衡又会进一步增加患癌的风险，因此通过促进肿瘤细胞铁死亡抑制NSCLC的生长、增殖、转移、上皮间充质转化，逆转其耐药性，可能会成为肺癌治疗所面临问题的一个突破口<sup>[<xref rid="b6" ref-type="bibr">6</xref>]</sup>。中药在治疗肺癌方面具有疗效确切、副作用小的特点，但作用机制尚不明确，既往研究发现一些中药及活性成分可以通过诱导NSCLC细胞铁死亡进而抑制肿瘤的生长、增殖、转移、上皮间充质转化，并逆转耐药性<sup>[<xref rid="b7" ref-type="bibr">7</xref>]</sup>。因此，本文综述了铁死亡在NSCLC中的作用及中药干预作用的研究进展，旨在为铁死亡通路研究及中药靶向铁死亡防治NSCLC提供理论基础。</p><table-wrap id="T1" position="float"><?disp-level 1?><label>表1</label><caption><p id="p00025">细胞程序性死亡方式的区别</p></caption><alt-text>Tab 1</alt-text><table frame="hsides" rules="groups"><thead><tr><th valign="top" align="justify" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Type of PCD</th><th valign="top" align="justify" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Morphological characteristics of cells</th><th valign="top" align="justify" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">Indicators of detection</th></tr></thead><tbody><tr><td valign="top" align="justify" style="border-top:1px solid #000;" rowspan="1" colspan="1">Apoptosis</td><td valign="top" align="justify" style="border-top:1px solid #000;" rowspan="1" colspan="1">The cytoplasm was dehydrated and concentrated, the cell membrane was vacuolated, the cell volume was reduced and pyknotic, the endoplasmic reticulum was dilated and vesicular and fused with the cell membrane, the nucleolus was cleaved, and apoptotic bodies were formed</td><td valign="top" align="justify" style="border-top:1px solid #000;" rowspan="1" colspan="1">The levels of MMP, PS and apoptosis-related proteins such as Caspase-3, PARP, etc.</td></tr><tr><td valign="top" align="justify" rowspan="1" colspan="1">Necroptosis</td><td valign="top" align="justify" rowspan="1" colspan="1">Cell size increases, organelles swell, membranes perforate, and finally cells disintegrate</td><td valign="top" align="justify" rowspan="1" colspan="1">The levels of necroptosis-related proteins such as RIPK3, RIPK1, and MLKL, etc.</td></tr><tr><td valign="top" align="justify" rowspan="1" colspan="1">Autophagy</td><td valign="top" align="justify" rowspan="1" colspan="1">The Golgi apparatus, endoplasmic reticulum and other organelles were swollen, the cytoplasm was amorphous, the nucleus was fragmented and pyknotic, and a large number of phagocytic vacuoles may occur</td><td valign="top" align="justify" rowspan="1" colspan="1">The number of autophagosomes and the levels of autophagy related proteins such as ATG5, ATG7, BeclinI, LC3, P62, etc.</td></tr><tr><td valign="top" align="justify" rowspan="1" colspan="1">Pyroptosis</td><td valign="top" align="justify" rowspan="1" colspan="1">The cell swells, and before the cell ruptures, a bulge forms on the cell, after which pores form in the cell membrane, causing the cell membrane to lose its integrity, releasing contents, causing inflammation, nuclear pyknosis, and DNA fragmentation</td><td valign="top" align="justify" rowspan="1" colspan="1">The levels of LDH, IL-1β, IL-18 and pyroptosis-related proteins Caspase-1, Gasdermin D, Caspase-4, etc.</td></tr><tr><td valign="top" align="justify" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Ferroptosis</td><td valign="top" align="justify" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Mitochondrial cristae decreased (disappeared), mitochondrial outer membrane rupture and shrinkage, the color of mitochondria was dark</td><td valign="top" align="justify" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">The levels of Intracellular Fe<sup>2+</sup>, ROS, GSH, GPX4，lipid peroxides MDA and LPO and ferroptosis-related proteins such as TfR1, SLC7A11, GPX4, ACSL4, LPCAT3, FTH1, etc.</td></tr></tbody></table><table-wrap-foot><fn id="nt1"><p id="p00035">MMP: mitochondrial membrane potential; PS: phosphatidylserine; PARP: poly ADP-ribose polymerase; RIPK3: receptor-interacting serine-threonine kinase 3; RIPK1: receptor interacting serine/threonine kinase 1; MLKL: mixed lineage kinase domain-like; ATG5/7: autophagy protein 5/7; LDH: lactate dehydrogenase; GSH: glutathione; GPX4: glutathione peroxidase 4; LPO: lipid peroxidation; ACSL4: acyl-CoA synthetase long-chain family member 4; LPCAT3: lysophosphatidylcholine acyltransferase 3; TfR1: transferrin receptor 1; SLC7A11: solute carrier family 7 member 11; FTH1: ferritin heavy chain 1; PCD: programmed cell death; IL: interleukin.</p></fn></table-wrap-foot></table-wrap><sec id="s1" disp-level="1"><title>1 铁死亡与NSCLC</title><sec id="s1.1" disp-level="2"><title>1.1 铁代谢紊乱</title><p id="p00040">铁是人体所需的基本微量元素之一，细胞外游离的Fe<sup>3+</sup>与转铁蛋白（transferrin, TF）结合形成铁蛋白复合物，该复合物与细胞膜上的转铁蛋白受体1（transferrin receptor 1, TfR1）结合后进入细胞<sup>[<xref rid="b8" ref-type="bibr">8</xref>]</sup>。进入细胞后，Fe<sup>3+</sup>被转送至内涵体（endosomes）中，在STEAP3（six transmembrane epithelial antigen of prostate 3）作用下还原成Fe<sup>2+</sup>，随后被DMT1（divalent metal transporter 1）释放到细胞质中形成不稳定铁池，过量的Fe<sup>2+</sup>可以储存在铁蛋白（ferritin）或被铁转运蛋白（ferroportin, FPN/SLC40A1）转移到细胞外，确保细胞内铁代谢平衡<sup>[<xref rid="b9" ref-type="bibr">9</xref>]</sup>。当NCOA4（nuclear receptor coactivator 4）诱导的铁蛋白降解增加或FPN受到抑制时会导致Fe<sup>2+</sup>过载<sup>[<xref rid="b10" ref-type="bibr">10</xref>,<xref rid="b11" ref-type="bibr">11</xref>]</sup>，Fe<sup>2+</sup>可以与过氧化氢（H<sub>2</sub>O<sub>2</sub>）发生芬顿（Fenton）反应（Fe<sup>2+</sup>+H<sub>2</sub>O<sub>2</sub>→Fe<sup>3+</sup>+•OH+OH<sup>−</sup>）产生大量ROS，进而诱导膜质过氧化，最终导致细胞铁死亡的发生<sup>[<xref rid="b12" ref-type="bibr">12</xref>]</sup>。而铁螯合剂（deferoxamine, DFO）和铁死亡抑制剂（ferrostatin-1, Fer-1）可以与细胞内铁离子结合抑制铁死亡<sup>[<xref rid="b13" ref-type="bibr">13</xref>]</sup>。</p><p id="p00045">铁代谢紊乱在肿瘤细胞中普遍存在，在NSCLC中铁代谢紊乱主要表现为铁输入增加和输出抑制，从而造成铁蓄积，这导致细胞对铁死亡更敏感。通过构建含铁离子的纳米粒，递送Fe<sup>2+</sup>至NSCLC细胞中，激活Fenton反应诱导铁死亡可以抑制细胞的生长、增殖、迁移并逆转其化疗耐药<sup>[<xref rid="b14" ref-type="bibr">14</xref>,<xref rid="b15" ref-type="bibr">15</xref>]</sup>。细胞色素P450还原酶（cytochrome P450 reductase, POR）是一种微粒体（microsomes）内的膜结合蛋白，POR通过上调多不饱和脂肪酸的脂质过氧化促进铁死亡发生，铁离子可以作为电子接收剂或者氧化剂参与反应<sup>[<xref rid="b16" ref-type="bibr">16</xref>]</sup>，POR与细胞色素B5还原酶（cytochrome B5 reductase, CYB5R1）还可以将电子从NAD（P）H转移到氧分子中生成H<sub>2</sub>O<sub>2</sub>，过氧化氢通过Fenton反应产生活性羟自由基，进而破坏细胞膜的完整性<sup>[<xref rid="b17" ref-type="bibr">17</xref>]</sup>。Yap（Yes-associated protein）是Hippo肿瘤抑制通路中的关键转录因子，对NSCLC的生长、转移和耐药具有显著的促进作用<sup>[<xref rid="b18" ref-type="bibr">18</xref>,<xref rid="b19" ref-type="bibr">19</xref>]</sup>。研究<sup>[<xref rid="b20" ref-type="bibr">20</xref>]</sup>表明，通过抑制Yap可以减少铁蛋白重链（ferritin heavy chain, FTH）和铁蛋白轻链（ferritin light chain, FTL）的合成来控制细胞内的铁水平，进而增强NSCLC铁死亡的敏感性。miR-302a-3p通过与FPN的3'-UTR直接结合，诱导脂质过氧化、铁过载和铁死亡，从而抑制NSCLC细胞的生长和集落形成，并增强其对顺铂和紫杉醇化疗敏感性<sup>[<xref rid="b21" ref-type="bibr">21</xref>]</sup>。长非编码RNA（long non-coding RNA, lncRNA）H19作为竞争性内源性RNA与miR-19b-3p结合，从而增强FTH的转录活性，促进铁死亡<sup>[<xref rid="b22" ref-type="bibr">22</xref>]</sup>。海洋生物活性碱（fascaplysin）通过增加Fe<sup>2+</sup>和ROS水平诱导铁死亡，并提高抗程序性死亡受体（programmed cell death 1, PD-1）免疫治疗的疗效<sup>[<xref rid="b23" ref-type="bibr">23</xref>]</sup>。</p></sec><sec id="s1.2" disp-level="2"><title>1.2 脂质过氧化</title><p id="p00050">细胞膜主要是由脂类、蛋白质、糖组成，其完整性对维持细胞正常功能至关重要<sup>[<xref rid="b24" ref-type="bibr">24</xref>]</sup>。当细胞中ROS过多时会与膜中磷脂的多不饱和脂肪酸（polyunsaturated fatty acid, PUFA）侧链结合，发生脂质过氧化反应生成大量脂质过氧化产物（lipid peroxide, LPO），破坏细胞膜的流动性和通透性，导致细胞死亡。酰基辅酶A长链合成酶4（acyl-CoA synthetase long-chain family member 4, ACSL4）可以较好地连接长链PUFA，包括花生四烯酸（arachidonic acid, AA）和肾上腺素酰基（adrenoyl, AdA），生成酰基CoA衍生物（CoA derivatives）<sup>[<xref rid="b25" ref-type="bibr">25</xref>]</sup>，然后溶血磷脂酰胆碱酰基转移酶3（lysophosphatidylcholine acyltransferase 3, LPCAT3）将这些衍生物酯化成磷脂酰乙醇胺（arachidonic acid phosphatidylethanolamine, AdA-PE; adrenic acid phosphatidylethanolamine, AA-PE）<sup>[<xref rid="b26" ref-type="bibr">26</xref>]</sup>，最后，AA-PE和AdA-PE被脂氧合酶15（arachidonic acid lipoxygenase 15, ALOX15）氧化生成LPO。ALOX15是一种含铁酶，磷酸化酶激酶G2（phosphorylating enzyme kinase G2, PHKG2）通过调节细胞内的铁离子浓度，影响ALOX15对PUFA的氧化反应<sup>[<xref rid="b27" ref-type="bibr">27</xref>]</sup>。</p><p id="p00055">LncRNA NEAT1可以靶向抑制ACSL4的蛋白表达，从而降低NSCLC细胞对铁死亡的敏感性<sup>[<xref rid="b28" ref-type="bibr">28</xref>]</sup>。LncRNA ASMTL‐AS1通过招募U2AF2（U2 small nuclear RNA auxiliary factor 2, U2AF2）来稳定SAT1（spermine N1‐acetyltransferase 1, SAT1），SAT1正向调节ALOX15表达诱导NSCLC铁死亡发挥抗癌作用<sup>[<xref rid="b29" ref-type="bibr">29</xref>]</sup>。</p></sec><sec id="s1.3" disp-level="2"><title>1.3 抗氧化系统失调</title><sec id="s1.3.1" disp-level="3"><title>1.3.1 胱氨酸/谷氨酸反向转运体（cystine/glutamate antiporter, System Xc<sup>-</sup>）途径</title><p id="p00060">为了抵御膜质过氧化的损害，细胞内存在一些重要的抗氧化系统，首先是经典的谷胱甘肽过氧化物酶4（glutathione peroxidase 4, GPX4）依赖通路，该通路主要通过System Xc<sup>-</sup>发挥作用，该系统位于细胞膜上，由轻链SLC7A11（xCT）和重链SLC3A2（4F2hc）组成，按照1:1的比例输入胱氨酸（cystine）和输出谷氨酸（glutamate）<sup>[<xref rid="b30" ref-type="bibr">30</xref>]</sup>，胱氨酸进入细胞后进一步生成为谷胱甘肽（glutathione, GSH），而GPX4以GSH为底物将LPO还原为对细胞膜无害的脂醇，抑制铁死亡发生<sup>[<xref rid="b31" ref-type="bibr">31</xref>]</sup>。当System Xc<sup>-</sup>受到抑制时，GSH转化不足，导致细胞抗氧化能力减弱诱发铁死亡<sup>[<xref rid="b32" ref-type="bibr">32</xref>]</sup>。</p><p id="p00065">SRY-box转录因子2（SRY-box 2, SOX2）可以与SLC7A11启动子结合促进其表达，增加细胞内的胱氨酸，SOX2高表达使NSCLC细胞对铁死亡抵抗力更强<sup>[<xref rid="b33" ref-type="bibr">33</xref>]</sup>。RNA结合基序单链相互作用蛋白1（RNA binding motif single stranded interacting protein 1, RBMS1）通过与翻译起始因子EIF3D（eukaryotic translation initiation factor 3 subunit D）相互作用，桥接SLC7A11的3'-UTR和5'-UTR，促进SLC7A11的翻译抑制铁死亡发生，且RBMS1高表达与NSCLC患者生存率降低有关<sup>[<xref rid="b34" ref-type="bibr">34</xref>]</sup>。甲基转移酶样蛋白3（methyltransferase-like 3, METTL3）介导SLC7A11 mRNA的m6A（N6-methyladenosine）修饰，并通过招募m6A阅读器YTHDF1（YTH domain family 1）稳定SLC7A11 mRNA并促进其翻译，从而促进NSCLC细胞增殖并抑制细胞铁死亡<sup>[<xref rid="b35" ref-type="bibr">35</xref>]</sup>。含有TCP1亚基3的伴侣蛋白（chaperone protein containing TCP1 subunit 3, CCT3）促进细胞周期进程并抑制SLC7A11介导的细胞铁死亡，且CCT3高表达与肺腺癌患者的不良预后有关<sup>[<xref rid="b36" ref-type="bibr">36</xref>]</sup>。在肺腺癌中，甲基腺苷RNA结合蛋白C2（YTH N6-methyladenosine RNA binding protein C2, YTHDC2）不仅可以抑制SLC7A11，而且以m6A依赖的方式破坏同源框蛋白A13（homo box A13, HOXA13）mRNA的稳定性，HOXA13作为转录刺激因子还可以下调SLC3A2的表达进而促进铁死亡发生<sup>[<xref rid="b37" ref-type="bibr">37</xref>]</sup>。miR-27a-3p可以与SLC7A11的3'-UTR直接结合，抑制SLC7A11的表达<sup>[<xref rid="b38" ref-type="bibr">38</xref>]</sup>。环状RNA FOXP1（CircFOXP1）在NSCLC患者血清中表达量显著增高<sup>[<xref rid="b39" ref-type="bibr">39</xref>]</sup>，研究<sup>[<xref rid="b40" ref-type="bibr">40</xref>]</sup>发现Circ FOXP1可以与miR-520a-5p结合，从而上调SLC7A11的表达，抑制铁死亡并促进肿瘤细胞增长。环状RNA P4HB（CircP4HB）通过调节miR-1184，进而上调SLC7A11的表达来抑制铁死亡<sup>[<xref rid="b41" ref-type="bibr">41</xref>]</sup>。铁死亡诱导剂PRLX93936能够抑制System Xc<sup>-</sup>表达，降低GSH和GPX4的活性，增强顺铂治疗NSCLC的效果<sup>[<xref rid="b42" ref-type="bibr">42</xref>]</sup>。p53是一种重要抑癌基因，其可以促进泛素特异性蛋白酶7（ubiquitin-specific protease 7, USP7）的核转位，从而抑制SLC7A11的表达，但50%-70%的NSCLC患者伴随p53基因突变，无法发挥正常功能<sup>[<xref rid="b43" ref-type="bibr">43</xref>]</sup>；P53还可以通过增强SAT1和谷氨酰胺酶2（glutaminase 2, GLS2）的表达，抑制胱氨酸的摄取，从而增强了NSCLC细胞对铁死亡的敏感性<sup>[<xref rid="b44" ref-type="bibr">44</xref>]</sup>。左旋丁哌卡因、Erastin和含有P53激活肽纳米粒子都可以在体内外均可激活P53信号通路，从而抑制NSCLC的发生发展<sup>[<xref rid="b45" ref-type="bibr">45</xref>,<xref rid="b46" ref-type="bibr">⇓</xref>-<xref rid="b47" ref-type="bibr">47</xref>]</sup>。金霉素和奥拉帕尼联用时通过ROS介导的细胞铁死亡途径来杀死p53基因突变的NSCLC细胞，效果优于单用奥拉帕尼<sup>[<xref rid="b48" ref-type="bibr">48</xref>]</sup>。LncRNA P53RRA可以与G3BP1（Ras GTPase-activating protein-binding protein 1）结合激活P53通路，并增加NSCLC细胞内Fe<sup>2+</sup>和ROS浓度诱导铁死亡<sup>[<xref rid="b49" ref-type="bibr">49</xref>]</sup>。</p></sec><sec id="s1.3.2" disp-level="3"><title>1.3.2 谷胱甘肽过氧化物酶4（glutathione peroxidase 4, GPX4）通路</title><p id="p00070">GPX4是细胞中的一种抗氧化酶，在NSCLC生长、增殖、上皮间充质转化、耐药中发挥重要作用，GPX4高表达与NSCLC患者较差的临床预后相关<sup>[<xref rid="b50" ref-type="bibr">50</xref>,<xref rid="b51" ref-type="bibr">51</xref>]</sup>。GPX4能够将细胞内的脂质过氧化物还原成无害的脂醇，抑制肿瘤细胞的铁死亡<sup>[<xref rid="b52" ref-type="bibr">52</xref>]</sup>。Notch家族成员Notch3（Notch homolog 3）的敲低可以增加细胞内ROS水平，并伴随GPX4和过氧化物还原蛋白6（peroxiredoxin 6, PRDX6）的表达水平下调，诱导脂质过氧化反应触发NSCLC细胞铁死亡<sup>[<xref rid="b53" ref-type="bibr">53</xref>]</sup>。肺腺癌细胞株SW900中的STYK1（serine-threonine tyrosine kinase 1）基因的过表达上调了GPX4的表达，促进细胞增殖并抑制铁死亡<sup>[<xref rid="b54" ref-type="bibr">54</xref>]</sup>。环状RNA DTL（Circ-DTL）通过上调Circ-DTL/miR-1287-5p/GPX4轴抑制铁死亡和凋亡发挥致癌作用，沉默Circ-DTL可促进NSCLC细胞对化疗药物的敏感性并抑制体内肿瘤的生长<sup>[<xref rid="b55" ref-type="bibr">55</xref>]</sup>。异丙酚能上调miR-744-5p和miR-615-3p以抑制GPX4的转录，通过增强NSCLC铁死亡敏感性并逆转顺铂耐药性<sup>[<xref rid="b56" ref-type="bibr">56</xref>]</sup>。miR-324-3p可以靶向GPX4基因并抑制其表达，通过上调miR-324-3p的表达，从而诱导NSCLC细胞发生铁死亡，并逆转NSCLC细胞顺铂耐药<sup>[<xref rid="b57" ref-type="bibr">57</xref>]</sup>。他汀类药物通过降低细胞内GPX4的含量诱导细胞铁死亡，并在转录水平抑制程序性死亡配体1（programmed cell death-ligand 1, PD-L1）表达增强免疫治疗的疗效<sup>[<xref rid="b58" ref-type="bibr">58</xref>]</sup>。</p></sec><sec id="s1.3.3" disp-level="3"><title>1.3.3 其他调控机制</title><p id="p00075">铁死亡抑制蛋白1（ferroptosis suppressiprotein 1, FSP1）可以将细胞质膜上的辅酶Q10（co-enzyme Q10, CoQ10）还原为泛醌醇（coenzyme QH2, CoQH2），醌氧化还原酶1[NAD(P)H dehydrogenase quinone 1, NQO1]在此过程中发挥关键作用，并将维生素K还原为氢醌，CoQH2和氢醌发挥捕获自由基的作用，使细胞免受铁死亡损伤，这一通路也被称为非经典的GPX4通路<sup>[<xref rid="b59" ref-type="bibr">59</xref>]</sup>。miR-4443通过靶向METLL3并以m6A方式增加FSP1的表达从而抑制铁死亡发生，增强NSCLC细胞顺铂耐药性。线粒体二氢乳清酸脱氢酶（dihydroorotate dehydrogenase, DHODH）能将CoQ10还原为CoQH2，抑制线粒体膜的脂质过氧化和铁死亡<sup>[<xref rid="b60" ref-type="bibr">60</xref>]</sup>。NQO1在NSCLC中高表达，通过降低NQO1的含量，可以显著抑制NSCLC细胞的生长和扩散并可以降低顺铂的耐药性<sup>[<xref rid="b61" ref-type="bibr">61</xref>]</sup>。四氢生物喋呤（tetrahydrobiopterin, BH4）是GPX4受到抑制后的重要抗氧化途径，BH4能够捕获自由基避免脂质过氧化，进而抑制铁死亡发生<sup>[<xref rid="b62" ref-type="bibr">62</xref>]</sup>。有研究<sup>[<xref rid="b63" ref-type="bibr">63</xref>,<xref rid="b64" ref-type="bibr">64</xref>]</sup>表明，铁死亡的发生依赖于自噬，自噬调节因子可以影响铁死亡的发生，特别是NCOA4介导的铁蛋白吞噬、自噬调节蛋白Beclin 1与SLC7A11直接结合都通过自噬调节铁死亡的发生。</p><p id="p00080">核因子E2相关因子2（nuclear factor erythroid 2-related factor 2, Nrf2）是一种重要的抗氧化转录因子，其高表达也是NSCLC耐药的主要原因之一<sup>[<xref rid="b65" ref-type="bibr">65</xref>]</sup>。正常情况下，Nrf2与KEAP1（Kelch-like ECH-associated protein 1）结合，KEAP1作为泛素连接酶的接头亚基，指导Nrf2在蛋白酶体降解。在氧化应激条件下，Nrf2会释放并转位到细胞核中，激活血红素加氧酶-1（heme oxygenase-1, HO-1），HO-1通过降解血红素生成一系列的具有抗氧化、抗炎作用的产物，对抗超氧化物和自由基对细胞的损害<sup>[<xref rid="b66" ref-type="bibr">66</xref>]</sup>。miR-6077通过调控KEAP1-Nrf2-SLC7A11/NQO1轴抑制铁死亡，保护NSCLC细胞免受顺铂联合培美曲塞诱导的细胞死亡<sup>[<xref rid="b67" ref-type="bibr">67</xref>]</sup>。System Xc<sup>-</sup>的活性和表达水平也受到Nrf2的调控，Nrf2的激活可以进一步增加System Xc<sup>-</sup>的表达，同时Nrf2是谷氨酸半胱氨酸连接酶（glutamate-cysteine ligase, GCLC）、谷胱甘肽合成酶（glutathione synthetase, GSS）等的关键转录因子，通过促进GSH的合成抑制铁死亡的发生<sup>[<xref rid="b68" ref-type="bibr">68</xref>]</sup>。异位表达lncRNA MT1DP可以稳定miR-365a-3p并下调Nrf2，使NSCLC细胞GSH水平下降增强铁死亡敏感性<sup>[<xref rid="b69" ref-type="bibr">69</xref>]</sup>。当Nrf2被E3泛素连接酶（E3 ubiquitin ligase, MIB1）降解时，NSCLC细胞的抗氧化能力减弱，肺癌细胞对铁死亡诱导剂的敏感性增强<sup>[<xref rid="b70" ref-type="bibr">70</xref>]</sup>。泛素特异性加工蛋白酶11（ubiquitin-specific-processing protease 11, USP11）在NSCLC患者中高表达，通过去泛素化保持Nrf2稳定性，USP11的耗竭有助于促进铁死亡并抑制细胞增殖<sup>[<xref rid="b71" ref-type="bibr">71</xref>]</sup>。索拉非尼与Erastin联用时通过抑制Nrf2/System Xc<sup>-</sup>通路，降低NSCLC细胞内抗氧化防御系统的活性并减少半胱氨酸的摄取，从而导致NSCLC细胞内过氧化脂质的积累和铁死亡的发生<sup>[<xref rid="b72" ref-type="bibr">72</xref>]</sup>。综上，抑制Nrf2或促进其降解可能有利于NSCLC铁死亡发生。</p></sec></sec></sec><sec id="s2" disp-level="1"><title>2 中药调控NSCLC细胞铁死亡的研究进展</title><p id="p00085">中医认为，肺癌是机体正气内虚，邪毒侵肺，气滞血瘀，痰浊内聚，于是邪气瘀毒交结，日久形成肺部积块，属于“肺积”“息贲”等的范畴，扶正祛邪、标本兼治是中医治疗肺癌的基本原则。肺癌早期以邪实为主，邪气盛则实，治当行气活血、清热解毒、化痰软坚等，所谓邪去则正安；晚期以正虚为主，精气夺则虚，治当益气养阴、补气生血、补阴温阳等，即正气存内，邪不可干<sup>[<xref rid="b73" ref-type="bibr">73</xref>]</sup>。目前NSCLC治疗过程中出现的药物耐药性和毒副作用的缺点，严重影响了疗效和患者的生存质量，而中药在抗NSCLC方面展现出独特优势：耐药性低、毒副作用小、综合调节机制等，但是其物质基础和作用机制尚不完全明确<sup>[<xref rid="b74" ref-type="bibr">74</xref>]</sup>。随着现代生物学技术的不断发展，探究中药抗NSCLC的分子调控机制成为研究热点，而铁死亡理论的提出部分解释了中药抗NSCLC的机制，并为中药的开发和研究提供了重要的指导。本文汇总了可以诱导NSCLC细胞发生铁死亡的中药，发现其主要作用靶点是调节铁代谢及脂质过氧化相关信号通路，进而抑制肿瘤的生长、增殖、转移并逆转耐药（<xref rid="T2" ref-type="table">表2</xref><sup>[<xref rid="b75" ref-type="bibr">75</xref>,<xref rid="b76" ref-type="bibr">⇓</xref>,<xref rid="b77" ref-type="bibr">⇓</xref>,<xref rid="b78" ref-type="bibr">⇓</xref>,<xref rid="b79" ref-type="bibr">⇓</xref>,<xref rid="b80" ref-type="bibr">⇓</xref>,<xref rid="b81" ref-type="bibr">⇓</xref>,<xref rid="b82" ref-type="bibr">⇓</xref>,<xref rid="b83" ref-type="bibr">⇓</xref>,<xref rid="b84" ref-type="bibr">⇓</xref>,<xref rid="b85" ref-type="bibr">⇓</xref>,<xref rid="b86" ref-type="bibr">⇓</xref>,<xref rid="b87" ref-type="bibr">⇓</xref>,<xref rid="b88" ref-type="bibr">⇓</xref>,<xref rid="b89" ref-type="bibr">⇓</xref>,<xref rid="b90" ref-type="bibr">⇓</xref>,<xref rid="b91" ref-type="bibr">⇓</xref>,<xref rid="b92" ref-type="bibr">⇓</xref>,<xref rid="b93" ref-type="bibr">⇓</xref>,<xref rid="b94" ref-type="bibr">⇓</xref>,<xref rid="b95" ref-type="bibr">⇓</xref>,<xref rid="b96" ref-type="bibr">⇓</xref>,<xref rid="b97" ref-type="bibr">⇓</xref>,<xref rid="b98" ref-type="bibr">⇓</xref>,<xref rid="b99" ref-type="bibr">⇓</xref>,<xref rid="b100" ref-type="bibr">⇓</xref>,<xref rid="b101" ref-type="bibr">⇓</xref>,<xref rid="b102" ref-type="bibr">⇓</xref>,<xref rid="b103" ref-type="bibr">⇓</xref>,<xref rid="b104" ref-type="bibr">⇓</xref>-<xref rid="b105" ref-type="bibr">105</xref>]</sup>、3<sup>[<xref rid="b106" ref-type="bibr">106</xref>,<xref rid="b107" ref-type="bibr">⇓</xref>,<xref rid="b108" ref-type="bibr">⇓</xref>,<xref rid="b109" ref-type="bibr">⇓</xref>,<xref rid="b110" ref-type="bibr">⇓</xref>-<xref rid="b111" ref-type="bibr">111</xref>]</sup>），且这些中药多具有清热解毒、行气活血、化痰软坚等功效。</p><table-wrap id="T2" position="float"><?disp-level 2?><label>表2</label><caption><p id="p00090">中药活性成分调控NSCLC铁死亡的作用机制</p></caption><alt-text>Tab 2</alt-text><table frame="hsides" rules="groups"><thead><tr><th valign="top" align="left" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Classification</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Active ingredient</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Primary origin</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" colspan="2" rowspan="1">Model</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">IC<sub>50</sub>
+</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Mechanism</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Ref.</th></tr><tr><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">In vitro</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">In vivo</th></tr></thead><tbody><tr><td valign="top" align="left" style="border-top:1px solid #000;" rowspan="6" colspan="1">Terpenoids</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Artesunate, Dihydroartemisinin</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Artemisia annua</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">H1299<break/>A549<break/>LTEP-a-2<break/>NCI-H23<break/>NCI-H358</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Inhibiting system Xc<sup>-</sup>, increasing mRNA levels of TFRC</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b75" ref-type="bibr">75</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Dihydroartemisinin</td><td valign="top" align="center" rowspan="1" colspan="1">Artemisia annua</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>A549-GR<break/>H1975<break/>HCC827</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b76" ref-type="bibr">76</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Andrographolide</td><td valign="top" align="center" rowspan="1" colspan="1">Andrographis paniculata</td><td valign="top" align="center" rowspan="1" colspan="1">H460<break/>H165</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice</td><td valign="top" align="center" rowspan="1" colspan="1">33.16<break/>32.45<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing intracellular Fe<sup>2+ </sup>and lipid ROS, reducing GSH content, inhibiting GPX4 and SLC7A11 expression</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b77" ref-type="bibr">77</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Celastrol</td><td valign="top" align="center" rowspan="1" colspan="1">Tripterygium wilfordii</td><td valign="top" align="center" rowspan="1" colspan="1">HCC827<break/>A549<break/>H1299</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS generation, disrupting MMP</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b78" ref-type="bibr">78</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Manoalide</td><td valign="top" align="center" rowspan="1" colspan="1">Sponge</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H157<break/>HCC827<break/>PC9</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice<break/>BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Inhibiting Nrf2-SLC7A11 axis, activating FTH1 pathway by mitochondrial Ca<sup>2+ </sup>overloading</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b79" ref-type="bibr">79</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="2" colspan="1">Oridonin</td><td valign="top" align="center" rowspan="2" colspan="1">Rabdosia rubescens</td><td valign="top" align="center" rowspan="2" colspan="1">A549<break/>A549/DDP</td><td valign="top" align="center" rowspan="2" colspan="1">-</td><td valign="top" align="center" rowspan="2" colspan="1">-</td><td valign="top" align="center" rowspan="2" colspan="1">Inducing LPO and Fe<sup>2+ </sup>overload, inhibiting the expression of system Xc<sup>-</sup>, GPX4, FTH1, Nrf2</td><td valign="top" align="center" rowspan="2" colspan="1">
+<sup>[<xref rid="b80" ref-type="bibr">80</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">β-elemene</td><td valign="top" align="center" rowspan="1" colspan="1">Radix curcumae</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>NCI-H460<break/>SPC-A-1</td><td valign="top" align="center" rowspan="1" colspan="1">NOD/SCID<break/>Mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Activating TFEB gene, upregulating transcription levels of downstream genes GLA, MCOLN1, and SLC26A11, increasing ubiquitination and degradation of GPX4</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b81" ref-type="bibr">81</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">α-hederin</td><td valign="top" align="center" rowspan="1" colspan="1">Ivy vine</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>PC9</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">14.94<break/>13.93<break/>（μg/mL）</td><td valign="top" align="center" rowspan="1" colspan="1">Disruption of GSS/GSH/GPX2 axis mediated GSH redox system</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b82" ref-type="bibr">82</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Dihydroisotanshinone I</td><td valign="top" align="center" rowspan="1" colspan="1">Salvia miltiorrhiza</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H460</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Blocking the protein expression of GPX4</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b83" ref-type="bibr">83</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Betulin</td><td valign="top" align="center" rowspan="1" colspan="1">Betula platyphylla</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H460</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing the expression of ROS, Fe<sup>2+</sup>, MDA, and inhibiting the expression of GSH</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b84" ref-type="bibr">84</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Sclareol</td><td valign="top" align="center" rowspan="1" colspan="1">Salvia sclarea</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" rowspan="1" colspan="1"/><td valign="top" align="center" rowspan="1" colspan="1">Downregulation of FPN and GPX4 expression</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b85" ref-type="bibr">85</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="3" colspan="1">Saponins</td><td valign="top" align="center" rowspan="1" colspan="1">Timosaponin AIII</td><td valign="top" align="center" rowspan="1" colspan="1">Anemarrhenae rhizoma</td><td valign="top" align="center" rowspan="1" colspan="1">H1299<break/>A549</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice<break/>BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">3.04<break/>2.57<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS, Fe<sup>2+</sup>, MDA, and ubiquitination and degradation of GPX4, inhibiting GSH, and targeting the degradation of GPX4 by binding to HSP90</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b86" ref-type="bibr">86</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Ophiopogonin-B</td><td valign="top" align="center" rowspan="1" colspan="1">Ophiopogon japonicus</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Activating AURKA, PHKG2, inhibiting SLC7A5, increasing intracellular Fe<sup>2+</sup>, MDA, reduce GSH, disrupting MMP</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b87" ref-type="bibr">87</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Brusatol</td><td valign="top" align="center" rowspan="1" colspan="1">Brucea javanica</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>NCI-H838<break/>NCI-H1703<break/>BEAS-2B</td><td valign="top" align="center" rowspan="1" colspan="1">NOG mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Activating the Nrf2/FOCAD-FAK signaling pathway, depriving cysteine</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b88" ref-type="bibr">88</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="7" colspan="1">Alkaloid</td><td valign="top" align="center" rowspan="1" colspan="1">Solasonine</td><td valign="top" align="center" rowspan="1" colspan="1">Solanum nigrum</td><td valign="top" align="center" rowspan="1" colspan="1">Calu-1<break/>A549</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing Fe<sup>2+ </sup>and ROS levels, inhibiting GSH, GPX4, SLC7A11 expression, inducing mitochondrial oxidative stress and lipid peroxidation</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b89" ref-type="bibr">89</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Sinapine</td><td valign="top" align="center" rowspan="1" colspan="1">Sinapis alba</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>SK<break/>H661</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing intracellular Fe<sup>2+</sup>, lipid peroxidation, and ROS, inhibiting P53/SLC7A11 pathway</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b90" ref-type="bibr">90</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Sanguinarine</td><td valign="top" align="center" rowspan="1" colspan="1">Macleaya cordata</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H3122</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing Fe<sup>2+ </sup>, ROS, MDA content, reducing GSH content, and endogenous GPX4 ubiquitination mediated by E3 ligase STUB1</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b91" ref-type="bibr">91</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Fascaplysin</td><td valign="top" align="center" rowspan="1" colspan="1">Sponge</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice</td><td valign="top" align="center" rowspan="1" colspan="1">2.923<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS and Fe<sup>2+ </sup>levels, downregulate ferroptosis-related proteins and endoplasmic reticulum stress</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b92" ref-type="bibr">92</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Camptothecin</td><td valign="top" align="center" rowspan="1" colspan="1">Camptotheca acuminata</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>LLC</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">268.2<break/>1278<break/>(nmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing intracellular ROS and LPO, reducing GSH and GPX4</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b93" ref-type="bibr">93</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Capsaicin</td><td valign="top" align="center" rowspan="1" colspan="1">Chili pepper</td><td valign="top" align="center" rowspan="1" colspan="1">A549,<break/>NCI-H23</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Inhibiting SLC7A11/GPX4 signaling pathway</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b94" ref-type="bibr">94</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Cinobufotalin</td><td valign="top" align="center" rowspan="1" colspan="1">Venenum bufonis</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>SK-MES-1</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Activating lncRNA LINC00597/hsa miR-367-3p/TFRC pathway</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b95" ref-type="bibr">95</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="6" colspan="1">Flavone</td><td valign="top" align="center" rowspan="1" colspan="1">6-Gingerol</td><td valign="top" align="center" rowspan="1" colspan="1">Ginger</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Downregulating USP14 expression, increasing ROS and Fe<sup>2+</sup> concentrations, increasing the number of autophagosomes</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b96" ref-type="bibr">96</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Curcumin</td><td valign="top" align="center" rowspan="1" colspan="1">Curcuma longa</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H1299</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing Fe<sup>2+</sup>, ACSL4 protein levels, consuming GSH, inhibiting SLC7A11 and GPX4 expression</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b97" ref-type="bibr">97</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Curcumin analog HO-3867</td><td valign="top" align="center" rowspan="1" colspan="1">Curcuma longa</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H460<break/>PC9<break/>H1975<break/>H1299<break/>A549 p53 KO<break/>H460 p53 KO</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">37.6<break/>23.7<break/>42.1<break/>28.7<break/>&gt;200<break/>&gt;200<break/>&gt;200<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Activating P53-DMT1 axis, inhibiting GPX4</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b98" ref-type="bibr">98</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Ginkgetin</td><td valign="top" align="center" rowspan="1" colspan="1">Gingko biloba</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>NCIH460<break/>SPC-A-1</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Inhibiting Nrf2/HO-1 axis, SLC7A11, GPX4 expression, GSH/GSSG ratio, increasing ROS</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b99" ref-type="bibr">99</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Eriocitrin</td><td valign="top" align="center" rowspan="1" colspan="1">Citrus limon</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>H1299</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing Fe<sup>2+</sup> and ROS levels, inhibiting the expression of Nrf2, SLC7A11 and GPX4</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b100" ref-type="bibr">100</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">2-methoxy-6-acetyl-7-methyljuglone</td><td valign="top" align="center" rowspan="1" colspan="1">Polygonum cuspidatum</td><td valign="top" align="center" rowspan="1" colspan="1">A549CR<break/>H1975AR</td><td valign="top" align="center" rowspan="1" colspan="1">Zebrafish</td><td valign="top" align="center" rowspan="1" colspan="1">7.5<break/>2.5<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Activating and binding NQO1, increasing ROS, LIP and LPO</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b101" ref-type="bibr">101</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" style="border-bottom:1px solid #000;" rowspan="4" colspan="1">Others</td><td valign="top" align="center" rowspan="1" colspan="1">Erianin</td><td valign="top" align="center" rowspan="1" colspan="1">Dendrobium candidum</td><td valign="top" align="center" rowspan="1" colspan="1">H460<break/>H1299</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS accumulation, LPO, and GSH depletion through the Ca<sup>2+</sup>/CaM pathway</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b102" ref-type="bibr">102</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Bufotalin</td><td valign="top" align="center" rowspan="1" colspan="1">Toad crisp</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">4.21±0.90<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing intracellular Fe<sup>2+</sup>, inhibiting GPX4 protein expression, accelerating GPX4 degradation and ubiquitination</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b103" ref-type="bibr">103</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" rowspan="1" colspan="1">Red ginseng polysaccharide</td><td valign="top" align="center" rowspan="1" colspan="1">Red ginseng</td><td valign="top" align="center" rowspan="1" colspan="1">A549</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">376.2<break/>(μmol/L)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing LDH, inhibiting GPX4 expression</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b104" ref-type="bibr">104</xref>]</sup>
+</td></tr><tr><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Scoparone</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Artemisia scoparia</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">A549<break/>H1299<break/>PC-9</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Activating ROS/JNK/SP1/ACSL4 axis</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b105" ref-type="bibr">105</xref>]</sup>
+</td></tr></tbody></table><table-wrap-foot><fn id="nt2"><p id="p00100">IC<sub>50</sub>: half maximal inhibitory concentration; DDP: Cisplatin; TFEB: transcription factor EB; MCOLN1: mucolipin 1; SLC26A11: solute carrier family 26 member 11; GSS: glutathione synthetase; GPX2: glutathione peroxidases 2; HSP90: heat shock protein 90; AURKA: aurora kinase A; PHKG2: phosphorylating enzyme kinase G2; SLC7A5: solute carrier family 7 member 5; USP14: ubiquitin carboxyl-terminal hydrolase 14; LIP: lipase inhibitory protein; JNK: c-Jun N-terminal kinase; SP1: specifieity protein 1.</p></fn></table-wrap-foot></table-wrap><table-wrap id="T3" position="float"><?disp-level 2?><label>表3</label><caption><p id="p00105">单味中药和中药复方调控NSCLC铁死亡的作用机制</p></caption><alt-text>Tab 3</alt-text><table frame="hsides" rules="groups"><thead><tr><th valign="top" align="left" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Single-herb traditional Chinese medicine/Chinese herbal compounds</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Composition of Chinese medicine</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" colspan="2" rowspan="1">Model</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">IC<sub>50</sub>
+</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Mechanism</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="2" colspan="1">Ref.</th></tr><tr><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">In vitro</th><th valign="top" align="center" style="border-top:1px solid #000;border-bottom:1px solid #000;" rowspan="1" colspan="1">In vivo</th></tr></thead><tbody><tr><td valign="top" align="left" style="border-top:1px solid #000;" rowspan="1" colspan="1">Realgar</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Realgar</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">H23<break/>A549<break/>H460<break/>H1650</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">2.66±0.33<break/>4.66±0.76<break/>7.02±0.36<break/>7.96±1.00<break/>(μg/mL)</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">Inhibiting expression of GPX4, SCL7A11, increasing expression of ACSL4</td><td valign="top" align="center" style="border-top:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b106" ref-type="bibr">106</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="1" colspan="1">Huaier ointment</td><td valign="top" align="center" rowspan="1" colspan="1">Trametes robiniophila Murr</td><td valign="top" align="center" rowspan="1" colspan="1">H1299</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing the content of ROS</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b107" ref-type="bibr">107</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="1" colspan="1">Fuzheng Kang-Ai decoction</td><td valign="top" align="center" rowspan="1" colspan="1">Radix pseudostellariae, Atractylodes rhizoma, Astragalus，etc.</td><td valign="top" align="center" rowspan="1" colspan="1">A549 H1299<break/>PC9<break/>H1650</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Inhibiting GPX4 protein and mRNA levels, SLC7A11 and SLC3A2, reducting GSH/GSSG ratio</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b108" ref-type="bibr">108</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="1" colspan="1">Qingrehuoxue formula</td><td valign="top" align="center" rowspan="1" colspan="1">Scutellaria baicalensis, red peony paeoniae, etc.</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" rowspan="1" colspan="1">-</td><td valign="top" align="center" rowspan="1" colspan="1">Activating P53 and inhibiting GSK-3 β/Nrf2 signaling pathway, increaseing ROS, Fe<sup>2+</sup>, H<sub>2</sub>O<sub>2</sub>, and MDA levels, inhibiting GSH, GPX4, and SLC7A11 protein levels</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b109" ref-type="bibr">109</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" rowspan="1" colspan="1">Xiaoyi Sanjie formula</td><td valign="top" align="center" rowspan="1" colspan="1">Rehmannia, Toosendania, Trichosanthes, Coix seed, etc.</td><td valign="top" align="center" rowspan="1" colspan="1">A549<break/>PC-9</td><td valign="top" align="center" rowspan="1" colspan="1">C57 mice</td><td valign="top" align="center" rowspan="1" colspan="1">5.814<break/>5.115<break/>(mg/mL)</td><td valign="top" align="center" rowspan="1" colspan="1">Increasing ROS levels, inhibiting GPX4 and FTH1 protein expression</td><td valign="top" align="center" rowspan="1" colspan="1">
+<sup>[<xref rid="b110" ref-type="bibr">110</xref>]</sup>
+</td></tr><tr><td valign="top" align="left" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Sijunzi decoction</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Ginseng, Atractylodes rhizoma, Poria cocos</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">A549<break/>A549/DDP</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">BALB/c nude mice</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">-</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">Inhibiting the P62/KEAP1/Nrf2 pathway, increasing lipid peroxidation and autophagy</td><td valign="top" align="center" style="border-bottom:1px solid #000;" rowspan="1" colspan="1">
+<sup>[<xref rid="b111" ref-type="bibr">111</xref>]</sup>
+</td></tr></tbody></table><table-wrap-foot><fn id="nt3"><p id="p00115">GSK-3β: glycogen synthase kinase-3 beta; GSSG: glutathione disulfide; P62: sequestosome-1.</p></fn></table-wrap-foot></table-wrap><sec id="s2.1" disp-level="2"><title>2.1 中药活性成分</title><sec id="s2.1.1" disp-level="3"><title>2.1.1 萜类（Terpenoids）</title><p id="p00120">萜类化合物是一类广泛存在于植物中的天然有机化合物，它们由多个异戊二烯单元组成，部分萜类化合物有抗菌、抗炎、抗肿瘤作用<sup>[<xref rid="b112" ref-type="bibr">112</xref>]</sup>。青蒿琥酯与双氢青蒿素（Artesunate, Dihydroartemisinin）是青蒿素衍生物，它们可以下调System Xc<sup>-</sup>并上调转铁蛋白受体（transferrin receptor, TFRC）的mRNA水平诱导铁死亡，另外双氢青蒿素还能通过铁死亡逆转NSCLC细胞对吉非替尼耐药<sup>[<xref rid="b75" ref-type="bibr">75</xref>,<xref rid="b76" ref-type="bibr">76</xref>]</sup>。穿心莲内酯（Andrographolide）能提高细胞内Fe<sup>2+</sup>和ROS含量，抑制GPX4和SLC7A11的表达导致铁死亡，还会导致MMP去极化和线粒体ATP合成减少，并破坏线粒体功能<sup>[<xref rid="b77" ref-type="bibr">77</xref>]</sup>。雷公藤红素（Celastrol）与Erastin联用时可以增加ROS生成，破坏MMP，促进线粒体分裂导致铁死亡，并以热休克转录因子1（heat shock transcription factor 1, HSF1）依赖的方式启动ATG5/ATG7依赖的自噬，PINK1/Parkin（PTEN-induced putative kinase 1/parkin RBR E3 ubiquitin protein ligase）依赖的线粒体自噬<sup>[<xref rid="b78" ref-type="bibr">78</xref>]</sup>。马诺内酯（Manoalide）通过抑制Nrf2-SLC7A11轴和线粒体Ca<sup>2+</sup>超载诱导的FTH1通路导致铁死亡，并通过产生ROS抑制KRAS-ERK通路，进而逆转KRAS突变NSCLC细胞对奥希替尼耐药性<sup>[<xref rid="b79" ref-type="bibr">79</xref>]</sup>。冬凌草甲素（Oridonin）能诱导LPO和Fe<sup>2+</sup>过载，抑制System Xc<sup>-</sup>、GPX4和FTH1、Nrf2的表达诱导铁死亡，并上调自噬代表蛋白LC3B的表达诱导自噬，通过铁死亡和自噬逆转A549细胞顺铂耐药<sup>[<xref rid="b80" ref-type="bibr">80</xref>]</sup>。β-榄香烯（β-elemene）显著激活转录因子EB（transcription factor EB, TFEB）并上调下游基因GLA、MCOLN1、SLC26A11的转录水平，促进GPX4的泛素化和降解，诱导细胞铁死亡<sup>[<xref rid="b81" ref-type="bibr">81</xref>]</sup>。α-常春藤素（α-hederin）通过破坏GSS/GSH/GPX2轴介导的GSH氧化还原系统来诱导NSCLC的铁死亡，并增强顺铂化疗的敏感性<sup>[<xref rid="b82" ref-type="bibr">82</xref>]</sup>。二氢异丹参酮I（dihydroisotanshinone I）可以阻断GPX4的蛋白表达诱导铁死亡，在体内通过铁死亡和凋亡抑制NSCLC肿瘤的生长<sup>[<xref rid="b83" ref-type="bibr">83</xref>]</sup>。白桦皮甙（Betulin）与吉非替尼联用时通过铁死亡来逆转表皮生长因子受体（epidermal growth factor receptor, EGFR）野生型/Kirsten大鼠肉瘤病毒癌基因同源物（kirsten rat sarcoma viral oncogene, KRAS）突变NSCLC细胞吉非替尼耐药，其具体机制为增加细胞内ROS、Fe<sup>2+</sup>和MDA的含量，减少GSH表达<sup>[<xref rid="b84" ref-type="bibr">84</xref>]</sup>。香紫苏醇（Sclareol）可以抑制FPN和GPX4的表达诱导铁死亡，并能上调PARP1[poly (ADP-ribose) Polymerase 1]和pro-Caspase 3/9的表达，下调分裂和抗凋亡蛋白Bcl-2和Bcl-xL的表达促进NSCLC细胞凋亡<sup>[<xref rid="b85" ref-type="bibr">85</xref>]</sup>。</p></sec><sec id="s2.1.2" disp-level="3"><title>2.1.2 皂苷类（Saponins）</title><p id="p00125">皂苷是一类广泛存在于植物中的天然糖苷，分为三萜类和甾体类皂苷，具有多种生物活性，包括抗肿瘤、抗炎、免疫调节等作用<sup>[<xref rid="b113" ref-type="bibr">113</xref>]</sup>。知母皂苷AIII（Timosaponin AIII）通过诱导ROS的释放和Fe<sup>2+</sup>蓄积、MDA的产生和GSH减少以及GPX4泛素化和降解导致铁死亡，并可以与热休克蛋白90（heat shock protein 90, HSP90）结合形成复合物，进一步靶向降解GPX4<sup>[<xref rid="b86" ref-type="bibr">86</xref>]</sup>。麦冬皂苷B（Ophiopogonin B）通过上调AURKA（aurora kinase A）和PHKG2，下调SLC7A5（solute carrier family 7 member 5）表达，导致细胞内MDA和Fe<sup>2+</sup>升高、GSH降低和MMP紊乱诱导铁死亡<sup>[<xref rid="b87" ref-type="bibr">87</xref>]</sup>。Nrf2抑制剂鸦胆子苦醇（Brusatol）通过抑制Nrf2活性，激活FOCAD-FAK（focadhesin-focal adhesion kinase）通路导致NSCLC细胞内半胱氨酸的剥夺诱导铁死亡<sup>[<xref rid="b88" ref-type="bibr">88</xref>]</sup>。</p></sec><sec id="s2.1.3" disp-level="3"><title>2.1.3 生物碱类（Alkaloid）</title><p id="p00130">生物碱由一个或多个芳香族或脂肪族环组成，其中至少一个环含有氮原子，通常是吡啶或喹啉结构，部分生物碱具有抗肿瘤、抗菌、调节生理功能等作用<sup>[<xref rid="b114" ref-type="bibr">114</xref>]</sup>。龙葵碱（Solasonine）诱导脂质过氧化，上调Fe<sup>2+</sup>和ROS的水平，抑制GSH、GPX4、SLC7A11等的表达和诱导线粒体氧化应激导致铁死亡<sup>[<xref rid="b89" ref-type="bibr">89</xref>]</sup>。芥子碱（Sinapine）可以增加脂质过氧化和ROS，并通过抑制P53/SLC7A11通路诱导铁死亡，同时上调TF与TfR1的活性导致细胞内Fe<sup>2+</sup>含量增多<sup>[<xref rid="b90" ref-type="bibr">90</xref>]</sup>。血根碱（Sanguinarine）可以增加Fe<sup>2+</sup>浓度、ROS水平和MDA含量以及降低GSH含量，并且通过E3连接酶STUB1（STIP1 homology and U-box containing protein 1）介导的内源性GPX4的泛素化从而降低GPX4的蛋白稳定性，进而诱导铁死亡<sup>[<xref rid="b91" ref-type="bibr">91</xref>]</sup>。海洋生物活性碱（Fascaplysin）可以A549细胞内ROS和Fe<sup>2+</sup>水平，下调铁死亡相关蛋白和内质网应激诱导铁死亡，通过调节Wnt/β-catenin信号通路和逆转上皮间充质转化表型来抑制迁移，并且还能显著上调肺癌细胞中PD-L1的表达进而增强免疫治疗效果<sup>[<xref rid="b92" ref-type="bibr">92</xref>]</sup>。载有喜树碱（Camptothecin）的中药纳米粒能导致A549细胞ROS、LPO产生增多，GSH、GPX4减少引起铁死亡，通过铁死亡和凋亡途径增强光热疗法（photothermal therapy, PTT）疗效<sup>[<xref rid="b93" ref-type="bibr">93</xref>]</sup>。辣椒碱（Capsaicin）通过失活SLC7A11/GPX4信号通路诱导铁死亡，抑制NSCLC细胞增殖<sup>[<xref rid="b94" ref-type="bibr">94</xref>]</sup>。华蟾素（Cinobufotalin）通过lncRNA LINC00597/hsa-miR-367-3p/TFRC通路诱导NSCLC铁死亡<sup>[<xref rid="b95" ref-type="bibr">95</xref>]</sup>。</p></sec><sec id="s2.1.4" disp-level="3"><title>2.1.4 黄酮类（Flavonoids）</title><p id="p00135">黄酮类化合物是许多中药的有效成分，其具有多种生物活性，包括抗癌、抗炎、抗菌等作用<sup>[<xref rid="b115" ref-type="bibr">115</xref>]</sup>。6-姜酚（6-Gingerol）可以抑制USP14（ubiquitin-specific protease 14）的表达并调控自噬依赖性铁死亡来抑制NSCLC肿瘤增长<sup>[<xref rid="b96" ref-type="bibr">96</xref>]</sup>。姜黄素（Curcumin）能够激活自噬，增加自噬蛋白Beclin1和LC3的表达，诱导铁过载，脂质过氧化，GSH耗竭，升高ACSL4蛋白水平，降低SLC7A11和GPX4蛋白表达等，并通过自噬途径诱导NSCLC细胞发生铁死亡<sup>[<xref rid="b97" ref-type="bibr">97</xref>]</sup>。姜黄素类似物HO-3867（Curcumin analog HO-3867）通过激活P53-DMT1轴和抑制GPX4诱导NSCLC发生铁死亡，并且能通过抑制Mcl-1和Bcl-2表达、上调Bax表达诱导细胞凋亡<sup>[<xref rid="b98" ref-type="bibr">98</xref>]</sup>。银杏素（Ginkgetin）通过抑制Nrf2/HO-1轴并下调SLC7A11和GPX4的表达和GSH/GSSG比值，促进ROS生成诱导铁死亡，并且能够增强NSCLC细胞顺铂敏感性<sup>[<xref rid="b99" ref-type="bibr">99</xref>]</sup>。圣草次苷（Eriocitrin）增加NSCLC细胞的ROS水平，下调Nrf2、SLC7A11和GPX4的表达诱导铁死亡，并通过铁死亡途径抑制上皮间充质转化<sup>[<xref rid="b100" ref-type="bibr">100</xref>]</sup>。2-甲氧基-6-乙酰基-7-甲基胡桃酮（2-methoxy-6-acetyl-7-methyljuglone）可以激活并结合NQO1，引发ROS生成、LIP（lipase inhibitory protein）增加和脂质过氧化诱导细胞铁死亡，并逆转A549细胞顺铂耐药和H596细胞奥西替尼耐药<sup>[<xref rid="b101" ref-type="bibr">101</xref>]</sup>。</p></sec><sec id="s2.1.5" disp-level="3"><title>2.1.5 其他</title><p id="p00140">毛兰素（Erianin）是从石斛中分离得到的联苄类化合物，它通过Ca<sup>2+</sup>/CaM依赖性的通路诱导铁死亡的发生，并能抑制细胞迁移发挥抗癌作用<sup>[<xref rid="b102" ref-type="bibr">102</xref>]</sup>。蟾毒它灵（Bufotalin）是从蟾酥中提取的类固醇内酯类化合物，它增加了细胞内的Fe<sup>2+</sup>和GPX4的泛素化，显著抑制A549细胞增殖并诱导其发生铁死亡<sup>[<xref rid="b103" ref-type="bibr">103</xref>]</sup>。红参多糖（Red ginseng polysaccharide）属于多糖类化合物，它是从红参中提取得到的一种主要活性成分，能诱导A549细胞乳酸脱氢酶（lactate dehydrogenase, LDH）释放，抑制GPX4表达诱导铁死亡<sup>[<xref rid="b104" ref-type="bibr">104</xref>]</sup>。滨蒿内酯（Scoparone）是从滨蒿中提取的苯丙素类化合物，其可以激活ROS/JNK/SP1/ACSL4轴触发NSCLC细胞铁死亡<sup>[<xref rid="b105" ref-type="bibr">105</xref>]</sup>。</p></sec></sec><sec id="s2.2" disp-level="2"><title>2.2 单味中药和复方</title><p id="p00145">雄黄（Realgar）通过提高细胞ACSL4、Fe<sup>2+</sup>、ROS，降低GPX4、SCL7A11、GSH的水平引发NSCLC铁死亡，索拉芬尼可以促进雄黄诱导的铁死亡<sup>[<xref rid="b106" ref-type="bibr">106</xref>]</sup>。欧海亚等<sup>[<xref rid="b116" ref-type="bibr">116</xref>]</sup>通过网络药理学和分子对接发现35种可以调控铁死亡的中药化合物，将35种化合物在TCMSP数据库中匹配得到301味中药，这些中药药味以苦、辛为主，药性以寒居多，主要归肝、肺二经。其中包括白果、枇杷叶、葛花、余甘子、麻黄根、槐角、女贞子和沙棘。这些中药成分可能与多个靶点有关联，因此推测它们可能对铁死亡具有一定的调节作用。但在NSCLC铁死亡的具体机制还需进一步探讨，因此对于中药干预铁死亡的潜力亟待挖掘。</p><p id="p00150">槐耳清膏（Huaier ointment）是一种传统中药制剂，可以增加ROS的含量诱导铁死亡并抑制H1299细胞NSCLC生长和转移<sup>[<xref rid="b107" ref-type="bibr">107</xref>]</sup>。扶正抗癌汤（Fuzheng Kang-Ai decoction）通过抑制GPX4的蛋白和mRNA水平，抑制SLC7A11和SLC3A2，并且降低GSH/GSSG比率诱导NSCLC铁死亡，而过表达GPX4显著逆转扶正抗癌汤诱导铁死亡的效果<sup>[<xref rid="b108" ref-type="bibr">108</xref>]</sup>。清热活血方（Qingrehuoxue formula）激活P53和抑制GSK-3β/Nrf2信号通路显著增加ROS、Fe<sup>2+</sup>、H<sub>2</sub>O<sub>2</sub>和MDA的水平，抑制GSH、GPX4和SLC7A11的蛋白水平引发NSCLC铁死亡<sup>[<xref rid="b109" ref-type="bibr">109</xref>]</sup>。消异散结方（Xiaoyi Sanjie formula）上调ROS水平，抑制GPX4和FTH1的蛋白表达诱导A549和PC9细胞铁死亡，其中白杨素、芹菜素和山柰酚可能是诱导铁死亡的关键成分<sup>[<xref rid="b110" ref-type="bibr">110</xref>]</sup>。四君子汤（Sijunzi decoction）因其四味中药药力平和，补益作用如君子而得名，常用于肺癌晚期患者。有研究<sup>[<xref rid="b111" ref-type="bibr">111</xref>]</sup>表明该方通过抑制P62/Keap1/Nrf2通路诱导脂质过氧化和自噬依赖性的铁死亡，并提高NSCLC细胞的顺铂敏感性，这为四君子汤的应用提供了新思路。通过汇总发现具有活血化瘀、清热解毒、补气生血等功效的中药复方在诱导铁死亡治疗NSCLC中发挥重要作用。</p></sec></sec><sec id="s3" disp-level="1"><title>3 总结与展望</title><p id="p00155">铁死亡是一种铁依赖的、ROS异常累积导致膜质过氧化而引起的一种新型的PCD方式，其作为一种新的细胞死亡方式，在抗肿瘤治疗方面也发挥着重要作用。在NSCLC中，诱导铁死亡可以抑制肿瘤细胞生长、增殖、上皮间充质转换，甚至可以逆转顺铂、吉非替尼、帕博利珠单抗等药物耐药性<sup>[<xref rid="b117" ref-type="bibr">117</xref>,<xref rid="b118" ref-type="bibr">⇓</xref>-<xref rid="b119" ref-type="bibr">119</xref>]</sup>。随着对铁死亡的研究不断深入，越来越多的调控机制被不断发现，目前研究多针对System Xc<sup>-</sup>/GPX4通路，而对FSP1/CoQ10、DHODH/CoQ10、Nrf2、P53等通路的研究尚不深入。另外，一些研究<sup>[<xref rid="b120" ref-type="bibr">120</xref>,<xref rid="b121" ref-type="bibr">121</xref>]</sup>认为铁死亡是依赖自噬的一种死亡途径，但关于自噬具体如何调控铁死亡的机制尚不完全明确。因此寻找新的铁死亡调控靶点并阐明这些靶点在NSCLC中的作用迫在眉睫。</p><p id="p00160">中药是我国宝贵的资源，在治疗许多疾病方面有着悠久的历史，其成分复杂、作用靶点多，在治疗NSCLC方面也有独特的优势。中药在调控铁死亡方面也发挥着多靶点的优势，一些中药活性成分和复方可以作用于各种铁死亡相关信号通路或调节蛋白，促进NSCLC细胞铁死亡发挥抑制肿瘤生长、增殖、转移、上皮间充质转化，并逆转耐药性的作用。然而，中药调控铁死亡治疗NSCLC等疾病仍有许多问题需要解决，关于中药调控铁死亡的研究多集中在中药活性成分，但中药治疗疾病并不依赖于特定的活性成分，而往往涉及多种成分的共同作用，了解各个成分在疾病中发挥的作用，可以为中药拟方提供更多理论依据；中药纳米粒可以增强药物在肿瘤组织中的积累和铁死亡靶向性，提高抗肿瘤药物的疗效，并减少对健康组织的损伤，具有良好的应用前景，未来需要深入研究中药纳米粒子使其发挥更大的作用；目前关于中药干预铁死亡机制的研究主要集中在动物和细胞水平，高质量的临床研究相对缺乏，如何通过调控铁死亡指导中药防治NSCLC发挥其优势，还需要进一步探讨。</p></sec><sec id="fn-group1" sec-type="fn-group" disp-level="1"><title>Footnotes</title><fn-group><fn id="fn4"><p><bold>Competing interests:</bold> The authors declare that they have no competing interests.</p></fn></fn-group></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>参 考 文 献</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="b1"><label>1.</label><mixed-citation><named-content content-type="citation-string">
+Wu F,
+Wang L,
+Zhou C.
+. 
+Lung cancer in China: current and prospect.
+Curr Opin Oncol,
+2021,
+33(1): 40-46. doi: 10.1097/cco.0000000000000703
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1097/cco.0000000000000703"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33165004"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr Opin Oncol&amp;title=Lung cancer in China: current and prospect&amp;author=F Wu&amp;author=L Wang&amp;author=C Zhou&amp;volume=33&amp;issue=1&amp;publication_year=2021&amp;pages=40-46&amp;pmid=33165004&amp;doi=10.1097/cco.0000000000000703&amp;"/></mixed-citation></ref><ref id="b2"><label>2.</label><mixed-citation><named-content content-type="citation-string">
+Li Y,
+Yan B,
+He S.
+. 
+Advances and challenges in the treatment of lung cancer.
+Biomed Pharmacother,
+2023,
+169: 115891. doi: 10.1016/j.biopha.2023.115891
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.biopha.2023.115891"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37979378"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biomed Pharmacother&amp;title=Advances and challenges in the treatment of lung cancer&amp;author=Y Li&amp;author=B Yan&amp;author=S He&amp;volume=169&amp;publication_year=2023&amp;pages=115891&amp;pmid=37979378&amp;doi=10.1016/j.biopha.2023.115891&amp;"/></mixed-citation></ref><ref id="b3"><label>3.</label><mixed-citation><named-content content-type="citation-string">
+Dixon SJ,
+Lemberg KM,
+Lamprecht MR,
+et al. 
+Ferroptosis: an iron-dependent form of nonapoptotic cell death.
+Cell,
+2012,
+149(5): 1060-1072. doi: 10.1016/j.cell.2012.03.042
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cell.2012.03.042"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3367386"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22632970"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell&amp;title=Ferroptosis: an iron-dependent form of nonapoptotic cell death&amp;author=SJ Dixon&amp;author=KM Lemberg&amp;author=MR Lamprecht&amp;volume=149&amp;issue=5&amp;publication_year=2012&amp;pages=1060-1072&amp;pmid=22632970&amp;doi=10.1016/j.cell.2012.03.042&amp;"/></mixed-citation></ref><ref id="b4"><label>4.</label><mixed-citation><named-content content-type="citation-string">
+Yan H,
+Zou T,
+Tuo Q,
+et al. 
+Ferroptosis: mechanisms and links with diseases.
+Signal Transduct Target Ther,
+2021,
+6(1): 49. doi: 10.1038/s41392-020-00428-9
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41392-020-00428-9"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7858612"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33536413"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Signal Transduct Target Ther&amp;title=Ferroptosis: mechanisms and links with diseases&amp;author=H Yan&amp;author=T Zou&amp;author=Q Tuo&amp;volume=6&amp;issue=1&amp;publication_year=2021&amp;pages=49&amp;pmid=33536413&amp;doi=10.1038/s41392-020-00428-9&amp;"/></mixed-citation></ref><ref id="b5"><label>5.</label><mixed-citation><named-content content-type="citation-string">
+Torti SV,
+Manz DH,
+Paul BT,
+et al. 
+Iron and cancer.
+Annu Rev Nutr,
+2018,
+38: 97-125. doi: 10.1146/annurev-nutr-082117-051732
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1146/annurev-nutr-082117-051732"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8118195"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30130469"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Annu Rev Nutr&amp;title=Iron and cancer&amp;author=SV Torti&amp;author=DH Manz&amp;author=BT Paul&amp;volume=38&amp;publication_year=2018&amp;pages=97-125&amp;pmid=30130469&amp;doi=10.1146/annurev-nutr-082117-051732&amp;"/></mixed-citation></ref><ref id="b6"><label>6.</label><mixed-citation><named-content content-type="citation-string">
+Zhou L,
+Zhao B,
+Zhang L,
+et al. 
+Alterations in cellular iron metabolism provide more therapeutic opportunities for cancer.
+Int J Mol Sci,
+2018,
+19(5): 1545. doi: 10.3390/ijms19051545
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/ijms19051545"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5983609"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29789480"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Mol Sci&amp;title=Alterations in cellular iron metabolism provide more therapeutic opportunities for cancer&amp;author=L Zhou&amp;author=B Zhao&amp;author=L Zhang&amp;volume=19&amp;issue=5&amp;publication_year=2018&amp;pages=1545&amp;pmid=29789480&amp;doi=10.3390/ijms19051545&amp;"/></mixed-citation></ref><ref id="b7"><label>7.</label><mixed-citation><named-content content-type="citation-string">
+Luo Y,
+Li J,
+Yu P,
+et al. 
+Targeting lncRNAs in programmed cell death as a therapeutic strategy for non-small cell lung cancer.
+Cell Death Discov,
+2022,
+8(1): 159. doi: 10.1038/s41420-022-00982-x
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41420-022-00982-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8980082"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35379783"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Discov&amp;title=Targeting lncRNAs in programmed cell death as a therapeutic strategy for non-small cell lung cancer&amp;author=Y Luo&amp;author=J Li&amp;author=P Yu&amp;volume=8&amp;issue=1&amp;publication_year=2022&amp;pages=159&amp;pmid=35379783&amp;doi=10.1038/s41420-022-00982-x&amp;"/></mixed-citation></ref><ref id="b8"><label>8.</label><mixed-citation><named-content content-type="citation-string">
+Feng H,
+Schorpp K,
+Jin J,
+et al. 
+Transferrin receptor is a specific ferroptosis marker.
+Cell Rep,
+2020,
+30(10): 3411-3423. doi: 10.1016/j.celrep.2020.02.049
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.celrep.2020.02.049"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7172030"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32160546"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Rep&amp;title=Transferrin receptor is a specific ferroptosis marker&amp;author=H Feng&amp;author=K Schorpp&amp;author=J Jin&amp;volume=30&amp;issue=10&amp;publication_year=2020&amp;pages=3411-3423&amp;pmid=32160546&amp;doi=10.1016/j.celrep.2020.02.049&amp;"/></mixed-citation></ref><ref id="b9"><label>9.</label><mixed-citation><named-content content-type="citation-string">
+Yanatori I,
+Kishi F.
+. 
+DMT1 and iron transport.
+Free Radic Biol Med,
+2019,
+133: 55-63. doi: 10.1016/j.freeradbiomed.2018.07.020
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2018.07.020"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30055235"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=DMT1 and iron transport&amp;author=I Yanatori&amp;author=F Kishi&amp;volume=133&amp;publication_year=2019&amp;pages=55-63&amp;pmid=30055235&amp;doi=10.1016/j.freeradbiomed.2018.07.020&amp;"/></mixed-citation></ref><ref id="b10"><label>10.</label><mixed-citation><named-content content-type="citation-string">
+Hou W,
+Xie Y,
+Song X,
+et al. 
+Autophagy promotes ferroptosis by degradation of ferritin.
+Autophagy,
+2016,
+12(8): 1425-1428. doi: 10.1080/15548627.2016.1187366
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/15548627.2016.1187366"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4968231"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27245739"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Autophagy&amp;title=Autophagy promotes ferroptosis by degradation of ferritin&amp;author=W Hou&amp;author=Y Xie&amp;author=X Song&amp;volume=12&amp;issue=8&amp;publication_year=2016&amp;pages=1425-1428&amp;pmid=27245739&amp;doi=10.1080/15548627.2016.1187366&amp;"/></mixed-citation></ref><ref id="b11"><label>11.</label><mixed-citation><named-content content-type="citation-string">
+Donovan A,
+Lima CA,
+Pinkus JL,
+et al. 
+The iron exporter ferroportin/Slc40a 1 is essential for iron homeostasis.
+Cell Metab,
+2005,
+1(3): 191-200. doi: 10.1016/j.cmet.2005.01.003
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cmet.2005.01.003"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16054062"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Metab&amp;title=The iron exporter ferroportin/Slc40a 1 is essential for iron homeostasis&amp;author=A Donovan&amp;author=CA Lima&amp;author=JL Pinkus&amp;volume=1&amp;issue=3&amp;publication_year=2005&amp;pages=191-200&amp;pmid=16054062&amp;doi=10.1016/j.cmet.2005.01.003&amp;"/></mixed-citation></ref><ref id="b12"><label>12.</label><mixed-citation><named-content content-type="citation-string">
+Schoenfeld JD,
+Sibenaller ZA,
+Mapuskar KA,
+et al. 
+O<sub>2</sub>⋅<sup>-</sup> and H<sub>2</sub>O<sub>2</sub>-mediated disruption of Fe metabolism causes the differential susceptibility of NSCLC and GBM cancer cells to pharmacological ascorbate.
+Cancer Cell,
+2017,
+31(4): 487-500. doi: 10.1016/j.ccell.2017.07.008
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.ccell.2017.07.008"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5497844"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28366679"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Cell&amp;title=O2⋅- and H2O2-mediated disruption of Fe metabolism causes the differential susceptibility of NSCLC and GBM cancer cells to pharmacological ascorbate&amp;author=JD Schoenfeld&amp;author=ZA Sibenaller&amp;author=KA Mapuskar&amp;volume=31&amp;issue=4&amp;publication_year=2017&amp;pages=487-500&amp;pmid=28366679&amp;doi=10.1016/j.ccell.2017.07.008&amp;"/></mixed-citation></ref><ref id="b13"><label>13.</label><mixed-citation><named-content content-type="citation-string">
+Gao M,
+Monian P,
+Quadri N,
+et al. 
+Glutaminolysis and transferrin regulate ferroptosis.
+Mol Cell,
+2015,
+59(2): 298-308. doi: 10.1016/j.molcel.2015.06.011
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molcel.2015.06.011"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4506736"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26166707"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cell&amp;title=Glutaminolysis and transferrin regulate ferroptosis&amp;author=M Gao&amp;author=P Monian&amp;author=N Quadri&amp;volume=59&amp;issue=2&amp;publication_year=2015&amp;pages=298-308&amp;pmid=26166707&amp;doi=10.1016/j.molcel.2015.06.011&amp;"/></mixed-citation></ref><ref id="b14"><label>14.</label><mixed-citation><named-content content-type="citation-string">
+Zhu G,
+Chi H,
+Liu M,
+et al. 
+Multifunctional “ball-rod” Janus nanoparticles boosting Fenton reaction for ferroptosis therapy of non-small cell lung cancer.
+J Colloid Interface Sci,
+2022,
+621: 12-23. doi: 10.1016/j.jcis.2022.04.021
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jcis.2022.04.021"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35447518"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Colloid Interface Sci&amp;title=Multifunctional “ball-rod” Janus nanoparticles boosting Fenton reaction for ferroptosis therapy of non-small cell lung cancer&amp;author=G Zhu&amp;author=H Chi&amp;author=M Liu&amp;volume=621&amp;publication_year=2022&amp;pages=12-23&amp;pmid=35447518&amp;doi=10.1016/j.jcis.2022.04.021&amp;"/></mixed-citation></ref><ref id="b15"><label>15.</label><mixed-citation><named-content content-type="citation-string">
+Fang D,
+Jin H,
+Huang X,
+et al. 
+PPy@Fe<sub>3</sub>O<sub>4</sub> nanoparticles inhibit tumor growth and metastasis through chemodynamic and photothermal therapy in non-small cell lung cancer.
+Front Chem,
+2021,
+9: 789934. doi: 10.3389/fchem.2021.789934
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fchem.2021.789934"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8606671"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34820358"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Chem&amp;title=PPy@Fe3O4 nanoparticles inhibit tumor growth and metastasis through chemodynamic and photothermal therapy in non-small cell lung cancer&amp;author=D Fang&amp;author=H Jin&amp;author=X Huang&amp;volume=9&amp;publication_year=2021&amp;pages=789934&amp;pmid=34820358&amp;doi=10.3389/fchem.2021.789934&amp;"/></mixed-citation></ref><ref id="b16"><label>16.</label><mixed-citation><named-content content-type="citation-string">
+Zou Y,
+Li H,
+Graham ET,
+et al. 
+Cytochrome P450 oxidoreductase contributes to phospholipid peroxidation in ferroptosis.
+Nat Chem Biol,
+2020,
+16(3): 302-309. doi: 10.1038/s41589-021-00767-w
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41589-021-00767-w"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7353921"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32080622"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Chem Biol&amp;title=Cytochrome P450 oxidoreductase contributes to phospholipid peroxidation in ferroptosis&amp;author=Y Zou&amp;author=H Li&amp;author=ET Graham&amp;volume=16&amp;issue=3&amp;publication_year=2020&amp;pages=302-309&amp;pmid=32080622&amp;doi=10.1038/s41589-021-00767-w&amp;"/></mixed-citation></ref><ref id="b17"><label>17.</label><mixed-citation><named-content content-type="citation-string">
+Yan B,
+Ai Y,
+Sun Q,
+et al. 
+Membrane damage during ferroptosis is caused by oxidation of phospholipids catalyzed by the oxidoreductases POR and CYB5R1.
+Mol Cell,
+2021,
+81(2): 355-369.e10. doi: 10.1016/j.molcel.2020.11.024
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molcel.2020.11.024"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33321093"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cell&amp;title=Membrane damage during ferroptosis is caused by oxidation of phospholipids catalyzed by the oxidoreductases POR and CYB5R1&amp;author=B Yan&amp;author=Y Ai&amp;author=Q Sun&amp;volume=81&amp;issue=2&amp;publication_year=2021&amp;pages=355-369&amp;pmid=33321093&amp;doi=10.1016/j.molcel.2020.11.024&amp;"/></mixed-citation></ref><ref id="b18"><label>18.</label><mixed-citation><named-content content-type="citation-string">
+Hsu PC,
+Jablons DM,
+Yang CT,
+et al. 
+Epidermal growth factor receptor (EGFR) pathway, yes-associated protein (YAP) and the regulation of programmed death-ligand 1 (PD-L1) in non-small cell lung cancer (NSCLC).
+Int J Mol Sci,
+2019,
+20(15): 3821. doi: 10.3390/ijms20153821
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/ijms20153821"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6695603"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31387256"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Mol Sci&amp;title=Epidermal growth factor receptor (EGFR) pathway, yes-associated protein (YAP) and the regulation of programmed death-ligand 1 (PD-L1) in non-small cell lung cancer (NSCLC)&amp;author=PC Hsu&amp;author=DM Jablons&amp;author=CT Yang&amp;volume=20&amp;issue=15&amp;publication_year=2019&amp;pages=3821&amp;pmid=31387256&amp;doi=10.3390/ijms20153821&amp;"/></mixed-citation></ref><ref id="b19"><label>19.</label><mixed-citation><named-content content-type="citation-string">
+Jin D,
+Guo J,
+Wu Y,
+et al. 
+ m(6)A mRNA methylation initiated by METTL3 directly promotes YAP translation and increases YAP activity by regulating the MALAT1-miR-1914-3p-YAP axis to induce NSCLC drug resistance and metastasis.
+J Hematol Oncol,
+2019,
+12(1): 135. doi: 10.1186/s13045-021-01048-8
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13045-021-01048-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6902496"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31818312"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Hematol Oncol&amp;title=m(6)A mRNA methylation initiated by METTL3 directly promotes YAP translation and increases YAP activity by regulating the MALAT1-miR-1914-3p-YAP axis to induce NSCLC drug resistance and metastasis&amp;author=D Jin&amp;author=J Guo&amp;author=Y Wu&amp;volume=12&amp;issue=1&amp;publication_year=2019&amp;pmid=31818312&amp;doi=10.1186/s13045-021-01048-8&amp;"/><related-article xmlns:xlink="http://www.w3.org/1999/xlink" related-article-type="retraction-forward" ext-link-type="pmcid" xlink:href="PMC9948469"/></mixed-citation></ref><ref id="b20"><label>20.</label><mixed-citation><named-content content-type="citation-string">
+Wang Y,
+Qiu S,
+Wang H,
+et al. 
+Transcriptional repression of ferritin light chain increases ferroptosis sensitivity in lung adenocarcinoma.
+Front Cell Dev Biol,
+2021,
+9: 719187. doi: 10.3389/fcell.2021.719187
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fcell.2021.719187"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8576304"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34765600"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Cell Dev Biol&amp;title=Transcriptional repression of ferritin light chain increases ferroptosis sensitivity in lung adenocarcinoma&amp;author=Y Wang&amp;author=S Qiu&amp;author=H Wang&amp;volume=9&amp;publication_year=2021&amp;pages=719187&amp;pmid=34765600&amp;doi=10.3389/fcell.2021.719187&amp;"/></mixed-citation></ref><ref id="b21"><label>21.</label><mixed-citation><named-content content-type="citation-string">
+Wei D,
+Ke Y Q,
+Duan P,
+et al. 
+MicroRNA-302a-3p induces ferroptosis of non-small cell lung cancer cells via targeting ferroportin.
+Free Radic Res,
+2021,
+55(7): 722-731. doi: 10.1080/10715762.2021.1947503
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/10715762.2021.1947503"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34181495"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Res&amp;title=MicroRNA-302a-3p induces ferroptosis of non-small cell lung cancer cells via targeting ferroportin&amp;author=D Wei&amp;author=Y Q Ke&amp;author=P Duan&amp;volume=55&amp;issue=7&amp;publication_year=2021&amp;pages=722-731&amp;pmid=34181495&amp;doi=10.1080/10715762.2021.1947503&amp;"/></mixed-citation></ref><ref id="b22"><label>22.</label><mixed-citation><named-content content-type="citation-string">
+Zhang R,
+Pan T,
+Xiang Y,
+et al. 
+Curcumenol triggered ferroptosis in lung cancer cells via lncRNA H19/miR-19b-3p/FTH1 axis.
+Bioact Mater,
+2022,
+13: 23-36. doi: 10.1016/j.bioactmat.2021.11.013
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bioactmat.2021.11.013"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8843976"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35224289"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioact Mater&amp;title=Curcumenol triggered ferroptosis in lung cancer cells via lncRNA H19/miR-19b-3p/FTH1 axis&amp;author=R Zhang&amp;author=T Pan&amp;author=Y Xiang&amp;volume=13&amp;publication_year=2022&amp;pages=23-36&amp;pmid=35224289&amp;doi=10.1016/j.bioactmat.2021.11.013&amp;"/></mixed-citation></ref><ref id="b23"><label>23.</label><mixed-citation><named-content content-type="citation-string">
+Plangger A,
+Rath B,
+Hochmair M,
+et al. 
+Synergistic cytotoxicity of the CDK4 inhibitor Fascaplysin in combination with EGFR inhibitor Afatinib against non-small cell lung cancer.
+Invest New Drugs,
+2022: 1-9. doi: 10.1007/s10637-021-01181-8
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s10637-021-01181-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8993745"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34596822"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Invest New Drugs&amp;title=Synergistic cytotoxicity of the CDK4 inhibitor Fascaplysin in combination with EGFR inhibitor Afatinib against non-small cell lung cancer&amp;author=A Plangger&amp;author=B Rath&amp;author=M Hochmair&amp;publication_year=2022&amp;pages=1-9&amp;pmid=34596822&amp;doi=10.1007/s10637-021-01181-8&amp;"/></mixed-citation></ref><ref id="b24"><label>24.</label><mixed-citation><named-content content-type="citation-string">
+Chen K,
+Li H,
+Zhou A,
+et al. 
+Cell membrane camouflaged metal oxide-black phosphorus biomimetic nanocomplex enhances photo-chemo-dynamic ferroptosis.
+ACS Appl Mater Interfaces,
+2022,
+14(23): 26557-26570. doi: 10.1021/acsami.2c08413
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsami.2c08413"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35658416"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Appl Mater Interfaces&amp;title=Cell membrane camouflaged metal oxide-black phosphorus biomimetic nanocomplex enhances photo-chemo-dynamic ferroptosis&amp;author=K Chen&amp;author=H Li&amp;author=A Zhou&amp;volume=14&amp;issue=23&amp;publication_year=2022&amp;pages=26557-26570&amp;pmid=35658416&amp;doi=10.1021/acsami.2c08413&amp;"/></mixed-citation></ref><ref id="b25"><label>25.</label><mixed-citation><named-content content-type="citation-string">
+Jiang X,
+Stockwell BR,
+Conrad M.
+. 
+Ferroptosis: mechanisms, biology and role in disease.
+Nat Rev Mol Cell Biol,
+2021,
+22(4): 266-282. doi: 10.1038/s41580-020-00324-8
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41580-020-00324-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8142022"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33495651"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Rev Mol Cell Biol&amp;title=Ferroptosis: mechanisms, biology and role in disease&amp;author=X Jiang&amp;author=BR Stockwell&amp;author=M Conrad&amp;volume=22&amp;issue=4&amp;publication_year=2021&amp;pages=266-282&amp;pmid=33495651&amp;doi=10.1038/s41580-020-00324-8&amp;"/></mixed-citation></ref><ref id="b26"><label>26.</label><mixed-citation><named-content content-type="citation-string">
+Li D,
+Li Y.
+. 
+The interaction between ferroptosis and lipid metabolism in cancer.
+Signal Transduct Target Ther,
+2020,
+5(1): 108. doi: 10.1038/s41392-020-00216-5
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41392-020-00216-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7327075"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32606298"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Signal Transduct Target Ther&amp;title=The interaction between ferroptosis and lipid metabolism in cancer&amp;author=D Li&amp;author=Y Li&amp;volume=5&amp;issue=1&amp;publication_year=2020&amp;pages=108&amp;pmid=32606298&amp;doi=10.1038/s41392-020-00216-5&amp;"/></mixed-citation></ref><ref id="b27"><label>27.</label><mixed-citation><named-content content-type="citation-string">
+Vishnupriya P,
+Aparna A,
+Viswanadha VP.
+. 
+Lipoxygenase (LOX) pathway: a promising target to combat cancer.
+Curr Pharm Des,
+2021,
+27(31): 3349-3369. doi: 10.2174/1381612826666210101153216
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2174/1381612826666210101153216"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33388012"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr Pharm Des&amp;title=Lipoxygenase (LOX) pathway: a promising target to combat cancer&amp;author=P Vishnupriya&amp;author=A Aparna&amp;author=VP Viswanadha&amp;volume=27&amp;issue=31&amp;publication_year=2021&amp;pages=3349-3369&amp;pmid=33388012&amp;doi=10.2174/1381612826666210101153216&amp;"/></mixed-citation></ref><ref id="b28"><label>28.</label><mixed-citation><named-content content-type="citation-string">
+Wu H,
+Liu A.
+. 
+Long non-coding RNA NEAT1 regulates ferroptosis sensitivity in non-small-cell lung cancer.
+J Int Med Res,
+2021,
+49(3): 0300060521996183. doi: 10.1177/0300060521996183
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1177/0300060521996183"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8166394"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33730930"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Int Med Res&amp;title=Long non-coding RNA NEAT1 regulates ferroptosis sensitivity in non-small-cell lung cancer&amp;author=H Wu&amp;author=A Liu&amp;volume=49&amp;issue=3&amp;publication_year=2021&amp;pmid=33730930&amp;doi=10.1177/0300060521996183&amp;"/></mixed-citation></ref><ref id="b29"><label>29.</label><mixed-citation><named-content content-type="citation-string">
+Sui X,
+Hu N,
+Zhang Z,
+et al. 
+ASMTL‐AS1 impedes the malignant progression of lung adenocarcinoma by regulating SAT1 to promote ferroptosis.
+Pathol Int,
+2021,
+71(11): 741-751. doi: 10.1111/pin.13158
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/pin.13158"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34658100"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Pathol Int&amp;title=ASMTL‐AS1 impedes the malignant progression of lung adenocarcinoma by regulating SAT1 to promote ferroptosis&amp;author=X Sui&amp;author=N Hu&amp;author=Z Zhang&amp;volume=71&amp;issue=11&amp;publication_year=2021&amp;pages=741-751&amp;pmid=34658100&amp;doi=10.1111/pin.13158&amp;"/></mixed-citation></ref><ref id="b30"><label>30.</label><mixed-citation><named-content content-type="citation-string">
+Conrad M,
+Sato H.
+. 
+The oxidative stress-inducible cystine/glutamate antiporter, system x(c)(-): cystine supplier and beyond.
+Amino Acids,
+2012,
+42: 231-246. doi: 10.1007/s00726-011-0867-5
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00726-011-0867-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21409388"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Amino Acids&amp;title=The oxidative stress-inducible cystine/glutamate antiporter, system x(c)(-): cystine supplier and beyond&amp;author=M Conrad&amp;author=H Sato&amp;volume=42&amp;publication_year=2012&amp;pages=231-246&amp;pmid=21409388&amp;doi=10.1007/s00726-011-0867-5&amp;"/></mixed-citation></ref><ref id="b31"><label>31.</label><mixed-citation><named-content content-type="citation-string">
+Deng L,
+He S,
+Guo N,
+et al. 
+Molecular mechanisms of ferroptosis and relevance to inflammation.
+Inflamm Res,
+2023,
+72(2): 281-299. doi: 10.1007/s00011-022-01672-1
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00011-022-01672-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9762665"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36536250"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Inflamm Res&amp;title=Molecular mechanisms of ferroptosis and relevance to inflammation&amp;author=L Deng&amp;author=S He&amp;author=N Guo&amp;volume=72&amp;issue=2&amp;publication_year=2023&amp;pages=281-299&amp;pmid=36536250&amp;doi=10.1007/s00011-022-01672-1&amp;"/></mixed-citation></ref><ref id="b32"><label>32.</label><mixed-citation><named-content content-type="citation-string">
+Dixon SJ,
+Stockwell BR.
+. 
+The role of iron and reactive oxygen species in cell death.
+Nat Chem Biol,
+2014,
+10(1): 9-17. doi: 10.1038/nchembio.1416
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nchembio.1416"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24346035"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Chem Biol&amp;title=The role of iron and reactive oxygen species in cell death&amp;author=SJ Dixon&amp;author=BR Stockwell&amp;volume=10&amp;issue=1&amp;publication_year=2014&amp;pages=9-17&amp;pmid=24346035&amp;doi=10.1038/nchembio.1416&amp;"/></mixed-citation></ref><ref id="b33"><label>33.</label><mixed-citation><named-content content-type="citation-string">
+Wang X,
+Chen Y,
+Wang X,
+et al. 
+Stem cell factor SOX2 confers ferroptosis resistance in lung cancer via upregulation of SLC7A11.
+Cancer Res,
+2021,
+81(20): 5217-5229. doi: 10.1158/0008-5472.CAN-21-0567
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/0008-5472.CAN-21-0567"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8530936"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34385181"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Res&amp;title=Stem cell factor SOX2 confers ferroptosis resistance in lung cancer via upregulation of SLC7A11&amp;author=X Wang&amp;author=Y Chen&amp;author=X Wang&amp;volume=81&amp;issue=20&amp;publication_year=2021&amp;pages=5217-5229&amp;pmid=34385181&amp;doi=10.1158/0008-5472.CAN-21-0567&amp;"/></mixed-citation></ref><ref id="b34"><label>34.</label><mixed-citation><named-content content-type="citation-string">
+Zhang W,
+Sun Y,
+Bai L,
+et al. 
+RBMS1 regulates lung cancer ferroptosis through translational control of SLC7A11.
+J Clin Invest,
+2021,
+131(22):e152067. doi: 10.1172/jci152067
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1172/jci152067"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8592553"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34609966"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Clin Invest&amp;title=RBMS1 regulates lung cancer ferroptosis through translational control of SLC7A11&amp;author=W Zhang&amp;author=Y Sun&amp;author=L Bai&amp;volume=131&amp;issue=22&amp;publication_year=2021&amp;pmid=34609966&amp;doi=10.1172/jci152067&amp;"/></mixed-citation></ref><ref id="b35"><label>35.</label><mixed-citation><named-content content-type="citation-string">
+Xu Y,
+Lv D,
+Yan C,
+et al. 
+METTL3 promotes lung adenocarcinoma tumor growth and inhibits ferroptosis by stabilizing SLC7A11 m6A modification.
+Cancer Cell Int,
+2022,
+22(1): 11. doi: 10.1186/s12935-021-02433-6
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12935-021-02433-6"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8742440"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34996469"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Cell Int&amp;title=METTL3 promotes lung adenocarcinoma tumor growth and inhibits ferroptosis by stabilizing SLC7A11 m6A modification&amp;author=Y Xu&amp;author=D Lv&amp;author=C Yan&amp;volume=22&amp;issue=1&amp;publication_year=2022&amp;pmid=34996469&amp;doi=10.1186/s12935-021-02433-6&amp;"/></mixed-citation></ref><ref id="b36"><label>36.</label><mixed-citation><named-content content-type="citation-string">
+Wang K,
+He J,
+Tu C,
+et al. 
+Upregulation of CCT3 predicts poor prognosis and promotes cell proliferation via inhibition of ferroptosis and activation of AKT signaling in lung adenocarcinoma.
+BMC Mol Cell Biol,
+2022,
+23(1): 25. doi: 10.1186/s12860-022-00424-7
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12860-022-00424-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9245217"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35773623"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Mol Cell Biol&amp;title=Upregulation of CCT3 predicts poor prognosis and promotes cell proliferation via inhibition of ferroptosis and activation of AKT signaling in lung adenocarcinoma&amp;author=K Wang&amp;author=J He&amp;author=C Tu&amp;volume=23&amp;issue=1&amp;publication_year=2022&amp;pmid=35773623&amp;doi=10.1186/s12860-022-00424-7&amp;"/></mixed-citation></ref><ref id="b37"><label>37.</label><mixed-citation><named-content content-type="citation-string">
+Ma L,
+Zhang X,
+Yu K,
+et al. 
+Targeting SLC3A2 subunit of system XC- is essential for m6A reader YTHDC2 to be an endogenous ferroptosis inducer in lung adenocarcinoma.
+Free Radic Biol Med,
+2021,
+168: 25-43. doi: 10.1016/j.freeradbiomed.2021.03.023
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2021.03.023"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33785413"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Targeting SLC3A2 subunit of system XC- is essential for m6A reader YTHDC2 to be an endogenous ferroptosis inducer in lung adenocarcinoma&amp;author=L Ma&amp;author=X Zhang&amp;author=K Yu&amp;volume=168&amp;publication_year=2021&amp;pages=25-43&amp;pmid=33785413&amp;doi=10.1016/j.freeradbiomed.2021.03.023&amp;"/></mixed-citation></ref><ref id="b38"><label>38.</label><mixed-citation><named-content content-type="citation-string">
+Lu X,
+Kang N,
+Ling X,
+et al. 
+MiR-27a-3p promotes non-small cell lung cancer through SLC7A11-mediated-ferroptosis.
+Front Oncol,
+2021,
+11: 759346. doi: 10.3389/fonc.2021.759346
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fonc.2021.759346"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8548660"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34722314"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Oncol&amp;title=MiR-27a-3p promotes non-small cell lung cancer through SLC7A11-mediated-ferroptosis&amp;author=X Lu&amp;author=N Kang&amp;author=X Ling&amp;volume=11&amp;publication_year=2021&amp;pages=759346&amp;pmid=34722314&amp;doi=10.3389/fonc.2021.759346&amp;"/></mixed-citation></ref><ref id="b39"><label>39.</label><mixed-citation><named-content content-type="citation-string">
+Luo Y,
+Zhang Q,
+Lv B,
+et al. 
+CircFOXP1: A novel serum diagnostic biomarker for non-small cell lung cancer.
+Int J Biol Markers,
+2022,
+37(1): 58-65. doi: 10.1177/17246008211073151
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1177/17246008211073151"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35072545"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Biol Markers&amp;title=CircFOXP1: A novel serum diagnostic biomarker for non-small cell lung cancer&amp;author=Y Luo&amp;author=Q Zhang&amp;author=B Lv&amp;volume=37&amp;issue=1&amp;publication_year=2022&amp;pages=58-65&amp;pmid=35072545&amp;doi=10.1177/17246008211073151&amp;"/></mixed-citation></ref><ref id="b40"><label>40.</label><mixed-citation><named-content content-type="citation-string">
+Li O,
+Kang J,
+Zhang JJ,
+et al. 
+Circle RNA FOXP1 promotes cell proliferation in lung cancer by regulating miR-185-5p/Wnt1 signaling pathway.
+Eur Rev Med Pharmacol Sci,
+2020,
+24(12): 6767-6778. doi: 10.26355/eurrev_202006_21665
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.26355/eurrev_202006_21665"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32633368"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Eur Rev Med Pharmacol Sci&amp;title=Circle RNA FOXP1 promotes cell proliferation in lung cancer by regulating miR-185-5p/Wnt1 signaling pathway&amp;author=O Li&amp;author=J Kang&amp;author=JJ Zhang&amp;volume=24&amp;issue=12&amp;publication_year=2020&amp;pages=6767-6778&amp;pmid=32633368&amp;doi=10.26355/eurrev_202006_21665&amp;"/></mixed-citation></ref><ref id="b41"><label>41.</label><mixed-citation><named-content content-type="citation-string">
+Pan CF,
+Wei K,
+Ma ZJ,
+et al. 
+CircP4HB regulates ferroptosis via SLC7A11-mediated glutathione synthesis in lung adenocarcinoma.
+Transl Lung Cancer Res,
+2022,
+11(3): 366-380. doi: 10.21037/tlcr-22-138
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.21037/tlcr-22-138"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8988082"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35399564"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Transl Lung Cancer Res&amp;title=CircP4HB regulates ferroptosis via SLC7A11-mediated glutathione synthesis in lung adenocarcinoma&amp;author=CF Pan&amp;author=K Wei&amp;author=ZJ Ma&amp;volume=11&amp;issue=3&amp;publication_year=2022&amp;pages=366-380&amp;pmid=35399564&amp;doi=10.21037/tlcr-22-138&amp;"/></mixed-citation></ref><ref id="b42"><label>42.</label><mixed-citation><named-content content-type="citation-string">
+Liang Z,
+Zhao W,
+Li X,
+et al. 
+Cisplatin synergizes with PRLX93936 to induce ferroptosis in non-small cell lung cancer cells.
+Biochem Biophys Res Commun,
+2021,
+569: 79-85. doi: 10.1016/j.bbrc.2021.06.088
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bbrc.2021.06.088"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34237431"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochem Biophys Res Commun&amp;title=Cisplatin synergizes with PRLX93936 to induce ferroptosis in non-small cell lung cancer cells&amp;author=Z Liang&amp;author=W Zhao&amp;author=X Li&amp;volume=569&amp;publication_year=2021&amp;pages=79-85&amp;pmid=34237431&amp;doi=10.1016/j.bbrc.2021.06.088&amp;"/></mixed-citation></ref><ref id="b43"><label>43.</label><mixed-citation><named-content content-type="citation-string">
+Ahrendt SA,
+Hu Y,
+Buta M,
+et al. 
+p53 mutations and survival in stage I non-small-cell lung cancer: results of a prospective study.
+J Natl Cancer Inst,
+2003,
+95(13): 961-970. doi: 10.1093/jnci/95.13.961
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/jnci/95.13.961"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12837832"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Natl Cancer Inst&amp;title=p53 mutations and survival in stage I non-small-cell lung cancer: results of a prospective study&amp;author=SA Ahrendt&amp;author=Y Hu&amp;author=M Buta&amp;volume=95&amp;issue=13&amp;publication_year=2003&amp;pages=961-970&amp;pmid=12837832&amp;doi=10.1093/jnci/95.13.961&amp;"/></mixed-citation></ref><ref id="b44"><label>44.</label><mixed-citation><named-content content-type="citation-string">
+Kang R,
+Kroemer G,
+Tang D.
+. 
+The tumor suppressor protein p53 and the ferroptosis network.
+Free Radic Biol Med,
+2019,
+133: 162-168. doi: 10.1016/j.freeradbiomed.2018.05.074
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2018.05.074"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6251771"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29800655"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=The tumor suppressor protein p53 and the ferroptosis network&amp;author=R Kang&amp;author=G Kroemer&amp;author=D Tang&amp;volume=133&amp;publication_year=2019&amp;pages=162-168&amp;pmid=29800655&amp;doi=10.1016/j.freeradbiomed.2018.05.074&amp;"/></mixed-citation></ref><ref id="b45"><label>45.</label><mixed-citation><named-content content-type="citation-string">
+Liu Y,
+Gu W. 
+. 
+p53 in ferroptosis regulation: the new weapon for the old guardian.
+Cell Death Differ,
+2022,
+29(5): 895-910. doi: 10.1038/s41418-022-00943-y
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41418-022-00943-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9091200"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35087226"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Differ&amp;title=p53 in ferroptosis regulation: the new weapon for the old guardian&amp;author=Y Liu&amp;author=W Gu&amp;volume=29&amp;issue=5&amp;publication_year=2022&amp;pages=895-910&amp;pmid=35087226&amp;doi=10.1038/s41418-022-00943-y&amp;"/></mixed-citation></ref><ref id="b46"><label>46.</label><mixed-citation><named-content content-type="citation-string">
+Huang C,
+Yang M,
+Deng J,
+et al. 
+Upregulation and activation of p53 by erastin-induced reactive oxygen species contribute to cytotoxic and cytostatic effects in A549 lung cancer cells.
+Oncol Rep,
+2018,
+40(4): 2363-2370. doi: 10.3892/or.2018.6585
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3892/or.2018.6585"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30066882"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncol Rep&amp;title=Upregulation and activation of p53 by erastin-induced reactive oxygen species contribute to cytotoxic and cytostatic effects in A549 lung cancer cells&amp;author=C Huang&amp;author=M Yang&amp;author=J Deng&amp;volume=40&amp;issue=4&amp;publication_year=2018&amp;pages=2363-2370&amp;pmid=30066882&amp;doi=10.3892/or.2018.6585&amp;"/></mixed-citation></ref><ref id="b47"><label>47.</label><mixed-citation><named-content content-type="citation-string">
+Wang J,
+Yang W,
+He X,
+et al. 
+Assembling p53 activating peptide with CeO<sub>2</sub> nanoparticle to construct a metallo-organic supermolecule toward the synergistic ferroptosis of tumor.
+Front Bioeng Biotechnol,
+2022,
+10: 929536. doi: 10.3389/fbioe.2022.929536
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fbioe.2022.929536"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9273839"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35837547"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Bioeng Biotechnol&amp;title=Assembling p53 activating peptide with CeO2 nanoparticle to construct a metallo-organic supermolecule toward the synergistic ferroptosis of tumor&amp;author=J Wang&amp;author=W Yang&amp;author=X He&amp;volume=10&amp;publication_year=2022&amp;pages=929536&amp;pmid=35837547&amp;doi=10.3389/fbioe.2022.929536&amp;"/></mixed-citation></ref><ref id="b48"><label>48.</label><mixed-citation><named-content content-type="citation-string">
+Freire Boullosa L,
+Van Loenhout J,
+Flieswasser T,
+et al. 
+Auranofin synergizes with the PARP inhibitor olaparib to induce ROS-mediated cell death in mutant p53 cancers.
+Antioxidants,
+2023,
+12(3): 667. doi: 10.3390/antiox12030667
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/antiox12030667"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10045521"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36978917"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Antioxidants&amp;title=Auranofin synergizes with the PARP inhibitor olaparib to induce ROS-mediated cell death in mutant p53 cancers&amp;author=Boullosa L Freire&amp;author=Loenhout J Van&amp;author=T Flieswasser&amp;volume=12&amp;issue=3&amp;publication_year=2023&amp;pmid=36978917&amp;doi=10.3390/antiox12030667&amp;"/></mixed-citation></ref><ref id="b49"><label>49.</label><mixed-citation><named-content content-type="citation-string">
+Mao C,
+Wang X,
+Liu Y,
+et al. 
+A G3BP1-interacting lncRNA promotes ferroptosis and apoptosis in cancer via nuclear sequestration of p53.
+Cancer Res,
+2018,
+78(13): 3484-3496. doi: 10.1158/0008-5472.can-17-3454
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/0008-5472.can-17-3454"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8073197"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29588351"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Res&amp;title=A G3BP1-interacting lncRNA promotes ferroptosis and apoptosis in cancer via nuclear sequestration of p53&amp;author=C Mao&amp;author=X Wang&amp;author=Y Liu&amp;volume=78&amp;issue=13&amp;publication_year=2018&amp;pages=3484-3496&amp;pmid=29588351&amp;doi=10.1158/0008-5472.can-17-3454&amp;"/></mixed-citation></ref><ref id="b50"><label>50.</label><mixed-citation><named-content content-type="citation-string">
+Hu Q,
+Zhu W,
+Du J,
+et al. 
+A near-infrared GPX4 fluorescent probe for non-small cell lung cancer imaging.
+Chem Commun,
+2023,
+59(3): 294-297. doi: 10.1039/d2cc06161a
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/d2cc06161a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36504123"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem Commun&amp;title=A near-infrared GPX4 fluorescent probe for non-small cell lung cancer imaging&amp;author=Q Hu&amp;author=W Zhu&amp;author=J Du&amp;volume=59&amp;issue=3&amp;publication_year=2023&amp;pages=294-297&amp;pmid=36504123&amp;doi=10.1039/d2cc06161a&amp;"/></mixed-citation></ref><ref id="b51"><label>51.</label><mixed-citation><named-content content-type="citation-string">
+Cheng F,
+Dou J,
+Yang Y,
+et al. 
+Drug-induced lactate confers ferroptosis resistance via p38-SGK1-NEDD4L-dependent upregulation of GPX4 in NSCLC cells.
+Cell Death Discov,
+2023,
+9(1): 165. doi: 10.1038/s41420-023-01463-5
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41420-023-01463-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10185500"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37188685"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Discov&amp;title=Drug-induced lactate confers ferroptosis resistance via p38-SGK1-NEDD4L-dependent upregulation of GPX4 in NSCLC cells&amp;author=F Cheng&amp;author=J Dou&amp;author=Y Yang&amp;volume=9&amp;issue=1&amp;publication_year=2023&amp;pages=165&amp;pmid=37188685&amp;doi=10.1038/s41420-023-01463-5&amp;"/></mixed-citation></ref><ref id="b52"><label>52.</label><mixed-citation><named-content content-type="citation-string">
+Forcina GC,
+Dixon SJ.
+. 
+GPX4 at the crossroads of lipid homeostasis and ferroptosis.
+Proteomics,
+2019,
+19(18): 1800311. doi: 10.1002/pmic.201800311
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/pmic.201800311"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30888116"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proteomics&amp;title=GPX4 at the crossroads of lipid homeostasis and ferroptosis&amp;author=GC Forcina&amp;author=SJ Dixon&amp;volume=19&amp;issue=18&amp;publication_year=2019&amp;pages=1800311&amp;pmid=30888116&amp;doi=10.1002/pmic.201800311&amp;"/></mixed-citation></ref><ref id="b53"><label>53.</label><mixed-citation><named-content content-type="citation-string">
+Li Z,
+Xiao JY,
+Liu M,
+et al. 
+Notch3 regulates ferroptosis via ROS‐induced lipid peroxidation in NSCLC cells.
+FEBS Open Bio,
+2022,
+12(6): 1197-1205. doi: 10.1002/2211-5463.13393
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/2211-5463.13393"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9157401"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35258176"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=FEBS Open Bio&amp;title=Notch3 regulates ferroptosis via ROS‐induced lipid peroxidation in NSCLC cells&amp;author=Z Li&amp;author=JY Xiao&amp;author=M Liu&amp;volume=12&amp;issue=6&amp;publication_year=2022&amp;pages=1197-1205&amp;pmid=35258176&amp;doi=10.1002/2211-5463.13393&amp;"/></mixed-citation></ref><ref id="b54"><label>54.</label><mixed-citation><named-content content-type="citation-string">
+Lai Y,
+Zhang Z,
+Li J,
+et al. 
+STYK1/NOK correlates with ferroptosis in non-small cell lung carcinoma.
+Biochem Biophys Res Commun,
+2019,
+519(4): 659-666. doi: 10.1016/j.bbrc.2019.09.032
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bbrc.2019.09.032"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31542233"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochem Biophys Res Commun&amp;title=STYK1/NOK correlates with ferroptosis in non-small cell lung carcinoma&amp;author=Y Lai&amp;author=Z Zhang&amp;author=J Li&amp;volume=519&amp;issue=4&amp;publication_year=2019&amp;pages=659-666&amp;pmid=31542233&amp;doi=10.1016/j.bbrc.2019.09.032&amp;"/></mixed-citation></ref><ref id="b55"><label>55.</label><mixed-citation><named-content content-type="citation-string">
+Shanshan W,
+Hongying M,
+Jingjing F,
+et al. 
+CircDTL functions as an oncogene and regulates both apoptosis and ferroptosis in non-small cell lung cancer cells.
+Front Genet,
+2021,
+12: 743505. doi: 10.3389/fgene.2021.743505
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fgene.2021.743505"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8490767"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34621297"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Genet&amp;title=CircDTL functions as an oncogene and regulates both apoptosis and ferroptosis in non-small cell lung cancer cells&amp;author=W Shanshan&amp;author=M Hongying&amp;author=F Jingjing&amp;volume=12&amp;publication_year=2021&amp;pages=743505&amp;pmid=34621297&amp;doi=10.3389/fgene.2021.743505&amp;"/></mixed-citation></ref><ref id="b56"><label>56.</label><mixed-citation><named-content content-type="citation-string">
+Han B,
+Liu Y,
+Zhang Q,
+et al. 
+Propofol decreases cisplatin resistance of non-small cell lung cancer by inducing GPX4-mediated ferroptosis through the miR-744-5p/miR-615-3p axis.
+J Proteomics,
+2023,
+274: 104777. doi: 10.1016/j.jprot.2022.104777
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jprot.2022.104777"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36427803"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Proteomics&amp;title=Propofol decreases cisplatin resistance of non-small cell lung cancer by inducing GPX4-mediated ferroptosis through the miR-744-5p/miR-615-3p axis&amp;author=B Han&amp;author=Y Liu&amp;author=Q Zhang&amp;volume=274&amp;publication_year=2023&amp;pages=104777&amp;pmid=36427803&amp;doi=10.1016/j.jprot.2022.104777&amp;"/></mixed-citation></ref><ref id="b57"><label>57.</label><mixed-citation><named-content content-type="citation-string">
+Deng S,
+Wu D,
+Li L,
+et al. 
+miR-324-3p reverses cisplatin resistance by inducing GPX4-mediated ferroptosis in lung adenocarcinoma cell line A549.
+Biochem Biophys Res Commun,
+2021,
+549: 54-60. doi: 10.1016/j.bbrc.2021.02.077
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.bbrc.2021.02.077"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33662669"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biochem Biophys Res Commun&amp;title=miR-324-3p reverses cisplatin resistance by inducing GPX4-mediated ferroptosis in lung adenocarcinoma cell line A549&amp;author=S Deng&amp;author=D Wu&amp;author=L Li&amp;volume=549&amp;publication_year=2021&amp;pages=54-60&amp;pmid=33662669&amp;doi=10.1016/j.bbrc.2021.02.077&amp;"/></mixed-citation></ref><ref id="b58"><label>58.</label><mixed-citation><named-content content-type="citation-string">
+Mao W,
+Cai Y,
+Chen D,
+et al. 
+Statin shapes inflamed tumor microenvironment and enhances immune checkpoint blockade in non-small cell lung cancer.
+JCI Insight,
+2022,
+7(18): e161940. doi: 10.1172/jci.insight.161940
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1172/jci.insight.161940"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9675559"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35943796"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=JCI Insight&amp;title=Statin shapes inflamed tumor microenvironment and enhances immune checkpoint blockade in non-small cell lung cancer&amp;author=W Mao&amp;author=Y Cai&amp;author=D Chen&amp;volume=7&amp;issue=18&amp;publication_year=2022&amp;pages=e161940&amp;pmid=35943796&amp;doi=10.1172/jci.insight.161940&amp;"/></mixed-citation></ref><ref id="b59"><label>59.</label><mixed-citation><named-content content-type="citation-string">
+Bersuker K,
+Hendricks JM,
+Li Z,
+et al. 
+The CoQ oxidoreductase FSP 1 acts parallel to GPX4 to inhibit ferroptosis.
+Nature,
+2019,
+575(7784): 688-692. doi: 10.1038/s41586-019-1705-2
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41586-019-1705-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6883167"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31634900"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=The CoQ oxidoreductase FSP 1 acts parallel to GPX4 to inhibit ferroptosis&amp;author=K Bersuker&amp;author=JM Hendricks&amp;author=Z Li&amp;volume=575&amp;issue=7784&amp;publication_year=2019&amp;pages=688-692&amp;pmid=31634900&amp;doi=10.1038/s41586-019-1705-2&amp;"/></mixed-citation></ref><ref id="b60"><label>60.</label><mixed-citation><named-content content-type="citation-string">
+Mao C,
+Liu X,
+Zhang Y,
+et al. 
+DHODH-mediated ferroptosis defence is a targetable vulnerability in cancer.
+Nature,
+2021,
+593(7860): 586-590. doi: 10.1038/s41586-021-03539-7
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41586-021-03539-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8895686"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33981038"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=DHODH-mediated ferroptosis defence is a targetable vulnerability in cancer&amp;author=C Mao&amp;author=X Liu&amp;author=Y Zhang&amp;volume=593&amp;issue=7860&amp;publication_year=2021&amp;pages=586-590&amp;pmid=33981038&amp;doi=10.1038/s41586-021-03539-7&amp;"/></mixed-citation></ref><ref id="b61"><label>61.</label><mixed-citation><named-content content-type="citation-string">
+Yu J,
+Zhong B,
+Zhao L,
+et al. 
+Fighting drug-resistant lung cancer by induction of NAD(P)H: quinone oxidoreductase 1 (NQO1)-mediated ferroptosis.
+Drug Resist Updat,
+2023,
+70: 100977. doi: 10.1016/j.drup.2023.100977
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.drup.2023.100977"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37321064"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Drug Resist Updat&amp;title=Fighting drug-resistant lung cancer by induction of NAD(P)H: quinone oxidoreductase 1 (NQO1)-mediated ferroptosis&amp;author=J Yu&amp;author=B Zhong&amp;author=L Zhao&amp;volume=70&amp;publication_year=2023&amp;pages=100977&amp;pmid=37321064&amp;doi=10.1016/j.drup.2023.100977&amp;"/></mixed-citation></ref><ref id="b62"><label>62.</label><mixed-citation><named-content content-type="citation-string">
+Soula M,
+Weber RA,
+Zilka O,
+et al. 
+Metabolic determinants of cancer cell sensitivity to canonical ferroptosis inducers.
+Nat Chem Biol,
+2020,
+16(12): 1351-1360. doi: 10.1038/s41589-020-0613-y
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41589-020-0613-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8299533"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32778843"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat Chem Biol&amp;title=Metabolic determinants of cancer cell sensitivity to canonical ferroptosis inducers&amp;author=M Soula&amp;author=RA Weber&amp;author=O Zilka&amp;volume=16&amp;issue=12&amp;publication_year=2020&amp;pages=1351-1360&amp;pmid=32778843&amp;doi=10.1038/s41589-020-0613-y&amp;"/></mixed-citation></ref><ref id="b63"><label>63.</label><mixed-citation><named-content content-type="citation-string">
+Mancias JD,
+Wang X,
+Gygi SP,
+et al. 
+Quantitative proteomics identifies NCOA 4 as the cargo receptor mediating ferritinophagy.
+Nature,
+2014,
+509(7498): 105-109. doi: 10.1038/nature13148
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature13148"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4180099"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24695223"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Quantitative proteomics identifies NCOA 4 as the cargo receptor mediating ferritinophagy&amp;author=JD Mancias&amp;author=X Wang&amp;author=SP Gygi&amp;volume=509&amp;issue=7498&amp;publication_year=2014&amp;pages=105-109&amp;pmid=24695223&amp;doi=10.1038/nature13148&amp;"/></mixed-citation></ref><ref id="b64"><label>64.</label><mixed-citation><named-content content-type="citation-string">
+Song X,
+Zhu S,
+Chen P,
+et al. 
+AMPK-mediated BECN1 phosphorylation promotes Ferroptosis by directly blocking system Xc<sup>-</sup> activity. Curr Biol
+,
+2018,
+28: 2388-2399.e5. doi: 10.1016/j.cub.2018.05.094
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cub.2018.05.094"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6081251"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30057310"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=AMPK-mediated BECN1 phosphorylation promotes Ferroptosis by directly blocking system Xc- activity. Curr Biol&amp;author=X Song&amp;author=S Zhu&amp;author=P Chen&amp;volume=28&amp;publication_year=2018&amp;pages=2388-2399&amp;pmid=30057310&amp;doi=10.1016/j.cub.2018.05.094&amp;"/></mixed-citation></ref><ref id="b65"><label>65.</label><mixed-citation id="mixed-citation65" xml:lang="en"><named-content content-type="citation-string">
+Hu SN,
+Zou XR,
+Fang ZX,
+et al. 
+Research progress of Nrf2 and ferroptosis in tumor drug resistance.
+Zhongguo Feiai Zazhi,
+2023,
+26(10): 765-773.
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3779/j.issn.1009-3419.2023.101.31"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10663776"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37989339"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zhongguo Feiai Zazhi&amp;title=Research progress of Nrf2 and ferroptosis in tumor drug resistance&amp;author=SN Hu&amp;author=XR Zou&amp;author=ZX Fang&amp;volume=26&amp;issue=10&amp;publication_year=2023&amp;pages=765-773&amp;pmid=37989339&amp;doi=10.3779/j.issn.1009-3419.2023.101.31&amp;"/></mixed-citation><mixed-citation id="mixed-citation66"><named-content content-type="citation-string">
+
+[胡舒宁,
+邹心如,
+方译萱,
+et al.
+. 
+Nrf2与铁死亡在肿瘤耐药中的研究进展.
+中国肺癌杂志,
+2023,
+26(10): 765-773.] doi: 10.3779/j.issn.1009-3419.2023.101.31
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3779/j.issn.1009-3419.2023.101.31"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10663776"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37989339"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=中国肺癌杂志&amp;title=Nrf2与铁死亡在肿瘤耐药中的研究进展&amp;volume=26&amp;issue=10&amp;publication_year=2023&amp;pages=765-773&amp;pmid=37989339&amp;doi=10.3779/j.issn.1009-3419.2023.101.31&amp;"/></mixed-citation></ref><ref id="b66"><label>66.</label><mixed-citation><named-content content-type="citation-string">
+Ghareghomi S,
+Moosavi-Movahedi F,
+Saso L,
+et al. 
+Modulation of Nrf2/HO-1 by natural compounds in lung cancer.
+Antioxidants,
+2023,
+12(3): 735. doi: 10.3390/antiox12030735
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/antiox12030735"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10044870"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36978983"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Antioxidants&amp;title=Modulation of Nrf2/HO-1 by natural compounds in lung cancer&amp;author=S Ghareghomi&amp;author=F Moosavi-Movahedi&amp;author=L Saso&amp;volume=12&amp;issue=3&amp;publication_year=2023&amp;pages=735&amp;pmid=36978983&amp;doi=10.3390/antiox12030735&amp;"/></mixed-citation></ref><ref id="b67"><label>67.</label><mixed-citation><named-content content-type="citation-string">
+Bi G,
+Liang J,
+Zhao M,
+et al. 
+miR-6077 promotes cisplatin/pemetrexed resistance in lung adenocarcinoma via CDKN1A/cell cycle arrest and KEAP1/ferroptosis pathways.
+Mol Ther Nucleic Acids,
+2022,
+28: 366-386. doi: 10.1016/j.omtn.2022.03.020
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.omtn.2022.03.020"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9035384"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35505963"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Ther Nucleic Acids&amp;title=miR-6077 promotes cisplatin/pemetrexed resistance in lung adenocarcinoma via CDKN1A/cell cycle arrest and KEAP1/ferroptosis pathways&amp;author=G Bi&amp;author=J Liang&amp;author=M Zhao&amp;volume=28&amp;publication_year=2022&amp;pages=366-386&amp;pmid=35505963&amp;doi=10.1016/j.omtn.2022.03.020&amp;"/></mixed-citation></ref><ref id="b68"><label>68.</label><mixed-citation><named-content content-type="citation-string">
+Kang YP,
+Mockabee-Macias A,
+Jiang C,
+et al. 
+Non-canonical glutamate-cysteine ligase activity protects against ferroptosis.
+Cell Metab,
+2021,
+33(1): 174-189. doi: 10.1016/j.cmet.2020.12.007
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cmet.2020.12.007"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7839835"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33357455"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Metab&amp;title=Non-canonical glutamate-cysteine ligase activity protects against ferroptosis&amp;author=YP Kang&amp;author=A Mockabee-Macias&amp;author=C Jiang&amp;volume=33&amp;issue=1&amp;publication_year=2021&amp;pages=174-189&amp;pmid=33357455&amp;doi=10.1016/j.cmet.2020.12.007&amp;"/></mixed-citation></ref><ref id="b69"><label>69.</label><mixed-citation><named-content content-type="citation-string">
+Gai C,
+Liu C,
+Wu X,
+et al. 
+MT1DP loaded by folate-modified liposomes sensitizes erastin-induced ferroptosis via regulating miR-365a-3p/NRF 2 axis in non-small cell lung cancer cells.
+Cell Death Dis,
+2020,
+11(9): 751. doi: 10.1038/s41419-020-02939-3
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41419-020-02939-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7490417"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32929075"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Dis&amp;title=MT1DP loaded by folate-modified liposomes sensitizes erastin-induced ferroptosis via regulating miR-365a-3p/NRF 2 axis in non-small cell lung cancer cells&amp;author=C Gai&amp;author=C Liu&amp;author=X Wu&amp;volume=11&amp;issue=9&amp;publication_year=2020&amp;pmid=32929075&amp;doi=10.1038/s41419-020-02939-3&amp;"/></mixed-citation></ref><ref id="b70"><label>70.</label><mixed-citation><named-content content-type="citation-string">
+Wang H,
+Huang Q,
+Xia J,
+et al. 
+The E3 ligase MIB1 promotes proteasomal degradation of NRF2 and sensitizes lung cancer cells to ferroptosis.
+Mol Cancer Res,
+2022,
+20(2): 253-264. doi: 10.1158/1541-7786.mcr-21-0342
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1158/1541-7786.mcr-21-0342"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34670864"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Cancer Res&amp;title=The E3 ligase MIB1 promotes proteasomal degradation of NRF2 and sensitizes lung cancer cells to ferroptosis&amp;author=H Wang&amp;author=Q Huang&amp;author=J Xia&amp;volume=20&amp;issue=2&amp;publication_year=2022&amp;pages=253-264&amp;pmid=34670864&amp;doi=10.1158/1541-7786.mcr-21-0342&amp;"/></mixed-citation></ref><ref id="b71"><label>71.</label><mixed-citation><named-content content-type="citation-string">
+Meng C,
+Zhan J,
+Chen D,
+et al. 
+The deubiquitinase USP 11 regulates cell proliferation and ferroptotic cell death via stabilization of NRF2 USP11 deubiquitinates and stabilizes NRF2.
+Oncogene,
+2021,
+40(9): 1706-1720. doi: 10.1038/s41388-021-01660-5
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41388-021-01660-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33531626"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncogene&amp;title=The deubiquitinase USP 11 regulates cell proliferation and ferroptotic cell death via stabilization of NRF2 USP11 deubiquitinates and stabilizes NRF2&amp;author=C Meng&amp;author=J Zhan&amp;author=D Chen&amp;volume=40&amp;issue=9&amp;publication_year=2021&amp;pages=1706-1720&amp;pmid=33531626&amp;doi=10.1038/s41388-021-01660-5&amp;"/></mixed-citation></ref><ref id="b72"><label>72.</label><mixed-citation><named-content content-type="citation-string">
+Li Y,
+Yan H,
+Xu X,
+et al. 
+Erastin/sorafenib induces cisplatin-resistant non-small cell lung cancer cell ferroptosis through inhibition of the Nrf2/xCT pathway.
+Oncol Lett,
+2020,
+19(1): 323-333. doi: 10.3892/ol.2019.11066
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3892/ol.2019.11066"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6923844"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31897145"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oncol Lett&amp;title=Erastin/sorafenib induces cisplatin-resistant non-small cell lung cancer cell ferroptosis through inhibition of the Nrf2/xCT pathway&amp;author=Y Li&amp;author=H Yan&amp;author=X Xu&amp;volume=19&amp;issue=1&amp;publication_year=2020&amp;pages=323-333&amp;pmid=31897145&amp;doi=10.3892/ol.2019.11066&amp;"/></mixed-citation></ref><ref id="b73"><label>73.</label><mixed-citation id="mixed-citation74" xml:lang="en"><named-content content-type="citation-string">
+Wang XW,
+Li ZG,
+Wang ZX,
+et al. 
+A review on TCM syndrome and treatment of lung cancer.
+Zhongyi Linchuang Yanjiu,
+2021,
+13(11): 125-128.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zhongyi Linchuang Yanjiu&amp;title=A review on TCM syndrome and treatment of lung cancer&amp;author=XW Wang&amp;author=ZG Li&amp;author=ZX Wang&amp;volume=13&amp;issue=11&amp;publication_year=2021&amp;pages=125-128&amp;"/></mixed-citation><mixed-citation id="mixed-citation75"><named-content content-type="citation-string">
+
+[王小伟,
+李志刚,
+王振祥,
+et al.
+. 
+肺癌的中医证型及治疗研究进展.
+中医临床研究,
+2021,
+13(11): 125-128.] doi: 10.3969/j.issn.1674-7860.2021.11.044
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3969/j.issn.1674-7860.2021.11.044"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=中医临床研究&amp;title=肺癌的中医证型及治疗研究进展&amp;volume=13&amp;issue=11&amp;publication_year=2021&amp;pages=125-128&amp;doi=10.3969/j.issn.1674-7860.2021.11.044&amp;"/></mixed-citation></ref><ref id="b74"><label>74.</label><mixed-citation id="mixed-citation76" xml:lang="en"><named-content content-type="citation-string">
+Xie YG,
+Shen KP,
+Lu YL.
+. 
+Progress in TCM treatment of non-small cell lung cancer.
+Zhonghua Zhongyiyao Zazhi,
+2021,
+36(5): 2846-2851.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zhonghua Zhongyiyao Zazhi&amp;title=Progress in TCM treatment of non-small cell lung cancer&amp;author=YG Xie&amp;author=KP Shen&amp;author=YL Lu&amp;volume=36&amp;issue=5&amp;publication_year=2021&amp;pages=2846-2851&amp;"/></mixed-citation><mixed-citation id="mixed-citation77"><named-content content-type="citation-string">
+
+[谢雅革,
+沈克平,
+卢艳琳.
+. 
+中医药治疗非小细胞肺癌研究进展.
+中华中医药杂志,
+2021,
+36(5): 2846-2851.] doi: 10.3969/j.issn.1671-7813.2009.04.12
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3969/j.issn.1671-7813.2009.04.12"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=中华中医药杂志&amp;title=中医药治疗非小细胞肺癌研究进展&amp;volume=36&amp;issue=5&amp;publication_year=2021&amp;pages=2846-2851&amp;doi=10.3969/j.issn.1671-7813.2009.04.12&amp;"/></mixed-citation></ref><ref id="b75"><label>75.</label><mixed-citation><named-content content-type="citation-string">
+Zhang Q,
+Yi H,
+Yao H,
+et al. 
+Artemisinin derivatives inhibit non-small cell lung cancer cells through induction of ROS-dependent apoptosis/ferroptosis.
+J Cancer,
+2021,
+12(13): 4075-4085. doi: 10.7150/jca.57054
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7150/jca.57054"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8176242"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34093811"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Cancer&amp;title=Artemisinin derivatives inhibit non-small cell lung cancer cells through induction of ROS-dependent apoptosis/ferroptosis&amp;author=Q Zhang&amp;author=H Yi&amp;author=H Yao&amp;volume=12&amp;issue=13&amp;publication_year=2021&amp;pages=4075-4085&amp;pmid=34093811&amp;doi=10.7150/jca.57054&amp;"/></mixed-citation></ref><ref id="b76"><label>76.</label><mixed-citation><named-content content-type="citation-string">
+Lai XY,
+Shi YM,
+Zhou MM.
+. 
+Dihydroartemisinin enhances gefitinib cytotoxicity against lung adenocarcinoma cells by inducing ROS-dependent apoptosis and ferroptosis.
+Kaohsiung J Med Sci,
+2023,
+39(7): 699-709. doi: 10.1002/kjm2.12684
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/kjm2.12684"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11895908"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37057810"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Kaohsiung J Med Sci&amp;title=Dihydroartemisinin enhances gefitinib cytotoxicity against lung adenocarcinoma cells by inducing ROS-dependent apoptosis and ferroptosis&amp;author=XY Lai&amp;author=YM Shi&amp;author=MM Zhou&amp;volume=39&amp;issue=7&amp;publication_year=2023&amp;pages=699-709&amp;pmid=37057810&amp;doi=10.1002/kjm2.12684&amp;"/></mixed-citation></ref><ref id="b77"><label>77.</label><mixed-citation><named-content content-type="citation-string">
+Li J,
+Huang S,
+Siqing H.
+. 
+Andrographolide promoted ferroptosis to repress the development of non-small cell lung cancer through activation of the mitochondrial dysfunction.
+Phytomedicine,
+2023,
+109: 154601. doi: 10.1016/j.phymed.2022.154601
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.phymed.2022.154601"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36610134"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phytomedicine&amp;title=Andrographolide promoted ferroptosis to repress the development of non-small cell lung cancer through activation of the mitochondrial dysfunction&amp;author=J Li&amp;author=S Huang&amp;author=H Siqing&amp;volume=109&amp;publication_year=2023&amp;pages=154601&amp;pmid=36610134&amp;doi=10.1016/j.phymed.2022.154601&amp;"/></mixed-citation></ref><ref id="b78"><label>78.</label><mixed-citation><named-content content-type="citation-string">
+Liu M,
+Fan Y,
+Li D,
+et al. 
+Ferroptosis inducer erastin sensitizes NSCLC cells to celastrol through activation of the ROS-mitochondrial fission-mitophagy axis.
+Mol Oncol,
+2021,
+15(8): 2084-2105. doi: 10.1002/1878-0261.12936
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/1878-0261.12936"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8334255"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33675143"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol Oncol&amp;title=Ferroptosis inducer erastin sensitizes NSCLC cells to celastrol through activation of the ROS-mitochondrial fission-mitophagy axis&amp;author=M Liu&amp;author=Y Fan&amp;author=D Li&amp;volume=15&amp;issue=8&amp;publication_year=2021&amp;pages=2084-2105&amp;pmid=33675143&amp;doi=10.1002/1878-0261.12936&amp;"/></mixed-citation></ref><ref id="b79"><label>79.</label><mixed-citation><named-content content-type="citation-string">
+Ni Y,
+Liu J,
+Zeng L,
+et al. 
+Natural product manoalide promotes EGFR-TKI sensitivity of lung cancer cells by KRAS-ERK pathway and mitochondrial Ca<sup>2+</sup> overload-induced ferroptosis.
+Front Pharmacol,
+2023,
+13: 1109822. doi: 10.3389/fphar.2022.1109822
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fphar.2022.1109822"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9873971"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36712673"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Pharmacol&amp;title=Natural product manoalide promotes EGFR-TKI sensitivity of lung cancer cells by KRAS-ERK pathway and mitochondrial Ca2+ overload-induced ferroptosis&amp;author=Y Ni&amp;author=J Liu&amp;author=L Zeng&amp;volume=13&amp;publication_year=2023&amp;pages=1109822&amp;pmid=36712673&amp;doi=10.3389/fphar.2022.1109822&amp;"/></mixed-citation></ref><ref id="b80"><label>80.</label><mixed-citation id="mixed-citation83" xml:lang="en"><named-content content-type="citation-string">
+Yang HH.
+. 
+The effects and mechanisms of oridonin on proliferation and cisplatin resistance of non-small cell lung cancer.
+Jilin University,
+2020.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Jilin University&amp;title=The effects and mechanisms of oridonin on proliferation and cisplatin resistance of non-small cell lung cancer&amp;author=HH Yang&amp;publication_year=2020&amp;"/></mixed-citation><mixed-citation id="mixed-citation84"><named-content content-type="citation-string">
+
+[杨桦鸿.
+. 
+冬凌草甲素对非小细胞肺癌细胞增殖和顺铂耐药的作用及机制研究.
+吉林大学,
+2020.] doi: 10.27162/d.cnki.gjlin.2020.000279
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.27162/d.cnki.gjlin.2020.000279"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=吉林大学&amp;title=冬凌草甲素对非小细胞肺癌细胞增殖和顺铂耐药的作用及机制研究&amp;publication_year=2020&amp;doi=10.27162/d.cnki.gjlin.2020.000279&amp;"/></mixed-citation></ref><ref id="b81"><label>81.</label><mixed-citation><named-content content-type="citation-string">
+Zhao LP,
+Wang HJ,
+Hu D,
+et al. 
+β-elemene induced ferroptosis via TFEB-mediated GPX4 degradation in EGFR wide-type non-small cell lung cancer.
+J Adv Res,
+2023(23): 234-235. doi: 10.1016/j.jare.2023.08.018
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jare.2023.08.018"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37689240"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Adv Res&amp;title=β-elemene induced ferroptosis via TFEB-mediated GPX4 degradation in EGFR wide-type non-small cell lung cancer&amp;author=LP Zhao&amp;author=HJ Wang&amp;author=D Hu&amp;issue=23&amp;publication_year=2023&amp;pages=234-235&amp;pmid=37689240&amp;doi=10.1016/j.jare.2023.08.018&amp;"/></mixed-citation></ref><ref id="b82"><label>82.</label><mixed-citation><named-content content-type="citation-string">
+Wu Y,
+Wang D,
+Lou Y,
+et al. 
+Regulatory mechanism of α-hederin upon cisplatin sensibility in NSCLC at safe dose by destroying GSS/GSH/GPX2 axis-mediated glutathione oxidation-reduction system.
+Biomed Pharmacother,
+2022,
+150: 112927. doi: 10.1016/j.biopha.2022.112927
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.biopha.2022.112927"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35398749"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biomed Pharmacother&amp;title=Regulatory mechanism of α-hederin upon cisplatin sensibility in NSCLC at safe dose by destroying GSS/GSH/GPX2 axis-mediated glutathione oxidation-reduction system&amp;author=Y Wu&amp;author=D Wang&amp;author=Y Lou&amp;volume=150&amp;publication_year=2022&amp;pages=112927&amp;pmid=35398749&amp;doi=10.1016/j.biopha.2022.112927&amp;"/></mixed-citation></ref><ref id="b83"><label>83.</label><mixed-citation><named-content content-type="citation-string">
+Wu CY,
+Yang YH,
+Lin YS,
+et al. 
+Dihydroisotanshinone I induced ferroptosis and apoptosis of lung cancer cells.
+Biomed Pharmacother,
+2021,
+139: 111585. doi: 10.1016/j.biopha.2021.111585
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.biopha.2021.111585"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33862493"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biomed Pharmacother&amp;title=Dihydroisotanshinone I induced ferroptosis and apoptosis of lung cancer cells&amp;author=CY Wu&amp;author=YH Yang&amp;author=YS Lin&amp;volume=139&amp;publication_year=2021&amp;pages=111585&amp;pmid=33862493&amp;doi=10.1016/j.biopha.2021.111585&amp;"/></mixed-citation></ref><ref id="b84"><label>84.</label><mixed-citation><named-content content-type="citation-string">
+Yan WY,
+Cai J,
+Wang JN,
+et al. 
+Co-treatment of betulin and gefitinib is effective against EGFR wild-type/KRAS-mutant non-small cell lung cancer by inducing ferroptosis.
+Neoplasma,
+2022,
+69(3): 648-656. doi: 10.4149/neo_2022_211103n1568
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.4149/neo_2022_211103n1568"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35330996"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Neoplasma&amp;title=Co-treatment of betulin and gefitinib is effective against EGFR wild-type/KRAS-mutant non-small cell lung cancer by inducing ferroptosis&amp;author=WY Yan&amp;author=J Cai&amp;author=JN Wang&amp;volume=69&amp;issue=3&amp;publication_year=2022&amp;pages=648-656&amp;pmid=35330996&amp;doi=10.4149/neo_2022_211103n1568&amp;"/></mixed-citation></ref><ref id="b85"><label>85.</label><mixed-citation><named-content content-type="citation-string">
+Rah B,
+Shafarin J,
+Hamad M,
+et al. 
+Sclareol induces cell cycle arrest and ROS‐mediated apoptosis and ferroptosis in lung adenocarcinoma cells.
+J Biochem Mol Toxicol,
+2024,
+38(1): e23563. doi: 10.1002/jbt.23563
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/jbt.23563"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37850667"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Biochem Mol Toxicol&amp;title=Sclareol induces cell cycle arrest and ROS‐mediated apoptosis and ferroptosis in lung adenocarcinoma cells&amp;author=B Rah&amp;author=J Shafarin&amp;author=M Hamad&amp;volume=38&amp;issue=1&amp;publication_year=2024&amp;pages=e23563&amp;pmid=37850667&amp;doi=10.1002/jbt.23563&amp;"/></mixed-citation></ref><ref id="b86"><label>86.</label><mixed-citation><named-content content-type="citation-string">
+Zhou C,
+Yu T,
+Zhu R,
+et al. 
+Timosaponin AIII promotes non-small-cell lung cancer ferroptosis through targeting and facilitating HSP 90 mediated GPX4 ubiquitination and degradation.
+Int J Biol Sci,
+2023,
+19(5): 1471-1489. doi: 10.7150/ijbs.77979
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7150/ijbs.77979"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10086754"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37056925"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Biol Sci&amp;title=Timosaponin AIII promotes non-small-cell lung cancer ferroptosis through targeting and facilitating HSP 90 mediated GPX4 ubiquitination and degradation&amp;author=C Zhou&amp;author=T Yu&amp;author=R Zhu&amp;volume=19&amp;issue=5&amp;publication_year=2023&amp;pages=1471-1489&amp;pmid=37056925&amp;doi=10.7150/ijbs.77979&amp;"/></mixed-citation></ref><ref id="b87"><label>87.</label><mixed-citation><named-content content-type="citation-string">
+Li L,
+Gao Q,
+Wang J,
+et al. 
+Induction of ferroptosis by ophiopogonin-B through regulating the gene signature AURKA in NSCLC.
+Front Oncol,
+2022,
+12: 833814. doi: 10.3389/fonc.2022.833814
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fonc.2022.833814"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9299951"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35875069"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Oncol&amp;title=Induction of ferroptosis by ophiopogonin-B through regulating the gene signature AURKA in NSCLC&amp;author=L Li&amp;author=Q Gao&amp;author=J Wang&amp;volume=12&amp;publication_year=2022&amp;pages=833814&amp;pmid=35875069&amp;doi=10.3389/fonc.2022.833814&amp;"/></mixed-citation></ref><ref id="b88"><label>88.</label><mixed-citation><named-content content-type="citation-string">
+Liu P,
+Wu D,
+Duan J,
+et al. 
+NRF2 regulates the sensitivity of human NSCLC cells to cystine deprivation-induced ferroptosis via FOCAD-FAK signaling pathway.
+Redox Biol,
+2020,
+37: 101702. doi: 10.1016/j.redox.2020.101702
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.redox.2020.101702"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7486457"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32898818"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Redox Biol&amp;title=NRF2 regulates the sensitivity of human NSCLC cells to cystine deprivation-induced ferroptosis via FOCAD-FAK signaling pathway&amp;author=P Liu&amp;author=D Wu&amp;author=J Duan&amp;volume=37&amp;publication_year=2020&amp;pages=101702&amp;pmid=32898818&amp;doi=10.1016/j.redox.2020.101702&amp;"/></mixed-citation></ref><ref id="b89"><label>89.</label><mixed-citation><named-content content-type="citation-string">
+Zeng YY,
+Luo YB,
+Ju XD,
+et al. 
+Solasonine causes redox imbalance and mitochondrial oxidative stress of ferroptosis in lung adenocarcinoma.
+Front Oncol,
+2022,
+12: 874900. doi: 10.3389/fonc.2022.874900
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fonc.2022.874900"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9158126"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35664792"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Oncol&amp;title=Solasonine causes redox imbalance and mitochondrial oxidative stress of ferroptosis in lung adenocarcinoma&amp;author=YY Zeng&amp;author=YB Luo&amp;author=XD Ju&amp;volume=12&amp;publication_year=2022&amp;pages=874900&amp;pmid=35664792&amp;doi=10.3389/fonc.2022.874900&amp;"/></mixed-citation></ref><ref id="b90"><label>90.</label><mixed-citation><named-content content-type="citation-string">
+Shao M,
+Jiang Q,
+Shen C,
+et al. 
+Sinapine induced ferroptosis in non-small cell lung cancer cells by upregulating transferrin/transferrin receptor and downregulating SLC7A11.
+Gene,
+2022,
+827: 146460. doi: 10.1016/j.gene.2022.146460
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.gene.2022.146460"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35358657"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Gene&amp;title=Sinapine induced ferroptosis in non-small cell lung cancer cells by upregulating transferrin/transferrin receptor and downregulating SLC7A11&amp;author=M Shao&amp;author=Q Jiang&amp;author=C Shen&amp;volume=827&amp;publication_year=2022&amp;pages=146460&amp;pmid=35358657&amp;doi=10.1016/j.gene.2022.146460&amp;"/></mixed-citation></ref><ref id="b91"><label>91.</label><mixed-citation><named-content content-type="citation-string">
+Xu R,
+Wu J,
+Luo Y,
+et al. 
+Sanguinarine represses the growth and metastasis of non-small cell lung cancer by facilitating ferroptosis.
+Curr Pharm Des,
+2022,
+28(9): 760-768. doi: 10.2174/1381612828666220217124542
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2174/1381612828666220217124542"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35176976"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Curr Pharm Des&amp;title=Sanguinarine represses the growth and metastasis of non-small cell lung cancer by facilitating ferroptosis&amp;author=R Xu&amp;author=J Wu&amp;author=Y Luo&amp;volume=28&amp;issue=9&amp;publication_year=2022&amp;pages=760-768&amp;pmid=35176976&amp;doi=10.2174/1381612828666220217124542&amp;"/></mixed-citation></ref><ref id="b92"><label>92.</label><mixed-citation><named-content content-type="citation-string">
+Luo L,
+Xu G.
+. 
+Fascaplysin induces apoptosis and ferroptosis, and enhances anti-PD-1 immunotherapy in non-small cell lung cancer (NSCLC) by promoting PD-L1 expression.
+Int J Mol Sci,
+2022,
+23(22): 13774. doi: 10.3390/ijms232213774
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/ijms232213774"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9699238"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36430250"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Mol Sci&amp;title=Fascaplysin induces apoptosis and ferroptosis, and enhances anti-PD-1 immunotherapy in non-small cell lung cancer (NSCLC) by promoting PD-L1 expression&amp;author=L Luo&amp;author=G Xu&amp;volume=23&amp;issue=22&amp;publication_year=2022&amp;pmid=36430250&amp;doi=10.3390/ijms232213774&amp;"/></mixed-citation></ref><ref id="b93"><label>93.</label><mixed-citation><named-content content-type="citation-string">
+Su M,
+Chen Y,
+Jia L,
+et al. 
+Camptothecin-loaded and manganese dioxide-coated polydopamine nanomedicine used for magnetic resonance imaging diagnosis and chemo-photothermal therapy for lung cancer.
+Int J Nanomed,
+2022,
+17: 6687-6705. doi: 10.2147/ijn.s359300
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2147/ijn.s359300"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9805739"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36597434"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Nanomed&amp;title=Camptothecin-loaded and manganese dioxide-coated polydopamine nanomedicine used for magnetic resonance imaging diagnosis and chemo-photothermal therapy for lung cancer&amp;author=M Su&amp;author=Y Chen&amp;author=L Jia&amp;volume=17&amp;publication_year=2022&amp;pages=6687-6705&amp;pmid=36597434&amp;doi=10.2147/ijn.s359300&amp;"/></mixed-citation></ref><ref id="b94"><label>94.</label><mixed-citation><named-content content-type="citation-string">
+Liu XY,
+Wei DG,
+Li RS.
+. 
+Capsaicin induces ferroptosis of NSCLC by regulating SLC7A11/GPX4 signaling in vitro.
+Sci Rep,
+2022,
+12(1): 11996. doi: 10.1038/s41598-022-16372-3
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41598-022-16372-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9283462"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35835852"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Sci Rep&amp;title=Capsaicin induces ferroptosis of NSCLC by regulating SLC7A11/GPX4 signaling in vitro&amp;author=XY Liu&amp;author=DG Wei&amp;author=RS Li&amp;volume=12&amp;issue=1&amp;publication_year=2022&amp;pages=11996&amp;pmid=35835852&amp;doi=10.1038/s41598-022-16372-3&amp;"/></mixed-citation></ref><ref id="b95"><label>95.</label><mixed-citation><named-content content-type="citation-string">
+Huang J,
+Deng C,
+Guo T,
+et al. 
+Cinobufotalin induces ferroptosis to suppress lung cancer cell growth by lncRNA LINC00597/hsa-miR-367-3p/TFRC pathway via resibufogenin.
+Anticancer Agents Med Chem,
+2023,
+23(6): 717-725. doi: 10.2174/1871520622666221010092922
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2174/1871520622666221010092922"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36221890"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Anticancer Agents Med Chem&amp;title=Cinobufotalin induces ferroptosis to suppress lung cancer cell growth by lncRNA LINC00597/hsa-miR-367-3p/TFRC pathway via resibufogenin&amp;author=J Huang&amp;author=C Deng&amp;author=T Guo&amp;volume=23&amp;issue=6&amp;publication_year=2023&amp;pages=717-725&amp;pmid=36221890&amp;doi=10.2174/1871520622666221010092922&amp;"/></mixed-citation></ref><ref id="b96"><label>96.</label><mixed-citation><named-content content-type="citation-string">
+Tsai Y,
+Xia C,
+Sun Z.
+. 
+The inhibitory effect of 6-gingerol on ubiquitin-specific peptidase 14 enhances autophagy-dependent ferroptosis and anti-tumor in vivo and in vitro.
+Front Pharmacol,
+2020,
+11: 598555. doi: 10.3389/fphar.2020.598555
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fphar.2020.598555"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7691590"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33281606"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Pharmacol&amp;title=The inhibitory effect of 6-gingerol on ubiquitin-specific peptidase 14 enhances autophagy-dependent ferroptosis and anti-tumor in vivo and in vitro&amp;author=Y Tsai&amp;author=C Xia&amp;author=Z Sun&amp;volume=11&amp;publication_year=2020&amp;pages=598555&amp;pmid=33281606&amp;doi=10.3389/fphar.2020.598555&amp;"/></mixed-citation></ref><ref id="b97"><label>97.</label><mixed-citation><named-content content-type="citation-string">
+Tang X,
+Ding H,
+Liang M,
+et al. 
+Curcumin induces ferroptosis in non‐small‐cell lung cancer via activating autophagy.
+Thorac Cancer,
+2021,
+12(8): 1219-1230. doi: 10.1111/1759-7714.13904
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/1759-7714.13904"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8046146"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33656766"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Thorac Cancer&amp;title=Curcumin induces ferroptosis in non‐small‐cell lung cancer via activating autophagy&amp;author=X Tang&amp;author=H Ding&amp;author=M Liang&amp;volume=12&amp;issue=8&amp;publication_year=2021&amp;pages=1219-1230&amp;pmid=33656766&amp;doi=10.1111/1759-7714.13904&amp;"/></mixed-citation></ref><ref id="b98"><label>98.</label><mixed-citation><named-content content-type="citation-string">
+Wu L,
+Xu G,
+Li N,
+et al. 
+Curcumin Analog, HO-3867, induces both apoptosis and Ferroptosis via multiple mechanisms in NSCLC cells with wild-type p53.
+Evid Based Complement Alternat Med,
+2023,
+2023: 1-13. doi: 10.1155/2023/8378581
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1155/2023/8378581"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9940973"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36814470"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Evid Based Complement Alternat Med&amp;title=Curcumin Analog, HO-3867, induces both apoptosis and Ferroptosis via multiple mechanisms in NSCLC cells with wild-type p53&amp;author=L Wu&amp;author=G Xu&amp;author=N Li&amp;volume=2023&amp;publication_year=2023&amp;pages=1-13&amp;pmid=36814470&amp;doi=10.1155/2023/8378581&amp;"/></mixed-citation></ref><ref id="b99"><label>99.</label><mixed-citation><named-content content-type="citation-string">
+Lou JS,
+Zhao LP,
+Huang ZH,
+et al. 
+Ginkgetin derived from Ginkgo biloba leaves enhances the therapeutic effect of cisplatin via ferroptosis-mediated disruption of the Nrf2/HO-1 axis in EGFR wild-type non-small-cell lung cancer.
+Phytomedicine,
+2021,
+80: 153370. doi: 10.1016/j.phymed.2020.153370
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.phymed.2020.153370"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33113504"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phytomedicine&amp;title=Ginkgetin derived from Ginkgo biloba leaves enhances the therapeutic effect of cisplatin via ferroptosis-mediated disruption of the Nrf2/HO-1 axis in EGFR wild-type non-small-cell lung cancer&amp;author=JS Lou&amp;author=LP Zhao&amp;author=ZH Huang&amp;volume=80&amp;publication_year=2021&amp;pages=153370&amp;pmid=33113504&amp;doi=10.1016/j.phymed.2020.153370&amp;"/></mixed-citation></ref><ref id="b100"><label>100.</label><mixed-citation><named-content content-type="citation-string">
+Gao M,
+Lai K,
+Deng Y,
+et al. 
+Eriocitrin inhibits epithelial-mesenchymal transformation (EMT) in lung adenocarcinoma cells via triggering ferroptosis.
+Aging,
+2023,
+15(19): 10089-10104. doi: 10.18632/aging.205049
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18632/aging.205049"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10599723"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37787987"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aging&amp;title=Eriocitrin inhibits epithelial-mesenchymal transformation (EMT) in lung adenocarcinoma cells via triggering ferroptosis&amp;author=M Gao&amp;author=K Lai&amp;author=Y Deng&amp;volume=15&amp;issue=19&amp;publication_year=2023&amp;pages=10089-10104&amp;pmid=37787987&amp;doi=10.18632/aging.205049&amp;"/></mixed-citation></ref><ref id="b101"><label>101.</label><mixed-citation><named-content content-type="citation-string">
+Yu J,
+Zhong B,
+Zhao L,
+et al. 
+Fighting drug-resistant lung cancer by induction of NAD(P)H: quinone oxidoreductase 1 (NQO1)-mediated ferroptosis.
+Drug Resist Updat,
+2023,
+70: 100977. doi: 10.1016/j.drup.2023.100977
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.drup.2023.100977"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37321064"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Drug Resist Updat&amp;title=Fighting drug-resistant lung cancer by induction of NAD(P)H: quinone oxidoreductase 1 (NQO1)-mediated ferroptosis&amp;author=J Yu&amp;author=B Zhong&amp;author=L Zhao&amp;volume=70&amp;publication_year=2023&amp;pages=100977&amp;pmid=37321064&amp;doi=10.1016/j.drup.2023.100977&amp;"/></mixed-citation></ref><ref id="b102"><label>102.</label><mixed-citation><named-content content-type="citation-string">
+Chen P,
+Wu Q,
+Feng J,
+et al. 
+Erianin, a novel dibenzyl compound in Dendrobium extract, inhibits lung cancer cell growth and migration via calcium/calmodulin-dependent ferroptosis.
+Signal Transduct Target Ther,
+2020,
+5(1): 51. doi: 10.1038/s41392-020-0149-3
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41392-020-0149-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7205607"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32382060"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Signal Transduct Target Ther&amp;title=Erianin, a novel dibenzyl compound in Dendrobium extract, inhibits lung cancer cell growth and migration via calcium/calmodulin-dependent ferroptosis&amp;author=P Chen&amp;author=Q Wu&amp;author=J Feng&amp;volume=5&amp;issue=1&amp;publication_year=2020&amp;pages=51&amp;pmid=32382060&amp;doi=10.1038/s41392-020-0149-3&amp;"/></mixed-citation></ref><ref id="b103"><label>103.</label><mixed-citation><named-content content-type="citation-string">
+Zhang W,
+Jiang B,
+Liu Y,
+et al. 
+Bufotalin induces ferroptosis in non-small cell lung cancer cells by facilitating the ubiquitination and degradation of GPX4.
+Free Radic Biol Med,
+2022,
+180: 75-84. doi: 10.1016/j.freeradbiomed.2022.01.009
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.freeradbiomed.2022.01.009"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35038550"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Free Radic Biol Med&amp;title=Bufotalin induces ferroptosis in non-small cell lung cancer cells by facilitating the ubiquitination and degradation of GPX4&amp;author=W Zhang&amp;author=B Jiang&amp;author=Y Liu&amp;volume=180&amp;publication_year=2022&amp;pages=75-84&amp;pmid=35038550&amp;doi=10.1016/j.freeradbiomed.2022.01.009&amp;"/></mixed-citation></ref><ref id="b104"><label>104.</label><mixed-citation><named-content content-type="citation-string">
+Zhai F,
+Liang Q,
+Wu Y,
+et al. 
+Red ginseng polysaccharide exhibits anticancer activity through GPX4 downregulation-induced ferroptosis.
+Pharm Biol,
+2022,
+60(1): 909-914. doi: 10.1080/13880209.2022.2066139
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/13880209.2022.2066139"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9116236"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35575436"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Pharm Biol&amp;title=Red ginseng polysaccharide exhibits anticancer activity through GPX4 downregulation-induced ferroptosis&amp;author=F Zhai&amp;author=Q Liang&amp;author=Y Wu&amp;volume=60&amp;issue=1&amp;publication_year=2022&amp;pages=909-914&amp;pmid=35575436&amp;doi=10.1080/13880209.2022.2066139&amp;"/></mixed-citation></ref><ref id="b105"><label>105.</label><mixed-citation><named-content content-type="citation-string">
+Shen H,
+Wei Y,
+Yang Q,
+et al. 
+Scoparone induces both apoptosis and ferroptosis via multiple mechanisms in non-small-cell lung cancer cells.
+Toxicol In Vitro,
+2023,
+91: 105627. doi: 10.1016/j.tiv.2023.105627
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.tiv.2023.105627"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37315743"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Toxicol In Vitro&amp;title=Scoparone induces both apoptosis and ferroptosis via multiple mechanisms in non-small-cell lung cancer cells&amp;author=H Shen&amp;author=Y Wei&amp;author=Q Yang&amp;volume=91&amp;publication_year=2023&amp;pages=105627&amp;pmid=37315743&amp;doi=10.1016/j.tiv.2023.105627&amp;"/></mixed-citation></ref><ref id="b106"><label>106.</label><mixed-citation><named-content content-type="citation-string">
+Liu X,
+Hai Y,
+Dong J,
+et al. 
+Realgar-induced KRAS mutation lung cancer cell death via KRAS/Raf/MAPK mediates ferroptosis.
+Int J Oncol,
+2022,
+61(6): 157. doi: 10.3892/ijo.2022.5447
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3892/ijo.2022.5447"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9635866"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36321791"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Int J Oncol&amp;title=Realgar-induced KRAS mutation lung cancer cell death via KRAS/Raf/MAPK mediates ferroptosis&amp;author=X Liu&amp;author=Y Hai&amp;author=J Dong&amp;volume=61&amp;issue=6&amp;publication_year=2022&amp;pages=157&amp;pmid=36321791&amp;doi=10.3892/ijo.2022.5447&amp;"/></mixed-citation></ref><ref id="b107"><label>107.</label><mixed-citation id="mixed-citation111" xml:lang="en"><named-content content-type="citation-string">
+Tian YY,
+Yang AL,
+Chen XN,
+et al. 
+Effect of Huaier aqueous extract on growth and metastasis of human non-small cell lung cancer NCI-H1299 cells and its underlying mechanisms.
+Zhongguo Zhongyao Zazhi,
+2020,
+45(15): 3700-3706.
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.19540/j.cnki.cjcmm.20200310.401"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32893561"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zhongguo Zhongyao Zazhi&amp;title=Effect of Huaier aqueous extract on growth and metastasis of human non-small cell lung cancer NCI-H1299 cells and its underlying mechanisms&amp;author=YY Tian&amp;author=AL Yang&amp;author=XN Chen&amp;volume=45&amp;issue=15&amp;publication_year=2020&amp;pages=3700-3706&amp;pmid=32893561&amp;doi=10.19540/j.cnki.cjcmm.20200310.401&amp;"/></mixed-citation><mixed-citation id="mixed-citation112"><named-content content-type="citation-string">
+
+[田颖颖,
+杨爱琳,
+陈孝男,
+et al.
+. 
+槐耳清膏抑制人非小细胞肺癌NCI-H1299细胞生长和转移及其作用机制研究.
+中国中药杂志,
+2020,
+45(15): 3700-3706.] doi: 10.19540/j.cnki.cjcmm.20200310.401
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.19540/j.cnki.cjcmm.20200310.401"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32893561"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=中国中药杂志&amp;title=槐耳清膏抑制人非小细胞肺癌NCI-H1299细胞生长和转移及其作用机制研究&amp;volume=45&amp;issue=15&amp;publication_year=2020&amp;pages=3700-3706&amp;pmid=32893561&amp;doi=10.19540/j.cnki.cjcmm.20200310.401&amp;"/></mixed-citation></ref><ref id="b108"><label>108.</label><mixed-citation><named-content content-type="citation-string">
+Zhao YY,
+Yang YQ,
+Sheng HH,
+et al. 
+GPX4 plays a crucial role in Fuzheng Kang’ai decoction-induced non-small cell lung cancer cell ferroptosis.
+Front Pharmacol,
+2022,
+13: 851680. doi: 10.21203/rs.3.rs-1176282/v1
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.21203/rs.3.rs-1176282/v1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9043103"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35496303"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Front Pharmacol&amp;title=GPX4 plays a crucial role in Fuzheng Kang’ai decoction-induced non-small cell lung cancer cell ferroptosis&amp;author=YY Zhao&amp;author=YQ Yang&amp;author=HH Sheng&amp;volume=13&amp;publication_year=2022&amp;pages=851680&amp;pmid=35496303&amp;doi=10.21203/rs.3.rs-1176282/v1&amp;"/></mixed-citation></ref><ref id="b109"><label>109.</label><mixed-citation><named-content content-type="citation-string">
+Xu F,
+Zhang J,
+Ji L,
+et al. 
+Inhibition of non-small cell lung cancer by ferroptosis and apoptosis induction through P53 and GSK-3β/Nrf 2 signal pathways using Qingrehuoxue formula.
+J Cancer,
+2023,
+14(3): 336-349. doi: 10.7150/jca.79465
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7150/jca.79465"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9969584"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36860928"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J Cancer&amp;title=Inhibition of non-small cell lung cancer by ferroptosis and apoptosis induction through P53 and GSK-3β/Nrf 2 signal pathways using Qingrehuoxue formula&amp;author=F Xu&amp;author=J Zhang&amp;author=L Ji&amp;volume=14&amp;issue=3&amp;publication_year=2023&amp;pages=336-349&amp;pmid=36860928&amp;doi=10.7150/jca.79465&amp;"/></mixed-citation></ref><ref id="b110"><label>110.</label><mixed-citation id="mixed-citation115" xml:lang="en"><named-content content-type="citation-string">
+Wang KJ.
+. 
+Study on the Curative effect and mechanism of Xiaoyi Sanjie Formula in the treatment of non-small cell lung cancer by promoting iron death.
+Changchun University of Traditional Chinese Medicine,
+2023.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Changchun University of Traditional Chinese Medicine&amp;title=Study on the Curative effect and mechanism of Xiaoyi Sanjie Formula in the treatment of non-small cell lung cancer by promoting iron death&amp;author=KJ Wang&amp;publication_year=2023&amp;"/></mixed-citation><mixed-citation id="mixed-citation116"><named-content content-type="citation-string">
+
+[王科举.
+. 
+消异散结方通过促进铁死亡治疗非小细胞肺癌的疗效与机制研究.
+长春中医药大学,
+2023.] doi: 10.26980/d.cnki.gcczc.2023.000035
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.26980/d.cnki.gcczc.2023.000035"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=长春中医药大学&amp;title=消异散结方通过促进铁死亡治疗非小细胞肺癌的疗效与机制研究&amp;publication_year=2023&amp;doi=10.26980/d.cnki.gcczc.2023.000035&amp;"/></mixed-citation></ref><ref id="b111"><label>111.</label><mixed-citation id="mixed-citation117" xml:lang="en"><named-content content-type="citation-string">
+Liu WJ.
+. 
+Sijunzi decoction improves cisplatin resistance of non-small cell lung cancer by inhibiting p62/Keap1/Nrf2 pathway to induce ferroptosis based on glutamine metabolic reprogramming.
+Liaoning University of Traditional Chinese Medicine,
+2023.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Liaoning University of Traditional Chinese Medicine&amp;title=Sijunzi decoction improves cisplatin resistance of non-small cell lung cancer by inhibiting p62/Keap1/Nrf2 pathway to induce ferroptosis based on glutamine metabolic reprogramming&amp;author=WJ Liu&amp;publication_year=2023&amp;"/></mixed-citation><mixed-citation id="mixed-citation118"><named-content content-type="citation-string">
+
+[刘文俊.
+. 
+基于谷氨酰胺代谢重编程探讨四君子汤抑制p62/Keap1/Nrf2通路诱导铁死亡改善NSCLC顺铂耐药.
+辽宁中医药大学,
+2023.] doi: 10.27213/d.cnki.glnzc.2023.000026
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.27213/d.cnki.glnzc.2023.000026"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=辽宁中医药大学&amp;title=基于谷氨酰胺代谢重编程探讨四君子汤抑制p62/Keap1/Nrf2通路诱导铁死亡改善NSCLC顺铂耐药&amp;publication_year=2023&amp;doi=10.27213/d.cnki.glnzc.2023.000026&amp;"/></mixed-citation></ref><ref id="b112"><label>112.</label><mixed-citation><named-content content-type="citation-string">
+Chopra B,
+Dhingra A K,
+Dhar K L,
+et al. 
+Emerging role of terpenoids for the treatment of cancer: A review.
+Mini Rev Med Chem,
+2021,
+21(16): 2300-2336. doi: 10.2174/1389557521666210112143024
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2174/1389557521666210112143024"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33438537"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mini Rev Med Chem&amp;title=Emerging role of terpenoids for the treatment of cancer: A review&amp;author=B Chopra&amp;author=A K Dhingra&amp;author=K L Dhar&amp;volume=21&amp;issue=16&amp;publication_year=2021&amp;pages=2300-2336&amp;pmid=33438537&amp;doi=10.2174/1389557521666210112143024&amp;"/></mixed-citation></ref><ref id="b113"><label>113.</label><mixed-citation><named-content content-type="citation-string">
+Xu XH,
+Li T,
+Fong CMV,
+et al. 
+Saponins from Chinese medicines as anticancer agents.
+Molecules,
+2016,
+21(10): 1326. doi: 10.3390/molecules21101326
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/molecules21101326"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6272920"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27782048"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecules&amp;title=Saponins from Chinese medicines as anticancer agents&amp;author=XH Xu&amp;author=T Li&amp;author=CMV Fong&amp;volume=21&amp;issue=10&amp;publication_year=2016&amp;pages=1326&amp;pmid=27782048&amp;doi=10.3390/molecules21101326&amp;"/></mixed-citation></ref><ref id="b114"><label>114.</label><mixed-citation><named-content content-type="citation-string">
+Liu C,
+Yang S,
+Wang K,
+et al. 
+Alkaloids from traditional Chinese medicine against hepatocellular carcinoma.
+Biomed Pharmacother,
+2019,
+120: 109543. doi: 10.1016/j.biopha.2019.109543
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.biopha.2019.109543"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31655311"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Biomed Pharmacother&amp;title=Alkaloids from traditional Chinese medicine against hepatocellular carcinoma&amp;author=C Liu&amp;author=S Yang&amp;author=K Wang&amp;volume=120&amp;publication_year=2019&amp;pages=109543&amp;pmid=31655311&amp;doi=10.1016/j.biopha.2019.109543&amp;"/></mixed-citation></ref><ref id="b115"><label>115.</label><mixed-citation><named-content content-type="citation-string">
+Cheng YC,
+Sheen JM,
+Hu WL,
+et al. 
+Polyphenols and oxidative stress in atherosclerosis-related ischemic heart disease and stroke.
+Oxid Med Cell Longev,
+2017,
+2017: 1-16. doi: 10.1155/2017/8526438
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1155/2017/8526438"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5727797"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29317985"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Oxid Med Cell Longev&amp;title=Polyphenols and oxidative stress in atherosclerosis-related ischemic heart disease and stroke&amp;author=YC Cheng&amp;author=JM Sheen&amp;author=WL Hu&amp;volume=2017&amp;publication_year=2017&amp;pages=1-16&amp;pmid=29317985&amp;doi=10.1155/2017/8526438&amp;"/></mixed-citation></ref><ref id="b116"><label>116.</label><mixed-citation id="mixed-citation123" xml:lang="en"><named-content content-type="citation-string">
+Ou HY,
+Ye XP,
+Li S,
+et al. 
+Study on medication rules of herbs in the regulation of Ferroptosis based on network pharmacology and data mining.
+Zhongguo Xiandai Yingyong Yaoxue,
+2019,
+36(18): 2317-2324.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zhongguo Xiandai Yingyong Yaoxue&amp;title=Study on medication rules of herbs in the regulation of Ferroptosis based on network pharmacology and data mining&amp;author=HY Ou&amp;author=XP Ye&amp;author=S Li&amp;volume=36&amp;issue=18&amp;publication_year=2019&amp;pages=2317-2324&amp;"/></mixed-citation><mixed-citation id="mixed-citation124"><named-content content-type="citation-string">
+
+[欧海亚,
+叶小鹏,
+李舒,
+et al.
+. 
+基于网络药理学及数据挖掘探讨中药调节铁死亡的用药规律研究.
+中国现代应用药学,
+2019,
+36(18): 2317-2324.] doi: 10.13748/j.cnki.issn1007-7693.2019.18.016
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.13748/j.cnki.issn1007-7693.2019.18.016"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=中国现代应用药学&amp;title=基于网络药理学及数据挖掘探讨中药调节铁死亡的用药规律研究&amp;volume=36&amp;issue=18&amp;publication_year=2019&amp;pages=2317-2324&amp;doi=10.13748/j.cnki.issn1007-7693.2019.18.016&amp;"/></mixed-citation></ref><ref id="b117"><label>117.</label><mixed-citation><named-content content-type="citation-string">
+Du J,
+Wang X,
+Li Y,
+et al. 
+DHA exhibits synergistic therapeutic efficacy with cisplatin to induce ferroptosis in pancreatic ductal adenocarcinoma via modulation of iron metabolism.
+Cell Death Dis,
+2021,
+12(7): 705. doi: 10.1038/s41419-021-03996-y
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41419-021-03996-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8280115"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34262021"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Death Dis&amp;title=DHA exhibits synergistic therapeutic efficacy with cisplatin to induce ferroptosis in pancreatic ductal adenocarcinoma via modulation of iron metabolism&amp;author=J Du&amp;author=X Wang&amp;author=Y Li&amp;volume=12&amp;issue=7&amp;publication_year=2021&amp;pages=705&amp;pmid=34262021&amp;doi=10.1038/s41419-021-03996-y&amp;"/></mixed-citation></ref><ref id="b118"><label>118.</label><mixed-citation><named-content content-type="citation-string">
+Wang L,
+Fu H,
+Song L,
+et al. 
+Overcoming AZD
+9291 resistance and metastasis of NSCLC via ferroptosis and multitarget interference by nanocatalytic sensitizer plus AHP‐DRI‐12. Small,
+2023,
+19(4): e2204133. doi: 10.1002/smll.202204133
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/smll.202204133"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36420659"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Overcoming AZD&amp;author=L Wang&amp;author=H Fu&amp;author=L Song&amp;volume=9291&amp;issue=4&amp;publication_year=2023&amp;pmid=36420659&amp;doi=10.1002/smll.202204133&amp;"/></mixed-citation></ref><ref id="b119"><label>119.</label><mixed-citation><named-content content-type="citation-string">
+Ren Y,
+Mao X,
+Xu H,
+et al. 
+Ferroptosis and EMT: key targets for combating cancer progression and therapy resistance.
+Cell Mol Life Sci,
+2023,
+80(9): 263. doi: 10.1007/s00018-023-04907-4
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00018-023-04907-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10439860"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="37598126"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Mol Life Sci&amp;title=Ferroptosis and EMT: key targets for combating cancer progression and therapy resistance&amp;author=Y Ren&amp;author=X Mao&amp;author=H Xu&amp;volume=80&amp;issue=9&amp;publication_year=2023&amp;pages=263&amp;pmid=37598126&amp;doi=10.1007/s00018-023-04907-4&amp;"/></mixed-citation></ref><ref id="b120"><label>120.</label><mixed-citation><named-content content-type="citation-string">
+Liu J,
+Kuang F,
+Kroemer G,
+et al. 
+Autophagy-dependent ferroptosis: machinery and regulation.
+Cell Chem Biol,
+2020,
+27(4): 420-435. doi: 10.1016/j.chembiol.2020.02.005
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.chembiol.2020.02.005"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7166192"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32160513"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Chem Biol&amp;title=Autophagy-dependent ferroptosis: machinery and regulation&amp;author=J Liu&amp;author=F Kuang&amp;author=G Kroemer&amp;volume=27&amp;issue=4&amp;publication_year=2020&amp;pages=420-435&amp;pmid=32160513&amp;doi=10.1016/j.chembiol.2020.02.005&amp;"/></mixed-citation></ref><ref id="b121"><label>121.</label><mixed-citation><named-content content-type="citation-string">
+Zhou B,
+Liu J,
+Kang R,
+et al. 
+Ferroptosis is a type of autophagy-dependent cell death.
+Cancer Biol,
+2020,
+66: 89-100. doi: 10.1016/j.semcancer.2019.03.002
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.semcancer.2019.03.002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30880243"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cancer Biol&amp;title=Ferroptosis is a type of autophagy-dependent cell death&amp;author=B Zhou&amp;author=J Liu&amp;author=R Kang&amp;volume=66&amp;publication_year=2020&amp;pages=89-100&amp;pmid=30880243&amp;doi=10.1016/j.semcancer.2019.03.002&amp;"/></mixed-citation></ref></ref-list></sec></sec></body></article>
